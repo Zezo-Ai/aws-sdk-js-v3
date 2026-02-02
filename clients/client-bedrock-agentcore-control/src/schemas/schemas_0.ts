@@ -1034,8 +1034,8 @@ export var CreateCodeInterpreterResponse$: StaticStructureSchema = [3, n0, _CCIR
 ];
 export var CreateEvaluatorRequest$: StaticStructureSchema = [3, n0, _CER,
   0,
-  [_eNv, _eC, _le, _cTl, _d],
-  [0, [() => EvaluatorConfig$, 0], 0, [0, 4], [() => EvaluatorDescription, 0]], 3
+  [_eNv, _eC, _le, _cTl, _d, _t],
+  [0, [() => EvaluatorConfig$, 0], 0, [0, 4], [() => EvaluatorDescription, 0], 128 | 0], 3
 ];
 export var CreateEvaluatorResponse$: StaticStructureSchema = [3, n0, _CERr,
   0,
@@ -1084,8 +1084,8 @@ export var CreateOauth2CredentialProviderResponse$: StaticStructureSchema = [3, 
 ];
 export var CreateOnlineEvaluationConfigRequest$: StaticStructureSchema = [3, n0, _COECR,
   0,
-  [_oECN, _ru, _dSC, _ev, _eERA, _eOC, _cTl, _d],
-  [0, () => Rule$, () => DataSourceConfig$, () => EvaluatorList, 0, 2, [0, 4], [() => EvaluationConfigDescription, 0]], 6
+  [_oECN, _ru, _dSC, _ev, _eERA, _eOC, _cTl, _d, _t],
+  [0, () => Rule$, () => DataSourceConfig$, () => EvaluatorList, 0, 2, [0, 4], [() => EvaluationConfigDescription, 0], 128 | 0], 6
 ];
 export var CreateOnlineEvaluationConfigResponse$: StaticStructureSchema = [3, n0, _COECRr,
   0,
