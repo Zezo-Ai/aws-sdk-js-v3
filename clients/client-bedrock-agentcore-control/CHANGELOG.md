@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.981.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.980.0...v3.981.0) (2026-02-02)
+
+
+### Features
+
+* **client-bedrock-agentcore-control:** Adds tagging support for AgentCore Evaluations (evaluator and online evaluation config) ([079aff0](https://github.com/aws/aws-sdk-js-v3/commit/079aff0164bf80985077f65657b9a8619ef518d1))
+
+
+
+
+
 # [3.980.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.979.0...v3.980.0) (2026-01-30)
 
 **Note:** Version bump only for package @aws-sdk/client-bedrock-agentcore-control

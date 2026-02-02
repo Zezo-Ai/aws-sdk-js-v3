@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.981.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.980.0...v3.981.0) (2026-02-02)
+
+
+### Bug Fixes
+
+* **deps:** bump fast-xml-parser from 5.2.5 to 5.3.4 ([#7699](https://github.com/aws/aws-sdk-js-v3/issues/7699)) ([37623f4](https://github.com/aws/aws-sdk-js-v3/commit/37623f4c325b6bf15bdd453708b6337b31b63c3c))
+
+
+### Features
+
+* **client-bedrock-agentcore-control:** Adds tagging support for AgentCore Evaluations (evaluator and online evaluation config) ([079aff0](https://github.com/aws/aws-sdk-js-v3/commit/079aff0164bf80985077f65657b9a8619ef518d1))
+* **client-cloudfront:** Add OriginMTLS support to CloudFront Distribution APIs ([4b7b074](https://github.com/aws/aws-sdk-js-v3/commit/4b7b074bcff8036ecd085332e828c49a40b036f4))
+* **client-mpa:** Updates to multi-party approval (MPA) service to add support for multi-factor authentication (MFA) for voting operations. ([a8d9582](https://github.com/aws/aws-sdk-js-v3/commit/a8d958260f6b0b5a58b6fa54310385e3e0a65304))
+* **clients:** update client endpoints as of 2026-02-02 ([df46365](https://github.com/aws/aws-sdk-js-v3/commit/df46365a7974ace9ad6d8005439d1cb8562332d6))
+
+
+
+
+
 # [3.980.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.979.0...v3.980.0) (2026-01-30)
 
 

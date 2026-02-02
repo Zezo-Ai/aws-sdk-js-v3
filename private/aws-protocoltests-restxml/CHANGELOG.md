@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.981.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.980.0...v3.981.0) (2026-02-02)
+
+
+### Bug Fixes
+
+* **deps:** bump fast-xml-parser from 5.2.5 to 5.3.4 ([#7699](https://github.com/aws/aws-sdk-js-v3/issues/7699)) ([37623f4](https://github.com/aws/aws-sdk-js-v3/commit/37623f4c325b6bf15bdd453708b6337b31b63c3c))
+
+
+
+
+
 # [3.980.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.979.0...v3.980.0) (2026-01-30)
 
 **Note:** Version bump only for package @aws-sdk/aws-protocoltests-restxml

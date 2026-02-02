@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.981.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.980.0...v3.981.0) (2026-02-02)
+
+
+### Features
+
+* **client-cloudfront:** Add OriginMTLS support to CloudFront Distribution APIs ([4b7b074](https://github.com/aws/aws-sdk-js-v3/commit/4b7b074bcff8036ecd085332e828c49a40b036f4))
+
+
+
+
+
 # [3.980.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.979.0...v3.980.0) (2026-01-30)
 
 **Note:** Version bump only for package @aws-sdk/client-cloudfront

@@ -37,7 +37,7 @@
     "typescript": "~5.8.3"
   },
   "peerDependencies": {
-    "@aws-sdk/client-dynamodb": "workspace:3.980.0"
+    "@aws-sdk/client-dynamodb": "workspace:3.981.0"
   },
   "engines": {
     "node": ">=20.0.0"
