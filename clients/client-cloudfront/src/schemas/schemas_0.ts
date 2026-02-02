@@ -58,6 +58,7 @@ const _CBL = "CacheBehaviorList";
 const _CBa = "CacheBehaviors";
 const _CBo = "CookieBehavior";
 const _CC = "CookiesConfig";
+const _CCA = "ClientCertificateArn";
 const _CCBS = "CaCertificatesBundleSource";
 const _CCBSL = "CaCertificatesBundleS3Location";
 const _CCDP = "CreateContinuousDeploymentPolicy";
@@ -800,6 +801,7 @@ const _OGr = "OriginGroup";
 const _OI = "OriginId";
 const _OKT = "OriginKeepaliveTimeout";
 const _OL = "OriginList";
+const _OMC = "OriginMtlsConfig";
 const _OO = "OriginOverride";
 const _OP = "OriginPath";
 const _OPP = "OriginProtocolPolicy";
@@ -1948,8 +1950,8 @@ export var Customizations$: StaticStructureSchema = [3, n0, _Cu,
 ];
 export var CustomOriginConfig$: StaticStructureSchema = [3, n0, _COC,
   0,
-  [_HTTPP, _HTTPSP, _OPP, _OSP, _ORT, _OKT, _IAT],
-  [1, 1, 0, [() => OriginSslProtocols$, 0], 1, 1, 0], 3
+  [_HTTPP, _HTTPSP, _OPP, _OSP, _ORT, _OKT, _IAT, _OMC],
+  [1, 1, 0, [() => OriginSslProtocols$, 0], 1, 1, 0, () => OriginMtlsConfig$], 3
 ];
 export var DefaultCacheBehavior$: StaticStructureSchema = [3, n0, _DCB,
   0,
@@ -3688,6 +3690,11 @@ export var OriginGroups$: StaticStructureSchema = [3, n0, _OG,
   0,
   [_Q, _I],
   [1, [() => OriginGroupList, 0]], 1
+];
+export var OriginMtlsConfig$: StaticStructureSchema = [3, n0, _OMC,
+  0,
+  [_CCA],
+  [0], 1
 ];
 export var OriginRequestPolicy$: StaticStructureSchema = [3, n0, _ORP,
   0,
