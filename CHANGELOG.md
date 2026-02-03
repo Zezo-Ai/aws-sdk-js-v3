@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.982.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.981.0...v3.982.0) (2026-02-03)
+
+
+### Bug Fixes
+
+* **eventstream-handler-node:** fix uncatchable error in stream pipeline ([#7703](https://github.com/aws/aws-sdk-js-v3/issues/7703)) ([eb4e2dd](https://github.com/aws/aws-sdk-js-v3/commit/eb4e2dd4addb8f58494140b12fbc6561ecdcdb6c))
+* **middleware-websocket:** establish stream pipeline prior to continuing with request ([#7704](https://github.com/aws/aws-sdk-js-v3/issues/7704)) ([52b25e8](https://github.com/aws/aws-sdk-js-v3/commit/52b25e84c2614936c078c3846e03493397a1934f))
+
+
+### Features
+
+* **client-batch:** AWS Batch Array Job Visibility feature support. Includes new statusSummaryLastUpdatedAt for array job parent DescribeJobs responses for the last time the statusSummary was updated. Includes both statusSummary and statusSummaryLastUpdatedAt in ListJobs responses for array job parents. ([08db9eb](https://github.com/aws/aws-sdk-js-v3/commit/08db9ebeff5ec0478f1608cdfa2cbd027dc97120))
+* **client-dynamodb:** This change supports the creation of multi-account global tables. It adds two new arguments to CreateTable, GlobalTableSourceArn and GlobalTableSettingsReplicationMode. DescribeTable is also updated to include information about GlobalTableSettingsReplicationMode. ([4bef08d](https://github.com/aws/aws-sdk-js-v3/commit/4bef08d4b3c14fa2bb9ab0e4382bff58ac3fa6a2))
+* **client-geo-maps:** Added support for optional style parameters in maps, including 3D terrain and 3D Buildings ([59d8232](https://github.com/aws/aws-sdk-js-v3/commit/59d8232aa0563a590d59a84737245bd99938b26a))
+* **client-kinesis:** Adds StreamId parameter to AWS Kinesis Data Streams APIs that is reserved for future use. ([96d7f32](https://github.com/aws/aws-sdk-js-v3/commit/96d7f32bd1a4a85a781a8fdcdaa3bd6d8c988978))
+* **client-marketplace-catalog:** Adds support for Catalog API us-east-1 dualstack endpoint catalog-marketplace.us-east-1.api.aws ([2c5c715](https://github.com/aws/aws-sdk-js-v3/commit/2c5c715ae13610926899fe3b65eff4480af124fa))
+* **client-sso-admin:** Added new Region management APIs to support multi-Region replication in IAM Identity Center. ([c16a6f4](https://github.com/aws/aws-sdk-js-v3/commit/c16a6f465ea3d24f5f4b84c1676ca5020d29cb51))
+
+
+
+
+
 # [3.981.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.980.0...v3.981.0) (2026-02-02)
 
 

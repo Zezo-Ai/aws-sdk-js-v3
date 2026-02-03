@@ -9,6 +9,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+
+# 3.973.6 (2026-02-03)
+### Chores
+* **core:** update dependencies.
+
+
+
 # 3.973.5 (2026-01-30)
 ### Chores
 * use yarn workspace versioning for monorepo packages ([#7693](https://github.com/aws/aws-sdk-js-v3/issues/7693)) ([b951130](https://github.com/aws/aws-sdk-js-v3/commit/b951130e92a694d06656632ec6ccc940cbd8fb3f))
