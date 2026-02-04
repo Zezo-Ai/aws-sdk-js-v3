@@ -9,6 +9,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+
+# 3.972.7 (2026-02-03)
+### Chores
+* **dynamodb-codec:** remove peer dependency on client ([#7711](https://github.com/aws/aws-sdk-js-v3/issues/7711)) ([3116b7d](https://github.com/aws/aws-sdk-js-v3/commit/3116b7d186fefd9d7e9fac74957c32b888cc1566))
+
+
+
 # 3.972.6 (2026-02-03)
 ### Chores
 * **dynamodb-codec:** update dependencies.

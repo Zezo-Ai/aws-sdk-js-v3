@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.983.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.982.0...v3.983.0) (2026-02-04)
+
+
+### Features
+
+* **client-bedrock-runtime:** Added support for structured outputs to Converse and ConverseStream APIs. ([ff529d7](https://github.com/aws/aws-sdk-js-v3/commit/ff529d7ec5fd38c5cb2aa682607ce3e924b53b19))
+* **client-connectcases:** Amazon Connect Cases now supports larger, multi-line text fields with up to 4,100 characters. Administrators can use the Admin UI to select the appropriate configuration (single-line or multi-line) on a per-field basis, improving case documentation capabilities. ([69bec69](https://github.com/aws/aws-sdk-js-v3/commit/69bec6943bd9acb429fd05779335e49efe12aef1))
+* **client-medialive:** AWS Elemental MediaLive now supports SRT listener mode for inputs and outputs, in addition to the existing SRT caller mode. ([25287d4](https://github.com/aws/aws-sdk-js-v3/commit/25287d4b47742c81c1d600d3739635e2a07acd74))
+* **client-workspaces-web:** Support for configuring and managing custom domain names for WorkSpaces Secure Browser portals. ([afd41b4](https://github.com/aws/aws-sdk-js-v3/commit/afd41b46460127fba61bde3dc0b894f152bd38fb))
+
+
+
+
+
 # [3.982.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.981.0...v3.982.0) (2026-02-03)
 
 
