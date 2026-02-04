@@ -70,6 +70,8 @@ export interface UpdateChannelCommandOutput extends UpdateChannelResponse, __Met
  *           EncryptionPassphraseSecretArn: "STRING_VALUE",
  *           StreamId: "STRING_VALUE",
  *           Url: "STRING_VALUE",
+ *           ConnectionMode: "CALLER" || "LISTENER",
+ *           ListenerPort: Number("int"),
  *         },
  *       ],
  *       LogicalInterfaceNames: [ // __listOf__string
@@ -1298,6 +1300,7 @@ export interface UpdateChannelCommandOutput extends UpdateChannelResponse, __Met
  *       LinkedChannelType: "FOLLOWING_CHANNEL" || "PRIMARY_CHANNEL",
  *     },
  *   },
+ *   ChannelSecurityGroups: "<__listOf__string>",
  * };
  * const command = new UpdateChannelCommand(input);
  * const response = await client.send(command);
@@ -1337,6 +1340,8 @@ export interface UpdateChannelCommandOutput extends UpdateChannelResponse, __Met
  * //             EncryptionPassphraseSecretArn: "STRING_VALUE",
  * //             StreamId: "STRING_VALUE",
  * //             Url: "STRING_VALUE",
+ * //             ConnectionMode: "CALLER" || "LISTENER",
+ * //             ListenerPort: Number("int"),
  * //           },
  * //         ],
  * //         LogicalInterfaceNames: [ // __listOf__string
@@ -2597,6 +2602,7 @@ export interface UpdateChannelCommandOutput extends UpdateChannelResponse, __Met
  * //         LinkedChannelType: "FOLLOWING_CHANNEL" || "PRIMARY_CHANNEL",
  * //       },
  * //     },
+ * //     ChannelSecurityGroups: "<__listOf__string>",
  * //   },
  * // };
  *

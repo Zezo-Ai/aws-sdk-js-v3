@@ -70,6 +70,8 @@ export interface CreateChannelCommandOutput extends CreateChannelResponse, __Met
  *           EncryptionPassphraseSecretArn: "STRING_VALUE",
  *           StreamId: "STRING_VALUE",
  *           Url: "STRING_VALUE",
+ *           ConnectionMode: "CALLER" || "LISTENER",
+ *           ListenerPort: Number("int"),
  *         },
  *       ],
  *       LogicalInterfaceNames: [ // __listOf__string
@@ -1307,6 +1309,7 @@ export interface CreateChannelCommandOutput extends CreateChannelResponse, __Met
  *       LinkedChannelType: "FOLLOWING_CHANNEL" || "PRIMARY_CHANNEL",
  *     },
  *   },
+ *   ChannelSecurityGroups: "<__listOf__string>",
  * };
  * const command = new CreateChannelCommand(input);
  * const response = await client.send(command);
@@ -1346,6 +1349,8 @@ export interface CreateChannelCommandOutput extends CreateChannelResponse, __Met
  * //             EncryptionPassphraseSecretArn: "STRING_VALUE",
  * //             StreamId: "STRING_VALUE",
  * //             Url: "STRING_VALUE",
+ * //             ConnectionMode: "CALLER" || "LISTENER",
+ * //             ListenerPort: Number("int"),
  * //           },
  * //         ],
  * //         LogicalInterfaceNames: [ // __listOf__string
@@ -2606,6 +2611,7 @@ export interface CreateChannelCommandOutput extends CreateChannelResponse, __Met
  * //         LinkedChannelType: "FOLLOWING_CHANNEL" || "PRIMARY_CHANNEL",
  * //       },
  * //     },
+ * //     ChannelSecurityGroups: "<__listOf__string>",
  * //   },
  * // };
  *

@@ -167,6 +167,7 @@ import {
   ColorSpacePassthroughSettings$,
   ConflictException,
   ConflictException$,
+  ConnectionMode,
   ContentType,
   CreateChannel$,
   CreateChannelCommand,
@@ -1023,6 +1024,10 @@ import {
   SrtCallerSourceRequest$,
   SrtEncryptionType,
   SrtGroupSettings$,
+  SrtListenerDecryption$,
+  SrtListenerDecryptionRequest$,
+  SrtListenerSettings$,
+  SrtListenerSettingsRequest$,
   SrtOutputDestinationSettings$,
   SrtOutputSettings$,
   SrtSettings$,
@@ -1977,6 +1982,10 @@ assert(typeof SrtCallerDecryptionRequest$ === "object");
 assert(typeof SrtCallerSource$ === "object");
 assert(typeof SrtCallerSourceRequest$ === "object");
 assert(typeof SrtGroupSettings$ === "object");
+assert(typeof SrtListenerDecryption$ === "object");
+assert(typeof SrtListenerDecryptionRequest$ === "object");
+assert(typeof SrtListenerSettings$ === "object");
+assert(typeof SrtListenerSettingsRequest$ === "object");
 assert(typeof SrtOutputDestinationSettings$ === "object");
 assert(typeof SrtOutputSettings$ === "object");
 assert(typeof SrtSettings$ === "object");
@@ -2144,6 +2153,7 @@ assert(typeof CmafNielsenId3Behavior === "object");
 assert(typeof CmafTimedMetadataId3Frame === "object");
 assert(typeof CmafTimedMetadataPassthrough === "object");
 assert(typeof ColorSpace === "object");
+assert(typeof ConnectionMode === "object");
 assert(typeof ContentType === "object");
 assert(typeof DashRoleAudio === "object");
 assert(typeof DashRoleCaption === "object");

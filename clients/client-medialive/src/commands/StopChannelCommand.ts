@@ -76,6 +76,8 @@ export interface StopChannelCommandOutput extends StopChannelResponse, __Metadat
  * //           EncryptionPassphraseSecretArn: "STRING_VALUE",
  * //           StreamId: "STRING_VALUE",
  * //           Url: "STRING_VALUE",
+ * //           ConnectionMode: "CALLER" || "LISTENER",
+ * //           ListenerPort: Number("int"),
  * //         },
  * //       ],
  * //       LogicalInterfaceNames: [ // __listOf__string
@@ -1336,6 +1338,7 @@ export interface StopChannelCommandOutput extends StopChannelResponse, __Metadat
  * //       LinkedChannelType: "FOLLOWING_CHANNEL" || "PRIMARY_CHANNEL",
  * //     },
  * //   },
+ * //   ChannelSecurityGroups: "<__listOf__string>",
  * // };
  *
  * ```
