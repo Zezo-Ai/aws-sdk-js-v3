@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.984.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.983.0...v3.984.0) (2026-02-05)
+
+
+### Features
+
+* **client-arc-region-switch:** Updates documentation for ARC Region switch and provides stronger validation for Amazon Aurora Global Database execution block parameters. ([cb7bcf4](https://github.com/aws/aws-sdk-js-v3/commit/cb7bcf4f8d699ae7bc74c9918fb3b1fa35929212))
+* **client-athena:** Reduces the minimum TargetDpus to create or update capacity reservations from 24 to 4. ([19dc3be](https://github.com/aws/aws-sdk-js-v3/commit/19dc3befa4ff8e5593a22a608656bd84ff443f15))
+* **client-bedrock-agentcore-control:** Support Browser profile persistence (cookies and local storage) across sessions for AgentCore Browser. ([a494454](https://github.com/aws/aws-sdk-js-v3/commit/a49445404f8102874cc09ce7895fd32e0768d178))
+* **client-bedrock-agentcore:** Support Browser profile persistence (cookies and local storage) across sessions for AgentCore Browser. ([ed27353](https://github.com/aws/aws-sdk-js-v3/commit/ed27353946169292c069f2c659dd72333b2eef41))
+* **client-glue:** This release adds the capability to easily create custom AWS Glue connections to data sources with REST APIs. ([a083905](https://github.com/aws/aws-sdk-js-v3/commit/a08390520e8a8bb9e58fff90b0a4f0ba7c456917))
+* **client-medialive:** Outputs using the AV1 codec in CMAF Ingest output groups in MediaLive now have the ability to specify a target bit depth of 8 or 10. ([35dbef6](https://github.com/aws/aws-sdk-js-v3/commit/35dbef6f9cb267592714406bc350eacf697713bd))
+* **client-ram:** Added ListSourceAssociations API. Allows RAM resource share owners to list source associations that determine which sources can access resources through service principal associations. Supports filtering by resource share ARN, source ID, source type, or status, with pagination. ([0e72d32](https://github.com/aws/aws-sdk-js-v3/commit/0e72d32d0394152e5c3bc405af7e40aa33f6cdea))
+* **client-transfer:** Adds support for the customer to send custom HTTP headers and configure an AS2 Connector to receive Asynchronous MDNs from their trading partner ([e14e08b](https://github.com/aws/aws-sdk-js-v3/commit/e14e08b3758a6678dde9e3505dd26f88e80a3f2b))
+* **client-workspaces:** Added support for 12 new graphics-optimized compute types - Graphics.g6 (xlarge, 2xlarge, 4xlarge, 8xlarge, 16xlarge), Graphics.gr6 (4xlarge, 8xlarge), Graphics.g6f (large, xlarge, 2xlarge, 4xlarge), and Graphics.gr6f (4xlarge). ([8ba8054](https://github.com/aws/aws-sdk-js-v3/commit/8ba8054e2fd0ff46bbec10b0d2d72dd46d2fa13f))
+* **clients:** update client endpoints as of 2026-02-05 ([2a007c3](https://github.com/aws/aws-sdk-js-v3/commit/2a007c3a2eb850d8cf01684f80c2196adf30035b))
+
+
+
+
+
 # [3.983.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.982.0...v3.983.0) (2026-02-04)
 
 

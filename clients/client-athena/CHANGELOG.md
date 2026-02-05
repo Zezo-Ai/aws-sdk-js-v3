@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.984.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.983.0...v3.984.0) (2026-02-05)
+
+
+### Features
+
+* **client-athena:** Reduces the minimum TargetDpus to create or update capacity reservations from 24 to 4. ([19dc3be](https://github.com/aws/aws-sdk-js-v3/commit/19dc3befa4ff8e5593a22a608656bd84ff443f15))
+
+
+
+
+
 # [3.983.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.982.0...v3.983.0) (2026-02-04)
 
 **Note:** Version bump only for package @aws-sdk/client-athena
