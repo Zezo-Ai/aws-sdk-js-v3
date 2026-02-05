@@ -3528,6 +3528,19 @@ export type AfdSignaling = (typeof AfdSignaling)[keyof typeof AfdSignaling];
  * @public
  * @enum
  */
+export const Av1BitDepth = {
+  DEPTH_10: "DEPTH_10",
+  DEPTH_8: "DEPTH_8",
+} as const;
+/**
+ * @public
+ */
+export type Av1BitDepth = (typeof Av1BitDepth)[keyof typeof Av1BitDepth];
+
+/**
+ * @public
+ * @enum
+ */
 export const FixedAfd = {
   AFD_0000: "AFD_0000",
   AFD_0010: "AFD_0010",

@@ -1120,6 +1120,7 @@ export interface DescribeChannelCommandOutput extends DescribeChannelResponse, _
  * //             SpatialAq: "DISABLED" || "ENABLED",
  * //             TemporalAq: "DISABLED" || "ENABLED",
  * //             TimecodeInsertion: "DISABLED" || "METADATA_OBU",
+ * //             BitDepth: "DEPTH_10" || "DEPTH_8",
  * //           },
  * //         },
  * //         Height: Number("int"),

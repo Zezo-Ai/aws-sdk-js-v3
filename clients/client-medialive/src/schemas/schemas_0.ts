@@ -2630,8 +2630,8 @@ export var Av1ColorSpaceSettings$: StaticStructureSchema = [3, n0, _ACSS,
 ];
 export var Av1Settings$: StaticStructureSchema = [3, n0, _ASv,
   0,
-  [_FD, _FN, _ASf, _BS, _CSS, _FA, _GS, _GSU, _L, _LARC, _MB, _MII, _PD, _PN, _QQL, _SCD, _TBS, _B, _RCM, _MBi, _SA, _TA, _TI],
-  [[1, { [_jN]: _fD }], [1, { [_jN]: _fN }], [0, { [_jN]: _aSf }], [1, { [_jN]: _bS }], [() => Av1ColorSpaceSettings$, { [_jN]: _cSS }], [0, { [_jN]: _fA }], [1, { [_jN]: _gS }], [0, { [_jN]: _gSU }], [0, { [_jN]: _l }], [0, { [_jN]: _lARC }], [1, { [_jN]: _mB }], [1, { [_jN]: _mII }], [1, { [_jN]: _pD }], [1, { [_jN]: _pN }], [1, { [_jN]: _qQL }], [0, { [_jN]: _sCD }], [() => TimecodeBurninSettings$, { [_jN]: _tBS }], [1, { [_jN]: _b }], [0, { [_jN]: _rCM }], [1, { [_jN]: _mBi }], [0, { [_jN]: _sA }], [0, { [_jN]: _tA }], [0, { [_jN]: _tI }]], 2
+  [_FD, _FN, _ASf, _BS, _CSS, _FA, _GS, _GSU, _L, _LARC, _MB, _MII, _PD, _PN, _QQL, _SCD, _TBS, _B, _RCM, _MBi, _SA, _TA, _TI, _BD],
+  [[1, { [_jN]: _fD }], [1, { [_jN]: _fN }], [0, { [_jN]: _aSf }], [1, { [_jN]: _bS }], [() => Av1ColorSpaceSettings$, { [_jN]: _cSS }], [0, { [_jN]: _fA }], [1, { [_jN]: _gS }], [0, { [_jN]: _gSU }], [0, { [_jN]: _l }], [0, { [_jN]: _lARC }], [1, { [_jN]: _mB }], [1, { [_jN]: _mII }], [1, { [_jN]: _pD }], [1, { [_jN]: _pN }], [1, { [_jN]: _qQL }], [0, { [_jN]: _sCD }], [() => TimecodeBurninSettings$, { [_jN]: _tBS }], [1, { [_jN]: _b }], [0, { [_jN]: _rCM }], [1, { [_jN]: _mBi }], [0, { [_jN]: _sA }], [0, { [_jN]: _tA }], [0, { [_jN]: _tI }], [0, { [_jN]: _bD }]], 2
 ];
 export var AvailBlanking$: StaticStructureSchema = [3, n0, _AB,
   0,

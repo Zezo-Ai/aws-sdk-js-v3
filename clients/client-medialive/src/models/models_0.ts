@@ -25,6 +25,7 @@ import {
   AudioOnlyHlsTrackType,
   AudioType,
   AuthenticationScheme,
+  Av1BitDepth,
   Av1GopSizeUnits,
   Av1Level,
   Av1LookAheadRateControl,
@@ -8909,6 +8910,12 @@ export interface Av1Settings {
    * @public
    */
   TimecodeInsertion?: Av1TimecodeInsertionBehavior | undefined;
+
+  /**
+   * Specifies the bit depth for the output encode. Choose a value. Or leave the field empty to use the default, which is 8 bit.
+   * @public
+   */
+  BitDepth?: Av1BitDepth | undefined;
 }
 
 /**

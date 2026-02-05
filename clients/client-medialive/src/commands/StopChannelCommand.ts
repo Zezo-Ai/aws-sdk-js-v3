@@ -1120,6 +1120,7 @@ export interface StopChannelCommandOutput extends StopChannelResponse, __Metadat
  * //             SpatialAq: "DISABLED" || "ENABLED",
  * //             TemporalAq: "DISABLED" || "ENABLED",
  * //             TimecodeInsertion: "DISABLED" || "METADATA_OBU",
+ * //             BitDepth: "DEPTH_10" || "DEPTH_8",
  * //           },
  * //         },
  * //         Height: Number("int"),

@@ -1120,6 +1120,7 @@ export interface DeleteChannelCommandOutput extends DeleteChannelResponse, __Met
  * //             SpatialAq: "DISABLED" || "ENABLED",
  * //             TemporalAq: "DISABLED" || "ENABLED",
  * //             TimecodeInsertion: "DISABLED" || "METADATA_OBU",
+ * //             BitDepth: "DEPTH_10" || "DEPTH_8",
  * //           },
  * //         },
  * //         Height: Number("int"),

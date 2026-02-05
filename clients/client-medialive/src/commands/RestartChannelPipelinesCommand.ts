@@ -1123,6 +1123,7 @@ export interface RestartChannelPipelinesCommandOutput extends RestartChannelPipe
  * //             SpatialAq: "DISABLED" || "ENABLED",
  * //             TemporalAq: "DISABLED" || "ENABLED",
  * //             TimecodeInsertion: "DISABLED" || "METADATA_OBU",
+ * //             BitDepth: "DEPTH_10" || "DEPTH_8",
  * //           },
  * //         },
  * //         Height: Number("int"),

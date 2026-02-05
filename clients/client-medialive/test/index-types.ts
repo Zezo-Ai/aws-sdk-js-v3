@@ -397,6 +397,7 @@ export type {
   AudioOnlyHlsTrackType,
   AudioType,
   AuthenticationScheme,
+  Av1BitDepth,
   Av1GopSizeUnits,
   Av1Level,
   Av1LookAheadRateControl,

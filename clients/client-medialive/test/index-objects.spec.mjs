@@ -58,6 +58,7 @@ import {
   AudioWatermarkSettings$,
   AuthenticationScheme,
   AutomaticInputFailoverSettings$,
+  Av1BitDepth,
   Av1ColorSpaceSettings$,
   Av1GopSizeUnits,
   Av1Level,
@@ -2113,6 +2114,7 @@ assert(typeof AudioOnlyHlsSegmentType === "object");
 assert(typeof AudioOnlyHlsTrackType === "object");
 assert(typeof AudioType === "object");
 assert(typeof AuthenticationScheme === "object");
+assert(typeof Av1BitDepth === "object");
 assert(typeof Av1GopSizeUnits === "object");
 assert(typeof Av1Level === "object");
 assert(typeof Av1LookAheadRateControl === "object");
