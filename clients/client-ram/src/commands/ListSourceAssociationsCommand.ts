@@ -4,9 +4,9 @@ import { Command as $Command } from "@smithy/smithy-client";
 import type { MetadataBearer as __MetadataBearer } from "@smithy/types";
 
 import { commonParams } from "../endpoint/EndpointParameters";
-import type { ListPrincipalsRequest, ListPrincipalsResponse } from "../models/models_0";
+import type { ListSourceAssociationsRequest, ListSourceAssociationsResponse } from "../models/models_0";
 import type { RAMClientResolvedConfig, ServiceInputTypes, ServiceOutputTypes } from "../RAMClient";
-import { ListPrincipals$ } from "../schemas/schemas_0";
+import { ListSourceAssociations$ } from "../schemas/schemas_0";
 
 /**
  * @public
@@ -16,57 +16,49 @@ export { $Command };
 /**
  * @public
  *
- * The input for {@link ListPrincipalsCommand}.
+ * The input for {@link ListSourceAssociationsCommand}.
  */
-export interface ListPrincipalsCommandInput extends ListPrincipalsRequest {}
+export interface ListSourceAssociationsCommandInput extends ListSourceAssociationsRequest {}
 /**
  * @public
  *
- * The output of {@link ListPrincipalsCommand}.
+ * The output of {@link ListSourceAssociationsCommand}.
  */
-export interface ListPrincipalsCommandOutput extends ListPrincipalsResponse, __MetadataBearer {}
+export interface ListSourceAssociationsCommandOutput extends ListSourceAssociationsResponse, __MetadataBearer {}
 
 /**
- * <p>Lists the principals that you are sharing resources with or that are sharing resources
- *             with you.</p>
- *          <note>
- *             <p>Always check the <code>NextToken</code> response parameter for a <code>null</code> value
- * when calling a paginated operation. These operations can occasionally return an empty set of results even when there are more
- * results available. The <code>NextToken</code> response parameter value is <code>null</code>
- *                <i>only</i>
- * when there are no more results to display.</p>
- *          </note>
+ * <p>Lists source associations for resource shares. Source associations control which sources can be used with service principals in resource shares. This operation provides visibility into source associations for resource share owners.</p>
+ *          <p>You can filter the results by resource share Amazon Resource Name (ARN), source ID, source type, or association status. We recommend using pagination to ensure that the operation returns quickly and successfully.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
- * import { RAMClient, ListPrincipalsCommand } from "@aws-sdk/client-ram"; // ES Modules import
- * // const { RAMClient, ListPrincipalsCommand } = require("@aws-sdk/client-ram"); // CommonJS import
+ * import { RAMClient, ListSourceAssociationsCommand } from "@aws-sdk/client-ram"; // ES Modules import
+ * // const { RAMClient, ListSourceAssociationsCommand } = require("@aws-sdk/client-ram"); // CommonJS import
  * // import type { RAMClientConfig } from "@aws-sdk/client-ram";
  * const config = {}; // type is RAMClientConfig
  * const client = new RAMClient(config);
- * const input = { // ListPrincipalsRequest
- *   resourceOwner: "SELF" || "OTHER-ACCOUNTS", // required
- *   resourceArn: "STRING_VALUE",
- *   principals: [ // PrincipalArnOrIdList
- *     "STRING_VALUE",
- *   ],
- *   resourceType: "STRING_VALUE",
+ * const input = { // ListSourceAssociationsRequest
  *   resourceShareArns: [ // ResourceShareArnList
  *     "STRING_VALUE",
  *   ],
+ *   sourceId: "STRING_VALUE",
+ *   sourceType: "STRING_VALUE",
+ *   associationStatus: "ASSOCIATING" || "ASSOCIATED" || "FAILED" || "DISASSOCIATING" || "DISASSOCIATED" || "SUSPENDED" || "SUSPENDING" || "RESTORING",
  *   nextToken: "STRING_VALUE",
  *   maxResults: Number("int"),
  * };
- * const command = new ListPrincipalsCommand(input);
+ * const command = new ListSourceAssociationsCommand(input);
  * const response = await client.send(command);
- * // { // ListPrincipalsResponse
- * //   principals: [ // PrincipalList
- * //     { // Principal
- * //       id: "STRING_VALUE",
+ * // { // ListSourceAssociationsResponse
+ * //   sourceAssociations: [ // AssociatedSourceList
+ * //     { // AssociatedSource
  * //       resourceShareArn: "STRING_VALUE",
- * //       creationTime: new Date("TIMESTAMP"),
+ * //       sourceId: "STRING_VALUE",
+ * //       sourceType: "STRING_VALUE",
+ * //       status: "STRING_VALUE",
  * //       lastUpdatedTime: new Date("TIMESTAMP"),
- * //       external: true || false,
+ * //       creationTime: new Date("TIMESTAMP"),
+ * //       statusMessage: "STRING_VALUE",
  * //     },
  * //   ],
  * //   nextToken: "STRING_VALUE",
@@ -74,10 +66,10 @@ export interface ListPrincipalsCommandOutput extends ListPrincipalsResponse, __M
  *
  * ```
  *
- * @param ListPrincipalsCommandInput - {@link ListPrincipalsCommandInput}
- * @returns {@link ListPrincipalsCommandOutput}
- * @see {@link ListPrincipalsCommandInput} for command's `input` shape.
- * @see {@link ListPrincipalsCommandOutput} for command's `response` shape.
+ * @param ListSourceAssociationsCommandInput - {@link ListSourceAssociationsCommandInput}
+ * @returns {@link ListSourceAssociationsCommandOutput}
+ * @see {@link ListSourceAssociationsCommandInput} for command's `input` shape.
+ * @see {@link ListSourceAssociationsCommandOutput} for command's `response` shape.
  * @see {@link RAMClientResolvedConfig | config} for RAMClient's `config` shape.
  *
  * @throws {@link InvalidNextTokenException} (client fault)
@@ -108,10 +100,10 @@ export interface ListPrincipalsCommandOutput extends ListPrincipalsResponse, __M
  *
  * @public
  */
-export class ListPrincipalsCommand extends $Command
+export class ListSourceAssociationsCommand extends $Command
   .classBuilder<
-    ListPrincipalsCommandInput,
-    ListPrincipalsCommandOutput,
+    ListSourceAssociationsCommandInput,
+    ListSourceAssociationsCommandOutput,
     RAMClientResolvedConfig,
     ServiceInputTypes,
     ServiceOutputTypes
@@ -120,19 +112,19 @@ export class ListPrincipalsCommand extends $Command
   .m(function (this: any, Command: any, cs: any, config: RAMClientResolvedConfig, o: any) {
     return [getEndpointPlugin(config, Command.getEndpointParameterInstructions())];
   })
-  .s("AmazonResourceSharing", "ListPrincipals", {})
-  .n("RAMClient", "ListPrincipalsCommand")
-  .sc(ListPrincipals$)
+  .s("AmazonResourceSharing", "ListSourceAssociations", {})
+  .n("RAMClient", "ListSourceAssociationsCommand")
+  .sc(ListSourceAssociations$)
   .build() {
   /** @internal type navigation helper, not in runtime. */
   protected declare static __types: {
     api: {
-      input: ListPrincipalsRequest;
-      output: ListPrincipalsResponse;
+      input: ListSourceAssociationsRequest;
+      output: ListSourceAssociationsResponse;
     };
     sdk: {
-      input: ListPrincipalsCommandInput;
-      output: ListPrincipalsCommandOutput;
+      input: ListSourceAssociationsCommandInput;
+      output: ListSourceAssociationsCommandOutput;
     };
   };
 }
