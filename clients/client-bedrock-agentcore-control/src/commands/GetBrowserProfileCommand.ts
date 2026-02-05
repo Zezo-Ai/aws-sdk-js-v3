@@ -9,8 +9,8 @@ import type {
   ServiceOutputTypes,
 } from "../BedrockAgentCoreControlClient";
 import { commonParams } from "../endpoint/EndpointParameters";
-import type { TagResourceRequest, TagResourceResponse } from "../models/models_1";
-import { TagResource$ } from "../schemas/schemas_0";
+import type { GetBrowserProfileRequest, GetBrowserProfileResponse } from "../models/models_0";
+import { GetBrowserProfile$ } from "../schemas/schemas_0";
 
 /**
  * @public
@@ -20,42 +20,50 @@ export { $Command };
 /**
  * @public
  *
- * The input for {@link TagResourceCommand}.
+ * The input for {@link GetBrowserProfileCommand}.
  */
-export interface TagResourceCommandInput extends TagResourceRequest {}
+export interface GetBrowserProfileCommandInput extends GetBrowserProfileRequest {}
 /**
  * @public
  *
- * The output of {@link TagResourceCommand}.
+ * The output of {@link GetBrowserProfileCommand}.
  */
-export interface TagResourceCommandOutput extends TagResourceResponse, __MetadataBearer {}
+export interface GetBrowserProfileCommandOutput extends GetBrowserProfileResponse, __MetadataBearer {}
 
 /**
- * <p>Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are also deleted.</p> <note> <p>This feature is currently available only for AgentCore Runtime, Browser, Browser Profile, Code Interpreter tool, and Gateway.</p> </note>
+ * <p>Gets information about a browser profile.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
- * import { BedrockAgentCoreControlClient, TagResourceCommand } from "@aws-sdk/client-bedrock-agentcore-control"; // ES Modules import
- * // const { BedrockAgentCoreControlClient, TagResourceCommand } = require("@aws-sdk/client-bedrock-agentcore-control"); // CommonJS import
+ * import { BedrockAgentCoreControlClient, GetBrowserProfileCommand } from "@aws-sdk/client-bedrock-agentcore-control"; // ES Modules import
+ * // const { BedrockAgentCoreControlClient, GetBrowserProfileCommand } = require("@aws-sdk/client-bedrock-agentcore-control"); // CommonJS import
  * // import type { BedrockAgentCoreControlClientConfig } from "@aws-sdk/client-bedrock-agentcore-control";
  * const config = {}; // type is BedrockAgentCoreControlClientConfig
  * const client = new BedrockAgentCoreControlClient(config);
- * const input = { // TagResourceRequest
- *   resourceArn: "STRING_VALUE", // required
- *   tags: { // TagsMap // required
- *     "<keys>": "STRING_VALUE",
- *   },
+ * const input = { // GetBrowserProfileRequest
+ *   profileId: "STRING_VALUE", // required
  * };
- * const command = new TagResourceCommand(input);
+ * const command = new GetBrowserProfileCommand(input);
  * const response = await client.send(command);
- * // {};
+ * // { // GetBrowserProfileResponse
+ * //   profileId: "STRING_VALUE", // required
+ * //   profileArn: "STRING_VALUE", // required
+ * //   name: "STRING_VALUE", // required
+ * //   description: "STRING_VALUE",
+ * //   status: "READY" || "DELETING" || "DELETED" || "SAVING", // required
+ * //   createdAt: new Date("TIMESTAMP"), // required
+ * //   lastUpdatedAt: new Date("TIMESTAMP"), // required
+ * //   lastSavedAt: new Date("TIMESTAMP"),
+ * //   lastSavedBrowserSessionId: "STRING_VALUE",
+ * //   lastSavedBrowserId: "STRING_VALUE",
+ * // };
  *
  * ```
  *
- * @param TagResourceCommandInput - {@link TagResourceCommandInput}
- * @returns {@link TagResourceCommandOutput}
- * @see {@link TagResourceCommandInput} for command's `input` shape.
- * @see {@link TagResourceCommandOutput} for command's `response` shape.
+ * @param GetBrowserProfileCommandInput - {@link GetBrowserProfileCommandInput}
+ * @returns {@link GetBrowserProfileCommandOutput}
+ * @see {@link GetBrowserProfileCommandInput} for command's `input` shape.
+ * @see {@link GetBrowserProfileCommandOutput} for command's `response` shape.
  * @see {@link BedrockAgentCoreControlClientResolvedConfig | config} for BedrockAgentCoreControlClient's `config` shape.
  *
  * @throws {@link AccessDeniedException} (client fault)
@@ -66,9 +74,6 @@ export interface TagResourceCommandOutput extends TagResourceResponse, __Metadat
  *
  * @throws {@link ResourceNotFoundException} (client fault)
  *  <p>This exception is thrown when a resource referenced by the operation does not exist</p>
- *
- * @throws {@link ServiceQuotaExceededException} (client fault)
- *  <p>This exception is thrown when a request is made beyond the service quota</p>
  *
  * @throws {@link ThrottlingException} (client fault)
  *  <p>This exception is thrown when the number of requests exceeds the limit</p>
@@ -82,10 +87,10 @@ export interface TagResourceCommandOutput extends TagResourceResponse, __Metadat
  *
  * @public
  */
-export class TagResourceCommand extends $Command
+export class GetBrowserProfileCommand extends $Command
   .classBuilder<
-    TagResourceCommandInput,
-    TagResourceCommandOutput,
+    GetBrowserProfileCommandInput,
+    GetBrowserProfileCommandOutput,
     BedrockAgentCoreControlClientResolvedConfig,
     ServiceInputTypes,
     ServiceOutputTypes
@@ -94,19 +99,19 @@ export class TagResourceCommand extends $Command
   .m(function (this: any, Command: any, cs: any, config: BedrockAgentCoreControlClientResolvedConfig, o: any) {
     return [getEndpointPlugin(config, Command.getEndpointParameterInstructions())];
   })
-  .s("AmazonBedrockAgentCoreControl", "TagResource", {})
-  .n("BedrockAgentCoreControlClient", "TagResourceCommand")
-  .sc(TagResource$)
+  .s("AmazonBedrockAgentCoreControl", "GetBrowserProfile", {})
+  .n("BedrockAgentCoreControlClient", "GetBrowserProfileCommand")
+  .sc(GetBrowserProfile$)
   .build() {
   /** @internal type navigation helper, not in runtime. */
   protected declare static __types: {
     api: {
-      input: TagResourceRequest;
-      output: {};
+      input: GetBrowserProfileRequest;
+      output: GetBrowserProfileResponse;
     };
     sdk: {
-      input: TagResourceCommandInput;
-      output: TagResourceCommandOutput;
+      input: GetBrowserProfileCommandInput;
+      output: GetBrowserProfileCommandOutput;
     };
   };
 }

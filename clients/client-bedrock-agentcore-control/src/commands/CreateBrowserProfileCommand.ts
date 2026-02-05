@@ -9,8 +9,8 @@ import type {
   ServiceOutputTypes,
 } from "../BedrockAgentCoreControlClient";
 import { commonParams } from "../endpoint/EndpointParameters";
-import type { TagResourceRequest, TagResourceResponse } from "../models/models_1";
-import { TagResource$ } from "../schemas/schemas_0";
+import type { CreateBrowserProfileRequest, CreateBrowserProfileResponse } from "../models/models_0";
+import { CreateBrowserProfile$ } from "../schemas/schemas_0";
 
 /**
  * @public
@@ -20,52 +20,59 @@ export { $Command };
 /**
  * @public
  *
- * The input for {@link TagResourceCommand}.
+ * The input for {@link CreateBrowserProfileCommand}.
  */
-export interface TagResourceCommandInput extends TagResourceRequest {}
+export interface CreateBrowserProfileCommandInput extends CreateBrowserProfileRequest {}
 /**
  * @public
  *
- * The output of {@link TagResourceCommand}.
+ * The output of {@link CreateBrowserProfileCommand}.
  */
-export interface TagResourceCommandOutput extends TagResourceResponse, __MetadataBearer {}
+export interface CreateBrowserProfileCommandOutput extends CreateBrowserProfileResponse, __MetadataBearer {}
 
 /**
- * <p>Associates the specified tags to a resource with the specified resourceArn. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are also deleted.</p> <note> <p>This feature is currently available only for AgentCore Runtime, Browser, Browser Profile, Code Interpreter tool, and Gateway.</p> </note>
+ * <p>Creates a browser profile in Amazon Bedrock AgentCore. A browser profile stores persistent browser data such as cookies, local storage, session storage, and browsing history that can be saved from browser sessions and reused in subsequent sessions.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
- * import { BedrockAgentCoreControlClient, TagResourceCommand } from "@aws-sdk/client-bedrock-agentcore-control"; // ES Modules import
- * // const { BedrockAgentCoreControlClient, TagResourceCommand } = require("@aws-sdk/client-bedrock-agentcore-control"); // CommonJS import
+ * import { BedrockAgentCoreControlClient, CreateBrowserProfileCommand } from "@aws-sdk/client-bedrock-agentcore-control"; // ES Modules import
+ * // const { BedrockAgentCoreControlClient, CreateBrowserProfileCommand } = require("@aws-sdk/client-bedrock-agentcore-control"); // CommonJS import
  * // import type { BedrockAgentCoreControlClientConfig } from "@aws-sdk/client-bedrock-agentcore-control";
  * const config = {}; // type is BedrockAgentCoreControlClientConfig
  * const client = new BedrockAgentCoreControlClient(config);
- * const input = { // TagResourceRequest
- *   resourceArn: "STRING_VALUE", // required
- *   tags: { // TagsMap // required
+ * const input = { // CreateBrowserProfileRequest
+ *   name: "STRING_VALUE", // required
+ *   description: "STRING_VALUE",
+ *   clientToken: "STRING_VALUE",
+ *   tags: { // TagsMap
  *     "<keys>": "STRING_VALUE",
  *   },
  * };
- * const command = new TagResourceCommand(input);
+ * const command = new CreateBrowserProfileCommand(input);
  * const response = await client.send(command);
- * // {};
+ * // { // CreateBrowserProfileResponse
+ * //   profileId: "STRING_VALUE", // required
+ * //   profileArn: "STRING_VALUE", // required
+ * //   createdAt: new Date("TIMESTAMP"), // required
+ * //   status: "READY" || "DELETING" || "DELETED" || "SAVING", // required
+ * // };
  *
  * ```
  *
- * @param TagResourceCommandInput - {@link TagResourceCommandInput}
- * @returns {@link TagResourceCommandOutput}
- * @see {@link TagResourceCommandInput} for command's `input` shape.
- * @see {@link TagResourceCommandOutput} for command's `response` shape.
+ * @param CreateBrowserProfileCommandInput - {@link CreateBrowserProfileCommandInput}
+ * @returns {@link CreateBrowserProfileCommandOutput}
+ * @see {@link CreateBrowserProfileCommandInput} for command's `input` shape.
+ * @see {@link CreateBrowserProfileCommandOutput} for command's `response` shape.
  * @see {@link BedrockAgentCoreControlClientResolvedConfig | config} for BedrockAgentCoreControlClient's `config` shape.
  *
  * @throws {@link AccessDeniedException} (client fault)
  *  <p>This exception is thrown when a request is denied per access permissions</p>
  *
+ * @throws {@link ConflictException} (client fault)
+ *  <p>This exception is thrown when there is a conflict performing an operation</p>
+ *
  * @throws {@link InternalServerException} (server fault)
  *  <p>This exception is thrown if there was an unexpected error during processing of request</p>
- *
- * @throws {@link ResourceNotFoundException} (client fault)
- *  <p>This exception is thrown when a resource referenced by the operation does not exist</p>
  *
  * @throws {@link ServiceQuotaExceededException} (client fault)
  *  <p>This exception is thrown when a request is made beyond the service quota</p>
@@ -82,10 +89,10 @@ export interface TagResourceCommandOutput extends TagResourceResponse, __Metadat
  *
  * @public
  */
-export class TagResourceCommand extends $Command
+export class CreateBrowserProfileCommand extends $Command
   .classBuilder<
-    TagResourceCommandInput,
-    TagResourceCommandOutput,
+    CreateBrowserProfileCommandInput,
+    CreateBrowserProfileCommandOutput,
     BedrockAgentCoreControlClientResolvedConfig,
     ServiceInputTypes,
     ServiceOutputTypes
@@ -94,19 +101,19 @@ export class TagResourceCommand extends $Command
   .m(function (this: any, Command: any, cs: any, config: BedrockAgentCoreControlClientResolvedConfig, o: any) {
     return [getEndpointPlugin(config, Command.getEndpointParameterInstructions())];
   })
-  .s("AmazonBedrockAgentCoreControl", "TagResource", {})
-  .n("BedrockAgentCoreControlClient", "TagResourceCommand")
-  .sc(TagResource$)
+  .s("AmazonBedrockAgentCoreControl", "CreateBrowserProfile", {})
+  .n("BedrockAgentCoreControlClient", "CreateBrowserProfileCommand")
+  .sc(CreateBrowserProfile$)
   .build() {
   /** @internal type navigation helper, not in runtime. */
   protected declare static __types: {
     api: {
-      input: TagResourceRequest;
-      output: {};
+      input: CreateBrowserProfileRequest;
+      output: CreateBrowserProfileResponse;
     };
     sdk: {
-      input: TagResourceCommandInput;
-      output: TagResourceCommandOutput;
+      input: CreateBrowserProfileCommandInput;
+      output: CreateBrowserProfileCommandOutput;
     };
   };
 }
