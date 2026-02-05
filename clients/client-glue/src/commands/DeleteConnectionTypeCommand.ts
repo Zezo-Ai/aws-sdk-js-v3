@@ -5,8 +5,8 @@ import type { MetadataBearer as __MetadataBearer } from "@smithy/types";
 
 import { commonParams } from "../endpoint/EndpointParameters";
 import type { GlueClientResolvedConfig, ServiceInputTypes, ServiceOutputTypes } from "../GlueClient";
-import type { UpdateDevEndpointRequest, UpdateDevEndpointResponse } from "../models/models_3";
-import { UpdateDevEndpoint$ } from "../schemas/schemas_0";
+import type { DeleteConnectionTypeRequest, DeleteConnectionTypeResponse } from "../models/models_1";
+import { DeleteConnectionType$ } from "../schemas/schemas_0";
 
 /**
  * @public
@@ -16,58 +16,44 @@ export { $Command };
 /**
  * @public
  *
- * The input for {@link UpdateDevEndpointCommand}.
+ * The input for {@link DeleteConnectionTypeCommand}.
  */
-export interface UpdateDevEndpointCommandInput extends UpdateDevEndpointRequest {}
+export interface DeleteConnectionTypeCommandInput extends DeleteConnectionTypeRequest {}
 /**
  * @public
  *
- * The output of {@link UpdateDevEndpointCommand}.
+ * The output of {@link DeleteConnectionTypeCommand}.
  */
-export interface UpdateDevEndpointCommandOutput extends UpdateDevEndpointResponse, __MetadataBearer {}
+export interface DeleteConnectionTypeCommandOutput extends DeleteConnectionTypeResponse, __MetadataBearer {}
 
 /**
- * <p>Updates a specified development endpoint.</p>
+ * <p>Deletes a custom connection type in Glue.</p>
+ *          <p>The connection type must exist and be registered before it can be deleted. This operation supports cleanup of connection type resources and helps maintain proper lifecycle management of custom connection types.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
- * import { GlueClient, UpdateDevEndpointCommand } from "@aws-sdk/client-glue"; // ES Modules import
- * // const { GlueClient, UpdateDevEndpointCommand } = require("@aws-sdk/client-glue"); // CommonJS import
+ * import { GlueClient, DeleteConnectionTypeCommand } from "@aws-sdk/client-glue"; // ES Modules import
+ * // const { GlueClient, DeleteConnectionTypeCommand } = require("@aws-sdk/client-glue"); // CommonJS import
  * // import type { GlueClientConfig } from "@aws-sdk/client-glue";
  * const config = {}; // type is GlueClientConfig
  * const client = new GlueClient(config);
- * const input = { // UpdateDevEndpointRequest
- *   EndpointName: "STRING_VALUE", // required
- *   PublicKey: "STRING_VALUE",
- *   AddPublicKeys: [ // PublicKeysList
- *     "STRING_VALUE",
- *   ],
- *   DeletePublicKeys: [
- *     "STRING_VALUE",
- *   ],
- *   CustomLibraries: { // DevEndpointCustomLibraries
- *     ExtraPythonLibsS3Path: "STRING_VALUE",
- *     ExtraJarsS3Path: "STRING_VALUE",
- *   },
- *   UpdateEtlLibraries: true || false,
- *   DeleteArguments: [ // StringList
- *     "STRING_VALUE",
- *   ],
- *   AddArguments: { // MapValue
- *     "<keys>": "STRING_VALUE",
- *   },
+ * const input = { // DeleteConnectionTypeRequest
+ *   ConnectionType: "STRING_VALUE", // required
  * };
- * const command = new UpdateDevEndpointCommand(input);
+ * const command = new DeleteConnectionTypeCommand(input);
  * const response = await client.send(command);
  * // {};
  *
  * ```
  *
- * @param UpdateDevEndpointCommandInput - {@link UpdateDevEndpointCommandInput}
- * @returns {@link UpdateDevEndpointCommandOutput}
- * @see {@link UpdateDevEndpointCommandInput} for command's `input` shape.
- * @see {@link UpdateDevEndpointCommandOutput} for command's `response` shape.
+ * @param DeleteConnectionTypeCommandInput - {@link DeleteConnectionTypeCommandInput}
+ * @returns {@link DeleteConnectionTypeCommandOutput}
+ * @see {@link DeleteConnectionTypeCommandInput} for command's `input` shape.
+ * @see {@link DeleteConnectionTypeCommandOutput} for command's `response` shape.
  * @see {@link GlueClientResolvedConfig | config} for GlueClient's `config` shape.
+ *
+ * @throws {@link AccessDeniedException} (client fault)
+ *  <p>Access to a resource was denied.</p>
  *
  * @throws {@link EntityNotFoundException} (client fault)
  *  <p>A specified entity does not exist</p>
@@ -90,10 +76,10 @@ export interface UpdateDevEndpointCommandOutput extends UpdateDevEndpointRespons
  *
  * @public
  */
-export class UpdateDevEndpointCommand extends $Command
+export class DeleteConnectionTypeCommand extends $Command
   .classBuilder<
-    UpdateDevEndpointCommandInput,
-    UpdateDevEndpointCommandOutput,
+    DeleteConnectionTypeCommandInput,
+    DeleteConnectionTypeCommandOutput,
     GlueClientResolvedConfig,
     ServiceInputTypes,
     ServiceOutputTypes
@@ -102,19 +88,19 @@ export class UpdateDevEndpointCommand extends $Command
   .m(function (this: any, Command: any, cs: any, config: GlueClientResolvedConfig, o: any) {
     return [getEndpointPlugin(config, Command.getEndpointParameterInstructions())];
   })
-  .s("AWSGlue", "UpdateDevEndpoint", {})
-  .n("GlueClient", "UpdateDevEndpointCommand")
-  .sc(UpdateDevEndpoint$)
+  .s("AWSGlue", "DeleteConnectionType", {})
+  .n("GlueClient", "DeleteConnectionTypeCommand")
+  .sc(DeleteConnectionType$)
   .build() {
   /** @internal type navigation helper, not in runtime. */
   protected declare static __types: {
     api: {
-      input: UpdateDevEndpointRequest;
+      input: DeleteConnectionTypeRequest;
       output: {};
     };
     sdk: {
-      input: UpdateDevEndpointCommandInput;
-      output: UpdateDevEndpointCommandOutput;
+      input: DeleteConnectionTypeCommandInput;
+      output: DeleteConnectionTypeCommandOutput;
     };
   };
 }
