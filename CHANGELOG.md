@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.985.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.984.0...v3.985.0) (2026-02-06)
+
+
+### Bug Fixes
+
+* **core/protocols:** nested Error objects in REST XML ([#7717](https://github.com/aws/aws-sdk-js-v3/issues/7717)) ([2c0d671](https://github.com/aws/aws-sdk-js-v3/commit/2c0d671fe5ed2505a5825620424a05c8f3b9c2ed))
+
+
+### Features
+
+* **client-bedrock-data-automation-runtime:** Add OutputConfiguration to InvokeDataAutomation input and output to support S3 output ([72c126f](https://github.com/aws/aws-sdk-js-v3/commit/72c126f09b2b346d37168224a901d7fe0afcb44b))
+* **client-deadline:** Adds support for tagging jobs during job creation ([444dcec](https://github.com/aws/aws-sdk-js-v3/commit/444dcec97d3476eb0a568f3a916367fcc08bd86b))
+* **client-iot-managed-integrations:** Adding support for Custom(General) Authorization in managed integrations for AWS IoT Device Management cloud connectors. ([f683f7b](https://github.com/aws/aws-sdk-js-v3/commit/f683f7b94a491f9590f679d680f66909f8900ee0))
+* **client-partnercentral-selling:** Releasing AWS Opportunity Snapshots for SDK release. ([9b27cd2](https://github.com/aws/aws-sdk-js-v3/commit/9b27cd2b691c80f4c7b23826b547d9bc6dacb100))
+* **client-sagemaker:** Adding g7e instance support in Sagemaker Training ([01f57c1](https://github.com/aws/aws-sdk-js-v3/commit/01f57c152554c2195855ebc0bc521faf1543b633))
+
+
+
+
+
 # [3.984.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.983.0...v3.984.0) (2026-02-05)
 
 

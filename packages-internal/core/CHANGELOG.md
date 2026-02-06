@@ -10,6 +10,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+
+# 3.973.7 (2026-02-06)
+### Chores
+* **codegen:** generate caret versions for aws-sdk dependencies ([#7714](https://github.com/aws/aws-sdk-js-v3/issues/7714)) ([5682d09](https://github.com/aws/aws-sdk-js-v3/commit/5682d095dd5d38f16b40296da0497a93f1ffbec3))
+
+
+
 # 3.973.6 (2026-02-03)
 ### Chores
 * **core:** update dependencies.

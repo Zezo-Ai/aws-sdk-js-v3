@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.985.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.984.0...v3.985.0) (2026-02-06)
+
+
+### Features
+
+* **client-deadline:** Adds support for tagging jobs during job creation ([444dcec](https://github.com/aws/aws-sdk-js-v3/commit/444dcec97d3476eb0a568f3a916367fcc08bd86b))
+
+
+
+
+
 # [3.984.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.983.0...v3.984.0) (2026-02-05)
 
 **Note:** Version bump only for package @aws-sdk/client-deadline
