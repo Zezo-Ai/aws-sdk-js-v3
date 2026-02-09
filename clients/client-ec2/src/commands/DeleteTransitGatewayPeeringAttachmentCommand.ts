@@ -8,7 +8,7 @@ import { commonParams } from "../endpoint/EndpointParameters";
 import type {
   DeleteTransitGatewayPeeringAttachmentRequest,
   DeleteTransitGatewayPeeringAttachmentResult,
-} from "../models/models_2";
+} from "../models/models_3";
 import { DeleteTransitGatewayPeeringAttachment$ } from "../schemas/schemas_0";
 
 /**

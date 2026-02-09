@@ -5,7 +5,7 @@ import type { MetadataBearer as __MetadataBearer } from "@smithy/types";
 
 import type { EC2ClientResolvedConfig, ServiceInputTypes, ServiceOutputTypes } from "../EC2Client";
 import { commonParams } from "../endpoint/EndpointParameters";
-import type { DescribeVerifiedAccessGroupsRequest, DescribeVerifiedAccessGroupsResult } from "../models/models_4";
+import type { DescribeVerifiedAccessGroupsRequest, DescribeVerifiedAccessGroupsResult } from "../models/models_5";
 import { DescribeVerifiedAccessGroups$ } from "../schemas/schemas_0";
 
 /**

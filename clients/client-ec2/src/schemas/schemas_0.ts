@@ -936,6 +936,9 @@ const _CSIRan = "CancelSpotInstanceRequests";
 const _CSIT = "CreateStoreImageTask";
 const _CSITR = "CreateStoreImageTaskRequest";
 const _CSITRr = "CreateStoreImageTaskResult";
+const _CSN = "CreateSecondaryNetwork";
+const _CSNR = "CreateSecondaryNetworkRequest";
+const _CSNRr = "CreateSecondaryNetworkResult";
 const _CSOK = "CertificateS3ObjectKey";
 const _CSR = "CopySnapshotRequest";
 const _CSRPSU = "CopySnapshotRequestPSU";
@@ -946,6 +949,9 @@ const _CSRrea = "CreateSnapshotsResult";
 const _CSRreat = "CreateSubnetRequest";
 const _CSRreate = "CreateSubnetResult";
 const _CSRred = "CreditSpecificationRequest";
+const _CSS = "CreateSecondarySubnet";
+const _CSSR = "CreateSecondarySubnetRequest";
+const _CSSRr = "CreateSecondarySubnetResult";
 const _CST = "ClientSecretType";
 const _CSo = "ComplianceStatus";
 const _CSon = "ConfigurationState";
@@ -1937,13 +1943,22 @@ const _DSIR = "DescribeScheduledInstancesRequest";
 const _DSIRR = "DescribeSpotInstanceRequestsRequest";
 const _DSIRRe = "DescribeSpotInstanceRequestsResult";
 const _DSIRe = "DescribeScheduledInstancesResult";
-const _DSIRes = "DescribeSpotInstanceRequests";
+const _DSIRes = "DescribeSecondaryInterfacesRequest";
+const _DSIResc = "DescribeSecondaryInterfacesResult";
+const _DSIRescr = "DescribeSpotInstanceRequests";
 const _DSIT = "DescribeStoreImageTasks";
 const _DSITR = "DescribeStoreImageTasksRequest";
 const _DSITRe = "DescribeStoreImageTasksResult";
+const _DSIe = "DescribeSecondaryInterfaces";
 const _DSLVI = "DescribeServiceLinkVirtualInterfaces";
 const _DSLVIR = "DescribeServiceLinkVirtualInterfacesRequest";
 const _DSLVIRe = "DescribeServiceLinkVirtualInterfacesResult";
+const _DSN = "DeleteSecondaryNetwork";
+const _DSNR = "DeleteSecondaryNetworkRequest";
+const _DSNRe = "DeleteSecondaryNetworkResult";
+const _DSNRes = "DescribeSecondaryNetworksRequest";
+const _DSNResc = "DescribeSecondaryNetworksResult";
+const _DSNe = "DescribeSecondaryNetworks";
 const _DSOMS = "DnsServersOptionsModifyStructure";
 const _DSPH = "DescribeSpotPriceHistory";
 const _DSPHR = "DescribeSpotPriceHistoryRequest";
@@ -1957,9 +1972,15 @@ const _DSRes = "DescribeSnapshotsRequest";
 const _DSResc = "DescribeSnapshotsResult";
 const _DSRescr = "DescribeSubnetsRequest";
 const _DSRescri = "DescribeSubnetsResult";
+const _DSS = "DeleteSecondarySubnet";
 const _DSSG = "DescribeStaleSecurityGroups";
 const _DSSGR = "DescribeStaleSecurityGroupsRequest";
 const _DSSGRe = "DescribeStaleSecurityGroupsResult";
+const _DSSR = "DeleteSecondarySubnetRequest";
+const _DSSRe = "DeleteSecondarySubnetResult";
+const _DSSRes = "DescribeSecondarySubnetsRequest";
+const _DSSResc = "DescribeSecondarySubnetsResult";
+const _DSSe = "DescribeSecondarySubnets";
 const _DSTS = "DescribeSnapshotTierStatus";
 const _DSTSR = "DescribeSnapshotTierStatusRequest";
 const _DSTSRe = "DescribeSnapshotTierStatusResult";
@@ -2932,6 +2953,7 @@ const _IAL = "IpAddressList";
 const _IALp = "Ipv6AddressList";
 const _IAPI = "Ipv4AddressesPerInterface";
 const _IAPIp = "Ipv6AddressesPerInterface";
+const _IAPSI = "Ipv4AddressesPerSecondaryInterface";
 const _IART = "IncludeAllResourceTypes";
 const _IAT = "IpAddressType";
 const _IATOI = "IncludeAllTagsOfInstance";
@@ -2958,11 +2980,13 @@ const _ICApv = "Ipv6CidrAssociation";
 const _ICB = "Ipv6CidrBlock";
 const _ICBA = "Ipv6CidrBlockAssociation";
 const _ICBAS = "Ipv6CidrBlockAssociationSet";
+const _ICBAp = "Ipv4CidrBlockAssociations";
 const _ICBNBG = "Ipv6CidrBlockNetworkBorderGroup";
 const _ICBS = "Ipv6CidrBlockState";
 const _ICBSL = "InsideCidrBlocksStringList";
 const _ICBSp = "Ipv6CidrBlockSet";
 const _ICBn = "InsideCidrBlocks";
+const _ICBp = "Ipv4CidrBlock";
 const _ICE = "InstanceConnectEndpoint";
 const _ICEA = "InstanceConnectEndpointArn";
 const _ICEDN = "InstanceConnectEndpointDnsNames";
@@ -3322,7 +3346,17 @@ const _ISE = "InstanceStatusEvent";
 const _ISEAC = "IpamScopeExternalAuthorityConfiguration";
 const _ISEL = "InstanceStatusEventList";
 const _ISI = "IpamScopeId";
-const _ISIn = "InstanceStorageInfo";
+const _ISIA = "InstanceSecondaryInterfaceAttachment";
+const _ISIL = "InstanceSecondaryInterfaceList";
+const _ISIPIA = "InstanceSecondaryInterfacePrivateIpAddress";
+const _ISIPIAL = "InstanceSecondaryInterfacePrivateIpAddressList";
+const _ISIPIALR = "InstanceSecondaryInterfacePrivateIpAddressListRequest";
+const _ISIPIAR = "InstanceSecondaryInterfacePrivateIpAddressRequest";
+const _ISIS = "InstanceSecondaryInterfaceSpecification";
+const _ISISLR = "InstanceSecondaryInterfaceSpecificationListRequest";
+const _ISISR = "InstanceSecondaryInterfaceSpecificationRequest";
+const _ISIn = "InstanceSecondaryInterface";
+const _ISIns = "InstanceStorageInfo";
 const _ISIp = "IpamScopeIds";
 const _ISL = "InputStorageLocation";
 const _ISLn = "InstanceStatusList";
@@ -3620,6 +3654,10 @@ const _LTINIS = "LaunchTemplateInstanceNetworkInterfaceSpecification";
 const _LTINISL = "LaunchTemplateInstanceNetworkInterfaceSpecificationList";
 const _LTINISR = "LaunchTemplateInstanceNetworkInterfaceSpecificationRequest";
 const _LTINISRL = "LaunchTemplateInstanceNetworkInterfaceSpecificationRequestList";
+const _LTISIS = "LaunchTemplateInstanceSecondaryInterfaceSpecification";
+const _LTISISL = "LaunchTemplateInstanceSecondaryInterfaceSpecificationList";
+const _LTISISR = "LaunchTemplateInstanceSecondaryInterfaceSpecificationRequest";
+const _LTISISRL = "LaunchTemplateInstanceSecondaryInterfaceSpecificationRequestList";
 const _LTISL = "LaunchTemplateIdStringList";
 const _LTIa = "LaunchTemplateIds";
 const _LTLC = "LaunchTemplateLicenseConfiguration";
@@ -3911,6 +3949,7 @@ const _MSIPC = "MacSystemIntegrityProtectionConfiguration";
 const _MSIPCR = "MacSystemIntegrityProtectionConfigurationRequest";
 const _MSIPCa = "MacSystemIntegrityProtectionConfig";
 const _MSIPS = "MacSystemIntegrityProtectionStatus";
+const _MSNI = "MaximumSecondaryNetworkInterfaces";
 const _MSPAPOOODP = "MaxSpotPriceAsPercentageOfOptimalOnDemandPrice";
 const _MST = "ModifySnapshotTier";
 const _MSTR = "ModifySnapshotTierRequest";
@@ -4404,6 +4443,7 @@ const _PIAha = "Phase1IntegrityAlgorithms";
 const _PIAhas = "Phase2IntegrityAlgorithms";
 const _PIAr = "PrivateIpAddress";
 const _PIAri = "PrivateIpAddresses";
+const _PIAriv = "PrivateIpv4Addresses";
 const _PIAu = "PublicIpAddress";
 const _PIB = "ProvisionIpamByoasn";
 const _PIBR = "ProvisionIpamByoasnRequest";
@@ -5086,6 +5126,8 @@ const _SIA = "ScheduledInstanceAvailability";
 const _SIAS = "ScheduledInstanceAvailabilitySet";
 const _SIAT = "SupportedIpAddressTypes";
 const _SIATu = "SupportedIpAddressType";
+const _SIAe = "SecondaryInterfaceArn";
+const _SIAec = "SecondaryInterfaceAttachment";
 const _SIBDM = "ScheduledInstancesBlockDeviceMapping";
 const _SIBDMS = "ScheduledInstancesBlockDeviceMappingSet";
 const _SICBA = "SubnetIpv6CidrBlockAssociation";
@@ -5100,13 +5142,19 @@ const _SIGB = "SizeInGB";
 const _SII = "SourceImageId";
 const _SIIA = "ScheduledInstancesIpv6Address";
 const _SIIAL = "ScheduledInstancesIpv6AddressList";
+const _SIIALe = "SecondaryInterfaceIpv4AddressList";
+const _SIIAe = "SecondaryInterfaceIpv4Address";
 const _SIIIP = "ScheduledInstancesIamInstanceProfile";
+const _SIIL = "SecondaryInterfaceIdList";
 const _SIIRS = "ScheduledInstanceIdRequestSet";
 const _SIIc = "ScheduledInstanceIds";
 const _SIIch = "ScheduledInstanceId";
+const _SIIe = "SecondaryInterfaceIds";
+const _SIIec = "SecondaryInterfaceId";
 const _SIIo = "SourceInstanceId";
-const _SIL = "SubnetIdList";
+const _SIL = "SecondaryInterfaceList";
 const _SILS = "ScheduledInstancesLaunchSpecification";
+const _SILu = "SubnetIdList";
 const _SIM = "ScheduledInstancesMonitoring";
 const _SIMB = "SizeInMiB";
 const _SINI = "ScheduledInstancesNetworkInterface";
@@ -5115,6 +5163,10 @@ const _SIP = "ScheduledInstancesPlacement";
 const _SIPE = "StaleIpPermissionsEgress";
 const _SIPI = "SourceIpamPoolId";
 const _SIPIAC = "ScheduledInstancesPrivateIpAddressConfig";
+const _SIPIAS = "SecondaryInterfacePrivateIpAddressSpecification";
+const _SIPIASL = "SecondaryInterfacePrivateIpAddressSpecificationList";
+const _SIPIASLR = "SecondaryInterfacePrivateIpAddressSpecificationListRequest";
+const _SIPIASR = "SecondaryInterfacePrivateIpAddressSpecificationRequest";
 const _SIPL = "SubnetIpPrefixesList";
 const _SIPS = "StaleIpPermissionSet";
 const _SIPt = "StaleIpPermission";
@@ -5143,9 +5195,12 @@ const _SIT = "SpotInstanceType";
 const _SITR = "StoreImageTaskResults";
 const _SITRS = "StoreImageTaskResultSet";
 const _SITRt = "StoreImageTaskResult";
+const _SITe = "SecondaryInterfaceType";
 const _SITi = "SingleInstanceType";
 const _SIc = "ScheduledInstance";
 const _SIe = "ServiceId";
+const _SIec = "SecondaryInterfaces";
+const _SIeco = "SecondaryInterface";
 const _SIer = "ServiceIds";
 const _SIn = "SnapshotId";
 const _SIna = "SnapshotIds";
@@ -5187,18 +5242,29 @@ const _SMt = "StatusMessage";
 const _SMta = "StateMessage";
 const _SN = "ServiceName";
 const _SNA = "ServiceNetworkArn";
+const _SNAe = "SecondaryNetworkArn";
 const _SNE = "SnsNotificationsEnabled";
+const _SNI = "SecondaryNetworkId";
 const _SNIA = "StartNetworkInsightsAnalysis";
 const _SNIAR = "StartNetworkInsightsAnalysisRequest";
 const _SNIARt = "StartNetworkInsightsAnalysisResult";
 const _SNIASA = "StartNetworkInsightsAccessScopeAnalysis";
 const _SNIASAR = "StartNetworkInsightsAccessScopeAnalysisRequest";
 const _SNIASARt = "StartNetworkInsightsAccessScopeAnalysisResult";
+const _SNICBA = "SecondaryNetworkIpv4CidrBlockAssociation";
+const _SNICBAL = "SecondaryNetworkIpv4CidrBlockAssociationList";
+const _SNIL = "SecondaryNetworkIdList";
+const _SNIe = "SecondaryNetworkIds";
+const _SNL = "SecondaryNetworkList";
 const _SNN = "ServiceNetworkName";
 const _SNS = "SriovNetSupport";
-const _SNe = "SessionNumber";
+const _SNSe = "SecondaryNetworkSupported";
+const _SNT = "SecondaryNetworkType";
+const _SNe = "SecondaryNetwork";
+const _SNec = "SecondaryNetworks";
 const _SNeq = "SequenceNumber";
 const _SNer = "ServiceNames";
+const _SNes = "SessionNumber";
 const _SO = "SpotOptions";
 const _SOR = "SpotOptionsRequest";
 const _SOS = "SkipOsShutdown";
@@ -5241,14 +5307,21 @@ const _SRou = "SourceResource";
 const _SRt = "StateReason";
 const _SRu = "SupportedRegions";
 const _SRup = "SupportedRegion";
-const _SS = "SseSpecification";
+const _SS = "SecondarySubnet";
+const _SSA = "SecondarySubnetArn";
 const _SSC = "SqlServerCredentials";
 const _SSG = "StaleSecurityGroup";
 const _SSGN = "SourceSecurityGroupName";
 const _SSGOI = "SourceSecurityGroupOwnerId";
 const _SSGS = "StaleSecurityGroupSet";
 const _SSI = "SourceSnapshotId";
+const _SSICBA = "SecondarySubnetIpv4CidrBlockAssociation";
+const _SSICBAL = "SecondarySubnetIpv4CidrBlockAssociationList";
+const _SSIL = "SecondarySubnetIdList";
+const _SSIe = "SecondarySubnetId";
+const _SSIec = "SecondarySubnetIds";
 const _SSIo = "SourceSnapshotIds";
+const _SSL = "SecondarySubnetList";
 const _SSLU = "SqlServerLicenseUsage";
 const _SSP = "SelfServicePortal";
 const _SSPU = "SelfServicePortalUrl";
@@ -5259,8 +5332,10 @@ const _SST = "SampledStartTime";
 const _SSTR = "SlotStartTimeRange";
 const _SSTRR = "SlotStartTimeRangeRequest";
 const _SSUPS = "S3StorageUploadPolicySignature";
-const _SSe = "ServiceState";
+const _SSe = "SecondarySubnets";
+const _SSer = "ServiceState";
 const _SSn = "SnapshotSet";
+const _SSs = "SseSpecification";
 const _SSt = "S3Storage";
 const _SSu = "SupportedStrategies";
 const _SSy = "SystemStatus";
@@ -6631,6 +6706,7 @@ const _iAI = "includeAllInstances";
 const _iAIn = "inferenceAcceleratorInfo";
 const _iAPI = "ipv4AddressesPerInterface";
 const _iAPIp = "ipv6AddressesPerInterface";
+const _iAPSI = "ipv4AddressesPerSecondaryInterface";
 const _iAS = "interfaceAssociationSet";
 const _iASp = "ipv6AddressesSet";
 const _iAT = "ipAddressType";
@@ -6647,7 +6723,8 @@ const _iCA = "interruptibleCapacityAllocation";
 const _iCAS = "ipv6CidrAssociationSet";
 const _iCB = "ipv6CidrBlock";
 const _iCBA = "ipv6CidrBlockAssociation";
-const _iCBAS = "ipv6CidrBlockAssociationSet";
+const _iCBAS = "ipv4CidrBlockAssociationSet";
+const _iCBASp = "ipv6CidrBlockAssociationSet";
 const _iCBS = "ipv6CidrBlockState";
 const _iCBSp = "ipv6CidrBlockSet";
 const _iCBn = "insideCidrBlocks";
@@ -7031,6 +7108,7 @@ const _mR = "maxResults";
 const _mRS = "modificationResultSet";
 const _mS = "messageSet";
 const _mSIPC = "macSystemIntegrityProtectionConfig";
+const _mSNI = "maximumSecondaryNetworkInterfaces";
 const _mSPAPOOODP = "maxSpotPriceAsPercentageOfOptimalOnDemandPrice";
 const _mSa = "managementState";
 const _mSai = "maintenanceStrategies";
@@ -7254,9 +7332,12 @@ const _pHP = "perHourPartition";
 const _pHS = "packetHeaderStatement";
 const _pI = "publicIp";
 const _pIA = "phase1IntegrityAlgorithm";
+const _pIAC = "privateIpAddressCount";
 const _pIAS = "privateIpAddressesSet";
 const _pIASh = "phase1IntegrityAlgorithmSet";
 const _pIASha = "phase2IntegrityAlgorithmSet";
+const _pIASr = "privateIpAddressSet";
+const _pIASri = "privateIpv4AddressSet";
 const _pIAh = "phase2IntegrityAlgorithm";
 const _pIAr = "privateIpAddress";
 const _pIAri = "privateIpAddresses";
@@ -7559,6 +7640,7 @@ const _sGVAS = "securityGroupVpcAssociationSet";
 const _sGe = "securityGroups";
 const _sH = "startHour";
 const _sI = "serviceId";
+const _sIA = "secondaryInterfaceArn";
 const _sIAS = "scheduledInstanceAvailabilitySet";
 const _sIATS = "supportedIpAddressTypeSet";
 const _sICRS = "subnetIpv4CidrReservationSet";
@@ -7567,6 +7649,7 @@ const _sICSS = "successfulInstanceCreditSpecificationSet";
 const _sIGB = "sizeInGB";
 const _sII = "sourceInstanceId";
 const _sIIc = "scheduledInstanceId";
+const _sIIe = "secondaryInterfaceId";
 const _sIIo = "sourceImageId";
 const _sIMB = "sizeInMiB";
 const _sIP = "staleIpPermissions";
@@ -7576,9 +7659,11 @@ const _sIR = "sourceImageRegion";
 const _sIRI = "spotInstanceRequestId";
 const _sIRS = "spotInstanceRequestSet";
 const _sIS = "scheduledInstanceSet";
+const _sISe = "secondaryInterfaceSet";
 const _sISu = "subnetIdSet";
 const _sIT = "spotInstanceType";
 const _sITRS = "storeImageTaskResultSet";
+const _sITe = "secondaryInterfaceType";
 const _sITi = "singleInstanceType";
 const _sIn = "snapshotId";
 const _sIo = "sourceIp";
@@ -7599,12 +7684,18 @@ const _sMTP = "spotMaxTotalPrice";
 const _sMt = "statusMessage";
 const _sMta = "stateMessage";
 const _sN = "serviceName";
-const _sNA = "serviceNetworkArn";
+const _sNA = "secondaryNetworkArn";
+const _sNAe = "serviceNetworkArn";
 const _sNE = "snsNotificationsEnabled";
+const _sNI = "secondaryNetworkId";
 const _sNN = "serviceNetworkName";
-const _sNS = "serviceNameSet";
+const _sNS = "secondaryNetworkSet";
+const _sNSe = "serviceNameSet";
+const _sNSec = "secondaryNetworkSupported";
 const _sNSr = "sriovNetSupport";
-const _sNe = "sequenceNumber";
+const _sNT = "secondaryNetworkType";
+const _sNe = "secondaryNetwork";
+const _sNeq = "sequenceNumber";
 const _sNes = "sessionNumber";
 const _sO = "spotOptions";
 const _sP = "s3Prefix";
@@ -7627,18 +7718,22 @@ const _sRT = "subnetRouteTable";
 const _sRe = "serviceResource";
 const _sRo = "sourceResource";
 const _sRt = "stateReason";
-const _sS = "snapshotSet";
+const _sS = "secondarySubnet";
+const _sSA = "secondarySubnetArn";
 const _sSC = "sqlServerCredentials";
 const _sSGN = "sourceSecurityGroupName";
 const _sSGOI = "sourceSecurityGroupOwnerId";
 const _sSGS = "staleSecurityGroupSet";
+const _sSI = "secondarySubnetId";
 const _sSLU = "sqlServerLicenseUsage";
 const _sSPU = "selfServicePortalUrl";
-const _sSS = "staticSourcesSupport";
+const _sSS = "secondarySubnetSet";
 const _sSSPA = "selfServiceSamlProviderArn";
+const _sSSt = "staticSourcesSupport";
 const _sST = "sampledStartTime";
 const _sSe = "settingSet";
 const _sSer = "serviceState";
+const _sSn = "snapshotSet";
 const _sSo = "sourceSet";
 const _sSs = "sseSpecification";
 const _sSt = "statusSet";
@@ -10652,6 +10747,30 @@ export var CreateRouteTableResult$: StaticStructureSchema = [3, n0, _CRTRre,
   , [_xN]: _rTo }], [0, { [_eQN]: `ClientToken`
   , [_xN]: _cT }]]
 ];
+export var CreateSecondaryNetworkRequest$: StaticStructureSchema = [3, n0, _CSNR,
+  0,
+  [_ICBp, _NT, _CT, _DR, _TS],
+  [0, 0, [0, 4], 2, [() => TagSpecificationList, { [_xN]: _TSa }]], 2
+];
+export var CreateSecondaryNetworkResult$: StaticStructureSchema = [3, n0, _CSNRr,
+  0,
+  [_SNe, _CT],
+  [[() => SecondaryNetwork$, { [_eQN]: `SecondaryNetwork`
+  , [_xN]: _sNe }], [0, { [_eQN]: `ClientToken`
+  , [_xN]: _cT }]]
+];
+export var CreateSecondarySubnetRequest$: StaticStructureSchema = [3, n0, _CSSR,
+  0,
+  [_ICBp, _SNI, _CT, _AZ, _AZI, _DR, _TS],
+  [0, 0, [0, 4], 0, 0, 2, [() => TagSpecificationList, { [_xN]: _TSa }]], 2
+];
+export var CreateSecondarySubnetResult$: StaticStructureSchema = [3, n0, _CSSRr,
+  0,
+  [_SS, _CT],
+  [[() => SecondarySubnet$, { [_eQN]: `SecondarySubnet`
+  , [_xN]: _sS }], [0, { [_eQN]: `ClientToken`
+  , [_xN]: _cT }]]
+];
 export var CreateSecurityGroupRequest$: StaticStructureSchema = [3, n0, _CSGR,
   0,
   [_De, _GN, _VI, _TS, _DR],
@@ -10681,7 +10800,7 @@ export var CreateSnapshotsResult$: StaticStructureSchema = [3, n0, _CSRrea,
   0,
   [_Sn],
   [[() => SnapshotSet, { [_eQN]: `SnapshotSet`
-  , [_xN]: _sS }]]
+  , [_xN]: _sSn }]]
 ];
 export var CreateSpotDatafeedSubscriptionRequest$: StaticStructureSchema = [3, n0, _CSDSR,
   0,
@@ -10763,7 +10882,7 @@ export var CreateTrafficMirrorFilterRuleResult$: StaticStructureSchema = [3, n0,
 ];
 export var CreateTrafficMirrorSessionRequest$: StaticStructureSchema = [3, n0, _CTMSR,
   0,
-  [_NII, _TMTI, _TMFI, _SNe, _PLa, _VNI, _De, _TS, _DR, _CT],
+  [_NII, _TMTI, _TMFI, _SNes, _PLa, _VNI, _De, _TS, _DR, _CT],
   [0, 0, 0, 1, 1, 1, 0, [() => TagSpecificationList, { [_xN]: _TSa }], 2, [0, 4]], 4
 ];
 export var CreateTrafficMirrorSessionResult$: StaticStructureSchema = [3, n0, _CTMSRr,
@@ -10975,7 +11094,7 @@ export var CreateVerifiedAccessEndpointRdsOptions$: StaticStructureSchema = [3, 
 ];
 export var CreateVerifiedAccessEndpointRequest$: StaticStructureSchema = [3, n0, _CVAER,
   0,
-  [_VAGI, _ETn, _ATt, _DCA, _ADp, _EDP, _SGIe, _LBO, _NIO, _De, _PDo, _TS, _CT, _DR, _SS, _ROd, _COi],
+  [_VAGI, _ETn, _ATt, _DCA, _ADp, _EDP, _SGIe, _LBO, _NIO, _De, _PDo, _TS, _CT, _DR, _SSs, _ROd, _COi],
   [0, 0, 0, 0, 0, 0, [() => SecurityGroupIdList, { [_xN]: _SGI }], [() => CreateVerifiedAccessEndpointLoadBalancerOptions$, 0], [() => CreateVerifiedAccessEndpointEniOptions$, 0], 0, 0, [() => TagSpecificationList, { [_xN]: _TSa }], [0, 4], 2, () => VerifiedAccessSseSpecificationRequest$, [() => CreateVerifiedAccessEndpointRdsOptions$, 0], [() => CreateVerifiedAccessEndpointCidrOptions$, 0]], 3
 ];
 export var CreateVerifiedAccessEndpointResult$: StaticStructureSchema = [3, n0, _CVAERr,
@@ -10986,7 +11105,7 @@ export var CreateVerifiedAccessEndpointResult$: StaticStructureSchema = [3, n0, 
 ];
 export var CreateVerifiedAccessGroupRequest$: StaticStructureSchema = [3, n0, _CVAGR,
   0,
-  [_VAII, _De, _PDo, _TS, _CT, _DR, _SS],
+  [_VAII, _De, _PDo, _TS, _CT, _DR, _SSs],
   [0, 0, 0, [() => TagSpecificationList, { [_xN]: _TSa }], [0, 4], 2, () => VerifiedAccessSseSpecificationRequest$], 1
 ];
 export var CreateVerifiedAccessGroupResult$: StaticStructureSchema = [3, n0, _CVAGRr,
@@ -11023,7 +11142,7 @@ export var CreateVerifiedAccessTrustProviderOidcOptions$: StaticStructureSchema 
 ];
 export var CreateVerifiedAccessTrustProviderRequest$: StaticStructureSchema = [3, n0, _CVATPR,
   0,
-  [_TPT, _PRNo, _UTPT, _DTPT, _OO, _DOev, _De, _TS, _CT, _DR, _SS, _NAOO],
+  [_TPT, _PRNo, _UTPT, _DTPT, _OO, _DOev, _De, _TS, _CT, _DR, _SSs, _NAOO],
   [0, 0, 0, 0, [() => CreateVerifiedAccessTrustProviderOidcOptions$, 0], () => CreateVerifiedAccessTrustProviderDeviceOptions$, 0, [() => TagSpecificationList, { [_xN]: _TSa }], [0, 4], 2, () => VerifiedAccessSseSpecificationRequest$, [() => CreateVerifiedAccessNativeApplicationOidcOptions$, 0]], 2
 ];
 export var CreateVerifiedAccessTrustProviderResult$: StaticStructureSchema = [3, n0, _CVATPRr,
@@ -11822,6 +11941,30 @@ export var DeleteRouteTableRequest$: StaticStructureSchema = [3, n0, _DRTR,
   [[0, { [_eQN]: `RouteTableId`
   , [_xN]: _rTI }], [2, { [_eQN]: `DryRun`
   , [_xN]: _dR }]], 1
+];
+export var DeleteSecondaryNetworkRequest$: StaticStructureSchema = [3, n0, _DSNR,
+  0,
+  [_SNI, _CT, _DR],
+  [0, [0, 4], 2], 1
+];
+export var DeleteSecondaryNetworkResult$: StaticStructureSchema = [3, n0, _DSNRe,
+  0,
+  [_SNe, _CT],
+  [[() => SecondaryNetwork$, { [_eQN]: `SecondaryNetwork`
+  , [_xN]: _sNe }], [0, { [_eQN]: `ClientToken`
+  , [_xN]: _cT }]]
+];
+export var DeleteSecondarySubnetRequest$: StaticStructureSchema = [3, n0, _DSSR,
+  0,
+  [_SSIe, _CT, _DR],
+  [0, [0, 4], 2], 1
+];
+export var DeleteSecondarySubnetResult$: StaticStructureSchema = [3, n0, _DSSRe,
+  0,
+  [_SS, _CT],
+  [[() => SecondarySubnet$, { [_eQN]: `SecondarySubnet`
+  , [_xN]: _sS }], [0, { [_eQN]: `ClientToken`
+  , [_xN]: _cT }]]
 ];
 export var DeleteSecurityGroupRequest$: StaticStructureSchema = [3, n0, _DSGR,
   0,
@@ -13476,7 +13619,7 @@ export var DescribeLockedSnapshotsResult$: StaticStructureSchema = [3, n0, _DLSR
   0,
   [_Sn, _NTe],
   [[() => LockedSnapshotsInfoList, { [_eQN]: `SnapshotSet`
-  , [_xN]: _sS }], [0, { [_eQN]: `NextToken`
+  , [_xN]: _sSn }], [0, { [_eQN]: `NextToken`
   , [_xN]: _nTe }]]
 ];
 export var DescribeMacHostsRequest$: StaticStructureSchema = [3, n0, _DMHR,
@@ -13864,6 +14007,42 @@ export var DescribeScheduledInstancesResult$: StaticStructureSchema = [3, n0, _D
   , [_xN]: _nTe }], [() => ScheduledInstanceSet, { [_eQN]: `ScheduledInstanceSet`
   , [_xN]: _sIS }]]
 ];
+export var DescribeSecondaryInterfacesRequest$: StaticStructureSchema = [3, n0, _DSIRes,
+  0,
+  [_DR, _Fi, _MR, _NTe, _SIIe],
+  [2, [() => FilterList, { [_xN]: _Fil }], 1, 0, [() => SecondaryInterfaceIdList, { [_xN]: _SIIec }]]
+];
+export var DescribeSecondaryInterfacesResult$: StaticStructureSchema = [3, n0, _DSIResc,
+  0,
+  [_SIec, _NTe],
+  [[() => SecondaryInterfaceList, { [_eQN]: `SecondaryInterfaceSet`
+  , [_xN]: _sISe }], [0, { [_eQN]: `NextToken`
+  , [_xN]: _nTe }]]
+];
+export var DescribeSecondaryNetworksRequest$: StaticStructureSchema = [3, n0, _DSNRes,
+  0,
+  [_DR, _Fi, _MR, _NTe, _SNIe],
+  [2, [() => FilterList, { [_xN]: _Fil }], 1, 0, [() => SecondaryNetworkIdList, { [_xN]: _SNI }]]
+];
+export var DescribeSecondaryNetworksResult$: StaticStructureSchema = [3, n0, _DSNResc,
+  0,
+  [_SNec, _NTe],
+  [[() => SecondaryNetworkList, { [_eQN]: `SecondaryNetworkSet`
+  , [_xN]: _sNS }], [0, { [_eQN]: `NextToken`
+  , [_xN]: _nTe }]]
+];
+export var DescribeSecondarySubnetsRequest$: StaticStructureSchema = [3, n0, _DSSRes,
+  0,
+  [_DR, _Fi, _MR, _NTe, _SSIec],
+  [2, [() => FilterList, { [_xN]: _Fil }], 1, 0, [() => SecondarySubnetIdList, { [_xN]: _SSIe }]]
+];
+export var DescribeSecondarySubnetsResult$: StaticStructureSchema = [3, n0, _DSSResc,
+  0,
+  [_SSe, _NTe],
+  [[() => SecondarySubnetList, { [_eQN]: `SecondarySubnetSet`
+  , [_xN]: _sSS }], [0, { [_eQN]: `NextToken`
+  , [_xN]: _nTe }]]
+];
 export var DescribeSecurityGroupReferencesRequest$: StaticStructureSchema = [3, n0, _DSGRR,
   0,
   [_GIr, _DR],
@@ -13949,7 +14128,7 @@ export var DescribeSnapshotsResult$: StaticStructureSchema = [3, n0, _DSResc,
   [_NTe, _Sn],
   [[0, { [_eQN]: `NextToken`
   , [_xN]: _nTe }], [() => SnapshotList, { [_eQN]: `SnapshotSet`
-  , [_xN]: _sS }]]
+  , [_xN]: _sSn }]]
 ];
 export var DescribeSnapshotTierStatusRequest$: StaticStructureSchema = [3, n0, _DSTSR,
   0,
@@ -14563,7 +14742,7 @@ export var DescribeVpcEndpointServicesResult$: StaticStructureSchema = [3, n0, _
   0,
   [_SNer, _SDe, _NTe],
   [[() => ValueStringList, { [_eQN]: `ServiceNameSet`
-  , [_xN]: _sNS }], [() => ServiceDetailSet, { [_eQN]: `ServiceDetailSet`
+  , [_xN]: _sNSe }], [() => ServiceDetailSet, { [_eQN]: `ServiceDetailSet`
   , [_xN]: _sDSe }], [0, { [_eQN]: `NextToken`
   , [_xN]: _nTe }]]
 ];
@@ -17717,7 +17896,7 @@ export var InitializationStatusDetails$: StaticStructureSchema = [3, n0, _ISD,
 ];
 export var Instance$: StaticStructureSchema = [3, n0, _In,
   0,
-  [_Arc, _BDMl, _CT, _EO, _ESna, _Hy, _IIP, _ILn, _EGAl, _EIAAla, _NIet, _OA, _RDN, _RDT, _SG, _SDC, _SIRI, _SNS, _SRt, _T, _VTir, _CO, _CBI, _CRI, _CRSa, _HO, _Li, _MO, _EOn, _BM, _PDl, _UO, _UOUT, _PDNO, _IApv, _TSp, _MOa, _CIBM, _NPO, _Op, _II, _IIm, _St, _PDN, _PDNub, _STR, _KN, _ALI, _PCro, _IT, _LTau, _Pla, _KI, _RIa, _Pl, _Mon, _SIu, _VI, _PIAr, _PIAu],
+  [_Arc, _BDMl, _CT, _EO, _ESna, _Hy, _IIP, _ILn, _EGAl, _EIAAla, _NIet, _OA, _RDN, _RDT, _SG, _SDC, _SIRI, _SNS, _SRt, _T, _VTir, _CO, _CBI, _CRI, _CRSa, _HO, _Li, _MO, _EOn, _BM, _PDl, _UO, _UOUT, _PDNO, _IApv, _TSp, _MOa, _CIBM, _NPO, _Op, _SIec, _II, _IIm, _St, _PDN, _PDNub, _STR, _KN, _ALI, _PCro, _IT, _LTau, _Pla, _KI, _RIa, _Pl, _Mon, _SIu, _VI, _PIAr, _PIAu],
   [[0, { [_eQN]: `Architecture`
   , [_xN]: _arc }], [() => InstanceBlockDeviceMappingList, { [_eQN]: `BlockDeviceMapping`
   , [_xN]: _bDM }], [0, { [_eQN]: `ClientToken`
@@ -17758,7 +17937,8 @@ export var Instance$: StaticStructureSchema = [3, n0, _In,
   , [_xN]: _mOa }], [0, { [_eQN]: `CurrentInstanceBootMode`
   , [_xN]: _cIBM }], [() => InstanceNetworkPerformanceOptions$, { [_eQN]: `NetworkPerformanceOptions`
   , [_xN]: _nPO }], [() => OperatorResponse$, { [_eQN]: `Operator`
-  , [_xN]: _ope }], [0, { [_eQN]: `InstanceId`
+  , [_xN]: _ope }], [() => InstanceSecondaryInterfaceList, { [_eQN]: `SecondaryInterfaceSet`
+  , [_xN]: _sISe }], [0, { [_eQN]: `InstanceId`
   , [_xN]: _iI }], [0, { [_eQN]: `ImageId`
   , [_xN]: _iIma }], [() => InstanceState$, { [_eQN]: `InstanceState`
   , [_xN]: _iSnst }], [0, { [_eQN]: `PrivateDnsName`
@@ -18152,6 +18332,48 @@ export var InstanceRequirementsWithMetadataRequest$: StaticStructureSchema = [3,
   [_ATr, _VTi, _IRn],
   [[() => ArchitectureTypeSet, { [_xN]: _ATrc }], [() => VirtualizationTypeSet, { [_xN]: _VTir }], [() => InstanceRequirementsRequest$, 0]]
 ];
+export var InstanceSecondaryInterface$: StaticStructureSchema = [3, n0, _ISIn,
+  0,
+  [_Att, _MAa, _SIIec, _OI, _PIAri, _SDC, _Sta, _SSIe, _SNI, _ITnt],
+  [[() => InstanceSecondaryInterfaceAttachment$, { [_eQN]: `Attachment`
+  , [_xN]: _at }], [0, { [_eQN]: `MacAddress`
+  , [_xN]: _mAa }], [0, { [_eQN]: `SecondaryInterfaceId`
+  , [_xN]: _sIIe }], [0, { [_eQN]: `OwnerId`
+  , [_xN]: _oI }], [() => InstanceSecondaryInterfacePrivateIpAddressList, { [_eQN]: `PrivateIpAddressSet`
+  , [_xN]: _pIASr }], [2, { [_eQN]: `SourceDestCheck`
+  , [_xN]: _sDC }], [0, { [_eQN]: `Status`
+  , [_xN]: _sta }], [0, { [_eQN]: `SecondarySubnetId`
+  , [_xN]: _sSI }], [0, { [_eQN]: `SecondaryNetworkId`
+  , [_xN]: _sNI }], [0, { [_eQN]: `InterfaceType`
+  , [_xN]: _iTnt }]]
+];
+export var InstanceSecondaryInterfaceAttachment$: StaticStructureSchema = [3, n0, _ISIA,
+  0,
+  [_ATtt, _AItt, _DOT, _DI, _Sta, _NCI],
+  [[4, { [_eQN]: `AttachTime`
+  , [_xN]: _aTt }], [0, { [_eQN]: `AttachmentId`
+  , [_xN]: _aIt }], [2, { [_eQN]: `DeleteOnTermination`
+  , [_xN]: _dOT }], [1, { [_eQN]: `DeviceIndex`
+  , [_xN]: _dI }], [0, { [_eQN]: `Status`
+  , [_xN]: _sta }], [1, { [_eQN]: `NetworkCardIndex`
+  , [_xN]: _nCI }]]
+];
+export var InstanceSecondaryInterfacePrivateIpAddress$: StaticStructureSchema = [3, n0, _ISIPIA,
+  0,
+  [_PIAr],
+  [[0, { [_eQN]: `PrivateIpAddress`
+  , [_xN]: _pIAr }]]
+];
+export var InstanceSecondaryInterfacePrivateIpAddressRequest$: StaticStructureSchema = [3, n0, _ISIPIAR,
+  0,
+  [_PIAr],
+  [0], 1
+];
+export var InstanceSecondaryInterfaceSpecificationRequest$: StaticStructureSchema = [3, n0, _ISISR,
+  0,
+  [_DOT, _DI, _PIAri, _PIAC, _SSIe, _ITnt, _NCI],
+  [2, 1, [() => InstanceSecondaryInterfacePrivateIpAddressListRequest, { [_xN]: _PIAr }], 1, 0, 0, 1]
+];
 export var InstanceSpecification$: StaticStructureSchema = [3, n0, _ISn,
   0,
   [_II, _EBV, _EDVI],
@@ -18213,7 +18435,7 @@ export var InstanceStatusSummary$: StaticStructureSchema = [3, n0, _ISS,
   , [_xN]: _det }], [0, { [_eQN]: `Status`
   , [_xN]: _sta }]]
 ];
-export var InstanceStorageInfo$: StaticStructureSchema = [3, n0, _ISIn,
+export var InstanceStorageInfo$: StaticStructureSchema = [3, n0, _ISIns,
   0,
   [_TSIGB, _Dis, _NS, _ESn],
   [[1, { [_eQN]: `TotalSizeInGB`
@@ -18243,7 +18465,7 @@ export var InstanceTopology$: StaticStructureSchema = [3, n0, _ITnstanc,
 ];
 export var InstanceTypeInfo$: StaticStructureSchema = [3, n0, _ITIn,
   0,
-  [_IT, _CGur, _FTE, _SUC, _SRDT, _SVT, _BMa, _Hy, _PIro, _VCIpu, _MIe, _ISSn, _ISIn, _EIb, _NIetw, _GIp, _FIpga, _PGI, _IAIn, _HS, _BPS, _DHS, _ARS, _SBM, _NES, _NTS, _NTI, _MAIe, _NIeu, _PSh, _RMS],
+  [_IT, _CGur, _FTE, _SUC, _SRDT, _SVT, _BMa, _Hy, _PIro, _VCIpu, _MIe, _ISSn, _ISIns, _EIb, _NIetw, _GIp, _FIpga, _PGI, _IAIn, _HS, _BPS, _DHS, _ARS, _SBM, _NES, _NTS, _NTI, _MAIe, _NIeu, _PSh, _RMS],
   [[0, { [_eQN]: `InstanceType`
   , [_xN]: _iT }], [2, { [_eQN]: `CurrentGeneration`
   , [_xN]: _cGur }], [2, { [_eQN]: `FreeTierEligible`
@@ -19122,6 +19344,23 @@ export var LaunchTemplateInstanceNetworkInterfaceSpecificationRequest$: StaticSt
   [_ACIA, _APIAss, _DOT, _De, _DI, _G, _ITnt, _IAC, _IA, _NII, _PIAr, _PIAri, _SPIAC, _SIu, _NCI, _IPpvr, _IPCp, _IPp, _IPC, _PIr, _ESS, _CTS, _EQC],
   [2, 2, 2, 0, 1, [() => SecurityGroupIdStringList, { [_xN]: _SGI }], 0, 1, [() => InstanceIpv6AddressListRequest, 0], 0, 0, [() => PrivateIpAddressSpecificationList, 0], 1, 0, 1, [() => Ipv4PrefixList, { [_xN]: _IPpvre }], 1, [() => Ipv6PrefixList, { [_xN]: _IPpv }], 1, 2, () => EnaSrdSpecificationRequest$, () => ConnectionTrackingSpecificationRequest$, 1]
 ];
+export var LaunchTemplateInstanceSecondaryInterfaceSpecification$: StaticStructureSchema = [3, n0, _LTISIS,
+  0,
+  [_DOT, _DI, _PIAri, _PIAC, _SSIe, _ITnt, _NCI],
+  [[2, { [_eQN]: `DeleteOnTermination`
+  , [_xN]: _dOT }], [1, { [_eQN]: `DeviceIndex`
+  , [_xN]: _dI }], [() => SecondaryInterfacePrivateIpAddressSpecificationList, { [_eQN]: `PrivateIpAddressesSet`
+  , [_xN]: _pIAS }], [1, { [_eQN]: `PrivateIpAddressCount`
+  , [_xN]: _pIAC }], [0, { [_eQN]: `SecondarySubnetId`
+  , [_xN]: _sSI }], [0, { [_eQN]: `InterfaceType`
+  , [_xN]: _iTnt }], [1, { [_eQN]: `NetworkCardIndex`
+  , [_xN]: _nCI }]]
+];
+export var LaunchTemplateInstanceSecondaryInterfaceSpecificationRequest$: StaticStructureSchema = [3, n0, _LTISISR,
+  0,
+  [_DOT, _DI, _PIAri, _PIAC, _SSIe, _ITnt, _NCI],
+  [2, 1, [() => SecondaryInterfacePrivateIpAddressSpecificationListRequest, { [_xN]: _PIAr }], 1, 0, 0, 1]
+];
 export var LaunchTemplateLicenseConfiguration$: StaticStructureSchema = [3, n0, _LTLC,
   0,
   [_LCA],
@@ -19279,7 +19518,7 @@ export var ListSnapshotsInRecycleBinResult$: StaticStructureSchema = [3, n0, _LS
   0,
   [_Sn, _NTe],
   [[() => SnapshotRecycleBinInfoList, { [_eQN]: `SnapshotSet`
-  , [_xN]: _sS }], [0, { [_eQN]: `NextToken`
+  , [_xN]: _sSn }], [0, { [_eQN]: `NextToken`
   , [_xN]: _nTe }]]
 ];
 export var ListVolumesInRecycleBinRequest$: StaticStructureSchema = [3, n0, _LVIRBR,
@@ -20119,7 +20358,7 @@ export var ModifyTrafficMirrorFilterRuleResult$: StaticStructureSchema = [3, n0,
 ];
 export var ModifyTrafficMirrorSessionRequest$: StaticStructureSchema = [3, n0, _MTMSR,
   0,
-  [_TMSI, _TMTI, _TMFI, _PLa, _SNe, _VNI, _De, _RF, _DR],
+  [_TMSI, _TMTI, _TMFI, _PLa, _SNes, _VNI, _De, _RF, _DR],
   [0, 0, 0, 1, 1, 1, 0, [64 | 0, { [_xN]: _RFe }], 2], 1
 ];
 export var ModifyTrafficMirrorSessionResult$: StaticStructureSchema = [3, n0, _MTMSRo,
@@ -20199,12 +20438,12 @@ export var ModifyVerifiedAccessEndpointLoadBalancerOptions$: StaticStructureSche
 ];
 export var ModifyVerifiedAccessEndpointPolicyRequest$: StaticStructureSchema = [3, n0, _MVAEPR,
   0,
-  [_VAEI, _PE, _PDo, _CT, _DR, _SS],
+  [_VAEI, _PE, _PDo, _CT, _DR, _SSs],
   [0, 2, 0, [0, 4], 2, () => VerifiedAccessSseSpecificationRequest$], 1
 ];
 export var ModifyVerifiedAccessEndpointPolicyResult$: StaticStructureSchema = [3, n0, _MVAEPRo,
   0,
-  [_PE, _PDo, _SS],
+  [_PE, _PDo, _SSs],
   [[2, { [_eQN]: `PolicyEnabled`
   , [_xN]: _pE }], [0, { [_eQN]: `PolicyDocument`
   , [_xN]: _pDo }], [() => VerifiedAccessSseSpecificationResponse$, { [_eQN]: `SseSpecification`
@@ -20233,12 +20472,12 @@ export var ModifyVerifiedAccessEndpointResult$: StaticStructureSchema = [3, n0, 
 ];
 export var ModifyVerifiedAccessGroupPolicyRequest$: StaticStructureSchema = [3, n0, _MVAGPR,
   0,
-  [_VAGI, _PE, _PDo, _CT, _DR, _SS],
+  [_VAGI, _PE, _PDo, _CT, _DR, _SSs],
   [0, 2, 0, [0, 4], 2, () => VerifiedAccessSseSpecificationRequest$], 1
 ];
 export var ModifyVerifiedAccessGroupPolicyResult$: StaticStructureSchema = [3, n0, _MVAGPRo,
   0,
-  [_PE, _PDo, _SS],
+  [_PE, _PDo, _SSs],
   [[2, { [_eQN]: `PolicyEnabled`
   , [_xN]: _pE }], [0, { [_eQN]: `PolicyDocument`
   , [_xN]: _pDo }], [() => VerifiedAccessSseSpecificationResponse$, { [_eQN]: `SseSpecification`
@@ -20294,7 +20533,7 @@ export var ModifyVerifiedAccessTrustProviderOidcOptions$: StaticStructureSchema 
 ];
 export var ModifyVerifiedAccessTrustProviderRequest$: StaticStructureSchema = [3, n0, _MVATPR,
   0,
-  [_VATPI, _OO, _DOev, _De, _DR, _CT, _SS, _NAOO],
+  [_VATPI, _OO, _DOev, _De, _DR, _CT, _SSs, _NAOO],
   [0, [() => ModifyVerifiedAccessTrustProviderOidcOptions$, 0], () => ModifyVerifiedAccessTrustProviderDeviceOptions$, 0, 2, [0, 4], () => VerifiedAccessSseSpecificationRequest$, [() => ModifyVerifiedAccessNativeApplicationOidcOptions$, 0]], 1
 ];
 export var ModifyVerifiedAccessTrustProviderResult$: StaticStructureSchema = [3, n0, _MVATPRo,
@@ -20672,7 +20911,7 @@ export var NetworkCardInfo$: StaticStructureSchema = [3, n0, _NCIe,
 ];
 export var NetworkInfo$: StaticStructureSchema = [3, n0, _NIetw,
   0,
-  [_NPe, _MNI, _MNC, _DNCI, _NC, _IAPI, _IAPIp, _ISpvu, _ESna, _ESf, _EIf, _EITS, _ESSn, _BWa, _FEQS],
+  [_NPe, _MNI, _MNC, _DNCI, _NC, _IAPI, _IAPIp, _ISpvu, _ESna, _ESf, _EIf, _EITS, _ESSn, _BWa, _FEQS, _SNSe, _MSNI, _IAPSI],
   [[0, { [_eQN]: `NetworkPerformance`
   , [_xN]: _nPe }], [1, { [_eQN]: `MaximumNetworkInterfaces`
   , [_xN]: _mNI }], [1, { [_eQN]: `MaximumNetworkCards`
@@ -20688,7 +20927,10 @@ export var NetworkInfo$: StaticStructureSchema = [3, n0, _NIetw,
   , [_xN]: _eITSn }], [2, { [_eQN]: `EnaSrdSupported`
   , [_xN]: _eSSn }], [() => BandwidthWeightingTypeList, { [_eQN]: `BandwidthWeightings`
   , [_xN]: _bWa }], [0, { [_eQN]: `FlexibleEnaQueuesSupport`
-  , [_xN]: _fEQS }]]
+  , [_xN]: _fEQS }], [2, { [_eQN]: `SecondaryNetworkSupported`
+  , [_xN]: _sNSec }], [1, { [_eQN]: `MaximumSecondaryNetworkInterfaces`
+  , [_xN]: _mSNI }], [1, { [_eQN]: `Ipv4AddressesPerSecondaryInterface`
+  , [_xN]: _iAPSI }]]
 ];
 export var NetworkInsightsAccessScope$: StaticStructureSchema = [3, n0, _NIAS,
   0,
@@ -20997,7 +21239,7 @@ export var PathComponent$: StaticStructureSchema = [3, n0, _PCat,
   0,
   [_SNeq, _ARcl, _ATtta, _C, _DVe, _OH, _IHn, _RTR, _SGRe, _SVo, _Su, _Vp, _ADd, _TG, _TGRTR, _Exp, _ELBL, _FSRi, _FSRir, _SN],
   [[1, { [_eQN]: `SequenceNumber`
-  , [_xN]: _sNe }], [() => AnalysisAclRule$, { [_eQN]: `AclRule`
+  , [_xN]: _sNeq }], [() => AnalysisAclRule$, { [_eQN]: `AclRule`
   , [_xN]: _aRc }], [() => AnalysisComponent$, { [_eQN]: `AttachedTo`
   , [_xN]: _aTtt }], [() => AnalysisComponent$, { [_eQN]: `Component`
   , [_xN]: _c }], [() => AnalysisComponent$, { [_eQN]: `DestinationVpc`
@@ -21870,8 +22112,8 @@ export var RequestIpamResourceTag$: StaticStructureSchema = [3, n0, _RIRT,
 ];
 export var RequestLaunchTemplateData$: StaticStructureSchema = [3, n0, _RLTD,
   0,
-  [_KI, _EO, _IIP, _BDMl, _NIet, _IIm, _IT, _KN, _Mon, _Pla, _RDI, _DAT, _IISB, _UDs, _TS, _EGSlas, _EIAl, _SGIe, _SG, _IMOns, _CSr, _CO, _CRSa, _LS, _HO, _MO, _EOn, _IRn, _PDNO, _MOa, _DASi, _Op, _NPO],
-  [0, 2, () => LaunchTemplateIamInstanceProfileSpecificationRequest$, [() => LaunchTemplateBlockDeviceMappingRequestList, { [_xN]: _BDM }], [() => LaunchTemplateInstanceNetworkInterfaceSpecificationRequestList, { [_xN]: _NIe }], 0, 0, 0, () => LaunchTemplatesMonitoringRequest$, () => LaunchTemplatePlacementRequest$, 0, 2, 0, [() => SensitiveUserData, 0], [() => LaunchTemplateTagSpecificationRequestList, { [_xN]: _TSa }], [() => ElasticGpuSpecificationList, { [_xN]: _EGSla }], [() => LaunchTemplateElasticInferenceAcceleratorList, { [_xN]: _EIA }], [() => SecurityGroupIdStringList, { [_xN]: _SGI }], [() => SecurityGroupStringList, { [_xN]: _SGe }], () => LaunchTemplateInstanceMarketOptionsRequest$, () => CreditSpecificationRequest$, () => LaunchTemplateCpuOptionsRequest$, () => LaunchTemplateCapacityReservationSpecificationRequest$, [() => LaunchTemplateLicenseSpecificationListRequest, { [_xN]: _LSi }], () => LaunchTemplateHibernationOptionsRequest$, () => LaunchTemplateInstanceMetadataOptionsRequest$, () => LaunchTemplateEnclaveOptionsRequest$, [() => InstanceRequirementsRequest$, 0], () => LaunchTemplatePrivateDnsNameOptionsRequest$, () => LaunchTemplateInstanceMaintenanceOptionsRequest$, 2, () => OperatorRequest$, () => LaunchTemplateNetworkPerformanceOptionsRequest$]
+  [_KI, _EO, _IIP, _BDMl, _NIet, _IIm, _IT, _KN, _Mon, _Pla, _RDI, _DAT, _IISB, _UDs, _TS, _EGSlas, _EIAl, _SGIe, _SG, _IMOns, _CSr, _CO, _CRSa, _LS, _HO, _MO, _EOn, _IRn, _PDNO, _MOa, _DASi, _Op, _NPO, _SIec],
+  [0, 2, () => LaunchTemplateIamInstanceProfileSpecificationRequest$, [() => LaunchTemplateBlockDeviceMappingRequestList, { [_xN]: _BDM }], [() => LaunchTemplateInstanceNetworkInterfaceSpecificationRequestList, { [_xN]: _NIe }], 0, 0, 0, () => LaunchTemplatesMonitoringRequest$, () => LaunchTemplatePlacementRequest$, 0, 2, 0, [() => SensitiveUserData, 0], [() => LaunchTemplateTagSpecificationRequestList, { [_xN]: _TSa }], [() => ElasticGpuSpecificationList, { [_xN]: _EGSla }], [() => LaunchTemplateElasticInferenceAcceleratorList, { [_xN]: _EIA }], [() => SecurityGroupIdStringList, { [_xN]: _SGI }], [() => SecurityGroupStringList, { [_xN]: _SGe }], () => LaunchTemplateInstanceMarketOptionsRequest$, () => CreditSpecificationRequest$, () => LaunchTemplateCpuOptionsRequest$, () => LaunchTemplateCapacityReservationSpecificationRequest$, [() => LaunchTemplateLicenseSpecificationListRequest, { [_xN]: _LSi }], () => LaunchTemplateHibernationOptionsRequest$, () => LaunchTemplateInstanceMetadataOptionsRequest$, () => LaunchTemplateEnclaveOptionsRequest$, [() => InstanceRequirementsRequest$, 0], () => LaunchTemplatePrivateDnsNameOptionsRequest$, () => LaunchTemplateInstanceMaintenanceOptionsRequest$, 2, () => OperatorRequest$, () => LaunchTemplateNetworkPerformanceOptionsRequest$, [() => LaunchTemplateInstanceSecondaryInterfaceSpecificationRequestList, { [_xN]: _SIeco }]]
 ];
 export var RequestSpotFleetRequest$: StaticStructureSchema = [3, n0, _RSFR,
   0,
@@ -22152,7 +22394,7 @@ export var ResponseError$: StaticStructureSchema = [3, n0, _REe,
 ];
 export var ResponseLaunchTemplateData$: StaticStructureSchema = [3, n0, _RLTDe,
   0,
-  [_KI, _EO, _IIP, _BDMl, _NIet, _IIm, _IT, _KN, _Mon, _Pla, _RDI, _DAT, _IISB, _UDs, _TS, _EGSlas, _EIAl, _SGIe, _SG, _IMOns, _CSr, _CO, _CRSa, _LS, _HO, _MO, _EOn, _IRn, _PDNO, _MOa, _DASi, _Op, _NPO],
+  [_KI, _EO, _IIP, _BDMl, _NIet, _IIm, _IT, _KN, _Mon, _Pla, _RDI, _DAT, _IISB, _UDs, _TS, _EGSlas, _EIAl, _SGIe, _SG, _IMOns, _CSr, _CO, _CRSa, _LS, _HO, _MO, _EOn, _IRn, _PDNO, _MOa, _DASi, _Op, _NPO, _SIec],
   [[0, { [_eQN]: `KernelId`
   , [_xN]: _kI }], [2, { [_eQN]: `EbsOptimized`
   , [_xN]: _eO }], [() => LaunchTemplateIamInstanceProfileSpecification$, { [_eQN]: `IamInstanceProfile`
@@ -22186,7 +22428,8 @@ export var ResponseLaunchTemplateData$: StaticStructureSchema = [3, n0, _RLTDe,
   , [_xN]: _mOa }], [2, { [_eQN]: `DisableApiStop`
   , [_xN]: _dASi }], [() => OperatorResponse$, { [_eQN]: `Operator`
   , [_xN]: _ope }], [() => LaunchTemplateNetworkPerformanceOptions$, { [_eQN]: `NetworkPerformanceOptions`
-  , [_xN]: _nPO }]]
+  , [_xN]: _nPO }], [() => LaunchTemplateInstanceSecondaryInterfaceSpecificationList, { [_eQN]: `SecondaryInterfaceSet`
+  , [_xN]: _sISe }]]
 ];
 export var RestoreAddressToClassicRequest$: StaticStructureSchema = [3, n0, _RATCR,
   0,
@@ -22523,8 +22766,8 @@ export var RunInstancesMonitoringEnabled$: StaticStructureSchema = [3, n0, _RIME
 ];
 export var RunInstancesRequest$: StaticStructureSchema = [3, n0, _RIRu,
   0,
-  [_MCa, _MCin, _BDMl, _IIm, _IT, _IAC, _IA, _KI, _KN, _Mon, _Pla, _RIa, _SGIe, _SG, _SIu, _UDs, _EGSla, _EIAl, _TS, _LT, _IMOns, _CSr, _CO, _CRSa, _HO, _LS, _MO, _EOn, _PDNO, _MOa, _DASi, _EPI, _NPO, _Op, _DR, _DAT, _IISB, _PIAr, _CT, _AId, _NIet, _IIP, _EO],
-  [1, 1, [() => BlockDeviceMappingRequestList, { [_xN]: _BDM }], 0, 0, 1, [() => InstanceIpv6AddressList, { [_xN]: _IApv }], 0, 0, [() => RunInstancesMonitoringEnabled$, 0], [() => Placement$, 0], 0, [() => SecurityGroupIdStringList, { [_xN]: _SGI }], [() => SecurityGroupStringList, { [_xN]: _SGe }], 0, [() => RunInstancesUserData, 0], [() => ElasticGpuSpecifications, 0], [() => ElasticInferenceAccelerators, { [_xN]: _EIA }], [() => TagSpecificationList, { [_xN]: _TSa }], () => LaunchTemplateSpecification$, () => InstanceMarketOptionsRequest$, () => CreditSpecificationRequest$, () => CpuOptionsRequest$, () => CapacityReservationSpecification$, () => HibernationOptionsRequest$, [() => LicenseSpecificationListRequest, { [_xN]: _LSi }], () => InstanceMetadataOptionsRequest$, () => EnclaveOptionsRequest$, () => PrivateDnsNameOptionsRequest$, () => InstanceMaintenanceOptionsRequest$, 2, 2, () => InstanceNetworkPerformanceOptionsRequest$, () => OperatorRequest$, [2, { [_eQN]: `DryRun`
+  [_MCa, _MCin, _BDMl, _IIm, _IT, _IAC, _IA, _KI, _KN, _Mon, _Pla, _RIa, _SGIe, _SG, _SIu, _UDs, _EGSla, _EIAl, _TS, _LT, _IMOns, _CSr, _CO, _CRSa, _HO, _LS, _MO, _EOn, _PDNO, _MOa, _DASi, _EPI, _NPO, _Op, _SIec, _DR, _DAT, _IISB, _PIAr, _CT, _AId, _NIet, _IIP, _EO],
+  [1, 1, [() => BlockDeviceMappingRequestList, { [_xN]: _BDM }], 0, 0, 1, [() => InstanceIpv6AddressList, { [_xN]: _IApv }], 0, 0, [() => RunInstancesMonitoringEnabled$, 0], [() => Placement$, 0], 0, [() => SecurityGroupIdStringList, { [_xN]: _SGI }], [() => SecurityGroupStringList, { [_xN]: _SGe }], 0, [() => RunInstancesUserData, 0], [() => ElasticGpuSpecifications, 0], [() => ElasticInferenceAccelerators, { [_xN]: _EIA }], [() => TagSpecificationList, { [_xN]: _TSa }], () => LaunchTemplateSpecification$, () => InstanceMarketOptionsRequest$, () => CreditSpecificationRequest$, () => CpuOptionsRequest$, () => CapacityReservationSpecification$, () => HibernationOptionsRequest$, [() => LicenseSpecificationListRequest, { [_xN]: _LSi }], () => InstanceMetadataOptionsRequest$, () => EnclaveOptionsRequest$, () => PrivateDnsNameOptionsRequest$, () => InstanceMaintenanceOptionsRequest$, 2, 2, () => InstanceNetworkPerformanceOptionsRequest$, () => OperatorRequest$, [() => InstanceSecondaryInterfaceSpecificationListRequest, { [_xN]: _SIeco }], [2, { [_eQN]: `DryRun`
   , [_xN]: _dR }], [2, { [_eQN]: `DisableApiTermination`
   , [_xN]: _dAT }], [0, { [_eQN]: `InstanceInitiatedShutdownBehavior`
   , [_xN]: _iISB }], [0, { [_eQN]: `PrivateIpAddress`
@@ -22695,6 +22938,103 @@ export var SearchTransitGatewayRoutesResult$: StaticStructureSchema = [3, n0, _S
   , [_xN]: _aRAd }], [0, { [_eQN]: `NextToken`
   , [_xN]: _nTe }]]
 ];
+export var SecondaryInterface$: StaticStructureSchema = [3, n0, _SIeco,
+  0,
+  [_AZ, _AZI, _Att, _MAa, _OI, _PIAriv, _SIIec, _SIAe, _SITe, _SSIe, _SNI, _SNT, _SDC, _Sta, _T],
+  [[0, { [_eQN]: `AvailabilityZone`
+  , [_xN]: _aZ }], [0, { [_eQN]: `AvailabilityZoneId`
+  , [_xN]: _aZI }], [() => SecondaryInterfaceAttachment$, { [_eQN]: `Attachment`
+  , [_xN]: _at }], [0, { [_eQN]: `MacAddress`
+  , [_xN]: _mAa }], [0, { [_eQN]: `OwnerId`
+  , [_xN]: _oI }], [() => SecondaryInterfaceIpv4AddressList, { [_eQN]: `PrivateIpv4AddressSet`
+  , [_xN]: _pIASri }], [0, { [_eQN]: `SecondaryInterfaceId`
+  , [_xN]: _sIIe }], [0, { [_eQN]: `SecondaryInterfaceArn`
+  , [_xN]: _sIA }], [0, { [_eQN]: `SecondaryInterfaceType`
+  , [_xN]: _sITe }], [0, { [_eQN]: `SecondarySubnetId`
+  , [_xN]: _sSI }], [0, { [_eQN]: `SecondaryNetworkId`
+  , [_xN]: _sNI }], [0, { [_eQN]: `SecondaryNetworkType`
+  , [_xN]: _sNT }], [2, { [_eQN]: `SourceDestCheck`
+  , [_xN]: _sDC }], [0, { [_eQN]: `Status`
+  , [_xN]: _sta }], [() => TagList, { [_eQN]: `TagSet`
+  , [_xN]: _tS }]]
+];
+export var SecondaryInterfaceAttachment$: StaticStructureSchema = [3, n0, _SIAec,
+  0,
+  [_AItt, _ATtt, _DOT, _DI, _II, _IOIn, _NCI, _Sta],
+  [[0, { [_eQN]: `AttachmentId`
+  , [_xN]: _aIt }], [4, { [_eQN]: `AttachTime`
+  , [_xN]: _aTt }], [2, { [_eQN]: `DeleteOnTermination`
+  , [_xN]: _dOT }], [1, { [_eQN]: `DeviceIndex`
+  , [_xN]: _dI }], [0, { [_eQN]: `InstanceId`
+  , [_xN]: _iI }], [0, { [_eQN]: `InstanceOwnerId`
+  , [_xN]: _iOIn }], [1, { [_eQN]: `NetworkCardIndex`
+  , [_xN]: _nCI }], [0, { [_eQN]: `Status`
+  , [_xN]: _sta }]]
+];
+export var SecondaryInterfaceIpv4Address$: StaticStructureSchema = [3, n0, _SIIAe,
+  0,
+  [_PIAr],
+  [[0, { [_eQN]: `PrivateIpAddress`
+  , [_xN]: _pIAr }]]
+];
+export var SecondaryInterfacePrivateIpAddressSpecification$: StaticStructureSchema = [3, n0, _SIPIAS,
+  0,
+  [_PIAr],
+  [[0, { [_eQN]: `PrivateIpAddress`
+  , [_xN]: _pIAr }]]
+];
+export var SecondaryInterfacePrivateIpAddressSpecificationRequest$: StaticStructureSchema = [3, n0, _SIPIASR,
+  0,
+  [_PIAr],
+  [0]
+];
+export var SecondaryNetwork$: StaticStructureSchema = [3, n0, _SNe,
+  0,
+  [_SNI, _SNAe, _OI, _Ty, _St, _SRt, _ICBAp, _T],
+  [[0, { [_eQN]: `SecondaryNetworkId`
+  , [_xN]: _sNI }], [0, { [_eQN]: `SecondaryNetworkArn`
+  , [_xN]: _sNA }], [0, { [_eQN]: `OwnerId`
+  , [_xN]: _oI }], [0, { [_eQN]: `Type`
+  , [_xN]: _ty }], [0, { [_eQN]: `State`
+  , [_xN]: _st }], [0, { [_eQN]: `StateReason`
+  , [_xN]: _sRt }], [() => SecondaryNetworkIpv4CidrBlockAssociationList, { [_eQN]: `Ipv4CidrBlockAssociationSet`
+  , [_xN]: _iCBAS }], [() => TagList, { [_eQN]: `TagSet`
+  , [_xN]: _tS }]]
+];
+export var SecondaryNetworkIpv4CidrBlockAssociation$: StaticStructureSchema = [3, n0, _SNICBA,
+  0,
+  [_AIs, _CB, _St, _SRt],
+  [[0, { [_eQN]: `AssociationId`
+  , [_xN]: _aIs }], [0, { [_eQN]: `CidrBlock`
+  , [_xN]: _cB }], [0, { [_eQN]: `State`
+  , [_xN]: _st }], [0, { [_eQN]: `StateReason`
+  , [_xN]: _sRt }]]
+];
+export var SecondarySubnet$: StaticStructureSchema = [3, n0, _SS,
+  0,
+  [_SSIe, _SSA, _SNI, _SNT, _OI, _AZI, _AZ, _ICBAp, _St, _SRt, _T],
+  [[0, { [_eQN]: `SecondarySubnetId`
+  , [_xN]: _sSI }], [0, { [_eQN]: `SecondarySubnetArn`
+  , [_xN]: _sSA }], [0, { [_eQN]: `SecondaryNetworkId`
+  , [_xN]: _sNI }], [0, { [_eQN]: `SecondaryNetworkType`
+  , [_xN]: _sNT }], [0, { [_eQN]: `OwnerId`
+  , [_xN]: _oI }], [0, { [_eQN]: `AvailabilityZoneId`
+  , [_xN]: _aZI }], [0, { [_eQN]: `AvailabilityZone`
+  , [_xN]: _aZ }], [() => SecondarySubnetIpv4CidrBlockAssociationList, { [_eQN]: `Ipv4CidrBlockAssociationSet`
+  , [_xN]: _iCBAS }], [0, { [_eQN]: `State`
+  , [_xN]: _st }], [0, { [_eQN]: `StateReason`
+  , [_xN]: _sRt }], [() => TagList, { [_eQN]: `TagSet`
+  , [_xN]: _tS }]]
+];
+export var SecondarySubnetIpv4CidrBlockAssociation$: StaticStructureSchema = [3, n0, _SSICBA,
+  0,
+  [_AIs, _CB, _St, _SRt],
+  [[0, { [_eQN]: `AssociationId`
+  , [_xN]: _aIs }], [0, { [_eQN]: `CidrBlock`
+  , [_xN]: _cB }], [0, { [_eQN]: `State`
+  , [_xN]: _st }], [0, { [_eQN]: `StateReason`
+  , [_xN]: _sRt }]]
+];
 export var SecurityGroup$: StaticStructureSchema = [3, n0, _SGe,
   0,
   [_GIr, _IPEp, _T, _VI, _SGA, _OI, _GN, _De, _IPpe],
@@ -22788,7 +23128,7 @@ export var SendDiagnosticInterruptRequest$: StaticStructureSchema = [3, n0, _SDI
 ];
 export var ServiceConfiguration$: StaticStructureSchema = [3, n0, _SCe,
   0,
-  [_STe, _SIe, _SN, _SSe, _AZIv, _AZv, _ARc, _MVE, _NLBAe, _GLBA, _SIAT, _BEDN, _PDN, _PDNC, _PRa, _T, _SRu, _RAE],
+  [_STe, _SIe, _SN, _SSer, _AZIv, _AZv, _ARc, _MVE, _NLBAe, _GLBA, _SIAT, _BEDN, _PDN, _PDNC, _PRa, _T, _SRu, _RAE],
   [[() => ServiceTypeDetailSet, { [_eQN]: `ServiceType`
   , [_xN]: _sTe }], [0, { [_eQN]: `ServiceId`
   , [_xN]: _sI }], [0, { [_eQN]: `ServiceName`
@@ -23296,7 +23636,7 @@ export var Subnet$: StaticStructureSchema = [3, n0, _Su,
   , [_xN]: _cOIP }], [0, { [_eQN]: `OwnerId`
   , [_xN]: _oI }], [2, { [_eQN]: `AssignIpv6AddressOnCreation`
   , [_xN]: _aIAOC }], [() => SubnetIpv6CidrBlockAssociationSet, { [_eQN]: `Ipv6CidrBlockAssociationSet`
-  , [_xN]: _iCBAS }], [() => TagList, { [_eQN]: `TagSet`
+  , [_xN]: _iCBASp }], [() => TagList, { [_eQN]: `TagSet`
   , [_xN]: _tS }], [0, { [_eQN]: `SubnetArn`
   , [_xN]: _sAub }], [0, { [_eQN]: `OutpostArn`
   , [_xN]: _oA }], [2, { [_eQN]: `EnableDns64`
@@ -23386,7 +23726,7 @@ export var SuccessfulQueuedPurchaseDeletion$: StaticStructureSchema = [3, n0, _S
 ];
 export var SupportedRegionDetail$: StaticStructureSchema = [3, n0, _SRD,
   0,
-  [_Regi, _SSe],
+  [_Regi, _SSer],
   [[0, { [_eQN]: `Region`
   , [_xN]: _reg }], [0, { [_eQN]: `ServiceState`
   , [_xN]: _sSer }]]
@@ -23568,7 +23908,7 @@ export var TrafficMirrorPortRangeRequest$: StaticStructureSchema = [3, n0, _TMPR
 ];
 export var TrafficMirrorSession$: StaticStructureSchema = [3, n0, _TMS,
   0,
-  [_TMSI, _TMTI, _TMFI, _NII, _OI, _PLa, _SNe, _VNI, _De, _T],
+  [_TMSI, _TMTI, _TMFI, _NII, _OI, _PLa, _SNes, _VNI, _De, _T],
   [[0, { [_eQN]: `TrafficMirrorSessionId`
   , [_xN]: _tMSI }], [0, { [_eQN]: `TrafficMirrorTargetId`
   , [_xN]: _tMTI }], [0, { [_eQN]: `TrafficMirrorFilterId`
@@ -23791,7 +24131,7 @@ export var TransitGatewayMulticastDomainOptions$: StaticStructureSchema = [3, n0
   [_ISg, _SSS, _AASA],
   [[0, { [_eQN]: `Igmpv2Support`
   , [_xN]: _iSg }], [0, { [_eQN]: `StaticSourcesSupport`
-  , [_xN]: _sSS }], [0, { [_eQN]: `AutoAcceptSharedAssociations`
+  , [_xN]: _sSSt }], [0, { [_eQN]: `AutoAcceptSharedAssociations`
   , [_xN]: _aASA }]]
 ];
 export var TransitGatewayMulticastGroup$: StaticStructureSchema = [3, n0, _TGMG,
@@ -24285,7 +24625,7 @@ export var VCpuInfo$: StaticStructureSchema = [3, n0, _VCIpu,
 ];
 export var VerifiedAccessEndpoint$: StaticStructureSchema = [3, n0, _VAE,
   0,
-  [_VAII, _VAGI, _VAEI, _ADp, _ETn, _ATt, _DCA, _EDnd, _DVD, _SGIe, _LBO, _NIO, _Sta, _De, _CTre, _LUTa, _DT, _T, _SS, _ROd, _COi],
+  [_VAII, _VAGI, _VAEI, _ADp, _ETn, _ATt, _DCA, _EDnd, _DVD, _SGIe, _LBO, _NIO, _Sta, _De, _CTre, _LUTa, _DT, _T, _SSs, _ROd, _COi],
   [[0, { [_eQN]: `VerifiedAccessInstanceId`
   , [_xN]: _vAII }], [0, { [_eQN]: `VerifiedAccessGroupId`
   , [_xN]: _vAGI }], [0, { [_eQN]: `VerifiedAccessEndpointId`
@@ -24373,7 +24713,7 @@ export var VerifiedAccessEndpointTarget$: StaticStructureSchema = [3, n0, _VAETe
 ];
 export var VerifiedAccessGroup$: StaticStructureSchema = [3, n0, _VAG,
   0,
-  [_VAGI, _VAII, _De, _Own, _VAGA, _CTre, _LUTa, _DT, _T, _SS],
+  [_VAGI, _VAII, _De, _Own, _VAGA, _CTre, _LUTa, _DT, _T, _SSs],
   [[0, { [_eQN]: `VerifiedAccessGroupId`
   , [_xN]: _vAGI }], [0, { [_eQN]: `VerifiedAccessInstanceId`
   , [_xN]: _vAII }], [0, { [_eQN]: `Description`
@@ -24518,7 +24858,7 @@ export var VerifiedAccessSseSpecificationResponse$: StaticStructureSchema = [3, 
 ];
 export var VerifiedAccessTrustProvider$: StaticStructureSchema = [3, n0, _VATP,
   0,
-  [_VATPI, _De, _TPT, _UTPT, _DTPT, _OO, _DOev, _PRNo, _CTre, _LUTa, _T, _SS, _NAOO],
+  [_VATPI, _De, _TPT, _UTPT, _DTPT, _OO, _DOev, _PRNo, _CTre, _LUTa, _T, _SSs, _NAOO],
   [[0, { [_eQN]: `VerifiedAccessTrustProviderId`
   , [_xN]: _vATPI }], [0, { [_eQN]: `Description`
   , [_xN]: _de }], [0, { [_eQN]: `TrustProviderType`
@@ -24703,7 +25043,7 @@ export var Vpc$: StaticStructureSchema = [3, n0, _Vp,
   [[0, { [_eQN]: `OwnerId`
   , [_xN]: _oI }], [0, { [_eQN]: `InstanceTenancy`
   , [_xN]: _iTns }], [() => VpcIpv6CidrBlockAssociationSet, { [_eQN]: `Ipv6CidrBlockAssociationSet`
-  , [_xN]: _iCBAS }], [() => VpcCidrBlockAssociationSet, { [_eQN]: `CidrBlockAssociationSet`
+  , [_xN]: _iCBASp }], [() => VpcCidrBlockAssociationSet, { [_eQN]: `CidrBlockAssociationSet`
   , [_xN]: _cBAS }], [2, { [_eQN]: `IsDefault`
   , [_xN]: _iDs }], [() => VpcEncryptionControl$, { [_eQN]: `EncryptionControl`
   , [_xN]: _eCn }], [() => TagList, { [_eQN]: `TagSet`
@@ -24843,7 +25183,7 @@ export var VpcEndpoint$: StaticStructureSchema = [3, n0, _VE,
   , [_xN]: _iPSpvr }], [() => SubnetIpPrefixesList, { [_eQN]: `Ipv6PrefixSet`
   , [_xN]: _iPSpvre }], [0, { [_eQN]: `FailureReason`
   , [_xN]: _fR }], [0, { [_eQN]: `ServiceNetworkArn`
-  , [_xN]: _sNA }], [0, { [_eQN]: `ResourceConfigurationArn`
+  , [_xN]: _sNAe }], [0, { [_eQN]: `ResourceConfigurationArn`
   , [_xN]: _rCA }], [0, { [_eQN]: `ServiceRegion`
   , [_xN]: _sR }]]
 ];
@@ -24853,7 +25193,7 @@ export var VpcEndpointAssociation$: StaticStructureSchema = [3, n0, _VEAp,
   [[0, { [_eQN]: `Id`
   , [_xN]: _i }], [0, { [_eQN]: `VpcEndpointId`
   , [_xN]: _vEI }], [0, { [_eQN]: `ServiceNetworkArn`
-  , [_xN]: _sNA }], [0, { [_eQN]: `ServiceNetworkName`
+  , [_xN]: _sNAe }], [0, { [_eQN]: `ServiceNetworkName`
   , [_xN]: _sNN }], [0, { [_eQN]: `AssociatedResourceAccessibility`
   , [_xN]: _aRAs }], [0, { [_eQN]: `FailureReason`
   , [_xN]: _fR }], [0, { [_eQN]: `FailureCode`
@@ -26027,6 +26367,22 @@ var InstancePrivateIpAddressList: StaticListSchema = [1, n0, _IPIAL,
   0, [() => InstancePrivateIpAddress$,
     { [_xN]: _it }]
 ];
+var InstanceSecondaryInterfaceList: StaticListSchema = [1, n0, _ISIL,
+  0, [() => InstanceSecondaryInterface$,
+    { [_xN]: _it }]
+];
+var InstanceSecondaryInterfacePrivateIpAddressList: StaticListSchema = [1, n0, _ISIPIAL,
+  0, [() => InstanceSecondaryInterfacePrivateIpAddress$,
+    { [_xN]: _it }]
+];
+var InstanceSecondaryInterfacePrivateIpAddressListRequest: StaticListSchema = [1, n0, _ISIPIALR,
+  0, [() => InstanceSecondaryInterfacePrivateIpAddressRequest$,
+    { [_xN]: _it }]
+];
+var InstanceSecondaryInterfaceSpecificationListRequest: StaticListSchema = [1, n0, _ISISLR,
+  0, [() => InstanceSecondaryInterfaceSpecificationRequest$,
+    { [_xN]: _it }]
+];
 var InstanceSet: StaticListSchema = [1, n0, _ISnstan,
   0, [() => InstanceTopology$,
     { [_xN]: _it }]
@@ -26344,6 +26700,14 @@ var LaunchTemplateInstanceNetworkInterfaceSpecificationList: StaticListSchema = 
 var LaunchTemplateInstanceNetworkInterfaceSpecificationRequestList: StaticListSchema = [1, n0, _LTINISRL,
   0, [() => LaunchTemplateInstanceNetworkInterfaceSpecificationRequest$,
     { [_xN]: _INIS }]
+];
+var LaunchTemplateInstanceSecondaryInterfaceSpecificationList: StaticListSchema = [1, n0, _LTISISL,
+  0, [() => LaunchTemplateInstanceSecondaryInterfaceSpecification$,
+    { [_xN]: _it }]
+];
+var LaunchTemplateInstanceSecondaryInterfaceSpecificationRequestList: StaticListSchema = [1, n0, _LTISISRL,
+  0, [() => LaunchTemplateInstanceSecondaryInterfaceSpecificationRequest$,
+    { [_xN]: _ISIS }]
 ];
 var LaunchTemplateLicenseList: StaticListSchema = [1, n0, _LTLL,
   0, [() => LaunchTemplateLicenseConfiguration$,
@@ -27085,6 +27449,50 @@ var ScheduledInstancesSecurityGroupIdSet: StaticListSchema = [1, n0, _SISGIS,
   0, [0,
     { [_xN]: _SGI }]
 ];
+var SecondaryInterfaceIdList: StaticListSchema = [1, n0, _SIIL,
+  0, [0,
+    { [_xN]: _it }]
+];
+var SecondaryInterfaceIpv4AddressList: StaticListSchema = [1, n0, _SIIALe,
+  0, [() => SecondaryInterfaceIpv4Address$,
+    { [_xN]: _it }]
+];
+var SecondaryInterfaceList: StaticListSchema = [1, n0, _SIL,
+  0, [() => SecondaryInterface$,
+    { [_xN]: _it }]
+];
+var SecondaryInterfacePrivateIpAddressSpecificationList: StaticListSchema = [1, n0, _SIPIASL,
+  0, [() => SecondaryInterfacePrivateIpAddressSpecification$,
+    { [_xN]: _it }]
+];
+var SecondaryInterfacePrivateIpAddressSpecificationListRequest: StaticListSchema = [1, n0, _SIPIASLR,
+  0, [() => SecondaryInterfacePrivateIpAddressSpecificationRequest$,
+    { [_xN]: _SIPIAS }]
+];
+var SecondaryNetworkIdList: StaticListSchema = [1, n0, _SNIL,
+  0, [0,
+    { [_xN]: _it }]
+];
+var SecondaryNetworkIpv4CidrBlockAssociationList: StaticListSchema = [1, n0, _SNICBAL,
+  0, [() => SecondaryNetworkIpv4CidrBlockAssociation$,
+    { [_xN]: _it }]
+];
+var SecondaryNetworkList: StaticListSchema = [1, n0, _SNL,
+  0, [() => SecondaryNetwork$,
+    { [_xN]: _it }]
+];
+var SecondarySubnetIdList: StaticListSchema = [1, n0, _SSIL,
+  0, [0,
+    { [_xN]: _it }]
+];
+var SecondarySubnetIpv4CidrBlockAssociationList: StaticListSchema = [1, n0, _SSICBAL,
+  0, [() => SecondarySubnetIpv4CidrBlockAssociation$,
+    { [_xN]: _it }]
+];
+var SecondarySubnetList: StaticListSchema = [1, n0, _SSL,
+  0, [() => SecondarySubnet$,
+    { [_xN]: _it }]
+];
 var SecurityGroupForVpcList: StaticListSchema = [1, n0, _SGFVL,
   0, [() => SecurityGroupForVpc$,
     { [_xN]: _it }]
@@ -27237,7 +27645,7 @@ var SubnetConfigurationsList: StaticListSchema = [1, n0, _SCL,
   0, [() => SubnetConfiguration$,
     { [_xN]: _it }]
 ];
-var SubnetIdList: StaticListSchema = [1, n0, _SIL,
+var SubnetIdList: StaticListSchema = [1, n0, _SILu,
   0, [0,
     { [_xN]: _ASIs }]
 ];
@@ -28170,6 +28578,12 @@ export var CreateRouteServerPeer$: StaticOperationSchema = [9, n0, _CRSP,
 export var CreateRouteTable$: StaticOperationSchema = [9, n0, _CRTr,
   0, () => CreateRouteTableRequest$, () => CreateRouteTableResult$
 ];
+export var CreateSecondaryNetwork$: StaticOperationSchema = [9, n0, _CSN,
+  0, () => CreateSecondaryNetworkRequest$, () => CreateSecondaryNetworkResult$
+];
+export var CreateSecondarySubnet$: StaticOperationSchema = [9, n0, _CSS,
+  0, () => CreateSecondarySubnetRequest$, () => CreateSecondarySubnetResult$
+];
 export var CreateSecurityGroup$: StaticOperationSchema = [9, n0, _CSG,
   0, () => CreateSecurityGroupRequest$, () => CreateSecurityGroupResult$
 ];
@@ -28445,6 +28859,12 @@ export var DeleteRouteServerPeer$: StaticOperationSchema = [9, n0, _DRSP,
 ];
 export var DeleteRouteTable$: StaticOperationSchema = [9, n0, _DRT,
   0, () => DeleteRouteTableRequest$, () => __Unit
+];
+export var DeleteSecondaryNetwork$: StaticOperationSchema = [9, n0, _DSN,
+  0, () => DeleteSecondaryNetworkRequest$, () => DeleteSecondaryNetworkResult$
+];
+export var DeleteSecondarySubnet$: StaticOperationSchema = [9, n0, _DSS,
+  0, () => DeleteSecondarySubnetRequest$, () => DeleteSecondarySubnetResult$
 ];
 export var DeleteSecurityGroup$: StaticOperationSchema = [9, n0, _DSG,
   0, () => DeleteSecurityGroupRequest$, () => DeleteSecurityGroupResult$
@@ -28950,6 +29370,15 @@ export var DescribeScheduledInstanceAvailability$: StaticOperationSchema = [9, n
 export var DescribeScheduledInstances$: StaticOperationSchema = [9, n0, _DSI,
   0, () => DescribeScheduledInstancesRequest$, () => DescribeScheduledInstancesResult$
 ];
+export var DescribeSecondaryInterfaces$: StaticOperationSchema = [9, n0, _DSIe,
+  0, () => DescribeSecondaryInterfacesRequest$, () => DescribeSecondaryInterfacesResult$
+];
+export var DescribeSecondaryNetworks$: StaticOperationSchema = [9, n0, _DSNe,
+  0, () => DescribeSecondaryNetworksRequest$, () => DescribeSecondaryNetworksResult$
+];
+export var DescribeSecondarySubnets$: StaticOperationSchema = [9, n0, _DSSe,
+  0, () => DescribeSecondarySubnetsRequest$, () => DescribeSecondarySubnetsResult$
+];
 export var DescribeSecurityGroupReferences$: StaticOperationSchema = [9, n0, _DSGRescr,
   0, () => DescribeSecurityGroupReferencesRequest$, () => DescribeSecurityGroupReferencesResult$
 ];
@@ -28986,7 +29415,7 @@ export var DescribeSpotFleetRequestHistory$: StaticOperationSchema = [9, n0, _DS
 export var DescribeSpotFleetRequests$: StaticOperationSchema = [9, n0, _DSFR,
   0, () => DescribeSpotFleetRequestsRequest$, () => DescribeSpotFleetRequestsResponse$
 ];
-export var DescribeSpotInstanceRequests$: StaticOperationSchema = [9, n0, _DSIRes,
+export var DescribeSpotInstanceRequests$: StaticOperationSchema = [9, n0, _DSIRescr,
   0, () => DescribeSpotInstanceRequestsRequest$, () => DescribeSpotInstanceRequestsResult$
 ];
 export var DescribeSpotPriceHistory$: StaticOperationSchema = [9, n0, _DSPH,

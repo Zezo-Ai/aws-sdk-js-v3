@@ -128,6 +128,9 @@ export const ResourceType = {
   route_server_endpoint: "route-server-endpoint",
   route_server_peer: "route-server-peer",
   route_table: "route-table",
+  secondary_interface: "secondary-interface",
+  secondary_network: "secondary-network",
+  secondary_subnet: "secondary-subnet",
   security_group: "security-group",
   security_group_rule: "security-group-rule",
   service_link_virtual_interface: "service-link-virtual-interface",
@@ -3812,6 +3815,18 @@ export type InstanceBandwidthWeighting = (typeof InstanceBandwidthWeighting)[key
  * @public
  * @enum
  */
+export const SecondaryInterfaceType = {
+  SECONDARY: "secondary",
+} as const;
+/**
+ * @public
+ */
+export type SecondaryInterfaceType = (typeof SecondaryInterfaceType)[keyof typeof SecondaryInterfaceType];
+
+/**
+ * @public
+ * @enum
+ */
 export const LaunchTemplateInstanceMetadataOptionsState = {
   applied: "applied",
   pending: "pending",
@@ -4346,6 +4361,88 @@ export const RouteState = {
  * @public
  */
 export type RouteState = (typeof RouteState)[keyof typeof RouteState];
+
+/**
+ * @public
+ * @enum
+ */
+export const SecondaryNetworkType = {
+  rdma: "rdma",
+} as const;
+/**
+ * @public
+ */
+export type SecondaryNetworkType = (typeof SecondaryNetworkType)[keyof typeof SecondaryNetworkType];
+
+/**
+ * @public
+ * @enum
+ */
+export const SecondaryNetworkCidrBlockAssociationState = {
+  associated: "associated",
+  associating: "associating",
+  association_failed: "association-failed",
+  disassociated: "disassociated",
+  disassociating: "disassociating",
+  disassociation_failed: "disassociation-failed",
+} as const;
+/**
+ * @public
+ */
+export type SecondaryNetworkCidrBlockAssociationState =
+  (typeof SecondaryNetworkCidrBlockAssociationState)[keyof typeof SecondaryNetworkCidrBlockAssociationState];
+
+/**
+ * @public
+ * @enum
+ */
+export const SecondaryNetworkState = {
+  create_complete: "create-complete",
+  create_failed: "create-failed",
+  create_in_progress: "create-in-progress",
+  delete_complete: "delete-complete",
+  delete_failed: "delete-failed",
+  delete_in_progress: "delete-in-progress",
+} as const;
+/**
+ * @public
+ */
+export type SecondaryNetworkState = (typeof SecondaryNetworkState)[keyof typeof SecondaryNetworkState];
+
+/**
+ * @public
+ * @enum
+ */
+export const SecondarySubnetCidrBlockAssociationState = {
+  associated: "associated",
+  associating: "associating",
+  association_failed: "association-failed",
+  disassociated: "disassociated",
+  disassociating: "disassociating",
+  disassociation_failed: "disassociation-failed",
+} as const;
+/**
+ * @public
+ */
+export type SecondarySubnetCidrBlockAssociationState =
+  (typeof SecondarySubnetCidrBlockAssociationState)[keyof typeof SecondarySubnetCidrBlockAssociationState];
+
+/**
+ * @public
+ * @enum
+ */
+export const SecondarySubnetState = {
+  create_complete: "create-complete",
+  create_failed: "create-failed",
+  create_in_progress: "create-in-progress",
+  delete_complete: "delete-complete",
+  delete_failed: "delete-failed",
+  delete_in_progress: "delete-in-progress",
+} as const;
+/**
+ * @public
+ */
+export type SecondarySubnetState = (typeof SecondarySubnetState)[keyof typeof SecondarySubnetState];
 
 /**
  * @public
@@ -6113,6 +6210,19 @@ export const MonitoringState = {
  * @public
  */
 export type MonitoringState = (typeof MonitoringState)[keyof typeof MonitoringState];
+
+/**
+ * @public
+ * @enum
+ */
+export const SecondaryInterfaceStatus = {
+  available: "available",
+  in_use: "in-use",
+} as const;
+/**
+ * @public
+ */
+export type SecondaryInterfaceStatus = (typeof SecondaryInterfaceStatus)[keyof typeof SecondaryInterfaceStatus];
 
 /**
  * @public

@@ -8,7 +8,7 @@ import { commonParams } from "../endpoint/EndpointParameters";
 import type {
   ModifyTransitGatewayVpcAttachmentRequest,
   ModifyTransitGatewayVpcAttachmentResult,
-} from "../models/models_6";
+} from "../models/models_7";
 import { ModifyTransitGatewayVpcAttachment$ } from "../schemas/schemas_0";
 
 /**

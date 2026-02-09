@@ -5,8 +5,7 @@ import type { MetadataBearer as __MetadataBearer } from "@smithy/types";
 
 import type { EC2ClientResolvedConfig, ServiceInputTypes, ServiceOutputTypes } from "../EC2Client";
 import { commonParams } from "../endpoint/EndpointParameters";
-import type { CreateSpotDatafeedSubscriptionRequest } from "../models/models_1";
-import type { CreateSpotDatafeedSubscriptionResult } from "../models/models_2";
+import type { CreateSpotDatafeedSubscriptionRequest, CreateSpotDatafeedSubscriptionResult } from "../models/models_2";
 import { CreateSpotDatafeedSubscription$ } from "../schemas/schemas_0";
 
 /**

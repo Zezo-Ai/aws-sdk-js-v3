@@ -690,6 +690,14 @@ import {
   CreateRouteTableCommand,
   CreateRouteTableRequest$,
   CreateRouteTableResult$,
+  CreateSecondaryNetwork$,
+  CreateSecondaryNetworkCommand,
+  CreateSecondaryNetworkRequest$,
+  CreateSecondaryNetworkResult$,
+  CreateSecondarySubnet$,
+  CreateSecondarySubnetCommand,
+  CreateSecondarySubnetRequest$,
+  CreateSecondarySubnetResult$,
   CreateSecurityGroup$,
   CreateSecurityGroupCommand,
   CreateSecurityGroupRequest$,
@@ -1082,6 +1090,14 @@ import {
   DeleteRouteTable$,
   DeleteRouteTableCommand,
   DeleteRouteTableRequest$,
+  DeleteSecondaryNetwork$,
+  DeleteSecondaryNetworkCommand,
+  DeleteSecondaryNetworkRequest$,
+  DeleteSecondaryNetworkResult$,
+  DeleteSecondarySubnet$,
+  DeleteSecondarySubnetCommand,
+  DeleteSecondarySubnetRequest$,
+  DeleteSecondarySubnetResult$,
   DeleteSecurityGroup$,
   DeleteSecurityGroupCommand,
   DeleteSecurityGroupRequest$,
@@ -1751,6 +1767,18 @@ import {
   DescribeScheduledInstancesCommand,
   DescribeScheduledInstancesRequest$,
   DescribeScheduledInstancesResult$,
+  DescribeSecondaryInterfaces$,
+  DescribeSecondaryInterfacesCommand,
+  DescribeSecondaryInterfacesRequest$,
+  DescribeSecondaryInterfacesResult$,
+  DescribeSecondaryNetworks$,
+  DescribeSecondaryNetworksCommand,
+  DescribeSecondaryNetworksRequest$,
+  DescribeSecondaryNetworksResult$,
+  DescribeSecondarySubnets$,
+  DescribeSecondarySubnetsCommand,
+  DescribeSecondarySubnetsRequest$,
+  DescribeSecondarySubnetsResult$,
   DescribeSecurityGroupReferences$,
   DescribeSecurityGroupReferencesCommand,
   DescribeSecurityGroupReferencesRequest$,
@@ -2846,6 +2874,11 @@ import {
   InstanceRequirements$,
   InstanceRequirementsRequest$,
   InstanceRequirementsWithMetadataRequest$,
+  InstanceSecondaryInterface$,
+  InstanceSecondaryInterfaceAttachment$,
+  InstanceSecondaryInterfacePrivateIpAddress$,
+  InstanceSecondaryInterfacePrivateIpAddressRequest$,
+  InstanceSecondaryInterfaceSpecificationRequest$,
   InstanceSpecification$,
   InstanceState$,
   InstanceStateChange$,
@@ -3008,6 +3041,8 @@ import {
   LaunchTemplateInstanceMetadataTagsState,
   LaunchTemplateInstanceNetworkInterfaceSpecification$,
   LaunchTemplateInstanceNetworkInterfaceSpecificationRequest$,
+  LaunchTemplateInstanceSecondaryInterfaceSpecification$,
+  LaunchTemplateInstanceSecondaryInterfaceSpecificationRequest$,
   LaunchTemplateLicenseConfiguration$,
   LaunchTemplateLicenseConfigurationRequest$,
   LaunchTemplateNetworkPerformanceOptions$,
@@ -3572,6 +3607,9 @@ import {
   paginateDescribeRouteTables,
   paginateDescribeScheduledInstanceAvailability,
   paginateDescribeScheduledInstances,
+  paginateDescribeSecondaryInterfaces,
+  paginateDescribeSecondaryNetworks,
+  paginateDescribeSecondarySubnets,
   paginateDescribeSecurityGroupRules,
   paginateDescribeSecurityGroups,
   paginateDescribeSecurityGroupVpcAssociations,
@@ -4028,6 +4066,22 @@ import {
   SearchTransitGatewayRoutesCommand,
   SearchTransitGatewayRoutesRequest$,
   SearchTransitGatewayRoutesResult$,
+  SecondaryInterface$,
+  SecondaryInterfaceAttachment$,
+  SecondaryInterfaceIpv4Address$,
+  SecondaryInterfacePrivateIpAddressSpecification$,
+  SecondaryInterfacePrivateIpAddressSpecificationRequest$,
+  SecondaryInterfaceStatus,
+  SecondaryInterfaceType,
+  SecondaryNetwork$,
+  SecondaryNetworkCidrBlockAssociationState,
+  SecondaryNetworkIpv4CidrBlockAssociation$,
+  SecondaryNetworkState,
+  SecondaryNetworkType,
+  SecondarySubnet$,
+  SecondarySubnetCidrBlockAssociationState,
+  SecondarySubnetIpv4CidrBlockAssociation$,
+  SecondarySubnetState,
   SecurityGroup$,
   SecurityGroupForVpc$,
   SecurityGroupIdentifier$,
@@ -4434,6 +4488,10 @@ import {
   waitForNatGatewayDeleted,
   waitForNetworkInterfaceAvailable,
   waitForPasswordDataAvailable,
+  waitForSecondaryNetworkCreateComplete,
+  waitForSecondaryNetworkDeleteComplete,
+  waitForSecondarySubnetCreateComplete,
+  waitForSecondarySubnetDeleteComplete,
   waitForSecurityGroupExists,
   waitForSecurityGroupVpcAssociationAssociated,
   waitForSecurityGroupVpcAssociationDisassociated,
@@ -4473,6 +4531,10 @@ import {
   waitUntilNatGatewayDeleted,
   waitUntilNetworkInterfaceAvailable,
   waitUntilPasswordDataAvailable,
+  waitUntilSecondaryNetworkCreateComplete,
+  waitUntilSecondaryNetworkDeleteComplete,
+  waitUntilSecondarySubnetCreateComplete,
+  waitUntilSecondarySubnetDeleteComplete,
   waitUntilSecurityGroupExists,
   waitUntilSecurityGroupVpcAssociationAssociated,
   waitUntilSecurityGroupVpcAssociationDisassociated,
@@ -4746,6 +4808,10 @@ assert(typeof CreateRouteServerPeerCommand === "function");
 assert(typeof CreateRouteServerPeer$ === "object");
 assert(typeof CreateRouteTableCommand === "function");
 assert(typeof CreateRouteTable$ === "object");
+assert(typeof CreateSecondaryNetworkCommand === "function");
+assert(typeof CreateSecondaryNetwork$ === "object");
+assert(typeof CreateSecondarySubnetCommand === "function");
+assert(typeof CreateSecondarySubnet$ === "object");
 assert(typeof CreateSecurityGroupCommand === "function");
 assert(typeof CreateSecurityGroup$ === "object");
 assert(typeof CreateSnapshotCommand === "function");
@@ -4930,6 +4996,10 @@ assert(typeof DeleteRouteServerPeerCommand === "function");
 assert(typeof DeleteRouteServerPeer$ === "object");
 assert(typeof DeleteRouteTableCommand === "function");
 assert(typeof DeleteRouteTable$ === "object");
+assert(typeof DeleteSecondaryNetworkCommand === "function");
+assert(typeof DeleteSecondaryNetwork$ === "object");
+assert(typeof DeleteSecondarySubnetCommand === "function");
+assert(typeof DeleteSecondarySubnet$ === "object");
 assert(typeof DeleteSecurityGroupCommand === "function");
 assert(typeof DeleteSecurityGroup$ === "object");
 assert(typeof DeleteSnapshotCommand === "function");
@@ -5266,6 +5336,12 @@ assert(typeof DescribeScheduledInstanceAvailabilityCommand === "function");
 assert(typeof DescribeScheduledInstanceAvailability$ === "object");
 assert(typeof DescribeScheduledInstancesCommand === "function");
 assert(typeof DescribeScheduledInstances$ === "object");
+assert(typeof DescribeSecondaryInterfacesCommand === "function");
+assert(typeof DescribeSecondaryInterfaces$ === "object");
+assert(typeof DescribeSecondaryNetworksCommand === "function");
+assert(typeof DescribeSecondaryNetworks$ === "object");
+assert(typeof DescribeSecondarySubnetsCommand === "function");
+assert(typeof DescribeSecondarySubnets$ === "object");
 assert(typeof DescribeSecurityGroupReferencesCommand === "function");
 assert(typeof DescribeSecurityGroupReferences$ === "object");
 assert(typeof DescribeSecurityGroupRulesCommand === "function");
@@ -6370,6 +6446,10 @@ assert(typeof CreateRouteServerRequest$ === "object");
 assert(typeof CreateRouteServerResult$ === "object");
 assert(typeof CreateRouteTableRequest$ === "object");
 assert(typeof CreateRouteTableResult$ === "object");
+assert(typeof CreateSecondaryNetworkRequest$ === "object");
+assert(typeof CreateSecondaryNetworkResult$ === "object");
+assert(typeof CreateSecondarySubnetRequest$ === "object");
+assert(typeof CreateSecondarySubnetResult$ === "object");
 assert(typeof CreateSecurityGroupRequest$ === "object");
 assert(typeof CreateSecurityGroupResult$ === "object");
 assert(typeof CreateSnapshotRequest$ === "object");
@@ -6569,6 +6649,10 @@ assert(typeof DeleteRouteServerPeerResult$ === "object");
 assert(typeof DeleteRouteServerRequest$ === "object");
 assert(typeof DeleteRouteServerResult$ === "object");
 assert(typeof DeleteRouteTableRequest$ === "object");
+assert(typeof DeleteSecondaryNetworkRequest$ === "object");
+assert(typeof DeleteSecondaryNetworkResult$ === "object");
+assert(typeof DeleteSecondarySubnetRequest$ === "object");
+assert(typeof DeleteSecondarySubnetResult$ === "object");
 assert(typeof DeleteSecurityGroupRequest$ === "object");
 assert(typeof DeleteSecurityGroupResult$ === "object");
 assert(typeof DeleteSnapshotRequest$ === "object");
@@ -6902,6 +6986,12 @@ assert(typeof DescribeScheduledInstanceAvailabilityRequest$ === "object");
 assert(typeof DescribeScheduledInstanceAvailabilityResult$ === "object");
 assert(typeof DescribeScheduledInstancesRequest$ === "object");
 assert(typeof DescribeScheduledInstancesResult$ === "object");
+assert(typeof DescribeSecondaryInterfacesRequest$ === "object");
+assert(typeof DescribeSecondaryInterfacesResult$ === "object");
+assert(typeof DescribeSecondaryNetworksRequest$ === "object");
+assert(typeof DescribeSecondaryNetworksResult$ === "object");
+assert(typeof DescribeSecondarySubnetsRequest$ === "object");
+assert(typeof DescribeSecondarySubnetsResult$ === "object");
 assert(typeof DescribeSecurityGroupReferencesRequest$ === "object");
 assert(typeof DescribeSecurityGroupReferencesResult$ === "object");
 assert(typeof DescribeSecurityGroupRulesRequest$ === "object");
@@ -7492,6 +7582,11 @@ assert(typeof InstancePrivateIpAddress$ === "object");
 assert(typeof InstanceRequirements$ === "object");
 assert(typeof InstanceRequirementsRequest$ === "object");
 assert(typeof InstanceRequirementsWithMetadataRequest$ === "object");
+assert(typeof InstanceSecondaryInterface$ === "object");
+assert(typeof InstanceSecondaryInterfaceAttachment$ === "object");
+assert(typeof InstanceSecondaryInterfacePrivateIpAddress$ === "object");
+assert(typeof InstanceSecondaryInterfacePrivateIpAddressRequest$ === "object");
+assert(typeof InstanceSecondaryInterfaceSpecificationRequest$ === "object");
 assert(typeof InstanceSpecification$ === "object");
 assert(typeof InstanceState$ === "object");
 assert(typeof InstanceStateChange$ === "object");
@@ -7596,6 +7691,8 @@ assert(typeof LaunchTemplateInstanceMetadataOptions$ === "object");
 assert(typeof LaunchTemplateInstanceMetadataOptionsRequest$ === "object");
 assert(typeof LaunchTemplateInstanceNetworkInterfaceSpecification$ === "object");
 assert(typeof LaunchTemplateInstanceNetworkInterfaceSpecificationRequest$ === "object");
+assert(typeof LaunchTemplateInstanceSecondaryInterfaceSpecification$ === "object");
+assert(typeof LaunchTemplateInstanceSecondaryInterfaceSpecificationRequest$ === "object");
 assert(typeof LaunchTemplateLicenseConfiguration$ === "object");
 assert(typeof LaunchTemplateLicenseConfigurationRequest$ === "object");
 assert(typeof LaunchTemplateNetworkPerformanceOptions$ === "object");
@@ -8079,6 +8176,15 @@ assert(typeof SearchTransitGatewayMulticastGroupsRequest$ === "object");
 assert(typeof SearchTransitGatewayMulticastGroupsResult$ === "object");
 assert(typeof SearchTransitGatewayRoutesRequest$ === "object");
 assert(typeof SearchTransitGatewayRoutesResult$ === "object");
+assert(typeof SecondaryInterface$ === "object");
+assert(typeof SecondaryInterfaceAttachment$ === "object");
+assert(typeof SecondaryInterfaceIpv4Address$ === "object");
+assert(typeof SecondaryInterfacePrivateIpAddressSpecification$ === "object");
+assert(typeof SecondaryInterfacePrivateIpAddressSpecificationRequest$ === "object");
+assert(typeof SecondaryNetwork$ === "object");
+assert(typeof SecondaryNetworkIpv4CidrBlockAssociation$ === "object");
+assert(typeof SecondarySubnet$ === "object");
+assert(typeof SecondarySubnetIpv4CidrBlockAssociation$ === "object");
 assert(typeof SecurityGroup$ === "object");
 assert(typeof SecurityGroupForVpc$ === "object");
 assert(typeof SecurityGroupIdentifier$ === "object");
@@ -8647,6 +8753,13 @@ assert(typeof RouteTableAssociationStateCode === "object");
 assert(typeof RuleAction === "object");
 assert(typeof Schedule === "object");
 assert(typeof Scope === "object");
+assert(typeof SecondaryInterfaceStatus === "object");
+assert(typeof SecondaryInterfaceType === "object");
+assert(typeof SecondaryNetworkCidrBlockAssociationState === "object");
+assert(typeof SecondaryNetworkState === "object");
+assert(typeof SecondaryNetworkType === "object");
+assert(typeof SecondarySubnetCidrBlockAssociationState === "object");
+assert(typeof SecondarySubnetState === "object");
 assert(typeof SecurityGroupReferencingSupportValue === "object");
 assert(typeof SecurityGroupVpcAssociationState === "object");
 assert(typeof SelfServicePortal === "object");
@@ -8780,6 +8893,10 @@ assert(typeof waitForNatGatewayAvailable === "function");
 assert(typeof waitForNatGatewayDeleted === "function");
 assert(typeof waitForNetworkInterfaceAvailable === "function");
 assert(typeof waitForPasswordDataAvailable === "function");
+assert(typeof waitForSecondaryNetworkCreateComplete === "function");
+assert(typeof waitForSecondaryNetworkDeleteComplete === "function");
+assert(typeof waitForSecondarySubnetCreateComplete === "function");
+assert(typeof waitForSecondarySubnetDeleteComplete === "function");
 assert(typeof waitForSecurityGroupExists === "function");
 assert(typeof waitForSecurityGroupVpcAssociationAssociated === "function");
 assert(typeof waitForSecurityGroupVpcAssociationDisassociated === "function");
@@ -8819,6 +8936,10 @@ assert(typeof waitUntilNatGatewayAvailable === "function");
 assert(typeof waitUntilNatGatewayDeleted === "function");
 assert(typeof waitUntilNetworkInterfaceAvailable === "function");
 assert(typeof waitUntilPasswordDataAvailable === "function");
+assert(typeof waitUntilSecondaryNetworkCreateComplete === "function");
+assert(typeof waitUntilSecondaryNetworkDeleteComplete === "function");
+assert(typeof waitUntilSecondarySubnetCreateComplete === "function");
+assert(typeof waitUntilSecondarySubnetDeleteComplete === "function");
 assert(typeof waitUntilSecurityGroupExists === "function");
 assert(typeof waitUntilSecurityGroupVpcAssociationAssociated === "function");
 assert(typeof waitUntilSecurityGroupVpcAssociationDisassociated === "function");
@@ -8927,6 +9048,9 @@ assert(typeof paginateDescribeRouteServers === "function");
 assert(typeof paginateDescribeRouteTables === "function");
 assert(typeof paginateDescribeScheduledInstanceAvailability === "function");
 assert(typeof paginateDescribeScheduledInstances === "function");
+assert(typeof paginateDescribeSecondaryInterfaces === "function");
+assert(typeof paginateDescribeSecondaryNetworks === "function");
+assert(typeof paginateDescribeSecondarySubnets === "function");
 assert(typeof paginateDescribeSecurityGroupRules === "function");
 assert(typeof paginateDescribeSecurityGroupVpcAssociations === "function");
 assert(typeof paginateDescribeSecurityGroups === "function");

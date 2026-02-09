@@ -8,7 +8,7 @@ import { commonParams } from "../endpoint/EndpointParameters";
 import type {
   ModifyVerifiedAccessEndpointPolicyRequest,
   ModifyVerifiedAccessEndpointPolicyResult,
-} from "../models/models_6";
+} from "../models/models_7";
 import { ModifyVerifiedAccessEndpointPolicy$ } from "../schemas/schemas_0";
 
 /**

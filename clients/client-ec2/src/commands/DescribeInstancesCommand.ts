@@ -5,8 +5,7 @@ import type { MetadataBearer as __MetadataBearer } from "@smithy/types";
 
 import type { EC2ClientResolvedConfig, ServiceInputTypes, ServiceOutputTypes } from "../EC2Client";
 import { commonParams } from "../endpoint/EndpointParameters";
-import type { DescribeInstancesRequest } from "../models/models_3";
-import type { DescribeInstancesResult } from "../models/models_4";
+import type { DescribeInstancesRequest, DescribeInstancesResult } from "../models/models_4";
 import { DescribeInstances$ } from "../schemas/schemas_0";
 
 /**
@@ -299,6 +298,31 @@ export interface DescribeInstancesCommandOutput extends DescribeInstancesResult,
  * //             BandwidthWeighting: "default" || "vpc-1" || "ebs-1",
  * //           },
  * //           Operator: "<OperatorResponse>",
+ * //           SecondaryInterfaces: [ // InstanceSecondaryInterfaceList
+ * //             { // InstanceSecondaryInterface
+ * //               Attachment: { // InstanceSecondaryInterfaceAttachment
+ * //                 AttachTime: new Date("TIMESTAMP"),
+ * //                 AttachmentId: "STRING_VALUE",
+ * //                 DeleteOnTermination: true || false,
+ * //                 DeviceIndex: Number("int"),
+ * //                 Status: "attaching" || "attached" || "detaching" || "detached",
+ * //                 NetworkCardIndex: Number("int"),
+ * //               },
+ * //               MacAddress: "STRING_VALUE",
+ * //               SecondaryInterfaceId: "STRING_VALUE",
+ * //               OwnerId: "STRING_VALUE",
+ * //               PrivateIpAddresses: [ // InstanceSecondaryInterfacePrivateIpAddressList
+ * //                 { // InstanceSecondaryInterfacePrivateIpAddress
+ * //                   PrivateIpAddress: "STRING_VALUE",
+ * //                 },
+ * //               ],
+ * //               SourceDestCheck: true || false,
+ * //               Status: "available" || "in-use",
+ * //               SecondarySubnetId: "STRING_VALUE",
+ * //               SecondaryNetworkId: "STRING_VALUE",
+ * //               InterfaceType: "secondary",
+ * //             },
+ * //           ],
  * //           InstanceId: "STRING_VALUE",
  * //           ImageId: "STRING_VALUE",
  * //           State: { // InstanceState

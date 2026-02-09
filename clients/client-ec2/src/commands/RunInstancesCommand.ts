@@ -160,7 +160,7 @@ export interface RunInstancesCommandOutput extends Reservation, __MetadataBearer
  *   ],
  *   TagSpecifications: [ // TagSpecificationList
  *     { // TagSpecification
- *       ResourceType: "capacity-reservation" || "client-vpn-endpoint" || "customer-gateway" || "carrier-gateway" || "coip-pool" || "declarative-policies-report" || "dedicated-host" || "dhcp-options" || "egress-only-internet-gateway" || "elastic-ip" || "elastic-gpu" || "export-image-task" || "export-instance-task" || "fleet" || "fpga-image" || "host-reservation" || "image" || "image-usage-report" || "import-image-task" || "import-snapshot-task" || "instance" || "instance-event-window" || "internet-gateway" || "ipam" || "ipam-pool" || "ipam-scope" || "ipv4pool-ec2" || "ipv6pool-ec2" || "key-pair" || "launch-template" || "local-gateway" || "local-gateway-route-table" || "local-gateway-virtual-interface" || "local-gateway-virtual-interface-group" || "local-gateway-route-table-vpc-association" || "local-gateway-route-table-virtual-interface-group-association" || "natgateway" || "network-acl" || "network-interface" || "network-insights-analysis" || "network-insights-path" || "network-insights-access-scope" || "network-insights-access-scope-analysis" || "outpost-lag" || "placement-group" || "prefix-list" || "replace-root-volume-task" || "reserved-instances" || "route-table" || "security-group" || "security-group-rule" || "service-link-virtual-interface" || "snapshot" || "spot-fleet-request" || "spot-instances-request" || "subnet" || "subnet-cidr-reservation" || "traffic-mirror-filter" || "traffic-mirror-session" || "traffic-mirror-target" || "transit-gateway" || "transit-gateway-attachment" || "transit-gateway-connect-peer" || "transit-gateway-multicast-domain" || "transit-gateway-policy-table" || "transit-gateway-metering-policy" || "transit-gateway-route-table" || "transit-gateway-route-table-announcement" || "volume" || "vpc" || "vpc-endpoint" || "vpc-endpoint-connection" || "vpc-endpoint-service" || "vpc-endpoint-service-permission" || "vpc-peering-connection" || "vpn-connection" || "vpn-gateway" || "vpc-flow-log" || "capacity-reservation-fleet" || "traffic-mirror-filter-rule" || "vpc-endpoint-connection-device-type" || "verified-access-instance" || "verified-access-group" || "verified-access-endpoint" || "verified-access-policy" || "verified-access-trust-provider" || "vpn-connection-device-type" || "vpc-block-public-access-exclusion" || "vpc-encryption-control" || "route-server" || "route-server-endpoint" || "route-server-peer" || "ipam-resource-discovery" || "ipam-resource-discovery-association" || "instance-connect-endpoint" || "verified-access-endpoint-target" || "ipam-external-resource-verification-token" || "capacity-block" || "mac-modification-task" || "ipam-prefix-list-resolver" || "ipam-policy" || "ipam-prefix-list-resolver-target" || "capacity-manager-data-export" || "vpn-concentrator",
+ *       ResourceType: "capacity-reservation" || "client-vpn-endpoint" || "customer-gateway" || "carrier-gateway" || "coip-pool" || "declarative-policies-report" || "dedicated-host" || "dhcp-options" || "egress-only-internet-gateway" || "elastic-ip" || "elastic-gpu" || "export-image-task" || "export-instance-task" || "fleet" || "fpga-image" || "host-reservation" || "image" || "image-usage-report" || "import-image-task" || "import-snapshot-task" || "instance" || "instance-event-window" || "internet-gateway" || "ipam" || "ipam-pool" || "ipam-scope" || "ipv4pool-ec2" || "ipv6pool-ec2" || "key-pair" || "launch-template" || "local-gateway" || "local-gateway-route-table" || "local-gateway-virtual-interface" || "local-gateway-virtual-interface-group" || "local-gateway-route-table-vpc-association" || "local-gateway-route-table-virtual-interface-group-association" || "natgateway" || "network-acl" || "network-interface" || "network-insights-analysis" || "network-insights-path" || "network-insights-access-scope" || "network-insights-access-scope-analysis" || "outpost-lag" || "placement-group" || "prefix-list" || "replace-root-volume-task" || "reserved-instances" || "route-table" || "security-group" || "security-group-rule" || "service-link-virtual-interface" || "snapshot" || "spot-fleet-request" || "spot-instances-request" || "subnet" || "subnet-cidr-reservation" || "traffic-mirror-filter" || "traffic-mirror-session" || "traffic-mirror-target" || "transit-gateway" || "transit-gateway-attachment" || "transit-gateway-connect-peer" || "transit-gateway-multicast-domain" || "transit-gateway-policy-table" || "transit-gateway-metering-policy" || "transit-gateway-route-table" || "transit-gateway-route-table-announcement" || "volume" || "vpc" || "vpc-endpoint" || "vpc-endpoint-connection" || "vpc-endpoint-service" || "vpc-endpoint-service-permission" || "vpc-peering-connection" || "vpn-connection" || "vpn-gateway" || "vpc-flow-log" || "capacity-reservation-fleet" || "traffic-mirror-filter-rule" || "vpc-endpoint-connection-device-type" || "verified-access-instance" || "verified-access-group" || "verified-access-endpoint" || "verified-access-policy" || "verified-access-trust-provider" || "vpn-connection-device-type" || "vpc-block-public-access-exclusion" || "vpc-encryption-control" || "route-server" || "route-server-endpoint" || "route-server-peer" || "ipam-resource-discovery" || "ipam-resource-discovery-association" || "instance-connect-endpoint" || "verified-access-endpoint-target" || "ipam-external-resource-verification-token" || "capacity-block" || "mac-modification-task" || "ipam-prefix-list-resolver" || "ipam-policy" || "ipam-prefix-list-resolver-target" || "secondary-interface" || "secondary-network" || "secondary-subnet" || "capacity-manager-data-export" || "vpn-concentrator",
  *       Tags: [ // TagList
  *         { // Tag
  *           Key: "STRING_VALUE",
@@ -233,6 +233,21 @@ export interface RunInstancesCommandOutput extends Reservation, __MetadataBearer
  *   Operator: { // OperatorRequest
  *     Principal: "STRING_VALUE",
  *   },
+ *   SecondaryInterfaces: [ // InstanceSecondaryInterfaceSpecificationListRequest
+ *     { // InstanceSecondaryInterfaceSpecificationRequest
+ *       DeleteOnTermination: true || false,
+ *       DeviceIndex: Number("int"),
+ *       PrivateIpAddresses: [ // InstanceSecondaryInterfacePrivateIpAddressListRequest
+ *         { // InstanceSecondaryInterfacePrivateIpAddressRequest
+ *           PrivateIpAddress: "STRING_VALUE", // required
+ *         },
+ *       ],
+ *       PrivateIpAddressCount: Number("int"),
+ *       SecondarySubnetId: "STRING_VALUE",
+ *       InterfaceType: "secondary",
+ *       NetworkCardIndex: Number("int"),
+ *     },
+ *   ],
  *   DryRun: true || false,
  *   DisableApiTermination: true || false,
  *   InstanceInitiatedShutdownBehavior: "stop" || "terminate",
@@ -512,6 +527,31 @@ export interface RunInstancesCommandOutput extends Reservation, __MetadataBearer
  * //         BandwidthWeighting: "default" || "vpc-1" || "ebs-1",
  * //       },
  * //       Operator: "<OperatorResponse>",
+ * //       SecondaryInterfaces: [ // InstanceSecondaryInterfaceList
+ * //         { // InstanceSecondaryInterface
+ * //           Attachment: { // InstanceSecondaryInterfaceAttachment
+ * //             AttachTime: new Date("TIMESTAMP"),
+ * //             AttachmentId: "STRING_VALUE",
+ * //             DeleteOnTermination: true || false,
+ * //             DeviceIndex: Number("int"),
+ * //             Status: "attaching" || "attached" || "detaching" || "detached",
+ * //             NetworkCardIndex: Number("int"),
+ * //           },
+ * //           MacAddress: "STRING_VALUE",
+ * //           SecondaryInterfaceId: "STRING_VALUE",
+ * //           OwnerId: "STRING_VALUE",
+ * //           PrivateIpAddresses: [ // InstanceSecondaryInterfacePrivateIpAddressList
+ * //             { // InstanceSecondaryInterfacePrivateIpAddress
+ * //               PrivateIpAddress: "STRING_VALUE",
+ * //             },
+ * //           ],
+ * //           SourceDestCheck: true || false,
+ * //           Status: "available" || "in-use",
+ * //           SecondarySubnetId: "STRING_VALUE",
+ * //           SecondaryNetworkId: "STRING_VALUE",
+ * //           InterfaceType: "secondary",
+ * //         },
+ * //       ],
  * //       InstanceId: "STRING_VALUE",
  * //       ImageId: "STRING_VALUE",
  * //       State: { // InstanceState

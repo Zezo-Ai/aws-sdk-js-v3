@@ -8,7 +8,7 @@ import { commonParams } from "../endpoint/EndpointParameters";
 import type {
   DeleteTransitGatewayMeteringPolicyEntryRequest,
   DeleteTransitGatewayMeteringPolicyEntryResult,
-} from "../models/models_2";
+} from "../models/models_3";
 import { DeleteTransitGatewayMeteringPolicyEntry$ } from "../schemas/schemas_0";
 
 /**

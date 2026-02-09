@@ -5,7 +5,7 @@ import type { MetadataBearer as __MetadataBearer } from "@smithy/types";
 
 import type { EC2ClientResolvedConfig, ServiceInputTypes, ServiceOutputTypes } from "../EC2Client";
 import { commonParams } from "../endpoint/EndpointParameters";
-import type { DeleteTransitGatewayRequest, DeleteTransitGatewayResult } from "../models/models_2";
+import type { DeleteTransitGatewayRequest, DeleteTransitGatewayResult } from "../models/models_3";
 import { DeleteTransitGateway$ } from "../schemas/schemas_0";
 
 /**

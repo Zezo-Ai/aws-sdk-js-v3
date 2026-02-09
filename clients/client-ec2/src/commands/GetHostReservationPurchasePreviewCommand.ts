@@ -8,7 +8,7 @@ import { commonParams } from "../endpoint/EndpointParameters";
 import type {
   GetHostReservationPurchasePreviewRequest,
   GetHostReservationPurchasePreviewResult,
-} from "../models/models_5";
+} from "../models/models_6";
 import { GetHostReservationPurchasePreview$ } from "../schemas/schemas_0";
 
 /**

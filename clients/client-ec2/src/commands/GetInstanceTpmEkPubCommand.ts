@@ -5,7 +5,7 @@ import type { MetadataBearer as __MetadataBearer } from "@smithy/types";
 
 import type { EC2ClientResolvedConfig, ServiceInputTypes, ServiceOutputTypes } from "../EC2Client";
 import { commonParams } from "../endpoint/EndpointParameters";
-import type { GetInstanceTpmEkPubRequest, GetInstanceTpmEkPubResult } from "../models/models_5";
+import type { GetInstanceTpmEkPubRequest, GetInstanceTpmEkPubResult } from "../models/models_6";
 import { GetInstanceTpmEkPub$ } from "../schemas/schemas_0";
 
 /**

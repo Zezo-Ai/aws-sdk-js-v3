@@ -6,6 +6,7 @@ import {
   BgpStatus,
   ConnectionNotificationState,
   ConnectionNotificationType,
+  CopyTagsFromSource,
   DatafeedSubscriptionState,
   DefaultRouteTableAssociationValue,
   DefaultRouteTablePropagationValue,
@@ -29,12 +30,18 @@ import {
   MulticastSupportValue,
   PayerResponsibility,
   ProtocolValue,
+  SecondaryNetworkType,
+  SecondarySubnetState,
   SecurityGroupReferencingSupportValue,
   ServiceConnectivityType,
   ServiceState,
   ServiceType,
+  SnapshotLocationEnum,
+  SnapshotState,
+  SSEType,
   State,
   StaticSourcesSupportValue,
+  StorageTier,
   SubnetCidrReservationType,
   TelemetryStatus,
   Tenancy,
@@ -42,6 +49,7 @@ import {
   TrafficMirrorNetworkService,
   TrafficMirrorRuleAction,
   TrafficMirrorTargetType,
+  TransferType,
   TransitGatewayAttachmentResourceType,
   TransitGatewayAttachmentState,
   TransitGatewayConnectPeerState,
@@ -95,30 +103,693 @@ import {
   UnsuccessfulItem,
   VpcAttachment,
 } from "./models_0";
-import type {
-  Ec2InstanceConnectEndpoint,
-  Ipam,
-  IpamExternalResourceVerificationToken,
-  IpamPolicy,
-  IpamPool,
-  IpamPrefixListResolver,
-  IpamPrefixListResolverTarget,
-  IpamResourceDiscovery,
-  IpamScope,
-  LaunchTemplate,
-  LocalGatewayRoute,
-  LocalGatewayRouteTable,
-  LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
-  LocalGatewayRouteTableVpcAssociation,
-  LocalGatewayVirtualInterface,
-  LocalGatewayVirtualInterfaceGroup,
-  ManagedPrefixList,
-  OperatorRequest,
-  RouteServer,
-  RouteServerEndpoint,
-  RouteServerPeer,
-  SpotInstanceStateFault,
+import {
+  type Ec2InstanceConnectEndpoint,
+  type Ipam,
+  type IpamExternalResourceVerificationToken,
+  type IpamPolicy,
+  type IpamPool,
+  type IpamPrefixListResolver,
+  type IpamPrefixListResolverTarget,
+  type IpamResourceDiscovery,
+  type IpamScope,
+  type LaunchTemplate,
+  type LocalGatewayRoute,
+  type LocalGatewayRouteTable,
+  type LocalGatewayRouteTableVirtualInterfaceGroupAssociation,
+  type LocalGatewayRouteTableVpcAssociation,
+  type LocalGatewayVirtualInterface,
+  type LocalGatewayVirtualInterfaceGroup,
+  type ManagedPrefixList,
+  type OperatorRequest,
+  type RouteServer,
+  type RouteServerEndpoint,
+  type RouteServerPeer,
+  type SecondaryNetwork,
+  SecondarySubnetIpv4CidrBlockAssociation,
 } from "./models_1";
+
+/**
+ * <p>Describes a secondary subnet.</p>
+ * @public
+ */
+export interface SecondarySubnet {
+  /**
+   * <p>The ID of the secondary subnet.</p>
+   * @public
+   */
+  SecondarySubnetId?: string | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of the secondary subnet.</p>
+   * @public
+   */
+  SecondarySubnetArn?: string | undefined;
+
+  /**
+   * <p>The ID of the secondary network.</p>
+   * @public
+   */
+  SecondaryNetworkId?: string | undefined;
+
+  /**
+   * <p>The type of the secondary network.</p>
+   * @public
+   */
+  SecondaryNetworkType?: SecondaryNetworkType | undefined;
+
+  /**
+   * <p>The ID of the Amazon Web Services account that owns the secondary subnet.</p>
+   * @public
+   */
+  OwnerId?: string | undefined;
+
+  /**
+   * <p>The ID of the Availability Zone of the secondary subnet.</p>
+   * @public
+   */
+  AvailabilityZoneId?: string | undefined;
+
+  /**
+   * <p>The Availability Zone of the secondary subnet.</p>
+   * @public
+   */
+  AvailabilityZone?: string | undefined;
+
+  /**
+   * <p>Information about the IPv4 CIDR blocks associated with the secondary subnet.</p>
+   * @public
+   */
+  Ipv4CidrBlockAssociations?: SecondarySubnetIpv4CidrBlockAssociation[] | undefined;
+
+  /**
+   * <p>The state of the secondary subnet.</p>
+   * @public
+   */
+  State?: SecondarySubnetState | undefined;
+
+  /**
+   * <p>The reason for the current state of the secondary subnet.</p>
+   * @public
+   */
+  StateReason?: string | undefined;
+
+  /**
+   * <p>The tags assigned to the secondary subnet.</p>
+   * @public
+   */
+  Tags?: Tag[] | undefined;
+}
+
+/**
+ * @public
+ */
+export interface CreateSecondarySubnetResult {
+  /**
+   * <p>Information about the secondary subnet.</p>
+   * @public
+   */
+  SecondarySubnet?: SecondarySubnet | undefined;
+
+  /**
+   * <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
+   * @public
+   */
+  ClientToken?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface CreateSecurityGroupRequest {
+  /**
+   * <p>A description for the security group.</p>
+   *          <p>Constraints: Up to 255 characters in length</p>
+   *          <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&;\{\}!$*</p>
+   * @public
+   */
+  Description: string | undefined;
+
+  /**
+   * <p>The name of the security group. Names are case-insensitive and must be unique within the VPC.</p>
+   *          <p>Constraints: Up to 255 characters in length. Can't start with <code>sg-</code>.</p>
+   *          <p>Valid characters: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&;\{\}!$*</p>
+   * @public
+   */
+  GroupName: string | undefined;
+
+  /**
+   * <p>The ID of the VPC. Required for a nondefault VPC.</p>
+   * @public
+   */
+  VpcId?: string | undefined;
+
+  /**
+   * <p>The tags to assign to the security group.</p>
+   * @public
+   */
+  TagSpecifications?: TagSpecification[] | undefined;
+
+  /**
+   * <p>Checks whether you have the required permissions for the action, without actually making the request,
+   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   * @public
+   */
+  DryRun?: boolean | undefined;
+}
+
+/**
+ * @public
+ */
+export interface CreateSecurityGroupResult {
+  /**
+   * <p>The ID of the security group.</p>
+   * @public
+   */
+  GroupId?: string | undefined;
+
+  /**
+   * <p>The tags assigned to the security group.</p>
+   * @public
+   */
+  Tags?: Tag[] | undefined;
+
+  /**
+   * <p>The security group ARN.</p>
+   * @public
+   */
+  SecurityGroupArn?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface CreateSnapshotRequest {
+  /**
+   * <p>A description for the snapshot.</p>
+   * @public
+   */
+  Description?: string | undefined;
+
+  /**
+   * <note>
+   *             <p>Only supported for volumes on Outposts. If the source volume is not on an Outpost,
+   *         omit this parameter.</p>
+   *          </note>
+   *          <ul>
+   *             <li>
+   *                <p>To create the snapshot on the same Outpost as the source volume, specify the
+   *           ARN of that Outpost. The snapshot must be created on the same Outpost as the volume.</p>
+   *             </li>
+   *             <li>
+   *                <p>To create the snapshot in the parent Region of the Outpost, omit this parameter.</p>
+   *             </li>
+   *          </ul>
+   *          <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">Create local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
+   * @public
+   */
+  OutpostArn?: string | undefined;
+
+  /**
+   * <p>The ID of the Amazon EBS volume.</p>
+   * @public
+   */
+  VolumeId: string | undefined;
+
+  /**
+   * <p>The tags to apply to the snapshot during creation.</p>
+   * @public
+   */
+  TagSpecifications?: TagSpecification[] | undefined;
+
+  /**
+   * <note>
+   *             <p>Only supported for volumes in Local Zones. If the source volume is not in a Local Zone,
+   *         omit this parameter.</p>
+   *          </note>
+   *          <ul>
+   *             <li>
+   *                <p>To create a local snapshot in the same Local Zone as the source volume, specify
+   *           <code>local</code>.</p>
+   *             </li>
+   *             <li>
+   *                <p>To create a regional snapshot in the parent Region of the Local Zone, specify
+   *           <code>regional</code> or omit this parameter.</p>
+   *             </li>
+   *          </ul>
+   *          <p>Default value: <code>regional</code>
+   *          </p>
+   * @public
+   */
+  Location?: SnapshotLocationEnum | undefined;
+
+  /**
+   * <p>Checks whether you have the required permissions for the action, without actually making the request,
+   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   * @public
+   */
+  DryRun?: boolean | undefined;
+}
+
+/**
+ * <p>Describes a snapshot.</p>
+ * @public
+ */
+export interface Snapshot {
+  /**
+   * <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not
+   *       the user-configured Amazon Web Services account alias set using the IAM console.</p>
+   * @public
+   */
+  OwnerAlias?: string | undefined;
+
+  /**
+   * <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
+   *   		<i>Amazon EBS User Guide</i>.</p>
+   * @public
+   */
+  OutpostArn?: string | undefined;
+
+  /**
+   * <p>Any tags assigned to the snapshot.</p>
+   * @public
+   */
+  Tags?: Tag[] | undefined;
+
+  /**
+   * <p>The storage tier in which the snapshot is stored. <code>standard</code> indicates
+   *       that the snapshot is stored in the standard snapshot storage tier and that it is ready
+   *       for use. <code>archive</code> indicates that the snapshot is currently archived and that
+   *       it must be restored before it can be used.</p>
+   * @public
+   */
+  StorageTier?: StorageTier | undefined;
+
+  /**
+   * <p>Only for archived snapshots that are temporarily restored. Indicates the date and
+   *       time when a temporarily restored snapshot will be automatically re-archived.</p>
+   * @public
+   */
+  RestoreExpiryTime?: Date | undefined;
+
+  /**
+   * <p>Reserved for future use.</p>
+   * @public
+   */
+  SseType?: SSEType | undefined;
+
+  /**
+   * <p>The Availability Zone or Local Zone of the snapshot. For example, <code>us-west-1a</code>
+   *       (Availability Zone) or <code>us-west-2-lax-1a</code> (Local Zone).</p>
+   * @public
+   */
+  AvailabilityZone?: string | undefined;
+
+  /**
+   * <note>
+   *             <p>Only for snapshot copies.</p>
+   *          </note>
+   *          <p>Indicates whether the snapshot copy was created with a standard or time-based
+   *       snapshot copy operation. Time-based snapshot copy operations complete within the
+   *       completion duration specified in the request. Standard snapshot copy operations
+   *       are completed on a best-effort basis.</p>
+   *          <ul>
+   *             <li>
+   *                <p>
+   *                   <code>standard</code> - The snapshot copy was created with a standard
+   *           snapshot copy operation.</p>
+   *             </li>
+   *             <li>
+   *                <p>
+   *                   <code>time-based</code> - The snapshot copy was created with a time-based
+   *           snapshot copy operation.</p>
+   *             </li>
+   *          </ul>
+   * @public
+   */
+  TransferType?: TransferType | undefined;
+
+  /**
+   * <note>
+   *             <p>Only for snapshot copies created with time-based snapshot copy operations.</p>
+   *          </note>
+   *          <p>The completion duration requested for the time-based snapshot copy operation.</p>
+   * @public
+   */
+  CompletionDurationMinutes?: number | undefined;
+
+  /**
+   * <p>The time stamp when the snapshot was completed.</p>
+   * @public
+   */
+  CompletionTime?: Date | undefined;
+
+  /**
+   * <p>The full size of the snapshot, in bytes.</p>
+   *          <important>
+   *             <p>This is <b>not</b> the incremental size of the snapshot.
+   *         This is the full snapshot size and represents the size of all the blocks that were
+   *         written to the source volume at the time the snapshot was created.</p>
+   *          </important>
+   * @public
+   */
+  FullSnapshotSizeInBytes?: number | undefined;
+
+  /**
+   * <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
+   *       created.</p>
+   * @public
+   */
+  SnapshotId?: string | undefined;
+
+  /**
+   * <p>The ID of the volume that was used to create the snapshot. Snapshots created by a copy
+   *       snapshot operation have an arbitrary volume ID that you should not use for any purpose.</p>
+   * @public
+   */
+  VolumeId?: string | undefined;
+
+  /**
+   * <p>The snapshot state.</p>
+   * @public
+   */
+  State?: SnapshotState | undefined;
+
+  /**
+   * <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails
+   *       (for example, if the proper KMS permissions are not obtained) this field displays error
+   *       state details to help you diagnose why the error occurred. This parameter is only returned by
+   *       <a>DescribeSnapshots</a>.</p>
+   * @public
+   */
+  StateMessage?: string | undefined;
+
+  /**
+   * <p>The time stamp when the snapshot was initiated.</p>
+   * @public
+   */
+  StartTime?: Date | undefined;
+
+  /**
+   * <p>The progress of the snapshot, as a percentage.</p>
+   * @public
+   */
+  Progress?: string | undefined;
+
+  /**
+   * <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
+   * @public
+   */
+  OwnerId?: string | undefined;
+
+  /**
+   * <p>The description for the snapshot.</p>
+   * @public
+   */
+  Description?: string | undefined;
+
+  /**
+   * <p>The size of the volume, in GiB.</p>
+   * @public
+   */
+  VolumeSize?: number | undefined;
+
+  /**
+   * <p>Indicates whether the snapshot is encrypted.</p>
+   * @public
+   */
+  Encrypted?: boolean | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of the KMS key that was used to protect the
+   *       volume encryption key for the parent volume.</p>
+   * @public
+   */
+  KmsKeyId?: string | undefined;
+
+  /**
+   * <p>The data encryption key identifier for the snapshot. This value is a unique identifier
+   *       that corresponds to the data encryption key that was used to encrypt the original volume or
+   *       snapshot copy. Because data encryption keys are inherited by volumes created from snapshots,
+   *       and vice versa, if snapshots share the same data encryption key identifier, then they belong
+   *       to the same volume/snapshot lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
+   * @public
+   */
+  DataEncryptionKeyId?: string | undefined;
+}
+
+/**
+ * <p>The instance details to specify which volumes should be snapshotted.</p>
+ * @public
+ */
+export interface InstanceSpecification {
+  /**
+   * <p>The instance to specify which volumes should be snapshotted.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+
+  /**
+   * <p>Excludes the root volume from being snapshotted.</p>
+   * @public
+   */
+  ExcludeBootVolume?: boolean | undefined;
+
+  /**
+   * <p>The IDs of the data (non-root) volumes to exclude from the multi-volume snapshot set.
+   *       If you specify the ID of the root volume, the request fails. To exclude the root volume,
+   *       use <b>ExcludeBootVolume</b>.</p>
+   *          <p>You can specify up to 40 volume IDs per request.</p>
+   * @public
+   */
+  ExcludeDataVolumeIds?: string[] | undefined;
+}
+
+/**
+ * @public
+ */
+export interface CreateSnapshotsRequest {
+  /**
+   * <p> A description propagated to every snapshot specified by the instance.</p>
+   * @public
+   */
+  Description?: string | undefined;
+
+  /**
+   * <p>The instance to specify which volumes should be included in the snapshots.</p>
+   * @public
+   */
+  InstanceSpecification: InstanceSpecification | undefined;
+
+  /**
+   * <note>
+   *             <p>Only supported for instances on Outposts. If the source instance is not on an Outpost,
+   *         omit this parameter.</p>
+   *          </note>
+   *          <ul>
+   *             <li>
+   *                <p>To create the snapshots on the same Outpost as the source instance, specify the
+   *           ARN of that Outpost. The snapshots must be created on the same Outpost as the instance.</p>
+   *             </li>
+   *             <li>
+   *                <p>To create the snapshots in the parent Region of the Outpost, omit this parameter.</p>
+   *             </li>
+   *          </ul>
+   *          <p>For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">
+   *       Create local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User Guide</i>.</p>
+   * @public
+   */
+  OutpostArn?: string | undefined;
+
+  /**
+   * <p>Tags to apply to every snapshot specified by the instance.</p>
+   * @public
+   */
+  TagSpecifications?: TagSpecification[] | undefined;
+
+  /**
+   * <p>Checks whether you have the required permissions for the action, without actually making the request,
+   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   * @public
+   */
+  DryRun?: boolean | undefined;
+
+  /**
+   * <p>Copies the tags from the specified volume to corresponding snapshot.</p>
+   * @public
+   */
+  CopyTagsFromSource?: CopyTagsFromSource | undefined;
+
+  /**
+   * <note>
+   *             <p>Only supported for instances in Local Zones. If the source instance is not in a Local Zone,
+   *         omit this parameter.</p>
+   *          </note>
+   *          <ul>
+   *             <li>
+   *                <p>To create local snapshots in the same Local Zone as the source instance, specify
+   *           <code>local</code>.</p>
+   *             </li>
+   *             <li>
+   *                <p>To create regional snapshots in the parent Region of the Local Zone, specify
+   *           <code>regional</code> or omit this parameter.</p>
+   *             </li>
+   *          </ul>
+   *          <p>Default value: <code>regional</code>
+   *          </p>
+   * @public
+   */
+  Location?: SnapshotLocationEnum | undefined;
+}
+
+/**
+ * <p>Information about a snapshot.</p>
+ * @public
+ */
+export interface SnapshotInfo {
+  /**
+   * <p>Description specified by the CreateSnapshotRequest that has been applied to all
+   *     snapshots.</p>
+   * @public
+   */
+  Description?: string | undefined;
+
+  /**
+   * <p>Tags associated with this snapshot.</p>
+   * @public
+   */
+  Tags?: Tag[] | undefined;
+
+  /**
+   * <p>Indicates whether the snapshot is encrypted.</p>
+   * @public
+   */
+  Encrypted?: boolean | undefined;
+
+  /**
+   * <p>Source volume from which this snapshot was created.</p>
+   * @public
+   */
+  VolumeId?: string | undefined;
+
+  /**
+   * <p>Current state of the snapshot.</p>
+   * @public
+   */
+  State?: SnapshotState | undefined;
+
+  /**
+   * <p>Size of the volume from which this snapshot was created.</p>
+   * @public
+   */
+  VolumeSize?: number | undefined;
+
+  /**
+   * <p>Time this snapshot was started. This is the same for all snapshots initiated by the
+   *     same request.</p>
+   * @public
+   */
+  StartTime?: Date | undefined;
+
+  /**
+   * <p>Progress this snapshot has made towards completing.</p>
+   * @public
+   */
+  Progress?: string | undefined;
+
+  /**
+   * <p>Account id used when creating this snapshot.</p>
+   * @public
+   */
+  OwnerId?: string | undefined;
+
+  /**
+   * <p>Snapshot id that can be used to describe this snapshot.</p>
+   * @public
+   */
+  SnapshotId?: string | undefined;
+
+  /**
+   * <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
+   *   		<i>Amazon EBS User Guide</i>.</p>
+   * @public
+   */
+  OutpostArn?: string | undefined;
+
+  /**
+   * <p>Reserved for future use.</p>
+   * @public
+   */
+  SseType?: SSEType | undefined;
+
+  /**
+   * <p>The Availability Zone or Local Zone of the snapshots. For example, <code>us-west-1a</code>
+   *       (Availability Zone) or <code>us-west-2-lax-1a</code> (Local Zone).</p>
+   * @public
+   */
+  AvailabilityZone?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface CreateSnapshotsResult {
+  /**
+   * <p>List of snapshots.</p>
+   * @public
+   */
+  Snapshots?: SnapshotInfo[] | undefined;
+}
+
+/**
+ * <p>Contains the parameters for CreateSpotDatafeedSubscription.</p>
+ * @public
+ */
+export interface CreateSpotDatafeedSubscriptionRequest {
+  /**
+   * <p>Checks whether you have the required permissions for the action, without actually
+   *             making the request, and provides an error response. If you have the required
+   *             permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is
+   *             <code>UnauthorizedOperation</code>.</p>
+   * @public
+   */
+  DryRun?: boolean | undefined;
+
+  /**
+   * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data feed. For
+   *             more information about bucket names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a>
+   *             in the <i>Amazon S3 User Guide</i>.</p>
+   * @public
+   */
+  Bucket: string | undefined;
+
+  /**
+   * <p>The prefix for the data feed file names.</p>
+   * @public
+   */
+  Prefix?: string | undefined;
+}
+
+/**
+ * <p>Describes a Spot Instance state change.</p>
+ * @public
+ */
+export interface SpotInstanceStateFault {
+  /**
+   * <p>The reason code for the Spot Instance state change.</p>
+   * @public
+   */
+  Code?: string | undefined;
+
+  /**
+   * <p>The message for the Spot Instance state change.</p>
+   * @public
+   */
+  Message?: string | undefined;
+}
 
 /**
  * <p>Describes the data feed for a Spot Instance.</p>
@@ -8465,6 +9136,86 @@ export interface DeleteRouteTableRequest {
 /**
  * @public
  */
+export interface DeleteSecondaryNetworkRequest {
+  /**
+   * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensure Idempotency</a>.</p>
+   * @public
+   */
+  ClientToken?: string | undefined;
+
+  /**
+   * <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   * @public
+   */
+  DryRun?: boolean | undefined;
+
+  /**
+   * <p>The ID of the secondary network.</p>
+   * @public
+   */
+  SecondaryNetworkId: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface DeleteSecondaryNetworkResult {
+  /**
+   * <p>Information about the secondary network.</p>
+   * @public
+   */
+  SecondaryNetwork?: SecondaryNetwork | undefined;
+
+  /**
+   * <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
+   * @public
+   */
+  ClientToken?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface DeleteSecondarySubnetRequest {
+  /**
+   * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensure Idempotency</a>.</p>
+   * @public
+   */
+  ClientToken?: string | undefined;
+
+  /**
+   * <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   * @public
+   */
+  DryRun?: boolean | undefined;
+
+  /**
+   * <p>The ID of the secondary subnet to delete.</p>
+   * @public
+   */
+  SecondarySubnetId: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface DeleteSecondarySubnetResult {
+  /**
+   * <p>Information about the secondary subnet being deleted.</p>
+   * @public
+   */
+  SecondarySubnet?: SecondarySubnet | undefined;
+
+  /**
+   * <p>Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was provided in the request.</p>
+   * @public
+   */
+  ClientToken?: string | undefined;
+}
+
+/**
+ * @public
+ */
 export interface DeleteSecurityGroupRequest {
   /**
    * <p>The ID of the security group.</p>
@@ -8721,252 +9472,6 @@ export interface DeleteTrafficMirrorTargetRequest {
    * @public
    */
   TrafficMirrorTargetId: string | undefined;
-
-  /**
-   * <p>Checks whether you have the required permissions for the action, without actually making the request,
-   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-   * @public
-   */
-  DryRun?: boolean | undefined;
-}
-
-/**
- * @public
- */
-export interface DeleteTrafficMirrorTargetResult {
-  /**
-   * <p>The ID of the deleted Traffic Mirror target.</p>
-   * @public
-   */
-  TrafficMirrorTargetId?: string | undefined;
-}
-
-/**
- * @public
- */
-export interface DeleteTransitGatewayRequest {
-  /**
-   * <p>The ID of the transit gateway.</p>
-   * @public
-   */
-  TransitGatewayId: string | undefined;
-
-  /**
-   * <p>Checks whether you have the required permissions for the action, without actually making the request,
-   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-   * @public
-   */
-  DryRun?: boolean | undefined;
-}
-
-/**
- * @public
- */
-export interface DeleteTransitGatewayResult {
-  /**
-   * <p>Information about the deleted transit gateway.</p>
-   * @public
-   */
-  TransitGateway?: TransitGateway | undefined;
-}
-
-/**
- * @public
- */
-export interface DeleteTransitGatewayConnectRequest {
-  /**
-   * <p>The ID of the Connect attachment.</p>
-   * @public
-   */
-  TransitGatewayAttachmentId: string | undefined;
-
-  /**
-   * <p>Checks whether you have the required permissions for the action, without actually making the request,
-   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-   * @public
-   */
-  DryRun?: boolean | undefined;
-}
-
-/**
- * @public
- */
-export interface DeleteTransitGatewayConnectResult {
-  /**
-   * <p>Information about the deleted Connect attachment.</p>
-   * @public
-   */
-  TransitGatewayConnect?: TransitGatewayConnect | undefined;
-}
-
-/**
- * @public
- */
-export interface DeleteTransitGatewayConnectPeerRequest {
-  /**
-   * <p>The ID of the Connect peer.</p>
-   * @public
-   */
-  TransitGatewayConnectPeerId: string | undefined;
-
-  /**
-   * <p>Checks whether you have the required permissions for the action, without actually making the request,
-   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-   * @public
-   */
-  DryRun?: boolean | undefined;
-}
-
-/**
- * @public
- */
-export interface DeleteTransitGatewayConnectPeerResult {
-  /**
-   * <p>Information about the deleted Connect peer.</p>
-   * @public
-   */
-  TransitGatewayConnectPeer?: TransitGatewayConnectPeer | undefined;
-}
-
-/**
- * @public
- */
-export interface DeleteTransitGatewayMeteringPolicyRequest {
-  /**
-   * <p>The ID of the transit gateway metering policy to delete.</p>
-   * @public
-   */
-  TransitGatewayMeteringPolicyId: string | undefined;
-
-  /**
-   * <p>Checks whether you have the required permissions for the action, without actually making the request,
-   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-   * @public
-   */
-  DryRun?: boolean | undefined;
-}
-
-/**
- * @public
- */
-export interface DeleteTransitGatewayMeteringPolicyResult {
-  /**
-   * <p>Information about the deleted transit gateway metering policy.</p>
-   * @public
-   */
-  TransitGatewayMeteringPolicy?: TransitGatewayMeteringPolicy | undefined;
-}
-
-/**
- * @public
- */
-export interface DeleteTransitGatewayMeteringPolicyEntryRequest {
-  /**
-   * <p>The ID of the transit gateway metering policy containing the entry to delete.</p>
-   * @public
-   */
-  TransitGatewayMeteringPolicyId: string | undefined;
-
-  /**
-   * <p>The rule number of the metering policy entry to delete.</p>
-   * @public
-   */
-  PolicyRuleNumber: number | undefined;
-
-  /**
-   * <p>Checks whether you have the required permissions for the action, without actually making the request,
-   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-   * @public
-   */
-  DryRun?: boolean | undefined;
-}
-
-/**
- * @public
- */
-export interface DeleteTransitGatewayMeteringPolicyEntryResult {
-  /**
-   * <p>Information about the deleted transit gateway metering policy entry.</p>
-   * @public
-   */
-  TransitGatewayMeteringPolicyEntry?: TransitGatewayMeteringPolicyEntry | undefined;
-}
-
-/**
- * @public
- */
-export interface DeleteTransitGatewayMulticastDomainRequest {
-  /**
-   * <p>The ID of the transit gateway multicast domain.</p>
-   * @public
-   */
-  TransitGatewayMulticastDomainId: string | undefined;
-
-  /**
-   * <p>Checks whether you have the required permissions for the action, without actually making the request,
-   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-   * @public
-   */
-  DryRun?: boolean | undefined;
-}
-
-/**
- * @public
- */
-export interface DeleteTransitGatewayMulticastDomainResult {
-  /**
-   * <p>Information about the deleted transit gateway multicast domain.</p>
-   * @public
-   */
-  TransitGatewayMulticastDomain?: TransitGatewayMulticastDomain | undefined;
-}
-
-/**
- * @public
- */
-export interface DeleteTransitGatewayPeeringAttachmentRequest {
-  /**
-   * <p>The ID of the transit gateway peering attachment.</p>
-   * @public
-   */
-  TransitGatewayAttachmentId: string | undefined;
-
-  /**
-   * <p>Checks whether you have the required permissions for the action, without actually making the request,
-   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-   * @public
-   */
-  DryRun?: boolean | undefined;
-}
-
-/**
- * @public
- */
-export interface DeleteTransitGatewayPeeringAttachmentResult {
-  /**
-   * <p>The transit gateway peering attachment.</p>
-   * @public
-   */
-  TransitGatewayPeeringAttachment?: TransitGatewayPeeringAttachment | undefined;
-}
-
-/**
- * @public
- */
-export interface DeleteTransitGatewayPolicyTableRequest {
-  /**
-   * <p>The transit gateway policy table to delete.</p>
-   * @public
-   */
-  TransitGatewayPolicyTableId: string | undefined;
 
   /**
    * <p>Checks whether you have the required permissions for the action, without actually making the request,

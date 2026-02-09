@@ -168,6 +168,9 @@ export interface DescribeInstanceTypesCommandOutput extends DescribeInstanceType
  * //           "default" || "vpc-1" || "ebs-1",
  * //         ],
  * //         FlexibleEnaQueuesSupport: "unsupported" || "supported",
+ * //         SecondaryNetworkSupported: true || false,
+ * //         MaximumSecondaryNetworkInterfaces: Number("int"),
+ * //         Ipv4AddressesPerSecondaryInterface: Number("int"),
  * //       },
  * //       GpuInfo: { // GpuInfo
  * //         Gpus: [ // GpuDeviceInfoList

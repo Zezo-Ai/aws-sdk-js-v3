@@ -8,7 +8,7 @@ import { commonParams } from "../endpoint/EndpointParameters";
 import type {
   DeleteTransitGatewayMulticastDomainRequest,
   DeleteTransitGatewayMulticastDomainResult,
-} from "../models/models_2";
+} from "../models/models_3";
 import { DeleteTransitGatewayMulticastDomain$ } from "../schemas/schemas_0";
 
 /**

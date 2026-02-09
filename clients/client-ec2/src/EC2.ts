@@ -595,6 +595,16 @@ import {
   CreateRouteTableCommandOutput,
 } from "./commands/CreateRouteTableCommand";
 import {
+  CreateSecondaryNetworkCommand,
+  CreateSecondaryNetworkCommandInput,
+  CreateSecondaryNetworkCommandOutput,
+} from "./commands/CreateSecondaryNetworkCommand";
+import {
+  CreateSecondarySubnetCommand,
+  CreateSecondarySubnetCommandInput,
+  CreateSecondarySubnetCommandOutput,
+} from "./commands/CreateSecondarySubnetCommand";
+import {
   CreateSecurityGroupCommand,
   CreateSecurityGroupCommandInput,
   CreateSecurityGroupCommandOutput,
@@ -1038,6 +1048,16 @@ import {
   DeleteRouteTableCommandInput,
   DeleteRouteTableCommandOutput,
 } from "./commands/DeleteRouteTableCommand";
+import {
+  DeleteSecondaryNetworkCommand,
+  DeleteSecondaryNetworkCommandInput,
+  DeleteSecondaryNetworkCommandOutput,
+} from "./commands/DeleteSecondaryNetworkCommand";
+import {
+  DeleteSecondarySubnetCommand,
+  DeleteSecondarySubnetCommandInput,
+  DeleteSecondarySubnetCommandOutput,
+} from "./commands/DeleteSecondarySubnetCommand";
 import {
   DeleteSecurityGroupCommand,
   DeleteSecurityGroupCommandInput,
@@ -1870,6 +1890,21 @@ import {
   DescribeScheduledInstancesCommandInput,
   DescribeScheduledInstancesCommandOutput,
 } from "./commands/DescribeScheduledInstancesCommand";
+import {
+  DescribeSecondaryInterfacesCommand,
+  DescribeSecondaryInterfacesCommandInput,
+  DescribeSecondaryInterfacesCommandOutput,
+} from "./commands/DescribeSecondaryInterfacesCommand";
+import {
+  DescribeSecondaryNetworksCommand,
+  DescribeSecondaryNetworksCommandInput,
+  DescribeSecondaryNetworksCommandOutput,
+} from "./commands/DescribeSecondaryNetworksCommand";
+import {
+  DescribeSecondarySubnetsCommand,
+  DescribeSecondarySubnetsCommandInput,
+  DescribeSecondarySubnetsCommandOutput,
+} from "./commands/DescribeSecondarySubnetsCommand";
 import {
   DescribeSecurityGroupReferencesCommand,
   DescribeSecurityGroupReferencesCommandInput,
@@ -3801,6 +3836,9 @@ import {
   paginateDescribeScheduledInstanceAvailability,
 } from "./pagination/DescribeScheduledInstanceAvailabilityPaginator";
 import { paginateDescribeScheduledInstances } from "./pagination/DescribeScheduledInstancesPaginator";
+import { paginateDescribeSecondaryInterfaces } from "./pagination/DescribeSecondaryInterfacesPaginator";
+import { paginateDescribeSecondaryNetworks } from "./pagination/DescribeSecondaryNetworksPaginator";
+import { paginateDescribeSecondarySubnets } from "./pagination/DescribeSecondarySubnetsPaginator";
 import { paginateDescribeSecurityGroupRules } from "./pagination/DescribeSecurityGroupRulesPaginator";
 import { paginateDescribeSecurityGroups } from "./pagination/DescribeSecurityGroupsPaginator";
 import {
@@ -3935,6 +3973,10 @@ import { waitUntilNatGatewayAvailable } from "./waiters/waitForNatGatewayAvailab
 import { waitUntilNatGatewayDeleted } from "./waiters/waitForNatGatewayDeleted";
 import { waitUntilNetworkInterfaceAvailable } from "./waiters/waitForNetworkInterfaceAvailable";
 import { waitUntilPasswordDataAvailable } from "./waiters/waitForPasswordDataAvailable";
+import { waitUntilSecondaryNetworkCreateComplete } from "./waiters/waitForSecondaryNetworkCreateComplete";
+import { waitUntilSecondaryNetworkDeleteComplete } from "./waiters/waitForSecondaryNetworkDeleteComplete";
+import { waitUntilSecondarySubnetCreateComplete } from "./waiters/waitForSecondarySubnetCreateComplete";
+import { waitUntilSecondarySubnetDeleteComplete } from "./waiters/waitForSecondarySubnetDeleteComplete";
 import { waitUntilSecurityGroupExists } from "./waiters/waitForSecurityGroupExists";
 import { waitUntilSecurityGroupVpcAssociationAssociated } from "./waiters/waitForSecurityGroupVpcAssociationAssociated";
 import {
@@ -4079,6 +4121,8 @@ const commands = {
   CreateRouteServerEndpointCommand,
   CreateRouteServerPeerCommand,
   CreateRouteTableCommand,
+  CreateSecondaryNetworkCommand,
+  CreateSecondarySubnetCommand,
   CreateSecurityGroupCommand,
   CreateSnapshotCommand,
   CreateSnapshotsCommand,
@@ -4171,6 +4215,8 @@ const commands = {
   DeleteRouteServerEndpointCommand,
   DeleteRouteServerPeerCommand,
   DeleteRouteTableCommand,
+  DeleteSecondaryNetworkCommand,
+  DeleteSecondarySubnetCommand,
   DeleteSecurityGroupCommand,
   DeleteSnapshotCommand,
   DeleteSpotDatafeedSubscriptionCommand,
@@ -4339,6 +4385,9 @@ const commands = {
   DescribeRouteTablesCommand,
   DescribeScheduledInstanceAvailabilityCommand,
   DescribeScheduledInstancesCommand,
+  DescribeSecondaryInterfacesCommand,
+  DescribeSecondaryNetworksCommand,
+  DescribeSecondarySubnetsCommand,
   DescribeSecurityGroupReferencesCommand,
   DescribeSecurityGroupRulesCommand,
   DescribeSecurityGroupsCommand,
@@ -4797,6 +4846,9 @@ const paginators = {
   paginateDescribeRouteTables,
   paginateDescribeScheduledInstanceAvailability,
   paginateDescribeScheduledInstances,
+  paginateDescribeSecondaryInterfaces,
+  paginateDescribeSecondaryNetworks,
+  paginateDescribeSecondarySubnets,
   paginateDescribeSecurityGroupRules,
   paginateDescribeSecurityGroups,
   paginateDescribeSecurityGroupVpcAssociations,
@@ -4896,6 +4948,10 @@ const waiters = {
   waitUntilNatGatewayAvailable,
   waitUntilNatGatewayDeleted,
   waitUntilNetworkInterfaceAvailable,
+  waitUntilSecondaryNetworkCreateComplete,
+  waitUntilSecondaryNetworkDeleteComplete,
+  waitUntilSecondarySubnetCreateComplete,
+  waitUntilSecondarySubnetDeleteComplete,
   waitUntilSecurityGroupExists,
   waitUntilSecurityGroupVpcAssociationAssociated,
   waitUntilSecurityGroupVpcAssociationDisassociated,
@@ -7006,6 +7062,40 @@ export interface EC2 {
   ): void;
 
   /**
+   * @see {@link CreateSecondaryNetworkCommand}
+   */
+  createSecondaryNetwork(
+    args: CreateSecondaryNetworkCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<CreateSecondaryNetworkCommandOutput>;
+  createSecondaryNetwork(
+    args: CreateSecondaryNetworkCommandInput,
+    cb: (err: any, data?: CreateSecondaryNetworkCommandOutput) => void
+  ): void;
+  createSecondaryNetwork(
+    args: CreateSecondaryNetworkCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: CreateSecondaryNetworkCommandOutput) => void
+  ): void;
+
+  /**
+   * @see {@link CreateSecondarySubnetCommand}
+   */
+  createSecondarySubnet(
+    args: CreateSecondarySubnetCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<CreateSecondarySubnetCommandOutput>;
+  createSecondarySubnet(
+    args: CreateSecondarySubnetCommandInput,
+    cb: (err: any, data?: CreateSecondarySubnetCommandOutput) => void
+  ): void;
+  createSecondarySubnet(
+    args: CreateSecondarySubnetCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: CreateSecondarySubnetCommandOutput) => void
+  ): void;
+
+  /**
    * @see {@link CreateSecurityGroupCommand}
    */
   createSecurityGroup(
@@ -8576,6 +8666,40 @@ export interface EC2 {
     args: DeleteRouteTableCommandInput,
     options: __HttpHandlerOptions,
     cb: (err: any, data?: DeleteRouteTableCommandOutput) => void
+  ): void;
+
+  /**
+   * @see {@link DeleteSecondaryNetworkCommand}
+   */
+  deleteSecondaryNetwork(
+    args: DeleteSecondaryNetworkCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<DeleteSecondaryNetworkCommandOutput>;
+  deleteSecondaryNetwork(
+    args: DeleteSecondaryNetworkCommandInput,
+    cb: (err: any, data?: DeleteSecondaryNetworkCommandOutput) => void
+  ): void;
+  deleteSecondaryNetwork(
+    args: DeleteSecondaryNetworkCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: DeleteSecondaryNetworkCommandOutput) => void
+  ): void;
+
+  /**
+   * @see {@link DeleteSecondarySubnetCommand}
+   */
+  deleteSecondarySubnet(
+    args: DeleteSecondarySubnetCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<DeleteSecondarySubnetCommandOutput>;
+  deleteSecondarySubnet(
+    args: DeleteSecondarySubnetCommandInput,
+    cb: (err: any, data?: DeleteSecondarySubnetCommandOutput) => void
+  ): void;
+  deleteSecondarySubnet(
+    args: DeleteSecondarySubnetCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: DeleteSecondarySubnetCommandOutput) => void
   ): void;
 
   /**
@@ -11540,6 +11664,60 @@ export interface EC2 {
     args: DescribeScheduledInstancesCommandInput,
     options: __HttpHandlerOptions,
     cb: (err: any, data?: DescribeScheduledInstancesCommandOutput) => void
+  ): void;
+
+  /**
+   * @see {@link DescribeSecondaryInterfacesCommand}
+   */
+  describeSecondaryInterfaces(): Promise<DescribeSecondaryInterfacesCommandOutput>;
+  describeSecondaryInterfaces(
+    args: DescribeSecondaryInterfacesCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<DescribeSecondaryInterfacesCommandOutput>;
+  describeSecondaryInterfaces(
+    args: DescribeSecondaryInterfacesCommandInput,
+    cb: (err: any, data?: DescribeSecondaryInterfacesCommandOutput) => void
+  ): void;
+  describeSecondaryInterfaces(
+    args: DescribeSecondaryInterfacesCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: DescribeSecondaryInterfacesCommandOutput) => void
+  ): void;
+
+  /**
+   * @see {@link DescribeSecondaryNetworksCommand}
+   */
+  describeSecondaryNetworks(): Promise<DescribeSecondaryNetworksCommandOutput>;
+  describeSecondaryNetworks(
+    args: DescribeSecondaryNetworksCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<DescribeSecondaryNetworksCommandOutput>;
+  describeSecondaryNetworks(
+    args: DescribeSecondaryNetworksCommandInput,
+    cb: (err: any, data?: DescribeSecondaryNetworksCommandOutput) => void
+  ): void;
+  describeSecondaryNetworks(
+    args: DescribeSecondaryNetworksCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: DescribeSecondaryNetworksCommandOutput) => void
+  ): void;
+
+  /**
+   * @see {@link DescribeSecondarySubnetsCommand}
+   */
+  describeSecondarySubnets(): Promise<DescribeSecondarySubnetsCommandOutput>;
+  describeSecondarySubnets(
+    args: DescribeSecondarySubnetsCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<DescribeSecondarySubnetsCommandOutput>;
+  describeSecondarySubnets(
+    args: DescribeSecondarySubnetsCommandInput,
+    cb: (err: any, data?: DescribeSecondarySubnetsCommandOutput) => void
+  ): void;
+  describeSecondarySubnets(
+    args: DescribeSecondarySubnetsCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: DescribeSecondarySubnetsCommandOutput) => void
   ): void;
 
   /**
@@ -18855,6 +19033,39 @@ export interface EC2 {
   ): Paginator<DescribeScheduledInstancesCommandOutput>;
 
   /**
+   * @see {@link DescribeSecondaryInterfacesCommand}
+   * @param args - command input.
+   * @param paginationConfig - optional pagination config.
+   * @returns AsyncIterable of {@link DescribeSecondaryInterfacesCommandOutput}.
+   */
+  paginateDescribeSecondaryInterfaces(
+    args?: DescribeSecondaryInterfacesCommandInput,
+    paginationConfig?: Omit<PaginationConfiguration, "client">
+  ): Paginator<DescribeSecondaryInterfacesCommandOutput>;
+
+  /**
+   * @see {@link DescribeSecondaryNetworksCommand}
+   * @param args - command input.
+   * @param paginationConfig - optional pagination config.
+   * @returns AsyncIterable of {@link DescribeSecondaryNetworksCommandOutput}.
+   */
+  paginateDescribeSecondaryNetworks(
+    args?: DescribeSecondaryNetworksCommandInput,
+    paginationConfig?: Omit<PaginationConfiguration, "client">
+  ): Paginator<DescribeSecondaryNetworksCommandOutput>;
+
+  /**
+   * @see {@link DescribeSecondarySubnetsCommand}
+   * @param args - command input.
+   * @param paginationConfig - optional pagination config.
+   * @returns AsyncIterable of {@link DescribeSecondarySubnetsCommandOutput}.
+   */
+  paginateDescribeSecondarySubnets(
+    args?: DescribeSecondarySubnetsCommandInput,
+    paginationConfig?: Omit<PaginationConfiguration, "client">
+  ): Paginator<DescribeSecondarySubnetsCommandOutput>;
+
+  /**
    * @see {@link DescribeSecurityGroupRulesCommand}
    * @param args - command input.
    * @param paginationConfig - optional pagination config.
@@ -19896,6 +20107,46 @@ export interface EC2 {
    */
   waitUntilNetworkInterfaceAvailable(
     args: DescribeNetworkInterfacesCommandInput,
+    waiterConfig: number | Omit<WaiterConfiguration<EC2>, "client">
+  ): Promise<WaiterResult>;
+
+  /**
+   * @see {@link DescribeSecondaryNetworksCommand}
+   * @param args - command input.
+   * @param waiterConfig - `maxWaitTime` in seconds or waiter config object.
+   */
+  waitUntilSecondaryNetworkCreateComplete(
+    args: DescribeSecondaryNetworksCommandInput,
+    waiterConfig: number | Omit<WaiterConfiguration<EC2>, "client">
+  ): Promise<WaiterResult>;
+
+  /**
+   * @see {@link DescribeSecondaryNetworksCommand}
+   * @param args - command input.
+   * @param waiterConfig - `maxWaitTime` in seconds or waiter config object.
+   */
+  waitUntilSecondaryNetworkDeleteComplete(
+    args: DescribeSecondaryNetworksCommandInput,
+    waiterConfig: number | Omit<WaiterConfiguration<EC2>, "client">
+  ): Promise<WaiterResult>;
+
+  /**
+   * @see {@link DescribeSecondarySubnetsCommand}
+   * @param args - command input.
+   * @param waiterConfig - `maxWaitTime` in seconds or waiter config object.
+   */
+  waitUntilSecondarySubnetCreateComplete(
+    args: DescribeSecondarySubnetsCommandInput,
+    waiterConfig: number | Omit<WaiterConfiguration<EC2>, "client">
+  ): Promise<WaiterResult>;
+
+  /**
+   * @see {@link DescribeSecondarySubnetsCommand}
+   * @param args - command input.
+   * @param waiterConfig - `maxWaitTime` in seconds or waiter config object.
+   */
+  waitUntilSecondarySubnetDeleteComplete(
+    args: DescribeSecondarySubnetsCommandInput,
     waiterConfig: number | Omit<WaiterConfiguration<EC2>, "client">
   ): Promise<WaiterResult>;
 

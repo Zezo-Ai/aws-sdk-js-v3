@@ -8,7 +8,7 @@ import { commonParams } from "../endpoint/EndpointParameters";
 import type {
   DescribeTransitGatewayRouteTablesRequest,
   DescribeTransitGatewayRouteTablesResult,
-} from "../models/models_4";
+} from "../models/models_5";
 import { DescribeTransitGatewayRouteTables$ } from "../schemas/schemas_0";
 
 /**

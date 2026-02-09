@@ -456,6 +456,14 @@ import {
 } from "./commands/CreateRouteServerPeerCommand";
 import { CreateRouteTableCommandInput, CreateRouteTableCommandOutput } from "./commands/CreateRouteTableCommand";
 import {
+  CreateSecondaryNetworkCommandInput,
+  CreateSecondaryNetworkCommandOutput,
+} from "./commands/CreateSecondaryNetworkCommand";
+import {
+  CreateSecondarySubnetCommandInput,
+  CreateSecondarySubnetCommandOutput,
+} from "./commands/CreateSecondarySubnetCommand";
+import {
   CreateSecurityGroupCommandInput,
   CreateSecurityGroupCommandOutput,
 } from "./commands/CreateSecurityGroupCommand";
@@ -751,6 +759,14 @@ import {
   DeleteRouteServerPeerCommandOutput,
 } from "./commands/DeleteRouteServerPeerCommand";
 import { DeleteRouteTableCommandInput, DeleteRouteTableCommandOutput } from "./commands/DeleteRouteTableCommand";
+import {
+  DeleteSecondaryNetworkCommandInput,
+  DeleteSecondaryNetworkCommandOutput,
+} from "./commands/DeleteSecondaryNetworkCommand";
+import {
+  DeleteSecondarySubnetCommandInput,
+  DeleteSecondarySubnetCommandOutput,
+} from "./commands/DeleteSecondarySubnetCommand";
 import {
   DeleteSecurityGroupCommandInput,
   DeleteSecurityGroupCommandOutput,
@@ -1345,6 +1361,18 @@ import {
   DescribeScheduledInstancesCommandInput,
   DescribeScheduledInstancesCommandOutput,
 } from "./commands/DescribeScheduledInstancesCommand";
+import {
+  DescribeSecondaryInterfacesCommandInput,
+  DescribeSecondaryInterfacesCommandOutput,
+} from "./commands/DescribeSecondaryInterfacesCommand";
+import {
+  DescribeSecondaryNetworksCommandInput,
+  DescribeSecondaryNetworksCommandOutput,
+} from "./commands/DescribeSecondaryNetworksCommand";
+import {
+  DescribeSecondarySubnetsCommandInput,
+  DescribeSecondarySubnetsCommandOutput,
+} from "./commands/DescribeSecondarySubnetsCommand";
 import {
   DescribeSecurityGroupReferencesCommandInput,
   DescribeSecurityGroupReferencesCommandOutput,
@@ -2785,6 +2813,8 @@ export type ServiceInputTypes =
   | CreateRouteServerEndpointCommandInput
   | CreateRouteServerPeerCommandInput
   | CreateRouteTableCommandInput
+  | CreateSecondaryNetworkCommandInput
+  | CreateSecondarySubnetCommandInput
   | CreateSecurityGroupCommandInput
   | CreateSnapshotCommandInput
   | CreateSnapshotsCommandInput
@@ -2877,6 +2907,8 @@ export type ServiceInputTypes =
   | DeleteRouteServerEndpointCommandInput
   | DeleteRouteServerPeerCommandInput
   | DeleteRouteTableCommandInput
+  | DeleteSecondaryNetworkCommandInput
+  | DeleteSecondarySubnetCommandInput
   | DeleteSecurityGroupCommandInput
   | DeleteSnapshotCommandInput
   | DeleteSpotDatafeedSubscriptionCommandInput
@@ -3045,6 +3077,9 @@ export type ServiceInputTypes =
   | DescribeRouteTablesCommandInput
   | DescribeScheduledInstanceAvailabilityCommandInput
   | DescribeScheduledInstancesCommandInput
+  | DescribeSecondaryInterfacesCommandInput
+  | DescribeSecondaryNetworksCommandInput
+  | DescribeSecondarySubnetsCommandInput
   | DescribeSecurityGroupReferencesCommandInput
   | DescribeSecurityGroupRulesCommandInput
   | DescribeSecurityGroupVpcAssociationsCommandInput
@@ -3539,6 +3574,8 @@ export type ServiceOutputTypes =
   | CreateRouteServerEndpointCommandOutput
   | CreateRouteServerPeerCommandOutput
   | CreateRouteTableCommandOutput
+  | CreateSecondaryNetworkCommandOutput
+  | CreateSecondarySubnetCommandOutput
   | CreateSecurityGroupCommandOutput
   | CreateSnapshotCommandOutput
   | CreateSnapshotsCommandOutput
@@ -3631,6 +3668,8 @@ export type ServiceOutputTypes =
   | DeleteRouteServerEndpointCommandOutput
   | DeleteRouteServerPeerCommandOutput
   | DeleteRouteTableCommandOutput
+  | DeleteSecondaryNetworkCommandOutput
+  | DeleteSecondarySubnetCommandOutput
   | DeleteSecurityGroupCommandOutput
   | DeleteSnapshotCommandOutput
   | DeleteSpotDatafeedSubscriptionCommandOutput
@@ -3799,6 +3838,9 @@ export type ServiceOutputTypes =
   | DescribeRouteTablesCommandOutput
   | DescribeScheduledInstanceAvailabilityCommandOutput
   | DescribeScheduledInstancesCommandOutput
+  | DescribeSecondaryInterfacesCommandOutput
+  | DescribeSecondaryNetworksCommandOutput
+  | DescribeSecondarySubnetsCommandOutput
   | DescribeSecurityGroupReferencesCommandOutput
   | DescribeSecurityGroupRulesCommandOutput
   | DescribeSecurityGroupVpcAssociationsCommandOutput

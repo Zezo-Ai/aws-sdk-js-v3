@@ -3,11 +3,13 @@ import {
   _InstanceType,
   AddressAttributeName,
   AmdSevSnpSpecification,
+  ApplianceModeSupportValue,
   ArchitectureValues,
   BootModeValues,
   CapacityManagerStatus,
   CapacityReservationInstancePlatform,
   CurrencyCodeValues,
+  DnsSupportValue,
   HostnameType,
   HttpTokensState,
   ImdsSupportValues,
@@ -23,6 +25,7 @@ import {
   InterruptibleCapacityReservationAllocationStatus,
   InterruptionType,
   IpAddressType,
+  Ipv6SupportValue,
   MarketType,
   MembershipType,
   PayerResponsibility,
@@ -31,6 +34,8 @@ import {
   ResetFpgaImageAttributeName,
   ResetImageAttributeName,
   RuleAction,
+  SecondaryInterfaceType,
+  SecurityGroupReferencingSupportValue,
   ShutdownBehavior,
   SnapshotAttributeName,
   SnapshotState,
@@ -40,6 +45,7 @@ import {
   TpmSupportValues,
   TransitGatewayAttachmentResourceType,
   VerificationMethod,
+  VerifiedAccessEndpointProtocol,
   VolumeType,
   VpcEncryptionControlExclusionStateInput,
   VpcEncryptionControlMode,
@@ -57,6 +63,8 @@ import {
   type TransitGatewayMulticastDomainAssociations,
   type TransitGatewayPeeringAttachment,
   type TransitGatewayVpcAttachment,
+  type VerifiedAccessInstance,
+  type VerifiedAccessSseSpecificationResponse,
   type VerifiedAccessTrustProvider,
   type VpcEncryptionControl,
   AddedPrincipal,
@@ -78,6 +86,9 @@ import {
 } from "./models_1";
 import {
   type DnsOptionsSpecification,
+  type TransitGatewayPrefixListReference,
+  type VerifiedAccessEndpoint,
+  type VerifiedAccessGroup,
   type VerifiedAccessSseSpecificationRequest,
   type VpcBlockPublicAccessExclusion,
   type VpnConnection,
@@ -99,12 +110,12 @@ import {
   type InstanceState,
   type InstanceTagNotificationAttribute,
   type IpamPoolCidr,
-  type Monitoring,
   CapacityBlock,
   CapacityBlockExtension,
   Filter,
 } from "./models_3";
 import {
+  type Monitoring,
   type NetworkInsightsAccessScopeAnalysis,
   type NetworkInsightsAnalysis,
   type PublicIpv4PoolRange,
@@ -115,12 +126,771 @@ import {
   ScheduledInstance,
   SpotInstanceRequest,
 } from "./models_4";
-import { type VolumeModification, type VpcBlockPublicAccessOptions, Purchase } from "./models_5";
 import type {
-  CapacityReservationSpecification,
-  ModifyVerifiedAccessNativeApplicationOidcOptions,
-  ModifyVerifiedAccessTrustProviderDeviceOptions,
-} from "./models_6";
+  VerifiedAccessInstanceLoggingConfiguration,
+  VolumeModification,
+  VpcBlockPublicAccessOptions,
+} from "./models_5";
+import { type CapacityReservationSpecification, Purchase } from "./models_6";
+
+/**
+ * @public
+ */
+export interface ModifyTransitGatewayPrefixListReferenceRequest {
+  /**
+   * <p>The ID of the transit gateway route table.</p>
+   * @public
+   */
+  TransitGatewayRouteTableId: string | undefined;
+
+  /**
+   * <p>The ID of the prefix list.</p>
+   * @public
+   */
+  PrefixListId: string | undefined;
+
+  /**
+   * <p>The ID of the attachment to which traffic is routed.</p>
+   * @public
+   */
+  TransitGatewayAttachmentId?: string | undefined;
+
+  /**
+   * <p>Indicates whether to drop traffic that matches this route.</p>
+   * @public
+   */
+  Blackhole?: boolean | undefined;
+
+  /**
+   * <p>Checks whether you have the required permissions for the action, without actually making the request,
+   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   * @public
+   */
+  DryRun?: boolean | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyTransitGatewayPrefixListReferenceResult {
+  /**
+   * <p>Information about the prefix list reference.</p>
+   * @public
+   */
+  TransitGatewayPrefixListReference?: TransitGatewayPrefixListReference | undefined;
+}
+
+/**
+ * <p>Describes the options for a VPC attachment.</p>
+ * @public
+ */
+export interface ModifyTransitGatewayVpcAttachmentRequestOptions {
+  /**
+   * <p>Enable or disable DNS support. The default is <code>enable</code>.</p>
+   * @public
+   */
+  DnsSupport?: DnsSupportValue | undefined;
+
+  /**
+   * <p>Enables you to reference a security group across VPCs attached to a transit gateway to simplify security group management.
+   *
+   * </p>
+   *          <p>This option is disabled by default.</p>
+   *          <p>For more information about security group referencing, see  <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#vpc-attachment-security">Security group referencing</a> in the <i>Amazon Web Services Transit Gateways Guide</i>.</p>
+   * @public
+   */
+  SecurityGroupReferencingSupport?: SecurityGroupReferencingSupportValue | undefined;
+
+  /**
+   * <p>Enable or disable IPv6 support. The default is <code>enable</code>.</p>
+   * @public
+   */
+  Ipv6Support?: Ipv6SupportValue | undefined;
+
+  /**
+   * <p>Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination uses the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is <code>disable</code>.</p>
+   * @public
+   */
+  ApplianceModeSupport?: ApplianceModeSupportValue | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyTransitGatewayVpcAttachmentRequest {
+  /**
+   * <p>The ID of the attachment.</p>
+   * @public
+   */
+  TransitGatewayAttachmentId: string | undefined;
+
+  /**
+   * <p>The IDs of one or more subnets to add. You can specify at most one subnet per Availability Zone.</p>
+   * @public
+   */
+  AddSubnetIds?: string[] | undefined;
+
+  /**
+   * <p>The IDs of one or more subnets to remove.</p>
+   * @public
+   */
+  RemoveSubnetIds?: string[] | undefined;
+
+  /**
+   * <p>The new VPC attachment options.</p>
+   * @public
+   */
+  Options?: ModifyTransitGatewayVpcAttachmentRequestOptions | undefined;
+
+  /**
+   * <p>Checks whether you have the required permissions for the action, without actually making the request,
+   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   * @public
+   */
+  DryRun?: boolean | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyTransitGatewayVpcAttachmentResult {
+  /**
+   * <p>Information about the modified attachment.</p>
+   * @public
+   */
+  TransitGatewayVpcAttachment?: TransitGatewayVpcAttachment | undefined;
+}
+
+/**
+ * <p>Describes the port range for a Verified Access endpoint.</p>
+ * @public
+ */
+export interface ModifyVerifiedAccessEndpointPortRange {
+  /**
+   * <p>The start of the port range.</p>
+   * @public
+   */
+  FromPort?: number | undefined;
+
+  /**
+   * <p>The end of the port range.</p>
+   * @public
+   */
+  ToPort?: number | undefined;
+}
+
+/**
+ * <p>The CIDR options for a Verified Access endpoint.</p>
+ * @public
+ */
+export interface ModifyVerifiedAccessEndpointCidrOptions {
+  /**
+   * <p>The port ranges.</p>
+   * @public
+   */
+  PortRanges?: ModifyVerifiedAccessEndpointPortRange[] | undefined;
+}
+
+/**
+ * <p>Describes a load balancer when creating an Amazon Web Services Verified Access endpoint using the
+ *             <code>load-balancer</code> type.</p>
+ * @public
+ */
+export interface ModifyVerifiedAccessEndpointLoadBalancerOptions {
+  /**
+   * <p>The IDs of the subnets.</p>
+   * @public
+   */
+  SubnetIds?: string[] | undefined;
+
+  /**
+   * <p>The IP protocol.</p>
+   * @public
+   */
+  Protocol?: VerifiedAccessEndpointProtocol | undefined;
+
+  /**
+   * <p>The IP port number.</p>
+   * @public
+   */
+  Port?: number | undefined;
+
+  /**
+   * <p>The port ranges.</p>
+   * @public
+   */
+  PortRanges?: ModifyVerifiedAccessEndpointPortRange[] | undefined;
+}
+
+/**
+ * <p>Describes the options when modifying a Verified Access endpoint with the
+ *             <code>network-interface</code> type.</p>
+ * @public
+ */
+export interface ModifyVerifiedAccessEndpointEniOptions {
+  /**
+   * <p>The IP protocol.</p>
+   * @public
+   */
+  Protocol?: VerifiedAccessEndpointProtocol | undefined;
+
+  /**
+   * <p>The IP port number.</p>
+   * @public
+   */
+  Port?: number | undefined;
+
+  /**
+   * <p>The port ranges.</p>
+   * @public
+   */
+  PortRanges?: ModifyVerifiedAccessEndpointPortRange[] | undefined;
+}
+
+/**
+ * <p>The RDS options for a Verified Access endpoint.</p>
+ * @public
+ */
+export interface ModifyVerifiedAccessEndpointRdsOptions {
+  /**
+   * <p>The IDs of the subnets.</p>
+   * @public
+   */
+  SubnetIds?: string[] | undefined;
+
+  /**
+   * <p>The port.</p>
+   * @public
+   */
+  Port?: number | undefined;
+
+  /**
+   * <p>The RDS endpoint.</p>
+   * @public
+   */
+  RdsEndpoint?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyVerifiedAccessEndpointRequest {
+  /**
+   * <p>The ID of the Verified Access endpoint.</p>
+   * @public
+   */
+  VerifiedAccessEndpointId: string | undefined;
+
+  /**
+   * <p>The ID of the Verified Access group.</p>
+   * @public
+   */
+  VerifiedAccessGroupId?: string | undefined;
+
+  /**
+   * <p>The load balancer details if creating the Verified Access endpoint as
+   *          <code>load-balancer</code>type.</p>
+   * @public
+   */
+  LoadBalancerOptions?: ModifyVerifiedAccessEndpointLoadBalancerOptions | undefined;
+
+  /**
+   * <p>The network interface options.</p>
+   * @public
+   */
+  NetworkInterfaceOptions?: ModifyVerifiedAccessEndpointEniOptions | undefined;
+
+  /**
+   * <p>A description for the Verified Access endpoint.</p>
+   * @public
+   */
+  Description?: string | undefined;
+
+  /**
+   * <p>A unique, case-sensitive token that you provide to ensure idempotency of your
+   *             modification request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring idempotency</a>.</p>
+   * @public
+   */
+  ClientToken?: string | undefined;
+
+  /**
+   * <p>Checks whether you have the required permissions for the action, without actually making the request,
+   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   * @public
+   */
+  DryRun?: boolean | undefined;
+
+  /**
+   * <p>The RDS options.</p>
+   * @public
+   */
+  RdsOptions?: ModifyVerifiedAccessEndpointRdsOptions | undefined;
+
+  /**
+   * <p>The CIDR options.</p>
+   * @public
+   */
+  CidrOptions?: ModifyVerifiedAccessEndpointCidrOptions | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyVerifiedAccessEndpointResult {
+  /**
+   * <p>Details about the Verified Access endpoint.</p>
+   * @public
+   */
+  VerifiedAccessEndpoint?: VerifiedAccessEndpoint | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyVerifiedAccessEndpointPolicyRequest {
+  /**
+   * <p>The ID of the Verified Access endpoint.</p>
+   * @public
+   */
+  VerifiedAccessEndpointId: string | undefined;
+
+  /**
+   * <p>The status of the Verified Access policy.</p>
+   * @public
+   */
+  PolicyEnabled?: boolean | undefined;
+
+  /**
+   * <p>The Verified Access policy document.</p>
+   * @public
+   */
+  PolicyDocument?: string | undefined;
+
+  /**
+   * <p>A unique, case-sensitive token that you provide to ensure idempotency of your
+   *             modification request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring idempotency</a>.</p>
+   * @public
+   */
+  ClientToken?: string | undefined;
+
+  /**
+   * <p>Checks whether you have the required permissions for the action, without actually making the request,
+   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   * @public
+   */
+  DryRun?: boolean | undefined;
+
+  /**
+   * <p>The options for server side encryption.</p>
+   * @public
+   */
+  SseSpecification?: VerifiedAccessSseSpecificationRequest | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyVerifiedAccessEndpointPolicyResult {
+  /**
+   * <p>The status of the Verified Access policy.</p>
+   * @public
+   */
+  PolicyEnabled?: boolean | undefined;
+
+  /**
+   * <p>The Verified Access policy document.</p>
+   * @public
+   */
+  PolicyDocument?: string | undefined;
+
+  /**
+   * <p>The options in use for server side encryption.</p>
+   * @public
+   */
+  SseSpecification?: VerifiedAccessSseSpecificationResponse | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyVerifiedAccessGroupRequest {
+  /**
+   * <p>The ID of the Verified Access group.</p>
+   * @public
+   */
+  VerifiedAccessGroupId: string | undefined;
+
+  /**
+   * <p>The ID of the Verified Access instance.</p>
+   * @public
+   */
+  VerifiedAccessInstanceId?: string | undefined;
+
+  /**
+   * <p>A description for the Verified Access group.</p>
+   * @public
+   */
+  Description?: string | undefined;
+
+  /**
+   * <p>A unique, case-sensitive token that you provide to ensure idempotency of your
+   *             modification request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring idempotency</a>.</p>
+   * @public
+   */
+  ClientToken?: string | undefined;
+
+  /**
+   * <p>Checks whether you have the required permissions for the action, without actually making the request,
+   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   * @public
+   */
+  DryRun?: boolean | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyVerifiedAccessGroupResult {
+  /**
+   * <p>Details about the Verified Access group.</p>
+   * @public
+   */
+  VerifiedAccessGroup?: VerifiedAccessGroup | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyVerifiedAccessGroupPolicyRequest {
+  /**
+   * <p>The ID of the Verified Access group.</p>
+   * @public
+   */
+  VerifiedAccessGroupId: string | undefined;
+
+  /**
+   * <p>The status of the Verified Access policy.</p>
+   * @public
+   */
+  PolicyEnabled?: boolean | undefined;
+
+  /**
+   * <p>The Verified Access policy document.</p>
+   * @public
+   */
+  PolicyDocument?: string | undefined;
+
+  /**
+   * <p>A unique, case-sensitive token that you provide to ensure idempotency of your
+   *             modification request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring idempotency</a>.</p>
+   * @public
+   */
+  ClientToken?: string | undefined;
+
+  /**
+   * <p>Checks whether you have the required permissions for the action, without actually making the request,
+   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   * @public
+   */
+  DryRun?: boolean | undefined;
+
+  /**
+   * <p>The options for server side encryption.</p>
+   * @public
+   */
+  SseSpecification?: VerifiedAccessSseSpecificationRequest | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyVerifiedAccessGroupPolicyResult {
+  /**
+   * <p>The status of the Verified Access policy.</p>
+   * @public
+   */
+  PolicyEnabled?: boolean | undefined;
+
+  /**
+   * <p>The Verified Access policy document.</p>
+   * @public
+   */
+  PolicyDocument?: string | undefined;
+
+  /**
+   * <p>The options in use for server side encryption.</p>
+   * @public
+   */
+  SseSpecification?: VerifiedAccessSseSpecificationResponse | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyVerifiedAccessInstanceRequest {
+  /**
+   * <p>The ID of the Verified Access instance.</p>
+   * @public
+   */
+  VerifiedAccessInstanceId: string | undefined;
+
+  /**
+   * <p>A description for the Verified Access instance.</p>
+   * @public
+   */
+  Description?: string | undefined;
+
+  /**
+   * <p>Checks whether you have the required permissions for the action, without actually making the request,
+   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   * @public
+   */
+  DryRun?: boolean | undefined;
+
+  /**
+   * <p>A unique, case-sensitive token that you provide to ensure idempotency of your
+   *             modification request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring idempotency</a>.</p>
+   * @public
+   */
+  ClientToken?: string | undefined;
+
+  /**
+   * <p>The custom subdomain.</p>
+   * @public
+   */
+  CidrEndpointsCustomSubDomain?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyVerifiedAccessInstanceResult {
+  /**
+   * <p>Details about the Verified Access instance.</p>
+   * @public
+   */
+  VerifiedAccessInstance?: VerifiedAccessInstance | undefined;
+}
+
+/**
+ * <p>Options for CloudWatch Logs as a logging destination.</p>
+ * @public
+ */
+export interface VerifiedAccessLogCloudWatchLogsDestinationOptions {
+  /**
+   * <p>Indicates whether logging is enabled.</p>
+   * @public
+   */
+  Enabled: boolean | undefined;
+
+  /**
+   * <p>The ID of the CloudWatch Logs log group.</p>
+   * @public
+   */
+  LogGroup?: string | undefined;
+}
+
+/**
+ * <p>Describes Amazon Kinesis Data Firehose logging options.</p>
+ * @public
+ */
+export interface VerifiedAccessLogKinesisDataFirehoseDestinationOptions {
+  /**
+   * <p>Indicates whether logging is enabled.</p>
+   * @public
+   */
+  Enabled: boolean | undefined;
+
+  /**
+   * <p>The ID of the delivery stream.</p>
+   * @public
+   */
+  DeliveryStream?: string | undefined;
+}
+
+/**
+ * <p>Options for Amazon S3 as a logging destination.</p>
+ * @public
+ */
+export interface VerifiedAccessLogS3DestinationOptions {
+  /**
+   * <p>Indicates whether logging is enabled.</p>
+   * @public
+   */
+  Enabled: boolean | undefined;
+
+  /**
+   * <p>The bucket name.</p>
+   * @public
+   */
+  BucketName?: string | undefined;
+
+  /**
+   * <p>The bucket prefix.</p>
+   * @public
+   */
+  Prefix?: string | undefined;
+
+  /**
+   * <p>The ID of the Amazon Web Services account that owns the Amazon S3 bucket.</p>
+   * @public
+   */
+  BucketOwner?: string | undefined;
+}
+
+/**
+ * <p>Options for Verified Access logs.</p>
+ * @public
+ */
+export interface VerifiedAccessLogOptions {
+  /**
+   * <p>Sends Verified Access logs to Amazon S3.</p>
+   * @public
+   */
+  S3?: VerifiedAccessLogS3DestinationOptions | undefined;
+
+  /**
+   * <p>Sends Verified Access logs to CloudWatch Logs.</p>
+   * @public
+   */
+  CloudWatchLogs?: VerifiedAccessLogCloudWatchLogsDestinationOptions | undefined;
+
+  /**
+   * <p>Sends Verified Access logs to Kinesis.</p>
+   * @public
+   */
+  KinesisDataFirehose?: VerifiedAccessLogKinesisDataFirehoseDestinationOptions | undefined;
+
+  /**
+   * <p>The logging version.</p>
+   *          <p>Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code>
+   *          </p>
+   * @public
+   */
+  LogVersion?: string | undefined;
+
+  /**
+   * <p>Indicates whether to include trust data sent by trust providers in the logs.</p>
+   * @public
+   */
+  IncludeTrustContext?: boolean | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyVerifiedAccessInstanceLoggingConfigurationRequest {
+  /**
+   * <p>The ID of the Verified Access instance.</p>
+   * @public
+   */
+  VerifiedAccessInstanceId: string | undefined;
+
+  /**
+   * <p>The configuration options for Verified Access instances.</p>
+   * @public
+   */
+  AccessLogs: VerifiedAccessLogOptions | undefined;
+
+  /**
+   * <p>Checks whether you have the required permissions for the action, without actually making the request,
+   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   * @public
+   */
+  DryRun?: boolean | undefined;
+
+  /**
+   * <p>A unique, case-sensitive token that you provide to ensure idempotency of your
+   *             modification request. For more information, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring idempotency</a>.</p>
+   * @public
+   */
+  ClientToken?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyVerifiedAccessInstanceLoggingConfigurationResult {
+  /**
+   * <p>The logging configuration for the Verified Access instance.</p>
+   * @public
+   */
+  LoggingConfiguration?: VerifiedAccessInstanceLoggingConfiguration | undefined;
+}
+
+/**
+ * <p>Modifies the configuration of the specified device-based Amazon Web Services Verified Access trust provider.</p>
+ * @public
+ */
+export interface ModifyVerifiedAccessTrustProviderDeviceOptions {
+  /**
+   * <p> The URL Amazon Web Services Verified Access will use to verify the authenticity of the device tokens.</p>
+   * @public
+   */
+  PublicSigningKeyUrl?: string | undefined;
+}
+
+/**
+ * <p>Describes the OpenID Connect (OIDC) options.</p>
+ * @public
+ */
+export interface ModifyVerifiedAccessNativeApplicationOidcOptions {
+  /**
+   * <p>The public signing key endpoint.</p>
+   * @public
+   */
+  PublicSigningKeyEndpoint?: string | undefined;
+
+  /**
+   * <p>The OIDC issuer identifier of the IdP.</p>
+   * @public
+   */
+  Issuer?: string | undefined;
+
+  /**
+   * <p>The authorization endpoint of the IdP.</p>
+   * @public
+   */
+  AuthorizationEndpoint?: string | undefined;
+
+  /**
+   * <p>The token endpoint of the IdP.</p>
+   * @public
+   */
+  TokenEndpoint?: string | undefined;
+
+  /**
+   * <p>The user info endpoint of the IdP.</p>
+   * @public
+   */
+  UserInfoEndpoint?: string | undefined;
+
+  /**
+   * <p>The OAuth 2.0 client identifier.</p>
+   * @public
+   */
+  ClientId?: string | undefined;
+
+  /**
+   * <p>The OAuth 2.0 client secret.</p>
+   * @public
+   */
+  ClientSecret?: string | undefined;
+
+  /**
+   * <p>The set of user claims to be requested from the IdP.</p>
+   * @public
+   */
+  Scope?: string | undefined;
+}
 
 /**
  * <p>Options for an OpenID Connect-compatible user-identity trust provider.</p>
@@ -5055,8 +5825,8 @@ export interface InstanceMetadataOptionsRequest {
   /**
    * <p>Set to <code>enabled</code> to allow access to instance tags from the instance
    *             metadata. Set to <code>disabled</code> to turn off access to instance tags from the
-   *             instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work with
-   *                 instance tags using the instance metadata</a>.</p>
+   *             instance metadata. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-tags-in-IMDS.html">View tags for your EC2
+   *                 instances using instance metadata</a>.</p>
    *          <p>Default: <code>disabled</code>
    *          </p>
    * @public
@@ -5121,6 +5891,67 @@ export interface PrivateDnsNameOptionsRequest {
    * @public
    */
   EnableResourceNameDnsAAAARecord?: boolean | undefined;
+}
+
+/**
+ * <p>Describes a private IPv4 address for a secondary interface request.</p>
+ * @public
+ */
+export interface InstanceSecondaryInterfacePrivateIpAddressRequest {
+  /**
+   * <p>The private IPv4 address.</p>
+   * @public
+   */
+  PrivateIpAddress: string | undefined;
+}
+
+/**
+ * <p>Describes a secondary interface specification for launching an instance.</p>
+ * @public
+ */
+export interface InstanceSecondaryInterfaceSpecificationRequest {
+  /**
+   * <p>Indicates whether the secondary interface is deleted when the instance is terminated.</p>
+   *          <p>The only supported value for this field is <code>true</code>.</p>
+   * @public
+   */
+  DeleteOnTermination?: boolean | undefined;
+
+  /**
+   * <p>The device index for the secondary interface attachment.</p>
+   * @public
+   */
+  DeviceIndex?: number | undefined;
+
+  /**
+   * <p>The private IPv4 addresses to assign to the secondary interface.</p>
+   * @public
+   */
+  PrivateIpAddresses?: InstanceSecondaryInterfacePrivateIpAddressRequest[] | undefined;
+
+  /**
+   * <p>The number of private IPv4 addresses to assign to the secondary interface.</p>
+   * @public
+   */
+  PrivateIpAddressCount?: number | undefined;
+
+  /**
+   * <p>The ID of the secondary subnet.</p>
+   * @public
+   */
+  SecondarySubnetId?: string | undefined;
+
+  /**
+   * <p>The type of secondary interface.</p>
+   * @public
+   */
+  InterfaceType?: SecondaryInterfaceType | undefined;
+
+  /**
+   * <p>The index of the network card. The network card must support secondary interfaces.</p>
+   * @public
+   */
+  NetworkCardIndex?: number | undefined;
 }
 
 /**
@@ -5444,6 +6275,12 @@ export interface RunInstancesRequest {
    * @public
    */
   Operator?: OperatorRequest | undefined;
+
+  /**
+   * <p>The secondary interfaces to associate with the instance.</p>
+   * @public
+   */
+  SecondaryInterfaces?: InstanceSecondaryInterfaceSpecificationRequest[] | undefined;
 
   /**
    * <p>Checks whether you have the required permissions for the operation, without actually making the

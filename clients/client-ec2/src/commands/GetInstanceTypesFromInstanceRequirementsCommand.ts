@@ -8,7 +8,7 @@ import { commonParams } from "../endpoint/EndpointParameters";
 import type {
   GetInstanceTypesFromInstanceRequirementsRequest,
   GetInstanceTypesFromInstanceRequirementsResult,
-} from "../models/models_5";
+} from "../models/models_6";
 import { GetInstanceTypesFromInstanceRequirements$ } from "../schemas/schemas_0";
 
 /**

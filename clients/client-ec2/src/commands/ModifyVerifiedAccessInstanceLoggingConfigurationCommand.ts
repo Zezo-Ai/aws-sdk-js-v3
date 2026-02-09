@@ -8,7 +8,7 @@ import { commonParams } from "../endpoint/EndpointParameters";
 import type {
   ModifyVerifiedAccessInstanceLoggingConfigurationRequest,
   ModifyVerifiedAccessInstanceLoggingConfigurationResult,
-} from "../models/models_6";
+} from "../models/models_7";
 import { ModifyVerifiedAccessInstanceLoggingConfiguration$ } from "../schemas/schemas_0";
 
 /**

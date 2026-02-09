@@ -5,8 +5,10 @@ import type { MetadataBearer as __MetadataBearer } from "@smithy/types";
 
 import type { EC2ClientResolvedConfig, ServiceInputTypes, ServiceOutputTypes } from "../EC2Client";
 import { commonParams } from "../endpoint/EndpointParameters";
-import type { DescribeVerifiedAccessInstanceLoggingConfigurationsRequest } from "../models/models_4";
-import type { DescribeVerifiedAccessInstanceLoggingConfigurationsResult } from "../models/models_5";
+import type {
+  DescribeVerifiedAccessInstanceLoggingConfigurationsRequest,
+  DescribeVerifiedAccessInstanceLoggingConfigurationsResult,
+} from "../models/models_5";
 import { DescribeVerifiedAccessInstanceLoggingConfigurations$ } from "../schemas/schemas_0";
 
 /**
