@@ -50,7 +50,7 @@ export interface ListClustersCommandOutput extends ListClustersResponse, __Metad
  * //       arn: "STRING_VALUE", // required
  * //       createdAt: new Date("TIMESTAMP"), // required
  * //       modifiedAt: new Date("TIMESTAMP"), // required
- * //       status: "CREATING" || "ACTIVE" || "UPDATING" || "DELETING" || "CREATE_FAILED" || "DELETE_FAILED" || "UPDATE_FAILED" || "SUSPENDING" || "SUSPENDED", // required
+ * //       status: "CREATING" || "ACTIVE" || "UPDATING" || "DELETING" || "CREATE_FAILED" || "DELETE_FAILED" || "UPDATE_FAILED" || "SUSPENDING" || "SUSPENDED" || "RESUMING", // required
  * //     },
  * //   ],
  * //   nextToken: "STRING_VALUE",

@@ -1087,6 +1087,12 @@
           "traits": {
             "smithy.api#enumValue": "SUSPENDED"
           }
+        },
+        "RESUMING": {
+          "target": "smithy.api#Unit",
+          "traits": {
+            "smithy.api#enumValue": "RESUMING"
+          }
         }
       }
     },
@@ -1428,6 +1434,12 @@
           "target": "smithy.api#Unit",
           "traits": {
             "smithy.api#enumValue": "SUSPENDED"
+          }
+        },
+        "RESUMING": {
+          "target": "smithy.api#Unit",
+          "traits": {
+            "smithy.api#enumValue": "RESUMING"
           }
         }
       }
@@ -3249,6 +3261,12 @@
           "target": "smithy.api#Unit",
           "traits": {
             "smithy.api#enumValue": "SUSPENDED"
+          }
+        },
+        "RESUMING": {
+          "target": "smithy.api#Unit",
+          "traits": {
+            "smithy.api#enumValue": "RESUMING"
           }
         }
       }
