@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.986.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.985.0...v3.986.0) (2026-02-09)
+
+
+### Features
+
+* **client-connectcampaignsv2:** Add the missing event type for WhatsApp ([6b19703](https://github.com/aws/aws-sdk-js-v3/commit/6b19703e15bf13fb26fe5ddbcd8e73d154204e17))
+* **client-ec2:** Amazon Secondary Networks is a networking feature that provides high-performance, low-latency connectivity for specialized workloads. ([0ba27c2](https://github.com/aws/aws-sdk-js-v3/commit/0ba27c28535f80e5156fe5d2f142c8999233674b))
+* **client-eks:** Amazon EKS adds a new DescribeUpdate update type, VendedLogsUpdate, to support an integration between EKS Auto Mode and Amazon CloudWatch Vended Logs. ([85135c4](https://github.com/aws/aws-sdk-js-v3/commit/85135c4a3104b958b11b32547ea0fda0405d0a63))
+* **client-imagebuilder:** EC2 Image Builder now supports wildcard patterns in lifecycle policies with recipes and enhances the experience of tag-scoped policies. ([f015ab6](https://github.com/aws/aws-sdk-js-v3/commit/f015ab63de494b18cc2395af769407d25269280a))
+* **client-neptunedata:** Added edgeOnlyLoad boolean parameter to Neptune bulk load request. When TRUE, files are loaded in order without scanning. When FALSE (default), the loader scans files first, then loads vertex files before edge files automatically. ([012843a](https://github.com/aws/aws-sdk-js-v3/commit/012843ab3d96994b945cb555887ffecfe1b92f3d))
+* **client-pcs:** Introduces RESUMING state for clusters, compute node groups, and queues. ([78ec45d](https://github.com/aws/aws-sdk-js-v3/commit/78ec45d517dcb9a2ea0ee279ec99d7bca6a7db50))
+* **clients:** update client endpoints as of 2026-02-09 ([b81f169](https://github.com/aws/aws-sdk-js-v3/commit/b81f169c19677987668177af06f9f104e2ea4178))
+
+
+
+
+
 # [3.985.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.984.0...v3.985.0) (2026-02-06)
 
 

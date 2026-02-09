@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.986.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.985.0...v3.986.0) (2026-02-09)
+
+
+### Features
+
+* **client-eks:** Amazon EKS adds a new DescribeUpdate update type, VendedLogsUpdate, to support an integration between EKS Auto Mode and Amazon CloudWatch Vended Logs. ([85135c4](https://github.com/aws/aws-sdk-js-v3/commit/85135c4a3104b958b11b32547ea0fda0405d0a63))
+
+
+
+
+
 # [3.985.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.984.0...v3.985.0) (2026-02-06)
 
 **Note:** Version bump only for package @aws-sdk/client-eks

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.986.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.985.0...v3.986.0) (2026-02-09)
+
+
+### Features
+
+* **client-neptunedata:** Added edgeOnlyLoad boolean parameter to Neptune bulk load request. When TRUE, files are loaded in order without scanning. When FALSE (default), the loader scans files first, then loads vertex files before edge files automatically. ([012843a](https://github.com/aws/aws-sdk-js-v3/commit/012843ab3d96994b945cb555887ffecfe1b92f3d))
+
+
+
+
+
 # [3.985.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.984.0...v3.985.0) (2026-02-06)
 
 **Note:** Version bump only for package @aws-sdk/client-neptunedata

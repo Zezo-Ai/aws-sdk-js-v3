@@ -8,6 +8,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+
+# 3.972.6 (2026-02-06)
+### Tests
+* **middleware-websocket:** improve integ test for websocket ([#7718](https://github.com/aws/aws-sdk-js-v3/issues/7718)) ([e25063a](https://github.com/aws/aws-sdk-js-v3/commit/e25063ae4e9c4c04ded2882e280a3fb1b511f961))
+
+
+
 # 3.972.5 (2026-02-05)
 ### Chores
 * **eventstream-handler-node:** eventstream code maintenance ([#7708](https://github.com/aws/aws-sdk-js-v3/issues/7708)) ([7163f9d](https://github.com/aws/aws-sdk-js-v3/commit/7163f9d847d9306d938cd4542862d35ee2c3ba46))
