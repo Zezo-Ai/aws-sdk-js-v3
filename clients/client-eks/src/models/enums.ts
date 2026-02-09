@@ -237,6 +237,7 @@ export const UpdateType = {
   LOGGING_UPDATE: "LoggingUpdate",
   REMOTE_NETWORK_CONFIG_UPDATE: "RemoteNetworkConfigUpdate",
   UPGRADE_POLICY_UPDATE: "UpgradePolicyUpdate",
+  VENDED_LOGS_UPDATE: "VendedLogsUpdate",
   VERSION_UPDATE: "VersionUpdate",
   VPC_CONFIG_UPDATE: "VpcConfigUpdate",
   ZONAL_SHIFT_CONFIG_UPDATE: "ZonalShiftConfigUpdate",

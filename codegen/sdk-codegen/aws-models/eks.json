@@ -13142,6 +13142,12 @@
           "traits": {
             "smithy.api#enumValue": "ControlPlaneScalingConfigUpdate"
           }
+        },
+        "VENDED_LOGS_UPDATE": {
+          "target": "smithy.api#Unit",
+          "traits": {
+            "smithy.api#enumValue": "VendedLogsUpdate"
+          }
         }
       }
     },
