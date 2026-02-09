@@ -1604,7 +1604,7 @@ export interface DataLakeSettings {
   CreateTableDefaultPermissions?: PrincipalPermissions[] | undefined;
 
   /**
-   * <p>A key-value map that provides an additional configuration on your data lake. CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, 3, and 4.</p>
+   * <p>A key-value map that provides an additional configuration on your data lake. CROSS_ACCOUNT_VERSION is the key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, 3, 4 and 5.</p>
    * @public
    */
   Parameters?: Record<string, string> | undefined;
@@ -2357,6 +2357,8 @@ export interface GetTemporaryGluePartitionCredentialsResponse {
 
 /**
  * <p>A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation generated authorization identifier and information from the request's authorization context.</p>
+ *          <p>For more information about how to utilize QuerySessionContext, see
+ *         <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/api-overview.html">Lake Formation workflow for application integration API operations</a> in the developer guide.</p>
  * @public
  */
 export interface QuerySessionContext {
