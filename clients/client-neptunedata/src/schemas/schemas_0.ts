@@ -233,6 +233,7 @@ const _eI = "eventId";
 const _eL = "edgeLabels";
 const _eM = "explainMode";
 const _eMST = "enableManagedSpotTraining";
+const _eOL = "edgeOnlyLoad";
 const _eP = "edgeProperties";
 const _ePP = "errorsPerPage";
 const _eS = "edgeStructures";
@@ -1087,8 +1088,8 @@ export var SparqlRecord$: StaticStructureSchema = [3, n0, _SR,
 ];
 export var StartLoaderJobInput$: StaticStructureSchema = [3, n0, _SLJI,
   0,
-  [_so, _fo, _sBR, _iRA, _mod, _fOE, _par, _pC, _uSCP, _qR, _de, _uPEI],
-  [0, 0, [0, { [_jN]: _reg }], 0, 0, 2, 0, 128 | 0, 2, 2, 64 | 0, 2], 4
+  [_so, _fo, _sBR, _iRA, _mod, _fOE, _par, _pC, _uSCP, _qR, _de, _uPEI, _eOL],
+  [0, 0, [0, { [_jN]: _reg }], 0, 0, 2, 0, 128 | 0, 2, 2, 64 | 0, 2, 2], 4
 ];
 export var StartLoaderJobOutput$: StaticStructureSchema = [3, n0, _SLJO,
   0,

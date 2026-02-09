@@ -53,6 +53,7 @@ export interface StartLoaderJobCommandOutput extends StartLoaderJobOutput, __Met
  *     "STRING_VALUE",
  *   ],
  *   userProvidedEdgeIds: true || false,
+ *   edgeOnlyLoad: true || false,
  * };
  * const command = new StartLoaderJobCommand(input);
  * const response = await client.send(command);

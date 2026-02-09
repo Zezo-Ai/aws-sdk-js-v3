@@ -2182,6 +2182,12 @@ export interface StartLoaderJobInput {
    * @public
    */
   userProvidedEdgeIds?: boolean | undefined;
+
+  /**
+   * <p> <b> <code>edgeOnlyLoad</code> </b>   –   A flag that controls file processing order during bulk loading.</p> <p> <i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.</p> <p> <i>Default value</i>: <code>"FALSE"</code>.</p> <p>When this parameter is set to "FALSE", the loader automatically loads vertex files first, then edge files afterwards. It does this by first scanning all files to determine their contents (vertices or edges). When this parameter is set to "TRUE", the loader skips the initial scanning phase and immediately loads all files in the order they appear.</p>
+   * @public
+   */
+  edgeOnlyLoad?: boolean | undefined;
 }
 
 /**
