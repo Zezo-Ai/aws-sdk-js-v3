@@ -2608,6 +2608,13 @@ UpdateTrafficDistribution
 </details>
 <details>
 <summary>
+UpdateUserConfig
+</summary>
+
+[Command API Reference](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/connect/command/UpdateUserConfigCommand/) / [Input](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-client-connect/Interface/UpdateUserConfigCommandInput/) / [Output](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-client-connect/Interface/UpdateUserConfigCommandOutput/)
+</details>
+<details>
+<summary>
 UpdateUserHierarchy
 </summary>
 

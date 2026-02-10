@@ -9,6 +9,8 @@ import {
   ActivateEvaluationFormRequest$,
   ActivateEvaluationFormResponse$,
   AdditionalEmailRecipients$,
+  AfterContactWorkConfig$,
+  AfterContactWorkConfigPerChannel$,
   AgentAvailabilityTimer,
   AgentConfig$,
   AgentContactReference$,
@@ -120,6 +122,7 @@ import {
   AudioQualityMetricsInfo$,
   AuthenticationProfile$,
   AuthenticationProfileSummary$,
+  AutoAcceptConfig$,
   AutoEvaluationConfiguration$,
   AutoEvaluationDetails$,
   AutoEvaluationStatus,
@@ -1456,6 +1459,8 @@ import {
   PauseContactRequest$,
   PauseContactResponse$,
   PersistentChat$,
+  PersistentConnectionConfig$,
+  PhoneNumberConfig$,
   PhoneNumberCountryCode,
   PhoneNumberQuickConnectConfig$,
   PhoneNumberStatus$,
@@ -2059,6 +2064,9 @@ import {
   UpdateTrafficDistributionCommand,
   UpdateTrafficDistributionRequest$,
   UpdateTrafficDistributionResponse$,
+  UpdateUserConfig$,
+  UpdateUserConfigCommand,
+  UpdateUserConfigRequest$,
   UpdateUserHierarchy$,
   UpdateUserHierarchyCommand,
   UpdateUserHierarchyGroupName$,
@@ -2148,6 +2156,8 @@ import {
   VocabularyState,
   VocabularySummary$,
   VoiceCallEntryPointParameters$,
+  VoiceEnhancementConfig$,
+  VoiceEnhancementMode,
   VoiceRecordingConfiguration$,
   VoiceRecordingTrack,
   WisdomInfo$,
@@ -2854,6 +2864,8 @@ assert(typeof UpdateTestCaseCommand === "function");
 assert(typeof UpdateTestCase$ === "object");
 assert(typeof UpdateTrafficDistributionCommand === "function");
 assert(typeof UpdateTrafficDistribution$ === "object");
+assert(typeof UpdateUserConfigCommand === "function");
+assert(typeof UpdateUserConfig$ === "object");
 assert(typeof UpdateUserHierarchyCommand === "function");
 assert(typeof UpdateUserHierarchy$ === "object");
 assert(typeof UpdateUserHierarchyGroupNameCommand === "function");
@@ -2887,6 +2899,8 @@ assert(typeof ActionSummary$ === "object");
 assert(typeof ActivateEvaluationFormRequest$ === "object");
 assert(typeof ActivateEvaluationFormResponse$ === "object");
 assert(typeof AdditionalEmailRecipients$ === "object");
+assert(typeof AfterContactWorkConfig$ === "object");
+assert(typeof AfterContactWorkConfigPerChannel$ === "object");
 assert(typeof AgentConfig$ === "object");
 assert(typeof AgentContactReference$ === "object");
 assert(typeof AgentFirst$ === "object");
@@ -2950,6 +2964,7 @@ assert(typeof AudioFeatures$ === "object");
 assert(typeof AudioQualityMetricsInfo$ === "object");
 assert(typeof AuthenticationProfile$ === "object");
 assert(typeof AuthenticationProfileSummary$ === "object");
+assert(typeof AutoAcceptConfig$ === "object");
 assert(typeof AutoEvaluationConfiguration$ === "object");
 assert(typeof AutoEvaluationDetails$ === "object");
 assert(typeof AutomaticFailConfiguration$ === "object");
@@ -3634,6 +3649,8 @@ assert(typeof ParticipantTokenCredentials$ === "object");
 assert(typeof PauseContactRequest$ === "object");
 assert(typeof PauseContactResponse$ === "object");
 assert(typeof PersistentChat$ === "object");
+assert(typeof PersistentConnectionConfig$ === "object");
+assert(typeof PhoneNumberConfig$ === "object");
 assert(typeof PhoneNumberQuickConnectConfig$ === "object");
 assert(typeof PhoneNumberStatus$ === "object");
 assert(typeof PhoneNumberSummary$ === "object");
@@ -3963,6 +3980,7 @@ assert(typeof UpdateTestCaseRequest$ === "object");
 assert(typeof UpdateTestCaseResponse$ === "object");
 assert(typeof UpdateTrafficDistributionRequest$ === "object");
 assert(typeof UpdateTrafficDistributionResponse$ === "object");
+assert(typeof UpdateUserConfigRequest$ === "object");
 assert(typeof UpdateUserHierarchyGroupNameRequest$ === "object");
 assert(typeof UpdateUserHierarchyRequest$ === "object");
 assert(typeof UpdateUserHierarchyStructureRequest$ === "object");
@@ -4015,6 +4033,7 @@ assert(typeof ViewVersionSummary$ === "object");
 assert(typeof Vocabulary$ === "object");
 assert(typeof VocabularySummary$ === "object");
 assert(typeof VoiceCallEntryPointParameters$ === "object");
+assert(typeof VoiceEnhancementConfig$ === "object");
 assert(typeof VoiceRecordingConfiguration$ === "object");
 assert(typeof WisdomInfo$ === "object");
 assert(typeof Workspace$ === "object");
@@ -4195,6 +4214,7 @@ assert(typeof ViewType === "object");
 assert(typeof Visibility === "object");
 assert(typeof VocabularyLanguageCode === "object");
 assert(typeof VocabularyState === "object");
+assert(typeof VoiceEnhancementMode === "object");
 assert(typeof VoiceRecordingTrack === "object");
 assert(typeof WorkspaceFontFamily === "object");
 // errors

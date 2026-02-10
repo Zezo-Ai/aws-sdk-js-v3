@@ -35,6 +35,21 @@ export type ActionType = (typeof ActionType)[keyof typeof ActionType];
  * @public
  * @enum
  */
+export const Channel = {
+  CHAT: "CHAT",
+  EMAIL: "EMAIL",
+  TASK: "TASK",
+  VOICE: "VOICE",
+} as const;
+/**
+ * @public
+ */
+export type Channel = (typeof Channel)[keyof typeof Channel];
+
+/**
+ * @public
+ * @enum
+ */
 export const AgentAvailabilityTimer = {
   TIME_SINCE_LAST_ACTIVITY: "TIME_SINCE_LAST_ACTIVITY",
   TIME_SINCE_LAST_INBOUND: "TIME_SINCE_LAST_INBOUND",
@@ -63,21 +78,6 @@ export const ContactState = {
  * @public
  */
 export type ContactState = (typeof ContactState)[keyof typeof ContactState];
-
-/**
- * @public
- * @enum
- */
-export const Channel = {
-  CHAT: "CHAT",
-  EMAIL: "EMAIL",
-  TASK: "TASK",
-  VOICE: "VOICE",
-} as const;
-/**
- * @public
- */
-export type Channel = (typeof Channel)[keyof typeof Channel];
 
 /**
  * @public
@@ -1255,6 +1255,20 @@ export const PhoneType = {
  * @public
  */
 export type PhoneType = (typeof PhoneType)[keyof typeof PhoneType];
+
+/**
+ * @public
+ * @enum
+ */
+export const VoiceEnhancementMode = {
+  NOISE_SUPPRESSION: "NOISE_SUPPRESSION",
+  NONE: "NONE",
+  VOICE_ISOLATION: "VOICE_ISOLATION",
+} as const;
+/**
+ * @public
+ */
+export type VoiceEnhancementMode = (typeof VoiceEnhancementMode)[keyof typeof VoiceEnhancementMode];
 
 /**
  * @public

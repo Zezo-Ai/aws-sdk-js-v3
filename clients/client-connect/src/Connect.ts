@@ -1624,6 +1624,11 @@ import {
   UpdateTrafficDistributionCommandOutput,
 } from "./commands/UpdateTrafficDistributionCommand";
 import {
+  UpdateUserConfigCommand,
+  UpdateUserConfigCommandInput,
+  UpdateUserConfigCommandOutput,
+} from "./commands/UpdateUserConfigCommand";
+import {
   UpdateUserHierarchyCommand,
   UpdateUserHierarchyCommandInput,
   UpdateUserHierarchyCommandOutput,
@@ -2126,6 +2131,7 @@ const commands = {
   UpdateTaskTemplateCommand,
   UpdateTestCaseCommand,
   UpdateTrafficDistributionCommand,
+  UpdateUserConfigCommand,
   UpdateUserHierarchyCommand,
   UpdateUserHierarchyGroupNameCommand,
   UpdateUserHierarchyStructureCommand,
@@ -8030,6 +8036,23 @@ export interface Connect {
     args: UpdateTrafficDistributionCommandInput,
     options: __HttpHandlerOptions,
     cb: (err: any, data?: UpdateTrafficDistributionCommandOutput) => void
+  ): void;
+
+  /**
+   * @see {@link UpdateUserConfigCommand}
+   */
+  updateUserConfig(
+    args: UpdateUserConfigCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<UpdateUserConfigCommandOutput>;
+  updateUserConfig(
+    args: UpdateUserConfigCommandInput,
+    cb: (err: any, data?: UpdateUserConfigCommandOutput) => void
+  ): void;
+  updateUserConfig(
+    args: UpdateUserConfigCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: UpdateUserConfigCommandOutput) => void
   ): void;
 
   /**

@@ -1,7 +1,6 @@
 // smithy-typescript generated code
 import {
   AgentAvailabilityTimer,
-  AgentStatusType,
   AutoEvaluationStatus,
   Channel,
   Comparison,
@@ -62,6 +61,7 @@ import {
   Visibility,
   VocabularyLanguageCode,
   VocabularyState,
+  WorkspaceFontFamily,
 } from "./enums";
 import {
   type AgentConfig,
@@ -95,24 +95,154 @@ import {
   type UserPhoneConfig,
   type Validation,
   type View,
-  type WorkspaceTheme,
+  type WorkspaceThemeImages,
+  type WorkspaceThemePalette,
+  AfterContactWorkConfigPerChannel,
   AgentContactReference,
-  AgentStatusSummary,
   AiAgentInfo,
   AliasConfiguration,
-  AnalyticsDataAssociationResult,
+  AutoAcceptConfig,
   Distribution,
   FailedBatchAssociationSummary,
   HoursOfOperationConfig,
   HoursOfOperationOverrideConfig,
   MediaConcurrency,
+  PersistentConnectionConfig,
+  PhoneNumberConfig,
   PrimaryValue,
   RoutingProfileQueueReference,
   RuleAction,
   SecurityProfileItem,
   SuccessfulBatchAssociationSummary,
   TaskTemplateField,
+  VoiceEnhancementConfig,
 } from "./models_0";
+
+/**
+ * <p>Contains font family configuration for workspace themes.</p>
+ * @public
+ */
+export interface FontFamily {
+  /**
+   * <p>The default font family to use in the workspace theme.</p>
+   * @public
+   */
+  Default?: WorkspaceFontFamily | undefined;
+}
+
+/**
+ * <p>Contains typography configuration for a workspace theme.</p>
+ * @public
+ */
+export interface WorkspaceThemeTypography {
+  /**
+   * <p>The font family configuration for text in the workspace.</p>
+   * @public
+   */
+  FontFamily?: FontFamily | undefined;
+}
+
+/**
+ * <p>Contains detailed theme configuration for a workspace, including colors, images, and typography.</p>
+ * @public
+ */
+export interface WorkspaceThemeConfig {
+  /**
+   * <p>The color palette configuration for the workspace theme.</p>
+   * @public
+   */
+  Palette?: WorkspaceThemePalette | undefined;
+
+  /**
+   * <p>The image assets used in the workspace theme.</p>
+   * @public
+   */
+  Images?: WorkspaceThemeImages | undefined;
+
+  /**
+   * <p>The typography configuration for the workspace theme.</p>
+   * @public
+   */
+  Typography?: WorkspaceThemeTypography | undefined;
+}
+
+/**
+ * <p>Contains theme configuration for a workspace, supporting both light and dark modes.</p>
+ * @public
+ */
+export interface WorkspaceTheme {
+  /**
+   * <p>The theme configuration for light mode.</p>
+   * @public
+   */
+  Light?: WorkspaceThemeConfig | undefined;
+
+  /**
+   * <p>The theme configuration for dark mode.</p>
+   * @public
+   */
+  Dark?: WorkspaceThemeConfig | undefined;
+}
+
+/**
+ * @public
+ */
+export interface CreateWorkspaceRequest {
+  /**
+   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+   *    the Amazon Resource Name (ARN) of the instance.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+
+  /**
+   * <p>The name of the workspace. Must be unique within the instance and can contain 1-127 characters.</p>
+   * @public
+   */
+  Name: string | undefined;
+
+  /**
+   * <p>The description of the workspace. Maximum length is 250 characters.</p>
+   * @public
+   */
+  Description?: string | undefined;
+
+  /**
+   * <p>The theme configuration for the workspace, including colors and styling.</p>
+   * @public
+   */
+  Theme?: WorkspaceTheme | undefined;
+
+  /**
+   * <p>The title displayed for the workspace.</p>
+   * @public
+   */
+  Title?: string | undefined;
+
+  /**
+   * <p>The tags used to organize, track, or control access for this resource. For example, <code>\{ "Tags":
+   *     \{"key1":"value1", "key2":"value2"\} \}</code>.</p>
+   * @public
+   */
+  Tags?: Record<string, string> | undefined;
+}
+
+/**
+ * @public
+ */
+export interface CreateWorkspaceResponse {
+  /**
+   * <p>The identifier of the workspace.</p>
+   * @public
+   */
+  WorkspaceId: string | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of the workspace.</p>
+   * @public
+   */
+  WorkspaceArn: string | undefined;
+}
 
 /**
  * @public
@@ -4827,6 +4957,36 @@ export interface User {
    * @public
    */
   Tags?: Record<string, string> | undefined;
+
+  /**
+   * <p>The list of auto-accept configuration settings for each channel.</p>
+   * @public
+   */
+  AutoAcceptConfigs?: AutoAcceptConfig[] | undefined;
+
+  /**
+   * <p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>
+   * @public
+   */
+  AfterContactWorkConfigs?: AfterContactWorkConfigPerChannel[] | undefined;
+
+  /**
+   * <p>The list of phone number configuration settings for each channel.</p>
+   * @public
+   */
+  PhoneNumberConfigs?: PhoneNumberConfig[] | undefined;
+
+  /**
+   * <p>The list of persistent connection configuration settings for each channel.</p>
+   * @public
+   */
+  PersistentConnectionConfigs?: PersistentConnectionConfig[] | undefined;
+
+  /**
+   * <p>The list of voice enhancement configuration settings for each channel.</p>
+   * @public
+   */
+  VoiceEnhancementConfigs?: VoiceEnhancementConfig[] | undefined;
 
   /**
    * <p>The timestamp when this resource was last modified.</p>
@@ -10134,142 +10294,3 @@ export interface ImportWorkspaceMediaRequest {
  * @public
  */
 export interface ImportWorkspaceMediaResponse {}
-
-/**
- * @public
- */
-export interface ListAgentStatusRequest {
-  /**
-   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-   * @public
-   */
-  InstanceId: string | undefined;
-
-  /**
-   * <p>The token for the next set of results. Use the value returned in the previous
-   * response in the next request to retrieve the next set of results.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
-
-  /**
-   * <p>The maximum number of results to return per page.</p>
-   * @public
-   */
-  MaxResults?: number | undefined;
-
-  /**
-   * <p>Available agent status types.</p>
-   * @public
-   */
-  AgentStatusTypes?: AgentStatusType[] | undefined;
-}
-
-/**
- * @public
- */
-export interface ListAgentStatusResponse {
-  /**
-   * <p>If there are additional results, this is the token for the next set of results.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
-
-  /**
-   * <p>A summary of agent statuses.</p>
-   * @public
-   */
-  AgentStatusSummaryList?: AgentStatusSummary[] | undefined;
-}
-
-/**
- * @public
- */
-export interface ListAnalyticsDataAssociationsRequest {
-  /**
-   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-   * @public
-   */
-  InstanceId: string | undefined;
-
-  /**
-   * <p>The identifier of the dataset to get the association status.</p>
-   * @public
-   */
-  DataSetId?: string | undefined;
-
-  /**
-   * <p>The token for the next set of results. Use the value returned in the previous
-   * response in the next request to retrieve the next set of results.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
-
-  /**
-   * <p>The maximum number of results to return per page.</p>
-   * @public
-   */
-  MaxResults?: number | undefined;
-}
-
-/**
- * @public
- */
-export interface ListAnalyticsDataAssociationsResponse {
-  /**
-   * <p>An array of successful results: <code>DataSetId</code>, <code>TargetAccountId</code>,
-   *     <code>ResourceShareId</code>, <code>ResourceShareArn</code>. This is a paginated API, so <code>nextToken</code> is
-   *    given if there are more results to be returned.</p>
-   * @public
-   */
-  Results?: AnalyticsDataAssociationResult[] | undefined;
-
-  /**
-   * <p>If there are additional results, this is the token for the next set of results.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
-}
-
-/**
- * @public
- */
-export interface ListAnalyticsDataLakeDataSetsRequest {
-  /**
-   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-   * @public
-   */
-  InstanceId: string | undefined;
-
-  /**
-   * <p>The token for the next set of results. Use the value returned in the previous
-   * response in the next request to retrieve the next set of results.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
-
-  /**
-   * <p>The maximum number of results to return per page.</p>
-   * @public
-   */
-  MaxResults?: number | undefined;
-}
-
-/**
- * <p>Information about datasets that are available to associate with: <code>DataSetId</code>,
- *     <code>DataSetName</code>.</p>
- * @public
- */
-export interface AnalyticsDataSetsResult {
-  /**
-   * <p>The identifier of the dataset.</p>
-   * @public
-   */
-  DataSetId?: string | undefined;
-
-  /**
-   * <p>The name of the dataset.</p>
-   * @public
-   */
-  DataSetName?: string | undefined;
-}

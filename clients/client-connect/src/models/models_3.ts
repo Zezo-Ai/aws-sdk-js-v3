@@ -56,6 +56,7 @@ import {
   type AgentStatusSearchFilter,
   type AllowedCapabilities,
   type Campaign,
+  type ControlPlaneAttributeFilter,
   type CreatedByInfo,
   type DataTableLockVersion,
   type Endpoint,
@@ -84,19 +85,23 @@ import {
   type Validation,
   type View,
   type ViewInputContent,
-  type WorkspaceTheme,
+  AfterContactWorkConfigPerChannel,
   Application,
+  AutoAcceptConfig,
   EvaluationFormItemEnablementExpression,
   FlowModule,
   HoursOfOperationConfig,
   HoursOfOperationOverrideConfig,
   MediaConcurrency,
+  PersistentConnectionConfig,
+  PhoneNumberConfig,
   PrimaryValue,
   Reference,
   RoutingProfileQueueConfig,
   RuleAction,
   TaskTemplateField,
   UserProficiency,
+  VoiceEnhancementConfig,
 } from "./models_0";
 import {
   type AttributeCondition,
@@ -116,6 +121,7 @@ import {
   type TaskTemplateInfoV2,
   type TelephonyConfig,
   type WisdomInfo,
+  type WorkspaceTheme,
   ContactEvaluation,
   EvaluationNote,
   NextContactEntry,
@@ -147,9 +153,192 @@ import type {
   UserHierarchyGroupSearchFilter,
   UserSearchFilter,
   ViewSearchFilter,
-  WorkspaceAssociationSearchFilter,
-  WorkspaceSearchFilter,
 } from "./models_2";
+
+/**
+ * <p>Defines filters to apply when searching for workspace associations, such as tag-based filters.</p>
+ * @public
+ */
+export interface WorkspaceAssociationSearchFilter {
+  /**
+   * <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an
+   *     <code>OR</code> or <code>AND</code> (List of List) input where:</p>
+   *          <ul>
+   *             <li>
+   *                <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator.</p>
+   *             </li>
+   *             <li>
+   *                <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p>
+   *             </li>
+   *          </ul>
+   * @public
+   */
+  AttributeFilter?: ControlPlaneAttributeFilter | undefined;
+}
+
+/**
+ * <p>Contains summary information about a workspace association with a user or routing profile.</p>
+ * @public
+ */
+export interface WorkspaceAssociationSearchSummary {
+  /**
+   * <p>The identifier of the workspace.</p>
+   * @public
+   */
+  WorkspaceId?: string | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of the workspace.</p>
+   * @public
+   */
+  WorkspaceArn?: string | undefined;
+
+  /**
+   * <p>The identifier of the associated resource (user or routing profile).</p>
+   * @public
+   */
+  ResourceId?: string | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of the associated resource.</p>
+   * @public
+   */
+  ResourceArn?: string | undefined;
+
+  /**
+   * <p>The type of resource associated with the workspace. Valid values are: <code>USER</code> and
+   *     <code>ROUTING_PROFILE</code>.</p>
+   * @public
+   */
+  ResourceType?: string | undefined;
+
+  /**
+   * <p>The name of the associated resource.</p>
+   * @public
+   */
+  ResourceName?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface SearchWorkspaceAssociationsResponse {
+  /**
+   * <p>If there are additional results, this is the token for the next set of results.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+
+  /**
+   * <p>A list of workspace associations that match the search criteria.</p>
+   * @public
+   */
+  WorkspaceAssociations?: WorkspaceAssociationSearchSummary[] | undefined;
+
+  /**
+   * <p>The approximate total number of workspace associations that match the search criteria.</p>
+   * @public
+   */
+  ApproximateTotalCount?: number | undefined;
+}
+
+/**
+ * <p>Defines filters to apply when searching for workspaces, such as tag-based filters.</p>
+ * @public
+ */
+export interface WorkspaceSearchFilter {
+  /**
+   * <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an
+   *     <code>OR</code> or <code>AND</code> (List of List) input where:</p>
+   *          <ul>
+   *             <li>
+   *                <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator.</p>
+   *             </li>
+   *             <li>
+   *                <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p>
+   *             </li>
+   *          </ul>
+   * @public
+   */
+  AttributeFilter?: ControlPlaneAttributeFilter | undefined;
+}
+
+/**
+ * <p>Contains summary information about a workspace returned from a search operation.</p>
+ * @public
+ */
+export interface WorkspaceSearchSummary {
+  /**
+   * <p>The unique identifier of the workspace.</p>
+   * @public
+   */
+  Id?: string | undefined;
+
+  /**
+   * <p>The name of the workspace.</p>
+   * @public
+   */
+  Name?: string | undefined;
+
+  /**
+   * <p>The visibility setting of the workspace.</p>
+   * @public
+   */
+  Visibility?: Visibility | undefined;
+
+  /**
+   * <p>The description of the workspace.</p>
+   * @public
+   */
+  Description?: string | undefined;
+
+  /**
+   * <p>The title displayed for the workspace.</p>
+   * @public
+   */
+  Title?: string | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of the workspace.</p>
+   * @public
+   */
+  Arn?: string | undefined;
+
+  /**
+   * <p>The timestamp when the workspace was created.</p>
+   * @public
+   */
+  CreatedAt?: Date | undefined;
+
+  /**
+   * <p>The tags associated with the workspace.</p>
+   * @public
+   */
+  Tags?: Record<string, string> | undefined;
+}
+
+/**
+ * @public
+ */
+export interface SearchWorkspacesResponse {
+  /**
+   * <p>If there are additional results, this is the token for the next set of results.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+
+  /**
+   * <p>A list of workspaces that match the search criteria.</p>
+   * @public
+   */
+  Workspaces?: WorkspaceSearchSummary[] | undefined;
+
+  /**
+   * <p>The approximate total number of workspaces that match the search criteria.</p>
+   * @public
+   */
+  ApproximateTotalCount?: number | undefined;
+}
 
 /**
  * <p>Chat integration event containing payload to perform different chat actions such as:</p>
@@ -4147,6 +4336,53 @@ export interface UpdateTrafficDistributionRequest {
  * @public
  */
 export interface UpdateTrafficDistributionResponse {}
+
+/**
+ * @public
+ */
+export interface UpdateUserConfigRequest {
+  /**
+   * <p>The list of auto-accept configuration settings for each channel. When auto-accept is enabled for a channel, available agents are automatically connected to contacts from that channel without needing to manually accept. Auto-accept connects agents to contacts in less than one second.</p>
+   * @public
+   */
+  AutoAcceptConfigs?: AutoAcceptConfig[] | undefined;
+
+  /**
+   * <p>The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). Enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>
+   * @public
+   */
+  AfterContactWorkConfigs?: AfterContactWorkConfigPerChannel[] | undefined;
+
+  /**
+   * <p>The list of phone number configuration settings for each channel.</p>
+   * @public
+   */
+  PhoneNumberConfigs?: PhoneNumberConfig[] | undefined;
+
+  /**
+   * <p>The list of persistent connection configuration settings for each channel.</p>
+   * @public
+   */
+  PersistentConnectionConfigs?: PersistentConnectionConfig[] | undefined;
+
+  /**
+   * <p>The list of voice enhancement configuration settings for each channel.</p>
+   * @public
+   */
+  VoiceEnhancementConfigs?: VoiceEnhancementConfig[] | undefined;
+
+  /**
+   * <p>The identifier of the user account.</p>
+   * @public
+   */
+  UserId: string | undefined;
+
+  /**
+   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+}
 
 /**
  * @public

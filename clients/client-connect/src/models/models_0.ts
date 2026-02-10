@@ -79,7 +79,7 @@ import {
   ViewType,
   VocabularyLanguageCode,
   VocabularyState,
-  WorkspaceFontFamily,
+  VoiceEnhancementMode,
 } from "./enums";
 
 /**
@@ -175,6 +175,42 @@ export interface AdditionalEmailRecipients {
    * @public
    */
   CcList?: EmailRecipient[] | undefined;
+}
+
+/**
+ * <p>Configuration settings for after contact work (ACW) timeout.</p>
+ * @public
+ */
+export interface AfterContactWorkConfig {
+  /**
+   * <p>The ACW timeout duration in seconds. Minimum: 1 second. Maximum: 2,000,000 seconds (24 days). Enter 0 for indefinite ACW time.</p>
+   * @public
+   */
+  AfterContactWorkTimeLimit?: number | undefined;
+}
+
+/**
+ * <p>Configuration settings for after contact work (ACW) timeout for a specific channel.</p>
+ * @public
+ */
+export interface AfterContactWorkConfigPerChannel {
+  /**
+   * <p>The channel for this ACW timeout configuration. Valid values: VOICE, CHAT, TASK, EMAIL.</p>
+   * @public
+   */
+  Channel: Channel | undefined;
+
+  /**
+   * <p>The ACW timeout settings for this channel.</p>
+   * @public
+   */
+  AfterContactWorkConfig: AfterContactWorkConfig | undefined;
+
+  /**
+   * <p>The ACW timeout settings for agent-first callbacks. This setting only applies to the VOICE channel.</p>
+   * @public
+   */
+  AgentFirstCallbackAfterContactWorkConfig?: AfterContactWorkConfig | undefined;
 }
 
 /**
@@ -7150,6 +7186,30 @@ export interface CreateUseCaseResponse {
 }
 
 /**
+ * <p>Configuration settings for auto-accept for a specific channel.</p>
+ * @public
+ */
+export interface AutoAcceptConfig {
+  /**
+   * <p>The channel for this auto-accept configuration. Valid values: VOICE, CHAT, TASK, EMAIL.</p>
+   * @public
+   */
+  Channel: Channel | undefined;
+
+  /**
+   * <p>Indicates whether auto-accept is enabled for this channel. When enabled, available agents are automatically connected to contacts from this channel.</p>
+   * @public
+   */
+  AutoAccept: boolean | undefined;
+
+  /**
+   * <p>Indicates whether auto-accept is enabled for agent-first callbacks. This setting only applies to the VOICE channel.</p>
+   * @public
+   */
+  AgentFirstCallbackAutoAccept?: boolean | undefined;
+}
+
+/**
  * <p>Contains information about the identity of a user.</p>
  *          <note>
  *             <p>For Amazon Connect instances that are created with the <code>EXISTING_DIRECTORY</code> identity management
@@ -7203,6 +7263,25 @@ export interface UserIdentityInfo {
 }
 
 /**
+ * <p>Configuration settings for persistent connection for a specific channel.</p>
+ * @public
+ */
+export interface PersistentConnectionConfig {
+  /**
+   * <p>Configuration settings for persistent connection. <b>Only <code>VOICE</code> is supported for this data type.</b>
+   *          </p>
+   * @public
+   */
+  Channel: Channel | undefined;
+
+  /**
+   * <p>Indicates whether persistent connection is enabled. When enabled, the agent's connection is maintained after a call ends, enabling subsequent calls to connect faster.</p>
+   * @public
+   */
+  PersistentConnection: boolean | undefined;
+}
+
+/**
  * <p>Contains information about the phone configuration settings for a user.</p>
  * @public
  */
@@ -7211,7 +7290,7 @@ export interface UserPhoneConfig {
    * <p>The phone type.</p>
    * @public
    */
-  PhoneType: PhoneType | undefined;
+  PhoneType?: PhoneType | undefined;
 
   /**
    * <p>The Auto accept setting.</p>
@@ -7243,6 +7322,50 @@ export interface UserPhoneConfig {
    * @public
    */
   PersistentConnection?: boolean | undefined;
+}
+
+/**
+ * <p>Configuration settings for phone type and phone number.</p>
+ * @public
+ */
+export interface PhoneNumberConfig {
+  /**
+   * <p>The channel for this phone number configuration. <b>Only <code>VOICE</code> is supported for this data type.</b>
+   *          </p>
+   * @public
+   */
+  Channel: Channel | undefined;
+
+  /**
+   * <p>The phone type. Valid values: SOFT_PHONE, DESK_PHONE.</p>
+   * @public
+   */
+  PhoneType: PhoneType | undefined;
+
+  /**
+   * <p>The phone number for the user's desk phone.</p>
+   * @public
+   */
+  PhoneNumber?: string | undefined;
+}
+
+/**
+ * <p>Configuration settings for voice enhancement.</p>
+ * @public
+ */
+export interface VoiceEnhancementConfig {
+  /**
+   * <p>The channel for this voice enhancement configuration. <b>Only <code>VOICE</code> is supported for this data type.</b>
+   *          </p>
+   * @public
+   */
+  Channel: Channel | undefined;
+
+  /**
+   * <p>The voice enhancement mode.</p>
+   * @public
+   */
+  VoiceEnhancementMode: VoiceEnhancementMode | undefined;
 }
 
 /**
@@ -7283,10 +7406,10 @@ export interface CreateUserRequest {
   IdentityInfo?: UserIdentityInfo | undefined;
 
   /**
-   * <p>The phone settings for the user.</p>
+   * <p>The phone settings for the user. This parameter is optional. If not provided, the user can be configured using channel-specific parameters such as <code>AutoAcceptConfigs</code>, <code>AfterContactWorkConfigs</code>, <code>PhoneNumberConfigs</code>, <code>PersistentConnectionConfigs</code>, and <code>VoiceEnhancementConfigs</code>.</p>
    * @public
    */
-  PhoneConfig: UserPhoneConfig | undefined;
+  PhoneConfig?: UserPhoneConfig | undefined;
 
   /**
    * <p>The identifier of the user account in the directory used for identity management. If Amazon Connect cannot
@@ -7323,6 +7446,36 @@ export interface CreateUserRequest {
    * @public
    */
   InstanceId: string | undefined;
+
+  /**
+   * <p>The list of auto-accept configuration settings for each channel.</p>
+   * @public
+   */
+  AutoAcceptConfigs?: AutoAcceptConfig[] | undefined;
+
+  /**
+   * <p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>
+   * @public
+   */
+  AfterContactWorkConfigs?: AfterContactWorkConfigPerChannel[] | undefined;
+
+  /**
+   * <p>The list of phone number configuration settings for each channel.</p>
+   * @public
+   */
+  PhoneNumberConfigs?: PhoneNumberConfig[] | undefined;
+
+  /**
+   * <p>The list of persistent connection configuration settings for each channel.</p>
+   * @public
+   */
+  PersistentConnectionConfigs?: PersistentConnectionConfig[] | undefined;
+
+  /**
+   * <p>The list of voice enhancement configuration settings for each channel.</p>
+   * @public
+   */
+  VoiceEnhancementConfigs?: VoiceEnhancementConfig[] | undefined;
 
   /**
    * <p>The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.</p>
@@ -7885,130 +8038,4 @@ export interface WorkspaceThemePalette {
    * @public
    */
   Primary?: PalettePrimary | undefined;
-}
-
-/**
- * <p>Contains font family configuration for workspace themes.</p>
- * @public
- */
-export interface FontFamily {
-  /**
-   * <p>The default font family to use in the workspace theme.</p>
-   * @public
-   */
-  Default?: WorkspaceFontFamily | undefined;
-}
-
-/**
- * <p>Contains typography configuration for a workspace theme.</p>
- * @public
- */
-export interface WorkspaceThemeTypography {
-  /**
-   * <p>The font family configuration for text in the workspace.</p>
-   * @public
-   */
-  FontFamily?: FontFamily | undefined;
-}
-
-/**
- * <p>Contains detailed theme configuration for a workspace, including colors, images, and typography.</p>
- * @public
- */
-export interface WorkspaceThemeConfig {
-  /**
-   * <p>The color palette configuration for the workspace theme.</p>
-   * @public
-   */
-  Palette?: WorkspaceThemePalette | undefined;
-
-  /**
-   * <p>The image assets used in the workspace theme.</p>
-   * @public
-   */
-  Images?: WorkspaceThemeImages | undefined;
-
-  /**
-   * <p>The typography configuration for the workspace theme.</p>
-   * @public
-   */
-  Typography?: WorkspaceThemeTypography | undefined;
-}
-
-/**
- * <p>Contains theme configuration for a workspace, supporting both light and dark modes.</p>
- * @public
- */
-export interface WorkspaceTheme {
-  /**
-   * <p>The theme configuration for light mode.</p>
-   * @public
-   */
-  Light?: WorkspaceThemeConfig | undefined;
-
-  /**
-   * <p>The theme configuration for dark mode.</p>
-   * @public
-   */
-  Dark?: WorkspaceThemeConfig | undefined;
-}
-
-/**
- * @public
- */
-export interface CreateWorkspaceRequest {
-  /**
-   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
-   *    the Amazon Resource Name (ARN) of the instance.</p>
-   * @public
-   */
-  InstanceId: string | undefined;
-
-  /**
-   * <p>The name of the workspace. Must be unique within the instance and can contain 1-127 characters.</p>
-   * @public
-   */
-  Name: string | undefined;
-
-  /**
-   * <p>The description of the workspace. Maximum length is 250 characters.</p>
-   * @public
-   */
-  Description?: string | undefined;
-
-  /**
-   * <p>The theme configuration for the workspace, including colors and styling.</p>
-   * @public
-   */
-  Theme?: WorkspaceTheme | undefined;
-
-  /**
-   * <p>The title displayed for the workspace.</p>
-   * @public
-   */
-  Title?: string | undefined;
-
-  /**
-   * <p>The tags used to organize, track, or control access for this resource. For example, <code>\{ "Tags":
-   *     \{"key1":"value1", "key2":"value2"\} \}</code>.</p>
-   * @public
-   */
-  Tags?: Record<string, string> | undefined;
-}
-
-/**
- * @public
- */
-export interface CreateWorkspaceResponse {
-  /**
-   * <p>The identifier of the workspace.</p>
-   * @public
-   */
-  WorkspaceId: string | undefined;
-
-  /**
-   * <p>The Amazon Resource Name (ARN) of the workspace.</p>
-   * @public
-   */
-  WorkspaceArn: string | undefined;
 }

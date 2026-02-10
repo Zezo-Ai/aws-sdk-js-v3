@@ -33,6 +33,32 @@ export interface CreateUserCommandOutput extends CreateUserResponse, __MetadataB
  *      <code>FirstName</code> and <code>LastName</code> are required if you are using Amazon Connect or SAML for
  *     identity management.</p>
  *          </important>
+ *          <note>
+ *             <p>Fields in <code>PhoneConfig</code> cannot be set simultaneously with their corresponding channel-specific configuration parameters. Specifically:</p>
+ *             <ul>
+ *                <li>
+ *                   <p>
+ *                      <code>PhoneConfig.AutoAccept</code> conflicts with <code>AutoAcceptConfigs</code>
+ *                   </p>
+ *                </li>
+ *                <li>
+ *                   <p>
+ *                      <code>PhoneConfig.AfterContactWorkTimeLimit</code> conflicts with <code>AfterContactWorkConfigs</code>
+ *                   </p>
+ *                </li>
+ *                <li>
+ *                   <p>
+ *                      <code>PhoneConfig.PhoneType</code> and <code>PhoneConfig.PhoneNumber</code> conflict with <code>PhoneNumberConfigs</code>
+ *                   </p>
+ *                </li>
+ *                <li>
+ *                   <p>
+ *                      <code>PhoneConfig.PersistentConnection</code> conflicts with <code>PersistentConnectionConfigs</code>
+ *                   </p>
+ *                </li>
+ *             </ul>
+ *             <p>We recommend using channel-specific parameters such as <code>AutoAcceptConfigs</code>, <code>AfterContactWorkConfigs</code>, <code>PhoneNumberConfigs</code>, <code>PersistentConnectionConfigs</code>, and <code>VoiceEnhancementConfigs</code> for per-channel configuration.</p>
+ *          </note>
  *          <p>For information about how to create users using the Amazon Connect admin website, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add Users</a> in the <i>Amazon Connect
  *     Administrator Guide</i>.</p>
  * @example
@@ -54,7 +80,7 @@ export interface CreateUserCommandOutput extends CreateUserResponse, __MetadataB
  *     Mobile: "STRING_VALUE",
  *   },
  *   PhoneConfig: { // UserPhoneConfig
- *     PhoneType: "SOFT_PHONE" || "DESK_PHONE", // required
+ *     PhoneType: "SOFT_PHONE" || "DESK_PHONE",
  *     AutoAccept: true || false,
  *     AfterContactWorkTimeLimit: Number("int"),
  *     DeskPhoneNumber: "STRING_VALUE",
@@ -67,6 +93,43 @@ export interface CreateUserCommandOutput extends CreateUserResponse, __MetadataB
  *   RoutingProfileId: "STRING_VALUE", // required
  *   HierarchyGroupId: "STRING_VALUE",
  *   InstanceId: "STRING_VALUE", // required
+ *   AutoAcceptConfigs: [ // AutoAcceptConfigs
+ *     { // AutoAcceptConfig
+ *       Channel: "VOICE" || "CHAT" || "TASK" || "EMAIL", // required
+ *       AutoAccept: true || false, // required
+ *       AgentFirstCallbackAutoAccept: true || false,
+ *     },
+ *   ],
+ *   AfterContactWorkConfigs: [ // AfterContactWorkConfigs
+ *     { // AfterContactWorkConfigPerChannel
+ *       Channel: "VOICE" || "CHAT" || "TASK" || "EMAIL", // required
+ *       AfterContactWorkConfig: { // AfterContactWorkConfig
+ *         AfterContactWorkTimeLimit: Number("int"),
+ *       },
+ *       AgentFirstCallbackAfterContactWorkConfig: {
+ *         AfterContactWorkTimeLimit: Number("int"),
+ *       },
+ *     },
+ *   ],
+ *   PhoneNumberConfigs: [ // PhoneNumberConfigs
+ *     { // PhoneNumberConfig
+ *       Channel: "VOICE" || "CHAT" || "TASK" || "EMAIL", // required
+ *       PhoneType: "SOFT_PHONE" || "DESK_PHONE", // required
+ *       PhoneNumber: "STRING_VALUE",
+ *     },
+ *   ],
+ *   PersistentConnectionConfigs: [ // PersistentConnectionConfigs
+ *     { // PersistentConnectionConfig
+ *       Channel: "VOICE" || "CHAT" || "TASK" || "EMAIL", // required
+ *       PersistentConnection: true || false, // required
+ *     },
+ *   ],
+ *   VoiceEnhancementConfigs: [ // VoiceEnhancementConfigs
+ *     { // VoiceEnhancementConfig
+ *       Channel: "VOICE" || "CHAT" || "TASK" || "EMAIL", // required
+ *       VoiceEnhancementMode: "VOICE_ISOLATION" || "NOISE_SUPPRESSION" || "NONE", // required
+ *     },
+ *   ],
  *   Tags: { // TagMap
  *     "<keys>": "STRING_VALUE",
  *   },

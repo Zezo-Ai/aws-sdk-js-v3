@@ -340,6 +340,7 @@ export * from "./UpdateSecurityProfileCommand";
 export * from "./UpdateTaskTemplateCommand";
 export * from "./UpdateTestCaseCommand";
 export * from "./UpdateTrafficDistributionCommand";
+export * from "./UpdateUserConfigCommand";
 export * from "./UpdateUserHierarchyCommand";
 export * from "./UpdateUserHierarchyGroupNameCommand";
 export * from "./UpdateUserHierarchyStructureCommand";

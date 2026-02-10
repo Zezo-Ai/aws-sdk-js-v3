@@ -1046,6 +1046,7 @@ import {
   UpdateTrafficDistributionCommandInput,
   UpdateTrafficDistributionCommandOutput,
 } from "./commands/UpdateTrafficDistributionCommand";
+import { UpdateUserConfigCommandInput, UpdateUserConfigCommandOutput } from "./commands/UpdateUserConfigCommand";
 import {
   UpdateUserHierarchyCommandInput,
   UpdateUserHierarchyCommandOutput,
@@ -1452,6 +1453,7 @@ export type ServiceInputTypes =
   | UpdateTaskTemplateCommandInput
   | UpdateTestCaseCommandInput
   | UpdateTrafficDistributionCommandInput
+  | UpdateUserConfigCommandInput
   | UpdateUserHierarchyCommandInput
   | UpdateUserHierarchyGroupNameCommandInput
   | UpdateUserHierarchyStructureCommandInput
@@ -1812,6 +1814,7 @@ export type ServiceOutputTypes =
   | UpdateTaskTemplateCommandOutput
   | UpdateTestCaseCommandOutput
   | UpdateTrafficDistributionCommandOutput
+  | UpdateUserConfigCommandOutput
   | UpdateUserHierarchyCommandOutput
   | UpdateUserHierarchyGroupNameCommandOutput
   | UpdateUserHierarchyStructureCommandOutput

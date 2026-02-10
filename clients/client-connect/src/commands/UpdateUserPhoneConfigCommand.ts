@@ -28,6 +28,9 @@ export interface UpdateUserPhoneConfigCommandOutput extends __MetadataBearer {}
 
 /**
  * <p>Updates the phone configuration settings for the specified user.</p>
+ *          <note>
+ *             <p>We recommend using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserConfig.html">UpdateUserConfig</a> API, which supports additional functionality that is not available in the UpdateUserPhoneConfig API, such as voice enhancement settings and per-channel configuration for auto-accept and After Contact Work (ACW) timeouts. In comparison, the UpdateUserPhoneConfig API will always set the same ACW timeouts to all channels the user handles.</p>
+ *          </note>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -38,7 +41,7 @@ export interface UpdateUserPhoneConfigCommandOutput extends __MetadataBearer {}
  * const client = new ConnectClient(config);
  * const input = { // UpdateUserPhoneConfigRequest
  *   PhoneConfig: { // UserPhoneConfig
- *     PhoneType: "SOFT_PHONE" || "DESK_PHONE", // required
+ *     PhoneType: "SOFT_PHONE" || "DESK_PHONE",
  *     AutoAccept: true || false,
  *     AfterContactWorkTimeLimit: Number("int"),
  *     DeskPhoneNumber: "STRING_VALUE",

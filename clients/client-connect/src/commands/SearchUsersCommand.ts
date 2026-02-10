@@ -154,7 +154,7 @@ export interface SearchUsersCommandOutput extends SearchUsersResponse, __Metadat
  * //         LastName: "STRING_VALUE",
  * //       },
  * //       PhoneConfig: { // UserPhoneConfig
- * //         PhoneType: "SOFT_PHONE" || "DESK_PHONE", // required
+ * //         PhoneType: "SOFT_PHONE" || "DESK_PHONE",
  * //         AutoAccept: true || false,
  * //         AfterContactWorkTimeLimit: Number("int"),
  * //         DeskPhoneNumber: "STRING_VALUE",
@@ -168,6 +168,43 @@ export interface SearchUsersCommandOutput extends SearchUsersResponse, __Metadat
  * //         "<keys>": "STRING_VALUE",
  * //       },
  * //       Username: "STRING_VALUE",
+ * //       AutoAcceptConfigs: [ // AutoAcceptConfigs
+ * //         { // AutoAcceptConfig
+ * //           Channel: "VOICE" || "CHAT" || "TASK" || "EMAIL", // required
+ * //           AutoAccept: true || false, // required
+ * //           AgentFirstCallbackAutoAccept: true || false,
+ * //         },
+ * //       ],
+ * //       AfterContactWorkConfigs: [ // AfterContactWorkConfigs
+ * //         { // AfterContactWorkConfigPerChannel
+ * //           Channel: "VOICE" || "CHAT" || "TASK" || "EMAIL", // required
+ * //           AfterContactWorkConfig: { // AfterContactWorkConfig
+ * //             AfterContactWorkTimeLimit: Number("int"),
+ * //           },
+ * //           AgentFirstCallbackAfterContactWorkConfig: {
+ * //             AfterContactWorkTimeLimit: Number("int"),
+ * //           },
+ * //         },
+ * //       ],
+ * //       PhoneNumberConfigs: [ // PhoneNumberConfigs
+ * //         { // PhoneNumberConfig
+ * //           Channel: "VOICE" || "CHAT" || "TASK" || "EMAIL", // required
+ * //           PhoneType: "SOFT_PHONE" || "DESK_PHONE", // required
+ * //           PhoneNumber: "STRING_VALUE",
+ * //         },
+ * //       ],
+ * //       PersistentConnectionConfigs: [ // PersistentConnectionConfigs
+ * //         { // PersistentConnectionConfig
+ * //           Channel: "VOICE" || "CHAT" || "TASK" || "EMAIL", // required
+ * //           PersistentConnection: true || false, // required
+ * //         },
+ * //       ],
+ * //       VoiceEnhancementConfigs: [ // VoiceEnhancementConfigs
+ * //         { // VoiceEnhancementConfig
+ * //           Channel: "VOICE" || "CHAT" || "TASK" || "EMAIL", // required
+ * //           VoiceEnhancementMode: "VOICE_ISOLATION" || "NOISE_SUPPRESSION" || "NONE", // required
+ * //         },
+ * //       ],
  * //     },
  * //   ],
  * //   NextToken: "STRING_VALUE",

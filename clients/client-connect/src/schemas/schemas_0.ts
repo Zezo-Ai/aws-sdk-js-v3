@@ -1,8 +1,10 @@
 const _A = "Arn";
-const _AA = "AliasArn";
+const _AA = "AutoAccept";
 const _AAC = "AttributeAndCondition";
 const _AACHGI = "AllowedAccessControlHierarchyGroupId";
 const _AACT = "AllowedAccessControlTags";
+const _AACu = "AutoAcceptConfig";
+const _AACut = "AutoAcceptConfigs";
 const _AADS = "AssociateAnalyticsDataSet";
 const _AADSR = "AssociateAnalyticsDataSetRequest";
 const _AADSRs = "AssociateAnalyticsDataSetResponse";
@@ -14,7 +16,7 @@ const _AAOR = "AssociateApprovedOriginRequest";
 const _AAT = "AgentAvailabilityTimer";
 const _AAVI = "AiAgentVersionId";
 const _AAi = "AiAgents";
-const _AAu = "AutoAccept";
+const _AAl = "AliasArn";
 const _AB = "AcknowledgedBy";
 const _ABAT = "AcceptedByAgentTimestamp";
 const _ABR = "AssociateBotRequest";
@@ -29,6 +31,9 @@ const _ACRL = "AgentContactReferenceList";
 const _ACS = "AgentContactState";
 const _ACSL = "AssociatedContactSummaryList";
 const _ACSs = "AssociatedContactSummary";
+const _ACWC = "AfterContactWorkConfig";
+const _ACWCPC = "AfterContactWorkConfigPerChannel";
+const _ACWCf = "AfterContactWorkConfigs";
 const _ACWD = "AfterContactWorkDuration";
 const _ACWET = "AfterContactWorkEndTimestamp";
 const _ACWST = "AfterContactWorkStartTimestamp";
@@ -75,6 +80,8 @@ const _AEn = "AndExpression";
 const _AEu = "AutoEvaluation";
 const _AF = "AgentFirst";
 const _AFC = "AutomaticFailConfiguration";
+const _AFCAA = "AgentFirstCallbackAutoAccept";
+const _AFCACWC = "AgentFirstCallbackAfterContactWorkConfig";
 const _AFE = "AttachedFileError";
 const _AFEL = "AttachedFileErrorsList";
 const _AFIRER = "AttachedFileInvalidRequestExceptionReason";
@@ -1679,6 +1686,8 @@ const _PAr = "PredefinedAttributes";
 const _PAro = "ProcessorArn";
 const _PB = "PageBackground";
 const _PC = "ParticipantCredentials";
+const _PCC = "PersistentConnectionConfigs";
+const _PCCe = "PersistentConnectionConfig";
 const _PCI = "PreviousContactId";
 const _PCR = "PauseContactRequest";
 const _PCRa = "PauseContactResponse";
@@ -1711,8 +1720,10 @@ const _PLro = "PromptList";
 const _PM = "ParticipantMetrics";
 const _PN = "PhoneNumber";
 const _PNA = "PhoneNumberArn";
+const _PNC = "PhoneNumberConfigs";
 const _PNCC = "PhoneNumberCountryCode";
 const _PNCCh = "PhoneNumberCountryCodes";
+const _PNCh = "PhoneNumberConfig";
 const _PND = "PhoneNumberDescription";
 const _PNI = "PhoneNumberId";
 const _PNP = "PhoneNumberPrefix";
@@ -2119,8 +2130,9 @@ const _SPAe = "SearchPredefinedAttributes";
 const _SPI = "SecurityProfileId";
 const _SPIe = "SecurityProfileIds";
 const _SPIec = "SecurityProfileItem";
-const _SPN = "SecurityProfileName";
+const _SPN = "SensitivePhoneNumber";
 const _SPNA = "SourcePhoneNumberArn";
+const _SPNe = "SecurityProfileName";
 const _SPNo = "SourcePhoneNumber";
 const _SPR = "SearchPromptsRequest";
 const _SPRe = "SearchPromptsResponse";
@@ -2535,6 +2547,8 @@ const _UTL = "UnprocessedTranscriptLocation";
 const _UTT = "UpdateTaskTemplate";
 const _UTTR = "UpdateTaskTemplateRequest";
 const _UTTRp = "UpdateTaskTemplateResponse";
+const _UUC = "UpdateUserConfig";
+const _UUCR = "UpdateUserConfigRequest";
 const _UUH = "UpdateUserHierarchy";
 const _UUHGN = "UpdateUserHierarchyGroupName";
 const _UUHGNR = "UpdateUserHierarchyGroupNameRequest";
@@ -2584,6 +2598,9 @@ const _VCEPP = "VoiceCallEntryPointParameters";
 const _VCS = "ViewContentSha256";
 const _VD = "VersionDescription";
 const _VE = "ValidationEnum";
+const _VEC = "VoiceEnhancementConfigs";
+const _VECo = "VoiceEnhancementConfig";
+const _VEM = "VoiceEnhancementMode";
 const _VI = "VocabularyId";
 const _VIC = "ViewInputContent";
 const _VIS = "ViewInputSchema";
@@ -2776,6 +2793,7 @@ var SearchableSegmentAttributeKey: StaticSimpleSchema = [0, n0, _SSAK, 8, 0];
 var SearchableSegmentAttributeValue: StaticSimpleSchema = [0, n0, _SSAV, 8, 0];
 var SearchText: StaticSimpleSchema = [0, n0, _ST, 8, 0];
 var SecurityToken: StaticSimpleSchema = [0, n0, _STe, 8, 0];
+var SensitivePhoneNumber: StaticSimpleSchema = [0, n0, _SPN, 8, 0];
 var ViewAction: StaticSimpleSchema = [0, n0, _VA, 8, 0];
 var ViewInputSchema: StaticSimpleSchema = [0, n0, _VIS, 8, 0];
 var ViewName: StaticSimpleSchema = [0, n0, _VN, 8, 0];
@@ -2804,6 +2822,16 @@ export var AdditionalEmailRecipients$: StaticStructureSchema = [3, n0, _AER,
   0,
   [_TL, _CL],
   [() => EmailRecipientsList, () => EmailRecipientsList]
+];
+export var AfterContactWorkConfig$: StaticStructureSchema = [3, n0, _ACWC,
+  0,
+  [_ACWTL],
+  [1]
+];
+export var AfterContactWorkConfigPerChannel$: StaticStructureSchema = [3, n0, _ACWCPC,
+  0,
+  [_C, _ACWC, _AFCACWC],
+  [0, () => AfterContactWorkConfig$, () => AfterContactWorkConfig$], 2
 ];
 export var AgentConfig$: StaticStructureSchema = [3, n0, _ACg,
   0,
@@ -3119,6 +3147,11 @@ export var AuthenticationProfileSummary$: StaticStructureSchema = [3, n0, _APS,
   0,
   [_I, _A, _N, _ID, _LMT, _LMR],
   [0, 0, 0, 2, 4, 0]
+];
+export var AutoAcceptConfig$: StaticStructureSchema = [3, n0, _AACu,
+  0,
+  [_C, _AA, _AFCAA],
+  [0, 2, 2], 2
 ];
 export var AutoEvaluationConfiguration$: StaticStructureSchema = [3, n0, _AEC,
   0,
@@ -3776,7 +3809,7 @@ export var CreateRuleResponse$: StaticStructureSchema = [3, n0, _CRRr,
 ];
 export var CreateSecurityProfileRequest$: StaticStructureSchema = [3, n0, _CSPR,
   0,
-  [_SPN, _II, _D, _Pe, _Ta, _AACT, _TRR, _App, _HRR, _AACHGI, _AFM, _GACC],
+  [_SPNe, _II, _D, _Pe, _Ta, _AACT, _TRR, _App, _HRR, _AACHGI, _AFM, _GACC],
   [0, [0, 1], 0, 64 | 0, 128 | 0, 128 | 0, 64 | 0, () => Applications, 64 | 0, 0, () => AllowedFlowModules, () => GranularAccessControlConfiguration$], 2
 ];
 export var CreateSecurityProfileResponse$: StaticStructureSchema = [3, n0, _CSPRr,
@@ -3836,8 +3869,8 @@ export var CreateUserHierarchyGroupResponse$: StaticStructureSchema = [3, n0, _C
 ];
 export var CreateUserRequest$: StaticStructureSchema = [3, n0, _CUR,
   0,
-  [_U, _PCh, _SPIe, _RPI, _II, _P, _IId, _DUI, _HGI, _Ta],
-  [0, () => UserPhoneConfig$, 64 | 0, 0, [0, 1], [() => Password, 0], [() => UserIdentityInfo$, 0], 0, 0, 128 | 0], 5
+  [_U, _SPIe, _RPI, _II, _P, _IId, _PCh, _DUI, _HGI, _AACut, _ACWCf, _PNC, _PCC, _VEC, _Ta],
+  [0, 64 | 0, 0, [0, 1], [() => Password, 0], [() => UserIdentityInfo$, 0], [() => UserPhoneConfig$, 0], 0, 0, () => AutoAcceptConfigs, () => AfterContactWorkConfigs, [() => PhoneNumberConfigs, 0], () => PersistentConnectionConfigs, () => VoiceEnhancementConfigs, 128 | 0], 4
 ];
 export var CreateUserResponse$: StaticStructureSchema = [3, n0, _CURr,
   0,
@@ -5656,7 +5689,7 @@ export var LexBotConfig$: StaticStructureSchema = [3, n0, _LBC,
 ];
 export var LexV2Bot$: StaticStructureSchema = [3, n0, _LVB,
   0,
-  [_AA],
+  [_AAl],
   [0]
 ];
 export var LimitExceededException$: StaticErrorSchema = [-3, n0, _LEE,
@@ -6578,6 +6611,16 @@ export var PersistentChat$: StaticStructureSchema = [3, n0, _PCe,
   [_RTe, _SCI],
   [0, 0]
 ];
+export var PersistentConnectionConfig$: StaticStructureSchema = [3, n0, _PCCe,
+  0,
+  [_C, _PCer],
+  [0, 2], 2
+];
+export var PhoneNumberConfig$: StaticStructureSchema = [3, n0, _PNCh,
+  0,
+  [_C, _PTh, _PN],
+  [0, 0, [() => SensitivePhoneNumber, 0]], 2
+];
 export var PhoneNumberQuickConnectConfig$: StaticStructureSchema = [3, n0, _PNQCC,
   0,
   [_PN],
@@ -7365,7 +7408,7 @@ export var SecurityKey$: StaticStructureSchema = [3, n0, _SKe,
 ];
 export var SecurityProfile$: StaticStructureSchema = [3, n0, _SPe,
   0,
-  [_I, _ORIr, _A, _SPN, _D, _Ta, _AACT, _TRR, _LMT, _LMR, _HRR, _AACHGI, _GACC],
+  [_I, _ORIr, _A, _SPNe, _D, _Ta, _AACT, _TRR, _LMT, _LMR, _HRR, _AACHGI, _GACC],
   [0, 0, 0, 0, 0, 128 | 0, 128 | 0, 64 | 0, 4, 0, 64 | 0, 0, () => GranularAccessControlConfiguration$]
 ];
 export var SecurityProfileItem$: StaticStructureSchema = [3, n0, _SPIec,
@@ -7380,7 +7423,7 @@ export var SecurityProfileSearchCriteria$: StaticStructureSchema = [3, n0, _SPSC
 ];
 export var SecurityProfileSearchSummary$: StaticStructureSchema = [3, n0, _SPSS,
   0,
-  [_I, _ORIr, _A, _SPN, _D, _Ta],
+  [_I, _ORIr, _A, _SPNe, _D, _Ta],
   [0, 0, 0, 0, 0, 128 | 0]
 ];
 export var SecurityProfilesSearchFilter$: StaticStructureSchema = [3, n0, _SPSF,
@@ -8241,6 +8284,11 @@ export var UpdateTrafficDistributionResponse$: StaticStructureSchema = [3, n0, _
   [],
   []
 ];
+export var UpdateUserConfigRequest$: StaticStructureSchema = [3, n0, _UUCR,
+  0,
+  [_UI, _II, _AACut, _ACWCf, _PNC, _PCC, _VEC],
+  [[0, 1], [0, 1], () => AutoAcceptConfigs, () => AfterContactWorkConfigs, [() => PhoneNumberConfigs, 0], () => PersistentConnectionConfigs, () => VoiceEnhancementConfigs], 2
+];
 export var UpdateUserHierarchyGroupNameRequest$: StaticStructureSchema = [3, n0, _UUHGNR,
   0,
   [_N, _HGI, _II],
@@ -8264,7 +8312,7 @@ export var UpdateUserIdentityInfoRequest$: StaticStructureSchema = [3, n0, _UUII
 export var UpdateUserPhoneConfigRequest$: StaticStructureSchema = [3, n0, _UUPCR,
   0,
   [_PCh, _UI, _II],
-  [() => UserPhoneConfig$, [0, 1], [0, 1]], 3
+  [[() => UserPhoneConfig$, 0], [0, 1], [0, 1]], 3
 ];
 export var UpdateUserProficienciesRequest$: StaticStructureSchema = [3, n0, _UUPR,
   0,
@@ -8358,8 +8406,8 @@ export var UseCase$: StaticStructureSchema = [3, n0, _UCs,
 ];
 export var User$: StaticStructureSchema = [3, n0, _Us,
   0,
-  [_I, _A, _U, _IId, _PCh, _DUI, _SPIe, _RPI, _HGI, _Ta, _LMT, _LMR],
-  [0, 0, 0, [() => UserIdentityInfo$, 0], () => UserPhoneConfig$, 0, 64 | 0, 0, 0, 128 | 0, 4, 0]
+  [_I, _A, _U, _IId, _PCh, _DUI, _SPIe, _RPI, _HGI, _Ta, _AACut, _ACWCf, _PNC, _PCC, _VEC, _LMT, _LMR],
+  [0, 0, 0, [() => UserIdentityInfo$, 0], [() => UserPhoneConfig$, 0], 0, 64 | 0, 0, 0, 128 | 0, () => AutoAcceptConfigs, () => AfterContactWorkConfigs, [() => PhoneNumberConfigs, 0], () => PersistentConnectionConfigs, () => VoiceEnhancementConfigs, 4, 0]
 ];
 export var UserData$: StaticStructureSchema = [3, n0, _UD,
   0,
@@ -8404,8 +8452,8 @@ export var UserNotFoundException$: StaticErrorSchema = [-3, n0, _UNFE,
 TypeRegistry.for(n0).registerError(UserNotFoundException$, UserNotFoundException);
 export var UserPhoneConfig$: StaticStructureSchema = [3, n0, _UPC,
   0,
-  [_PTh, _AAu, _ACWTL, _DPNe, _PCer],
-  [0, 2, 1, 0, 2], 1
+  [_PTh, _AA, _ACWTL, _DPNe, _PCer],
+  [0, 2, 1, [() => SensitivePhoneNumber, 0], 2]
 ];
 export var UserProficiency$: StaticStructureSchema = [3, n0, _UPs,
   0,
@@ -8439,8 +8487,8 @@ export var UserSearchFilter$: StaticStructureSchema = [3, n0, _USF,
 ];
 export var UserSearchSummary$: StaticStructureSchema = [3, n0, _USS,
   0,
-  [_A, _DUI, _HGI, _I, _IId, _PCh, _RPI, _SPIe, _Ta, _U],
-  [0, 0, 0, 0, [() => UserIdentityInfoLite$, 0], () => UserPhoneConfig$, 0, 64 | 0, 128 | 0, 0]
+  [_A, _DUI, _HGI, _I, _IId, _PCh, _RPI, _SPIe, _Ta, _U, _AACut, _ACWCf, _PNC, _PCC, _VEC],
+  [0, 0, 0, 0, [() => UserIdentityInfoLite$, 0], [() => UserPhoneConfig$, 0], 0, 64 | 0, 128 | 0, 0, () => AutoAcceptConfigs, () => AfterContactWorkConfigs, [() => PhoneNumberConfigs, 0], () => PersistentConnectionConfigs, () => VoiceEnhancementConfigs]
 ];
 export var UserSummary$: StaticStructureSchema = [3, n0, _US,
   0,
@@ -8506,6 +8554,11 @@ export var VoiceCallEntryPointParameters$: StaticStructureSchema = [3, n0, _VCEP
   0,
   [_SPNo, _DPN, _FI],
   [0, 0, 0]
+];
+export var VoiceEnhancementConfig$: StaticStructureSchema = [3, n0, _VECo,
+  0,
+  [_C, _VEM],
+  [0, 0], 2
 ];
 export var VoiceRecordingConfiguration$: StaticStructureSchema = [3, n0, _VRC,
   0,
@@ -8594,6 +8647,9 @@ var ActionSummaries: StaticListSchema = [1, n0, _ASc,
   0, () => ActionSummary$
 ];
 var ActiveRegionList = 64 | 0;
+var AfterContactWorkConfigs: StaticListSchema = [1, n0, _ACWCf,
+  0, () => AfterContactWorkConfigPerChannel$
+];
 var AgentContactReferenceList: StaticListSchema = [1, n0, _ACRL,
   0, () => AgentContactReference$
 ];
@@ -8655,6 +8711,9 @@ var AttributesList: StaticListSchema = [1, n0, _ALt,
 ];
 var AuthenticationProfileSummaryList: StaticListSchema = [1, n0, _APSL,
   0, () => AuthenticationProfileSummary$
+];
+var AutoAcceptConfigs: StaticListSchema = [1, n0, _AACut,
+  0, () => AutoAcceptConfig$
 ];
 var AvailableNumbersList: StaticListSchema = [1, n0, _ANL,
   0, () => AvailableNumberSummary$
@@ -9001,6 +9060,13 @@ var ParticipantTimerConfigList: StaticListSchema = [1, n0, _PTCL,
   0, () => ParticipantTimerConfiguration$
 ];
 var PermissionsList = 64 | 0;
+var PersistentConnectionConfigs: StaticListSchema = [1, n0, _PCC,
+  0, () => PersistentConnectionConfig$
+];
+var PhoneNumberConfigs: StaticListSchema = [1, n0, _PNC,
+  0, [() => PhoneNumberConfig$,
+    0]
+];
 var PhoneNumberCountryCodes = 64 | 0;
 var PhoneNumberSummaryList: StaticListSchema = [1, n0, _PNSL,
   0, () => PhoneNumberSummary$
@@ -9320,6 +9386,9 @@ var ViewVersionSummaryList: StaticListSchema = [1, n0, _VVSL,
 ];
 var VocabularySummaryList: StaticListSchema = [1, n0, _VSLo,
   0, () => VocabularySummary$
+];
+var VoiceEnhancementConfigs: StaticListSchema = [1, n0, _VEC,
+  0, () => VoiceEnhancementConfig$
 ];
 var WeekdayOccurrenceList = 64 | 1;
 var WorkspaceAssociationSearchConditionList: StaticListSchema = [1, n0, _WASCL,
@@ -10502,6 +10571,9 @@ export var UpdateTestCase$: StaticOperationSchema = [9, n0, _UTC,
 ];
 export var UpdateTrafficDistribution$: StaticOperationSchema = [9, n0, _UTD,
   { [_h]: ["PUT", "/traffic-distribution/{Id}", 200] }, () => UpdateTrafficDistributionRequest$, () => UpdateTrafficDistributionResponse$
+];
+export var UpdateUserConfig$: StaticOperationSchema = [9, n0, _UUC,
+  { [_h]: ["POST", "/users/{InstanceId}/{UserId}/config", 200] }, () => UpdateUserConfigRequest$, () => __Unit
 ];
 export var UpdateUserHierarchy$: StaticOperationSchema = [9, n0, _UUH,
   { [_h]: ["POST", "/users/{InstanceId}/{UserId}/hierarchy", 200] }, () => UpdateUserHierarchyRequest$, () => __Unit

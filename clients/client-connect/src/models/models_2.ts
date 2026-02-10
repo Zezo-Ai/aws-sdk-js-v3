@@ -1,5 +1,6 @@
 // smithy-typescript generated code
 import {
+  AgentStatusType,
   ArtifactStatus,
   AutoEvaluationStatus,
   BooleanComparisonType,
@@ -63,7 +64,6 @@ import {
   UseCaseType,
   ViewStatus,
   ViewType,
-  Visibility,
   VocabularyLanguageCode,
   VocabularyState,
 } from "./enums";
@@ -75,23 +75,29 @@ import {
   type StringCondition,
   type UserPhoneConfig,
   ActionSummary,
+  AfterContactWorkConfigPerChannel,
   AgentStatus,
+  AgentStatusSummary,
   AliasConfiguration,
+  AnalyticsDataAssociationResult,
   Application,
+  AutoAcceptConfig,
   FlowAssociationSummary,
   FlowModule,
   InstanceStorageConfig,
   LexBot,
+  PersistentConnectionConfig,
+  PhoneNumberConfig,
   PrimaryValueResponse,
   SecurityProfileItem,
   TagCondition,
   UserProficiency,
   View,
+  VoiceEnhancementConfig,
 } from "./models_0";
 import {
   type EvaluationContactParticipant,
   type EvaluationScore,
-  AnalyticsDataSetsResult,
   Attribute,
   ContactFlow,
   ContactFlowModule,
@@ -109,6 +115,145 @@ import {
   RoutingProfile,
   TestCase,
 } from "./models_1";
+
+/**
+ * @public
+ */
+export interface ListAgentStatusRequest {
+  /**
+   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+
+  /**
+   * <p>The token for the next set of results. Use the value returned in the previous
+   * response in the next request to retrieve the next set of results.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+
+  /**
+   * <p>The maximum number of results to return per page.</p>
+   * @public
+   */
+  MaxResults?: number | undefined;
+
+  /**
+   * <p>Available agent status types.</p>
+   * @public
+   */
+  AgentStatusTypes?: AgentStatusType[] | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ListAgentStatusResponse {
+  /**
+   * <p>If there are additional results, this is the token for the next set of results.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+
+  /**
+   * <p>A summary of agent statuses.</p>
+   * @public
+   */
+  AgentStatusSummaryList?: AgentStatusSummary[] | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ListAnalyticsDataAssociationsRequest {
+  /**
+   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+
+  /**
+   * <p>The identifier of the dataset to get the association status.</p>
+   * @public
+   */
+  DataSetId?: string | undefined;
+
+  /**
+   * <p>The token for the next set of results. Use the value returned in the previous
+   * response in the next request to retrieve the next set of results.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+
+  /**
+   * <p>The maximum number of results to return per page.</p>
+   * @public
+   */
+  MaxResults?: number | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ListAnalyticsDataAssociationsResponse {
+  /**
+   * <p>An array of successful results: <code>DataSetId</code>, <code>TargetAccountId</code>,
+   *     <code>ResourceShareId</code>, <code>ResourceShareArn</code>. This is a paginated API, so <code>nextToken</code> is
+   *    given if there are more results to be returned.</p>
+   * @public
+   */
+  Results?: AnalyticsDataAssociationResult[] | undefined;
+
+  /**
+   * <p>If there are additional results, this is the token for the next set of results.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ListAnalyticsDataLakeDataSetsRequest {
+  /**
+   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+
+  /**
+   * <p>The token for the next set of results. Use the value returned in the previous
+   * response in the next request to retrieve the next set of results.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+
+  /**
+   * <p>The maximum number of results to return per page.</p>
+   * @public
+   */
+  MaxResults?: number | undefined;
+}
+
+/**
+ * <p>Information about datasets that are available to associate with: <code>DataSetId</code>,
+ *     <code>DataSetName</code>.</p>
+ * @public
+ */
+export interface AnalyticsDataSetsResult {
+  /**
+   * <p>The identifier of the dataset.</p>
+   * @public
+   */
+  DataSetId?: string | undefined;
+
+  /**
+   * <p>The name of the dataset.</p>
+   * @public
+   */
+  DataSetName?: string | undefined;
+}
 
 /**
  * @public
@@ -8358,6 +8503,36 @@ export interface UserSearchSummary {
    * @public
    */
   Username?: string | undefined;
+
+  /**
+   * <p>The list of auto-accept configuration settings for each channel.</p>
+   * @public
+   */
+  AutoAcceptConfigs?: AutoAcceptConfig[] | undefined;
+
+  /**
+   * <p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>
+   * @public
+   */
+  AfterContactWorkConfigs?: AfterContactWorkConfigPerChannel[] | undefined;
+
+  /**
+   * <p>The list of phone number configuration settings for each channel.</p>
+   * @public
+   */
+  PhoneNumberConfigs?: PhoneNumberConfig[] | undefined;
+
+  /**
+   * <p>The list of persistent connection configuration settings for each channel.</p>
+   * @public
+   */
+  PersistentConnectionConfigs?: PersistentConnectionConfig[] | undefined;
+
+  /**
+   * <p>The list of voice enhancement configuration settings for each channel.</p>
+   * @public
+   */
+  VoiceEnhancementConfigs?: VoiceEnhancementConfig[] | undefined;
 }
 
 /**
@@ -8536,189 +8711,4 @@ export interface SearchVocabulariesResponse {
    * @public
    */
   NextToken?: string | undefined;
-}
-
-/**
- * <p>Defines filters to apply when searching for workspace associations, such as tag-based filters.</p>
- * @public
- */
-export interface WorkspaceAssociationSearchFilter {
-  /**
-   * <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an
-   *     <code>OR</code> or <code>AND</code> (List of List) input where:</p>
-   *          <ul>
-   *             <li>
-   *                <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator.</p>
-   *             </li>
-   *             <li>
-   *                <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p>
-   *             </li>
-   *          </ul>
-   * @public
-   */
-  AttributeFilter?: ControlPlaneAttributeFilter | undefined;
-}
-
-/**
- * <p>Contains summary information about a workspace association with a user or routing profile.</p>
- * @public
- */
-export interface WorkspaceAssociationSearchSummary {
-  /**
-   * <p>The identifier of the workspace.</p>
-   * @public
-   */
-  WorkspaceId?: string | undefined;
-
-  /**
-   * <p>The Amazon Resource Name (ARN) of the workspace.</p>
-   * @public
-   */
-  WorkspaceArn?: string | undefined;
-
-  /**
-   * <p>The identifier of the associated resource (user or routing profile).</p>
-   * @public
-   */
-  ResourceId?: string | undefined;
-
-  /**
-   * <p>The Amazon Resource Name (ARN) of the associated resource.</p>
-   * @public
-   */
-  ResourceArn?: string | undefined;
-
-  /**
-   * <p>The type of resource associated with the workspace. Valid values are: <code>USER</code> and
-   *     <code>ROUTING_PROFILE</code>.</p>
-   * @public
-   */
-  ResourceType?: string | undefined;
-
-  /**
-   * <p>The name of the associated resource.</p>
-   * @public
-   */
-  ResourceName?: string | undefined;
-}
-
-/**
- * @public
- */
-export interface SearchWorkspaceAssociationsResponse {
-  /**
-   * <p>If there are additional results, this is the token for the next set of results.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
-
-  /**
-   * <p>A list of workspace associations that match the search criteria.</p>
-   * @public
-   */
-  WorkspaceAssociations?: WorkspaceAssociationSearchSummary[] | undefined;
-
-  /**
-   * <p>The approximate total number of workspace associations that match the search criteria.</p>
-   * @public
-   */
-  ApproximateTotalCount?: number | undefined;
-}
-
-/**
- * <p>Defines filters to apply when searching for workspaces, such as tag-based filters.</p>
- * @public
- */
-export interface WorkspaceSearchFilter {
-  /**
-   * <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an
-   *     <code>OR</code> or <code>AND</code> (List of List) input where:</p>
-   *          <ul>
-   *             <li>
-   *                <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator.</p>
-   *             </li>
-   *             <li>
-   *                <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p>
-   *             </li>
-   *          </ul>
-   * @public
-   */
-  AttributeFilter?: ControlPlaneAttributeFilter | undefined;
-}
-
-/**
- * <p>Contains summary information about a workspace returned from a search operation.</p>
- * @public
- */
-export interface WorkspaceSearchSummary {
-  /**
-   * <p>The unique identifier of the workspace.</p>
-   * @public
-   */
-  Id?: string | undefined;
-
-  /**
-   * <p>The name of the workspace.</p>
-   * @public
-   */
-  Name?: string | undefined;
-
-  /**
-   * <p>The visibility setting of the workspace.</p>
-   * @public
-   */
-  Visibility?: Visibility | undefined;
-
-  /**
-   * <p>The description of the workspace.</p>
-   * @public
-   */
-  Description?: string | undefined;
-
-  /**
-   * <p>The title displayed for the workspace.</p>
-   * @public
-   */
-  Title?: string | undefined;
-
-  /**
-   * <p>The Amazon Resource Name (ARN) of the workspace.</p>
-   * @public
-   */
-  Arn?: string | undefined;
-
-  /**
-   * <p>The timestamp when the workspace was created.</p>
-   * @public
-   */
-  CreatedAt?: Date | undefined;
-
-  /**
-   * <p>The tags associated with the workspace.</p>
-   * @public
-   */
-  Tags?: Record<string, string> | undefined;
-}
-
-/**
- * @public
- */
-export interface SearchWorkspacesResponse {
-  /**
-   * <p>If there are additional results, this is the token for the next set of results.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
-
-  /**
-   * <p>A list of workspaces that match the search criteria.</p>
-   * @public
-   */
-  Workspaces?: WorkspaceSearchSummary[] | undefined;
-
-  /**
-   * <p>The approximate total number of workspaces that match the search criteria.</p>
-   * @public
-   */
-  ApproximateTotalCount?: number | undefined;
 }
