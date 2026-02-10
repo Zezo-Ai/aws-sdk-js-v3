@@ -1,7 +1,7 @@
 {
   "name": "@aws-sdk/client-cognito-identity",
   "description": "AWS SDK for JavaScript Cognito Identity Client for Node.js, Browser and React Native",
-  "version": "3.986.0",
+  "version": "3.987.0",
   "scripts": {
     "build": "concurrently 'yarn:build:types' 'yarn:build:es' && yarn build:cjs",
     "build:cjs": "node ../../scripts/compilation/inline client-cognito-identity",
@@ -31,7 +31,7 @@
     "@aws-sdk/middleware-user-agent": "workspace:^3.972.7",
     "@aws-sdk/region-config-resolver": "workspace:^3.972.3",
     "@aws-sdk/types": "workspace:^3.973.1",
-    "@aws-sdk/util-endpoints": "workspace:3.986.0",
+    "@aws-sdk/util-endpoints": "workspace:3.987.0",
     "@aws-sdk/util-user-agent-browser": "workspace:^3.972.3",
     "@aws-sdk/util-user-agent-node": "workspace:^3.972.5",
     "@smithy/config-resolver": "^4.4.6",
@@ -62,7 +62,7 @@
     "tslib": "^2.6.2"
   },
   "devDependencies": {
-    "@aws-sdk/client-iam": "workspace:3.986.0",
+    "@aws-sdk/client-iam": "workspace:3.987.0",
     "@tsconfig/node20": "20.1.8",
     "@types/chai": "^4.2.11",
     "@types/node": "^20.14.8",

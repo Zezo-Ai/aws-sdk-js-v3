@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.987.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.986.0...v3.987.0) (2026-02-10)
+
+
+### Features
+
+* **client-bedrock-agentcore:** Added AgentCore browser proxy configuration support, allowing routing of browser traffic through HTTP and HTTPS proxy servers with authentication and bypass rules. ([9bdc1cf](https://github.com/aws/aws-sdk-js-v3/commit/9bdc1cf81adf5a42bc61e98e48c9449c1732428a))
+
+
+
+
+
 # [3.986.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.985.0...v3.986.0) (2026-02-09)
 
 **Note:** Version bump only for package @aws-sdk/client-bedrock-agentcore

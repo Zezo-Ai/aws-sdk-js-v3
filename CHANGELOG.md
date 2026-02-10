@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.987.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.986.0...v3.987.0) (2026-02-10)
+
+
+### Features
+
+* **client-bedrock-agentcore:** Added AgentCore browser proxy configuration support, allowing routing of browser traffic through HTTP and HTTPS proxy servers with authentication and bypass rules. ([9bdc1cf](https://github.com/aws/aws-sdk-js-v3/commit/9bdc1cf81adf5a42bc61e98e48c9449c1732428a))
+* **client-connect:** Amazon Connect now supports per-channel auto-accept and After Contact Work (ACW) timeouts. Configure agents with auto-accept and ACW timeout settings for chat, tasks, emails, and callbacks. Use the new UpdateUserConfig API to manage these settings. ([9408c41](https://github.com/aws/aws-sdk-js-v3/commit/9408c4135ba64f680ce5038e8b10bb4c96126087))
+* **client-eks:** Introducing an optional policy field, an IAM policy applied to pod identity associations in addition to IAM role policies. When specified, pod permissions are the intersection of IAM role policies and the policy field, ensuring the principle of least privilege. ([c35168e](https://github.com/aws/aws-sdk-js-v3/commit/c35168e301f2f874ea38c2e85743fff1a6bf4d79))
+* **client-kafka:** Amazon MSK adds three new APIs, CreateTopic, UpdateTopic, and DeleteTopic for managing Kafka topics in your MSK clusters. ([cc06eb6](https://github.com/aws/aws-sdk-js-v3/commit/cc06eb6f4b6f46d8381bfe0372f357f9f398d2e2))
+* **client-rds:** This release adds backup configuration for RDS and Aurora restores, letting customers set backup retention period and preferred backup window during restore. It also enables viewing backup settings when describing snapshots or automated backups for instances and clusters. ([dfcf7f3](https://github.com/aws/aws-sdk-js-v3/commit/dfcf7f3d55be4a863fafd3bf8a66311824590078))
+* **clients:** update client endpoints as of 2026-02-10 ([1bee3fe](https://github.com/aws/aws-sdk-js-v3/commit/1bee3fecd51d26d694f1e85a0f6b53d67ac77f60))
+
+
+
+
+
 # [3.986.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.985.0...v3.986.0) (2026-02-09)
 
 

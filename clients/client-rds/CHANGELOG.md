@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.987.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.986.0...v3.987.0) (2026-02-10)
+
+
+### Features
+
+* **client-rds:** This release adds backup configuration for RDS and Aurora restores, letting customers set backup retention period and preferred backup window during restore. It also enables viewing backup settings when describing snapshots or automated backups for instances and clusters. ([dfcf7f3](https://github.com/aws/aws-sdk-js-v3/commit/dfcf7f3d55be4a863fafd3bf8a66311824590078))
+
+
+
+
+
 # [3.986.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.985.0...v3.986.0) (2026-02-09)
 
 **Note:** Version bump only for package @aws-sdk/client-rds
