@@ -22,6 +22,8 @@ import {
   ClientVpcConnection$,
   CloudWatchLogs$,
   Cluster$,
+  ClusterConnectivityException,
+  ClusterConnectivityException$,
   ClusterInfo$,
   ClusterOperationInfo$,
   ClusterOperationStep$,
@@ -42,6 +44,8 @@ import {
   ConnectivityInfo$,
   ConsumerGroupReplication$,
   ConsumerGroupReplicationUpdate$,
+  ControllerMovedException,
+  ControllerMovedException$,
   ControllerNodeInfo$,
   CreateCluster$,
   CreateClusterCommand,
@@ -59,6 +63,10 @@ import {
   CreateReplicatorCommand,
   CreateReplicatorRequest$,
   CreateReplicatorResponse$,
+  CreateTopic$,
+  CreateTopicCommand,
+  CreateTopicRequest$,
+  CreateTopicResponse$,
   CreateVpcConnection$,
   CreateVpcConnectionCommand,
   CreateVpcConnectionRequest$,
@@ -80,6 +88,10 @@ import {
   DeleteReplicatorCommand,
   DeleteReplicatorRequest$,
   DeleteReplicatorResponse$,
+  DeleteTopic$,
+  DeleteTopicCommand,
+  DeleteTopicRequest$,
+  DeleteTopicResponse$,
   DeleteVpcConnection$,
   DeleteVpcConnectionCommand,
   DeleteVpcConnectionRequest$,
@@ -145,6 +157,8 @@ import {
   GetCompatibleKafkaVersionsCommand,
   GetCompatibleKafkaVersionsRequest$,
   GetCompatibleKafkaVersionsResponse$,
+  GroupSubscribedToTopicException,
+  GroupSubscribedToTopicException$,
   Iam$,
   InternalServerErrorException,
   InternalServerErrorException$,
@@ -156,7 +170,11 @@ import {
   KafkaClusterClientVpcConfig$,
   KafkaClusterDescription$,
   KafkaClusterSummary$,
+  KafkaRequestException,
+  KafkaRequestException$,
   KafkaServiceException,
+  KafkaTimeoutException,
+  KafkaTimeoutException$,
   KafkaVersion$,
   KafkaVersionStatus,
   ListClientVpcConnections$,
@@ -221,6 +239,8 @@ import {
   NodeExporterInfo$,
   NodeInfo$,
   NodeType,
+  NotControllerException,
+  NotControllerException$,
   NotFoundException,
   NotFoundException$,
   OpenMonitoring$,
@@ -249,6 +269,8 @@ import {
   PutClusterPolicyCommand,
   PutClusterPolicyRequest$,
   PutClusterPolicyResponse$,
+  ReassignmentInProgressException,
+  ReassignmentInProgressException$,
   Rebalancing$,
   RebalancingStatus,
   RebootBroker$,
@@ -288,6 +310,8 @@ import {
   Tls$,
   TooManyRequestsException,
   TooManyRequestsException$,
+  TopicExistsException,
+  TopicExistsException$,
   TopicInfo$,
   TopicPartitionInfo$,
   TopicReplication$,
@@ -296,6 +320,8 @@ import {
   Unauthenticated$,
   UnauthorizedException,
   UnauthorizedException$,
+  UnknownTopicOrPartitionException,
+  UnknownTopicOrPartitionException$,
   UnprocessedScramSecret$,
   UntagResource$,
   UntagResourceCommand,
@@ -348,6 +374,10 @@ import {
   UpdateStorageCommand,
   UpdateStorageRequest$,
   UpdateStorageResponse$,
+  UpdateTopic$,
+  UpdateTopicCommand,
+  UpdateTopicRequest$,
+  UpdateTopicResponse$,
   UserIdentity$,
   UserIdentityType,
   VpcConfig$,
@@ -380,6 +410,8 @@ assert(typeof CreateConfigurationCommand === "function");
 assert(typeof CreateConfiguration$ === "object");
 assert(typeof CreateReplicatorCommand === "function");
 assert(typeof CreateReplicator$ === "object");
+assert(typeof CreateTopicCommand === "function");
+assert(typeof CreateTopic$ === "object");
 assert(typeof CreateVpcConnectionCommand === "function");
 assert(typeof CreateVpcConnection$ === "object");
 assert(typeof DeleteClusterCommand === "function");
@@ -390,6 +422,8 @@ assert(typeof DeleteConfigurationCommand === "function");
 assert(typeof DeleteConfiguration$ === "object");
 assert(typeof DeleteReplicatorCommand === "function");
 assert(typeof DeleteReplicator$ === "object");
+assert(typeof DeleteTopicCommand === "function");
+assert(typeof DeleteTopic$ === "object");
 assert(typeof DeleteVpcConnectionCommand === "function");
 assert(typeof DeleteVpcConnection$ === "object");
 assert(typeof DescribeClusterCommand === "function");
@@ -480,6 +514,8 @@ assert(typeof UpdateSecurityCommand === "function");
 assert(typeof UpdateSecurity$ === "object");
 assert(typeof UpdateStorageCommand === "function");
 assert(typeof UpdateStorage$ === "object");
+assert(typeof UpdateTopicCommand === "function");
+assert(typeof UpdateTopic$ === "object");
 // structural schemas
 assert(typeof AmazonMskCluster$ === "object");
 assert(typeof BatchAssociateScramSecretRequest$ === "object");
@@ -520,6 +556,8 @@ assert(typeof CreateConfigurationRequest$ === "object");
 assert(typeof CreateConfigurationResponse$ === "object");
 assert(typeof CreateReplicatorRequest$ === "object");
 assert(typeof CreateReplicatorResponse$ === "object");
+assert(typeof CreateTopicRequest$ === "object");
+assert(typeof CreateTopicResponse$ === "object");
 assert(typeof CreateVpcConnectionRequest$ === "object");
 assert(typeof CreateVpcConnectionResponse$ === "object");
 assert(typeof DeleteClusterPolicyRequest$ === "object");
@@ -530,6 +568,8 @@ assert(typeof DeleteConfigurationRequest$ === "object");
 assert(typeof DeleteConfigurationResponse$ === "object");
 assert(typeof DeleteReplicatorRequest$ === "object");
 assert(typeof DeleteReplicatorResponse$ === "object");
+assert(typeof DeleteTopicRequest$ === "object");
+assert(typeof DeleteTopicResponse$ === "object");
 assert(typeof DeleteVpcConnectionRequest$ === "object");
 assert(typeof DeleteVpcConnectionResponse$ === "object");
 assert(typeof DescribeClusterOperationRequest$ === "object");
@@ -669,6 +709,8 @@ assert(typeof UpdateSecurityRequest$ === "object");
 assert(typeof UpdateSecurityResponse$ === "object");
 assert(typeof UpdateStorageRequest$ === "object");
 assert(typeof UpdateStorageResponse$ === "object");
+assert(typeof UpdateTopicRequest$ === "object");
+assert(typeof UpdateTopicResponse$ === "object");
 assert(typeof UserIdentity$ === "object");
 assert(typeof VpcConfig$ === "object");
 assert(typeof VpcConnection$ === "object");
@@ -703,20 +745,38 @@ assert(typeof VpcConnectionState === "object");
 // errors
 assert(BadRequestException.prototype instanceof KafkaServiceException);
 assert(typeof BadRequestException$ === "object");
+assert(ClusterConnectivityException.prototype instanceof KafkaServiceException);
+assert(typeof ClusterConnectivityException$ === "object");
 assert(ConflictException.prototype instanceof KafkaServiceException);
 assert(typeof ConflictException$ === "object");
+assert(ControllerMovedException.prototype instanceof KafkaServiceException);
+assert(typeof ControllerMovedException$ === "object");
 assert(ForbiddenException.prototype instanceof KafkaServiceException);
 assert(typeof ForbiddenException$ === "object");
+assert(GroupSubscribedToTopicException.prototype instanceof KafkaServiceException);
+assert(typeof GroupSubscribedToTopicException$ === "object");
 assert(InternalServerErrorException.prototype instanceof KafkaServiceException);
 assert(typeof InternalServerErrorException$ === "object");
+assert(KafkaRequestException.prototype instanceof KafkaServiceException);
+assert(typeof KafkaRequestException$ === "object");
+assert(KafkaTimeoutException.prototype instanceof KafkaServiceException);
+assert(typeof KafkaTimeoutException$ === "object");
+assert(NotControllerException.prototype instanceof KafkaServiceException);
+assert(typeof NotControllerException$ === "object");
 assert(NotFoundException.prototype instanceof KafkaServiceException);
 assert(typeof NotFoundException$ === "object");
+assert(ReassignmentInProgressException.prototype instanceof KafkaServiceException);
+assert(typeof ReassignmentInProgressException$ === "object");
 assert(ServiceUnavailableException.prototype instanceof KafkaServiceException);
 assert(typeof ServiceUnavailableException$ === "object");
 assert(TooManyRequestsException.prototype instanceof KafkaServiceException);
 assert(typeof TooManyRequestsException$ === "object");
+assert(TopicExistsException.prototype instanceof KafkaServiceException);
+assert(typeof TopicExistsException$ === "object");
 assert(UnauthorizedException.prototype instanceof KafkaServiceException);
 assert(typeof UnauthorizedException$ === "object");
+assert(UnknownTopicOrPartitionException.prototype instanceof KafkaServiceException);
+assert(typeof UnknownTopicOrPartitionException$ === "object");
 assert(KafkaServiceException.prototype instanceof Error);
 // paginators
 assert(typeof paginateDescribeTopicPartitions === "function");

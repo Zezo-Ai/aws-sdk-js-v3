@@ -243,6 +243,13 @@ CreateReplicator
 </details>
 <details>
 <summary>
+CreateTopic
+</summary>
+
+[Command API Reference](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/kafka/command/CreateTopicCommand/) / [Input](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-client-kafka/Interface/CreateTopicCommandInput/) / [Output](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-client-kafka/Interface/CreateTopicCommandOutput/)
+</details>
+<details>
+<summary>
 CreateVpcConnection
 </summary>
 
@@ -275,6 +282,13 @@ DeleteReplicator
 </summary>
 
 [Command API Reference](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/kafka/command/DeleteReplicatorCommand/) / [Input](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-client-kafka/Interface/DeleteReplicatorCommandInput/) / [Output](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-client-kafka/Interface/DeleteReplicatorCommandOutput/)
+</details>
+<details>
+<summary>
+DeleteTopic
+</summary>
+
+[Command API Reference](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/kafka/command/DeleteTopicCommand/) / [Input](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-client-kafka/Interface/DeleteTopicCommandInput/) / [Output](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-client-kafka/Interface/DeleteTopicCommandOutput/)
 </details>
 <details>
 <summary>
@@ -590,4 +604,11 @@ UpdateStorage
 </summary>
 
 [Command API Reference](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/kafka/command/UpdateStorageCommand/) / [Input](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-client-kafka/Interface/UpdateStorageCommandInput/) / [Output](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-client-kafka/Interface/UpdateStorageCommandOutput/)
+</details>
+<details>
+<summary>
+UpdateTopic
+</summary>
+
+[Command API Reference](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/kafka/command/UpdateTopicCommand/) / [Input](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-client-kafka/Interface/UpdateTopicCommandInput/) / [Output](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-client-kafka/Interface/UpdateTopicCommandOutput/)
 </details>

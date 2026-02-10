@@ -2652,6 +2652,64 @@ export interface CreateReplicatorResponse {
 /**
  * @public
  */
+export interface CreateTopicRequest {
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+   * @public
+   */
+  ClusterArn: string | undefined;
+
+  /**
+   * <p>The name of the topic to create.</p>
+   * @public
+   */
+  TopicName: string | undefined;
+
+  /**
+   * <p>The number of partitions for the topic.</p>
+   * @public
+   */
+  PartitionCount: number | undefined;
+
+  /**
+   * <p>The replication factor for the topic.</p>
+   * @public
+   */
+  ReplicationFactor: number | undefined;
+
+  /**
+   * <p>Topic configurations encoded as a Base64 string.</p>
+   * @public
+   */
+  Configs?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface CreateTopicResponse {
+  /**
+   * <p>The Amazon Resource Name (ARN) of the topic.</p>
+   * @public
+   */
+  TopicArn?: string | undefined;
+
+  /**
+   * <p>The name of the topic that was created.</p>
+   * @public
+   */
+  TopicName?: string | undefined;
+
+  /**
+   * <p>The status of the topic creation.</p>
+   * @public
+   */
+  Status?: TopicState | undefined;
+}
+
+/**
+ * @public
+ */
 export interface CreateVpcConnectionRequest {
   /**
    * <p>The cluster Amazon Resource Name (ARN) for the VPC connection.</p>
@@ -2853,6 +2911,46 @@ export interface DeleteReplicatorResponse {
    * @public
    */
   ReplicatorState?: ReplicatorState | undefined;
+}
+
+/**
+ * @public
+ */
+export interface DeleteTopicRequest {
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+   * @public
+   */
+  ClusterArn: string | undefined;
+
+  /**
+   * <p>The name of the topic to delete.</p>
+   * @public
+   */
+  TopicName: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface DeleteTopicResponse {
+  /**
+   * <p>The Amazon Resource Name (ARN) of the topic.</p>
+   * @public
+   */
+  TopicArn?: string | undefined;
+
+  /**
+   * <p>The name of the topic that was deleted.</p>
+   * @public
+   */
+  TopicName?: string | undefined;
+
+  /**
+   * <p>The status of the topic deletion.</p>
+   * @public
+   */
+  Status?: TopicState | undefined;
 }
 
 /**
@@ -4752,4 +4850,56 @@ export interface UpdateStorageResponse {
    * @public
    */
   ClusterOperationArn?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface UpdateTopicRequest {
+  /**
+   * <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
+   * @public
+   */
+  ClusterArn: string | undefined;
+
+  /**
+   * <p>The name of the topic to update configuration for.</p>
+   * @public
+   */
+  TopicName: string | undefined;
+
+  /**
+   * <p>The new topic configurations encoded as a Base64 string.</p>
+   * @public
+   */
+  Configs?: string | undefined;
+
+  /**
+   * <p>The new total number of partitions for the topic.</p>
+   * @public
+   */
+  PartitionCount?: number | undefined;
+}
+
+/**
+ * @public
+ */
+export interface UpdateTopicResponse {
+  /**
+   * <p>The Amazon Resource Name (ARN) of the topic.</p>
+   * @public
+   */
+  TopicArn?: string | undefined;
+
+  /**
+   * <p>The name of the topic whose configuration was updated.</p>
+   * @public
+   */
+  TopicName?: string | undefined;
+
+  /**
+   * <p>The status of the topic update.</p>
+   * @public
+   */
+  Status?: TopicState | undefined;
 }

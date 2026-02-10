@@ -78,6 +78,7 @@ import {
   CreateConfigurationCommandOutput,
 } from "./commands/CreateConfigurationCommand";
 import { CreateReplicatorCommandInput, CreateReplicatorCommandOutput } from "./commands/CreateReplicatorCommand";
+import { CreateTopicCommandInput, CreateTopicCommandOutput } from "./commands/CreateTopicCommand";
 import {
   CreateVpcConnectionCommandInput,
   CreateVpcConnectionCommandOutput,
@@ -92,6 +93,7 @@ import {
   DeleteConfigurationCommandOutput,
 } from "./commands/DeleteConfigurationCommand";
 import { DeleteReplicatorCommandInput, DeleteReplicatorCommandOutput } from "./commands/DeleteReplicatorCommand";
+import { DeleteTopicCommandInput, DeleteTopicCommandOutput } from "./commands/DeleteTopicCommand";
 import {
   DeleteVpcConnectionCommandInput,
   DeleteVpcConnectionCommandOutput,
@@ -197,6 +199,7 @@ import {
 } from "./commands/UpdateReplicationInfoCommand";
 import { UpdateSecurityCommandInput, UpdateSecurityCommandOutput } from "./commands/UpdateSecurityCommand";
 import { UpdateStorageCommandInput, UpdateStorageCommandOutput } from "./commands/UpdateStorageCommand";
+import { UpdateTopicCommandInput, UpdateTopicCommandOutput } from "./commands/UpdateTopicCommand";
 import {
   ClientInputEndpointParameters,
   ClientResolvedEndpointParameters,
@@ -218,11 +221,13 @@ export type ServiceInputTypes =
   | CreateClusterV2CommandInput
   | CreateConfigurationCommandInput
   | CreateReplicatorCommandInput
+  | CreateTopicCommandInput
   | CreateVpcConnectionCommandInput
   | DeleteClusterCommandInput
   | DeleteClusterPolicyCommandInput
   | DeleteConfigurationCommandInput
   | DeleteReplicatorCommandInput
+  | DeleteTopicCommandInput
   | DeleteVpcConnectionCommandInput
   | DescribeClusterCommandInput
   | DescribeClusterOperationCommandInput
@@ -267,7 +272,8 @@ export type ServiceInputTypes =
   | UpdateRebalancingCommandInput
   | UpdateReplicationInfoCommandInput
   | UpdateSecurityCommandInput
-  | UpdateStorageCommandInput;
+  | UpdateStorageCommandInput
+  | UpdateTopicCommandInput;
 
 /**
  * @public
@@ -279,11 +285,13 @@ export type ServiceOutputTypes =
   | CreateClusterV2CommandOutput
   | CreateConfigurationCommandOutput
   | CreateReplicatorCommandOutput
+  | CreateTopicCommandOutput
   | CreateVpcConnectionCommandOutput
   | DeleteClusterCommandOutput
   | DeleteClusterPolicyCommandOutput
   | DeleteConfigurationCommandOutput
   | DeleteReplicatorCommandOutput
+  | DeleteTopicCommandOutput
   | DeleteVpcConnectionCommandOutput
   | DescribeClusterCommandOutput
   | DescribeClusterOperationCommandOutput
@@ -328,7 +336,8 @@ export type ServiceOutputTypes =
   | UpdateRebalancingCommandOutput
   | UpdateReplicationInfoCommandOutput
   | UpdateSecurityCommandOutput
-  | UpdateStorageCommandOutput;
+  | UpdateStorageCommandOutput
+  | UpdateTopicCommandOutput;
 
 /**
  * @public

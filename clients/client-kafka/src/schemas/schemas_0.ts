@@ -42,6 +42,7 @@ const _CB = "ClientBroker";
 const _CBI = "CreatedBrokerIds";
 const _CBSI = "CurrentBrokerSoftwareInfo";
 const _CC = "CreateCluster";
+const _CCE = "ClusterConnectivityException";
 const _CCR = "CreateClusterRequest";
 const _CCRr = "CreateClusterResponse";
 const _CCRre = "CreateConfigurationRequest";
@@ -61,6 +62,7 @@ const _CIl = "ClusterInfo";
 const _CIo = "ConfigurationInfo";
 const _CKV = "CompatibleKafkaVersion";
 const _CKVo = "CompatibleKafkaVersions";
+const _CME = "ControllerMovedException";
 const _CN = "ClusterName";
 const _CNF = "ClusterNameFilter";
 const _CNI = "ControllerNodeInfo";
@@ -83,7 +85,10 @@ const _CSl = "ClientSubnet";
 const _CT = "CreationTime";
 const _CTC = "CopyTopicConfigurations";
 const _CTF = "ClusterTypeFilter";
+const _CTR = "CreateTopicRequest";
+const _CTRr = "CreateTopicResponse";
 const _CTl = "ClusterType";
+const _CTr = "CreateTopic";
 const _CV = "CurrentVersion";
 const _CVC = "ClientVpcConnection";
 const _CVCR = "CreateVpcConnectionRequest";
@@ -134,12 +139,15 @@ const _DRRes = "DescribeReplicatorRequest";
 const _DRResc = "DescribeReplicatorResponse";
 const _DRe = "DescribeReplicator";
 const _DS = "DeliveryStream";
-const _DT = "DescribeTopic";
+const _DT = "DeleteTopic";
 const _DTP = "DescribeTopicPartitions";
 const _DTPR = "DescribeTopicPartitionsRequest";
 const _DTPRe = "DescribeTopicPartitionsResponse";
-const _DTR = "DescribeTopicRequest";
-const _DTRe = "DescribeTopicResponse";
+const _DTR = "DeleteTopicRequest";
+const _DTRe = "DeleteTopicResponse";
+const _DTRes = "DescribeTopicRequest";
+const _DTResc = "DescribeTopicResponse";
+const _DTe = "DescribeTopic";
 const _DVC = "DeleteVpcConnection";
 const _DVCR = "DeleteVpcConnectionRequest";
 const _DVCRe = "DeleteVpcConnectionResponse";
@@ -172,6 +180,7 @@ const _GCKVRe = "GetCompatibleKafkaVersionsResponse";
 const _GCP = "GetClusterPolicy";
 const _GCPR = "GetClusterPolicyRequest";
 const _GCPRe = "GetClusterPolicyResponse";
+const _GSTTE = "GroupSubscribedToTopicException";
 const _I = "Iam";
 const _IC = "InCluster";
 const _IP = "InvalidParameter";
@@ -189,6 +198,8 @@ const _KCD = "KafkaClusterDescription";
 const _KCS = "KafkaClusterSummary";
 const _KCSa = "KafkaClustersSummary";
 const _KCa = "KafkaCluster";
+const _KRE = "KafkaRequestException";
+const _KTE = "KafkaTimeoutException";
 const _KV = "KafkaVersion";
 const _KVa = "KafkaVersions";
 const _L = "Leader";
@@ -243,6 +254,7 @@ const _MCI = "MutableClusterInfo";
 const _MR = "MaxResults";
 const _N = "Name";
 const _NARN = "NodeARN";
+const _NCE = "NotControllerException";
 const _NE = "NodeExporter";
 const _NEI = "NodeExporterInfo";
 const _NFE = "NotFoundException";
@@ -288,6 +300,7 @@ const _RF = "ReplicationFactor";
 const _RI = "ReplicationInfo";
 const _RID = "ReplicationInfoDescription";
 const _RIL = "ReplicationInfoList";
+const _RIPE = "ReassignmentInProgressException";
 const _RIS = "ReplicationInfoSummary";
 const _RISL = "ReplicationInfoSummaryList";
 const _RN = "ReplicatorName";
@@ -339,6 +352,7 @@ const _TBEBSVI = "TargetBrokerEBSVolumeInfo";
 const _TCA = "TargetClusterArn";
 const _TCI = "TargetClusterInfo";
 const _TCT = "TargetCompressionType";
+const _TEE = "TopicExistsException";
 const _TI = "TopicInfo";
 const _TIT = "TargetInstanceType";
 const _TK = "TagKeys";
@@ -404,6 +418,10 @@ const _USRpda = "UpdateStorageResponse";
 const _USS = "UnprocessedScramSecrets";
 const _USSn = "UnprocessedScramSecret";
 const _USp = "UpdateStorage";
+const _UT = "UpdateTopic";
+const _UTOPE = "UnknownTopicOrPartitionException";
+const _UTR = "UpdateTopicRequest";
+const _UTRp = "UpdateTopicResponse";
 const _V = "Version";
 const _VC = "VpcConnectivity";
 const _VCA = "VpcConnectionArn";
@@ -684,13 +702,22 @@ import type {
 
 import {
   BadRequestException,
+  ClusterConnectivityException,
   ConflictException,
+  ControllerMovedException,
   ForbiddenException,
+  GroupSubscribedToTopicException,
   InternalServerErrorException,
+  KafkaRequestException,
+  KafkaTimeoutException,
+  NotControllerException,
   NotFoundException,
+  ReassignmentInProgressException,
   ServiceUnavailableException,
   TooManyRequestsException,
+  TopicExistsException,
   UnauthorizedException,
+  UnknownTopicOrPartitionException,
 } from "../models/errors";
 import { KafkaServiceException } from "../models/KafkaServiceException";
 
@@ -776,6 +803,12 @@ export var Cluster$: StaticStructureSchema = [3, n0, _C,
   [_AOA, _CTl, _CA, _CN, _CT, _CV, _St, _SIt, _Ta, _P, _Se],
   [[0, { [_jN]: _aOA }], [0, { [_jN]: _cTl }], [0, { [_jN]: _cA }], [0, { [_jN]: _cN }], [5, { [_jN]: _cT }], [0, { [_jN]: _cV }], [0, { [_jN]: _st }], [() => StateInfo$, { [_jN]: _sIt }], [128 | 0, { [_jN]: _ta }], [() => Provisioned$, { [_jN]: _p }], [() => Serverless$, { [_jN]: _se }]]
 ];
+export var ClusterConnectivityException$: StaticErrorSchema = [-3, n0, _CCE,
+  { [_e]: _c, [_hE]: 409 },
+  [_IP, _M],
+  [[0, { [_jN]: _iP }], [0, { [_jN]: _m }]]
+];
+TypeRegistry.for(n0).registerError(ClusterConnectivityException$, ClusterConnectivityException);
 export var ClusterInfo$: StaticStructureSchema = [3, n0, _CIl,
   0,
   [_AOA, _BNGI, _R, _CAl, _CA, _CN, _CT, _CBSI, _CV, _EI, _EM, _OM, _LI, _NOBN, _St, _SIt, _Ta, _ZCS, _ZCST, _SM, _CAS],
@@ -857,6 +890,12 @@ export var ConsumerGroupReplicationUpdate$: StaticStructureSchema = [3, n0, _CGR
   [_CGTE, _CGTR, _DACNCG, _SCGO],
   [[64 | 0, { [_jN]: _cGTE }], [64 | 0, { [_jN]: _cGTR }], [2, { [_jN]: _dACNCG }], [2, { [_jN]: _sCGO }]], 4
 ];
+export var ControllerMovedException$: StaticErrorSchema = [-3, n0, _CME,
+  { [_e]: _c, [_hE]: 409 },
+  [_IP, _M],
+  [[0, { [_jN]: _iP }], [0, { [_jN]: _m }]]
+];
+TypeRegistry.for(n0).registerError(ControllerMovedException$, ControllerMovedException);
 export var ControllerNodeInfo$: StaticStructureSchema = [3, n0, _CNI,
   0,
   [_E],
@@ -901,6 +940,16 @@ export var CreateReplicatorResponse$: StaticStructureSchema = [3, n0, _CRRr,
   0,
   [_RA, _RN, _RS],
   [[0, { [_jN]: _rA }], [0, { [_jN]: _rN }], [0, { [_jN]: _rS }]]
+];
+export var CreateTopicRequest$: StaticStructureSchema = [3, n0, _CTR,
+  0,
+  [_CA, _TN, _PC, _RF, _Con],
+  [[0, 1], [0, { [_jN]: _tN }], [1, { [_jN]: _pC }], [1, { [_jN]: _rF }], [0, { [_jN]: _co }]], 4
+];
+export var CreateTopicResponse$: StaticStructureSchema = [3, n0, _CTRr,
+  0,
+  [_TA, _TN, _Sta],
+  [[0, { [_jN]: _tA }], [0, { [_jN]: _tN }], [0, { [_jN]: _sta }]]
 ];
 export var CreateVpcConnectionRequest$: StaticStructureSchema = [3, n0, _CVCR,
   0,
@@ -951,6 +1000,16 @@ export var DeleteReplicatorResponse$: StaticStructureSchema = [3, n0, _DRRe,
   0,
   [_RA, _RS],
   [[0, { [_jN]: _rA }], [0, { [_jN]: _rS }]]
+];
+export var DeleteTopicRequest$: StaticStructureSchema = [3, n0, _DTR,
+  0,
+  [_CA, _TN],
+  [[0, 1], [0, 1]], 2
+];
+export var DeleteTopicResponse$: StaticStructureSchema = [3, n0, _DTRe,
+  0,
+  [_TA, _TN, _Sta],
+  [[0, { [_jN]: _tA }], [0, { [_jN]: _tN }], [0, { [_jN]: _sta }]]
 ];
 export var DeleteVpcConnectionRequest$: StaticStructureSchema = [3, n0, _DVCR,
   0,
@@ -1042,12 +1101,12 @@ export var DescribeTopicPartitionsResponse$: StaticStructureSchema = [3, n0, _DT
   [_Pa, _NT],
   [[() => __listOfTopicPartitionInfo, { [_jN]: _pa }], [0, { [_jN]: _nT }]]
 ];
-export var DescribeTopicRequest$: StaticStructureSchema = [3, n0, _DTR,
+export var DescribeTopicRequest$: StaticStructureSchema = [3, n0, _DTRes,
   0,
   [_CA, _TN],
   [[0, 1], [0, 1]], 2
 ];
-export var DescribeTopicResponse$: StaticStructureSchema = [3, n0, _DTRe,
+export var DescribeTopicResponse$: StaticStructureSchema = [3, n0, _DTResc,
   0,
   [_TA, _TN, _RF, _PC, _Con, _Sta],
   [[0, { [_jN]: _tA }], [0, { [_jN]: _tN }], [1, { [_jN]: _rF }], [1, { [_jN]: _pC }], [0, { [_jN]: _co }], [0, { [_jN]: _sta }]]
@@ -1128,6 +1187,12 @@ export var GetCompatibleKafkaVersionsResponse$: StaticStructureSchema = [3, n0, 
   [_CKVo],
   [[() => __listOfCompatibleKafkaVersion, { [_jN]: _cKV }]]
 ];
+export var GroupSubscribedToTopicException$: StaticErrorSchema = [-3, n0, _GSTTE,
+  { [_e]: _c, [_hE]: 409 },
+  [_IP, _M],
+  [[0, { [_jN]: _iP }], [0, { [_jN]: _m }]]
+];
+TypeRegistry.for(n0).registerError(GroupSubscribedToTopicException$, GroupSubscribedToTopicException);
 export var Iam$: StaticStructureSchema = [3, n0, _I,
   0,
   [_En],
@@ -1169,6 +1234,18 @@ export var KafkaClusterSummary$: StaticStructureSchema = [3, n0, _KCS,
   [_AMC, _KCA],
   [[() => AmazonMskCluster$, { [_jN]: _aMC }], [0, { [_jN]: _kCA }]]
 ];
+export var KafkaRequestException$: StaticErrorSchema = [-3, n0, _KRE,
+  { [_e]: _c, [_hE]: 400 },
+  [_IP, _M],
+  [[0, { [_jN]: _iP }], [0, { [_jN]: _m }]]
+];
+TypeRegistry.for(n0).registerError(KafkaRequestException$, KafkaRequestException);
+export var KafkaTimeoutException$: StaticErrorSchema = [-3, n0, _KTE,
+  { [_e]: _c, [_hE]: 409 },
+  [_IP, _M],
+  [[0, { [_jN]: _iP }], [0, { [_jN]: _m }]]
+];
+TypeRegistry.for(n0).registerError(KafkaTimeoutException$, KafkaTimeoutException);
 export var KafkaVersion$: StaticStructureSchema = [3, n0, _KV,
   0,
   [_V, _Sta],
@@ -1339,6 +1416,12 @@ export var NodeInfo$: StaticStructureSchema = [3, n0, _NI,
   [_ATCT, _BNI, _CNI, _IT, _NARN, _NTo, _ZNI],
   [[0, { [_jN]: _aTCT }], [() => BrokerNodeInfo$, { [_jN]: _bNI }], [() => ControllerNodeInfo$, { [_jN]: _cNI }], [0, { [_jN]: _iT }], [0, { [_jN]: _nARN }], [0, { [_jN]: _nTo }], [() => ZookeeperNodeInfo$, { [_jN]: _zNI }]]
 ];
+export var NotControllerException$: StaticErrorSchema = [-3, n0, _NCE,
+  { [_e]: _c, [_hE]: 409 },
+  [_IP, _M],
+  [[0, { [_jN]: _iP }], [0, { [_jN]: _m }]]
+];
+TypeRegistry.for(n0).registerError(NotControllerException$, NotControllerException);
 export var NotFoundException$: StaticErrorSchema = [-3, n0, _NFE,
   { [_e]: _c, [_hE]: 404 },
   [_IP, _M],
@@ -1395,6 +1478,12 @@ export var PutClusterPolicyResponse$: StaticStructureSchema = [3, n0, _PCPRu,
   [_CV],
   [[0, { [_jN]: _cV }]]
 ];
+export var ReassignmentInProgressException$: StaticErrorSchema = [-3, n0, _RIPE,
+  { [_e]: _c, [_hE]: 409 },
+  [_IP, _M],
+  [[0, { [_jN]: _iP }], [0, { [_jN]: _m }]]
+];
+TypeRegistry.for(n0).registerError(ReassignmentInProgressException$, ReassignmentInProgressException);
 export var Rebalancing$: StaticStructureSchema = [3, n0, _R,
   0,
   [_Sta],
@@ -1522,6 +1611,12 @@ export var TooManyRequestsException$: StaticErrorSchema = [-3, n0, _TMRE,
   [[0, { [_jN]: _iP }], [0, { [_jN]: _m }]]
 ];
 TypeRegistry.for(n0).registerError(TooManyRequestsException$, TooManyRequestsException);
+export var TopicExistsException$: StaticErrorSchema = [-3, n0, _TEE,
+  { [_e]: _c, [_hE]: 409 },
+  [_IP, _M],
+  [[0, { [_jN]: _iP }], [0, { [_jN]: _m }]]
+];
+TypeRegistry.for(n0).registerError(TopicExistsException$, TopicExistsException);
 export var TopicInfo$: StaticStructureSchema = [3, n0, _TI,
   0,
   [_TA, _TN, _RF, _PC, _OOSRC],
@@ -1553,6 +1648,12 @@ export var UnauthorizedException$: StaticErrorSchema = [-3, n0, _UE,
   [[0, { [_jN]: _iP }], [0, { [_jN]: _m }]]
 ];
 TypeRegistry.for(n0).registerError(UnauthorizedException$, UnauthorizedException);
+export var UnknownTopicOrPartitionException$: StaticErrorSchema = [-3, n0, _UTOPE,
+  { [_e]: _c, [_hE]: 404 },
+  [_IP, _M],
+  [[0, { [_jN]: _iP }], [0, { [_jN]: _m }]]
+];
+TypeRegistry.for(n0).registerError(UnknownTopicOrPartitionException$, UnknownTopicOrPartitionException);
 export var UnprocessedScramSecret$: StaticStructureSchema = [3, n0, _USSn,
   0,
   [_EC, _EMr, _SA],
@@ -1682,6 +1783,16 @@ export var UpdateStorageResponse$: StaticStructureSchema = [3, n0, _USRpda,
   0,
   [_CA, _COA],
   [[0, { [_jN]: _cA }], [0, { [_jN]: _cOA }]]
+];
+export var UpdateTopicRequest$: StaticStructureSchema = [3, n0, _UTR,
+  0,
+  [_CA, _TN, _Con, _PC],
+  [[0, 1], [0, 1], [0, { [_jN]: _co }], [1, { [_jN]: _pC }]], 2
+];
+export var UpdateTopicResponse$: StaticStructureSchema = [3, n0, _UTRp,
+  0,
+  [_TA, _TN, _Sta],
+  [[0, { [_jN]: _tA }], [0, { [_jN]: _tN }], [0, { [_jN]: _sta }]]
 ];
 export var UserIdentity$: StaticStructureSchema = [3, n0, _UI,
   0,
@@ -1866,6 +1977,9 @@ export var CreateConfiguration$: StaticOperationSchema = [9, n0, _CCr,
 export var CreateReplicator$: StaticOperationSchema = [9, n0, _CRr,
   { [_h]: ["POST", "/replication/v1/replicators", 200] }, () => CreateReplicatorRequest$, () => CreateReplicatorResponse$
 ];
+export var CreateTopic$: StaticOperationSchema = [9, n0, _CTr,
+  { [_h]: ["POST", "/v1/clusters/{ClusterArn}/topics", 200] }, () => CreateTopicRequest$, () => CreateTopicResponse$
+];
 export var CreateVpcConnection$: StaticOperationSchema = [9, n0, _CVCr,
   { [_h]: ["POST", "/v1/vpc-connection", 200] }, () => CreateVpcConnectionRequest$, () => CreateVpcConnectionResponse$
 ];
@@ -1880,6 +1994,9 @@ export var DeleteConfiguration$: StaticOperationSchema = [9, n0, _DCe,
 ];
 export var DeleteReplicator$: StaticOperationSchema = [9, n0, _DR,
   { [_h]: ["DELETE", "/replication/v1/replicators/{ReplicatorArn}", 200] }, () => DeleteReplicatorRequest$, () => DeleteReplicatorResponse$
+];
+export var DeleteTopic$: StaticOperationSchema = [9, n0, _DT,
+  { [_h]: ["DELETE", "/v1/clusters/{ClusterArn}/topics/{TopicName}", 200] }, () => DeleteTopicRequest$, () => DeleteTopicResponse$
 ];
 export var DeleteVpcConnection$: StaticOperationSchema = [9, n0, _DVC,
   { [_h]: ["DELETE", "/v1/vpc-connection/{Arn}", 200] }, () => DeleteVpcConnectionRequest$, () => DeleteVpcConnectionResponse$
@@ -1905,7 +2022,7 @@ export var DescribeConfigurationRevision$: StaticOperationSchema = [9, n0, _DCRe
 export var DescribeReplicator$: StaticOperationSchema = [9, n0, _DRe,
   { [_h]: ["GET", "/replication/v1/replicators/{ReplicatorArn}", 200] }, () => DescribeReplicatorRequest$, () => DescribeReplicatorResponse$
 ];
-export var DescribeTopic$: StaticOperationSchema = [9, n0, _DT,
+export var DescribeTopic$: StaticOperationSchema = [9, n0, _DTe,
   { [_h]: ["GET", "/v1/clusters/{ClusterArn}/topics/{TopicName}", 200] }, () => DescribeTopicRequest$, () => DescribeTopicResponse$
 ];
 export var DescribeTopicPartitions$: StaticOperationSchema = [9, n0, _DTP,
@@ -2015,4 +2132,7 @@ export var UpdateSecurity$: StaticOperationSchema = [9, n0, _US,
 ];
 export var UpdateStorage$: StaticOperationSchema = [9, n0, _USp,
   { [_h]: ["PUT", "/v1/clusters/{ClusterArn}/storage", 200] }, () => UpdateStorageRequest$, () => UpdateStorageResponse$
+];
+export var UpdateTopic$: StaticOperationSchema = [9, n0, _UT,
+  { [_h]: ["PUT", "/v1/clusters/{ClusterArn}/topics/{TopicName}", 200] }, () => UpdateTopicRequest$, () => UpdateTopicResponse$
 ];

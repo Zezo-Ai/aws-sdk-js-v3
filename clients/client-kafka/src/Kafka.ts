@@ -32,6 +32,7 @@ import {
   CreateReplicatorCommandInput,
   CreateReplicatorCommandOutput,
 } from "./commands/CreateReplicatorCommand";
+import { CreateTopicCommand, CreateTopicCommandInput, CreateTopicCommandOutput } from "./commands/CreateTopicCommand";
 import {
   CreateVpcConnectionCommand,
   CreateVpcConnectionCommandInput,
@@ -57,6 +58,7 @@ import {
   DeleteReplicatorCommandInput,
   DeleteReplicatorCommandOutput,
 } from "./commands/DeleteReplicatorCommand";
+import { DeleteTopicCommand, DeleteTopicCommandInput, DeleteTopicCommandOutput } from "./commands/DeleteTopicCommand";
 import {
   DeleteVpcConnectionCommand,
   DeleteVpcConnectionCommandInput,
@@ -270,6 +272,7 @@ import {
   UpdateStorageCommandInput,
   UpdateStorageCommandOutput,
 } from "./commands/UpdateStorageCommand";
+import { UpdateTopicCommand, UpdateTopicCommandInput, UpdateTopicCommandOutput } from "./commands/UpdateTopicCommand";
 import { KafkaClient } from "./KafkaClient";
 import { paginateDescribeTopicPartitions } from "./pagination/DescribeTopicPartitionsPaginator";
 import { paginateListClientVpcConnections } from "./pagination/ListClientVpcConnectionsPaginator";
@@ -293,11 +296,13 @@ const commands = {
   CreateClusterV2Command,
   CreateConfigurationCommand,
   CreateReplicatorCommand,
+  CreateTopicCommand,
   CreateVpcConnectionCommand,
   DeleteClusterCommand,
   DeleteClusterPolicyCommand,
   DeleteConfigurationCommand,
   DeleteReplicatorCommand,
+  DeleteTopicCommand,
   DeleteVpcConnectionCommand,
   DescribeClusterCommand,
   DescribeClusterOperationCommand,
@@ -343,6 +348,7 @@ const commands = {
   UpdateReplicationInfoCommand,
   UpdateSecurityCommand,
   UpdateStorageCommand,
+  UpdateTopicCommand,
 };
 const paginators = {
   paginateDescribeTopicPartitions,
@@ -465,6 +471,23 @@ export interface Kafka {
   ): void;
 
   /**
+   * @see {@link CreateTopicCommand}
+   */
+  createTopic(
+    args: CreateTopicCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<CreateTopicCommandOutput>;
+  createTopic(
+    args: CreateTopicCommandInput,
+    cb: (err: any, data?: CreateTopicCommandOutput) => void
+  ): void;
+  createTopic(
+    args: CreateTopicCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: CreateTopicCommandOutput) => void
+  ): void;
+
+  /**
    * @see {@link CreateVpcConnectionCommand}
    */
   createVpcConnection(
@@ -547,6 +570,23 @@ export interface Kafka {
     args: DeleteReplicatorCommandInput,
     options: __HttpHandlerOptions,
     cb: (err: any, data?: DeleteReplicatorCommandOutput) => void
+  ): void;
+
+  /**
+   * @see {@link DeleteTopicCommand}
+   */
+  deleteTopic(
+    args: DeleteTopicCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<DeleteTopicCommandOutput>;
+  deleteTopic(
+    args: DeleteTopicCommandInput,
+    cb: (err: any, data?: DeleteTopicCommandOutput) => void
+  ): void;
+  deleteTopic(
+    args: DeleteTopicCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: DeleteTopicCommandOutput) => void
   ): void;
 
   /**
@@ -1319,6 +1359,23 @@ export interface Kafka {
     args: UpdateStorageCommandInput,
     options: __HttpHandlerOptions,
     cb: (err: any, data?: UpdateStorageCommandOutput) => void
+  ): void;
+
+  /**
+   * @see {@link UpdateTopicCommand}
+   */
+  updateTopic(
+    args: UpdateTopicCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<UpdateTopicCommandOutput>;
+  updateTopic(
+    args: UpdateTopicCommandInput,
+    cb: (err: any, data?: UpdateTopicCommandOutput) => void
+  ): void;
+  updateTopic(
+    args: UpdateTopicCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: UpdateTopicCommandOutput) => void
   ): void;
 
   /**
