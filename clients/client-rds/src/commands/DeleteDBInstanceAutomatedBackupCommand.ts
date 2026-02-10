@@ -72,6 +72,7 @@ export interface DeleteDBInstanceAutomatedBackupCommandOutput extends DeleteDBIn
  * //     Timezone: "STRING_VALUE",
  * //     IAMDatabaseAuthenticationEnabled: true || false,
  * //     BackupRetentionPeriod: Number("int"),
+ * //     PreferredBackupWindow: "STRING_VALUE",
  * //     DBInstanceAutomatedBackupsArn: "STRING_VALUE",
  * //     DBInstanceAutomatedBackupsReplications: [ // DBInstanceAutomatedBackupsReplicationList
  * //       { // DBInstanceAutomatedBackupsReplication

@@ -92,6 +92,8 @@ export interface RestoreDBInstanceFromDBSnapshotCommandOutput extends RestoreDBI
  *   CustomIamInstanceProfile: "STRING_VALUE",
  *   AllocatedStorage: Number("int"),
  *   DBClusterSnapshotIdentifier: "STRING_VALUE",
+ *   BackupRetentionPeriod: Number("int"),
+ *   PreferredBackupWindow: "STRING_VALUE",
  *   DedicatedLogVolume: true || false,
  *   CACertificateIdentifier: "STRING_VALUE",
  *   EngineLifecycleSupport: "STRING_VALUE",

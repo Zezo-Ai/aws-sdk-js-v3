@@ -96,6 +96,8 @@ export interface RestoreDBInstanceToPointInTimeCommandOutput extends RestoreDBIn
  *   BackupTarget: "STRING_VALUE",
  *   CustomIamInstanceProfile: "STRING_VALUE",
  *   AllocatedStorage: Number("int"),
+ *   BackupRetentionPeriod: Number("int"),
+ *   PreferredBackupWindow: "STRING_VALUE",
  *   DedicatedLogVolume: true || false,
  *   CACertificateIdentifier: "STRING_VALUE",
  *   EngineLifecycleSupport: "STRING_VALUE",

@@ -95,6 +95,8 @@ export interface RestoreDBClusterToPointInTimeCommandOutput extends RestoreDBClu
  *   EnablePerformanceInsights: true || false,
  *   PerformanceInsightsKMSKeyId: "STRING_VALUE",
  *   PerformanceInsightsRetentionPeriod: Number("int"),
+ *   BackupRetentionPeriod: Number("int"),
+ *   PreferredBackupWindow: "STRING_VALUE",
  *   EngineLifecycleSupport: "STRING_VALUE",
  *   TagSpecifications: [ // TagSpecificationList
  *     { // TagSpecification

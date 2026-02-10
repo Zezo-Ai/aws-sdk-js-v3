@@ -2166,8 +2166,8 @@ export var DBClusterAlreadyExistsFault$: StaticErrorSchema = [-3, n0, _DBCAEF,
 TypeRegistry.for(n0).registerError(DBClusterAlreadyExistsFault$, DBClusterAlreadyExistsFault);
 export var DBClusterAutomatedBackup$: StaticStructureSchema = [3, n0, _DBCAB,
   0,
-  [_E, _VI, _DBCABA, _DBCI, _RW, _MU, _DCRI, _R, _LM, _St, _IAMDAE, _CCT, _SE, _AS, _EV, _DBCA, _BRP, _EMn, _AZv, _P, _KKI, _STt, _I, _ST, _ABRPA, _TL],
-  [0, 0, 0, 0, () => RestoreWindow$, 0, 0, 0, 0, 0, 2, 4, 2, 1, 0, 0, 1, 0, [() => AvailabilityZones, 0], 1, 0, 0, 1, 1, 0, [() => TagList, 0]]
+  [_E, _VI, _DBCABA, _DBCI, _RW, _MU, _DCRI, _R, _LM, _St, _IAMDAE, _CCT, _SE, _AS, _EV, _DBCA, _BRP, _PBW, _EMn, _AZv, _P, _KKI, _STt, _I, _ST, _ABRPA, _TL],
+  [0, 0, 0, 0, () => RestoreWindow$, 0, 0, 0, 0, 0, 2, 4, 2, 1, 0, 0, 1, 0, 0, [() => AvailabilityZones, 0], 1, 0, 0, 1, 1, 0, [() => TagList, 0]]
 ];
 export var DBClusterAutomatedBackupMessage$: StaticStructureSchema = [3, n0, _DBCABM,
   0,
@@ -2313,8 +2313,8 @@ export var DBClusterRoleQuotaExceededFault$: StaticErrorSchema = [-3, n0, _DBCRQ
 TypeRegistry.for(n0).registerError(DBClusterRoleQuotaExceededFault$, DBClusterRoleQuotaExceededFault);
 export var DBClusterSnapshot$: StaticStructureSchema = [3, n0, _DBCS,
   0,
-  [_AZv, _DBCSI, _DBCI, _SCT, _E, _EMn, _AS, _St, _P, _VI, _CCT, _MU, _EV, _LM, _STna, _PP, _SE, _KKI, _DBCSA, _SDBCSA, _IAMDAE, _TL, _STt, _ST, _DCRI, _DBSI],
-  [[() => AvailabilityZones, 0], 0, 0, 4, 0, 0, 1, 0, 1, 0, 4, 0, 0, 0, 0, 1, 2, 0, 0, 0, 2, [() => TagList, 0], 0, 1, 0, 0]
+  [_AZv, _DBCSI, _DBCI, _SCT, _E, _EMn, _AS, _St, _P, _VI, _CCT, _MU, _EV, _LM, _STna, _PP, _SE, _BRP, _PBW, _KKI, _DBCSA, _SDBCSA, _IAMDAE, _TL, _STt, _ST, _DCRI, _DBSI],
+  [[() => AvailabilityZones, 0], 0, 0, 4, 0, 0, 1, 0, 1, 0, 4, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 2, [() => TagList, 0], 0, 1, 0, 0]
 ];
 export var DBClusterSnapshotAlreadyExistsFault$: StaticErrorSchema = [-3, n0, _DBCSAEF,
   { [_aQE]: [`DBClusterSnapshotAlreadyExistsFault`, 400], [_e]: _c, [_hE]: 400 },
@@ -2371,8 +2371,8 @@ export var DBInstanceAlreadyExistsFault$: StaticErrorSchema = [-3, n0, _DBIAEF,
 TypeRegistry.for(n0).registerError(DBInstanceAlreadyExistsFault$, DBInstanceAlreadyExistsFault);
 export var DBInstanceAutomatedBackup$: StaticStructureSchema = [3, n0, _DBIAB,
   0,
-  [_DBIA, _DRI, _R, _DBII, _RW, _AS, _St, _P, _AZ, _VI, _ICTn, _MU, _E, _EV, _LM, _I, _ST, _OGN, _TCA, _Enc, _STt, _KKI, _Ti, _IAMDAE, _BRP, _DBIABA, _DBIABR, _BTa, _MT, _ABRPA, _TL, _DLV, _ASVd],
-  [0, 0, 0, 0, () => RestoreWindow$, 1, 0, 1, 0, 0, 4, 0, 0, 0, 0, 1, 1, 0, 0, 2, 0, 0, 0, 2, 1, 0, [() => DBInstanceAutomatedBackupsReplicationList, 0], 0, 2, 0, [() => TagList, 0], 2, () => AdditionalStorageVolumesList]
+  [_DBIA, _DRI, _R, _DBII, _RW, _AS, _St, _P, _AZ, _VI, _ICTn, _MU, _E, _EV, _LM, _I, _ST, _OGN, _TCA, _Enc, _STt, _KKI, _Ti, _IAMDAE, _BRP, _PBW, _DBIABA, _DBIABR, _BTa, _MT, _ABRPA, _TL, _DLV, _ASVd],
+  [0, 0, 0, 0, () => RestoreWindow$, 1, 0, 1, 0, 0, 4, 0, 0, 0, 0, 1, 1, 0, 0, 2, 0, 0, 0, 2, 1, 0, 0, [() => DBInstanceAutomatedBackupsReplicationList, 0], 0, 2, 0, [() => TagList, 0], 2, () => AdditionalStorageVolumesList]
 ];
 export var DBInstanceAutomatedBackupMessage$: StaticStructureSchema = [3, n0, _DBIABM,
   0,
@@ -2642,8 +2642,8 @@ export var DBShardGroupNotFoundFault$: StaticErrorSchema = [-3, n0, _DBSGNFFh,
 TypeRegistry.for(n0).registerError(DBShardGroupNotFoundFault$, DBShardGroupNotFoundFault);
 export var DBSnapshot$: StaticStructureSchema = [3, n0, _DBS,
   0,
-  [_DBSIn, _DBII, _SCT, _E, _AS, _St, _P, _AZ, _VI, _ICTn, _MU, _EV, _LM, _STna, _I, _ST, _OGN, _PP, _SR, _SDBSI, _STt, _TCA, _Enc, _KKI, _DBSA, _Ti, _IAMDAE, _PF, _DRI, _TL, _STn, _OSCT, _SDT, _DBSI, _MT, _DLV, _ASVd, _SAZ],
-  [0, 0, 4, 0, 1, 0, 1, 0, 0, 4, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 2, [() => ProcessorFeatureList, 0], 0, [() => TagList, 0], 0, 4, 4, 0, 2, 2, () => AdditionalStorageVolumesList, 0]
+  [_DBSIn, _DBII, _SCT, _E, _AS, _St, _P, _AZ, _VI, _ICTn, _MU, _EV, _LM, _STna, _I, _ST, _OGN, _PP, _SR, _SDBSI, _STt, _TCA, _Enc, _BRP, _PBW, _KKI, _DBSA, _Ti, _IAMDAE, _PF, _DRI, _TL, _STn, _OSCT, _SDT, _DBSI, _MT, _DLV, _ASVd, _SAZ],
+  [0, 0, 4, 0, 1, 0, 1, 0, 0, 4, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 2, [() => ProcessorFeatureList, 0], 0, [() => TagList, 0], 0, 4, 4, 0, 2, 2, () => AdditionalStorageVolumesList, 0]
 ];
 export var DBSnapshotAlreadyExistsFault$: StaticErrorSchema = [-3, n0, _DBSAEF,
   { [_aQE]: [`DBSnapshotAlreadyExists`, 400], [_e]: _c, [_hE]: 400 },
@@ -4279,8 +4279,8 @@ export var RestoreDBClusterFromS3Result$: StaticStructureSchema = [3, n0, _RDBCF
 ];
 export var RestoreDBClusterFromSnapshotMessage$: StaticStructureSchema = [3, n0, _RDBCFSMe,
   0,
-  [_DBCI, _SIn, _E, _AZv, _EV, _P, _DBSGNu, _DN, _OGN, _VSGI, _T, _KKI, _EIAMDA, _BW, _ECLE, _EMn, _SC, _DBCPGN, _DP, _CTTS, _Do, _DIAMRN, _DBCIC, _STt, _I, _PA, _NT, _SVSC, _RCCC, _MIo, _MRA, _EPI, _PIKMSKI, _PIRP, _ELS, _TS],
-  [0, 0, 0, [() => AvailabilityZones, 0], 0, 1, 0, 0, 0, [() => VpcSecurityGroupIdList, 0], [() => TagList, 0], 0, 2, 1, 64 | 0, 0, () => ScalingConfiguration$, 0, 2, 2, 0, 0, 0, 0, 1, 2, 0, () => ServerlessV2ScalingConfiguration$, () => RdsCustomClusterConfiguration$, 1, 0, 2, 0, 1, 0, [() => TagSpecificationList, 0]], 3
+  [_DBCI, _SIn, _E, _AZv, _EV, _P, _DBSGNu, _DN, _OGN, _VSGI, _T, _KKI, _EIAMDA, _BW, _ECLE, _EMn, _SC, _DBCPGN, _DP, _CTTS, _Do, _DIAMRN, _DBCIC, _STt, _I, _PA, _NT, _SVSC, _RCCC, _MIo, _MRA, _EPI, _PIKMSKI, _PIRP, _BRP, _PBW, _ELS, _TS],
+  [0, 0, 0, [() => AvailabilityZones, 0], 0, 1, 0, 0, 0, [() => VpcSecurityGroupIdList, 0], [() => TagList, 0], 0, 2, 1, 64 | 0, 0, () => ScalingConfiguration$, 0, 2, 2, 0, 0, 0, 0, 1, 2, 0, () => ServerlessV2ScalingConfiguration$, () => RdsCustomClusterConfiguration$, 1, 0, 2, 0, 1, 1, 0, 0, [() => TagSpecificationList, 0]], 3
 ];
 export var RestoreDBClusterFromSnapshotResult$: StaticStructureSchema = [3, n0, _RDBCFSRe,
   0,
@@ -4289,8 +4289,8 @@ export var RestoreDBClusterFromSnapshotResult$: StaticStructureSchema = [3, n0, 
 ];
 export var RestoreDBClusterToPointInTimeMessage$: StaticStructureSchema = [3, n0, _RDBCTPITM,
   0,
-  [_DBCI, _RT, _SDBCI, _RTT, _ULRT, _P, _DBSGNu, _OGN, _VSGI, _T, _KKI, _EIAMDA, _BW, _ECLE, _DBCPGN, _DP, _CTTS, _Do, _DIAMRN, _DBCIC, _STt, _PA, _I, _NT, _SDCRI, _SVSC, _SC, _EMn, _RCCC, _MIo, _MRA, _EPI, _PIKMSKI, _PIRP, _ELS, _TS],
-  [0, 0, 0, 4, 2, 1, 0, 0, [() => VpcSecurityGroupIdList, 0], [() => TagList, 0], 0, 2, 1, 64 | 0, 0, 2, 2, 0, 0, 0, 0, 2, 1, 0, 0, () => ServerlessV2ScalingConfiguration$, () => ScalingConfiguration$, 0, () => RdsCustomClusterConfiguration$, 1, 0, 2, 0, 1, 0, [() => TagSpecificationList, 0]], 1
+  [_DBCI, _RT, _SDBCI, _RTT, _ULRT, _P, _DBSGNu, _OGN, _VSGI, _T, _KKI, _EIAMDA, _BW, _ECLE, _DBCPGN, _DP, _CTTS, _Do, _DIAMRN, _DBCIC, _STt, _PA, _I, _NT, _SDCRI, _SVSC, _SC, _EMn, _RCCC, _MIo, _MRA, _EPI, _PIKMSKI, _PIRP, _BRP, _PBW, _ELS, _TS],
+  [0, 0, 0, 4, 2, 1, 0, 0, [() => VpcSecurityGroupIdList, 0], [() => TagList, 0], 0, 2, 1, 64 | 0, 0, 2, 2, 0, 0, 0, 0, 2, 1, 0, 0, () => ServerlessV2ScalingConfiguration$, () => ScalingConfiguration$, 0, () => RdsCustomClusterConfiguration$, 1, 0, 2, 0, 1, 1, 0, 0, [() => TagSpecificationList, 0]], 1
 ];
 export var RestoreDBClusterToPointInTimeResult$: StaticStructureSchema = [3, n0, _RDBCTPITR,
   0,
@@ -4299,8 +4299,8 @@ export var RestoreDBClusterToPointInTimeResult$: StaticStructureSchema = [3, n0,
 ];
 export var RestoreDBInstanceFromDBSnapshotMessage$: StaticStructureSchema = [3, n0, _RDBIFDBSM,
   0,
-  [_DBII, _DBSIn, _DBIC, _P, _AZ, _DBSGNu, _MAZ, _PA, _AMVU, _LM, _DBN, _E, _I, _ST, _OGN, _T, _STt, _TCA, _TCP, _VSGI, _Do, _DF, _DO, _DASA, _DDI, _CTTS, _DIAMRN, _EIAMDA, _ECLE, _PF, _UDPF, _DBPGN, _DP, _ECOI, _NT, _BTa, _CIIP, _AS, _DBCSI, _DLV, _CACI, _ELS, _ASVd, _TS, _MMUP, _MUSKKI],
-  [0, 0, 0, 1, 0, 0, 2, 2, 2, 0, 0, 0, 1, 1, 0, [() => TagList, 0], 0, 0, [() => SensitiveString, 0], [() => VpcSecurityGroupIdList, 0], 0, 0, 0, 0, 64 | 0, 2, 0, 2, 64 | 0, [() => ProcessorFeatureList, 0], 2, 0, 2, 2, 0, 0, 0, 1, 0, 2, 0, 0, () => AdditionalStorageVolumesList, [() => TagSpecificationList, 0], 2, 0], 1
+  [_DBII, _DBSIn, _DBIC, _P, _AZ, _DBSGNu, _MAZ, _PA, _AMVU, _LM, _DBN, _E, _I, _ST, _OGN, _T, _STt, _TCA, _TCP, _VSGI, _Do, _DF, _DO, _DASA, _DDI, _CTTS, _DIAMRN, _EIAMDA, _ECLE, _PF, _UDPF, _DBPGN, _DP, _ECOI, _NT, _BTa, _CIIP, _AS, _DBCSI, _BRP, _PBW, _DLV, _CACI, _ELS, _ASVd, _TS, _MMUP, _MUSKKI],
+  [0, 0, 0, 1, 0, 0, 2, 2, 2, 0, 0, 0, 1, 1, 0, [() => TagList, 0], 0, 0, [() => SensitiveString, 0], [() => VpcSecurityGroupIdList, 0], 0, 0, 0, 0, 64 | 0, 2, 0, 2, 64 | 0, [() => ProcessorFeatureList, 0], 2, 0, 2, 2, 0, 0, 0, 1, 0, 1, 0, 2, 0, 0, () => AdditionalStorageVolumesList, [() => TagSpecificationList, 0], 2, 0], 1
 ];
 export var RestoreDBInstanceFromDBSnapshotResult$: StaticStructureSchema = [3, n0, _RDBIFDBSR,
   0,
@@ -4319,8 +4319,8 @@ export var RestoreDBInstanceFromS3Result$: StaticStructureSchema = [3, n0, _RDBI
 ];
 export var RestoreDBInstanceToPointInTimeMessage$: StaticStructureSchema = [3, n0, _RDBITPITM,
   0,
-  [_TDBII, _SDBII, _RTe, _ULRT, _DBIC, _P, _AZ, _DBSGNu, _MAZ, _PA, _AMVU, _LM, _DBN, _E, _I, _ST, _OGN, _CTTS, _T, _STt, _TCA, _TCP, _VSGI, _Do, _DIAMRN, _DF, _DO, _DASA, _DDI, _EIAMDA, _ECLE, _PF, _UDPF, _DBPGN, _DP, _SDRI, _MAS, _ECOI, _NT, _SDBIABA, _BTa, _CIIP, _AS, _DLV, _CACI, _ELS, _ASVd, _TS, _MMUP, _MUSKKI],
-  [0, 0, 4, 2, 0, 1, 0, 0, 2, 2, 2, 0, 0, 0, 1, 1, 0, 2, [() => TagList, 0], 0, 0, [() => SensitiveString, 0], [() => VpcSecurityGroupIdList, 0], 0, 0, 0, 0, 0, 64 | 0, 2, 64 | 0, [() => ProcessorFeatureList, 0], 2, 0, 2, 0, 1, 2, 0, 0, 0, 0, 1, 2, 0, 0, () => AdditionalStorageVolumesList, [() => TagSpecificationList, 0], 2, 0], 1
+  [_TDBII, _SDBII, _RTe, _ULRT, _DBIC, _P, _AZ, _DBSGNu, _MAZ, _PA, _AMVU, _LM, _DBN, _E, _I, _ST, _OGN, _CTTS, _T, _STt, _TCA, _TCP, _VSGI, _Do, _DIAMRN, _DF, _DO, _DASA, _DDI, _EIAMDA, _ECLE, _PF, _UDPF, _DBPGN, _DP, _SDRI, _MAS, _ECOI, _NT, _SDBIABA, _BTa, _CIIP, _AS, _BRP, _PBW, _DLV, _CACI, _ELS, _ASVd, _TS, _MMUP, _MUSKKI],
+  [0, 0, 4, 2, 0, 1, 0, 0, 2, 2, 2, 0, 0, 0, 1, 1, 0, 2, [() => TagList, 0], 0, 0, [() => SensitiveString, 0], [() => VpcSecurityGroupIdList, 0], 0, 0, 0, 0, 0, 64 | 0, 2, 64 | 0, [() => ProcessorFeatureList, 0], 2, 0, 2, 0, 1, 2, 0, 0, 0, 0, 1, 1, 0, 2, 0, 0, () => AdditionalStorageVolumesList, [() => TagSpecificationList, 0], 2, 0], 1
 ];
 export var RestoreDBInstanceToPointInTimeResult$: StaticStructureSchema = [3, n0, _RDBITPITR,
   0,

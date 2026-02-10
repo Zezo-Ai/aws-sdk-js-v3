@@ -981,6 +981,18 @@ export interface DBClusterSnapshot {
   StorageEncrypted?: boolean | undefined;
 
   /**
+   * <p>The number of days for which automatic DB snapshots are retained.</p>
+   * @public
+   */
+  BackupRetentionPeriod?: number | undefined;
+
+  /**
+   * <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+   * @public
+   */
+  PreferredBackupWindow?: string | undefined;
+
+  /**
    * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
    * @public
    */
@@ -1349,6 +1361,18 @@ export interface DBSnapshot {
    * @public
    */
   Encrypted?: boolean | undefined;
+
+  /**
+   * <p>The number of days for which automatic DB snapshots are retained.</p>
+   * @public
+   */
+  BackupRetentionPeriod?: number | undefined;
+
+  /**
+   * <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+   * @public
+   */
+  PreferredBackupWindow?: string | undefined;
 
   /**
    * <p>If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for the encrypted DB snapshot.</p> <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -7139,6 +7163,12 @@ export interface DBClusterAutomatedBackup {
   BackupRetentionPeriod?: number | undefined;
 
   /**
+   * <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+   * @public
+   */
+  PreferredBackupWindow?: string | undefined;
+
+  /**
    * <p>The engine mode of the database engine for the automated backup.</p>
    * @public
    */
@@ -7463,6 +7493,12 @@ export interface DBInstanceAutomatedBackup {
    * @public
    */
   BackupRetentionPeriod?: number | undefined;
+
+  /**
+   * <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
+   * @public
+   */
+  PreferredBackupWindow?: string | undefined;
 
   /**
    * <p>The Amazon Resource Name (ARN) for the replicated automated backups.</p>

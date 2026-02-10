@@ -79,6 +79,8 @@ export interface DescribeDBClusterSnapshotsCommandOutput extends DBClusterSnapsh
  * //       SnapshotType: "STRING_VALUE",
  * //       PercentProgress: Number("int"),
  * //       StorageEncrypted: true || false,
+ * //       BackupRetentionPeriod: Number("int"),
+ * //       PreferredBackupWindow: "STRING_VALUE",
  * //       KmsKeyId: "STRING_VALUE",
  * //       DBClusterSnapshotArn: "STRING_VALUE",
  * //       SourceDBClusterSnapshotArn: "STRING_VALUE",

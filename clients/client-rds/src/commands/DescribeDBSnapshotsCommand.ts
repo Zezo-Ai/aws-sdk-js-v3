@@ -83,6 +83,8 @@ export interface DescribeDBSnapshotsCommandOutput extends DBSnapshotMessage, __M
  * //       StorageType: "STRING_VALUE",
  * //       TdeCredentialArn: "STRING_VALUE",
  * //       Encrypted: true || false,
+ * //       BackupRetentionPeriod: Number("int"),
+ * //       PreferredBackupWindow: "STRING_VALUE",
  * //       KmsKeyId: "STRING_VALUE",
  * //       DBSnapshotArn: "STRING_VALUE",
  * //       Timezone: "STRING_VALUE",

@@ -63,6 +63,7 @@ export interface DeleteDBClusterAutomatedBackupCommandOutput extends DeleteDBClu
  * //     EngineVersion: "STRING_VALUE",
  * //     DBClusterArn: "STRING_VALUE",
  * //     BackupRetentionPeriod: Number("int"),
+ * //     PreferredBackupWindow: "STRING_VALUE",
  * //     EngineMode: "STRING_VALUE",
  * //     AvailabilityZones: [ // AvailabilityZones
  * //       "STRING_VALUE",
