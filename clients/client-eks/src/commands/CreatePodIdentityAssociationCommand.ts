@@ -69,6 +69,7 @@ export interface CreatePodIdentityAssociationCommandOutput extends CreatePodIden
  *   },
  *   disableSessionTags: true || false,
  *   targetRoleArn: "STRING_VALUE",
+ *   policy: "STRING_VALUE",
  * };
  * const command = new CreatePodIdentityAssociationCommand(input);
  * const response = await client.send(command);
@@ -89,6 +90,7 @@ export interface CreatePodIdentityAssociationCommandOutput extends CreatePodIden
  * //     disableSessionTags: true || false,
  * //     targetRoleArn: "STRING_VALUE",
  * //     externalId: "STRING_VALUE",
+ * //     policy: "STRING_VALUE",
  * //   },
  * // };
  *

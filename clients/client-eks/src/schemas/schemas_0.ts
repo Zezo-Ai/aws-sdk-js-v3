@@ -554,6 +554,7 @@ const _pU = "productUrl";
 const _pV = "platformVersion";
 const _pVl = "platformVersions";
 const _pa = "params";
+const _po = "policy";
 const _pr = "provider";
 const _pre = "preserve";
 const _pu = "publishers";
@@ -1012,8 +1013,8 @@ export var CreateNodegroupResponse$: StaticStructureSchema = [3, n0, _CNRr,
 ];
 export var CreatePodIdentityAssociationRequest$: StaticStructureSchema = [3, n0, _CPIAR,
   0,
-  [_cN, _nam, _sA, _rA, _cRT, _t, _dST, _tRA],
-  [[0, 1], 0, 0, 0, [0, 4], 128 | 0, 2, 0], 4
+  [_cN, _nam, _sA, _rA, _cRT, _t, _dST, _tRA, _po],
+  [[0, 1], 0, 0, 0, [0, 4], 128 | 0, 2, 0, 0], 4
 ];
 export var CreatePodIdentityAssociationResponse$: StaticStructureSchema = [3, n0, _CPIARr,
   0,
@@ -1641,8 +1642,8 @@ export var OutpostConfigResponse$: StaticStructureSchema = [3, n0, _OCRu,
 ];
 export var PodIdentityAssociation$: StaticStructureSchema = [3, n0, _PIA,
   0,
-  [_cN, _nam, _sA, _rA, _aAss, _aIs, _t, _cA, _mA, _oAw, _dST, _tRA, _eI],
-  [0, 0, 0, 0, 0, 0, 128 | 0, 4, 4, 0, 2, 0, 0]
+  [_cN, _nam, _sA, _rA, _aAss, _aIs, _t, _cA, _mA, _oAw, _dST, _tRA, _eI, _po],
+  [0, 0, 0, 0, 0, 0, 128 | 0, 4, 4, 0, 2, 0, 0, 0]
 ];
 export var PodIdentityAssociationSummary$: StaticStructureSchema = [3, n0, _PIAS,
   0,
@@ -1899,8 +1900,8 @@ export var UpdateParam$: StaticStructureSchema = [3, n0, _UP,
 ];
 export var UpdatePodIdentityAssociationRequest$: StaticStructureSchema = [3, n0, _UPIAR,
   0,
-  [_cN, _aIs, _rA, _cRT, _dST, _tRA],
-  [[0, 1], [0, 1], 0, [0, 4], 2, 0], 2
+  [_cN, _aIs, _rA, _cRT, _dST, _tRA, _po],
+  [[0, 1], [0, 1], 0, [0, 4], 2, 0, 0], 2
 ];
 export var UpdatePodIdentityAssociationResponse$: StaticStructureSchema = [3, n0, _UPIARp,
   0,

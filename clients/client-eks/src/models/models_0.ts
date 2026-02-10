@@ -4365,6 +4365,34 @@ export interface CreatePodIdentityAssociationRequest {
    * @public
    */
   targetRoleArn?: string | undefined;
+
+  /**
+   * <p>An optional IAM policy in JSON format (as an escaped string) that applies additional
+   *             restrictions to this pod identity association beyond the IAM policies attached to the
+   *             IAM role. This policy is applied as the intersection of the role's policies and this
+   *             policy, allowing you to reduce the permissions that applications in the pods can use.
+   *             Use this policy to enforce least privilege access while still leveraging a shared IAM
+   *             role across multiple applications.</p>
+   *          <p>
+   *             <b>Important considerations</b>
+   *          </p>
+   *          <ul>
+   *             <li>
+   *                <p>
+   *                   <b>Session tags:</b> When using this policy,
+   *                     <code>disableSessionTags</code> must be set to <code>true</code>.</p>
+   *             </li>
+   *             <li>
+   *                <p>
+   *                   <b>Target role permissions:</b> If you specify both
+   *                     a <code>TargetRoleArn</code> and a policy, the policy restrictions apply only to
+   *                     the target role's permissions, not to the initial role used for assuming the
+   *                     target role.</p>
+   *             </li>
+   *          </ul>
+   * @public
+   */
+  policy?: string | undefined;
 }
 
 /**
@@ -4504,6 +4532,17 @@ export interface PodIdentityAssociation {
    * @public
    */
   externalId?: string | undefined;
+
+  /**
+   * <p>An optional IAM policy in JSON format (as an escaped string) that applies additional
+   *             restrictions to this pod identity association beyond the IAM policies attached to the
+   *             IAM role. This policy is applied as the intersection of the role's policies and this
+   *             policy, allowing you to reduce the permissions that applications in the pods can use.
+   *             Use this policy to enforce least privilege access while still leveraging a shared IAM
+   *             role across multiple applications.</p>
+   * @public
+   */
+  policy?: string | undefined;
 }
 
 /**
@@ -7726,6 +7765,34 @@ export interface UpdatePodIdentityAssociationRequest {
    * @public
    */
   targetRoleArn?: string | undefined;
+
+  /**
+   * <p>An optional IAM policy in JSON format (as an escaped string) that applies additional
+   *             restrictions to this pod identity association beyond the IAM policies attached to the
+   *             IAM role. This policy is applied as the intersection of the role's policies and this
+   *             policy, allowing you to reduce the permissions that applications in the pods can use.
+   *             Use this policy to enforce least privilege access while still leveraging a shared IAM
+   *             role across multiple applications.</p>
+   *          <p>
+   *             <b>Important considerations</b>
+   *          </p>
+   *          <ul>
+   *             <li>
+   *                <p>
+   *                   <b>Session tags:</b> When using this policy,
+   *                     <code>disableSessionTags</code> must be set to <code>true</code>.</p>
+   *             </li>
+   *             <li>
+   *                <p>
+   *                   <b>Target role permissions:</b> If you specify both
+   *                     a <code>TargetRoleArn</code> and a policy, the policy restrictions apply only to
+   *                     the target role's permissions, not to the initial role used for assuming the
+   *                     target role.</p>
+   *             </li>
+   *          </ul>
+   * @public
+   */
+  policy?: string | undefined;
 }
 
 /**

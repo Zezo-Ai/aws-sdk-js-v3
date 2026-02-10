@@ -59,6 +59,7 @@ export interface UpdatePodIdentityAssociationCommandOutput extends UpdatePodIden
  *   clientRequestToken: "STRING_VALUE",
  *   disableSessionTags: true || false,
  *   targetRoleArn: "STRING_VALUE",
+ *   policy: "STRING_VALUE",
  * };
  * const command = new UpdatePodIdentityAssociationCommand(input);
  * const response = await client.send(command);
@@ -79,6 +80,7 @@ export interface UpdatePodIdentityAssociationCommandOutput extends UpdatePodIden
  * //     disableSessionTags: true || false,
  * //     targetRoleArn: "STRING_VALUE",
  * //     externalId: "STRING_VALUE",
+ * //     policy: "STRING_VALUE",
  * //   },
  * // };
  *

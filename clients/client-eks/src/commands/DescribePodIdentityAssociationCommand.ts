@@ -63,6 +63,7 @@ export interface DescribePodIdentityAssociationCommandOutput extends DescribePod
  * //     disableSessionTags: true || false,
  * //     targetRoleArn: "STRING_VALUE",
  * //     externalId: "STRING_VALUE",
+ * //     policy: "STRING_VALUE",
  * //   },
  * // };
  *
