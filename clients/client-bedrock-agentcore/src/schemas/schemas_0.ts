@@ -8,6 +8,7 @@ const _ASu = "AutomationStream";
 const _ATT = "AccessTokenType";
 const _AUT = "AuthorizationUrlType";
 const _B = "Body";
+const _BA = "BasicAuth";
 const _BCMR = "BatchCreateMemoryRecords";
 const _BCMRI = "BatchCreateMemoryRecordsInput";
 const _BCMRO = "BatchCreateMemoryRecordsOutput";
@@ -63,6 +64,7 @@ const _EJMx = "ExtractionJobMessages";
 const _EL = "EventList";
 const _EMFE = "EventMetadataFilterExpression";
 const _EMFL = "EventMetadataFilterList";
+const _EP = "ExternalProxy";
 const _ER = "EvaluateRequest";
 const _ERC = "EvaluationResultContent";
 const _ERv = "EvaluateResponse";
@@ -153,8 +155,13 @@ const _MRUI = "MemoryRecordUpdateInput";
 const _MRUIL = "MemoryRecordsUpdateInputList";
 const _MSI = "Mcp-Session-Id";
 const _MV = "MetadataValue";
+const _P = "Proxies";
+const _PB = "ProxyBypass";
+const _PC = "ProxyConfiguration";
+const _PCr = "ProxyCredentials";
 const _PT = "PayloadType";
 const _PTL = "PayloadTypeList";
+const _Pr = "Proxy";
 const _RC = "ResourceContent";
 const _RCE = "RetryableConflictException";
 const _RCEu = "RuntimeClientError";
@@ -230,10 +237,12 @@ const _aT = "accessToken";
 const _aU = "authorizationUrl";
 const _ar = "arguments";
 const _b = "branch";
+const _bA = "basicAuth";
 const _bI = "browserIdentifier";
 const _ba = "baggage";
 const _bl = "blob";
 const _bu = "bucket";
+const _by = "bypass";
 const _c = "client";
 const _cA = "createdAt";
 const _cC = "clearContext";
@@ -248,8 +257,10 @@ const _cod = "code";
 const _com = "command";
 const _con = "context";
 const _conv = "conversational";
+const _cr = "credentials";
 const _d = "data";
-const _dP = "directoryPath";
+const _dP = "domainPatterns";
+const _dPi = "directoryPath";
 const _de = "description";
 const _e = "error";
 const _eA = "evaluatorArn";
@@ -262,6 +273,7 @@ const _eJ = "extractionJob";
 const _eM = "errorMessage";
 const _eMv = "eventMetadata";
 const _eN = "evaluatorName";
+const _eP = "externalProxy";
 const _eR = "evaluationResults";
 const _eT = "eventTimestamp";
 const _eTv = "evaluationTarget";
@@ -322,10 +334,13 @@ const _oF = "oauth2Flow";
 const _oT = "outputTokens";
 const _p = "payload";
 const _pC = "profileConfiguration";
+const _pCr = "proxyConfiguration";
 const _pI = "profileIdentifier";
 const _pa = "path";
 const _pat = "paths";
-const _pr = "prefix";
+const _po = "port";
+const _pr = "proxies";
+const _pre = "prefix";
 const _q = "qualifier";
 const _r = "records";
 const _rCPN = "resourceCredentialProviderName";
@@ -342,6 +357,7 @@ const _resu = "result";
 const _ri = "right";
 const _ro = "role";
 const _s = "sensitive";
+const _sA = "secretArn";
 const _sC = "structuredContent";
 const _sCe = "searchCriteria";
 const _sCp = "spanContext";
@@ -469,6 +485,11 @@ export var AutomationStreamUpdate$: StaticStructureSchema = [3, n0, _ASU,
   0,
   [_sS],
   [0]
+];
+export var BasicAuth$: StaticStructureSchema = [3, n0, _BA,
+  0,
+  [_sA],
+  [0], 1
 ];
 export var BatchCreateMemoryRecordsInput$: StaticStructureSchema = [3, n0, _BCMRI,
   0,
@@ -627,6 +648,11 @@ export var EventMetadataFilterExpression$: StaticStructureSchema = [3, n0, _EMFE
   [_le, _o, _ri],
   [() => LeftExpression$, 0, () => RightExpression$], 2
 ];
+export var ExternalProxy$: StaticStructureSchema = [3, n0, _EP,
+  0,
+  [_se, _po, _dP, _cr],
+  [0, 1, 64 | 0, () => ProxyCredentials$], 2
+];
 export var ExtractionJob$: StaticStructureSchema = [3, n0, _EJ,
   0,
   [_jI],
@@ -664,8 +690,8 @@ export var GetBrowserSessionRequest$: StaticStructureSchema = [3, n0, _GBSR,
 ];
 export var GetBrowserSessionResponse$: StaticStructureSchema = [3, n0, _GBSRe,
   0,
-  [_bI, _sI, _cA, _n, _vP, _ext, _pC, _sTS, _sta, _str, _sRA, _lUA],
-  [0, 0, 5, 0, () => ViewPort$, () => BrowserExtensions, () => BrowserProfileConfiguration$, 1, 0, () => BrowserSessionStream$, 0, 5], 3
+  [_bI, _sI, _cA, _n, _vP, _ext, _pC, _sTS, _sta, _str, _pCr, _sRA, _lUA],
+  [0, 0, 5, 0, () => ViewPort$, () => BrowserExtensions, () => BrowserProfileConfiguration$, 1, 0, () => BrowserSessionStream$, () => ProxyConfiguration$, 0, 5], 3
 ];
 export var GetCodeInterpreterSessionRequest$: StaticStructureSchema = [3, n0, _GCISR,
   0,
@@ -899,6 +925,16 @@ export var MessageMetadata$: StaticStructureSchema = [3, n0, _MM,
   [_eI, _mIe],
   [0, 1], 2
 ];
+export var ProxyBypass$: StaticStructureSchema = [3, n0, _PB,
+  0,
+  [_dP],
+  [64 | 0]
+];
+export var ProxyConfiguration$: StaticStructureSchema = [3, n0, _PC,
+  0,
+  [_pr, _by],
+  [() => Proxies, () => ProxyBypass$], 1
+];
 export var ResourceContent$: StaticStructureSchema = [3, n0, _RC,
   0,
   [_t, _u, _mT, _te, _bl],
@@ -934,7 +970,7 @@ export var RuntimeClientError$: StaticErrorSchema = [-3, n0, _RCEu,
 TypeRegistry.for(n0).registerError(RuntimeClientError$, RuntimeClientError);
 export var S3Location$: StaticStructureSchema = [3, n0, _SL,
   0,
-  [_bu, _pr, _vI],
+  [_bu, _pre, _vI],
   [0, 0, 0], 2
 ];
 export var SaveBrowserSessionProfileRequest$: StaticStructureSchema = [3, n0, _SBSPR,
@@ -976,8 +1012,8 @@ export var SpanContext$: StaticStructureSchema = [3, n0, _SCp,
 ];
 export var StartBrowserSessionRequest$: StaticStructureSchema = [3, n0, _SBSR,
   0,
-  [_bI, _tI, _tP, _n, _sTS, _vP, _ext, _pC, _cT],
-  [[0, 1], [0, { [_hH]: _XATI }], [0, { [_hH]: _tr }], 0, 1, () => ViewPort$, () => BrowserExtensions, () => BrowserProfileConfiguration$, [0, 4]], 1
+  [_bI, _tI, _tP, _n, _sTS, _vP, _ext, _pC, _pCr, _cT],
+  [[0, 1], [0, { [_hH]: _XATI }], [0, { [_hH]: _tr }], 0, 1, () => ViewPort$, () => BrowserExtensions, () => BrowserProfileConfiguration$, () => ProxyConfiguration$, [0, 4]], 1
 ];
 export var StartBrowserSessionResponse$: StaticStructureSchema = [3, n0, _SBSRt,
   0,
@@ -1053,7 +1089,7 @@ export var TokenUsage$: StaticStructureSchema = [3, n0, _TU,
 ];
 export var ToolArguments$: StaticStructureSchema = [3, n0, _TA,
   0,
-  [_cod, _lan, _cC, _com, _pa, _pat, _co, _dP, _tIa],
+  [_cod, _lan, _cC, _com, _pa, _pat, _co, _dPi, _tIa],
   [0, 0, 2, 0, 0, 64 | 0, [() => InputContentBlockList, 0], 0, 0]
 ];
 export var ToolResultStructuredContent$: StaticStructureSchema = [3, n0, _TRSC,
@@ -1110,6 +1146,7 @@ var CodeInterpreterSessionSummaries: StaticListSchema = [1, n0, _CISSo,
 var ContentBlockList: StaticListSchema = [1, n0, _CBL,
   0, () => ContentBlock$
 ];
+var DomainPatterns = 64 | 0;
 var EvaluationResults: StaticListSchema = [1, n0, _ERva,
   0, [() => EvaluationResultContent$,
     0]
@@ -1156,6 +1193,9 @@ var NamespacesList = 64 | 0;
 var PayloadTypeList: StaticListSchema = [1, n0, _PTL,
   0, [() => PayloadType$,
     0]
+];
+var Proxies: StaticListSchema = [1, n0, _P,
+  0, () => Proxy$
 ];
 var ScopesListType = 64 | 0;
 var SessionSummaryList: StaticListSchema = [1, n0, _SSL,
@@ -1228,6 +1268,16 @@ export var PayloadType$: StaticUnionSchema = [4, n0, _PT,
   0,
   [_conv, _bl],
   [[() => Conversational$, 0], [() => Document, 0]]
+];
+export var Proxy$: StaticUnionSchema = [4, n0, _Pr,
+  0,
+  [_eP],
+  [() => ExternalProxy$]
+];
+export var ProxyCredentials$: StaticUnionSchema = [4, n0, _PCr,
+  0,
+  [_bA],
+  [() => BasicAuth$]
 ];
 export var ResourceLocation$: StaticUnionSchema = [4, n0, _RL,
   0,

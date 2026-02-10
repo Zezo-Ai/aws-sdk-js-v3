@@ -64,6 +64,29 @@ export interface StartBrowserSessionCommandOutput extends StartBrowserSessionRes
  *   profileConfiguration: { // BrowserProfileConfiguration
  *     profileIdentifier: "STRING_VALUE", // required
  *   },
+ *   proxyConfiguration: { // ProxyConfiguration
+ *     proxies: [ // Proxies // required
+ *       { // Proxy Union: only one key present
+ *         externalProxy: { // ExternalProxy
+ *           server: "STRING_VALUE", // required
+ *           port: Number("int"), // required
+ *           domainPatterns: [ // DomainPatterns
+ *             "STRING_VALUE",
+ *           ],
+ *           credentials: { // ProxyCredentials Union: only one key present
+ *             basicAuth: { // BasicAuth
+ *               secretArn: "STRING_VALUE", // required
+ *             },
+ *           },
+ *         },
+ *       },
+ *     ],
+ *     bypass: { // ProxyBypass
+ *       domainPatterns: [
+ *         "STRING_VALUE",
+ *       ],
+ *     },
+ *   },
  *   clientToken: "STRING_VALUE",
  * };
  * const command = new StartBrowserSessionCommand(input);

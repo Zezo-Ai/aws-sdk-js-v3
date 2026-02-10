@@ -478,6 +478,156 @@ export interface BrowserProfileConfiguration {
 }
 
 /**
+ * <p>Configuration for domains that should bypass all proxies and connect directly to the internet. These bypass rules take precedence over all proxy routing rules.</p>
+ * @public
+ */
+export interface ProxyBypass {
+  /**
+   * <p>Array of domain patterns that should bypass the proxy. Supports <code>.amazonaws.com</code> for subdomain matching or <code>amazonaws.com</code> for exact domain matching. Requests to these domains connect directly without using any proxy. Maximum 253 characters per pattern.</p>
+   * @public
+   */
+  domainPatterns?: string[] | undefined;
+}
+
+/**
+ * <p>Configuration for HTTP Basic Authentication using credentials stored in Amazon Web Services Secrets Manager. The secret must contain a JSON object with <code>username</code> and <code>password</code> string fields. Username allows alphanumeric characters and <code>@._+=-</code> symbols (pattern: <code>^[a-zA-Z0-9@._+=\-]+$</code>). Password allows alphanumeric characters and <code>@._+=-!#$%&amp;*</code> symbols (pattern: <code>^[a-zA-Z0-9@._+=\-!#$%&amp;*]+$</code>). Both fields have a maximum length of 256 characters.</p>
+ * @public
+ */
+export interface BasicAuth {
+  /**
+   * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing proxy credentials. The secret must be a JSON object with <code>username</code> and <code>password</code> string fields that meet validation requirements. The caller must have <code>secretsmanager:GetSecretValue</code> permission for this ARN. Example secret format: <code>\{"username": "proxy_user", "password": "secure_password"\}</code> </p>
+   * @public
+   */
+  secretArn: string | undefined;
+}
+
+/**
+ * <p>Union type representing different proxy authentication methods. Currently supports HTTP Basic Authentication (username and password).</p>
+ * @public
+ */
+export type ProxyCredentials =
+  | ProxyCredentials.BasicAuthMember
+  | ProxyCredentials.$UnknownMember;
+
+/**
+ * @public
+ */
+export namespace ProxyCredentials {
+  /**
+   * <p>HTTP Basic Authentication credentials (username and password) stored in Amazon Web Services Secrets Manager.</p>
+   * @public
+   */
+  export interface BasicAuthMember {
+    basicAuth: BasicAuth;
+    $unknown?: never;
+  }
+
+  /**
+   * @public
+   */
+  export interface $UnknownMember {
+    basicAuth?: never;
+    $unknown: [string, any];
+  }
+
+  /**
+   * @deprecated unused in schema-serde mode.
+   *
+   */
+  export interface Visitor<T> {
+    basicAuth: (value: BasicAuth) => T;
+    _: (name: string, value: any) => T;
+  }
+}
+
+/**
+ * <p>Configuration for a customer-managed external proxy server. Includes server location, optional domain-based routing patterns, and authentication credentials.</p>
+ * @public
+ */
+export interface ExternalProxy {
+  /**
+   * <p>The hostname of the proxy server. Must be a valid DNS hostname (maximum 253 characters).</p>
+   * @public
+   */
+  server: string | undefined;
+
+  /**
+   * <p>The port number of the proxy server. Valid range: 1-65535.</p>
+   * @public
+   */
+  port: number | undefined;
+
+  /**
+   * <p>Optional array of domain patterns that should route through this specific proxy. Supports <code>.example.com</code> for subdomain matching (matches any subdomain of example.com) or <code>example.com</code> for exact domain matching. If omitted, this proxy acts as a catch-all for domains not matched by other proxies. Maximum 100 patterns per proxy, each up to 253 characters.</p>
+   * @public
+   */
+  domainPatterns?: string[] | undefined;
+
+  /**
+   * <p>Optional authentication credentials for the proxy server. If omitted, the proxy is accessed without authentication (useful for IP-allowlisted proxies).</p>
+   * @public
+   */
+  credentials?: ProxyCredentials | undefined;
+}
+
+/**
+ * <p>Union type representing different proxy configurations. Currently supports external customer-managed proxies.</p>
+ * @public
+ */
+export type Proxy =
+  | Proxy.ExternalProxyMember
+  | Proxy.$UnknownMember;
+
+/**
+ * @public
+ */
+export namespace Proxy {
+  /**
+   * <p>Configuration for an external customer-managed proxy server.</p>
+   * @public
+   */
+  export interface ExternalProxyMember {
+    externalProxy: ExternalProxy;
+    $unknown?: never;
+  }
+
+  /**
+   * @public
+   */
+  export interface $UnknownMember {
+    externalProxy?: never;
+    $unknown: [string, any];
+  }
+
+  /**
+   * @deprecated unused in schema-serde mode.
+   *
+   */
+  export interface Visitor<T> {
+    externalProxy: (value: ExternalProxy) => T;
+    _: (name: string, value: any) => T;
+  }
+}
+
+/**
+ * <p>Configuration for routing browser traffic through customer-managed proxy servers. Supports 1-5 proxy servers for domain-based routing and proxy bypass rules.</p>
+ * @public
+ */
+export interface ProxyConfiguration {
+  /**
+   * <p>An array of 1-5 proxy server configurations for domain-based routing. Each proxy can specify which domains it handles via <code>domainPatterns</code>, enabling flexible routing of different traffic through different proxies based on destination domain.</p>
+   * @public
+   */
+  proxies: Proxy[] | undefined;
+
+  /**
+   * <p>Optional configuration for domains that should bypass all proxies and connect directly to their destination, like the internet. Takes precedence over all proxy routing rules.</p>
+   * @public
+   */
+  bypass?: ProxyBypass | undefined;
+}
+
+/**
  * <p>The configuration for a stream that enables programmatic control of a browser session in Amazon Bedrock AgentCore. This stream provides a bidirectional communication channel for sending commands to the browser and receiving responses, allowing agents to automate web interactions such as navigation, form filling, and element clicking.</p>
  * @public
  */
@@ -606,6 +756,12 @@ export interface GetBrowserSessionResponse {
    * @public
    */
   streams?: BrowserSessionStream | undefined;
+
+  /**
+   * <p>The active proxy configuration for this browser session. This field is only present if proxy configuration was provided when the session was started using <code>StartBrowserSession</code>. The configuration includes proxy servers, domain bypass rules and the proxy authentication credentials.</p>
+   * @public
+   */
+  proxyConfiguration?: ProxyConfiguration | undefined;
 
   /**
    * <p>The artifact containing the session replay information.</p>
@@ -759,6 +915,12 @@ export interface StartBrowserSessionRequest {
    * @public
    */
   profileConfiguration?: BrowserProfileConfiguration | undefined;
+
+  /**
+   * <p>Optional proxy configuration for routing browser traffic through customer-specified proxy servers. When provided, enables HTTP Basic authentication via Amazon Web Services Secrets Manager and domain-based routing rules. Requires <code>secretsmanager:GetSecretValue</code> IAM permission for the specified secret ARNs.</p>
+   * @public
+   */
+  proxyConfiguration?: ProxyConfiguration | undefined;
 
   /**
    * <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock AgentCore ignores the request, but does not return an error. This parameter helps prevent the creation of duplicate sessions if there are temporary network issues.</p>

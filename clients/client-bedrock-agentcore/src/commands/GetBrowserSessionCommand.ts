@@ -80,6 +80,29 @@ export interface GetBrowserSessionCommandOutput extends GetBrowserSessionRespons
  * //       streamEndpoint: "STRING_VALUE",
  * //     },
  * //   },
+ * //   proxyConfiguration: { // ProxyConfiguration
+ * //     proxies: [ // Proxies // required
+ * //       { // Proxy Union: only one key present
+ * //         externalProxy: { // ExternalProxy
+ * //           server: "STRING_VALUE", // required
+ * //           port: Number("int"), // required
+ * //           domainPatterns: [ // DomainPatterns
+ * //             "STRING_VALUE",
+ * //           ],
+ * //           credentials: { // ProxyCredentials Union: only one key present
+ * //             basicAuth: { // BasicAuth
+ * //               secretArn: "STRING_VALUE", // required
+ * //             },
+ * //           },
+ * //         },
+ * //       },
+ * //     ],
+ * //     bypass: { // ProxyBypass
+ * //       domainPatterns: [
+ * //         "STRING_VALUE",
+ * //       ],
+ * //     },
+ * //   },
  * //   sessionReplayArtifact: "STRING_VALUE",
  * //   lastUpdatedAt: new Date("TIMESTAMP"),
  * // };

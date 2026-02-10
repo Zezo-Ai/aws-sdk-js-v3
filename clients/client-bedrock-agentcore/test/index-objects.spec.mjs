@@ -5,6 +5,7 @@ import {
   AutomationStream$,
   AutomationStreamStatus,
   AutomationStreamUpdate$,
+  BasicAuth$,
   BatchCreateMemoryRecords$,
   BatchCreateMemoryRecordsCommand,
   BatchCreateMemoryRecordsInput$,
@@ -65,6 +66,7 @@ import {
   EvaluationTarget$,
   Event$,
   EventMetadataFilterExpression$,
+  ExternalProxy$,
   ExtractionJob$,
   ExtractionJobFilterInput$,
   ExtractionJobMessages$,
@@ -175,6 +177,10 @@ import {
   paginateRetrieveMemoryRecords,
   PayloadType$,
   ProgrammingLanguage,
+  Proxy$,
+  ProxyBypass$,
+  ProxyConfiguration$,
+  ProxyCredentials$,
   ResourceContent$,
   ResourceContentType,
   ResourceLocation$,
@@ -331,6 +337,7 @@ assert(typeof UpdateBrowserStream$ === "object");
 assert(typeof ActorSummary$ === "object");
 assert(typeof AutomationStream$ === "object");
 assert(typeof AutomationStreamUpdate$ === "object");
+assert(typeof BasicAuth$ === "object");
 assert(typeof BatchCreateMemoryRecordsInput$ === "object");
 assert(typeof BatchCreateMemoryRecordsOutput$ === "object");
 assert(typeof BatchDeleteMemoryRecordsInput$ === "object");
@@ -365,6 +372,7 @@ assert(typeof EvaluationResultContent$ === "object");
 assert(typeof EvaluationTarget$ === "object");
 assert(typeof Event$ === "object");
 assert(typeof EventMetadataFilterExpression$ === "object");
+assert(typeof ExternalProxy$ === "object");
 assert(typeof ExtractionJob$ === "object");
 assert(typeof ExtractionJobFilterInput$ === "object");
 assert(typeof ExtractionJobMessages$ === "object");
@@ -422,6 +430,10 @@ assert(typeof MemoryRecordUpdateInput$ === "object");
 assert(typeof MessageMetadata$ === "object");
 assert(typeof MetadataValue$ === "object");
 assert(typeof PayloadType$ === "object");
+assert(typeof Proxy$ === "object");
+assert(typeof ProxyBypass$ === "object");
+assert(typeof ProxyConfiguration$ === "object");
+assert(typeof ProxyCredentials$ === "object");
 assert(typeof ResourceContent$ === "object");
 assert(typeof ResourceLocation$ === "object");
 assert(typeof RetrieveMemoryRecordsInput$ === "object");
