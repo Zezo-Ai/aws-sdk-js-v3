@@ -10,6 +10,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+
+# 3.972.8 (2026-02-10)
+### Chores
+* **codegen:** update for compositeErrorRegistries ([#7728](https://github.com/aws/aws-sdk-js-v3/issues/7728)) ([d20ea16](https://github.com/aws/aws-sdk-js-v3/commit/d20ea16f8069517b7dc02c62f39afea11423f061))
+
+
+
 # 3.972.7 (2026-02-05)
 ### Chores
 * **codegen:** generate caret versions for aws-sdk dependencies ([#7714](https://github.com/aws/aws-sdk-js-v3/issues/7714)) ([5682d09](https://github.com/aws/aws-sdk-js-v3/commit/5682d095dd5d38f16b40296da0497a93f1ffbec3))

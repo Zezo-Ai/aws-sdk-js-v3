@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.988.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.987.0...v3.988.0) (2026-02-11)
+
+
+### Features
+
+* **client-kafkaconnect:** Support configurable upper limits on task count during autoscaling operations via maxAutoscalingTaskCount parameter. ([c996f67](https://github.com/aws/aws-sdk-js-v3/commit/c996f67dda4fcfaa0006e77919c505ab554cbbd2))
+
+
+
+
+
 # [3.987.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.986.0...v3.987.0) (2026-02-10)
 
 **Note:** Version bump only for package @aws-sdk/client-kafkaconnect

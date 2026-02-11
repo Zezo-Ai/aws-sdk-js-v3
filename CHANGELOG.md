@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.988.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.987.0...v3.988.0) (2026-02-11)
+
+
+### Features
+
+* **client-batch:** Add support for listing jobs by share identifier and getting snapshots of active capacity utilization by job queue and share. ([951d363](https://github.com/aws/aws-sdk-js-v3/commit/951d36346b42cbb57be81880dad529808985145a))
+* **client-ec2:** R8i instances powered by custom Intel Xeon 6 processors available only on AWS with sustained all-core 3.9 GHz turbo frequency ([72ad526](https://github.com/aws/aws-sdk-js-v3/commit/72ad52628aea8adb0a856d5bc9ab7a09bd5f9fb7))
+* **client-eks:** This release adds support for Windows Server 2025 in Amazon EKS Managed Node Groups. ([6af8b6b](https://github.com/aws/aws-sdk-js-v3/commit/6af8b6b969e7205044c3dc0f87d630e732ba0a35))
+* **client-kafkaconnect:** Support configurable upper limits on task count during autoscaling operations via maxAutoscalingTaskCount parameter. ([c996f67](https://github.com/aws/aws-sdk-js-v3/commit/c996f67dda4fcfaa0006e77919c505ab554cbbd2))
+* **client-s3tables:** S3 Tables now supports setting partition specifications and sort orders on tables. Partition specs allow users to define how data is organized using transform functions. Sort order configurations enable users to specify sort directions and null ordering preferences for optimized data layout. ([e6b5be0](https://github.com/aws/aws-sdk-js-v3/commit/e6b5be094895d5341684473063b45bc2d9eec336))
+
+
+
+
+
 # [3.987.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.986.0...v3.987.0) (2026-02-10)
 
 

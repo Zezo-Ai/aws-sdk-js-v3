@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.988.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.987.0...v3.988.0) (2026-02-11)
+
+
+### Features
+
+* **client-s3tables:** S3 Tables now supports setting partition specifications and sort orders on tables. Partition specs allow users to define how data is organized using transform functions. Sort order configurations enable users to specify sort directions and null ordering preferences for optimized data layout. ([e6b5be0](https://github.com/aws/aws-sdk-js-v3/commit/e6b5be094895d5341684473063b45bc2d9eec336))
+
+
+
+
+
 # [3.987.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.986.0...v3.987.0) (2026-02-10)
 
 **Note:** Version bump only for package @aws-sdk/client-s3tables
