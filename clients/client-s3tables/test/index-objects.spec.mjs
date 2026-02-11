@@ -126,8 +126,14 @@ import {
   IcebergCompactionSettings$,
   IcebergCompactionStrategy,
   IcebergMetadata$,
+  IcebergNullOrder,
+  IcebergPartitionField$,
+  IcebergPartitionSpec$,
   IcebergSchema$,
   IcebergSnapshotManagementSettings$,
+  IcebergSortDirection,
+  IcebergSortField$,
+  IcebergSortOrder$,
   IcebergUnreferencedFileRemovalSettings$,
   InternalServerErrorException,
   InternalServerErrorException$,
@@ -403,8 +409,12 @@ assert(typeof GetTableStorageClassRequest$ === "object");
 assert(typeof GetTableStorageClassResponse$ === "object");
 assert(typeof IcebergCompactionSettings$ === "object");
 assert(typeof IcebergMetadata$ === "object");
+assert(typeof IcebergPartitionField$ === "object");
+assert(typeof IcebergPartitionSpec$ === "object");
 assert(typeof IcebergSchema$ === "object");
 assert(typeof IcebergSnapshotManagementSettings$ === "object");
+assert(typeof IcebergSortField$ === "object");
+assert(typeof IcebergSortOrder$ === "object");
 assert(typeof IcebergUnreferencedFileRemovalSettings$ === "object");
 assert(typeof LastSuccessfulReplicatedUpdate$ === "object");
 assert(typeof ListNamespacesRequest$ === "object");
@@ -458,6 +468,8 @@ assert(typeof UpdateTableMetadataLocationRequest$ === "object");
 assert(typeof UpdateTableMetadataLocationResponse$ === "object");
 // enums
 assert(typeof IcebergCompactionStrategy === "object");
+assert(typeof IcebergNullOrder === "object");
+assert(typeof IcebergSortDirection === "object");
 assert(typeof JobStatus === "object");
 assert(typeof MaintenanceStatus === "object");
 assert(typeof OpenTableFormat === "object");

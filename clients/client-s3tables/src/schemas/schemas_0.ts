@@ -89,9 +89,15 @@ const _GTSCR = "GetTableStorageClassRequest";
 const _GTSCRe = "GetTableStorageClassResponse";
 const _ICS = "IcebergCompactionSettings";
 const _IM = "IcebergMetadata";
+const _IPF = "IcebergPartitionField";
+const _IPFL = "IcebergPartitionFieldList";
+const _IPS = "IcebergPartitionSpec";
 const _IS = "IcebergSchema";
 const _ISEE = "InternalServerErrorException";
+const _ISF = "IcebergSortField";
+const _ISFL = "IcebergSortFieldList";
 const _ISMS = "IcebergSnapshotManagementSettings";
+const _ISO = "IcebergSortOrder";
 const _IUFRS = "IcebergUnreferencedFileRemovalSettings";
 const _LN = "ListNamespaces";
 const _LNR = "ListNamespacesRequest";
@@ -188,11 +194,14 @@ const _dTA = "destinationTableArn";
 const _dTBA = "destinationTableBucketArn";
 const _dTBARN = "destinationTableBucketARN";
 const _da = "days";
+const _di = "direction";
 const _e = "error";
 const _eC = "encryptionConfiguration";
 const _f = "format";
+const _fI = "fieldId";
 const _fM = "failureMessage";
-const _fi = "fields";
+const _fi = "field-id";
+const _fie = "fields";
 const _h = "http";
 const _hE = "httpError";
 const _hQ = "httpQuery";
@@ -201,6 +210,7 @@ const _iC = "icebergCompaction";
 const _iSM = "icebergSnapshotManagement";
 const _iUFR = "icebergUnreferencedFileRemoval";
 const _ic = "iceberg";
+const _jN = "jsonName";
 const _kKA = "kmsKeyArn";
 const _lRT = "lastRunTimestamp";
 const _lSRU = "lastSuccessfulReplicatedUpdate";
@@ -222,10 +232,15 @@ const _nCD = "nonCurrentDays";
 const _nI = "namespaceId";
 const _nN = "newName";
 const _nNN = "newNamespaceName";
+const _nO = "nullOrder";
 const _na = "name";
 const _nam = "namespaces";
+const _no = "null-order";
 const _oAI = "ownerAccountId";
+const _oI = "orderId";
+const _oi = "order-id";
 const _p = "properties";
+const _pS = "partitionSpec";
 const _pr = "prefix";
 const _r = "required";
 const _rA = "resourceArn";
@@ -239,11 +254,15 @@ const _s = "smithy.ts.sdk.synthetic.com.amazonaws.s3tables";
 const _sA = "sseAlgorithm";
 const _sC = "storageClass";
 const _sCC = "storageClassConfiguration";
+const _sI = "sourceId";
+const _sIp = "specId";
 const _sTA = "sourceTableArn";
 const _sTARN = "sourceTableARN";
 const _sc = "schema";
 const _se = "server";
 const _set = "settings";
+const _si = "source-id";
+const _si_ = "spec-id";
 const _st = "status";
 const _str = "strategy";
 const _t = "tags";
@@ -256,11 +275,13 @@ const _tFSMB = "targetFileSizeMB";
 const _tK = "tagKeys";
 const _ta = "tables";
 const _ti = "timestamp";
+const _tr = "transform";
 const _ty = "type";
 const _uD = "unreferencedDays";
 const _v = "value";
 const _vT = "versionToken";
 const _wL = "warehouseLocation";
+const _wO = "writeOrder";
 const n0 = "com.amazonaws.s3tables";
 
 // smithy-typescript generated code
@@ -371,7 +392,7 @@ export var CreateTableBucketResponse$: StaticStructureSchema = [3, n0, _CTBRr,
 export var CreateTableRequest$: StaticStructureSchema = [3, n0, _CTR,
   0,
   [_tBARN, _n, _na, _f, _me, _eC, _sCC, _t],
-  [[0, 1], [0, 1], 0, 0, () => TableMetadata$, () => EncryptionConfiguration$, () => StorageClassConfiguration$, 128 | 0], 4
+  [[0, 1], [0, 1], 0, 0, [() => TableMetadata$, 0], () => EncryptionConfiguration$, () => StorageClassConfiguration$, 128 | 0], 4
 ];
 export var CreateTableResponse$: StaticStructureSchema = [3, n0, _CTRr,
   0,
@@ -625,18 +646,38 @@ export var IcebergCompactionSettings$: StaticStructureSchema = [3, n0, _ICS,
 ];
 export var IcebergMetadata$: StaticStructureSchema = [3, n0, _IM,
   0,
-  [_sc, _p],
-  [() => IcebergSchema$, 128 | 0], 1
+  [_sc, _pS, _wO, _p],
+  [() => IcebergSchema$, [() => IcebergPartitionSpec$, 0], [() => IcebergSortOrder$, 0], 128 | 0], 1
+];
+export var IcebergPartitionField$: StaticStructureSchema = [3, n0, _IPF,
+  0,
+  [_sI, _tr, _na, _fI],
+  [[1, { [_jN]: _si }], 0, 0, [1, { [_jN]: _fi }]], 3
+];
+export var IcebergPartitionSpec$: StaticStructureSchema = [3, n0, _IPS,
+  0,
+  [_fie, _sIp],
+  [[() => IcebergPartitionFieldList, 0], [1, { [_jN]: _si_ }]], 1
 ];
 export var IcebergSchema$: StaticStructureSchema = [3, n0, _IS,
   0,
-  [_fi],
+  [_fie],
   [() => SchemaFieldList], 1
 ];
 export var IcebergSnapshotManagementSettings$: StaticStructureSchema = [3, n0, _ISMS,
   0,
   [_mSTK, _mSAH],
   [1, 1]
+];
+export var IcebergSortField$: StaticStructureSchema = [3, n0, _ISF,
+  0,
+  [_sI, _tr, _di, _nO],
+  [[1, { [_jN]: _si }], 0, 0, [0, { [_jN]: _no }]], 4
+];
+export var IcebergSortOrder$: StaticStructureSchema = [3, n0, _ISO,
+  0,
+  [_oI, _fie],
+  [[1, { [_jN]: _oi }], [() => IcebergSortFieldList, 0]], 2
 ];
 export var IcebergUnreferencedFileRemovalSettings$: StaticStructureSchema = [3, n0, _IUFRS,
   0,
@@ -780,8 +821,8 @@ export var ReplicationInformation$: StaticStructureSchema = [3, n0, _RI,
 ];
 export var SchemaField$: StaticStructureSchema = [3, n0, _SF,
   0,
-  [_na, _ty, _r],
-  [0, 0, 2], 2
+  [_na, _ty, _i, _r],
+  [0, 0, 1, 2], 2
 ];
 export var StorageClassConfiguration$: StaticStructureSchema = [3, n0, _SCC,
   0,
@@ -879,6 +920,14 @@ export var UpdateTableMetadataLocationResponse$: StaticStructureSchema = [3, n0,
   [0, 0, 64 | 0, 0, 0], 5
 ];
 var __Unit = "unit" as const;
+var IcebergPartitionFieldList: StaticListSchema = [1, n0, _IPFL,
+  0, [() => IcebergPartitionField$,
+    0]
+];
+var IcebergSortFieldList: StaticListSchema = [1, n0, _ISFL,
+  0, [() => IcebergSortField$,
+    0]
+];
 var NamespaceList = 64 | 0;
 var NamespaceSummaryList: StaticListSchema = [1, n0, _NSL,
   0, () => NamespaceSummary$
@@ -929,7 +978,7 @@ export var TableMaintenanceSettings$: StaticUnionSchema = [4, n0, _TMS,
 export var TableMetadata$: StaticUnionSchema = [4, n0, _TM,
   0,
   [_ic],
-  [() => IcebergMetadata$]
+  [[() => IcebergMetadata$, 0]]
 ];
 export var CreateNamespace$: StaticOperationSchema = [9, n0, _CN,
   { [_h]: ["PUT", "/namespaces/{tableBucketARN}", 200] }, () => CreateNamespaceRequest$, () => CreateNamespaceResponse$

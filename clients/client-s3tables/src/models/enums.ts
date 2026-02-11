@@ -28,6 +28,32 @@ export type OpenTableFormat = (typeof OpenTableFormat)[keyof typeof OpenTableFor
  * @public
  * @enum
  */
+export const IcebergSortDirection = {
+  ASC: "asc",
+  DESC: "desc",
+} as const;
+/**
+ * @public
+ */
+export type IcebergSortDirection = (typeof IcebergSortDirection)[keyof typeof IcebergSortDirection];
+
+/**
+ * @public
+ * @enum
+ */
+export const IcebergNullOrder = {
+  NULLS_FIRST: "nulls-first",
+  NULLS_LAST: "nulls-last",
+} as const;
+/**
+ * @public
+ */
+export type IcebergNullOrder = (typeof IcebergNullOrder)[keyof typeof IcebergNullOrder];
+
+/**
+ * @public
+ * @enum
+ */
 export const StorageClass = {
   INTELLIGENT_TIERING: "INTELLIGENT_TIERING",
   STANDARD: "STANDARD",

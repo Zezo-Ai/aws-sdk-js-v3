@@ -1,6 +1,8 @@
 // smithy-typescript generated code
 import {
   IcebergCompactionStrategy,
+  IcebergNullOrder,
+  IcebergSortDirection,
   JobStatus,
   MaintenanceStatus,
   OpenTableFormat,
@@ -69,10 +71,64 @@ export interface EncryptionConfiguration {
 }
 
 /**
+ * <p>Defines a single partition field in an Iceberg partition specification.</p>
+ * @public
+ */
+export interface IcebergPartitionField {
+  /**
+   * <p>The ID of the source schema field to partition by. This must reference a valid field ID from the table schema.</p>
+   * @public
+   */
+  sourceId: number | undefined;
+
+  /**
+   * <p>The partition transform to apply to the source field. Supported transforms include <code>identity</code>, <code>year</code>, <code>month</code>, <code>day</code>, <code>hour</code>, <code>bucket</code>, and <code>truncate</code>. For more information, see the <a href="https://iceberg.apache.org/spec/#partition-transforms">Apache Iceberg partition transforms documentation</a>.</p>
+   * @public
+   */
+  transform: string | undefined;
+
+  /**
+   * <p>The name for this partition field. This name is used in the partitioned file paths.</p>
+   * @public
+   */
+  name: string | undefined;
+
+  /**
+   * <p>An optional unique identifier for this partition field. If not specified, S3 Tables automatically assigns a field ID.</p>
+   * @public
+   */
+  fieldId?: number | undefined;
+}
+
+/**
+ * <p>Defines how data in an Iceberg table is partitioned. Partitioning helps optimize query performance by organizing data into separate files based on field values. Each partition field specifies a transform to apply to a source field.</p>
+ * @public
+ */
+export interface IcebergPartitionSpec {
+  /**
+   * <p>The list of partition fields that define how the table data is partitioned. Each field specifies a source field and a transform to apply. This field is required if <code>partitionSpec</code> is provided.</p>
+   * @public
+   */
+  fields: IcebergPartitionField[] | undefined;
+
+  /**
+   * <p>The unique identifier for this partition specification. If not specified, defaults to <code>0</code>.</p>
+   * @public
+   */
+  specId?: number | undefined;
+}
+
+/**
  * <p>Contains details about a schema field.</p>
  * @public
  */
 export interface SchemaField {
+  /**
+   * <p>An optional unique identifier for the schema field. Field IDs are used by Apache Iceberg to track schema evolution and maintain compatibility across schema changes. If not specified, S3 Tables automatically assigns field IDs.</p>
+   * @public
+   */
+  id?: number | undefined;
+
   /**
    * <p>The name of the field.</p>
    * @public
@@ -105,6 +161,54 @@ export interface IcebergSchema {
 }
 
 /**
+ * <p>Defines a single sort field in an Iceberg sort order specification.</p>
+ * @public
+ */
+export interface IcebergSortField {
+  /**
+   * <p>The ID of the source schema field to sort by. This must reference a valid field ID from the table schema.</p>
+   * @public
+   */
+  sourceId: number | undefined;
+
+  /**
+   * <p>The transform to apply to the source field before sorting. Use <code>identity</code> to sort by the field value directly, or specify other transforms as needed.</p>
+   * @public
+   */
+  transform: string | undefined;
+
+  /**
+   * <p>The sort direction. Valid values are <code>asc</code> for ascending order or <code>desc</code> for descending order.</p>
+   * @public
+   */
+  direction: IcebergSortDirection | undefined;
+
+  /**
+   * <p>Specifies how null values are ordered. Valid values are <code>nulls-first</code> to place nulls before non-null values, or <code>nulls-last</code> to place nulls after non-null values.</p>
+   * @public
+   */
+  nullOrder: IcebergNullOrder | undefined;
+}
+
+/**
+ * <p>Defines the sort order for data within an Iceberg table. Sorting data can improve query performance by enabling more efficient data skipping.</p>
+ * @public
+ */
+export interface IcebergSortOrder {
+  /**
+   * <p>The unique identifier for this sort order. If not specified, defaults to <code>1</code>. The order ID is used by Apache Iceberg to track sort order evolution.</p>
+   * @public
+   */
+  orderId: number | undefined;
+
+  /**
+   * <p>The list of sort fields that define how data is sorted within files. Each field specifies a source field, sort direction, and null ordering. This field is required if <code>writeOrder</code> is provided.</p>
+   * @public
+   */
+  fields: IcebergSortField[] | undefined;
+}
+
+/**
  * <p>Contains details about the metadata for an Iceberg table.</p>
  * @public
  */
@@ -116,7 +220,19 @@ export interface IcebergMetadata {
   schema: IcebergSchema | undefined;
 
   /**
-   * <p>Contains configuration properties for an Iceberg table.</p>
+   * <p>The partition specification for the Iceberg table. Partitioning organizes data into separate files based on the values of one or more fields, which can improve query performance by reducing the amount of data scanned. Each partition field applies a transform (such as identity, year, month, or bucket) to a single field.</p>
+   * @public
+   */
+  partitionSpec?: IcebergPartitionSpec | undefined;
+
+  /**
+   * <p>The sort order for the Iceberg table. Sort order defines how data is sorted within data files, which can improve query performance by enabling more efficient data skipping and filtering.</p>
+   * @public
+   */
+  writeOrder?: IcebergSortOrder | undefined;
+
+  /**
+   * <p>A map of custom configuration properties for the Iceberg table.</p>
    * @public
    */
   properties?: Record<string, string> | undefined;

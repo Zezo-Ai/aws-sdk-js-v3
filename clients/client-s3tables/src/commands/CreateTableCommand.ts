@@ -46,9 +46,32 @@ export interface CreateTableCommandOutput extends CreateTableResponse, __Metadat
  *       schema: { // IcebergSchema
  *         fields: [ // SchemaFieldList // required
  *           { // SchemaField
+ *             id: Number("int"),
  *             name: "STRING_VALUE", // required
  *             type: "STRING_VALUE", // required
  *             required: true || false,
+ *           },
+ *         ],
+ *       },
+ *       partitionSpec: { // IcebergPartitionSpec
+ *         fields: [ // IcebergPartitionFieldList // required
+ *           { // IcebergPartitionField
+ *             sourceId: Number("int"), // required
+ *             transform: "STRING_VALUE", // required
+ *             name: "STRING_VALUE", // required
+ *             fieldId: Number("int"),
+ *           },
+ *         ],
+ *         specId: Number("int"),
+ *       },
+ *       writeOrder: { // IcebergSortOrder
+ *         orderId: Number("int"), // required
+ *         fields: [ // IcebergSortFieldList // required
+ *           { // IcebergSortField
+ *             sourceId: Number("int"), // required
+ *             transform: "STRING_VALUE", // required
+ *             direction: "asc" || "desc", // required
+ *             nullOrder: "nulls-first" || "nulls-last", // required
  *           },
  *         ],
  *       },
