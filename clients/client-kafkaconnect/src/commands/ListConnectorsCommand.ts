@@ -57,6 +57,7 @@ export interface ListConnectorsCommandOutput extends ListConnectorsResponse, __M
  * //           scaleOutPolicy: { // ScaleOutPolicyDescription
  * //             cpuUtilizationPercentage: Number("int"),
  * //           },
+ * //           maxAutoscalingTaskCount: Number("int"),
  * //         },
  * //         provisionedCapacity: { // ProvisionedCapacityDescription
  * //           mcuCount: Number("int"),

@@ -53,6 +53,7 @@ export interface DescribeConnectorCommandOutput extends DescribeConnectorRespons
  * //       scaleOutPolicy: { // ScaleOutPolicyDescription
  * //         cpuUtilizationPercentage: Number("int"),
  * //       },
+ * //       maxAutoscalingTaskCount: Number("int"),
  * //     },
  * //     provisionedCapacity: { // ProvisionedCapacityDescription
  * //       mcuCount: Number("int"),

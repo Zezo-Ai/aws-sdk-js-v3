@@ -48,6 +48,7 @@ export interface UpdateConnectorCommandOutput extends UpdateConnectorResponse, _
  *       scaleOutPolicy: { // ScaleOutPolicyUpdate
  *         cpuUtilizationPercentage: Number("int"), // required
  *       },
+ *       maxAutoscalingTaskCount: Number("int"),
  *     },
  *     provisionedCapacity: { // ProvisionedCapacityUpdate
  *       mcuCount: Number("int"), // required

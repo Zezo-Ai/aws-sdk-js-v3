@@ -178,6 +178,7 @@ const _lOPD = "__listOfPluginDescription";
 const _lOWCS = "__listOfWorkerConfigurationSummary";
 const _lR = "latestRevision";
 const _m = "message";
+const _mATC = "maxAutoscalingTaskCount";
 const _mC = "mcuCount";
 const _mR = "maxResults";
 const _mWC = "maxWorkerCount";
@@ -320,18 +321,18 @@ export var ApacheKafkaClusterDescription$: StaticStructureSchema = [3, n0, _AKCD
 ];
 export var AutoScaling$: StaticStructureSchema = [3, n0, _AS,
   0,
-  [_mWC, _mC, _mWCi, _sIP, _sOP],
-  [1, 1, 1, () => ScaleInPolicy$, () => ScaleOutPolicy$], 3
+  [_mWC, _mC, _mWCi, _sIP, _sOP, _mATC],
+  [1, 1, 1, () => ScaleInPolicy$, () => ScaleOutPolicy$, 1], 3
 ];
 export var AutoScalingDescription$: StaticStructureSchema = [3, n0, _ASD,
   0,
-  [_mWC, _mC, _mWCi, _sIP, _sOP],
-  [1, 1, 1, () => ScaleInPolicyDescription$, () => ScaleOutPolicyDescription$]
+  [_mWC, _mC, _mWCi, _sIP, _sOP, _mATC],
+  [1, 1, 1, () => ScaleInPolicyDescription$, () => ScaleOutPolicyDescription$, 1]
 ];
 export var AutoScalingUpdate$: StaticStructureSchema = [3, n0, _ASU,
   0,
-  [_mWC, _mC, _mWCi, _sIP, _sOP],
-  [1, 1, 1, () => ScaleInPolicyUpdate$, () => ScaleOutPolicyUpdate$], 5
+  [_mWC, _mC, _mWCi, _sIP, _sOP, _mATC],
+  [1, 1, 1, () => ScaleInPolicyUpdate$, () => ScaleOutPolicyUpdate$, 1], 5
 ];
 export var Capacity$: StaticStructureSchema = [3, n0, _C,
   0,

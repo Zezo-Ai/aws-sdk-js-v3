@@ -48,6 +48,7 @@ export interface CreateConnectorCommandOutput extends CreateConnectorResponse, _
  *       scaleOutPolicy: { // ScaleOutPolicy
  *         cpuUtilizationPercentage: Number("int"), // required
  *       },
+ *       maxAutoscalingTaskCount: Number("int"),
  *     },
  *     provisionedCapacity: { // ProvisionedCapacity
  *       mcuCount: Number("int"), // required

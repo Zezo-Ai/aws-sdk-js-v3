@@ -115,16 +115,22 @@ export interface AutoScalingDescription {
   minWorkerCount?: number | undefined;
 
   /**
-   * <p>The sacle-in policy for the connector.</p>
+   * <p>The scale-in policy for the connector.</p>
    * @public
    */
   scaleInPolicy?: ScaleInPolicyDescription | undefined;
 
   /**
-   * <p>The sacle-out policy for the connector.&gt;</p>
+   * <p>The scale-out policy for the connector.</p>
    * @public
    */
   scaleOutPolicy?: ScaleOutPolicyDescription | undefined;
+
+  /**
+   * <p>The maximum number of tasks allocated to the connector during autoscaling operations. Must be at least equal to maxWorkerCount.</p>
+   * @public
+   */
+  maxAutoscalingTaskCount?: number | undefined;
 }
 
 /**
@@ -799,16 +805,22 @@ export interface AutoScaling {
   minWorkerCount: number | undefined;
 
   /**
-   * <p>The sacle-in policy for the connector.</p>
+   * <p>The scale-in policy for the connector.</p>
    * @public
    */
   scaleInPolicy?: ScaleInPolicy | undefined;
 
   /**
-   * <p>The sacle-out policy for the connector.</p>
+   * <p>The scale-out policy for the connector.</p>
    * @public
    */
   scaleOutPolicy?: ScaleOutPolicy | undefined;
+
+  /**
+   * <p>The maximum number of tasks allocated to the connector during autoscaling operations. Must be at least equal to maxWorkerCount.</p>
+   * @public
+   */
+  maxAutoscalingTaskCount?: number | undefined;
 }
 
 /**
@@ -859,16 +871,22 @@ export interface AutoScalingUpdate {
   minWorkerCount: number | undefined;
 
   /**
-   * <p>The target sacle-in policy for the connector.</p>
+   * <p>The target scale-in policy for the connector.</p>
    * @public
    */
   scaleInPolicy: ScaleInPolicyUpdate | undefined;
 
   /**
-   * <p>The target sacle-out policy for the connector.</p>
+   * <p>The target scale-out policy for the connector.</p>
    * @public
    */
   scaleOutPolicy: ScaleOutPolicyUpdate | undefined;
+
+  /**
+   * <p>The maximum number of tasks allocated to the connector during autoscaling operations. Must be at least equal to maxWorkerCount.</p>
+   * @public
+   */
+  maxAutoscalingTaskCount?: number | undefined;
 }
 
 /**
