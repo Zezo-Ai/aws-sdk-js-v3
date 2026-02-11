@@ -130,17 +130,24 @@ const _EV = "EksVolume";
 const _EVk = "EksVolumes";
 const _EVn = "EnvironmentVariables";
 const _FC = "FirelensConfiguration";
+const _FCU = "FairshareCapacityUsage";
+const _FCUL = "FairshareCapacityUsageList";
+const _FCULa = "FairshareCapacityUtilizationList";
+const _FCUa = "FairshareCapacityUtilization";
 const _FOQD = "FrontOfQueueDetail";
 const _FOQJS = "FrontOfQueueJobSummary";
 const _FOQJSL = "FrontOfQueueJobSummaryList";
 const _FP = "FairsharePolicy";
 const _FPC = "FargatePlatformConfiguration";
+const _FUD = "FairshareUtilizationDetail";
 const _GJQS = "GetJobQueueSnapshot";
 const _GJQSR = "GetJobQueueSnapshotRequest";
 const _GJQSRe = "GetJobQueueSnapshotResponse";
 const _H = "Host";
 const _IPS = "ImagePullSecret";
 const _IPSm = "ImagePullSecrets";
+const _JCUS = "JobCapacityUsageSummary";
+const _JCUSL = "JobCapacityUsageSummaryList";
 const _JD = "JobDefinition";
 const _JDL = "JobDefinitionList";
 const _JDLo = "JobDependencyList";
@@ -206,6 +213,9 @@ const _NPOo = "NodePropertyOverrides";
 const _NPS = "NodePropertiesSummary";
 const _NRP = "NodeRangeProperty";
 const _NRPo = "NodeRangeProperties";
+const _QSCU = "QueueSnapshotCapacityUsage";
+const _QSCUL = "QueueSnapshotCapacityUsageList";
+const _QSUD = "QueueSnapshotUtilizationDetail";
 const _RC = "RepositoryCredentials";
 const _RJD = "RegisterJobDefinition";
 const _RJDR = "RegisterJobDefinitionRequest";
@@ -225,6 +235,10 @@ const _SEOe = "ServiceEnvironmentOrders";
 const _SJ = "SubmitJob";
 const _SJAD = "ServiceJobAttemptDetail";
 const _SJADe = "ServiceJobAttemptDetails";
+const _SJCUD = "ServiceJobCapacityUsageDetail";
+const _SJCUDL = "ServiceJobCapacityUsageDetailList";
+const _SJCUS = "ServiceJobCapacityUsageSummary";
+const _SJCUSL = "ServiceJobCapacityUsageSummaryList";
 const _SJEOE = "ServiceJobEvaluateOnExit";
 const _SJEOEL = "ServiceJobEvaluateOnExitList";
 const _SJR = "SubmitJobRequest";
@@ -293,6 +307,7 @@ const _aPI = "accessPointId";
 const _aPIs = "assignPublicIp";
 const _aQ = "availableQuantity";
 const _aS = "allocationStrategy";
+const _aSC = "activeShareCount";
 const _ac = "action";
 const _an = "annotations";
 const _ar = "arns";
@@ -328,6 +343,7 @@ const _cRom = "computeReservation";
 const _cRon = "consumableResources";
 const _cT = "clientToken";
 const _cU = "capacityUnit";
+const _cUa = "capacityUsage";
 const _co = "container";
 const _com = "command";
 const _con = "containers";
@@ -365,6 +381,7 @@ const _fOQ = "frontOfQueue";
 const _fP = "fairsharePolicy";
 const _fPC = "fargatePlatformConfiguration";
 const _fSI = "fileSystemId";
+const _fU = "fairshareUtilization";
 const _h = "host";
 const _hE = "httpError";
 const _hL = "hardLimit";
@@ -475,6 +492,7 @@ const _par = "parameters";
 const _pe = "permissions";
 const _pr = "priority";
 const _q = "quantity";
+const _qU = "queueUtilization";
 const _r = "reason";
 const _rA = "resourceArn";
 const _rAG = "runAsGroup";
@@ -495,6 +513,7 @@ const _rev = "revision";
 const _s = "smithy.ts.sdk.synthetic.com.amazonaws.batch";
 const _sA = "startedAt";
 const _sAN = "serviceAccountName";
+const _sAc = "scheduledAt";
 const _sAt = "stoppedAt";
 const _sC = "securityContext";
 const _sD = "shareDistribution";
@@ -540,6 +559,8 @@ const _sw = "swappiness";
 const _t = "tags";
 const _tA = "taskArn";
 const _tC = "timeoutConfig";
+const _tCU = "topCapacityUtilization";
+const _tCUo = "totalCapacityUsage";
 const _tE = "transitEncryption";
 const _tEP = "transitEncryptionPort";
 const _tIT = "targetInstanceTypes";
@@ -900,8 +921,8 @@ export var DescribeServiceJobRequest$: StaticStructureSchema = [3, n0, _DSJR,
 ];
 export var DescribeServiceJobResponse$: StaticStructureSchema = [3, n0, _DSJRe,
   0,
-  [_jI, _jN, _jQ, _sJT, _sA, _sta, _at, _cA, _iTs, _jA, _lA, _rS, _sPc, _sRP, _sI, _sR, _sAt, _t, _tC],
-  [0, 0, 0, 0, 1, 0, () => ServiceJobAttemptDetails, 1, 2, 0, () => LatestServiceJobAttempt$, () => ServiceJobRetryStrategy$, 1, 0, 0, 0, 1, 128 | 0, () => ServiceJobTimeout$], 6
+  [_jI, _jN, _jQ, _sJT, _sA, _sta, _at, _cUa, _cA, _iTs, _jA, _lA, _rS, _sAc, _sPc, _sRP, _sI, _sR, _sAt, _t, _tC],
+  [0, 0, 0, 0, 1, 0, () => ServiceJobAttemptDetails, () => ServiceJobCapacityUsageDetailList, 1, 2, 0, () => LatestServiceJobAttempt$, () => ServiceJobRetryStrategy$, 1, 1, 0, 0, 0, 1, 128 | 0, () => ServiceJobTimeout$], 6
 ];
 export var Device$: StaticStructureSchema = [3, n0, _D,
   0,
@@ -1068,10 +1089,25 @@ export var EvaluateOnExit$: StaticStructureSchema = [3, n0, _EOE,
   [_ac, _oSR, _oR, _oEC],
   [0, 0, 0, 0], 1
 ];
+export var FairshareCapacityUsage$: StaticStructureSchema = [3, n0, _FCU,
+  0,
+  [_cU, _q],
+  [0, 1]
+];
+export var FairshareCapacityUtilization$: StaticStructureSchema = [3, n0, _FCUa,
+  0,
+  [_sI, _cUa],
+  [0, () => FairshareCapacityUsageList]
+];
 export var FairsharePolicy$: StaticStructureSchema = [3, n0, _FP,
   0,
   [_sDS, _cRom, _sD],
   [1, 1, () => ShareAttributesList]
+];
+export var FairshareUtilizationDetail$: StaticStructureSchema = [3, n0, _FUD,
+  0,
+  [_aSC, _tCU],
+  [1, () => FairshareCapacityUtilizationList]
 ];
 export var FargatePlatformConfiguration$: StaticStructureSchema = [3, n0, _FPC,
   0,
@@ -1100,8 +1136,8 @@ export var GetJobQueueSnapshotRequest$: StaticStructureSchema = [3, n0, _GJQSR,
 ];
 export var GetJobQueueSnapshotResponse$: StaticStructureSchema = [3, n0, _GJQSRe,
   0,
-  [_fOQ],
-  [() => FrontOfQueueDetail$]
+  [_fOQ, _qU],
+  [() => FrontOfQueueDetail$, () => QueueSnapshotUtilizationDetail$]
 ];
 export var Host$: StaticStructureSchema = [3, n0, _H,
   0,
@@ -1112,6 +1148,11 @@ export var ImagePullSecret$: StaticStructureSchema = [3, n0, _IPS,
   0,
   [_n],
   [0], 1
+];
+export var JobCapacityUsageSummary$: StaticStructureSchema = [3, n0, _JCUS,
+  0,
+  [_cU, _q],
+  [0, 1]
 ];
 export var JobDefinition$: StaticStructureSchema = [3, n0, _JD,
   0,
@@ -1140,8 +1181,8 @@ export var JobStateTimeLimitAction$: StaticStructureSchema = [3, n0, _JSTLA,
 ];
 export var JobSummary$: StaticStructureSchema = [3, n0, _JS,
   0,
-  [_jI, _jN, _jA, _cA, _sta, _sR, _sA, _sAt, _co, _aP, _nP, _jD],
-  [0, 0, 0, 1, 0, 0, 1, 1, () => ContainerSummary$, () => ArrayPropertiesSummary$, () => NodePropertiesSummary$, 0], 2
+  [_jI, _jN, _jA, _cUa, _cA, _sAc, _sI, _sta, _sR, _sA, _sAt, _co, _aP, _nP, _jD],
+  [0, 0, 0, () => JobCapacityUsageSummaryList, 1, 1, 0, 0, 0, 1, 1, () => ContainerSummary$, () => ArrayPropertiesSummary$, () => NodePropertiesSummary$, 0], 2
 ];
 export var JobTimeout$: StaticStructureSchema = [3, n0, _JT,
   0,
@@ -1293,6 +1334,16 @@ export var NodeRangeProperty$: StaticStructureSchema = [3, n0, _NRP,
   [_tN, _co, _iT, _eP, _ePk, _cRP],
   [0, () => ContainerProperties$, 64 | 0, () => EcsProperties$, () => EksProperties$, () => ConsumableResourceProperties$], 1
 ];
+export var QueueSnapshotCapacityUsage$: StaticStructureSchema = [3, n0, _QSCU,
+  0,
+  [_cU, _q],
+  [0, 1]
+];
+export var QueueSnapshotUtilizationDetail$: StaticStructureSchema = [3, n0, _QSUD,
+  0,
+  [_tCUo, _fU, _lUA],
+  [() => QueueSnapshotCapacityUsageList, () => FairshareUtilizationDetail$, 1]
+];
 export var RegisterJobDefinitionRequest$: StaticStructureSchema = [3, n0, _RJDR,
   0,
   [_jDN, _ty, _par, _sPc, _cPo, _nP, _rS, _pT, _ti, _t, _pC, _ePk, _eP, _cRP],
@@ -1353,6 +1404,16 @@ export var ServiceJobAttemptDetail$: StaticStructureSchema = [3, n0, _SJAD,
   [_sRI, _sA, _sAt, _sR],
   [() => ServiceResourceId$, 1, 1, 0]
 ];
+export var ServiceJobCapacityUsageDetail$: StaticStructureSchema = [3, n0, _SJCUD,
+  0,
+  [_cU, _q],
+  [0, 1]
+];
+export var ServiceJobCapacityUsageSummary$: StaticStructureSchema = [3, n0, _SJCUS,
+  0,
+  [_cU, _q],
+  [0, 1]
+];
 export var ServiceJobEvaluateOnExit$: StaticStructureSchema = [3, n0, _SJEOE,
   0,
   [_ac, _oSR],
@@ -1365,8 +1426,8 @@ export var ServiceJobRetryStrategy$: StaticStructureSchema = [3, n0, _SJRS,
 ];
 export var ServiceJobSummary$: StaticStructureSchema = [3, n0, _SJS,
   0,
-  [_jI, _jN, _sJT, _lA, _cA, _jA, _sI, _sta, _sR, _sA, _sAt],
-  [0, 0, 0, () => LatestServiceJobAttempt$, 1, 0, 0, 0, 0, 1, 1], 3
+  [_jI, _jN, _sJT, _lA, _cUa, _cA, _jA, _sAc, _sI, _sta, _sR, _sA, _sAt],
+  [0, 0, 0, () => LatestServiceJobAttempt$, () => ServiceJobCapacityUsageSummaryList, 1, 0, 1, 0, 0, 0, 1, 1], 3
 ];
 export var ServiceJobTimeout$: StaticStructureSchema = [3, n0, _SJT,
   0,
@@ -1593,11 +1654,20 @@ var EnvironmentVariables: StaticListSchema = [1, n0, _EVn,
 var EvaluateOnExitList: StaticListSchema = [1, n0, _EOEL,
   0, () => EvaluateOnExit$
 ];
+var FairshareCapacityUsageList: StaticListSchema = [1, n0, _FCUL,
+  0, () => FairshareCapacityUsage$
+];
+var FairshareCapacityUtilizationList: StaticListSchema = [1, n0, _FCULa,
+  0, () => FairshareCapacityUtilization$
+];
 var FrontOfQueueJobSummaryList: StaticListSchema = [1, n0, _FOQJSL,
   0, () => FrontOfQueueJobSummary$
 ];
 var ImagePullSecrets: StaticListSchema = [1, n0, _IPSm,
   0, () => ImagePullSecret$
+];
+var JobCapacityUsageSummaryList: StaticListSchema = [1, n0, _JCUSL,
+  0, () => JobCapacityUsageSummary$
 ];
 var JobDefinitionList: StaticListSchema = [1, n0, _JDL,
   0, () => JobDefinition$
@@ -1669,6 +1739,9 @@ var NodeRangeProperties: StaticListSchema = [1, n0, _NRPo,
   0, () => NodeRangeProperty$
 ];
 var PlatformCapabilityList = 64 | 0;
+var QueueSnapshotCapacityUsageList: StaticListSchema = [1, n0, _QSCUL,
+  0, () => QueueSnapshotCapacityUsage$
+];
 var ResourceRequirements: StaticListSchema = [1, n0, _RRe,
   0, () => ResourceRequirement$
 ];
@@ -1689,6 +1762,12 @@ var ServiceEnvironmentOrders: StaticListSchema = [1, n0, _SEOe,
 ];
 var ServiceJobAttemptDetails: StaticListSchema = [1, n0, _SJADe,
   0, () => ServiceJobAttemptDetail$
+];
+var ServiceJobCapacityUsageDetailList: StaticListSchema = [1, n0, _SJCUDL,
+  0, () => ServiceJobCapacityUsageDetail$
+];
+var ServiceJobCapacityUsageSummaryList: StaticListSchema = [1, n0, _SJCUSL,
+  0, () => ServiceJobCapacityUsageSummary$
 ];
 var ServiceJobEvaluateOnExitList: StaticListSchema = [1, n0, _SJEOEL,
   0, () => ServiceJobEvaluateOnExit$

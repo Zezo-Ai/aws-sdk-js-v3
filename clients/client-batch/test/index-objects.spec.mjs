@@ -147,7 +147,10 @@ import {
   EksVolume$,
   EphemeralStorage$,
   EvaluateOnExit$,
+  FairshareCapacityUsage$,
+  FairshareCapacityUtilization$,
   FairsharePolicy$,
+  FairshareUtilizationDetail$,
   FargatePlatformConfiguration$,
   FirelensConfiguration$,
   FirelensConfigurationType,
@@ -159,6 +162,7 @@ import {
   GetJobQueueSnapshotResponse$,
   Host$,
   ImagePullSecret$,
+  JobCapacityUsageSummary$,
   JobDefinition$,
   JobDefinitionType,
   JobDependency$,
@@ -226,6 +230,8 @@ import {
   paginateListSchedulingPolicies,
   paginateListServiceJobs,
   PlatformCapability,
+  QueueSnapshotCapacityUsage$,
+  QueueSnapshotUtilizationDetail$,
   RegisterJobDefinition$,
   RegisterJobDefinitionCommand,
   RegisterJobDefinitionRequest$,
@@ -247,6 +253,8 @@ import {
   ServiceEnvironmentStatus,
   ServiceEnvironmentType,
   ServiceJobAttemptDetail$,
+  ServiceJobCapacityUsageDetail$,
+  ServiceJobCapacityUsageSummary$,
   ServiceJobEvaluateOnExit$,
   ServiceJobRetryAction,
   ServiceJobRetryStrategy$,
@@ -488,7 +496,10 @@ assert(typeof EksSecret$ === "object");
 assert(typeof EksVolume$ === "object");
 assert(typeof EphemeralStorage$ === "object");
 assert(typeof EvaluateOnExit$ === "object");
+assert(typeof FairshareCapacityUsage$ === "object");
+assert(typeof FairshareCapacityUtilization$ === "object");
 assert(typeof FairsharePolicy$ === "object");
+assert(typeof FairshareUtilizationDetail$ === "object");
 assert(typeof FargatePlatformConfiguration$ === "object");
 assert(typeof FirelensConfiguration$ === "object");
 assert(typeof FrontOfQueueDetail$ === "object");
@@ -497,6 +508,7 @@ assert(typeof GetJobQueueSnapshotRequest$ === "object");
 assert(typeof GetJobQueueSnapshotResponse$ === "object");
 assert(typeof Host$ === "object");
 assert(typeof ImagePullSecret$ === "object");
+assert(typeof JobCapacityUsageSummary$ === "object");
 assert(typeof JobDefinition$ === "object");
 assert(typeof JobDependency$ === "object");
 assert(typeof JobDetail$ === "object");
@@ -533,6 +545,8 @@ assert(typeof NodeProperties$ === "object");
 assert(typeof NodePropertiesSummary$ === "object");
 assert(typeof NodePropertyOverride$ === "object");
 assert(typeof NodeRangeProperty$ === "object");
+assert(typeof QueueSnapshotCapacityUsage$ === "object");
+assert(typeof QueueSnapshotUtilizationDetail$ === "object");
 assert(typeof RegisterJobDefinitionRequest$ === "object");
 assert(typeof RegisterJobDefinitionResponse$ === "object");
 assert(typeof RepositoryCredentials$ === "object");
@@ -545,6 +559,8 @@ assert(typeof Secret$ === "object");
 assert(typeof ServiceEnvironmentDetail$ === "object");
 assert(typeof ServiceEnvironmentOrder$ === "object");
 assert(typeof ServiceJobAttemptDetail$ === "object");
+assert(typeof ServiceJobCapacityUsageDetail$ === "object");
+assert(typeof ServiceJobCapacityUsageSummary$ === "object");
 assert(typeof ServiceJobEvaluateOnExit$ === "object");
 assert(typeof ServiceJobRetryStrategy$ === "object");
 assert(typeof ServiceJobSummary$ === "object");

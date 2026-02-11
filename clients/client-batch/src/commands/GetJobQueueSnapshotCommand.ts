@@ -27,7 +27,8 @@ export interface GetJobQueueSnapshotCommandInput extends GetJobQueueSnapshotRequ
 export interface GetJobQueueSnapshotCommandOutput extends GetJobQueueSnapshotResponse, __MetadataBearer {}
 
 /**
- * <p>Provides a list of the first 100 <code>RUNNABLE</code> jobs associated to a single job queue.</p>
+ * <p>Provides a list of the first 100 <code>RUNNABLE</code> jobs associated to a single job
+ *       queue and includes capacity utilization, including total usage and breakdown by share for fairshare scheduling job queues. </p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -49,6 +50,29 @@ export interface GetJobQueueSnapshotCommandOutput extends GetJobQueueSnapshotRes
  * //         earliestTimeAtPosition: Number("long"),
  * //       },
  * //     ],
+ * //     lastUpdatedAt: Number("long"),
+ * //   },
+ * //   queueUtilization: { // QueueSnapshotUtilizationDetail
+ * //     totalCapacityUsage: [ // QueueSnapshotCapacityUsageList
+ * //       { // QueueSnapshotCapacityUsage
+ * //         capacityUnit: "STRING_VALUE",
+ * //         quantity: Number("double"),
+ * //       },
+ * //     ],
+ * //     fairshareUtilization: { // FairshareUtilizationDetail
+ * //       activeShareCount: Number("long"),
+ * //       topCapacityUtilization: [ // FairshareCapacityUtilizationList
+ * //         { // FairshareCapacityUtilization
+ * //           shareIdentifier: "STRING_VALUE",
+ * //           capacityUsage: [ // FairshareCapacityUsageList
+ * //             { // FairshareCapacityUsage
+ * //               capacityUnit: "STRING_VALUE",
+ * //               quantity: Number("double"),
+ * //             },
+ * //           ],
+ * //         },
+ * //       ],
+ * //     },
  * //     lastUpdatedAt: Number("long"),
  * //   },
  * // };

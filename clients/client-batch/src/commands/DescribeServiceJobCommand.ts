@@ -53,6 +53,12 @@ export interface DescribeServiceJobCommandOutput extends DescribeServiceJobRespo
  * //       statusReason: "STRING_VALUE",
  * //     },
  * //   ],
+ * //   capacityUsage: [ // ServiceJobCapacityUsageDetailList
+ * //     { // ServiceJobCapacityUsageDetail
+ * //       capacityUnit: "STRING_VALUE",
+ * //       quantity: Number("double"),
+ * //     },
+ * //   ],
  * //   createdAt: Number("long"),
  * //   isTerminated: true || false,
  * //   jobArn: "STRING_VALUE",
@@ -74,6 +80,7 @@ export interface DescribeServiceJobCommandOutput extends DescribeServiceJobRespo
  * //       },
  * //     ],
  * //   },
+ * //   scheduledAt: Number("long"),
  * //   schedulingPriority: Number("int"),
  * //   serviceRequestPayload: "STRING_VALUE",
  * //   serviceJobType: "SAGEMAKER_TRAINING", // required

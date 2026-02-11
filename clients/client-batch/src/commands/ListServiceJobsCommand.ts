@@ -61,10 +61,17 @@ export interface ListServiceJobsCommandOutput extends ListServiceJobsResponse, _
  * //           value: "STRING_VALUE", // required
  * //         },
  * //       },
+ * //       capacityUsage: [ // ServiceJobCapacityUsageSummaryList
+ * //         { // ServiceJobCapacityUsageSummary
+ * //           capacityUnit: "STRING_VALUE",
+ * //           quantity: Number("double"),
+ * //         },
+ * //       ],
  * //       createdAt: Number("long"),
  * //       jobArn: "STRING_VALUE",
  * //       jobId: "STRING_VALUE", // required
  * //       jobName: "STRING_VALUE", // required
+ * //       scheduledAt: Number("long"),
  * //       serviceJobType: "SAGEMAKER_TRAINING", // required
  * //       shareIdentifier: "STRING_VALUE",
  * //       status: "SUBMITTED" || "PENDING" || "RUNNABLE" || "SCHEDULED" || "STARTING" || "RUNNING" || "SUCCEEDED" || "FAILED",

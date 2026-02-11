@@ -40,8 +40,6 @@ export interface ListJobsCommandOutput extends ListJobsResponse, __MetadataBeare
  *                <p>An array job ID to return a list of the children for that job</p>
  *             </li>
  *          </ul>
- *          <p>You can filter the results by job status with the <code>jobStatus</code> parameter. If you
- *       don't specify a status, only <code>RUNNING</code> jobs are returned.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -74,7 +72,15 @@ export interface ListJobsCommandOutput extends ListJobsResponse, __MetadataBeare
  * //       jobArn: "STRING_VALUE",
  * //       jobId: "STRING_VALUE", // required
  * //       jobName: "STRING_VALUE", // required
+ * //       capacityUsage: [ // JobCapacityUsageSummaryList
+ * //         { // JobCapacityUsageSummary
+ * //           capacityUnit: "STRING_VALUE",
+ * //           quantity: Number("double"),
+ * //         },
+ * //       ],
  * //       createdAt: Number("long"),
+ * //       scheduledAt: Number("long"),
+ * //       shareIdentifier: "STRING_VALUE",
  * //       status: "SUBMITTED" || "PENDING" || "RUNNABLE" || "STARTING" || "RUNNING" || "SUCCEEDED" || "FAILED",
  * //       statusReason: "STRING_VALUE",
  * //       startedAt: Number("long"),

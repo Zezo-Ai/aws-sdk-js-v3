@@ -6207,6 +6207,27 @@ export interface ServiceJobAttemptDetail {
 }
 
 /**
+ * <p>The capacity usage for a service job, including the unit of
+ *             measure and quantity of resources being consumed.</p>
+ * @public
+ */
+export interface ServiceJobCapacityUsageDetail {
+  /**
+   * <p>The unit of measure for the service job capacity usage. For service jobs, this is
+   *                 <code>NUM_INSTANCES</code>.</p>
+   * @public
+   */
+  capacityUnit?: string | undefined;
+
+  /**
+   * <p>The quantity of capacity being used by the service job, measured in the units
+   *             specified by <code>capacityUnit</code>.</p>
+   * @public
+   */
+  quantity?: number | undefined;
+}
+
+/**
  * <p>Information about the latest attempt of a service job. A Service job can transition from <code>SCHEDULED</code> back to <code>RUNNABLE</code> state when they encounter capacity constraints.</p>
  * @public
  */
@@ -6277,6 +6298,14 @@ export interface DescribeServiceJobResponse {
   attempts?: ServiceJobAttemptDetail[] | undefined;
 
   /**
+   * <p>The configured capacity for the service job, such as the number of instances. The
+   *             number of instances should be the same value as the
+   *                 <code>serviceRequestPayload.InstanceCount</code> field.</p>
+   * @public
+   */
+  capacityUsage?: ServiceJobCapacityUsageDetail[] | undefined;
+
+  /**
    * <p>The Unix timestamp (in milliseconds) for when the service job was created.</p>
    * @public
    */
@@ -6323,6 +6352,14 @@ export interface DescribeServiceJobResponse {
    * @public
    */
   retryStrategy?: ServiceJobRetryStrategy | undefined;
+
+  /**
+   * <p>The Unix timestamp (in milliseconds) for when the service job was scheduled. This
+   *             represents when the service job was dispatched to SageMaker and the service job transitioned to the
+   *                 <code>SCHEDULED</code> state.</p>
+   * @public
+   */
+  scheduledAt?: number | undefined;
 
   /**
    * <p>The scheduling priority of the service job. </p>
@@ -6433,14 +6470,134 @@ export interface FrontOfQueueDetail {
 }
 
 /**
+ * <p>The capacity usage for a fairshare scheduling job queue.</p>
+ * @public
+ */
+export interface FairshareCapacityUsage {
+  /**
+   * <p>The unit of measure for the capacity usage. For compute jobs, this is
+   *                 <code>VCPU</code> for Amazon EC2 and <code>cpu</code> for Amazon EKS. For service jobs, this is <code>NUM_INSTANCES</code>.</p>
+   * @public
+   */
+  capacityUnit?: string | undefined;
+
+  /**
+   * <p>The quantity of capacity being used, measured in the units specified by
+   *                 <code>capacityUnit</code>.</p>
+   * @public
+   */
+  quantity?: number | undefined;
+}
+
+/**
+ * <p>The capacity utilization for a specific share in a fairshare scheduling job queue, including the share identifier and its current usage.</p>
+ * @public
+ */
+export interface FairshareCapacityUtilization {
+  /**
+   * <p>The share identifier for the fairshare scheduling job queue.</p>
+   * @public
+   */
+  shareIdentifier?: string | undefined;
+
+  /**
+   * <p>The capacity usage information for this share, including the unit of measure and
+   *             quantity being used. This is
+   *             <code>VCPU</code> for Amazon EC2 and <code>cpu</code> for Amazon EKS.</p>
+   * @public
+   */
+  capacityUsage?: FairshareCapacityUsage[] | undefined;
+}
+
+/**
+ * <p>The fairshare utilization for a job queue, including the number
+ *             of active shares and top capacity utilization.</p>
+ * @public
+ */
+export interface FairshareUtilizationDetail {
+  /**
+   * <p>The total number of active shares in the fairshare scheduling job queue that are
+   *             currently utilizing capacity.</p>
+   * @public
+   */
+  activeShareCount?: number | undefined;
+
+  /**
+   * <p>A list of the top 20 shares with the highest capacity utilization, ordered by usage
+   *             amount.</p>
+   * @public
+   */
+  topCapacityUtilization?: FairshareCapacityUtilization[] | undefined;
+}
+
+/**
+ * <p>The configured capacity usage for a job queue snapshot, including the unit of
+ *             measure and quantity of resources being used.</p>
+ * @public
+ */
+export interface QueueSnapshotCapacityUsage {
+  /**
+   * <p>The unit of measure for the capacity usage. For compute jobs, this is
+   *             <code>VCPU</code> for Amazon EC2 and <code>cpu</code> for Amazon EKS. For service jobs, this is <code>NUM_INSTANCES</code>.</p>
+   * @public
+   */
+  capacityUnit?: string | undefined;
+
+  /**
+   * <p>The quantity of capacity being used in the queue snapshot, measured in the units
+   *             specified by <code>capacityUnit</code>.</p>
+   * @public
+   */
+  quantity?: number | undefined;
+}
+
+/**
+ * <p>The job queue utilization at a specific point in time,
+ *             including total capacity usage and fairshare utilization breakdown.</p>
+ * @public
+ */
+export interface QueueSnapshotUtilizationDetail {
+  /**
+   * <p>The total capacity usage for the entire job queue, for both first-in,
+   *             first-out (FIFO) and fairshare scheduling job queue.</p>
+   * @public
+   */
+  totalCapacityUsage?: QueueSnapshotCapacityUsage[] | undefined;
+
+  /**
+   * <p>The utilization information for a fairshare scheduling job queues, including
+   *             active share count and top capacity utilization by share.</p>
+   * @public
+   */
+  fairshareUtilization?: FairshareUtilizationDetail | undefined;
+
+  /**
+   * <p>The Unix timestamp (in milliseconds) for when the queue utilization information was
+   *             last updated.</p>
+   * @public
+   */
+  lastUpdatedAt?: number | undefined;
+}
+
+/**
  * @public
  */
 export interface GetJobQueueSnapshotResponse {
   /**
-   * <p>The list of the first 100 <code>RUNNABLE</code> jobs in each job queue. For first-in-first-out (FIFO) job queues, jobs are ordered based on their submission time. For fair-share scheduling (FSS) job queues, jobs are ordered based on their job priority and share usage.</p>
+   * <p>The list of the first 100 <code>RUNNABLE</code> jobs in each job queue. For
+   *       first-in-first-out (FIFO) job queues, jobs are ordered based on their submission time. For
+   *       fair-share scheduling (FSS) job queues, jobs are ordered based on their job priority and share
+   *       usage.</p>
    * @public
    */
   frontOfQueue?: FrontOfQueueDetail | undefined;
+
+  /**
+   * <p>The job queue's capacity utilization, including total usage and
+   *             breakdown by fairshare scheduling queue.</p>
+   * @public
+   */
+  queueUtilization?: QueueSnapshotUtilizationDetail | undefined;
 }
 
 /**
@@ -6607,7 +6764,7 @@ export interface ListJobsRequest {
   /**
    * <p>The job status used to filter jobs in the specified queue. If the <code>filters</code>
    *       parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any
-   *       status are returned. If you don't specify a status, only <code>RUNNING</code> jobs are
+   *       status are returned. The exception is the <code>SHARE_IDENTIFIER</code> filter and <code>jobStatus</code> can be used together. If you don't specify a status, only <code>RUNNING</code> jobs are
    *       returned.</p>
    *          <note>
    *             <p>Array job parents are updated to <code>PENDING</code> when any child job is updated to <code>RUNNABLE</code> and remain in <code>PENDING</code> status while child jobs are running. To view these jobs, filter by <code>PENDING</code> status until all child jobs reach a terminal state.</p>
@@ -6654,9 +6811,12 @@ export interface ListJobsRequest {
 
   /**
    * <p>The filter to apply to the query. Only one filter can be used at a time. When the filter
-   *       is used, <code>jobStatus</code> is ignored. The filter doesn't apply to child jobs in an array
+   *       is used, <code>jobStatus</code> is ignored with the exception that <code>SHARE_IDENTIFIER</code> and <code>jobStatus</code> can be used together. The filter doesn't apply to child jobs in an array
    *       or multi-node parallel (MNP) jobs. The results are sorted by the <code>createdAt</code> field,
    *       with the most recent jobs being first.</p>
+   *          <note>
+   *             <p>The <code>SHARE_IDENTIFIER</code> filter and the <code>jobStatus</code> field can be used together to filter results.</p>
+   *          </note>
    *          <dl>
    *             <dt>JOB_NAME</dt>
    *             <dd>
@@ -6695,10 +6855,35 @@ export interface ListJobsRequest {
    *             corresponds to the <code>createdAt</code> value. The value is a string representation of
    *             the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
    *             </dd>
+   *             <dt>SHARE_IDENTIFIER</dt>
+   *             <dd>
+   *                <p>The value for the filter is the fairshare scheduling share identifier.</p>
+   *             </dd>
    *          </dl>
    * @public
    */
   filters?: KeyValuesPair[] | undefined;
+}
+
+/**
+ * <p>The capacity usage for a job, including the unit of measure
+ *             and quantity of resources being used.</p>
+ * @public
+ */
+export interface JobCapacityUsageSummary {
+  /**
+   * <p>The unit of measure for the capacity usage. This is
+   *             <code>VCPU</code> for Amazon EC2 and <code>cpu</code> for Amazon EKS.</p>
+   * @public
+   */
+  capacityUnit?: string | undefined;
+
+  /**
+   * <p>The quantity of capacity being used by the job, measured in the units specified by
+   *                 <code>capacityUnit</code>.</p>
+   * @public
+   */
+  quantity?: number | undefined;
 }
 
 /**
@@ -6770,6 +6955,13 @@ export interface JobSummary {
   jobName: string | undefined;
 
   /**
+   * <p>The configured capacity usage information for this job, including the unit of measure and
+   *             quantity of resources.</p>
+   * @public
+   */
+  capacityUsage?: JobCapacityUsageSummary[] | undefined;
+
+  /**
    * <p>The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs and
    *    parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time
    *     <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
@@ -6778,6 +6970,20 @@ export interface JobSummary {
    * @public
    */
   createdAt?: number | undefined;
+
+  /**
+   * <p>The Unix timestamp (in milliseconds) for when the job was scheduled for
+   *             execution. For more information on job statues, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service-job-status.html">Service job status</a> in the <i>Batch User Guide</i>.</p>
+   * @public
+   */
+  scheduledAt?: number | undefined;
+
+  /**
+   * <p>The share identifier for the fairshare scheduling queue that this job is
+   *             associated with.</p>
+   * @public
+   */
+  shareIdentifier?: string | undefined;
 
   /**
    * <p>The current status for the job.</p>
@@ -6947,7 +7153,7 @@ export interface ListJobsByConsumableResourceSummary {
   jobDefinitionArn?: string | undefined;
 
   /**
-   * <p>The fair-share scheduling policy identifier for the job.</p>
+   * <p>The fair-share scheduling identifier for the job.</p>
    * @public
    */
   shareIdentifier?: string | undefined;
@@ -7125,7 +7331,13 @@ export interface ListServiceJobsRequest {
   jobQueue?: string | undefined;
 
   /**
-   * <p>The job status with which to filter service jobs. </p>
+   * <p>The job status used to filter service jobs in the specified queue. If the <code>filters</code>
+   * 	            parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with any
+   * 	            status are returned. The exception is the <code>SHARE_IDENTIFIER</code> filter and <code>jobStatus</code> can be used together. If you don't specify a status, only <code>RUNNING</code> jobs are
+   * 	            returned.</p>
+   *          <note>
+   *             <p>The <code>SHARE_IDENTIFIER</code> filter and the <code>jobStatus</code> field can be used together to filter results.</p>
+   *          </note>
    * @public
    */
   jobStatus?: ServiceJobStatus | undefined;
@@ -7147,9 +7359,12 @@ export interface ListServiceJobsRequest {
   nextToken?: string | undefined;
 
   /**
-   * <p>The filter to apply to the query. Only one filter can be used at a time. When the filter
-   *            is used, <code>jobStatus</code> is ignored. The results are sorted by the <code>createdAt</code> field,
-   *            with the most recent jobs being first.</p>
+   * <p>The filter to apply to the query. Only one filter can be used at a time. When the
+   * 	            filter is used, <code>jobStatus</code> is ignored with the exception that <code>SHARE_IDENTIFIER</code> and <code>jobStatus</code> can be used together. The results are sorted by the
+   * 	                <code>createdAt</code> field, with the most recent jobs being first.</p>
+   *          <note>
+   *             <p>The <code>SHARE_IDENTIFIER</code> filter and the <code>jobStatus</code> field can be used together to filter results.</p>
+   *          </note>
    *          <dl>
    *             <dt>JOB_NAME</dt>
    *             <dd>
@@ -7173,10 +7388,35 @@ export interface ListServiceJobsRequest {
    *                        corresponds to the <code>createdAt</code> value. The value is a string representation of
    *                        the number of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</p>
    *             </dd>
+   *             <dt>SHARE_IDENTIFIER</dt>
+   *             <dd>
+   *                <p>The value for the filter is the fairshare scheduling share identifier.</p>
+   *             </dd>
    *          </dl>
    * @public
    */
   filters?: KeyValuesPair[] | undefined;
+}
+
+/**
+ * <p>The capacity usage for a service job, including the unit of
+ *             measure and quantity of resources being used.</p>
+ * @public
+ */
+export interface ServiceJobCapacityUsageSummary {
+  /**
+   * <p>The unit of measure for the service job capacity usage. For service jobs, this is
+   *                 <code>NUM_INSTANCES</code>.</p>
+   * @public
+   */
+  capacityUnit?: string | undefined;
+
+  /**
+   * <p>The quantity of capacity being used by the service job, measured in the units
+   *             specified by <code>capacityUnit</code>.</p>
+   * @public
+   */
+  quantity?: number | undefined;
 }
 
 /**
@@ -7189,6 +7429,13 @@ export interface ServiceJobSummary {
    * @public
    */
   latestAttempt?: LatestServiceJobAttempt | undefined;
+
+  /**
+   * <p>The capacity usage information for this service job, including the unit of measure and
+   *             quantity of resources being used.</p>
+   * @public
+   */
+  capacityUsage?: ServiceJobCapacityUsageSummary[] | undefined;
 
   /**
    * <p>The Unix timestamp (in milliseconds) for when the service job was created.</p>
@@ -7213,6 +7460,13 @@ export interface ServiceJobSummary {
    * @public
    */
   jobName: string | undefined;
+
+  /**
+   * <p>The Unix timestamp (in milliseconds) for when the service job was scheduled for
+   *             execution.</p>
+   * @public
+   */
+  scheduledAt?: number | undefined;
 
   /**
    * <p>The type of service job. For SageMaker Training jobs, this value is <code>SAGEMAKER_TRAINING</code>.</p>
