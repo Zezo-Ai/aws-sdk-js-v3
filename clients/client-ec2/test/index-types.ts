@@ -2532,6 +2532,7 @@ export type {
   NatGatewayApplianceState,
   NatGatewayApplianceType,
   NatGatewayState,
+  NestedVirtualizationSpecification,
   NetworkInterfaceAttribute,
   NetworkInterfaceCreationType,
   NetworkInterfacePermissionStateCode,

@@ -78,7 +78,7 @@ export interface DescribeInstanceTypesCommandOutput extends DescribeInstanceType
  * //         ],
  * //         SustainedClockSpeedInGhz: Number("double"),
  * //         SupportedFeatures: [ // SupportedAdditionalProcessorFeatureList
- * //           "amd-sev-snp",
+ * //           "amd-sev-snp" || "nested-virtualization",
  * //         ],
  * //         Manufacturer: "STRING_VALUE",
  * //       },

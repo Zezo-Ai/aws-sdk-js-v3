@@ -198,6 +198,7 @@ export interface CreateLaunchTemplateCommandOutput extends CreateLaunchTemplateR
  *       CoreCount: Number("int"),
  *       ThreadsPerCore: Number("int"),
  *       AmdSevSnp: "enabled" || "disabled",
+ *       NestedVirtualization: "enabled" || "disabled",
  *     },
  *     CapacityReservationSpecification: { // LaunchTemplateCapacityReservationSpecificationRequest
  *       CapacityReservationPreference: "capacity-reservations-only" || "open" || "none",

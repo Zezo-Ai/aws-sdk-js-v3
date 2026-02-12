@@ -201,6 +201,7 @@ export interface CreateLaunchTemplateVersionCommandOutput extends CreateLaunchTe
  *       CoreCount: Number("int"),
  *       ThreadsPerCore: Number("int"),
  *       AmdSevSnp: "enabled" || "disabled",
+ *       NestedVirtualization: "enabled" || "disabled",
  *     },
  *     CapacityReservationSpecification: { // LaunchTemplateCapacityReservationSpecificationRequest
  *       CapacityReservationPreference: "capacity-reservations-only" || "open" || "none",
@@ -499,6 +500,7 @@ export interface CreateLaunchTemplateVersionCommandOutput extends CreateLaunchTe
  * //         CoreCount: Number("int"),
  * //         ThreadsPerCore: Number("int"),
  * //         AmdSevSnp: "enabled" || "disabled",
+ * //         NestedVirtualization: "enabled" || "disabled",
  * //       },
  * //       CapacityReservationSpecification: { // LaunchTemplateCapacityReservationSpecificationResponse
  * //         CapacityReservationPreference: "capacity-reservations-only" || "open" || "none",

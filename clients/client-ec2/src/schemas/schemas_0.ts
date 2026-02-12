@@ -4217,6 +4217,7 @@ const _NTI = "NitroTpmInfo";
 const _NTS = "NitroTpmSupport";
 const _NTSVL = "NitroTpmSupportedVersionsList";
 const _NTe = "NextToken";
+const _NV = "NestedVirtualization";
 const _Na = "Nameservers";
 const _O = "Origin";
 const _OA = "OutpostArn";
@@ -7210,6 +7211,7 @@ const _nT = "networkType";
 const _nTI = "nitroTpmInfo";
 const _nTS = "nitroTpmSupport";
 const _nTe = "nextToken";
+const _nV = "nestedVirtualization";
 const _o = "origin";
 const _oA = "outpostArn";
 const _oAr = "organizationsAccess";
@@ -9974,16 +9976,17 @@ export var CopyVolumesResult$: StaticStructureSchema = [3, n0, _CVRop,
 ];
 export var CpuOptions$: StaticStructureSchema = [3, n0, _CO,
   0,
-  [_CCor, _TPC, _ASS],
+  [_CCor, _TPC, _ASS, _NV],
   [[1, { [_eQN]: `CoreCount`
   , [_xN]: _cCo }], [1, { [_eQN]: `ThreadsPerCore`
   , [_xN]: _tPC }], [0, { [_eQN]: `AmdSevSnp`
-  , [_xN]: _aSS }]]
+  , [_xN]: _aSS }], [0, { [_eQN]: `NestedVirtualization`
+  , [_xN]: _nV }]]
 ];
 export var CpuOptionsRequest$: StaticStructureSchema = [3, n0, _COR,
   0,
-  [_CCor, _TPC, _ASS],
-  [1, 1, 0]
+  [_CCor, _TPC, _ASS, _NV],
+  [1, 1, 0, 0]
 ];
 export var CpuPerformanceFactor$: StaticStructureSchema = [3, n0, _CPF,
   0,
@@ -19193,16 +19196,17 @@ export var LaunchTemplateConfig$: StaticStructureSchema = [3, n0, _LTCa,
 ];
 export var LaunchTemplateCpuOptions$: StaticStructureSchema = [3, n0, _LTCO,
   0,
-  [_CCor, _TPC, _ASS],
+  [_CCor, _TPC, _ASS, _NV],
   [[1, { [_eQN]: `CoreCount`
   , [_xN]: _cCo }], [1, { [_eQN]: `ThreadsPerCore`
   , [_xN]: _tPC }], [0, { [_eQN]: `AmdSevSnp`
-  , [_xN]: _aSS }]]
+  , [_xN]: _aSS }], [0, { [_eQN]: `NestedVirtualization`
+  , [_xN]: _nV }]]
 ];
 export var LaunchTemplateCpuOptionsRequest$: StaticStructureSchema = [3, n0, _LTCOR,
   0,
-  [_CCor, _TPC, _ASS],
-  [1, 1, 0]
+  [_CCor, _TPC, _ASS, _NV],
+  [1, 1, 0, 0]
 ];
 export var LaunchTemplateEbsBlockDevice$: StaticStructureSchema = [3, n0, _LTEBD,
   0,
@@ -20012,16 +20016,17 @@ export var ModifyInstanceConnectEndpointResult$: StaticStructureSchema = [3, n0,
 ];
 export var ModifyInstanceCpuOptionsRequest$: StaticStructureSchema = [3, n0, _MICOR,
   0,
-  [_II, _CCor, _TPC, _DR],
-  [0, 1, 1, 2], 3
+  [_II, _CCor, _TPC, _NV, _DR],
+  [0, 1, 1, 0, 2], 1
 ];
 export var ModifyInstanceCpuOptionsResult$: StaticStructureSchema = [3, n0, _MICORo,
   0,
-  [_II, _CCor, _TPC],
+  [_II, _CCor, _TPC, _NV],
   [[0, { [_eQN]: `InstanceId`
   , [_xN]: _iI }], [1, { [_eQN]: `CoreCount`
   , [_xN]: _cCo }], [1, { [_eQN]: `ThreadsPerCore`
-  , [_xN]: _tPC }]]
+  , [_xN]: _tPC }], [0, { [_eQN]: `NestedVirtualization`
+  , [_xN]: _nV }]]
 ];
 export var ModifyInstanceCreditSpecificationRequest$: StaticStructureSchema = [3, n0, _MICSR,
   0,

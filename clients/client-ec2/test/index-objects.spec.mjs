@@ -3470,6 +3470,7 @@ import {
   NatGatewayAttachedAppliance$,
   NatGatewayState,
   NativeApplicationOidcOptions$,
+  NestedVirtualizationSpecification,
   NetworkAcl$,
   NetworkAclAssociation$,
   NetworkAclEntry$,
@@ -8691,6 +8692,7 @@ assert(typeof NatGatewayApplianceModifyState === "object");
 assert(typeof NatGatewayApplianceState === "object");
 assert(typeof NatGatewayApplianceType === "object");
 assert(typeof NatGatewayState === "object");
+assert(typeof NestedVirtualizationSpecification === "object");
 assert(typeof NetworkInterfaceAttribute === "object");
 assert(typeof NetworkInterfaceCreationType === "object");
 assert(typeof NetworkInterfacePermissionStateCode === "object");

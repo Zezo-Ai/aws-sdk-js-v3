@@ -49,6 +49,7 @@ import {
   LockState,
   MonitoringState,
   MoveStatus,
+  NestedVirtualizationSpecification,
   NetworkInterfaceAttribute,
   NetworkInterfaceStatus,
   NitroEnclavesSupport,
@@ -992,6 +993,12 @@ export interface CpuOptions {
    * @public
    */
   AmdSevSnp?: AmdSevSnpSpecification | undefined;
+
+  /**
+   * <p>Indicates whether the instance is enabled for nested virtualization.</p>
+   * @public
+   */
+  NestedVirtualization?: NestedVirtualizationSpecification | undefined;
 }
 
 /**

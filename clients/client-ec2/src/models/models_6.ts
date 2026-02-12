@@ -59,6 +59,7 @@ import {
   ManagedBy,
   MetadataDefaultHttpTokensState,
   ModifyAvailabilityZoneOptInStatus,
+  NestedVirtualizationSpecification,
   OperationType,
   PartitionLoadFrequency,
   PaymentOption,
@@ -7507,13 +7508,20 @@ export interface ModifyInstanceCpuOptionsRequest {
    * <p>The number of CPU cores to activate for the specified instance.</p>
    * @public
    */
-  CoreCount: number | undefined;
+  CoreCount?: number | undefined;
 
   /**
    * <p>The number of threads to run for each CPU core.</p>
    * @public
    */
-  ThreadsPerCore: number | undefined;
+  ThreadsPerCore?: number | undefined;
+
+  /**
+   * <p>Indicates whether to enable or disable nested virtualization for the instance.
+   *             When nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled for the instance.</p>
+   * @public
+   */
+  NestedVirtualization?: NestedVirtualizationSpecification | undefined;
 
   /**
    * <p>Checks whether you have the required permissions for the operation, without actually making the
@@ -7547,6 +7555,12 @@ export interface ModifyInstanceCpuOptionsResult {
    * @public
    */
   ThreadsPerCore?: number | undefined;
+
+  /**
+   * <p>Indicates whether nested virtualization has been enabled or disabled.</p>
+   * @public
+   */
+  NestedVirtualization?: NestedVirtualizationSpecification | undefined;
 }
 
 /**

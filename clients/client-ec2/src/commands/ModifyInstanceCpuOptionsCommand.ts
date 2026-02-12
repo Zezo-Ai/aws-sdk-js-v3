@@ -47,8 +47,9 @@ export interface ModifyInstanceCpuOptionsCommandOutput extends ModifyInstanceCpu
  * const client = new EC2Client(config);
  * const input = { // ModifyInstanceCpuOptionsRequest
  *   InstanceId: "STRING_VALUE", // required
- *   CoreCount: Number("int"), // required
- *   ThreadsPerCore: Number("int"), // required
+ *   CoreCount: Number("int"),
+ *   ThreadsPerCore: Number("int"),
+ *   NestedVirtualization: "enabled" || "disabled",
  *   DryRun: true || false,
  * };
  * const command = new ModifyInstanceCpuOptionsCommand(input);
@@ -57,6 +58,7 @@ export interface ModifyInstanceCpuOptionsCommandOutput extends ModifyInstanceCpu
  * //   InstanceId: "STRING_VALUE",
  * //   CoreCount: Number("int"),
  * //   ThreadsPerCore: Number("int"),
+ * //   NestedVirtualization: "enabled" || "disabled",
  * // };
  *
  * ```

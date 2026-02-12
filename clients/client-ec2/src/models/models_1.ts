@@ -79,6 +79,7 @@ import {
   NatGatewayApplianceState,
   NatGatewayApplianceType,
   NatGatewayState,
+  NestedVirtualizationSpecification,
   NetworkInterfaceCreationType,
   NetworkInterfacePermissionStateCode,
   NetworkInterfaceStatus,
@@ -6863,6 +6864,14 @@ export interface LaunchTemplateCpuOptionsRequest {
    * @public
    */
   AmdSevSnp?: AmdSevSnpSpecification | undefined;
+
+  /**
+   * <p>Indicates whether to enable the instance for nested virtualization.
+   *             Nested virtualization is supported only on 8th generation Intel-based instance types (c8i, m8i, r8i, and their flex variants).
+   *             When nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled for the instance.</p>
+   * @public
+   */
+  NestedVirtualization?: NestedVirtualizationSpecification | undefined;
 }
 
 /**
@@ -8495,6 +8504,12 @@ export interface LaunchTemplateCpuOptions {
    * @public
    */
   AmdSevSnp?: AmdSevSnpSpecification | undefined;
+
+  /**
+   * <p>Indicates whether the instance is enabled for nested virtualization. </p>
+   * @public
+   */
+  NestedVirtualization?: NestedVirtualizationSpecification | undefined;
 }
 
 /**

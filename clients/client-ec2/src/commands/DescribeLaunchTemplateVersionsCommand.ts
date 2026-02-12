@@ -221,6 +221,7 @@ export interface DescribeLaunchTemplateVersionsCommandOutput extends DescribeLau
  * //           CoreCount: Number("int"),
  * //           ThreadsPerCore: Number("int"),
  * //           AmdSevSnp: "enabled" || "disabled",
+ * //           NestedVirtualization: "enabled" || "disabled",
  * //         },
  * //         CapacityReservationSpecification: { // LaunchTemplateCapacityReservationSpecificationResponse
  * //           CapacityReservationPreference: "capacity-reservations-only" || "open" || "none",

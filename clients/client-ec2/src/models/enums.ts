@@ -3689,6 +3689,20 @@ export type AmdSevSnpSpecification = (typeof AmdSevSnpSpecification)[keyof typeo
  * @public
  * @enum
  */
+export const NestedVirtualizationSpecification = {
+  disabled: "disabled",
+  enabled: "enabled",
+} as const;
+/**
+ * @public
+ */
+export type NestedVirtualizationSpecification =
+  (typeof NestedVirtualizationSpecification)[keyof typeof NestedVirtualizationSpecification];
+
+/**
+ * @public
+ * @enum
+ */
 export const ShutdownBehavior = {
   stop: "stop",
   terminate: "terminate",
@@ -6563,6 +6577,7 @@ export type ArchitectureType = (typeof ArchitectureType)[keyof typeof Architectu
  */
 export const SupportedAdditionalProcessorFeature = {
   AMD_SEV_SNP: "amd-sev-snp",
+  NESTED_VIRTUALIZATION: "nested-virtualization",
 } as const;
 /**
  * @public

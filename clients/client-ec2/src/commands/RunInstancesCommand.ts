@@ -191,6 +191,7 @@ export interface RunInstancesCommandOutput extends Reservation, __MetadataBearer
  *     CoreCount: Number("int"),
  *     ThreadsPerCore: Number("int"),
  *     AmdSevSnp: "enabled" || "disabled",
+ *     NestedVirtualization: "enabled" || "disabled",
  *   },
  *   CapacityReservationSpecification: { // CapacityReservationSpecification
  *     CapacityReservationPreference: "capacity-reservations-only" || "open" || "none",
@@ -478,6 +479,7 @@ export interface RunInstancesCommandOutput extends Reservation, __MetadataBearer
  * //         CoreCount: Number("int"),
  * //         ThreadsPerCore: Number("int"),
  * //         AmdSevSnp: "enabled" || "disabled",
+ * //         NestedVirtualization: "enabled" || "disabled",
  * //       },
  * //       CapacityBlockId: "STRING_VALUE",
  * //       CapacityReservationId: "STRING_VALUE",
