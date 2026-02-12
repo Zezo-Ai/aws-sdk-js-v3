@@ -12,6 +12,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+
+# 3.973.9 (2026-02-11)
+### Bug Fixes
+* **client-ec2:** fix ec2QueryName serialization ([#7734](https://github.com/aws/aws-sdk-js-v3/issues/7734)) ([05e3a62](https://github.com/aws/aws-sdk-js-v3/commit/05e3a621a6d8d49a4d027638987326d9c850dbf3))
+
+
+
 # 3.973.8 (2026-02-10)
 ### Chores
 * **codegen:** update for compositeErrorRegistries ([#7728](https://github.com/aws/aws-sdk-js-v3/issues/7728)) ([d20ea16](https://github.com/aws/aws-sdk-js-v3/commit/d20ea16f8069517b7dc02c62f39afea11423f061))

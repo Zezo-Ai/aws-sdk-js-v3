@@ -12,6 +12,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+
+# 3.972.10 (2026-02-12)
+### Chores
+* **dynamodb-codec:** update dependencies.
+
+
+
 # 3.972.9 (2026-02-10)
 ### Chores
 * **codegen:** update for compositeErrorRegistries ([#7728](https://github.com/aws/aws-sdk-js-v3/issues/7728)) ([d20ea16](https://github.com/aws/aws-sdk-js-v3/commit/d20ea16f8069517b7dc02c62f39afea11423f061))

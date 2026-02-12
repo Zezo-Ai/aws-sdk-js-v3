@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.989.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.988.0...v3.989.0) (2026-02-12)
+
+
+### Features
+
+* **client-ec2:** Launching nested virtualization. This feature allows you to run nested VMs inside virtual (non-bare metal) EC2 instances. ([9541a83](https://github.com/aws/aws-sdk-js-v3/commit/9541a839f1825bd6fbb29a8708813fff67ce26ff))
+
+
+
+
+
 # [3.988.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.987.0...v3.988.0) (2026-02-11)
 
 

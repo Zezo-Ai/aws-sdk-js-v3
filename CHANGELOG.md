@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.989.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.988.0...v3.989.0) (2026-02-12)
+
+
+### Bug Fixes
+
+* **client-ec2:** fix ec2QueryName serialization ([#7734](https://github.com/aws/aws-sdk-js-v3/issues/7734)) ([05e3a62](https://github.com/aws/aws-sdk-js-v3/commit/05e3a621a6d8d49a4d027638987326d9c850dbf3))
+
+
+### Features
+
+* **client-ec2:** Launching nested virtualization. This feature allows you to run nested VMs inside virtual (non-bare metal) EC2 instances. ([9541a83](https://github.com/aws/aws-sdk-js-v3/commit/9541a839f1825bd6fbb29a8708813fff67ce26ff))
+
+
+
+
+
 # [3.988.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.987.0...v3.988.0) (2026-02-11)
 
 
