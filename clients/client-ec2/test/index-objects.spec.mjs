@@ -248,9 +248,11 @@ import {
   AvailabilityMode,
   AvailabilityZone$,
   AvailabilityZoneAddress$,
+  AvailabilityZoneGeography$,
   AvailabilityZoneMessage$,
   AvailabilityZoneOptInStatus,
   AvailabilityZoneState,
+  AvailabilityZoneSubGeography$,
   AvailableCapacity$,
   BandwidthWeightingType,
   BareMetal,
@@ -3801,6 +3803,7 @@ import {
   ReferencedSecurityGroup$,
   Region$,
   RegionalSummary$,
+  RegionGeography$,
   RegisteredInstance$,
   RegisterImage$,
   RegisterImageCommand,
@@ -6206,7 +6209,9 @@ assert(typeof AuthorizeSecurityGroupIngressRequest$ === "object");
 assert(typeof AuthorizeSecurityGroupIngressResult$ === "object");
 assert(typeof AvailabilityZone$ === "object");
 assert(typeof AvailabilityZoneAddress$ === "object");
+assert(typeof AvailabilityZoneGeography$ === "object");
 assert(typeof AvailabilityZoneMessage$ === "object");
+assert(typeof AvailabilityZoneSubGeography$ === "object");
 assert(typeof AvailableCapacity$ === "object");
 assert(typeof BaselineEbsBandwidthMbps$ === "object");
 assert(typeof BaselineEbsBandwidthMbpsRequest$ === "object");
@@ -8033,6 +8038,7 @@ assert(typeof RecurringCharge$ === "object");
 assert(typeof ReferencedSecurityGroup$ === "object");
 assert(typeof Region$ === "object");
 assert(typeof RegionalSummary$ === "object");
+assert(typeof RegionGeography$ === "object");
 assert(typeof RegisteredInstance$ === "object");
 assert(typeof RegisterImageRequest$ === "object");
 assert(typeof RegisterImageResult$ === "object");

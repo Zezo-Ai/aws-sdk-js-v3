@@ -1951,6 +1951,18 @@ export interface DescribeAvailabilityZonesRequest {
 }
 
 /**
+ * <p>Describes the geography information for an Availability Zone or Local Zone.</p>
+ * @public
+ */
+export interface AvailabilityZoneGeography {
+  /**
+   * <p>The name of the geography, for example, <code>United States of America</code>.</p>
+   * @public
+   */
+  Name?: string | undefined;
+}
+
+/**
  * <p>Describes a message about an Availability Zone, Local Zone, or Wavelength Zone.</p>
  * @public
  */
@@ -1960,6 +1972,19 @@ export interface AvailabilityZoneMessage {
    * @public
    */
   Message?: string | undefined;
+}
+
+/**
+ * <p>Describes the sub-geography information for an Availability Zone or Local Zone.</p>
+ * @public
+ */
+export interface AvailabilityZoneSubGeography {
+  /**
+   * <p>The name of the sub-geography, for example, <code>Oregon.</code>
+   *          </p>
+   * @public
+   */
+  Name?: string | undefined;
 }
 
 /**
@@ -2055,6 +2080,19 @@ export interface AvailabilityZone {
    * @public
    */
   GroupLongName?: string | undefined;
+
+  /**
+   * <p>The geography information for the Availability Zone or Local Zone. The geography is returned as a list.</p>
+   * @public
+   */
+  Geography?: AvailabilityZoneGeography[] | undefined;
+
+  /**
+   * <p>The sub-geography information for the Availability Zone or Local Zone. The sub-geography is returned
+   *       as a list.</p>
+   * @public
+   */
+  SubGeography?: AvailabilityZoneSubGeography[] | undefined;
 
   /**
    * <p>The state of the Availability Zone, Local Zone, or Wavelength Zone. The possible values are
@@ -11345,88 +11383,4 @@ export interface InstanceState {
    * @public
    */
   Name?: InstanceStateName | undefined;
-}
-
-/**
- * <p>Information about the instance and the AMI used to launch the instance.</p>
- * @public
- */
-export interface InstanceImageMetadata {
-  /**
-   * <p>The ID of the instance.</p>
-   * @public
-   */
-  InstanceId?: string | undefined;
-
-  /**
-   * <p>The instance type.</p>
-   * @public
-   */
-  InstanceType?: _InstanceType | undefined;
-
-  /**
-   * <p>The time the instance was launched.</p>
-   * @public
-   */
-  LaunchTime?: Date | undefined;
-
-  /**
-   * <p>The Availability Zone or Local Zone of the instance.</p>
-   * @public
-   */
-  AvailabilityZone?: string | undefined;
-
-  /**
-   * <p>The ID of the Availability Zone or Local Zone of the instance.</p>
-   * @public
-   */
-  ZoneId?: string | undefined;
-
-  /**
-   * <p>The current state of the instance.</p>
-   * @public
-   */
-  State?: InstanceState | undefined;
-
-  /**
-   * <p>The ID of the Amazon Web Services account that owns the instance.</p>
-   * @public
-   */
-  OwnerId?: string | undefined;
-
-  /**
-   * <p>Any tags assigned to the instance.</p>
-   * @public
-   */
-  Tags?: Tag[] | undefined;
-
-  /**
-   * <p>Information about the AMI used to launch the instance.</p>
-   * @public
-   */
-  ImageMetadata?: ImageMetadata | undefined;
-
-  /**
-   * <p>The entity that manages the instance.</p>
-   * @public
-   */
-  Operator?: OperatorResponse | undefined;
-}
-
-/**
- * @public
- */
-export interface DescribeInstanceImageMetadataResult {
-  /**
-   * <p>Information about the instance and the AMI used to launch the instance.</p>
-   * @public
-   */
-  InstanceImageMetadata?: InstanceImageMetadata[] | undefined;
-
-  /**
-   * <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there
-   *          are no more items to return.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
 }

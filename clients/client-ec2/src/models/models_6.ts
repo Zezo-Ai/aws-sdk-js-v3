@@ -145,8 +145,6 @@ import {
   type TrafficMirrorFilterRule,
   type TrafficMirrorPortRangeRequest,
   type TrafficMirrorSession,
-  type TransitGateway,
-  type TransitGatewayMeteringPolicy,
   SubnetCidrReservation,
   TransitGatewayMeteringPolicyEntry,
   TransitGatewayPrefixListReference,
@@ -170,6 +168,41 @@ import {
   ReservedInstancesConfiguration,
 } from "./models_4";
 import { type InstanceFamilyCreditSpecification, RouteServerPropagation } from "./models_5";
+
+/**
+ * @public
+ */
+export interface GetDefaultCreditSpecificationResult {
+  /**
+   * <p>The default credit option for CPU usage of the instance family.</p>
+   * @public
+   */
+  InstanceFamilyCreditSpecification?: InstanceFamilyCreditSpecification | undefined;
+}
+
+/**
+ * @public
+ */
+export interface GetEbsDefaultKmsKeyIdRequest {
+  /**
+   * <p>Checks whether you have the required permissions for the action, without actually making the request,
+   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   * @public
+   */
+  DryRun?: boolean | undefined;
+}
+
+/**
+ * @public
+ */
+export interface GetEbsDefaultKmsKeyIdResult {
+  /**
+   * <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by default.</p>
+   * @public
+   */
+  KmsKeyId?: string | undefined;
+}
 
 /**
  * @public
@@ -10056,57 +10089,4 @@ export interface ModifyTransitGatewayRequest {
    * @public
    */
   DryRun?: boolean | undefined;
-}
-
-/**
- * @public
- */
-export interface ModifyTransitGatewayResult {
-  /**
-   * <p>Information about the transit gateway.</p>
-   * @public
-   */
-  TransitGateway?: TransitGateway | undefined;
-}
-
-/**
- * @public
- */
-export interface ModifyTransitGatewayMeteringPolicyRequest {
-  /**
-   * <p>The ID of the transit gateway metering policy to modify.</p>
-   * @public
-   */
-  TransitGatewayMeteringPolicyId: string | undefined;
-
-  /**
-   * <p>The IDs of middlebox attachments to add to the metering policy.</p>
-   * @public
-   */
-  AddMiddleboxAttachmentIds?: string[] | undefined;
-
-  /**
-   * <p>The IDs of middlebox attachments to remove from the metering policy.</p>
-   * @public
-   */
-  RemoveMiddleboxAttachmentIds?: string[] | undefined;
-
-  /**
-   * <p>Checks whether you have the required permissions for the action, without actually making the request,
-   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-   * @public
-   */
-  DryRun?: boolean | undefined;
-}
-
-/**
- * @public
- */
-export interface ModifyTransitGatewayMeteringPolicyResult {
-  /**
-   * <p>Information about the modified transit gateway metering policy.</p>
-   * @public
-   */
-  TransitGatewayMeteringPolicy?: TransitGatewayMeteringPolicy | undefined;
 }

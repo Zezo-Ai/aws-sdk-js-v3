@@ -87,9 +87,6 @@ import {
   TargetCapacityUnitType,
   Tenancy,
   TieringOperationStatus,
-  TransitGatewayAssociationState,
-  TransitGatewayAttachmentResourceType,
-  TransitGatewayAttachmentState,
   UsageClassType,
   VirtualizationType,
 } from "./enums";
@@ -172,6 +169,7 @@ import {
   type AttributeBooleanValue,
   type EnclaveOptions,
   type EventInformation,
+  type ImageMetadata,
   type InstanceState,
   Byoasn,
   Filter,
@@ -179,6 +177,90 @@ import {
   InstanceBlockDeviceMapping,
   ProductCode,
 } from "./models_3";
+
+/**
+ * <p>Information about the instance and the AMI used to launch the instance.</p>
+ * @public
+ */
+export interface InstanceImageMetadata {
+  /**
+   * <p>The ID of the instance.</p>
+   * @public
+   */
+  InstanceId?: string | undefined;
+
+  /**
+   * <p>The instance type.</p>
+   * @public
+   */
+  InstanceType?: _InstanceType | undefined;
+
+  /**
+   * <p>The time the instance was launched.</p>
+   * @public
+   */
+  LaunchTime?: Date | undefined;
+
+  /**
+   * <p>The Availability Zone or Local Zone of the instance.</p>
+   * @public
+   */
+  AvailabilityZone?: string | undefined;
+
+  /**
+   * <p>The ID of the Availability Zone or Local Zone of the instance.</p>
+   * @public
+   */
+  ZoneId?: string | undefined;
+
+  /**
+   * <p>The current state of the instance.</p>
+   * @public
+   */
+  State?: InstanceState | undefined;
+
+  /**
+   * <p>The ID of the Amazon Web Services account that owns the instance.</p>
+   * @public
+   */
+  OwnerId?: string | undefined;
+
+  /**
+   * <p>Any tags assigned to the instance.</p>
+   * @public
+   */
+  Tags?: Tag[] | undefined;
+
+  /**
+   * <p>Information about the AMI used to launch the instance.</p>
+   * @public
+   */
+  ImageMetadata?: ImageMetadata | undefined;
+
+  /**
+   * <p>The entity that manages the instance.</p>
+   * @public
+   */
+  Operator?: OperatorResponse | undefined;
+}
+
+/**
+ * @public
+ */
+export interface DescribeInstanceImageMetadataResult {
+  /**
+   * <p>Information about the instance and the AMI used to launch the instance.</p>
+   * @public
+   */
+  InstanceImageMetadata?: InstanceImageMetadata[] | undefined;
+
+  /**
+   * <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there
+   *          are no more items to return.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+}
 
 /**
  * @public
@@ -8412,6 +8494,18 @@ export interface DescribeRegionsRequest {
 }
 
 /**
+ * <p>Describes the geography information for a Region.</p>
+ * @public
+ */
+export interface RegionGeography {
+  /**
+   * <p>The name of the geography, for example, <code>United States of America</code>.</p>
+   * @public
+   */
+  Name?: string | undefined;
+}
+
+/**
  * <p>Describes a Region.</p>
  * @public
  */
@@ -8422,6 +8516,12 @@ export interface Region {
    * @public
    */
   OptInStatus?: string | undefined;
+
+  /**
+   * <p>The geography information for the Region. The geography is returned as a list.</p>
+   * @public
+   */
+  Geography?: RegionGeography[] | undefined;
 
   /**
    * <p>The name of the Region.</p>
@@ -14706,105 +14806,4 @@ export interface DescribeTransitGatewayAttachmentsRequest {
    * @public
    */
   DryRun?: boolean | undefined;
-}
-
-/**
- * <p>Describes an association.</p>
- * @public
- */
-export interface TransitGatewayAttachmentAssociation {
-  /**
-   * <p>The ID of the route table for the transit gateway.</p>
-   * @public
-   */
-  TransitGatewayRouteTableId?: string | undefined;
-
-  /**
-   * <p>The state of the association.</p>
-   * @public
-   */
-  State?: TransitGatewayAssociationState | undefined;
-}
-
-/**
- * <p>Describes an attachment between a resource and a transit gateway.</p>
- * @public
- */
-export interface TransitGatewayAttachment {
-  /**
-   * <p>The ID of the attachment.</p>
-   * @public
-   */
-  TransitGatewayAttachmentId?: string | undefined;
-
-  /**
-   * <p>The ID of the transit gateway.</p>
-   * @public
-   */
-  TransitGatewayId?: string | undefined;
-
-  /**
-   * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
-   * @public
-   */
-  TransitGatewayOwnerId?: string | undefined;
-
-  /**
-   * <p>The ID of the Amazon Web Services account that owns the resource.</p>
-   * @public
-   */
-  ResourceOwnerId?: string | undefined;
-
-  /**
-   * <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
-   * @public
-   */
-  ResourceType?: TransitGatewayAttachmentResourceType | undefined;
-
-  /**
-   * <p>The ID of the resource.</p>
-   * @public
-   */
-  ResourceId?: string | undefined;
-
-  /**
-   * <p>The attachment state. Note that the <code>initiating</code> state has been deprecated.</p>
-   * @public
-   */
-  State?: TransitGatewayAttachmentState | undefined;
-
-  /**
-   * <p>The association.</p>
-   * @public
-   */
-  Association?: TransitGatewayAttachmentAssociation | undefined;
-
-  /**
-   * <p>The creation time.</p>
-   * @public
-   */
-  CreationTime?: Date | undefined;
-
-  /**
-   * <p>The tags for the attachment.</p>
-   * @public
-   */
-  Tags?: Tag[] | undefined;
-}
-
-/**
- * @public
- */
-export interface DescribeTransitGatewayAttachmentsResult {
-  /**
-   * <p>Information about the attachments.</p>
-   * @public
-   */
-  TransitGatewayAttachments?: TransitGatewayAttachment[] | undefined;
-
-  /**
-   * <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
 }

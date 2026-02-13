@@ -87,6 +87,8 @@ import {
 } from "./models_1";
 import {
   type DnsOptionsSpecification,
+  type TransitGateway,
+  type TransitGatewayMeteringPolicy,
   type TransitGatewayPrefixListReference,
   type VerifiedAccessEndpoint,
   type VerifiedAccessGroup,
@@ -133,6 +135,59 @@ import type {
   VpcBlockPublicAccessOptions,
 } from "./models_5";
 import { type CapacityReservationSpecification, Purchase } from "./models_6";
+
+/**
+ * @public
+ */
+export interface ModifyTransitGatewayResult {
+  /**
+   * <p>Information about the transit gateway.</p>
+   * @public
+   */
+  TransitGateway?: TransitGateway | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyTransitGatewayMeteringPolicyRequest {
+  /**
+   * <p>The ID of the transit gateway metering policy to modify.</p>
+   * @public
+   */
+  TransitGatewayMeteringPolicyId: string | undefined;
+
+  /**
+   * <p>The IDs of middlebox attachments to add to the metering policy.</p>
+   * @public
+   */
+  AddMiddleboxAttachmentIds?: string[] | undefined;
+
+  /**
+   * <p>The IDs of middlebox attachments to remove from the metering policy.</p>
+   * @public
+   */
+  RemoveMiddleboxAttachmentIds?: string[] | undefined;
+
+  /**
+   * <p>Checks whether you have the required permissions for the action, without actually making the request,
+   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
+   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   * @public
+   */
+  DryRun?: boolean | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ModifyTransitGatewayMeteringPolicyResult {
+  /**
+   * <p>Information about the modified transit gateway metering policy.</p>
+   * @public
+   */
+  TransitGatewayMeteringPolicy?: TransitGatewayMeteringPolicy | undefined;
+}
 
 /**
  * @public

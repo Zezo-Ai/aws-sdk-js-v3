@@ -35,7 +35,9 @@ import {
   SnapshotBlockPublicAccessState,
   State,
   StatisticType,
+  TransitGatewayAssociationState,
   TransitGatewayAttachmentResourceType,
+  TransitGatewayAttachmentState,
   TransitGatewayPropagationState,
   UnlimitedSupportedInstanceFamily,
   UserTrustProviderType,
@@ -110,6 +112,107 @@ import {
   ProductCode,
 } from "./models_3";
 import { RegisteredInstance } from "./models_4";
+
+/**
+ * <p>Describes an association.</p>
+ * @public
+ */
+export interface TransitGatewayAttachmentAssociation {
+  /**
+   * <p>The ID of the route table for the transit gateway.</p>
+   * @public
+   */
+  TransitGatewayRouteTableId?: string | undefined;
+
+  /**
+   * <p>The state of the association.</p>
+   * @public
+   */
+  State?: TransitGatewayAssociationState | undefined;
+}
+
+/**
+ * <p>Describes an attachment between a resource and a transit gateway.</p>
+ * @public
+ */
+export interface TransitGatewayAttachment {
+  /**
+   * <p>The ID of the attachment.</p>
+   * @public
+   */
+  TransitGatewayAttachmentId?: string | undefined;
+
+  /**
+   * <p>The ID of the transit gateway.</p>
+   * @public
+   */
+  TransitGatewayId?: string | undefined;
+
+  /**
+   * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
+   * @public
+   */
+  TransitGatewayOwnerId?: string | undefined;
+
+  /**
+   * <p>The ID of the Amazon Web Services account that owns the resource.</p>
+   * @public
+   */
+  ResourceOwnerId?: string | undefined;
+
+  /**
+   * <p>The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.</p>
+   * @public
+   */
+  ResourceType?: TransitGatewayAttachmentResourceType | undefined;
+
+  /**
+   * <p>The ID of the resource.</p>
+   * @public
+   */
+  ResourceId?: string | undefined;
+
+  /**
+   * <p>The attachment state. Note that the <code>initiating</code> state has been deprecated.</p>
+   * @public
+   */
+  State?: TransitGatewayAttachmentState | undefined;
+
+  /**
+   * <p>The association.</p>
+   * @public
+   */
+  Association?: TransitGatewayAttachmentAssociation | undefined;
+
+  /**
+   * <p>The creation time.</p>
+   * @public
+   */
+  CreationTime?: Date | undefined;
+
+  /**
+   * <p>The tags for the attachment.</p>
+   * @public
+   */
+  Tags?: Tag[] | undefined;
+}
+
+/**
+ * @public
+ */
+export interface DescribeTransitGatewayAttachmentsResult {
+  /**
+   * <p>Information about the attachments.</p>
+   * @public
+   */
+  TransitGatewayAttachments?: TransitGatewayAttachment[] | undefined;
+
+  /**
+   * <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+}
 
 /**
  * @public
@@ -8959,39 +9062,4 @@ export interface InstanceFamilyCreditSpecification {
    * @public
    */
   CpuCredits?: string | undefined;
-}
-
-/**
- * @public
- */
-export interface GetDefaultCreditSpecificationResult {
-  /**
-   * <p>The default credit option for CPU usage of the instance family.</p>
-   * @public
-   */
-  InstanceFamilyCreditSpecification?: InstanceFamilyCreditSpecification | undefined;
-}
-
-/**
- * @public
- */
-export interface GetEbsDefaultKmsKeyIdRequest {
-  /**
-   * <p>Checks whether you have the required permissions for the action, without actually making the request,
-   *    and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>.
-   *    Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-   * @public
-   */
-  DryRun?: boolean | undefined;
-}
-
-/**
- * @public
- */
-export interface GetEbsDefaultKmsKeyIdResult {
-  /**
-   * <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by default.</p>
-   * @public
-   */
-  KmsKeyId?: string | undefined;
 }

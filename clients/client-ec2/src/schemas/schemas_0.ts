@@ -390,13 +390,17 @@ const _AWSAKI = "AWSAccessKeyId";
 const _AZ = "AvailabilityZone";
 const _AZA = "AvailabilityZoneAddress";
 const _AZAv = "AvailabilityZoneAddresses";
-const _AZG = "AvailabilityZoneGroup";
+const _AZG = "AvailabilityZoneGeography";
+const _AZGL = "AvailabilityZoneGeographyList";
+const _AZGv = "AvailabilityZoneGroup";
 const _AZI = "AvailabilityZoneId";
 const _AZISL = "AvailabilityZoneIdStringList";
 const _AZIv = "AvailabilityZoneIds";
 const _AZL = "AvailabilityZoneList";
 const _AZM = "AvailabilityZoneMessage";
 const _AZML = "AvailabilityZoneMessageList";
+const _AZSG = "AvailabilityZoneSubGeography";
+const _AZSGL = "AvailabilityZoneSubGeographyList";
 const _AZSL = "AvailabilityZoneStringList";
 const _AZv = "AvailabilityZones";
 const _Ac = "Acl";
@@ -2898,6 +2902,7 @@ const _GVRBEERe = "GetVpcResourcesBlockingEncryptionEnforcementResult";
 const _GVTRS = "GetVpnTunnelReplacementStatus";
 const _GVTRSR = "GetVpnTunnelReplacementStatusRequest";
 const _GVTRSRe = "GetVpnTunnelReplacementStatusResult";
+const _Ge = "Geography";
 const _Gp = "Gpus";
 const _Gr = "Group";
 const _H = "Hosts";
@@ -4670,9 +4675,11 @@ const _RFISL = "ReservationFleetInstanceSpecificationList";
 const _RFP = "RekeyFuzzPercentage";
 const _RFPR = "RequestFilterPortRange";
 const _RFe = "RemoveField";
+const _RG = "RegionGeography";
 const _RGA = "RuleGroupArn";
 const _RGI = "ReferencedGroupId";
 const _RGIe = "ReferencedGroupInfo";
+const _RGL = "RegionGeographyList";
 const _RGLBA = "RemoveGatewayLoadBalancerArns";
 const _RGLBAe = "RemoveGatewayLoadBalancerArn";
 const _RGROP = "RuleGroupRuleOptionsPairs";
@@ -5086,7 +5093,7 @@ const _SFRIp = "SpotFleetRequestIds";
 const _SFRS = "SpotFleetRequestState";
 const _SFTS = "SpotFleetTagSpecification";
 const _SFTSL = "SpotFleetTagSpecificationList";
-const _SG = "SecurityGroups";
+const _SG = "SubGeography";
 const _SGA = "SecurityGroupArn";
 const _SGFV = "SecurityGroupForVpcs";
 const _SGFVL = "SecurityGroupForVpcList";
@@ -5120,7 +5127,8 @@ const _SGSL = "SecurityGroupStringList";
 const _SGVA = "SecurityGroupVpcAssociations";
 const _SGVAL = "SecurityGroupVpcAssociationList";
 const _SGVAe = "SecurityGroupVpcAssociation";
-const _SGe = "SecurityGroup";
+const _SGe = "SecurityGroups";
+const _SGec = "SecurityGroup";
 const _SH = "StartHour";
 const _SI = "SubnetIds";
 const _SIA = "ScheduledInstanceAvailability";
@@ -6672,8 +6680,9 @@ const _gM = "groupMember";
 const _gN = "groupName";
 const _gOI = "groupOwnerId";
 const _gPS = "gpuPartitionSize";
-const _gS = "groupSet";
-const _gSr = "groupSource";
+const _gS = "geographySet";
+const _gSr = "groupSet";
+const _gSro = "groupSource";
 const _gp = "gpus";
 const _gr = "groups";
 const _h = "hypervisor";
@@ -7637,7 +7646,8 @@ const _sGRI = "securityGroupRuleId";
 const _sGRS = "securityGroupRuleSet";
 const _sGRSe = "securityGroupReferenceSet";
 const _sGRSec = "securityGroupReferencingSupport";
-const _sGS = "securityGroupSet";
+const _sGS = "subGeographySet";
+const _sGSe = "securityGroupSet";
 const _sGVAS = "securityGroupVpcAssociationSet";
 const _sGe = "securityGroups";
 const _sH = "startHour";
@@ -9000,7 +9010,7 @@ export var AuthorizeSecurityGroupIngressResult$: StaticStructureSchema = [3, n0,
 ];
 export var AvailabilityZone$: StaticStructureSchema = [3, n0, _AZ,
   0,
-  [_OIS, _Mes, _RN, _ZN, _ZI, _GN, _NBG, _ZT, _PZN, _PZI, _GLN, _St],
+  [_OIS, _Mes, _RN, _ZN, _ZI, _GN, _NBG, _ZT, _PZN, _PZI, _GLN, _Ge, _SG, _St],
   [[0, { [_eQN]: `OptInStatus`
   , [_xN]: _oIS }], [() => AvailabilityZoneMessageList, { [_eQN]: `MessageSet`
   , [_xN]: _mS }], [0, { [_eQN]: `RegionName`
@@ -9012,7 +9022,9 @@ export var AvailabilityZone$: StaticStructureSchema = [3, n0, _AZ,
   , [_xN]: _zT }], [0, { [_eQN]: `ParentZoneName`
   , [_xN]: _pZN }], [0, { [_eQN]: `ParentZoneId`
   , [_xN]: _pZI }], [0, { [_eQN]: `GroupLongName`
-  , [_xN]: _gLN }], [0, { [_eQN]: `ZoneState`
+  , [_xN]: _gLN }], [() => AvailabilityZoneGeographyList, { [_eQN]: `GeographySet`
+  , [_xN]: _gS }], [() => AvailabilityZoneSubGeographyList, { [_eQN]: `SubGeographySet`
+  , [_xN]: _sGS }], [0, { [_eQN]: `ZoneState`
   , [_xN]: _zS }]]
 ];
 export var AvailabilityZoneAddress$: StaticStructureSchema = [3, n0, _AZA,
@@ -9020,11 +9032,23 @@ export var AvailabilityZoneAddress$: StaticStructureSchema = [3, n0, _AZA,
   [_AZ, _AZI, _AIll],
   [0, 0, [() => AllocationIdList, { [_xN]: _AIl }]]
 ];
+export var AvailabilityZoneGeography$: StaticStructureSchema = [3, n0, _AZG,
+  0,
+  [_N],
+  [[0, { [_eQN]: `Name`
+  , [_xN]: _n }]]
+];
 export var AvailabilityZoneMessage$: StaticStructureSchema = [3, n0, _AZM,
   0,
   [_Me],
   [[0, { [_eQN]: `Message`
   , [_xN]: _me }]]
+];
+export var AvailabilityZoneSubGeography$: StaticStructureSchema = [3, n0, _AZSG,
+  0,
+  [_N],
+  [[0, { [_eQN]: `Name`
+  , [_xN]: _n }]]
 ];
 export var AvailableCapacity$: StaticStructureSchema = [3, n0, _ACv,
   0,
@@ -9623,7 +9647,7 @@ export var ClassicLinkInstance$: StaticStructureSchema = [3, n0, _CLI,
   0,
   [_G, _II, _T, _VI],
   [[() => GroupIdentifierList, { [_eQN]: `GroupSet`
-  , [_xN]: _gS }], [0, { [_eQN]: `InstanceId`
+  , [_xN]: _gSr }], [0, { [_eQN]: `InstanceId`
   , [_xN]: _iI }], [() => TagList, { [_eQN]: `TagSet`
   , [_xN]: _tS }], [0, { [_eQN]: `VpcId`
   , [_xN]: _vI }]]
@@ -13776,7 +13800,7 @@ export var DescribeNetworkInterfaceAttributeResult$: StaticStructureSchema = [3,
   [[() => NetworkInterfaceAttachment$, { [_eQN]: `Attachment`
   , [_xN]: _at }], [() => AttributeValue$, { [_eQN]: `Description`
   , [_xN]: _de }], [() => GroupIdentifierList, { [_eQN]: `GroupSet`
-  , [_xN]: _gS }], [0, { [_eQN]: `NetworkInterfaceId`
+  , [_xN]: _gSr }], [0, { [_eQN]: `NetworkInterfaceId`
   , [_xN]: _nII }], [() => AttributeBooleanValue$, { [_eQN]: `SourceDestCheck`
   , [_xN]: _sDC }], [2, { [_eQN]: `AssociatePublicIpAddress`
   , [_xN]: _aPIA }]]
@@ -14088,7 +14112,7 @@ export var DescribeSecurityGroupsRequest$: StaticStructureSchema = [3, n0, _DSGR
 ];
 export var DescribeSecurityGroupsResult$: StaticStructureSchema = [3, n0, _DSGResc,
   0,
-  [_NTe, _SG],
+  [_NTe, _SGe],
   [[0, { [_eQN]: `NextToken`
   , [_xN]: _nTe }], [() => SecurityGroupList, { [_eQN]: `SecurityGroupInfo`
   , [_xN]: _sGIec }]]
@@ -16006,7 +16030,7 @@ export var EventInformation$: StaticStructureSchema = [3, n0, _EIv,
 ];
 export var Explanation$: StaticStructureSchema = [3, n0, _Ex,
   0,
-  [_Ac, _ARcl, _A, _Add, _ATtta, _AZv, _AZIv, _Cid, _C, _CGu, _D, _DVe, _Di, _ECx, _IRT, _IG, _LBAo, _CLBL, _LBLP, _LBT, _LBTG, _LBTGo, _LBTP, _ELBL, _MCi, _NG, _NIe, _PF, _VPC, _Po, _PRor, _PL, _Prot, _RTR, _RTo, _SGe, _SGRe, _SG, _SVo, _St, _Su, _SRT, _Vp, _VE, _VCp, _VG, _TG, _TGRT, _TGRTR, _TGAra, _CAo, _CRo, _FSRi, _FSRir],
+  [_Ac, _ARcl, _A, _Add, _ATtta, _AZv, _AZIv, _Cid, _C, _CGu, _D, _DVe, _Di, _ECx, _IRT, _IG, _LBAo, _CLBL, _LBLP, _LBT, _LBTG, _LBTGo, _LBTP, _ELBL, _MCi, _NG, _NIe, _PF, _VPC, _Po, _PRor, _PL, _Prot, _RTR, _RTo, _SGec, _SGRe, _SGe, _SVo, _St, _Su, _SRT, _Vp, _VE, _VCp, _VG, _TG, _TGRT, _TGRTR, _TGAra, _CAo, _CRo, _FSRi, _FSRir],
   [[() => AnalysisComponent$, { [_eQN]: `Acl`
   , [_xN]: _ac }], [() => AnalysisAclRule$, { [_eQN]: `AclRule`
   , [_xN]: _aRc }], [0, { [_eQN]: `Address`
@@ -16045,7 +16069,7 @@ export var Explanation$: StaticStructureSchema = [3, n0, _Ex,
   , [_xN]: _rTo }], [() => AnalysisComponent$, { [_eQN]: `SecurityGroup`
   , [_xN]: _sG }], [() => AnalysisSecurityGroupRule$, { [_eQN]: `SecurityGroupRule`
   , [_xN]: _sGR }], [() => AnalysisComponentList, { [_eQN]: `SecurityGroupSet`
-  , [_xN]: _sGS }], [() => AnalysisComponent$, { [_eQN]: `SourceVpc`
+  , [_xN]: _sGSe }], [() => AnalysisComponent$, { [_eQN]: `SourceVpc`
   , [_xN]: _sV }], [0, { [_eQN]: `State`
   , [_xN]: _st }], [() => AnalysisComponent$, { [_eQN]: `Subnet`
   , [_xN]: _su }], [() => AnalysisComponent$, { [_eQN]: `SubnetRouteTable`
@@ -17910,7 +17934,7 @@ export var InitializationStatusDetails$: StaticStructureSchema = [3, n0, _ISD,
 ];
 export var Instance$: StaticStructureSchema = [3, n0, _In,
   0,
-  [_Arc, _BDMl, _CT, _EO, _ESna, _Hy, _IIP, _ILn, _EGAl, _EIAAla, _NIet, _OA, _RDN, _RDT, _SG, _SDC, _SIRI, _SNS, _SRt, _T, _VTir, _CO, _CBI, _CRI, _CRSa, _HO, _Li, _MO, _EOn, _BM, _PDl, _UO, _UOUT, _PDNO, _IApv, _TSp, _MOa, _CIBM, _NPO, _Op, _SIec, _II, _IIm, _St, _PDN, _PDNub, _STR, _KN, _ALI, _PCro, _IT, _LTau, _Pla, _KI, _RIa, _Pl, _Mon, _SIu, _VI, _PIAr, _PIAu],
+  [_Arc, _BDMl, _CT, _EO, _ESna, _Hy, _IIP, _ILn, _EGAl, _EIAAla, _NIet, _OA, _RDN, _RDT, _SGe, _SDC, _SIRI, _SNS, _SRt, _T, _VTir, _CO, _CBI, _CRI, _CRSa, _HO, _Li, _MO, _EOn, _BM, _PDl, _UO, _UOUT, _PDNO, _IApv, _TSp, _MOa, _CIBM, _NPO, _Op, _SIec, _II, _IIm, _St, _PDN, _PDNub, _STR, _KN, _ALI, _PCro, _IT, _LTau, _Pla, _KI, _RIa, _Pl, _Mon, _SIu, _VI, _PIAr, _PIAu],
   [[0, { [_eQN]: `Architecture`
   , [_xN]: _arc }], [() => InstanceBlockDeviceMappingList, { [_eQN]: `BlockDeviceMapping`
   , [_xN]: _bDM }], [0, { [_eQN]: `ClientToken`
@@ -17926,7 +17950,7 @@ export var Instance$: StaticStructureSchema = [3, n0, _In,
   , [_xN]: _oA }], [0, { [_eQN]: `RootDeviceName`
   , [_xN]: _rDN }], [0, { [_eQN]: `RootDeviceType`
   , [_xN]: _rDT }], [() => GroupIdentifierList, { [_eQN]: `GroupSet`
-  , [_xN]: _gS }], [2, { [_eQN]: `SourceDestCheck`
+  , [_xN]: _gSr }], [2, { [_eQN]: `SourceDestCheck`
   , [_xN]: _sDC }], [0, { [_eQN]: `SpotInstanceRequestId`
   , [_xN]: _sIRI }], [0, { [_eQN]: `SriovNetSupport`
   , [_xN]: _sNSr }], [() => StateReason$, { [_eQN]: `StateReason`
@@ -18007,7 +18031,7 @@ export var InstanceAttribute$: StaticStructureSchema = [3, n0, _IAns,
   , [_xN]: _sNSr }], [() => AttributeValue$, { [_eQN]: `UserData`
   , [_xN]: _uDs }], [() => AttributeBooleanValue$, { [_eQN]: `DisableApiStop`
   , [_xN]: _dASi }], [() => GroupIdentifierList, { [_eQN]: `GroupSet`
-  , [_xN]: _gS }]]
+  , [_xN]: _gSr }]]
 ];
 export var InstanceBlockDeviceMapping$: StaticStructureSchema = [3, n0, _IBDM,
   0,
@@ -18228,7 +18252,7 @@ export var InstanceNetworkInterface$: StaticStructureSchema = [3, n0, _INI,
   , [_xN]: _ass }], [() => InstanceNetworkInterfaceAttachment$, { [_eQN]: `Attachment`
   , [_xN]: _at }], [0, { [_eQN]: `Description`
   , [_xN]: _de }], [() => GroupIdentifierList, { [_eQN]: `GroupSet`
-  , [_xN]: _gS }], [() => InstanceIpv6AddressList, { [_eQN]: `Ipv6AddressesSet`
+  , [_xN]: _gSr }], [() => InstanceIpv6AddressList, { [_eQN]: `Ipv6AddressesSet`
   , [_xN]: _iASp }], [0, { [_eQN]: `MacAddress`
   , [_xN]: _mAa }], [0, { [_eQN]: `NetworkInterfaceId`
   , [_xN]: _nII }], [0, { [_eQN]: `OwnerId`
@@ -18629,7 +18653,7 @@ export var IpamDiscoveredAccount$: StaticStructureSchema = [3, n0, _IDAp,
 ];
 export var IpamDiscoveredPublicAddress$: StaticStructureSchema = [3, n0, _IDPAp,
   0,
-  [_IRDI, _ARd, _A, _AOI, _AAId, _ASs, _ATddr, _Se, _SRer, _VI, _SIu, _PIPI, _NII, _NID, _II, _T, _NBG, _SG, _STam],
+  [_IRDI, _ARd, _A, _AOI, _AAId, _ASs, _ATddr, _Se, _SRer, _VI, _SIu, _PIPI, _NII, _NID, _II, _T, _NBG, _SGe, _STam],
   [[0, { [_eQN]: `IpamResourceDiscoveryId`
   , [_xN]: _iRDI }], [0, { [_eQN]: `AddressRegion`
   , [_xN]: _aRd }], [0, { [_eQN]: `Address`
@@ -18648,7 +18672,7 @@ export var IpamDiscoveredPublicAddress$: StaticStructureSchema = [3, n0, _IDPAp,
   , [_xN]: _iI }], [() => IpamPublicAddressTags$, { [_eQN]: `Tags`
   , [_xN]: _tag }], [0, { [_eQN]: `NetworkBorderGroup`
   , [_xN]: _nBG }], [() => IpamPublicAddressSecurityGroupList, { [_eQN]: `SecurityGroupSet`
-  , [_xN]: _sGS }], [4, { [_eQN]: `SampleTime`
+  , [_xN]: _sGSe }], [4, { [_eQN]: `SampleTime`
   , [_xN]: _sTa }]]
 ];
 export var IpamDiscoveredResourceCidr$: StaticStructureSchema = [3, n0, _IDRCp,
@@ -19123,7 +19147,7 @@ export var LaunchPermissionModifications$: StaticStructureSchema = [3, n0, _LPM,
 ];
 export var LaunchSpecification$: StaticStructureSchema = [3, n0, _LSa,
   0,
-  [_UDs, _ATddre, _BDMl, _EO, _IIP, _IIm, _IT, _KI, _KN, _NIet, _Pla, _RIa, _SIu, _SG, _Mon],
+  [_UDs, _ATddre, _BDMl, _EO, _IIP, _IIm, _IT, _KI, _KN, _NIet, _Pla, _RIa, _SIu, _SGe, _Mon],
   [[() => SensitiveUserData, { [_eQN]: `UserData`
   , [_xN]: _uDs }], [0, { [_eQN]: `AddressingType`
   , [_xN]: _aTddr }], [() => BlockDeviceMappingList, { [_eQN]: `BlockDeviceMapping`
@@ -19138,7 +19162,7 @@ export var LaunchSpecification$: StaticStructureSchema = [3, n0, _LSa,
   , [_xN]: _pla }], [0, { [_eQN]: `RamdiskId`
   , [_xN]: _rIa }], [0, { [_eQN]: `SubnetId`
   , [_xN]: _sIu }], [() => GroupIdentifierList, { [_eQN]: `GroupSet`
-  , [_xN]: _gS }], [() => RunInstancesMonitoringEnabled$, { [_eQN]: `Monitoring`
+  , [_xN]: _gSr }], [() => RunInstancesMonitoringEnabled$, { [_eQN]: `Monitoring`
   , [_xN]: _mo }]]
 ];
 export var LaunchTemplate$: StaticStructureSchema = [3, n0, _LT,
@@ -19335,7 +19359,7 @@ export var LaunchTemplateInstanceNetworkInterfaceSpecification$: StaticStructure
   , [_xN]: _dOT }], [0, { [_eQN]: `Description`
   , [_xN]: _de }], [1, { [_eQN]: `DeviceIndex`
   , [_xN]: _dI }], [() => GroupIdStringList, { [_eQN]: `GroupSet`
-  , [_xN]: _gS }], [0, { [_eQN]: `InterfaceType`
+  , [_xN]: _gSr }], [0, { [_eQN]: `InterfaceType`
   , [_xN]: _iTnt }], [1, { [_eQN]: `Ipv6AddressCount`
   , [_xN]: _iAC }], [() => InstanceIpv6AddressList, { [_eQN]: `Ipv6AddressesSet`
   , [_xN]: _iASp }], [0, { [_eQN]: `NetworkInterfaceId`
@@ -21032,7 +21056,7 @@ export var NetworkInterface$: StaticStructureSchema = [3, n0, _NIe,
   , [_xN]: _aZ }], [() => ConnectionTrackingConfiguration$, { [_eQN]: `ConnectionTrackingConfiguration`
   , [_xN]: _cTC }], [0, { [_eQN]: `Description`
   , [_xN]: _de }], [() => GroupIdentifierList, { [_eQN]: `GroupSet`
-  , [_xN]: _gS }], [0, { [_eQN]: `InterfaceType`
+  , [_xN]: _gSr }], [0, { [_eQN]: `InterfaceType`
   , [_xN]: _iTnt }], [() => NetworkInterfaceIpv6AddressesList, { [_eQN]: `Ipv6AddressesSet`
   , [_xN]: _iASp }], [0, { [_eQN]: `MacAddress`
   , [_xN]: _mAa }], [0, { [_eQN]: `NetworkInterfaceId`
@@ -21790,9 +21814,10 @@ export var ReferencedSecurityGroup$: StaticStructureSchema = [3, n0, _RSG,
 ];
 export var Region$: StaticStructureSchema = [3, n0, _Regi,
   0,
-  [_OIS, _RN, _Endp],
+  [_OIS, _Ge, _RN, _Endp],
   [[0, { [_eQN]: `OptInStatus`
-  , [_xN]: _oIS }], [0, { [_eQN]: `RegionName`
+  , [_xN]: _oIS }], [() => RegionGeographyList, { [_eQN]: `GeographySet`
+  , [_xN]: _gS }], [0, { [_eQN]: `RegionName`
   , [_xN]: _rNe }], [0, { [_eQN]: `RegionEndpoint`
   , [_xN]: _rEe }]]
 ];
@@ -21803,6 +21828,12 @@ export var RegionalSummary$: StaticStructureSchema = [3, n0, _RSeg,
   , [_xN]: _rNe }], [1, { [_eQN]: `NumberOfMatchedAccounts`
   , [_xN]: _nOMA }], [1, { [_eQN]: `NumberOfUnmatchedAccounts`
   , [_xN]: _nOUA }]]
+];
+export var RegionGeography$: StaticStructureSchema = [3, n0, _RG,
+  0,
+  [_N],
+  [[0, { [_eQN]: `Name`
+  , [_xN]: _n }]]
 ];
 export var RegisteredInstance$: StaticStructureSchema = [3, n0, _RIeg,
   0,
@@ -22128,8 +22159,8 @@ export var RequestIpamResourceTag$: StaticStructureSchema = [3, n0, _RIRT,
 ];
 export var RequestLaunchTemplateData$: StaticStructureSchema = [3, n0, _RLTD,
   0,
-  [_KI, _EO, _IIP, _BDMl, _NIet, _IIm, _IT, _KN, _Mon, _Pla, _RDI, _DAT, _IISB, _UDs, _TS, _EGSlas, _EIAl, _SGIe, _SG, _IMOns, _CSr, _CO, _CRSa, _LS, _HO, _MO, _EOn, _IRn, _PDNO, _MOa, _DASi, _Op, _NPO, _SIec],
-  [0, 2, () => LaunchTemplateIamInstanceProfileSpecificationRequest$, [() => LaunchTemplateBlockDeviceMappingRequestList, { [_xN]: _BDM }], [() => LaunchTemplateInstanceNetworkInterfaceSpecificationRequestList, { [_xN]: _NIe }], 0, 0, 0, () => LaunchTemplatesMonitoringRequest$, () => LaunchTemplatePlacementRequest$, 0, 2, 0, [() => SensitiveUserData, 0], [() => LaunchTemplateTagSpecificationRequestList, { [_xN]: _TSa }], [() => ElasticGpuSpecificationList, { [_xN]: _EGSla }], [() => LaunchTemplateElasticInferenceAcceleratorList, { [_xN]: _EIA }], [() => SecurityGroupIdStringList, { [_xN]: _SGI }], [() => SecurityGroupStringList, { [_xN]: _SGe }], () => LaunchTemplateInstanceMarketOptionsRequest$, () => CreditSpecificationRequest$, () => LaunchTemplateCpuOptionsRequest$, () => LaunchTemplateCapacityReservationSpecificationRequest$, [() => LaunchTemplateLicenseSpecificationListRequest, { [_xN]: _LSi }], () => LaunchTemplateHibernationOptionsRequest$, () => LaunchTemplateInstanceMetadataOptionsRequest$, () => LaunchTemplateEnclaveOptionsRequest$, [() => InstanceRequirementsRequest$, 0], () => LaunchTemplatePrivateDnsNameOptionsRequest$, () => LaunchTemplateInstanceMaintenanceOptionsRequest$, 2, () => OperatorRequest$, () => LaunchTemplateNetworkPerformanceOptionsRequest$, [() => LaunchTemplateInstanceSecondaryInterfaceSpecificationRequestList, { [_xN]: _SIeco }]]
+  [_KI, _EO, _IIP, _BDMl, _NIet, _IIm, _IT, _KN, _Mon, _Pla, _RDI, _DAT, _IISB, _UDs, _TS, _EGSlas, _EIAl, _SGIe, _SGe, _IMOns, _CSr, _CO, _CRSa, _LS, _HO, _MO, _EOn, _IRn, _PDNO, _MOa, _DASi, _Op, _NPO, _SIec],
+  [0, 2, () => LaunchTemplateIamInstanceProfileSpecificationRequest$, [() => LaunchTemplateBlockDeviceMappingRequestList, { [_xN]: _BDM }], [() => LaunchTemplateInstanceNetworkInterfaceSpecificationRequestList, { [_xN]: _NIe }], 0, 0, 0, () => LaunchTemplatesMonitoringRequest$, () => LaunchTemplatePlacementRequest$, 0, 2, 0, [() => SensitiveUserData, 0], [() => LaunchTemplateTagSpecificationRequestList, { [_xN]: _TSa }], [() => ElasticGpuSpecificationList, { [_xN]: _EGSla }], [() => LaunchTemplateElasticInferenceAcceleratorList, { [_xN]: _EIA }], [() => SecurityGroupIdStringList, { [_xN]: _SGI }], [() => SecurityGroupStringList, { [_xN]: _SGec }], () => LaunchTemplateInstanceMarketOptionsRequest$, () => CreditSpecificationRequest$, () => LaunchTemplateCpuOptionsRequest$, () => LaunchTemplateCapacityReservationSpecificationRequest$, [() => LaunchTemplateLicenseSpecificationListRequest, { [_xN]: _LSi }], () => LaunchTemplateHibernationOptionsRequest$, () => LaunchTemplateInstanceMetadataOptionsRequest$, () => LaunchTemplateEnclaveOptionsRequest$, [() => InstanceRequirementsRequest$, 0], () => LaunchTemplatePrivateDnsNameOptionsRequest$, () => LaunchTemplateInstanceMaintenanceOptionsRequest$, 2, () => OperatorRequest$, () => LaunchTemplateNetworkPerformanceOptionsRequest$, [() => LaunchTemplateInstanceSecondaryInterfaceSpecificationRequestList, { [_xN]: _SIeco }]]
 ];
 export var RequestSpotFleetRequest$: StaticStructureSchema = [3, n0, _RSFR,
   0,
@@ -22146,7 +22177,7 @@ export var RequestSpotFleetResponse$: StaticStructureSchema = [3, n0, _RSFRe,
 ];
 export var RequestSpotInstancesRequest$: StaticStructureSchema = [3, n0, _RSIR,
   0,
-  [_LSa, _TS, _IIB, _DR, _SPp, _CT, _IC, _Ty, _VF, _VU, _LGa, _AZG, _BDMlo],
+  [_LSa, _TS, _IIB, _DR, _SPp, _CT, _IC, _Ty, _VF, _VU, _LGa, _AZGv, _BDMlo],
   [[() => RequestSpotLaunchSpecification$, 0], [() => TagSpecificationList, { [_xN]: _TSa }], 0, [2, { [_eQN]: `DryRun`
   , [_xN]: _dR }], [0, { [_eQN]: `SpotPrice`
   , [_xN]: _sPp }], [0, { [_eQN]: `ClientToken`
@@ -22167,8 +22198,8 @@ export var RequestSpotInstancesResult$: StaticStructureSchema = [3, n0, _RSIRe,
 ];
 export var RequestSpotLaunchSpecification$: StaticStructureSchema = [3, n0, _RSLS,
   0,
-  [_SGIe, _SG, _ATddre, _BDMl, _EO, _IIP, _IIm, _IT, _KI, _KN, _Mon, _NIet, _Pla, _RIa, _SIu, _UDs],
-  [[() => RequestSpotLaunchSpecificationSecurityGroupIdList, { [_xN]: _SGI }], [() => RequestSpotLaunchSpecificationSecurityGroupList, { [_xN]: _SGe }], [0, { [_eQN]: `AddressingType`
+  [_SGIe, _SGe, _ATddre, _BDMl, _EO, _IIP, _IIm, _IT, _KI, _KN, _Mon, _NIet, _Pla, _RIa, _SIu, _UDs],
+  [[() => RequestSpotLaunchSpecificationSecurityGroupIdList, { [_xN]: _SGI }], [() => RequestSpotLaunchSpecificationSecurityGroupList, { [_xN]: _SGec }], [0, { [_eQN]: `AddressingType`
   , [_xN]: _aTddr }], [() => BlockDeviceMappingList, { [_eQN]: `BlockDeviceMapping`
   , [_xN]: _bDM }], [2, { [_eQN]: `EbsOptimized`
   , [_xN]: _eO }], [() => IamInstanceProfileSpecification$, { [_eQN]: `IamInstanceProfile`
@@ -22190,7 +22221,7 @@ export var Reservation$: StaticStructureSchema = [3, n0, _Reser,
   , [_xN]: _rI }], [0, { [_eQN]: `OwnerId`
   , [_xN]: _oI }], [0, { [_eQN]: `RequesterId`
   , [_xN]: _rIeq }], [() => GroupIdentifierList, { [_eQN]: `GroupSet`
-  , [_xN]: _gS }], [() => InstanceList, { [_eQN]: `InstancesSet`
+  , [_xN]: _gSr }], [() => InstanceList, { [_eQN]: `InstancesSet`
   , [_xN]: _iSn }]]
 ];
 export var ReservationFleetInstanceSpecification$: StaticStructureSchema = [3, n0, _RFIS,
@@ -22410,7 +22441,7 @@ export var ResponseError$: StaticStructureSchema = [3, n0, _REe,
 ];
 export var ResponseLaunchTemplateData$: StaticStructureSchema = [3, n0, _RLTDe,
   0,
-  [_KI, _EO, _IIP, _BDMl, _NIet, _IIm, _IT, _KN, _Mon, _Pla, _RDI, _DAT, _IISB, _UDs, _TS, _EGSlas, _EIAl, _SGIe, _SG, _IMOns, _CSr, _CO, _CRSa, _LS, _HO, _MO, _EOn, _IRn, _PDNO, _MOa, _DASi, _Op, _NPO, _SIec],
+  [_KI, _EO, _IIP, _BDMl, _NIet, _IIm, _IT, _KN, _Mon, _Pla, _RDI, _DAT, _IISB, _UDs, _TS, _EGSlas, _EIAl, _SGIe, _SGe, _IMOns, _CSr, _CO, _CRSa, _LS, _HO, _MO, _EOn, _IRn, _PDNO, _MOa, _DASi, _Op, _NPO, _SIec],
   [[0, { [_eQN]: `KernelId`
   , [_xN]: _kI }], [2, { [_eQN]: `EbsOptimized`
   , [_xN]: _eO }], [() => LaunchTemplateIamInstanceProfileSpecification$, { [_eQN]: `IamInstanceProfile`
@@ -22430,7 +22461,7 @@ export var ResponseLaunchTemplateData$: StaticStructureSchema = [3, n0, _RLTDe,
   , [_xN]: _eGSS }], [() => LaunchTemplateElasticInferenceAcceleratorResponseList, { [_eQN]: `ElasticInferenceAcceleratorSet`
   , [_xN]: _eIAS }], [() => ValueStringList, { [_eQN]: `SecurityGroupIdSet`
   , [_xN]: _sGIS }], [() => ValueStringList, { [_eQN]: `SecurityGroupSet`
-  , [_xN]: _sGS }], [() => LaunchTemplateInstanceMarketOptions$, { [_eQN]: `InstanceMarketOptions`
+  , [_xN]: _sGSe }], [() => LaunchTemplateInstanceMarketOptions$, { [_eQN]: `InstanceMarketOptions`
   , [_xN]: _iMOn }], [() => CreditSpecification$, { [_eQN]: `CreditSpecification`
   , [_xN]: _cSr }], [() => LaunchTemplateCpuOptions$, { [_eQN]: `CpuOptions`
   , [_xN]: _cO }], [() => LaunchTemplateCapacityReservationSpecificationResponse$, { [_eQN]: `CapacityReservationSpecification`
@@ -22782,8 +22813,8 @@ export var RunInstancesMonitoringEnabled$: StaticStructureSchema = [3, n0, _RIME
 ];
 export var RunInstancesRequest$: StaticStructureSchema = [3, n0, _RIRu,
   0,
-  [_MCa, _MCin, _BDMl, _IIm, _IT, _IAC, _IA, _KI, _KN, _Mon, _Pla, _RIa, _SGIe, _SG, _SIu, _UDs, _EGSla, _EIAl, _TS, _LT, _IMOns, _CSr, _CO, _CRSa, _HO, _LS, _MO, _EOn, _PDNO, _MOa, _DASi, _EPI, _NPO, _Op, _SIec, _DR, _DAT, _IISB, _PIAr, _CT, _AId, _NIet, _IIP, _EO],
-  [1, 1, [() => BlockDeviceMappingRequestList, { [_xN]: _BDM }], 0, 0, 1, [() => InstanceIpv6AddressList, { [_xN]: _IApv }], 0, 0, [() => RunInstancesMonitoringEnabled$, 0], [() => Placement$, 0], 0, [() => SecurityGroupIdStringList, { [_xN]: _SGI }], [() => SecurityGroupStringList, { [_xN]: _SGe }], 0, [() => RunInstancesUserData, 0], [() => ElasticGpuSpecifications, 0], [() => ElasticInferenceAccelerators, { [_xN]: _EIA }], [() => TagSpecificationList, { [_xN]: _TSa }], () => LaunchTemplateSpecification$, () => InstanceMarketOptionsRequest$, () => CreditSpecificationRequest$, () => CpuOptionsRequest$, () => CapacityReservationSpecification$, () => HibernationOptionsRequest$, [() => LicenseSpecificationListRequest, { [_xN]: _LSi }], () => InstanceMetadataOptionsRequest$, () => EnclaveOptionsRequest$, () => PrivateDnsNameOptionsRequest$, () => InstanceMaintenanceOptionsRequest$, 2, 2, () => InstanceNetworkPerformanceOptionsRequest$, () => OperatorRequest$, [() => InstanceSecondaryInterfaceSpecificationListRequest, { [_xN]: _SIeco }], [2, { [_eQN]: `DryRun`
+  [_MCa, _MCin, _BDMl, _IIm, _IT, _IAC, _IA, _KI, _KN, _Mon, _Pla, _RIa, _SGIe, _SGe, _SIu, _UDs, _EGSla, _EIAl, _TS, _LT, _IMOns, _CSr, _CO, _CRSa, _HO, _LS, _MO, _EOn, _PDNO, _MOa, _DASi, _EPI, _NPO, _Op, _SIec, _DR, _DAT, _IISB, _PIAr, _CT, _AId, _NIet, _IIP, _EO],
+  [1, 1, [() => BlockDeviceMappingRequestList, { [_xN]: _BDM }], 0, 0, 1, [() => InstanceIpv6AddressList, { [_xN]: _IApv }], 0, 0, [() => RunInstancesMonitoringEnabled$, 0], [() => Placement$, 0], 0, [() => SecurityGroupIdStringList, { [_xN]: _SGI }], [() => SecurityGroupStringList, { [_xN]: _SGec }], 0, [() => RunInstancesUserData, 0], [() => ElasticGpuSpecifications, 0], [() => ElasticInferenceAccelerators, { [_xN]: _EIA }], [() => TagSpecificationList, { [_xN]: _TSa }], () => LaunchTemplateSpecification$, () => InstanceMarketOptionsRequest$, () => CreditSpecificationRequest$, () => CpuOptionsRequest$, () => CapacityReservationSpecification$, () => HibernationOptionsRequest$, [() => LicenseSpecificationListRequest, { [_xN]: _LSi }], () => InstanceMetadataOptionsRequest$, () => EnclaveOptionsRequest$, () => PrivateDnsNameOptionsRequest$, () => InstanceMaintenanceOptionsRequest$, 2, 2, () => InstanceNetworkPerformanceOptionsRequest$, () => OperatorRequest$, [() => InstanceSecondaryInterfaceSpecificationListRequest, { [_xN]: _SIeco }], [2, { [_eQN]: `DryRun`
   , [_xN]: _dR }], [2, { [_eQN]: `DisableApiTermination`
   , [_xN]: _dAT }], [0, { [_eQN]: `InstanceInitiatedShutdownBehavior`
   , [_xN]: _iISB }], [0, { [_eQN]: `PrivateIpAddress`
@@ -23051,7 +23082,7 @@ export var SecondarySubnetIpv4CidrBlockAssociation$: StaticStructureSchema = [3,
   , [_xN]: _st }], [0, { [_eQN]: `StateReason`
   , [_xN]: _sRt }]]
 ];
-export var SecurityGroup$: StaticStructureSchema = [3, n0, _SGe,
+export var SecurityGroup$: StaticStructureSchema = [3, n0, _SGec,
   0,
   [_GIr, _IPEp, _T, _VI, _SGA, _OI, _GN, _De, _IPpe],
   [[0, { [_eQN]: `GroupId`
@@ -23348,7 +23379,7 @@ export var SpotDatafeedSubscription$: StaticStructureSchema = [3, n0, _SDS,
 ];
 export var SpotFleetLaunchSpecification$: StaticStructureSchema = [3, n0, _SFLS,
   0,
-  [_ATddre, _BDMl, _EO, _IIP, _IIm, _IT, _KI, _KN, _Mon, _NIet, _Pla, _RIa, _SPp, _SIu, _UDs, _WCe, _TS, _IRn, _SG],
+  [_ATddre, _BDMl, _EO, _IIP, _IIm, _IT, _KI, _KN, _Mon, _NIet, _Pla, _RIa, _SPp, _SIu, _UDs, _WCe, _TS, _IRn, _SGe],
   [[0, { [_eQN]: `AddressingType`
   , [_xN]: _aTddr }], [() => BlockDeviceMappingList, { [_eQN]: `BlockDeviceMapping`
   , [_xN]: _bDM }], [2, { [_eQN]: `EbsOptimized`
@@ -23368,7 +23399,7 @@ export var SpotFleetLaunchSpecification$: StaticStructureSchema = [3, n0, _SFLS,
   , [_xN]: _wC }], [() => SpotFleetTagSpecificationList, { [_eQN]: `TagSpecificationSet`
   , [_xN]: _tSS }], [() => InstanceRequirements$, { [_eQN]: `InstanceRequirements`
   , [_xN]: _iR }], [() => GroupIdentifierList, { [_eQN]: `GroupSet`
-  , [_xN]: _gS }]]
+  , [_xN]: _gSr }]]
 ];
 export var SpotFleetMonitoring$: StaticStructureSchema = [3, n0, _SFM,
   0,
@@ -23426,7 +23457,7 @@ export var SpotFleetTagSpecification$: StaticStructureSchema = [3, n0, _SFTS,
 ];
 export var SpotInstanceRequest$: StaticStructureSchema = [3, n0, _SIRp,
   0,
-  [_ABHP, _AZG, _BDMlo, _CTr, _Fa, _II, _LGa, _LSa, _LAZ, _LAZI, _PDr, _SIRI, _SPp, _St, _Sta, _T, _Ty, _VF, _VU, _IIB],
+  [_ABHP, _AZGv, _BDMlo, _CTr, _Fa, _II, _LGa, _LSa, _LAZ, _LAZI, _PDr, _SIRI, _SPp, _St, _Sta, _T, _Ty, _VF, _VU, _IIB],
   [[0, { [_eQN]: `ActualBlockHourlyPrice`
   , [_xN]: _aBHP }], [0, { [_eQN]: `AvailabilityZoneGroup`
   , [_xN]: _aZG }], [1, { [_eQN]: `BlockDurationMinutes`
@@ -23810,7 +23841,7 @@ export var TargetGroupsConfig$: StaticStructureSchema = [3, n0, _TGCa,
 ];
 export var TargetNetwork$: StaticStructureSchema = [3, n0, _TNa,
   0,
-  [_AIs, _VI, _TNI, _CVEI, _Sta, _SG],
+  [_AIs, _VI, _TNI, _CVEI, _Sta, _SGe],
   [[0, { [_eQN]: `AssociationId`
   , [_xN]: _aIs }], [0, { [_eQN]: `VpcId`
   , [_xN]: _vI }], [0, { [_eQN]: `TargetNetworkId`
@@ -24162,7 +24193,7 @@ export var TransitGatewayMulticastGroup$: StaticStructureSchema = [3, n0, _TGMG,
   , [_xN]: _rOI }], [0, { [_eQN]: `NetworkInterfaceId`
   , [_xN]: _nII }], [2, { [_eQN]: `GroupMember`
   , [_xN]: _gM }], [2, { [_eQN]: `GroupSource`
-  , [_xN]: _gSr }], [0, { [_eQN]: `MemberType`
+  , [_xN]: _gSro }], [0, { [_eQN]: `MemberType`
   , [_xN]: _mTe }], [0, { [_eQN]: `SourceType`
   , [_xN]: _sTo }]]
 ];
@@ -25185,7 +25216,7 @@ export var VpcEndpoint$: StaticStructureSchema = [3, n0, _VE,
   , [_xN]: _pDo }], [() => ValueStringList, { [_eQN]: `RouteTableIdSet`
   , [_xN]: _rTIS }], [() => ValueStringList, { [_eQN]: `SubnetIdSet`
   , [_xN]: _sISu }], [() => GroupIdentifierSet, { [_eQN]: `GroupSet`
-  , [_xN]: _gS }], [0, { [_eQN]: `IpAddressType`
+  , [_xN]: _gSr }], [0, { [_eQN]: `IpAddressType`
   , [_xN]: _iAT }], [() => DnsOptions$, { [_eQN]: `DnsOptions`
   , [_xN]: _dOn }], [2, { [_eQN]: `PrivateDnsEnabled`
   , [_xN]: _pDE }], [2, { [_eQN]: `RequesterManaged`
@@ -25549,6 +25580,10 @@ var AvailabilityZoneAddresses: StaticListSchema = [1, n0, _AZAv,
   0, [() => AvailabilityZoneAddress$,
     { [_xN]: _AZA }]
 ];
+var AvailabilityZoneGeographyList: StaticListSchema = [1, n0, _AZGL,
+  0, [() => AvailabilityZoneGeography$,
+    { [_xN]: _it }]
+];
 var AvailabilityZoneIdStringList: StaticListSchema = [1, n0, _AZISL,
   0, [0,
     { [_xN]: _AZI }]
@@ -25564,6 +25599,10 @@ var AvailabilityZoneMessageList: StaticListSchema = [1, n0, _AZML,
 var AvailabilityZoneStringList: StaticListSchema = [1, n0, _AZSL,
   0, [0,
     { [_xN]: _AZ }]
+];
+var AvailabilityZoneSubGeographyList: StaticListSchema = [1, n0, _AZSGL,
+  0, [() => AvailabilityZoneSubGeography$,
+    { [_xN]: _it }]
 ];
 var AvailableInstanceCapacityList: StaticListSchema = [1, n0, _AICL,
   0, [() => InstanceCapacity$,
@@ -27238,6 +27277,10 @@ var RegionalSummaryList: StaticListSchema = [1, n0, _RSL,
   0, [() => RegionalSummary$,
     { [_xN]: _it }]
 ];
+var RegionGeographyList: StaticListSchema = [1, n0, _RGL,
+  0, [() => RegionGeography$,
+    { [_xN]: _it }]
+];
 var RegionList: StaticListSchema = [1, n0, _RL,
   0, [() => Region$,
     { [_xN]: _it }]
@@ -27553,7 +27596,7 @@ var SecurityGroupRuleUpdateList: StaticListSchema = [1, n0, _SGRUL,
 ];
 var SecurityGroupStringList: StaticListSchema = [1, n0, _SGSL,
   0, [0,
-    { [_xN]: _SGe }]
+    { [_xN]: _SGec }]
 ];
 var SecurityGroupVpcAssociationList: StaticListSchema = [1, n0, _SGVAL,
   0, [() => SecurityGroupVpcAssociation$,

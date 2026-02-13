@@ -64,6 +64,11 @@ export interface DescribeRegionsCommandOutput extends DescribeRegionsResult, __M
  * //   Regions: [ // RegionList
  * //     { // Region
  * //       OptInStatus: "STRING_VALUE",
+ * //       Geography: [ // RegionGeographyList
+ * //         { // RegionGeography
+ * //           Name: "STRING_VALUE",
+ * //         },
+ * //       ],
  * //       RegionName: "STRING_VALUE",
  * //       Endpoint: "STRING_VALUE",
  * //     },
