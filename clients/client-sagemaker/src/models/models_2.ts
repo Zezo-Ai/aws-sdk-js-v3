@@ -76,11 +76,9 @@ import {
   PartnerAppStatus,
   PartnerAppType,
   Peft,
-  PipelineExecutionStatus,
   PipelineStatus,
   ProblemType,
   ProcessingInstanceType,
-  ProcessingJobStatus,
   Processor,
   ProductionVariantAcceleratorType,
   ProductionVariantInstanceType,
@@ -94,6 +92,7 @@ import {
   SchedulerResourceStatus,
   ScheduleStatus,
   ServerlessJobType,
+  SharingType,
   SkipModelValidation,
   StageStatus,
   Statistic,
@@ -114,7 +113,6 @@ import {
   type AlgorithmSpecification,
   type AlgorithmStatusDetails,
   type AlgorithmValidationSpecification,
-  type AppSpecification,
   type ArtifactSource,
   type AsyncInferenceConfig,
   type AutoMLCandidate,
@@ -151,8 +149,6 @@ import {
   type KernelGatewayImageConfig,
   type MetadataProperties,
   type ModelDeployConfig,
-  type NeoVpcConfig,
-  type OutputConfig,
   type OutputDataConfig,
   type ResourceConfig,
   type ResourceSpec,
@@ -185,6 +181,7 @@ import {
   type DeviceSelectionConfig,
   type DomainSettings,
   type DriftCheckBaselines,
+  type EbsStorageSettings,
   type EdgeDeploymentConfig,
   type EdgeOutputConfig,
   type EndpointInfo,
@@ -204,6 +201,8 @@ import {
   type InferenceExperimentDataStorageConfig,
   type InferenceExperimentSchedule,
   type InstanceMetadataServiceConfiguration,
+  type JupyterServerAppSettings,
+  type KernelGatewayAppSettings,
   type LabelingJobAlgorithmsConfig,
   type LabelingJobInputConfig,
   type LabelingJobOutputConfig,
@@ -231,18 +230,17 @@ import {
   type MonitoringResources,
   type MonitoringScheduleConfig,
   type MonitoringStoppingCondition,
-  type NetworkConfig,
+  type NeoVpcConfig,
   type OfflineStoreConfig,
   type OnlineStoreConfig,
   type OptimizationJobModelSource,
   type OptimizationJobOutputConfig,
   type OptimizationVpcConfig,
+  type OutputConfig,
+  type OwnershipSettings,
   type ParallelismConfiguration,
   type PartnerAppConfig,
   type PartnerAppMaintenanceConfig,
-  type ProcessingOutputConfig,
-  type ProcessingResources,
-  type ProcessingStoppingCondition,
   type ProductionVariantManagedInstanceScaling,
   type ProductionVariantRoutingConfig,
   type ProductionVariantServerlessConfig,
@@ -251,15 +249,159 @@ import {
   type RetryStrategy,
   type ShadowModeConfig,
   type SourceAlgorithmSpecification,
+  type SpaceCodeEditorAppSettings,
+  type SpaceJupyterLabAppSettings,
   type UserSettings,
+  CustomFileSystem,
   EdgeDeploymentModelConfig,
   FeatureDefinition,
   HyperParameterTrainingJobDefinition,
   NotebookInstanceLifecycleHook,
   OptimizationConfig,
-  ProcessingInput,
   ProductionVariant,
 } from "./models_1";
+
+/**
+ * <p>The storage settings for a space.</p>
+ * @public
+ */
+export interface SpaceStorageSettings {
+  /**
+   * <p>A collection of EBS storage settings for a space.</p>
+   * @public
+   */
+  EbsStorageSettings?: EbsStorageSettings | undefined;
+}
+
+/**
+ * <p>A collection of space settings.</p>
+ * @public
+ */
+export interface SpaceSettings {
+  /**
+   * <p>The JupyterServer app settings.</p>
+   * @public
+   */
+  JupyterServerAppSettings?: JupyterServerAppSettings | undefined;
+
+  /**
+   * <p>The KernelGateway app settings.</p>
+   * @public
+   */
+  KernelGatewayAppSettings?: KernelGatewayAppSettings | undefined;
+
+  /**
+   * <p>The Code Editor application settings.</p>
+   * @public
+   */
+  CodeEditorAppSettings?: SpaceCodeEditorAppSettings | undefined;
+
+  /**
+   * <p>The settings for the JupyterLab application.</p>
+   * @public
+   */
+  JupyterLabAppSettings?: SpaceJupyterLabAppSettings | undefined;
+
+  /**
+   * <p>The type of app created within the space.</p> <p>If using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateSpace.html"> UpdateSpace</a> API, you can't change the app type of your space by specifying a different value for this field.</p>
+   * @public
+   */
+  AppType?: AppType | undefined;
+
+  /**
+   * <p>The storage settings for a space.</p>
+   * @public
+   */
+  SpaceStorageSettings?: SpaceStorageSettings | undefined;
+
+  /**
+   * <p>If you enable this option, SageMaker AI creates the following resources on your behalf when you create the space:</p> <ul> <li> <p>The user profile that possesses the space.</p> </li> <li> <p>The app that the space contains.</p> </li> </ul>
+   * @public
+   */
+  SpaceManagedResources?: FeatureStatus | undefined;
+
+  /**
+   * <p>A file system, created by you, that you assign to a space for an Amazon SageMaker AI Domain. Permitted users can access this file system in Amazon SageMaker AI Studio.</p>
+   * @public
+   */
+  CustomFileSystems?: CustomFileSystem[] | undefined;
+
+  /**
+   * <p>A setting that enables or disables remote access for a SageMaker space. When enabled, this allows you to connect to the remote space from your local IDE.</p>
+   * @public
+   */
+  RemoteAccess?: FeatureStatus | undefined;
+}
+
+/**
+ * <p>A collection of space sharing settings.</p>
+ * @public
+ */
+export interface SpaceSharingSettings {
+  /**
+   * <p>Specifies the sharing type of the space.</p>
+   * @public
+   */
+  SharingType: SharingType | undefined;
+}
+
+/**
+ * @public
+ */
+export interface CreateSpaceRequest {
+  /**
+   * <p>The ID of the associated domain.</p>
+   * @public
+   */
+  DomainId: string | undefined;
+
+  /**
+   * <p>The name of the space.</p>
+   * @public
+   */
+  SpaceName: string | undefined;
+
+  /**
+   * <p>Tags to associated with the space. Each tag consists of a key and an optional value. Tag keys must be unique for each resource. Tags are searchable using the <code>Search</code> API.</p>
+   * @public
+   */
+  Tags?: Tag[] | undefined;
+
+  /**
+   * <p>A collection of space settings.</p>
+   * @public
+   */
+  SpaceSettings?: SpaceSettings | undefined;
+
+  /**
+   * <p>A collection of ownership settings.</p>
+   * @public
+   */
+  OwnershipSettings?: OwnershipSettings | undefined;
+
+  /**
+   * <p>A collection of space sharing settings.</p>
+   * @public
+   */
+  SpaceSharingSettings?: SpaceSharingSettings | undefined;
+
+  /**
+   * <p>The name of the space that appears in the SageMaker Studio UI.</p>
+   * @public
+   */
+  SpaceDisplayName?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface CreateSpaceResponse {
+  /**
+   * <p>The space's Amazon Resource Name (ARN).</p>
+   * @public
+   */
+  SpaceArn?: string | undefined;
+}
 
 /**
  * @public
@@ -9418,270 +9560,4 @@ export interface SelectedStep {
    * @public
    */
   StepName: string | undefined;
-}
-
-/**
- * <p>The selective execution configuration applied to the pipeline run.</p>
- * @public
- */
-export interface SelectiveExecutionConfig {
-  /**
-   * <p>The ARN from a reference execution of the current pipeline. Used to copy input collaterals needed for the selected steps to run. The execution status of the pipeline can be either <code>Failed</code> or <code>Success</code>.</p> <p>This field is required if the steps you specify for <code>SelectedSteps</code> depend on output collaterals from any non-specified pipeline steps. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-selective-ex.html">Selective Execution for Pipeline Steps</a>.</p>
-   * @public
-   */
-  SourcePipelineExecutionArn?: string | undefined;
-
-  /**
-   * <p>A list of pipeline steps to run. All step(s) in all path(s) between two selected steps should be included.</p>
-   * @public
-   */
-  SelectedSteps: SelectedStep[] | undefined;
-}
-
-/**
- * @public
- */
-export interface DescribePipelineExecutionResponse {
-  /**
-   * <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-   * @public
-   */
-  PipelineArn?: string | undefined;
-
-  /**
-   * <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-   * @public
-   */
-  PipelineExecutionArn?: string | undefined;
-
-  /**
-   * <p>The display name of the pipeline execution.</p>
-   * @public
-   */
-  PipelineExecutionDisplayName?: string | undefined;
-
-  /**
-   * <p>The status of the pipeline execution.</p>
-   * @public
-   */
-  PipelineExecutionStatus?: PipelineExecutionStatus | undefined;
-
-  /**
-   * <p>The description of the pipeline execution.</p>
-   * @public
-   */
-  PipelineExecutionDescription?: string | undefined;
-
-  /**
-   * <p>Specifies the names of the experiment and trial created by a pipeline.</p>
-   * @public
-   */
-  PipelineExperimentConfig?: PipelineExperimentConfig | undefined;
-
-  /**
-   * <p>If the execution failed, a message describing why.</p>
-   * @public
-   */
-  FailureReason?: string | undefined;
-
-  /**
-   * <p>The time when the pipeline execution was created.</p>
-   * @public
-   */
-  CreationTime?: Date | undefined;
-
-  /**
-   * <p>The time when the pipeline execution was modified last.</p>
-   * @public
-   */
-  LastModifiedTime?: Date | undefined;
-
-  /**
-   * <p>Information about the user who created or modified a SageMaker resource.</p>
-   * @public
-   */
-  CreatedBy?: UserContext | undefined;
-
-  /**
-   * <p>Information about the user who created or modified a SageMaker resource.</p>
-   * @public
-   */
-  LastModifiedBy?: UserContext | undefined;
-
-  /**
-   * <p>The parallelism configuration applied to the pipeline.</p>
-   * @public
-   */
-  ParallelismConfiguration?: ParallelismConfiguration | undefined;
-
-  /**
-   * <p>The selective execution configuration applied to the pipeline run.</p>
-   * @public
-   */
-  SelectiveExecutionConfig?: SelectiveExecutionConfig | undefined;
-
-  /**
-   * <p>The ID of the pipeline version.</p>
-   * @public
-   */
-  PipelineVersionId?: number | undefined;
-
-  /**
-   * <p> The MLflow configuration of the pipeline execution. </p>
-   * @public
-   */
-  MLflowConfig?: MLflowConfiguration | undefined;
-}
-
-/**
- * @public
- */
-export interface DescribeProcessingJobRequest {
-  /**
-   * <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-   * @public
-   */
-  ProcessingJobName: string | undefined;
-}
-
-/**
- * @public
- */
-export interface DescribeProcessingJobResponse {
-  /**
-   * <p>The inputs for a processing job.</p>
-   * @public
-   */
-  ProcessingInputs?: ProcessingInput[] | undefined;
-
-  /**
-   * <p>Output configuration for the processing job.</p>
-   * @public
-   */
-  ProcessingOutputConfig?: ProcessingOutputConfig | undefined;
-
-  /**
-   * <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-   * @public
-   */
-  ProcessingJobName: string | undefined;
-
-  /**
-   * <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
-   * @public
-   */
-  ProcessingResources: ProcessingResources | undefined;
-
-  /**
-   * <p>The time limit for how long the processing job is allowed to run.</p>
-   * @public
-   */
-  StoppingCondition?: ProcessingStoppingCondition | undefined;
-
-  /**
-   * <p>Configures the processing job to run a specified container image.</p>
-   * @public
-   */
-  AppSpecification: AppSpecification | undefined;
-
-  /**
-   * <p>The environment variables set in the Docker container.</p>
-   * @public
-   */
-  Environment?: Record<string, string> | undefined;
-
-  /**
-   * <p>Networking options for a processing job.</p>
-   * @public
-   */
-  NetworkConfig?: NetworkConfig | undefined;
-
-  /**
-   * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-   * @public
-   */
-  RoleArn?: string | undefined;
-
-  /**
-   * <p>The configuration information used to create an experiment.</p>
-   * @public
-   */
-  ExperimentConfig?: ExperimentConfig | undefined;
-
-  /**
-   * <p>The Amazon Resource Name (ARN) of the processing job.</p>
-   * @public
-   */
-  ProcessingJobArn: string | undefined;
-
-  /**
-   * <p>Provides the status of a processing job.</p>
-   * @public
-   */
-  ProcessingJobStatus: ProcessingJobStatus | undefined;
-
-  /**
-   * <p>An optional string, up to one KB in size, that contains metadata from the processing container when the processing job exits.</p>
-   * @public
-   */
-  ExitMessage?: string | undefined;
-
-  /**
-   * <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
-   * @public
-   */
-  FailureReason?: string | undefined;
-
-  /**
-   * <p>The time at which the processing job completed.</p>
-   * @public
-   */
-  ProcessingEndTime?: Date | undefined;
-
-  /**
-   * <p>The time at which the processing job started.</p>
-   * @public
-   */
-  ProcessingStartTime?: Date | undefined;
-
-  /**
-   * <p>The time at which the processing job was last modified.</p>
-   * @public
-   */
-  LastModifiedTime?: Date | undefined;
-
-  /**
-   * <p>The time at which the processing job was created.</p>
-   * @public
-   */
-  CreationTime: Date | undefined;
-
-  /**
-   * <p>The ARN of a monitoring schedule for an endpoint associated with this processing job.</p>
-   * @public
-   */
-  MonitoringScheduleArn?: string | undefined;
-
-  /**
-   * <p>The ARN of an AutoML job associated with this processing job.</p>
-   * @public
-   */
-  AutoMLJobArn?: string | undefined;
-
-  /**
-   * <p>The ARN of a training job associated with this processing job.</p>
-   * @public
-   */
-  TrainingJobArn?: string | undefined;
-}
-
-/**
- * @public
- */
-export interface DescribeProjectInput {
-  /**
-   * <p>The name of the project to describe.</p>
-   * @public
-   */
-  ProjectName: string | undefined;
 }

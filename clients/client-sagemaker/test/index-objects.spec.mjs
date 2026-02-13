@@ -213,6 +213,8 @@ import {
   ClusterEventDetail$,
   ClusterEventResourceType,
   ClusterEventSummary$,
+  ClusterFsxLustreConfig$,
+  ClusterFsxOpenZfsConfig$,
   ClusterInstanceGroupDetails$,
   ClusterInstanceGroupSpecification$,
   ClusterInstancePlacement$,
@@ -234,9 +236,14 @@ import {
   ClusterOnDemandOptions$,
   ClusterOrchestrator$,
   ClusterOrchestratorEksConfig$,
+  ClusterOrchestratorSlurmConfig$,
   ClusterRestrictedInstanceGroupDetails$,
   ClusterRestrictedInstanceGroupSpecification$,
   ClusterSchedulerConfigSummary$,
+  ClusterSlurmConfig$,
+  ClusterSlurmConfigDetails$,
+  ClusterSlurmConfigStrategy,
+  ClusterSlurmNodeType,
   ClusterSortBy,
   ClusterSpotOptions$,
   ClusterStatus,
@@ -3538,6 +3545,8 @@ assert(typeof ClusterCapacityRequirements$ === "object");
 assert(typeof ClusterEbsVolumeConfig$ === "object");
 assert(typeof ClusterEventDetail$ === "object");
 assert(typeof ClusterEventSummary$ === "object");
+assert(typeof ClusterFsxLustreConfig$ === "object");
+assert(typeof ClusterFsxOpenZfsConfig$ === "object");
 assert(typeof ClusterInstanceGroupDetails$ === "object");
 assert(typeof ClusterInstanceGroupSpecification$ === "object");
 assert(typeof ClusterInstancePlacement$ === "object");
@@ -3554,9 +3563,12 @@ assert(typeof ClusterNodeSummary$ === "object");
 assert(typeof ClusterOnDemandOptions$ === "object");
 assert(typeof ClusterOrchestrator$ === "object");
 assert(typeof ClusterOrchestratorEksConfig$ === "object");
+assert(typeof ClusterOrchestratorSlurmConfig$ === "object");
 assert(typeof ClusterRestrictedInstanceGroupDetails$ === "object");
 assert(typeof ClusterRestrictedInstanceGroupSpecification$ === "object");
 assert(typeof ClusterSchedulerConfigSummary$ === "object");
+assert(typeof ClusterSlurmConfig$ === "object");
+assert(typeof ClusterSlurmConfigDetails$ === "object");
 assert(typeof ClusterSpotOptions$ === "object");
 assert(typeof ClusterSummary$ === "object");
 assert(typeof ClusterTieredStorageConfig$ === "object");
@@ -4891,6 +4903,8 @@ assert(typeof ClusterInstanceType === "object");
 assert(typeof ClusterKubernetesTaintEffect === "object");
 assert(typeof ClusterNodeProvisioningMode === "object");
 assert(typeof ClusterNodeRecovery === "object");
+assert(typeof ClusterSlurmConfigStrategy === "object");
+assert(typeof ClusterSlurmNodeType === "object");
 assert(typeof ClusterSortBy === "object");
 assert(typeof ClusterStatus === "object");
 assert(typeof CodeRepositorySortBy === "object");

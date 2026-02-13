@@ -2300,6 +2300,20 @@ export type DeepHealthCheckType = (typeof DeepHealthCheckType)[keyof typeof Deep
  * @public
  * @enum
  */
+export const ClusterSlurmNodeType = {
+  COMPUTE: "Compute",
+  CONTROLLER: "Controller",
+  LOGIN: "Login",
+} as const;
+/**
+ * @public
+ */
+export type ClusterSlurmNodeType = (typeof ClusterSlurmNodeType)[keyof typeof ClusterSlurmNodeType];
+
+/**
+ * @public
+ * @enum
+ */
 export const SoftwareUpdateStatus = {
   FAILED: "Failed",
   IN_PROGRESS: "InProgress",
@@ -2356,6 +2370,20 @@ export const ClusterNodeRecovery = {
  * @public
  */
 export type ClusterNodeRecovery = (typeof ClusterNodeRecovery)[keyof typeof ClusterNodeRecovery];
+
+/**
+ * @public
+ * @enum
+ */
+export const ClusterSlurmConfigStrategy = {
+  MANAGED: "Managed",
+  MERGE: "Merge",
+  OVERWRITE: "Overwrite",
+} as const;
+/**
+ * @public
+ */
+export type ClusterSlurmConfigStrategy = (typeof ClusterSlurmConfigStrategy)[keyof typeof ClusterSlurmConfigStrategy];
 
 /**
  * @public
@@ -2830,6 +2858,12 @@ export const ProcessingInstanceType = {
   ML_G6_4XLARGE: "ml.g6.4xlarge",
   ML_G6_8XLARGE: "ml.g6.8xlarge",
   ML_G6_XLARGE: "ml.g6.xlarge",
+  ML_G7E_12XLARGE: "ml.g7e.12xlarge",
+  ML_G7E_24XLARGE: "ml.g7e.24xlarge",
+  ML_G7E_2XLARGE: "ml.g7e.2xlarge",
+  ML_G7E_48XLARGE: "ml.g7e.48xlarge",
+  ML_G7E_4XLARGE: "ml.g7e.4xlarge",
+  ML_G7E_8XLARGE: "ml.g7e.8xlarge",
   ML_M4_10XLARGE: "ml.m4.10xlarge",
   ML_M4_16XLARGE: "ml.m4.16xlarge",
   ML_M4_2XLARGE: "ml.m4.2xlarge",

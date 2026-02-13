@@ -57,6 +57,15 @@ export interface CreateClusterCommandOutput extends CreateClusterResponse, __Met
  *             VolumeKmsKeyId: "STRING_VALUE",
  *             RootVolume: true || false,
  *           },
+ *           FsxLustreConfig: { // ClusterFsxLustreConfig
+ *             DnsName: "STRING_VALUE", // required
+ *             MountName: "STRING_VALUE", // required
+ *             MountPath: "STRING_VALUE",
+ *           },
+ *           FsxOpenZfsConfig: { // ClusterFsxOpenZfsConfig
+ *             DnsName: "STRING_VALUE", // required
+ *             MountPath: "STRING_VALUE",
+ *           },
  *         },
  *       ],
  *       OnStartDeepHealthChecks: [ // OnStartDeepHealthChecks
@@ -105,6 +114,12 @@ export interface CreateClusterCommandOutput extends CreateClusterResponse, __Met
  *           },
  *         ],
  *       },
+ *       SlurmConfig: { // ClusterSlurmConfig
+ *         NodeType: "Controller" || "Login" || "Compute", // required
+ *         PartitionNames: [ // ClusterPartitionNames
+ *           "STRING_VALUE",
+ *         ],
+ *       },
  *       CapacityRequirements: { // ClusterCapacityRequirements
  *         Spot: {},
  *         OnDemand: {},
@@ -124,6 +139,15 @@ export interface CreateClusterCommandOutput extends CreateClusterResponse, __Met
  *             VolumeSizeInGB: Number("int"),
  *             VolumeKmsKeyId: "STRING_VALUE",
  *             RootVolume: true || false,
+ *           },
+ *           FsxLustreConfig: {
+ *             DnsName: "STRING_VALUE", // required
+ *             MountName: "STRING_VALUE", // required
+ *             MountPath: "STRING_VALUE",
+ *           },
+ *           FsxOpenZfsConfig: {
+ *             DnsName: "STRING_VALUE", // required
+ *             MountPath: "STRING_VALUE",
  *           },
  *         },
  *       ],
@@ -185,6 +209,9 @@ export interface CreateClusterCommandOutput extends CreateClusterResponse, __Met
  *   Orchestrator: { // ClusterOrchestrator
  *     Eks: { // ClusterOrchestratorEksConfig
  *       ClusterArn: "STRING_VALUE", // required
+ *     },
+ *     Slurm: { // ClusterOrchestratorSlurmConfig
+ *       SlurmConfigStrategy: "Overwrite" || "Managed" || "Merge",
  *     },
  *   },
  *   NodeRecovery: "Automatic" || "None",

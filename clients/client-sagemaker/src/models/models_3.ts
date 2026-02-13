@@ -99,8 +99,6 @@ import {
   PipelineExecutionStatus,
   ProcessingJobStatus,
   ProfilingStatus,
-  ProjectSortBy,
-  ProjectSortOrder,
   ProjectStatus,
   RecommendationJobStatus,
   RecommendationJobType,
@@ -146,6 +144,7 @@ import {
 import {
   type AlgorithmSpecification,
   type AmazonQSettings,
+  type AppSpecification,
   type AutoMLJobStepMetadata,
   type BatchDataCaptureConfig,
   type BedrockCustomModelDeploymentMetadata,
@@ -201,19 +200,23 @@ import {
   type LabelingJobInputConfig,
   type ModelLifeCycle,
   type MonitoringScheduleConfig,
+  type NetworkConfig,
   type OfflineStoreConfig,
   type OnlineStoreConfig,
   type OwnershipSettings,
+  type ParallelismConfiguration,
+  type ProcessingOutputConfig,
+  type ProcessingResources,
+  type ProcessingStoppingCondition,
   type ResourceLimits,
   type RetryStrategy,
   type ServiceCatalogProvisioningDetails,
-  type SpaceSettings,
-  type SpaceSharingSettings,
   type TrustedIdentityPropagationSettings,
   type UnifiedStudioSettings,
   type UserSettings,
   FeatureDefinition,
   HyperParameterTrainingJobDefinition,
+  ProcessingInput,
 } from "./models_1";
 import {
   type DataCaptureConfigSummary,
@@ -230,6 +233,7 @@ import {
   type LabelingJobOutput,
   type LastUpdateStatus,
   type MlflowConfig,
+  type MLflowConfiguration,
   type ModelArtifacts,
   type ModelClientConfig,
   type ModelConfiguration,
@@ -237,11 +241,14 @@ import {
   type NotificationConfiguration,
   type ObjectiveStatusCounters,
   type OfflineStoreStatus,
+  type PipelineExperimentConfig,
   type ProfilerConfig,
   type RecommendationMetrics,
   type RemoteDebugConfig,
   type ServerlessJobConfig,
   type SourceIpConfig,
+  type SpaceSettings,
+  type SpaceSharingSettings,
   type TensorBoardOutputConfig,
   type TrainingJobStatusCounters,
   type TrialComponentStatus,
@@ -254,9 +261,276 @@ import {
   MonitoringExecutionSummary,
   ProductionVariantSummary,
   ProfilerRuleConfiguration,
+  SelectedStep,
   TrialComponentArtifact,
   TrialComponentParameterValue,
 } from "./models_2";
+
+/**
+ * <p>The selective execution configuration applied to the pipeline run.</p>
+ * @public
+ */
+export interface SelectiveExecutionConfig {
+  /**
+   * <p>The ARN from a reference execution of the current pipeline. Used to copy input collaterals needed for the selected steps to run. The execution status of the pipeline can be either <code>Failed</code> or <code>Success</code>.</p> <p>This field is required if the steps you specify for <code>SelectedSteps</code> depend on output collaterals from any non-specified pipeline steps. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-selective-ex.html">Selective Execution for Pipeline Steps</a>.</p>
+   * @public
+   */
+  SourcePipelineExecutionArn?: string | undefined;
+
+  /**
+   * <p>A list of pipeline steps to run. All step(s) in all path(s) between two selected steps should be included.</p>
+   * @public
+   */
+  SelectedSteps: SelectedStep[] | undefined;
+}
+
+/**
+ * @public
+ */
+export interface DescribePipelineExecutionResponse {
+  /**
+   * <p>The Amazon Resource Name (ARN) of the pipeline.</p>
+   * @public
+   */
+  PipelineArn?: string | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
+   * @public
+   */
+  PipelineExecutionArn?: string | undefined;
+
+  /**
+   * <p>The display name of the pipeline execution.</p>
+   * @public
+   */
+  PipelineExecutionDisplayName?: string | undefined;
+
+  /**
+   * <p>The status of the pipeline execution.</p>
+   * @public
+   */
+  PipelineExecutionStatus?: PipelineExecutionStatus | undefined;
+
+  /**
+   * <p>The description of the pipeline execution.</p>
+   * @public
+   */
+  PipelineExecutionDescription?: string | undefined;
+
+  /**
+   * <p>Specifies the names of the experiment and trial created by a pipeline.</p>
+   * @public
+   */
+  PipelineExperimentConfig?: PipelineExperimentConfig | undefined;
+
+  /**
+   * <p>If the execution failed, a message describing why.</p>
+   * @public
+   */
+  FailureReason?: string | undefined;
+
+  /**
+   * <p>The time when the pipeline execution was created.</p>
+   * @public
+   */
+  CreationTime?: Date | undefined;
+
+  /**
+   * <p>The time when the pipeline execution was modified last.</p>
+   * @public
+   */
+  LastModifiedTime?: Date | undefined;
+
+  /**
+   * <p>Information about the user who created or modified a SageMaker resource.</p>
+   * @public
+   */
+  CreatedBy?: UserContext | undefined;
+
+  /**
+   * <p>Information about the user who created or modified a SageMaker resource.</p>
+   * @public
+   */
+  LastModifiedBy?: UserContext | undefined;
+
+  /**
+   * <p>The parallelism configuration applied to the pipeline.</p>
+   * @public
+   */
+  ParallelismConfiguration?: ParallelismConfiguration | undefined;
+
+  /**
+   * <p>The selective execution configuration applied to the pipeline run.</p>
+   * @public
+   */
+  SelectiveExecutionConfig?: SelectiveExecutionConfig | undefined;
+
+  /**
+   * <p>The ID of the pipeline version.</p>
+   * @public
+   */
+  PipelineVersionId?: number | undefined;
+
+  /**
+   * <p> The MLflow configuration of the pipeline execution. </p>
+   * @public
+   */
+  MLflowConfig?: MLflowConfiguration | undefined;
+}
+
+/**
+ * @public
+ */
+export interface DescribeProcessingJobRequest {
+  /**
+   * <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+   * @public
+   */
+  ProcessingJobName: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface DescribeProcessingJobResponse {
+  /**
+   * <p>The inputs for a processing job.</p>
+   * @public
+   */
+  ProcessingInputs?: ProcessingInput[] | undefined;
+
+  /**
+   * <p>Output configuration for the processing job.</p>
+   * @public
+   */
+  ProcessingOutputConfig?: ProcessingOutputConfig | undefined;
+
+  /**
+   * <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+   * @public
+   */
+  ProcessingJobName: string | undefined;
+
+  /**
+   * <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
+   * @public
+   */
+  ProcessingResources: ProcessingResources | undefined;
+
+  /**
+   * <p>The time limit for how long the processing job is allowed to run.</p>
+   * @public
+   */
+  StoppingCondition?: ProcessingStoppingCondition | undefined;
+
+  /**
+   * <p>Configures the processing job to run a specified container image.</p>
+   * @public
+   */
+  AppSpecification: AppSpecification | undefined;
+
+  /**
+   * <p>The environment variables set in the Docker container.</p>
+   * @public
+   */
+  Environment?: Record<string, string> | undefined;
+
+  /**
+   * <p>Networking options for a processing job.</p>
+   * @public
+   */
+  NetworkConfig?: NetworkConfig | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+   * @public
+   */
+  RoleArn?: string | undefined;
+
+  /**
+   * <p>The configuration information used to create an experiment.</p>
+   * @public
+   */
+  ExperimentConfig?: ExperimentConfig | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of the processing job.</p>
+   * @public
+   */
+  ProcessingJobArn: string | undefined;
+
+  /**
+   * <p>Provides the status of a processing job.</p>
+   * @public
+   */
+  ProcessingJobStatus: ProcessingJobStatus | undefined;
+
+  /**
+   * <p>An optional string, up to one KB in size, that contains metadata from the processing container when the processing job exits.</p>
+   * @public
+   */
+  ExitMessage?: string | undefined;
+
+  /**
+   * <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
+   * @public
+   */
+  FailureReason?: string | undefined;
+
+  /**
+   * <p>The time at which the processing job completed.</p>
+   * @public
+   */
+  ProcessingEndTime?: Date | undefined;
+
+  /**
+   * <p>The time at which the processing job started.</p>
+   * @public
+   */
+  ProcessingStartTime?: Date | undefined;
+
+  /**
+   * <p>The time at which the processing job was last modified.</p>
+   * @public
+   */
+  LastModifiedTime?: Date | undefined;
+
+  /**
+   * <p>The time at which the processing job was created.</p>
+   * @public
+   */
+  CreationTime: Date | undefined;
+
+  /**
+   * <p>The ARN of a monitoring schedule for an endpoint associated with this processing job.</p>
+   * @public
+   */
+  MonitoringScheduleArn?: string | undefined;
+
+  /**
+   * <p>The ARN of an AutoML job associated with this processing job.</p>
+   * @public
+   */
+  AutoMLJobArn?: string | undefined;
+
+  /**
+   * <p>The ARN of a training job associated with this processing job.</p>
+   * @public
+   */
+  TrainingJobArn?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface DescribeProjectInput {
+  /**
+   * <p>The name of the project to describe.</p>
+   * @public
+   */
+  ProjectName: string | undefined;
+}
 
 /**
  * <p>Details of a provisioned service catalog product. For information about service catalog, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What is Amazon Web Services Service Catalog</a>.</p>
@@ -11218,181 +11492,4 @@ export interface ListProcessingJobsRequest {
    * @public
    */
   MaxResults?: number | undefined;
-}
-
-/**
- * <p>Summary of information about a processing job.</p>
- * @public
- */
-export interface ProcessingJobSummary {
-  /**
-   * <p>The name of the processing job.</p>
-   * @public
-   */
-  ProcessingJobName: string | undefined;
-
-  /**
-   * <p>The Amazon Resource Name (ARN) of the processing job..</p>
-   * @public
-   */
-  ProcessingJobArn: string | undefined;
-
-  /**
-   * <p>The time at which the processing job was created.</p>
-   * @public
-   */
-  CreationTime: Date | undefined;
-
-  /**
-   * <p>The time at which the processing job completed.</p>
-   * @public
-   */
-  ProcessingEndTime?: Date | undefined;
-
-  /**
-   * <p>A timestamp that indicates the last time the processing job was modified.</p>
-   * @public
-   */
-  LastModifiedTime?: Date | undefined;
-
-  /**
-   * <p>The status of the processing job.</p>
-   * @public
-   */
-  ProcessingJobStatus: ProcessingJobStatus | undefined;
-
-  /**
-   * <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
-   * @public
-   */
-  FailureReason?: string | undefined;
-
-  /**
-   * <p>An optional string, up to one KB in size, that contains metadata from the processing container when the processing job exits.</p>
-   * @public
-   */
-  ExitMessage?: string | undefined;
-}
-
-/**
- * @public
- */
-export interface ListProcessingJobsResponse {
-  /**
-   * <p>An array of <code>ProcessingJobSummary</code> objects, each listing a processing job.</p>
-   * @public
-   */
-  ProcessingJobSummaries: ProcessingJobSummary[] | undefined;
-
-  /**
-   * <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of processing jobs, use it in the subsequent request.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
-}
-
-/**
- * @public
- */
-export interface ListProjectsInput {
-  /**
-   * <p>A filter that returns the projects that were created after a specified time.</p>
-   * @public
-   */
-  CreationTimeAfter?: Date | undefined;
-
-  /**
-   * <p>A filter that returns the projects that were created before a specified time.</p>
-   * @public
-   */
-  CreationTimeBefore?: Date | undefined;
-
-  /**
-   * <p>The maximum number of projects to return in the response.</p>
-   * @public
-   */
-  MaxResults?: number | undefined;
-
-  /**
-   * <p>A filter that returns the projects whose name contains a specified string.</p>
-   * @public
-   */
-  NameContains?: string | undefined;
-
-  /**
-   * <p>If the result of the previous <code>ListProjects</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
-
-  /**
-   * <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
-   * @public
-   */
-  SortBy?: ProjectSortBy | undefined;
-
-  /**
-   * <p>The sort order for results. The default is <code>Ascending</code>.</p>
-   * @public
-   */
-  SortOrder?: ProjectSortOrder | undefined;
-}
-
-/**
- * <p>Information about a project.</p>
- * @public
- */
-export interface ProjectSummary {
-  /**
-   * <p>The name of the project.</p>
-   * @public
-   */
-  ProjectName: string | undefined;
-
-  /**
-   * <p>The description of the project.</p>
-   * @public
-   */
-  ProjectDescription?: string | undefined;
-
-  /**
-   * <p>The Amazon Resource Name (ARN) of the project.</p>
-   * @public
-   */
-  ProjectArn: string | undefined;
-
-  /**
-   * <p>The ID of the project.</p>
-   * @public
-   */
-  ProjectId: string | undefined;
-
-  /**
-   * <p>The time that the project was created.</p>
-   * @public
-   */
-  CreationTime: Date | undefined;
-
-  /**
-   * <p>The status of the project.</p>
-   * @public
-   */
-  ProjectStatus: ProjectStatus | undefined;
-}
-
-/**
- * @public
- */
-export interface ListProjectsOutput {
-  /**
-   * <p>A list of summaries of projects.</p>
-   * @public
-   */
-  ProjectSummaryList: ProjectSummary[] | undefined;
-
-  /**
-   * <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
 }

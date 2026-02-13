@@ -36,6 +36,8 @@ import {
   PipelineStatus,
   ProcessingJobStatus,
   Processor,
+  ProjectSortBy,
+  ProjectSortOrder,
   ProjectStatus,
   Relation,
   ReservedCapacityInstanceType,
@@ -84,6 +86,7 @@ import {
   type CfnUpdateTemplateProvider,
   type CheckpointConfig,
   type ClusterAutoScalingConfig,
+  type ClusterOrchestrator,
   type ClusterTieredStorageConfig,
   type CodeEditorAppImageConfig,
   type ComputeQuotaConfig,
@@ -141,8 +144,6 @@ import {
   type ServiceCatalogProvisioningDetails,
   type ShadowModeConfig,
   type SourceAlgorithmSpecification,
-  type SpaceSettings,
-  type SpaceStorageSettings,
   type TtlDuration,
   type UiTemplate,
   type UserSettings,
@@ -166,8 +167,9 @@ import {
   type OidcConfig,
   type PipelineExperimentConfig,
   type ProfilerConfig,
-  type SelectiveExecutionConfig,
   type SourceIpConfig,
+  type SpaceSettings,
+  type SpaceStorageSettings,
   type TensorBoardOutputConfig,
   type TrialComponentStatus,
   type WorkerAccessConfiguration,
@@ -189,6 +191,7 @@ import {
   type FeatureMetadata,
   type GitConfigForUpdate,
   type HyperParameterTuningJobSearchEntity,
+  type SelectiveExecutionConfig,
   type ServiceCatalogProvisionedProductDetails,
   type TrialComponentSource,
   type TrialSource,
@@ -209,6 +212,183 @@ import {
   Workforce,
   Workteam,
 } from "./models_3";
+
+/**
+ * <p>Summary of information about a processing job.</p>
+ * @public
+ */
+export interface ProcessingJobSummary {
+  /**
+   * <p>The name of the processing job.</p>
+   * @public
+   */
+  ProcessingJobName: string | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of the processing job..</p>
+   * @public
+   */
+  ProcessingJobArn: string | undefined;
+
+  /**
+   * <p>The time at which the processing job was created.</p>
+   * @public
+   */
+  CreationTime: Date | undefined;
+
+  /**
+   * <p>The time at which the processing job completed.</p>
+   * @public
+   */
+  ProcessingEndTime?: Date | undefined;
+
+  /**
+   * <p>A timestamp that indicates the last time the processing job was modified.</p>
+   * @public
+   */
+  LastModifiedTime?: Date | undefined;
+
+  /**
+   * <p>The status of the processing job.</p>
+   * @public
+   */
+  ProcessingJobStatus: ProcessingJobStatus | undefined;
+
+  /**
+   * <p>A string, up to one KB in size, that contains the reason a processing job failed, if it failed.</p>
+   * @public
+   */
+  FailureReason?: string | undefined;
+
+  /**
+   * <p>An optional string, up to one KB in size, that contains metadata from the processing container when the processing job exits.</p>
+   * @public
+   */
+  ExitMessage?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ListProcessingJobsResponse {
+  /**
+   * <p>An array of <code>ProcessingJobSummary</code> objects, each listing a processing job.</p>
+   * @public
+   */
+  ProcessingJobSummaries: ProcessingJobSummary[] | undefined;
+
+  /**
+   * <p>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of processing jobs, use it in the subsequent request.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ListProjectsInput {
+  /**
+   * <p>A filter that returns the projects that were created after a specified time.</p>
+   * @public
+   */
+  CreationTimeAfter?: Date | undefined;
+
+  /**
+   * <p>A filter that returns the projects that were created before a specified time.</p>
+   * @public
+   */
+  CreationTimeBefore?: Date | undefined;
+
+  /**
+   * <p>The maximum number of projects to return in the response.</p>
+   * @public
+   */
+  MaxResults?: number | undefined;
+
+  /**
+   * <p>A filter that returns the projects whose name contains a specified string.</p>
+   * @public
+   */
+  NameContains?: string | undefined;
+
+  /**
+   * <p>If the result of the previous <code>ListProjects</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+
+  /**
+   * <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
+   * @public
+   */
+  SortBy?: ProjectSortBy | undefined;
+
+  /**
+   * <p>The sort order for results. The default is <code>Ascending</code>.</p>
+   * @public
+   */
+  SortOrder?: ProjectSortOrder | undefined;
+}
+
+/**
+ * <p>Information about a project.</p>
+ * @public
+ */
+export interface ProjectSummary {
+  /**
+   * <p>The name of the project.</p>
+   * @public
+   */
+  ProjectName: string | undefined;
+
+  /**
+   * <p>The description of the project.</p>
+   * @public
+   */
+  ProjectDescription?: string | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of the project.</p>
+   * @public
+   */
+  ProjectArn: string | undefined;
+
+  /**
+   * <p>The ID of the project.</p>
+   * @public
+   */
+  ProjectId: string | undefined;
+
+  /**
+   * <p>The time that the project was created.</p>
+   * @public
+   */
+  CreationTime: Date | undefined;
+
+  /**
+   * <p>The status of the project.</p>
+   * @public
+   */
+  ProjectStatus: ProjectStatus | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ListProjectsOutput {
+  /**
+   * <p>A list of summaries of projects.</p>
+   * @public
+   */
+  ProjectSummaryList: ProjectSummary[] | undefined;
+
+  /**
+   * <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+}
 
 /**
  * @public
@@ -5031,6 +5211,12 @@ export interface UpdateClusterRequest {
    * @public
    */
   AutoScaling?: ClusterAutoScalingConfig | undefined;
+
+  /**
+   * <p>The type of orchestrator used for the SageMaker HyperPod cluster.</p>
+   * @public
+   */
+  Orchestrator?: ClusterOrchestrator | undefined;
 }
 
 /**

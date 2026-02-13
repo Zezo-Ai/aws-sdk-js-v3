@@ -395,7 +395,9 @@ const _CFDRr = "CreateFlowDefinitionResponse";
 const _CFG = "CreateFeatureGroup";
 const _CFGR = "CreateFeatureGroupRequest";
 const _CFGRr = "CreateFeatureGroupResponse";
+const _CFLC = "ClusterFsxLustreConfig";
 const _CFM = "CertifyForMarketplace";
+const _CFOZC = "ClusterFsxOpenZfsConfig";
 const _CFS = "CustomFileSystems";
 const _CFSC = "CustomFileSystemConfigs";
 const _CFSCu = "CustomFileSystemConfig";
@@ -530,6 +532,7 @@ const _COJ = "CreateOptimizationJob";
 const _COJR = "CreateOptimizationJobRequest";
 const _COJRr = "CreateOptimizationJobResponse";
 const _COL = "CaptureOptionList";
+const _COSC = "ClusterOrchestratorSlurmConfig";
 const _COa = "CaptureOptions";
 const _COl = "ClusterOrchestrator";
 const _COo = "CompilerOptions";
@@ -609,6 +612,7 @@ const _CSA = "CandidateStepArn";
 const _CSBC = "ClarifyShapBaselineConfig";
 const _CSC = "CapacitySizeConfig";
 const _CSCA = "ClusterSchedulerConfigArn";
+const _CSCD = "ClusterSlurmConfigDetails";
 const _CSCI = "ClusterSchedulerConfigId";
 const _CSCP = "CfnStackCreateParameter";
 const _CSCPf = "CfnStackCreateParameters";
@@ -617,6 +621,7 @@ const _CSCSL = "ClusterSchedulerConfigSummaryList";
 const _CSCSl = "ClusterSchedulerConfigSummaries";
 const _CSCV = "ClusterSchedulerConfigVersion";
 const _CSCl = "ClarifyShapConfig";
+const _CSClu = "ClusterSlurmConfig";
 const _CSCu = "CurrentServerlessConfig";
 const _CSD = "CfnStackDetail";
 const _CSHCTIS = "ContainerStartupHealthCheckTimeoutInSeconds";
@@ -1059,6 +1064,7 @@ const _DNe = "DeviceName";
 const _DNef = "DefinitionName";
 const _DNev = "DeviceNames";
 const _DNi = "DisplayName";
+const _DNn = "DnsName";
 const _DNo = "DomainName";
 const _DOJ = "DeleteOptimizationJob";
 const _DOJR = "DeleteOptimizationJobRequest";
@@ -1400,12 +1406,14 @@ const _FHPTJOM = "FinalHyperParameterTuningJobObjectiveMetric";
 const _FHo = "ForecastHorizon";
 const _FI = "FlatInvocations";
 const _FL = "FilterList";
+const _FLC = "FsxLustreConfig";
 const _FM = "FailureMessage";
 const _FMDL = "FinalMetricDataList";
 const _FMe = "FeatureMetadata";
 const _FN = "FeatureName";
 const _FNLI = "FailedNodeLogicalIds";
 const _FNRE = "FailedNonRetryableError";
+const _FOZC = "FsxOpenZfsConfig";
 const _FP = "FeatureParameter";
 const _FPA = "FeatureParameterAdditions";
 const _FPe = "FeatureParameters";
@@ -2197,11 +2205,12 @@ const _MNE = "ModelNameEquals";
 const _MNOT = "MaxNumberOfTests";
 const _MNOTJ = "MaxNumberOfTrainingJobs";
 const _MNOTJNI = "MaxNumberOfTrainingJobsNotImproving";
-const _MNo = "ModelName";
+const _MNo = "MountName";
+const _MNod = "ModelName";
 const _MO = "MonitoringOutput";
 const _MOC = "MonitoringOutputConfig";
 const _MOo = "MonitoringOutputs";
-const _MP = "MetadataProperties";
+const _MP = "MountPath";
 const _MPA = "ModelPackageArn";
 const _MPAL = "ModelPackageArnList";
 const _MPC = "ModelPackageConfig";
@@ -2241,8 +2250,8 @@ const _MPVAE = "ModelPackageVersionArnEquals";
 const _MPVP = "ModelPackageValidationProfile";
 const _MPVPo = "ModelPackageValidationProfiles";
 const _MPVS = "ModelPackageValidationSpecification";
-const _MPo = "MountPath";
-const _MPod = "ModelPackage";
+const _MPe = "MetadataProperties";
+const _MPo = "ModelPackage";
 const _MQ = "ModelQuality";
 const _MQAS = "ModelQualityAppSpecification";
 const _MQBC = "ModelQualityBaselineConfig";
@@ -2362,9 +2371,10 @@ const _NPM = "NodeProvisioningMode";
 const _NPN = "NestedPropertyName";
 const _NR = "NodeRecovery";
 const _NRE = "NonRetryableError";
-const _NT = "NextToken";
+const _NT = "NodeType";
 const _NTA = "NodesToAdd";
 const _NTAo = "NotificationTopicArn";
+const _NTe = "NextToken";
 const _NV = "NumberValue";
 const _NVC = "NeoVpcConfig";
 const _Na = "Namespace";
@@ -2516,6 +2526,7 @@ const _PNQ = "PropertyNameQuery";
 const _PNS = "PropertyNameSuggestions";
 const _PNSL = "PropertyNameSuggestionList";
 const _PNSr = "PropertyNameSuggestion";
+const _PNa = "PartitionNames";
 const _PNi = "PipelineName";
 const _PNr = "ProjectName";
 const _PNro = "PropertyName";
@@ -2767,6 +2778,7 @@ const _SCJR = "StopCompilationJobRequest";
 const _SCPD = "ServiceCatalogProvisioningDetails";
 const _SCPPD = "ServiceCatalogProvisionedProductDetails";
 const _SCPUD = "ServiceCatalogProvisioningUpdateDetails";
+const _SCS = "SlurmConfigStrategy";
 const _SCT = "SupportedContentTypes";
 const _SCTo = "S3CompressionType";
 const _SCTu = "SupportedCompressionTypes";
@@ -2776,6 +2788,7 @@ const _SCe = "ServerlessConfig";
 const _SCh = "ShuffleConfig";
 const _SCha = "ShapConfig";
 const _SCk = "SkipCheck";
+const _SCl = "SlurmConfig";
 const _SCt = "StoppingCondition";
 const _SCto = "StoppingConditions";
 const _SCtr = "StrategyConfig";
@@ -3015,6 +3028,7 @@ const _Sco = "Scope";
 const _Se = "Seed";
 const _Sea = "Search";
 const _Set = "Set";
+const _Sl = "Slurm";
 const _So = "Sources";
 const _Sp = "Spot";
 const _Spa = "Spaces";
@@ -4157,15 +4171,25 @@ export var ClusterEventSummary$: StaticStructureSchema = [3, n0, _CES,
   [_EI, _CAl, _CNl, _RT, _ETv, _IGN, _II, _D],
   [0, 0, 0, 0, 4, 0, 0, 0], 5
 ];
+export var ClusterFsxLustreConfig$: StaticStructureSchema = [3, n0, _CFLC,
+  0,
+  [_DNn, _MNo, _MP],
+  [0, 0, 0], 2
+];
+export var ClusterFsxOpenZfsConfig$: StaticStructureSchema = [3, n0, _CFOZC,
+  0,
+  [_DNn, _MP],
+  [0, 0], 1
+];
 export var ClusterInstanceGroupDetails$: StaticStructureSchema = [3, n0, _CIGD,
   0,
-  [_CCu, _TCa, _MCi, _IGN, _IT, _LCC, _ERx, _TPC, _ISC, _OSDHC, _St, _TPA, _TPS, _OVC, _SUC, _CII, _DII, _AO, _KC, _CRa, _TSC, _SUS, _ASUC],
-  [1, 1, 1, 0, 0, () => ClusterLifeCycleConfig$, 0, 1, () => ClusterInstanceStorageConfigs, 64 | 0, 0, 0, 0, () => VpcConfig$, () => ScheduledUpdateConfig$, 0, 0, 128 | 1, () => ClusterKubernetesConfigDetails$, () => ClusterCapacityRequirements$, 1, 0, () => DeploymentConfiguration$]
+  [_CCu, _TCa, _MCi, _IGN, _IT, _LCC, _ERx, _TPC, _ISC, _OSDHC, _St, _TPA, _TPS, _OVC, _SUC, _CII, _DII, _AO, _KC, _CRa, _TSC, _SUS, _ASUC, _SCl],
+  [1, 1, 1, 0, 0, () => ClusterLifeCycleConfig$, 0, 1, () => ClusterInstanceStorageConfigs, 64 | 0, 0, 0, 0, () => VpcConfig$, () => ScheduledUpdateConfig$, 0, 0, 128 | 1, () => ClusterKubernetesConfigDetails$, () => ClusterCapacityRequirements$, 1, 0, () => DeploymentConfiguration$, () => ClusterSlurmConfigDetails$]
 ];
 export var ClusterInstanceGroupSpecification$: StaticStructureSchema = [3, n0, _CIGS,
   0,
-  [_ICns, _IGN, _IT, _LCC, _ERx, _MIC, _TPC, _ISC, _OSDHC, _TPA, _OVC, _SUC, _IIm, _KC, _CRa],
-  [1, 0, 0, () => ClusterLifeCycleConfig$, 0, 1, 1, () => ClusterInstanceStorageConfigs, 64 | 0, 0, () => VpcConfig$, () => ScheduledUpdateConfig$, 0, () => ClusterKubernetesConfig$, () => ClusterCapacityRequirements$], 5
+  [_ICns, _IGN, _IT, _LCC, _ERx, _MIC, _TPC, _ISC, _OSDHC, _TPA, _OVC, _SUC, _IIm, _KC, _SCl, _CRa],
+  [1, 0, 0, () => ClusterLifeCycleConfig$, 0, 1, 1, () => ClusterInstanceStorageConfigs, 64 | 0, 0, () => VpcConfig$, () => ScheduledUpdateConfig$, 0, () => ClusterKubernetesConfig$, () => ClusterSlurmConfig$, () => ClusterCapacityRequirements$], 5
 ];
 export var ClusterInstancePlacement$: StaticStructureSchema = [3, n0, _CIP,
   0,
@@ -4224,13 +4248,18 @@ export var ClusterOnDemandOptions$: StaticStructureSchema = [3, n0, _CODO,
 ];
 export var ClusterOrchestrator$: StaticStructureSchema = [3, n0, _COl,
   0,
-  [_Ek],
-  [() => ClusterOrchestratorEksConfig$]
+  [_Ek, _Sl],
+  [() => ClusterOrchestratorEksConfig$, () => ClusterOrchestratorSlurmConfig$]
 ];
 export var ClusterOrchestratorEksConfig$: StaticStructureSchema = [3, n0, _COEC,
   0,
   [_CAl],
   [0], 1
+];
+export var ClusterOrchestratorSlurmConfig$: StaticStructureSchema = [3, n0, _COSC,
+  0,
+  [_SCS],
+  [0]
 ];
 export var ClusterRestrictedInstanceGroupDetails$: StaticStructureSchema = [3, n0, _CRIGD,
   0,
@@ -4246,6 +4275,16 @@ export var ClusterSchedulerConfigSummary$: StaticStructureSchema = [3, n0, _CSCS
   0,
   [_CSCA, _CSCI, _N, _CT, _St, _CSCV, _LMT, _CAl],
   [0, 0, 0, 4, 0, 1, 4, 0], 5
+];
+export var ClusterSlurmConfig$: StaticStructureSchema = [3, n0, _CSClu,
+  0,
+  [_NT, _PNa],
+  [0, 64 | 0], 1
+];
+export var ClusterSlurmConfigDetails$: StaticStructureSchema = [3, n0, _CSCD,
+  0,
+  [_NT, _PNa],
+  [0, 64 | 0], 1
 ];
 export var ClusterSpotOptions$: StaticStructureSchema = [3, n0, _CSO,
   0,
@@ -4364,7 +4403,7 @@ export var ConvergenceDetected$: StaticStructureSchema = [3, n0, _CDo,
 ];
 export var CreateActionRequest$: StaticStructureSchema = [3, n0, _CAR,
   0,
-  [_AN, _S, _AT, _D, _St, _Pr, _MP, _Ta],
+  [_AN, _S, _AT, _D, _St, _Pr, _MPe, _Ta],
   [0, () => ActionSource$, 0, 0, 0, 128 | 0, () => MetadataProperties$, () => TagList], 3
 ];
 export var CreateActionResponse$: StaticStructureSchema = [3, n0, _CARr,
@@ -4404,7 +4443,7 @@ export var CreateAppResponse$: StaticStructureSchema = [3, n0, _CARrea,
 ];
 export var CreateArtifactRequest$: StaticStructureSchema = [3, n0, _CARreat,
   0,
-  [_S, _ATr, _ANr, _Pr, _MP, _Ta],
+  [_S, _ATr, _ANr, _Pr, _MPe, _Ta],
   [() => ArtifactSource$, 0, 0, 128 | 0, () => MetadataProperties$, () => TagList], 2
 ];
 export var CreateArtifactResponse$: StaticStructureSchema = [3, n0, _CARreate,
@@ -4534,7 +4573,7 @@ export var CreateEdgeDeploymentStageRequest$: StaticStructureSchema = [3, n0, _C
 ];
 export var CreateEdgePackagingJobRequest$: StaticStructureSchema = [3, n0, _CEPJR,
   0,
-  [_EPJN, _CJN, _MNo, _MVo, _RAo, _OC, _RK, _Ta],
+  [_EPJN, _CJN, _MNod, _MVo, _RAo, _OC, _RK, _Ta],
   [0, 0, 0, 0, 0, () => EdgeOutputConfig$, 0, () => TagList], 6
 ];
 export var CreateEndpointConfigInput$: StaticStructureSchema = [3, n0, _CECI,
@@ -4589,12 +4628,12 @@ export var CreateFlowDefinitionResponse$: StaticStructureSchema = [3, n0, _CFDRr
 ];
 export var CreateHubContentPresignedUrlsRequest$: StaticStructureSchema = [3, n0, _CHCPUR,
   0,
-  [_HN, _HCT, _HCN, _HCV, _ACc, _MR, _NT],
+  [_HN, _HCT, _HCN, _HCV, _ACc, _MR, _NTe],
   [0, 0, 0, 0, () => PresignedUrlAccessConfig$, 1, 0], 3
 ];
 export var CreateHubContentPresignedUrlsResponse$: StaticStructureSchema = [3, n0, _CHCPURr,
   0,
-  [_AUC, _NT],
+  [_AUC, _NTe],
   [() => AuthorizedUrlConfigs, 0], 1
 ];
 export var CreateHubContentReferenceRequest$: StaticStructureSchema = [3, n0, _CHCRR,
@@ -4759,7 +4798,7 @@ export var CreateModelExplainabilityJobDefinitionResponse$: StaticStructureSchem
 ];
 export var CreateModelInput$: StaticStructureSchema = [3, n0, _CMI,
   0,
-  [_MNo, _PC, _Co, _IEC, _ERA, _Ta, _VC, _ENI],
+  [_MNod, _PC, _Co, _IEC, _ERA, _Ta, _VC, _ENI],
   [0, () => ContainerDefinition$, () => ContainerDefinitionList, () => InferenceExecutionConfig$, 0, () => TagList, () => VpcConfig$, 2], 1
 ];
 export var CreateModelOutput$: StaticStructureSchema = [3, n0, _CMO,
@@ -4779,7 +4818,7 @@ export var CreateModelPackageGroupOutput$: StaticStructureSchema = [3, n0, _CMPG
 ];
 export var CreateModelPackageInput$: StaticStructureSchema = [3, n0, _CMPI,
   0,
-  [_MPN, _MPGN, _MPD, _MPRT, _ISn, _VSa, _SAS, _CFM, _Ta, _MAS, _MP, _MM, _CTl, _Do, _Tas, _SPU, _CMP, _DCB, _AIS, _SMV, _SU, _SC, _MCod, _MLC],
+  [_MPN, _MPGN, _MPD, _MPRT, _ISn, _VSa, _SAS, _CFM, _Ta, _MAS, _MPe, _MM, _CTl, _Do, _Tas, _SPU, _CMP, _DCB, _AIS, _SMV, _SU, _SC, _MCod, _MLC],
   [0, 0, 0, 0, () => InferenceSpecification$, () => ModelPackageValidationSpecification$, () => SourceAlgorithmSpecification$, 2, () => TagList, 0, () => MetadataProperties$, () => ModelMetrics$, [0, 4], 0, 0, 0, 128 | 0, () => DriftCheckBaselines$, () => AdditionalInferenceSpecifications, 0, 0, () => ModelPackageSecurityConfig$, [() => ModelPackageModelCard$, 0], () => ModelLifeCycle$]
 ];
 export var CreateModelPackageOutput$: StaticStructureSchema = [3, n0, _CMPO,
@@ -4974,7 +5013,7 @@ export var CreateTrainingPlanResponse$: StaticStructureSchema = [3, n0, _CTPRr,
 ];
 export var CreateTransformJobRequest$: StaticStructureSchema = [3, n0, _CTJRre,
   0,
-  [_TJNr, _MNo, _TIr, _TO, _TR, _MCT, _MCCo, _MPIMB, _BS, _E, _DCC, _DP, _Ta, _ECxp],
+  [_TJNr, _MNod, _TIr, _TO, _TR, _MCT, _MCCo, _MPIMB, _BS, _E, _DCC, _DP, _Ta, _ECxp],
   [0, 0, () => TransformInput$, () => TransformOutput$, () => TransformResources$, 1, () => ModelClientConfig$, 1, 0, 128 | 0, () => BatchDataCaptureConfig$, () => DataProcessing$, () => TagList, () => ExperimentConfig$], 5
 ];
 export var CreateTransformJobResponse$: StaticStructureSchema = [3, n0, _CTJRrea,
@@ -4984,7 +5023,7 @@ export var CreateTransformJobResponse$: StaticStructureSchema = [3, n0, _CTJRrea
 ];
 export var CreateTrialComponentRequest$: StaticStructureSchema = [3, n0, _CTCR,
   0,
-  [_TCN, _DNi, _St, _STt, _ETn, _P, _IAn, _OA, _MP, _Ta],
+  [_TCN, _DNi, _St, _STt, _ETn, _P, _IAn, _OA, _MPe, _Ta],
   [0, 0, () => TrialComponentStatus$, 4, 4, () => TrialComponentParameters, () => TrialComponentArtifacts, () => TrialComponentArtifacts, () => MetadataProperties$, () => TagList], 1
 ];
 export var CreateTrialComponentResponse$: StaticStructureSchema = [3, n0, _CTCRr,
@@ -4994,7 +5033,7 @@ export var CreateTrialComponentResponse$: StaticStructureSchema = [3, n0, _CTCRr
 ];
 export var CreateTrialRequest$: StaticStructureSchema = [3, n0, _CTR,
   0,
-  [_TN, _ENx, _DNi, _MP, _Ta],
+  [_TN, _ENx, _DNi, _MPe, _Ta],
   [0, 0, 0, () => MetadataProperties$, () => TagList], 2
 ];
 export var CreateTrialResponse$: StaticStructureSchema = [3, n0, _CTRr,
@@ -5374,7 +5413,7 @@ export var DeleteModelExplainabilityJobDefinitionRequest$: StaticStructureSchema
 ];
 export var DeleteModelInput$: StaticStructureSchema = [3, n0, _DMI,
   0,
-  [_MNo],
+  [_MNod],
   [0], 1
 ];
 export var DeleteModelPackageGroupInput$: StaticStructureSchema = [3, n0, _DMPGI,
@@ -5564,7 +5603,7 @@ export var DescribeActionRequest$: StaticStructureSchema = [3, n0, _DARes,
 ];
 export var DescribeActionResponse$: StaticStructureSchema = [3, n0, _DAResc,
   0,
-  [_AN, _AA, _S, _AT, _D, _St, _Pr, _CT, _CB, _LMT, _LMB, _MP, _LGA],
+  [_AN, _AA, _S, _AT, _D, _St, _Pr, _CT, _CB, _LMT, _LMB, _MPe, _LGA],
   [0, 0, () => ActionSource$, 0, 0, 0, 128 | 0, 4, () => UserContext$, 4, () => UserContext$, () => MetadataProperties$, 0]
 ];
 export var DescribeAlgorithmInput$: StaticStructureSchema = [3, n0, _DAIe,
@@ -5604,7 +5643,7 @@ export var DescribeArtifactRequest$: StaticStructureSchema = [3, n0, _DARescrib,
 ];
 export var DescribeArtifactResponse$: StaticStructureSchema = [3, n0, _DARescribe,
   0,
-  [_ANr, _AAr, _S, _ATr, _Pr, _CT, _CB, _LMT, _LMB, _MP, _LGA],
+  [_ANr, _AAr, _S, _ATr, _Pr, _CT, _CB, _LMT, _LMB, _MPe, _LGA],
   [0, 0, () => ArtifactSource$, 0, 128 | 0, 4, () => UserContext$, 4, () => UserContext$, () => MetadataProperties$, 0]
 ];
 export var DescribeAutoMLJobRequest$: StaticStructureSchema = [3, n0, _DAMLJR,
@@ -5729,12 +5768,12 @@ export var DescribeDeviceFleetResponse$: StaticStructureSchema = [3, n0, _DDFRes
 ];
 export var DescribeDeviceRequest$: StaticStructureSchema = [3, n0, _DDRes,
   0,
-  [_DNe, _DFN, _NT],
+  [_DNe, _DFN, _NTe],
   [0, 0, 0], 2
 ];
 export var DescribeDeviceResponse$: StaticStructureSchema = [3, n0, _DDResc,
   0,
-  [_DNe, _DFN, _RTeg, _DAe, _D, _ITN, _LHa, _Mod, _MMa, _NT, _AV],
+  [_DNe, _DFN, _RTeg, _DAe, _D, _ITN, _LHa, _Mod, _MMa, _NTe, _AV],
   [0, 0, 4, 0, 0, 0, 4, () => EdgeModels, 1, 0, 0], 3
 ];
 export var DescribeDomainRequest$: StaticStructureSchema = [3, n0, _DDRescr,
@@ -5749,12 +5788,12 @@ export var DescribeDomainResponse$: StaticStructureSchema = [3, n0, _DDRescri,
 ];
 export var DescribeEdgeDeploymentPlanRequest$: StaticStructureSchema = [3, n0, _DEDPRe,
   0,
-  [_EDPN, _NT, _MR],
+  [_EDPN, _NTe, _MR],
   [0, 0, 1], 1
 ];
 export var DescribeEdgeDeploymentPlanResponse$: StaticStructureSchema = [3, n0, _DEDPRes,
   0,
-  [_EDPA, _EDPN, _MCo, _DFN, _Sta, _EDS, _EDP, _EDF, _NT, _CT, _LMT],
+  [_EDPA, _EDPN, _MCo, _DFN, _Sta, _EDS, _EDP, _EDF, _NTe, _CT, _LMT],
   [0, 0, () => EdgeDeploymentModelConfigs, 0, () => DeploymentStageStatusSummaries, 1, 1, 1, 0, 4, 4], 5
 ];
 export var DescribeEdgePackagingJobRequest$: StaticStructureSchema = [3, n0, _DEPJR,
@@ -5764,7 +5803,7 @@ export var DescribeEdgePackagingJobRequest$: StaticStructureSchema = [3, n0, _DE
 ];
 export var DescribeEdgePackagingJobResponse$: StaticStructureSchema = [3, n0, _DEPJRe,
   0,
-  [_EPJA, _EPJN, _EPJS, _CJN, _MNo, _MVo, _RAo, _OC, _RK, _EPJSM, _CT, _LMT, _MAod, _MSo, _PDO],
+  [_EPJA, _EPJN, _EPJS, _CJN, _MNod, _MVo, _RAo, _OC, _RK, _EPJSM, _CT, _LMT, _MAod, _MSo, _PDO],
   [0, 0, 0, 0, 0, 0, 0, () => EdgeOutputConfig$, 0, 0, 4, 4, 0, 0, () => EdgePresetDeploymentOutput$], 3
 ];
 export var DescribeEndpointConfigInput$: StaticStructureSchema = [3, n0, _DECIe,
@@ -5799,12 +5838,12 @@ export var DescribeExperimentResponse$: StaticStructureSchema = [3, n0, _DEResc,
 ];
 export var DescribeFeatureGroupRequest$: StaticStructureSchema = [3, n0, _DFGRe,
   0,
-  [_FGN, _NT],
+  [_FGN, _NTe],
   [0, 0], 1
 ];
 export var DescribeFeatureGroupResponse$: StaticStructureSchema = [3, n0, _DFGRes,
   0,
-  [_FGA, _FGN, _RIFN, _ETFN, _FD, _CT, _NT, _LMT, _OSC, _OSCf, _TCh, _RAo, _FGS, _OSS, _LUS, _FR, _D, _OSTSB],
+  [_FGA, _FGN, _RIFN, _ETFN, _FD, _CT, _NTe, _LMT, _OSC, _OSCf, _TCh, _RAo, _FGS, _OSS, _LUS, _FR, _D, _OSTSB],
   [0, 0, 0, 0, () => FeatureDefinitions, 4, 0, 4, () => OnlineStoreConfig$, () => OfflineStoreConfig$, () => ThroughputConfigDescription$, 0, 0, () => OfflineStoreStatus$, () => LastUpdateStatus$, 0, 0, 1], 7
 ];
 export var DescribeFeatureMetadataRequest$: StaticStructureSchema = [3, n0, _DFMR,
@@ -5999,12 +6038,12 @@ export var DescribeModelExplainabilityJobDefinitionResponse$: StaticStructureSch
 ];
 export var DescribeModelInput$: StaticStructureSchema = [3, n0, _DMIe,
   0,
-  [_MNo],
+  [_MNod],
   [0], 1
 ];
 export var DescribeModelOutput$: StaticStructureSchema = [3, n0, _DMO,
   0,
-  [_MNo, _CT, _MA, _PC, _Co, _IEC, _ERA, _VC, _ENI, _DR],
+  [_MNod, _CT, _MA, _PC, _Co, _IEC, _ERA, _VC, _ENI, _DR],
   [0, 4, 0, () => ContainerDefinition$, () => ContainerDefinitionList, () => InferenceExecutionConfig$, 0, () => VpcConfig$, 2, () => DeploymentRecommendation$], 3
 ];
 export var DescribeModelPackageGroupInput$: StaticStructureSchema = [3, n0, _DMPGIe,
@@ -6024,7 +6063,7 @@ export var DescribeModelPackageInput$: StaticStructureSchema = [3, n0, _DMPIe,
 ];
 export var DescribeModelPackageOutput$: StaticStructureSchema = [3, n0, _DMPO,
   0,
-  [_MPN, _MPA, _CT, _MPSo, _MPSD, _MPGN, _MPV, _MPRT, _MPD, _ISn, _SAS, _VSa, _CFM, _MAS, _CB, _MP, _MM, _LMT, _LMB, _ADpp, _Do, _Tas, _SPU, _CMP, _DCB, _AIS, _SMV, _SU, _SC, _MCod, _MLC],
+  [_MPN, _MPA, _CT, _MPSo, _MPSD, _MPGN, _MPV, _MPRT, _MPD, _ISn, _SAS, _VSa, _CFM, _MAS, _CB, _MPe, _MM, _LMT, _LMB, _ADpp, _Do, _Tas, _SPU, _CMP, _DCB, _AIS, _SMV, _SU, _SC, _MCod, _MLC],
   [0, 0, 4, 0, () => ModelPackageStatusDetails$, 0, 1, 0, 0, () => InferenceSpecification$, () => SourceAlgorithmSpecification$, () => ModelPackageValidationSpecification$, 2, 0, () => UserContext$, () => MetadataProperties$, () => ModelMetrics$, 4, () => UserContext$, 0, 0, 0, 0, 128 | 0, () => DriftCheckBaselines$, () => AdditionalInferenceSpecifications, 0, 0, () => ModelPackageSecurityConfig$, [() => ModelPackageModelCard$, 0], () => ModelLifeCycle$], 5
 ];
 export var DescribeModelQualityJobDefinitionRequest$: StaticStructureSchema = [3, n0, _DMQJDRe,
@@ -6204,7 +6243,7 @@ export var DescribeTransformJobRequest$: StaticStructureSchema = [3, n0, _DTJRes
 ];
 export var DescribeTransformJobResponse$: StaticStructureSchema = [3, n0, _DTJRescr,
   0,
-  [_TJNr, _TJAr, _TJSr, _MNo, _TIr, _TR, _CT, _FR, _MCT, _MCCo, _MPIMB, _BS, _E, _TO, _DCC, _TSTr, _TETr, _LJA, _AMLJAu, _DP, _ECxp],
+  [_TJNr, _TJAr, _TJSr, _MNod, _TIr, _TR, _CT, _FR, _MCT, _MCCo, _MPIMB, _BS, _E, _TO, _DCC, _TSTr, _TETr, _LJA, _AMLJAu, _DP, _ECxp],
   [0, 0, 0, 0, () => TransformInput$, () => TransformResources$, 4, 0, 1, () => ModelClientConfig$, 1, 0, 128 | 0, () => TransformOutput$, () => BatchDataCaptureConfig$, 4, 4, 0, 0, () => DataProcessing$, () => ExperimentConfig$], 7
 ];
 export var DescribeTrialComponentRequest$: StaticStructureSchema = [3, n0, _DTCRes,
@@ -6214,7 +6253,7 @@ export var DescribeTrialComponentRequest$: StaticStructureSchema = [3, n0, _DTCR
 ];
 export var DescribeTrialComponentResponse$: StaticStructureSchema = [3, n0, _DTCResc,
   0,
-  [_TCN, _TCA, _DNi, _S, _St, _STt, _ETn, _CT, _CB, _LMT, _LMB, _P, _IAn, _OA, _MP, _Me, _LGA, _So],
+  [_TCN, _TCA, _DNi, _S, _St, _STt, _ETn, _CT, _CB, _LMT, _LMB, _P, _IAn, _OA, _MPe, _Me, _LGA, _So],
   [0, 0, 0, () => TrialComponentSource$, () => TrialComponentStatus$, 4, 4, 4, () => UserContext$, 4, () => UserContext$, () => TrialComponentParameters, () => TrialComponentArtifacts, () => TrialComponentArtifacts, () => MetadataProperties$, () => TrialComponentMetricSummaries, 0, () => TrialComponentSources]
 ];
 export var DescribeTrialRequest$: StaticStructureSchema = [3, n0, _DTRes,
@@ -6224,7 +6263,7 @@ export var DescribeTrialRequest$: StaticStructureSchema = [3, n0, _DTRes,
 ];
 export var DescribeTrialResponse$: StaticStructureSchema = [3, n0, _DTResc,
   0,
-  [_TN, _TA, _DNi, _ENx, _S, _CT, _CB, _LMT, _LMB, _MP],
+  [_TN, _TA, _DNi, _ENx, _S, _CT, _CB, _LMT, _LMB, _MPe],
   [0, 0, 0, 0, () => TrialSource$, 4, () => UserContext$, 4, () => UserContext$, () => MetadataProperties$]
 ];
 export var DescribeUserProfileRequest$: StaticStructureSchema = [3, n0, _DUPRe,
@@ -6414,17 +6453,17 @@ export var EdgeDeploymentStatus$: StaticStructureSchema = [3, n0, _EDSd,
 ];
 export var EdgeModel$: StaticStructureSchema = [3, n0, _EMd,
   0,
-  [_MNo, _MVo, _LST, _LIa],
+  [_MNod, _MVo, _LST, _LIa],
   [0, 0, 4, 4], 2
 ];
 export var EdgeModelStat$: StaticStructureSchema = [3, n0, _EMS,
   0,
-  [_MNo, _MVo, _ODCf, _CDC, _ADC, _SDC],
+  [_MNod, _MVo, _ODCf, _CDC, _ADC, _SDC],
   [0, 0, 1, 1, 1, 1], 6
 ];
 export var EdgeModelSummary$: StaticStructureSchema = [3, n0, _EMSd,
   0,
-  [_MNo, _MVo],
+  [_MNod, _MVo],
   [0, 0], 2
 ];
 export var EdgeOutputConfig$: StaticStructureSchema = [3, n0, _EOC,
@@ -6434,7 +6473,7 @@ export var EdgeOutputConfig$: StaticStructureSchema = [3, n0, _EOC,
 ];
 export var EdgePackagingJobSummary$: StaticStructureSchema = [3, n0, _EPJSd,
   0,
-  [_EPJA, _EPJN, _EPJS, _CJN, _MNo, _MVo, _CT, _LMT],
+  [_EPJA, _EPJN, _EPJS, _CJN, _MNod, _MVo, _CT, _LMT],
   [0, 0, 0, 0, 0, 0, 4, 4], 3
 ];
 export var EdgePresetDeploymentOutput$: StaticStructureSchema = [3, n0, _EPDO,
@@ -6634,7 +6673,7 @@ export var FileSource$: StaticStructureSchema = [3, n0, _FS,
 ];
 export var FileSystemConfig$: StaticStructureSchema = [3, n0, _FSC,
   0,
-  [_MPo, _DU, _DG],
+  [_MP, _DU, _DG],
   [0, 1, 1]
 ];
 export var FileSystemDataSource$: StaticStructureSchema = [3, n0, _FSDS,
@@ -7004,12 +7043,12 @@ export var InferenceComponentRuntimeConfigSummary$: StaticStructureSchema = [3, 
 ];
 export var InferenceComponentSpecification$: StaticStructureSchema = [3, n0, _ICSn,
   0,
-  [_MNo, _Cont, _SPt, _CRR, _BICN, _DCCat],
+  [_MNod, _Cont, _SPt, _CRR, _BICN, _DCCat],
   [0, () => InferenceComponentContainerSpecification$, () => InferenceComponentStartupParameters$, () => InferenceComponentComputeResourceRequirements$, 0, () => InferenceComponentDataCacheConfig$]
 ];
 export var InferenceComponentSpecificationSummary$: StaticStructureSchema = [3, n0, _ICSS,
   0,
-  [_MNo, _Cont, _SPt, _CRR, _BICN, _DCCat],
+  [_MNod, _Cont, _SPt, _CRR, _BICN, _DCCat],
   [0, () => InferenceComponentContainerSpecificationSummary$, () => InferenceComponentStartupParameters$, () => InferenceComponentComputeResourceRequirements$, 0, () => InferenceComponentDataCacheConfigSummary$]
 ];
 export var InferenceComponentStartupParameters$: StaticStructureSchema = [3, n0, _ICSP,
@@ -7059,7 +7098,7 @@ export var InferenceRecommendation$: StaticStructureSchema = [3, n0, _IRnf,
 ];
 export var InferenceRecommendationsJob$: StaticStructureSchema = [3, n0, _IRJ,
   0,
-  [_JN, _JD, _JT, _JA, _St, _CT, _RAo, _LMT, _CTom, _FR, _MNo, _SPU, _MPVA],
+  [_JN, _JD, _JT, _JA, _St, _CT, _RAo, _LMT, _CTom, _FR, _MNod, _SPU, _MPVA],
   [0, 0, 0, 0, 0, 4, 0, 4, 4, 0, 0, 0, 0], 8
 ];
 export var InferenceRecommendationsJobStep$: StaticStructureSchema = [3, n0, _IRJS,
@@ -7249,852 +7288,852 @@ export var LineageMetadata$: StaticStructureSchema = [3, n0, _LMi,
 ];
 export var ListActionsRequest$: StaticStructureSchema = [3, n0, _LAR,
   0,
-  [_SU, _AT, _CAre, _CBr, _SBo, _SO, _NT, _MR],
+  [_SU, _AT, _CAre, _CBr, _SBo, _SO, _NTe, _MR],
   [0, 0, 4, 4, 0, 0, 0, 1]
 ];
 export var ListActionsResponse$: StaticStructureSchema = [3, n0, _LARi,
   0,
-  [_AScti, _NT],
+  [_AScti, _NTe],
   [() => ActionSummaries, 0]
 ];
 export var ListAlgorithmsInput$: StaticStructureSchema = [3, n0, _LAI,
   0,
-  [_CTA, _CTB, _MR, _NCa, _NT, _SBo, _SO],
+  [_CTA, _CTB, _MR, _NCa, _NTe, _SBo, _SO],
   [4, 4, 1, 0, 0, 0, 0]
 ];
 export var ListAlgorithmsOutput$: StaticStructureSchema = [3, n0, _LAO,
   0,
-  [_ASL, _NT],
+  [_ASL, _NTe],
   [() => AlgorithmSummaryList, 0], 1
 ];
 export var ListAliasesRequest$: StaticStructureSchema = [3, n0, _LARis,
   0,
-  [_IN, _Alia, _V, _MR, _NT],
+  [_IN, _Alia, _V, _MR, _NTe],
   [0, 0, 1, 1, 0], 1
 ];
 export var ListAliasesResponse$: StaticStructureSchema = [3, n0, _LARist,
   0,
-  [_SMIVA, _NT],
+  [_SMIVA, _NTe],
   [64 | 0, 0]
 ];
 export var ListAppImageConfigsRequest$: StaticStructureSchema = [3, n0, _LAICR,
   0,
-  [_MR, _NT, _NCa, _CTB, _CTA, _MTB, _MTA, _SBo, _SO],
+  [_MR, _NTe, _NCa, _CTB, _CTA, _MTB, _MTA, _SBo, _SO],
   [1, 0, 0, 4, 4, 4, 4, 0, 0]
 ];
 export var ListAppImageConfigsResponse$: StaticStructureSchema = [3, n0, _LAICRi,
   0,
-  [_NT, _AICp],
+  [_NTe, _AICp],
   [0, () => AppImageConfigList]
 ];
 export var ListAppsRequest$: StaticStructureSchema = [3, n0, _LARistp,
   0,
-  [_NT, _MR, _SO, _SBo, _DIE, _UPNE, _SNE],
+  [_NTe, _MR, _SO, _SBo, _DIE, _UPNE, _SNE],
   [0, 1, 0, 0, 0, 0, 0]
 ];
 export var ListAppsResponse$: StaticStructureSchema = [3, n0, _LARistpp,
   0,
-  [_Ap, _NT],
+  [_Ap, _NTe],
   [() => AppList, 0]
 ];
 export var ListArtifactsRequest$: StaticStructureSchema = [3, n0, _LARistr,
   0,
-  [_SU, _ATr, _CAre, _CBr, _SBo, _SO, _NT, _MR],
+  [_SU, _ATr, _CAre, _CBr, _SBo, _SO, _NTe, _MR],
   [0, 0, 4, 4, 0, 0, 0, 1]
 ];
 export var ListArtifactsResponse$: StaticStructureSchema = [3, n0, _LARistrt,
   0,
-  [_ASrti, _NT],
+  [_ASrti, _NTe],
   [() => ArtifactSummaries, 0]
 ];
 export var ListAssociationsRequest$: StaticStructureSchema = [3, n0, _LARists,
   0,
-  [_SA, _DA, _ST, _DT, _ATs, _CAre, _CBr, _SBo, _SO, _NT, _MR],
+  [_SA, _DA, _ST, _DT, _ATs, _CAre, _CBr, _SBo, _SO, _NTe, _MR],
   [0, 0, 0, 0, 0, 4, 4, 0, 0, 0, 1]
 ];
 export var ListAssociationsResponse$: StaticStructureSchema = [3, n0, _LARistss,
   0,
-  [_ASss, _NT],
+  [_ASss, _NTe],
   [() => AssociationSummaries, 0]
 ];
 export var ListAutoMLJobsRequest$: StaticStructureSchema = [3, n0, _LAMLJR,
   0,
-  [_CTA, _CTB, _LMTA, _LMTB, _NCa, _SE, _SO, _SBo, _MR, _NT],
+  [_CTA, _CTB, _LMTA, _LMTB, _NCa, _SE, _SO, _SBo, _MR, _NTe],
   [4, 4, 4, 4, 0, 0, 0, 0, 1, 0]
 ];
 export var ListAutoMLJobsResponse$: StaticStructureSchema = [3, n0, _LAMLJRi,
   0,
-  [_AMLJSut, _NT],
+  [_AMLJSut, _NTe],
   [() => AutoMLJobSummaries, 0], 1
 ];
 export var ListCandidatesForAutoMLJobRequest$: StaticStructureSchema = [3, n0, _LCFAMLJR,
   0,
-  [_AMLJN, _SE, _CNE, _SO, _SBo, _MR, _NT],
+  [_AMLJN, _SE, _CNE, _SO, _SBo, _MR, _NTe],
   [0, 0, 0, 0, 0, 1, 0], 1
 ];
 export var ListCandidatesForAutoMLJobResponse$: StaticStructureSchema = [3, n0, _LCFAMLJRi,
   0,
-  [_Can, _NT],
+  [_Can, _NTe],
   [() => AutoMLCandidates, 0], 1
 ];
 export var ListClusterEventsRequest$: StaticStructureSchema = [3, n0, _LCER,
   0,
-  [_CNl, _IGN, _NI, _ETA, _ETB, _SBo, _SO, _RT, _MR, _NT],
+  [_CNl, _IGN, _NI, _ETA, _ETB, _SBo, _SO, _RT, _MR, _NTe],
   [0, 0, 0, 4, 4, 0, 0, 0, 1, 0], 1
 ];
 export var ListClusterEventsResponse$: StaticStructureSchema = [3, n0, _LCERi,
   0,
-  [_NT, _Ev],
+  [_NTe, _Ev],
   [0, () => ClusterEventSummaries]
 ];
 export var ListClusterNodesRequest$: StaticStructureSchema = [3, n0, _LCNR,
   0,
-  [_CNl, _CTA, _CTB, _IGNC, _MR, _NT, _SBo, _SO, _INLI],
+  [_CNl, _CTA, _CTB, _IGNC, _MR, _NTe, _SBo, _SO, _INLI],
   [0, 4, 4, 0, 1, 0, 0, 0, 2], 1
 ];
 export var ListClusterNodesResponse$: StaticStructureSchema = [3, n0, _LCNRi,
   0,
-  [_CNSl, _NT],
+  [_CNSl, _NTe],
   [() => ClusterNodeSummaries, 0], 1
 ];
 export var ListClusterSchedulerConfigsRequest$: StaticStructureSchema = [3, n0, _LCSCR,
   0,
-  [_CAre, _CBr, _NCa, _CAl, _St, _SBo, _SO, _NT, _MR],
+  [_CAre, _CBr, _NCa, _CAl, _St, _SBo, _SO, _NTe, _MR],
   [4, 4, 0, 0, 0, 0, 0, 0, 1]
 ];
 export var ListClusterSchedulerConfigsResponse$: StaticStructureSchema = [3, n0, _LCSCRi,
   0,
-  [_CSCSl, _NT],
+  [_CSCSl, _NTe],
   [() => ClusterSchedulerConfigSummaryList, 0]
 ];
 export var ListClustersRequest$: StaticStructureSchema = [3, n0, _LCR,
   0,
-  [_CTA, _CTB, _MR, _NCa, _NT, _SBo, _SO, _TPA],
+  [_CTA, _CTB, _MR, _NCa, _NTe, _SBo, _SO, _TPA],
   [4, 4, 1, 0, 0, 0, 0, 0]
 ];
 export var ListClustersResponse$: StaticStructureSchema = [3, n0, _LCRi,
   0,
-  [_CSlus, _NT],
+  [_CSlus, _NTe],
   [() => ClusterSummaries, 0], 1
 ];
 export var ListCodeRepositoriesInput$: StaticStructureSchema = [3, n0, _LCRI,
   0,
-  [_CTA, _CTB, _LMTA, _LMTB, _MR, _NCa, _NT, _SBo, _SO],
+  [_CTA, _CTB, _LMTA, _LMTB, _MR, _NCa, _NTe, _SBo, _SO],
   [4, 4, 4, 4, 1, 0, 0, 0, 0]
 ];
 export var ListCodeRepositoriesOutput$: StaticStructureSchema = [3, n0, _LCRO,
   0,
-  [_CRSL, _NT],
+  [_CRSL, _NTe],
   [() => CodeRepositorySummaryList, 0], 1
 ];
 export var ListCompilationJobsRequest$: StaticStructureSchema = [3, n0, _LCJR,
   0,
-  [_NT, _MR, _CTA, _CTB, _LMTA, _LMTB, _NCa, _SE, _SBo, _SO],
+  [_NTe, _MR, _CTA, _CTB, _LMTA, _LMTB, _NCa, _SE, _SBo, _SO],
   [0, 1, 4, 4, 4, 4, 0, 0, 0, 0]
 ];
 export var ListCompilationJobsResponse$: StaticStructureSchema = [3, n0, _LCJRi,
   0,
-  [_CJSom, _NT],
+  [_CJSom, _NTe],
   [() => CompilationJobSummaries, 0], 1
 ];
 export var ListComputeQuotasRequest$: StaticStructureSchema = [3, n0, _LCQR,
   0,
-  [_CAre, _CBr, _NCa, _St, _CAl, _SBo, _SO, _NT, _MR],
+  [_CAre, _CBr, _NCa, _St, _CAl, _SBo, _SO, _NTe, _MR],
   [4, 4, 0, 0, 0, 0, 0, 0, 1]
 ];
 export var ListComputeQuotasResponse$: StaticStructureSchema = [3, n0, _LCQRi,
   0,
-  [_CQSo, _NT],
+  [_CQSo, _NTe],
   [() => ComputeQuotaSummaryList, 0]
 ];
 export var ListContextsRequest$: StaticStructureSchema = [3, n0, _LCRis,
   0,
-  [_SU, _CTonte, _CAre, _CBr, _SBo, _SO, _NT, _MR],
+  [_SU, _CTonte, _CAre, _CBr, _SBo, _SO, _NTe, _MR],
   [0, 0, 4, 4, 0, 0, 0, 1]
 ];
 export var ListContextsResponse$: StaticStructureSchema = [3, n0, _LCRist,
   0,
-  [_CSont, _NT],
+  [_CSont, _NTe],
   [() => ContextSummaries, 0]
 ];
 export var ListDataQualityJobDefinitionsRequest$: StaticStructureSchema = [3, n0, _LDQJDR,
   0,
-  [_EN, _SBo, _SO, _NT, _MR, _NCa, _CTB, _CTA],
+  [_EN, _SBo, _SO, _NTe, _MR, _NCa, _CTB, _CTA],
   [0, 0, 0, 0, 1, 0, 4, 4]
 ];
 export var ListDataQualityJobDefinitionsResponse$: StaticStructureSchema = [3, n0, _LDQJDRi,
   0,
-  [_JDS, _NT],
+  [_JDS, _NTe],
   [() => MonitoringJobDefinitionSummaryList, 0], 1
 ];
 export var ListDeviceFleetsRequest$: StaticStructureSchema = [3, n0, _LDFR,
   0,
-  [_NT, _MR, _CTA, _CTB, _LMTA, _LMTB, _NCa, _SBo, _SO],
+  [_NTe, _MR, _CTA, _CTB, _LMTA, _LMTB, _NCa, _SBo, _SO],
   [0, 1, 4, 4, 4, 4, 0, 0, 0]
 ];
 export var ListDeviceFleetsResponse$: StaticStructureSchema = [3, n0, _LDFRi,
   0,
-  [_DFSe, _NT],
+  [_DFSe, _NTe],
   [() => DeviceFleetSummaries, 0], 1
 ];
 export var ListDevicesRequest$: StaticStructureSchema = [3, n0, _LDR,
   0,
-  [_NT, _MR, _LHA, _MNo, _DFN],
+  [_NTe, _MR, _LHA, _MNod, _DFN],
   [0, 1, 4, 0, 0]
 ];
 export var ListDevicesResponse$: StaticStructureSchema = [3, n0, _LDRi,
   0,
-  [_DSevic, _NT],
+  [_DSevic, _NTe],
   [() => DeviceSummaries, 0], 1
 ];
 export var ListDomainsRequest$: StaticStructureSchema = [3, n0, _LDRis,
   0,
-  [_NT, _MR],
+  [_NTe, _MR],
   [0, 1]
 ];
 export var ListDomainsResponse$: StaticStructureSchema = [3, n0, _LDRist,
   0,
-  [_Dom, _NT],
+  [_Dom, _NTe],
   [() => DomainList, 0]
 ];
 export var ListEdgeDeploymentPlansRequest$: StaticStructureSchema = [3, n0, _LEDPR,
   0,
-  [_NT, _MR, _CTA, _CTB, _LMTA, _LMTB, _NCa, _DFNC, _SBo, _SO],
+  [_NTe, _MR, _CTA, _CTB, _LMTA, _LMTB, _NCa, _DFNC, _SBo, _SO],
   [0, 1, 4, 4, 4, 4, 0, 0, 0, 0]
 ];
 export var ListEdgeDeploymentPlansResponse$: StaticStructureSchema = [3, n0, _LEDPRi,
   0,
-  [_EDPSd, _NT],
+  [_EDPSd, _NTe],
   [() => EdgeDeploymentPlanSummaries, 0], 1
 ];
 export var ListEdgePackagingJobsRequest$: StaticStructureSchema = [3, n0, _LEPJR,
   0,
-  [_NT, _MR, _CTA, _CTB, _LMTA, _LMTB, _NCa, _MNC, _SE, _SBo, _SO],
+  [_NTe, _MR, _CTA, _CTB, _LMTA, _LMTB, _NCa, _MNC, _SE, _SBo, _SO],
   [0, 1, 4, 4, 4, 4, 0, 0, 0, 0, 0]
 ];
 export var ListEdgePackagingJobsResponse$: StaticStructureSchema = [3, n0, _LEPJRi,
   0,
-  [_EPJSdg, _NT],
+  [_EPJSdg, _NTe],
   [() => EdgePackagingJobSummaries, 0], 1
 ];
 export var ListEndpointConfigsInput$: StaticStructureSchema = [3, n0, _LECI,
   0,
-  [_SBo, _SO, _NT, _MR, _NCa, _CTB, _CTA],
+  [_SBo, _SO, _NTe, _MR, _NCa, _CTB, _CTA],
   [0, 0, 0, 1, 0, 4, 4]
 ];
 export var ListEndpointConfigsOutput$: StaticStructureSchema = [3, n0, _LECO,
   0,
-  [_ECndp, _NT],
+  [_ECndp, _NTe],
   [() => EndpointConfigSummaryList, 0], 1
 ];
 export var ListEndpointsInput$: StaticStructureSchema = [3, n0, _LEI,
   0,
-  [_SBo, _SO, _NT, _MR, _NCa, _CTB, _CTA, _LMTB, _LMTA, _SE],
+  [_SBo, _SO, _NTe, _MR, _NCa, _CTB, _CTA, _LMTB, _LMTA, _SE],
   [0, 0, 0, 1, 0, 4, 4, 4, 4, 0]
 ];
 export var ListEndpointsOutput$: StaticStructureSchema = [3, n0, _LEO,
   0,
-  [_End, _NT],
+  [_End, _NTe],
   [() => EndpointSummaryList, 0], 1
 ];
 export var ListExperimentsRequest$: StaticStructureSchema = [3, n0, _LER,
   0,
-  [_CAre, _CBr, _SBo, _SO, _NT, _MR],
+  [_CAre, _CBr, _SBo, _SO, _NTe, _MR],
   [4, 4, 0, 0, 0, 1]
 ];
 export var ListExperimentsResponse$: StaticStructureSchema = [3, n0, _LERi,
   0,
-  [_ESxpe, _NT],
+  [_ESxpe, _NTe],
   [() => ExperimentSummaries, 0]
 ];
 export var ListFeatureGroupsRequest$: StaticStructureSchema = [3, n0, _LFGR,
   0,
-  [_NCa, _FGSE, _OSSE, _CTA, _CTB, _SO, _SBo, _MR, _NT],
+  [_NCa, _FGSE, _OSSE, _CTA, _CTB, _SO, _SBo, _MR, _NTe],
   [0, 0, 0, 4, 4, 0, 0, 1, 0]
 ];
 export var ListFeatureGroupsResponse$: StaticStructureSchema = [3, n0, _LFGRi,
   0,
-  [_FGSea, _NT],
+  [_FGSea, _NTe],
   [() => FeatureGroupSummaries, 0], 1
 ];
 export var ListFlowDefinitionsRequest$: StaticStructureSchema = [3, n0, _LFDR,
   0,
-  [_CTA, _CTB, _SO, _NT, _MR],
+  [_CTA, _CTB, _SO, _NTe, _MR],
   [4, 4, 0, 0, 1]
 ];
 export var ListFlowDefinitionsResponse$: StaticStructureSchema = [3, n0, _LFDRi,
   0,
-  [_FDSlo, _NT],
+  [_FDSlo, _NTe],
   [() => FlowDefinitionSummaries, 0], 1
 ];
 export var ListHubContentsRequest$: StaticStructureSchema = [3, n0, _LHCR,
   0,
-  [_HN, _HCT, _NCa, _MSV, _CTB, _CTA, _SBo, _SO, _MR, _NT],
+  [_HN, _HCT, _NCa, _MSV, _CTB, _CTA, _SBo, _SO, _MR, _NTe],
   [0, 0, 0, 0, 4, 4, 0, 0, 1, 0], 2
 ];
 export var ListHubContentsResponse$: StaticStructureSchema = [3, n0, _LHCRi,
   0,
-  [_HCSu, _NT],
+  [_HCSu, _NTe],
   [() => HubContentInfoList, 0], 1
 ];
 export var ListHubContentVersionsRequest$: StaticStructureSchema = [3, n0, _LHCVR,
   0,
-  [_HN, _HCT, _HCN, _MVi, _MSV, _CTB, _CTA, _SBo, _SO, _MR, _NT],
+  [_HN, _HCT, _HCN, _MVi, _MSV, _CTB, _CTA, _SBo, _SO, _MR, _NTe],
   [0, 0, 0, 0, 0, 4, 4, 0, 0, 1, 0], 3
 ];
 export var ListHubContentVersionsResponse$: StaticStructureSchema = [3, n0, _LHCVRi,
   0,
-  [_HCSu, _NT],
+  [_HCSu, _NTe],
   [() => HubContentInfoList, 0], 1
 ];
 export var ListHubsRequest$: StaticStructureSchema = [3, n0, _LHR,
   0,
-  [_NCa, _CTB, _CTA, _LMTB, _LMTA, _SBo, _SO, _MR, _NT],
+  [_NCa, _CTB, _CTA, _LMTB, _LMTA, _SBo, _SO, _MR, _NTe],
   [0, 4, 4, 4, 4, 0, 0, 1, 0]
 ];
 export var ListHubsResponse$: StaticStructureSchema = [3, n0, _LHRi,
   0,
-  [_HSu, _NT],
+  [_HSu, _NTe],
   [() => HubInfoList, 0], 1
 ];
 export var ListHumanTaskUisRequest$: StaticStructureSchema = [3, n0, _LHTUR,
   0,
-  [_CTA, _CTB, _SO, _NT, _MR],
+  [_CTA, _CTB, _SO, _NTe, _MR],
   [4, 4, 0, 0, 1]
 ];
 export var ListHumanTaskUisResponse$: StaticStructureSchema = [3, n0, _LHTURi,
   0,
-  [_HTUSum, _NT],
+  [_HTUSum, _NTe],
   [() => HumanTaskUiSummaries, 0], 1
 ];
 export var ListHyperParameterTuningJobsRequest$: StaticStructureSchema = [3, n0, _LHPTJR,
   0,
-  [_NT, _MR, _SBo, _SO, _NCa, _CTA, _CTB, _LMTA, _LMTB, _SE],
+  [_NTe, _MR, _SBo, _SO, _NCa, _CTA, _CTB, _LMTA, _LMTB, _SE],
   [0, 1, 0, 0, 0, 4, 4, 4, 4, 0]
 ];
 export var ListHyperParameterTuningJobsResponse$: StaticStructureSchema = [3, n0, _LHPTJRi,
   0,
-  [_HPTJSype, _NT],
+  [_HPTJSype, _NTe],
   [() => HyperParameterTuningJobSummaries, 0], 1
 ];
 export var ListImagesRequest$: StaticStructureSchema = [3, n0, _LIR,
   0,
-  [_CTA, _CTB, _LMTA, _LMTB, _MR, _NCa, _NT, _SBo, _SO],
+  [_CTA, _CTB, _LMTA, _LMTB, _MR, _NCa, _NTe, _SBo, _SO],
   [4, 4, 4, 4, 1, 0, 0, 0, 0]
 ];
 export var ListImagesResponse$: StaticStructureSchema = [3, n0, _LIRi,
   0,
-  [_Im, _NT],
+  [_Im, _NTe],
   [() => Images, 0]
 ];
 export var ListImageVersionsRequest$: StaticStructureSchema = [3, n0, _LIVR,
   0,
-  [_IN, _CTA, _CTB, _LMTA, _LMTB, _MR, _NT, _SBo, _SO],
+  [_IN, _CTA, _CTB, _LMTA, _LMTB, _MR, _NTe, _SBo, _SO],
   [0, 4, 4, 4, 4, 1, 0, 0, 0], 1
 ];
 export var ListImageVersionsResponse$: StaticStructureSchema = [3, n0, _LIVRi,
   0,
-  [_IVm, _NT],
+  [_IVm, _NTe],
   [() => ImageVersions, 0]
 ];
 export var ListInferenceComponentsInput$: StaticStructureSchema = [3, n0, _LICI,
   0,
-  [_SBo, _SO, _NT, _MR, _NCa, _CTB, _CTA, _LMTB, _LMTA, _SE, _ENE, _VNE],
+  [_SBo, _SO, _NTe, _MR, _NCa, _CTB, _CTA, _LMTB, _LMTA, _SE, _ENE, _VNE],
   [0, 0, 0, 1, 0, 4, 4, 4, 4, 0, 0, 0]
 ];
 export var ListInferenceComponentsOutput$: StaticStructureSchema = [3, n0, _LICO,
   0,
-  [_ICnf, _NT],
+  [_ICnf, _NTe],
   [() => InferenceComponentSummaryList, 0], 1
 ];
 export var ListInferenceExperimentsRequest$: StaticStructureSchema = [3, n0, _LIER,
   0,
-  [_NCa, _T, _SE, _CTA, _CTB, _LMTA, _LMTB, _SBo, _SO, _NT, _MR],
+  [_NCa, _T, _SE, _CTA, _CTB, _LMTA, _LMTB, _SBo, _SO, _NTe, _MR],
   [0, 0, 0, 4, 4, 4, 4, 0, 0, 0, 1]
 ];
 export var ListInferenceExperimentsResponse$: StaticStructureSchema = [3, n0, _LIERi,
   0,
-  [_IE, _NT],
+  [_IE, _NTe],
   [() => InferenceExperimentList, 0]
 ];
 export var ListInferenceRecommendationsJobsRequest$: StaticStructureSchema = [3, n0, _LIRJR,
   0,
-  [_CTA, _CTB, _LMTA, _LMTB, _NCa, _SE, _SBo, _SO, _NT, _MR, _MNE, _MPVAE],
+  [_CTA, _CTB, _LMTA, _LMTB, _NCa, _SE, _SBo, _SO, _NTe, _MR, _MNE, _MPVAE],
   [4, 4, 4, 4, 0, 0, 0, 0, 0, 1, 0, 0]
 ];
 export var ListInferenceRecommendationsJobsResponse$: StaticStructureSchema = [3, n0, _LIRJRi,
   0,
-  [_IRJn, _NT],
+  [_IRJn, _NTe],
   [() => InferenceRecommendationsJobs, 0], 1
 ];
 export var ListInferenceRecommendationsJobStepsRequest$: StaticStructureSchema = [3, n0, _LIRJSR,
   0,
-  [_JN, _St, _STte, _MR, _NT],
+  [_JN, _St, _STte, _MR, _NTe],
   [0, 0, 0, 1, 0], 1
 ];
 export var ListInferenceRecommendationsJobStepsResponse$: StaticStructureSchema = [3, n0, _LIRJSRi,
   0,
-  [_Ste, _NT],
+  [_Ste, _NTe],
   [() => InferenceRecommendationsJobSteps, 0]
 ];
 export var ListLabelingJobsForWorkteamRequest$: StaticStructureSchema = [3, n0, _LLJFWR,
   0,
-  [_WAo, _MR, _NT, _CTA, _CTB, _JRCC, _SBo, _SO],
+  [_WAo, _MR, _NTe, _CTA, _CTB, _JRCC, _SBo, _SO],
   [0, 1, 0, 4, 4, 0, 0, 0], 1
 ];
 export var ListLabelingJobsForWorkteamResponse$: StaticStructureSchema = [3, n0, _LLJFWRi,
   0,
-  [_LJSL, _NT],
+  [_LJSL, _NTe],
   [() => LabelingJobForWorkteamSummaryList, 0], 1
 ];
 export var ListLabelingJobsRequest$: StaticStructureSchema = [3, n0, _LLJR,
   0,
-  [_CTA, _CTB, _LMTA, _LMTB, _MR, _NT, _NCa, _SBo, _SO, _SE],
+  [_CTA, _CTB, _LMTA, _LMTB, _MR, _NTe, _NCa, _SBo, _SO, _SE],
   [4, 4, 4, 4, 1, 0, 0, 0, 0, 0]
 ];
 export var ListLabelingJobsResponse$: StaticStructureSchema = [3, n0, _LLJRi,
   0,
-  [_LJSL, _NT],
+  [_LJSL, _NTe],
   [() => LabelingJobSummaryList, 0]
 ];
 export var ListLineageGroupsRequest$: StaticStructureSchema = [3, n0, _LLGR,
   0,
-  [_CAre, _CBr, _SBo, _SO, _NT, _MR],
+  [_CAre, _CBr, _SBo, _SO, _NTe, _MR],
   [4, 4, 0, 0, 0, 1]
 ];
 export var ListLineageGroupsResponse$: StaticStructureSchema = [3, n0, _LLGRi,
   0,
-  [_LGSi, _NT],
+  [_LGSi, _NTe],
   [() => LineageGroupSummaries, 0]
 ];
 export var ListMlflowAppsRequest$: StaticStructureSchema = [3, n0, _LMAR,
   0,
-  [_CAre, _CBr, _St, _MVl, _DFDI, _ADS, _SBo, _SO, _NT, _MR],
+  [_CAre, _CBr, _St, _MVl, _DFDI, _ADS, _SBo, _SO, _NTe, _MR],
   [4, 4, 0, 0, 0, 0, 0, 0, 0, 1]
 ];
 export var ListMlflowAppsResponse$: StaticStructureSchema = [3, n0, _LMARi,
   0,
-  [_Sum, _NT],
+  [_Sum, _NTe],
   [() => MlflowAppSummaries, 0]
 ];
 export var ListMlflowTrackingServersRequest$: StaticStructureSchema = [3, n0, _LMTSR,
   0,
-  [_CAre, _CBr, _TSSr, _MVl, _SBo, _SO, _NT, _MR],
+  [_CAre, _CBr, _TSSr, _MVl, _SBo, _SO, _NTe, _MR],
   [4, 4, 0, 0, 0, 0, 0, 1]
 ];
 export var ListMlflowTrackingServersResponse$: StaticStructureSchema = [3, n0, _LMTSRi,
   0,
-  [_TSSra, _NT],
+  [_TSSra, _NTe],
   [() => TrackingServerSummaryList, 0]
 ];
 export var ListModelBiasJobDefinitionsRequest$: StaticStructureSchema = [3, n0, _LMBJDR,
   0,
-  [_EN, _SBo, _SO, _NT, _MR, _NCa, _CTB, _CTA],
+  [_EN, _SBo, _SO, _NTe, _MR, _NCa, _CTB, _CTA],
   [0, 0, 0, 0, 1, 0, 4, 4]
 ];
 export var ListModelBiasJobDefinitionsResponse$: StaticStructureSchema = [3, n0, _LMBJDRi,
   0,
-  [_JDS, _NT],
+  [_JDS, _NTe],
   [() => MonitoringJobDefinitionSummaryList, 0], 1
 ];
 export var ListModelCardExportJobsRequest$: StaticStructureSchema = [3, n0, _LMCEJR,
   0,
-  [_MCN, _MCV, _CTA, _CTB, _MCEJNC, _SE, _SBo, _SO, _NT, _MR],
+  [_MCN, _MCV, _CTA, _CTB, _MCEJNC, _SE, _SBo, _SO, _NTe, _MR],
   [0, 1, 4, 4, 0, 0, 0, 0, 0, 1], 1
 ];
 export var ListModelCardExportJobsResponse$: StaticStructureSchema = [3, n0, _LMCEJRi,
   0,
-  [_MCEJS, _NT],
+  [_MCEJS, _NTe],
   [() => ModelCardExportJobSummaryList, 0], 1
 ];
 export var ListModelCardsRequest$: StaticStructureSchema = [3, n0, _LMCR,
   0,
-  [_CTA, _CTB, _MR, _NCa, _MCS, _NT, _SBo, _SO],
+  [_CTA, _CTB, _MR, _NCa, _MCS, _NTe, _SBo, _SO],
   [4, 4, 1, 0, 0, 0, 0, 0]
 ];
 export var ListModelCardsResponse$: StaticStructureSchema = [3, n0, _LMCRi,
   0,
-  [_MCSo, _NT],
+  [_MCSo, _NTe],
   [() => ModelCardSummaryList, 0], 1
 ];
 export var ListModelCardVersionsRequest$: StaticStructureSchema = [3, n0, _LMCVR,
   0,
-  [_MCN, _CTA, _CTB, _MR, _MCS, _NT, _SBo, _SO],
+  [_MCN, _CTA, _CTB, _MR, _MCS, _NTe, _SBo, _SO],
   [0, 4, 4, 1, 0, 0, 0, 0], 1
 ];
 export var ListModelCardVersionsResponse$: StaticStructureSchema = [3, n0, _LMCVRi,
   0,
-  [_MCVSL, _NT],
+  [_MCVSL, _NTe],
   [() => ModelCardVersionSummaryList, 0], 1
 ];
 export var ListModelExplainabilityJobDefinitionsRequest$: StaticStructureSchema = [3, n0, _LMEJDR,
   0,
-  [_EN, _SBo, _SO, _NT, _MR, _NCa, _CTB, _CTA],
+  [_EN, _SBo, _SO, _NTe, _MR, _NCa, _CTB, _CTA],
   [0, 0, 0, 0, 1, 0, 4, 4]
 ];
 export var ListModelExplainabilityJobDefinitionsResponse$: StaticStructureSchema = [3, n0, _LMEJDRi,
   0,
-  [_JDS, _NT],
+  [_JDS, _NTe],
   [() => MonitoringJobDefinitionSummaryList, 0], 1
 ];
 export var ListModelMetadataRequest$: StaticStructureSchema = [3, n0, _LMMR,
   0,
-  [_SEe, _NT, _MR],
+  [_SEe, _NTe, _MR],
   [() => ModelMetadataSearchExpression$, 0, 1]
 ];
 export var ListModelMetadataResponse$: StaticStructureSchema = [3, n0, _LMMRi,
   0,
-  [_MMS, _NT],
+  [_MMS, _NTe],
   [() => ModelMetadataSummaries, 0], 1
 ];
 export var ListModelPackageGroupsInput$: StaticStructureSchema = [3, n0, _LMPGI,
   0,
-  [_CTA, _CTB, _MR, _NCa, _NT, _SBo, _SO, _CAFO],
+  [_CTA, _CTB, _MR, _NCa, _NTe, _SBo, _SO, _CAFO],
   [4, 4, 1, 0, 0, 0, 0, 0]
 ];
 export var ListModelPackageGroupsOutput$: StaticStructureSchema = [3, n0, _LMPGO,
   0,
-  [_MPGSL, _NT],
+  [_MPGSL, _NTe],
   [() => ModelPackageGroupSummaryList, 0], 1
 ];
 export var ListModelPackagesInput$: StaticStructureSchema = [3, n0, _LMPI,
   0,
-  [_CTA, _CTB, _MR, _NCa, _MAS, _MPGN, _MPT, _NT, _SBo, _SO],
+  [_CTA, _CTB, _MR, _NCa, _MAS, _MPGN, _MPT, _NTe, _SBo, _SO],
   [4, 4, 1, 0, 0, 0, 0, 0, 0, 0]
 ];
 export var ListModelPackagesOutput$: StaticStructureSchema = [3, n0, _LMPO,
   0,
-  [_MPSL, _NT],
+  [_MPSL, _NTe],
   [() => ModelPackageSummaryList, 0], 1
 ];
 export var ListModelQualityJobDefinitionsRequest$: StaticStructureSchema = [3, n0, _LMQJDR,
   0,
-  [_EN, _SBo, _SO, _NT, _MR, _NCa, _CTB, _CTA],
+  [_EN, _SBo, _SO, _NTe, _MR, _NCa, _CTB, _CTA],
   [0, 0, 0, 0, 1, 0, 4, 4]
 ];
 export var ListModelQualityJobDefinitionsResponse$: StaticStructureSchema = [3, n0, _LMQJDRi,
   0,
-  [_JDS, _NT],
+  [_JDS, _NTe],
   [() => MonitoringJobDefinitionSummaryList, 0], 1
 ];
 export var ListModelsInput$: StaticStructureSchema = [3, n0, _LMI,
   0,
-  [_SBo, _SO, _NT, _MR, _NCa, _CTB, _CTA],
+  [_SBo, _SO, _NTe, _MR, _NCa, _CTB, _CTA],
   [0, 0, 0, 1, 0, 4, 4]
 ];
 export var ListModelsOutput$: StaticStructureSchema = [3, n0, _LMO,
   0,
-  [_Mod, _NT],
+  [_Mod, _NTe],
   [() => ModelSummaryList, 0], 1
 ];
 export var ListMonitoringAlertHistoryRequest$: StaticStructureSchema = [3, n0, _LMAHR,
   0,
-  [_MSN, _MAN, _SBo, _SO, _NT, _MR, _CTB, _CTA, _SE],
+  [_MSN, _MAN, _SBo, _SO, _NTe, _MR, _CTB, _CTA, _SE],
   [0, 0, 0, 0, 0, 1, 4, 4, 0]
 ];
 export var ListMonitoringAlertHistoryResponse$: StaticStructureSchema = [3, n0, _LMAHRi,
   0,
-  [_MAH, _NT],
+  [_MAH, _NTe],
   [() => MonitoringAlertHistoryList, 0]
 ];
 export var ListMonitoringAlertsRequest$: StaticStructureSchema = [3, n0, _LMARis,
   0,
-  [_MSN, _NT, _MR],
+  [_MSN, _NTe, _MR],
   [0, 0, 1], 1
 ];
 export var ListMonitoringAlertsResponse$: StaticStructureSchema = [3, n0, _LMARist,
   0,
-  [_MASo, _NT],
+  [_MASo, _NTe],
   [() => MonitoringAlertSummaryList, 0]
 ];
 export var ListMonitoringExecutionsRequest$: StaticStructureSchema = [3, n0, _LMER,
   0,
-  [_MSN, _EN, _SBo, _SO, _NT, _MR, _STB, _STAc, _CTB, _CTA, _LMTB, _LMTA, _SE, _MJDN, _MTE],
+  [_MSN, _EN, _SBo, _SO, _NTe, _MR, _STB, _STAc, _CTB, _CTA, _LMTB, _LMTA, _SE, _MJDN, _MTE],
   [0, 0, 0, 0, 0, 1, 4, 4, 4, 4, 4, 4, 0, 0, 0]
 ];
 export var ListMonitoringExecutionsResponse$: StaticStructureSchema = [3, n0, _LMERi,
   0,
-  [_MES, _NT],
+  [_MES, _NTe],
   [() => MonitoringExecutionSummaryList, 0], 1
 ];
 export var ListMonitoringSchedulesRequest$: StaticStructureSchema = [3, n0, _LMSR,
   0,
-  [_EN, _SBo, _SO, _NT, _MR, _NCa, _CTB, _CTA, _LMTB, _LMTA, _SE, _MJDN, _MTE],
+  [_EN, _SBo, _SO, _NTe, _MR, _NCa, _CTB, _CTA, _LMTB, _LMTA, _SE, _MJDN, _MTE],
   [0, 0, 0, 0, 1, 0, 4, 4, 4, 4, 0, 0, 0]
 ];
 export var ListMonitoringSchedulesResponse$: StaticStructureSchema = [3, n0, _LMSRi,
   0,
-  [_MSSo, _NT],
+  [_MSSo, _NTe],
   [() => MonitoringScheduleSummaryList, 0], 1
 ];
 export var ListNotebookInstanceLifecycleConfigsInput$: StaticStructureSchema = [3, n0, _LNILCI,
   0,
-  [_NT, _MR, _SBo, _SO, _NCa, _CTB, _CTA, _LMTB, _LMTA],
+  [_NTe, _MR, _SBo, _SO, _NCa, _CTB, _CTA, _LMTB, _LMTA],
   [0, 1, 0, 0, 0, 4, 4, 4, 4]
 ];
 export var ListNotebookInstanceLifecycleConfigsOutput$: StaticStructureSchema = [3, n0, _LNILCO,
   0,
-  [_NT, _NILC],
+  [_NTe, _NILC],
   [0, () => NotebookInstanceLifecycleConfigSummaryList]
 ];
 export var ListNotebookInstancesInput$: StaticStructureSchema = [3, n0, _LNII,
   0,
-  [_NT, _MR, _SBo, _SO, _NCa, _CTB, _CTA, _LMTB, _LMTA, _SE, _NILCNC, _DCRC, _ACRE],
+  [_NTe, _MR, _SBo, _SO, _NCa, _CTB, _CTA, _LMTB, _LMTA, _SE, _NILCNC, _DCRC, _ACRE],
   [0, 1, 0, 0, 0, 4, 4, 4, 4, 0, 0, 0, 0]
 ];
 export var ListNotebookInstancesOutput$: StaticStructureSchema = [3, n0, _LNIO,
   0,
-  [_NT, _NIot],
+  [_NTe, _NIot],
   [0, () => NotebookInstanceSummaryList]
 ];
 export var ListOptimizationJobsRequest$: StaticStructureSchema = [3, n0, _LOJR,
   0,
-  [_NT, _MR, _CTA, _CTB, _LMTA, _LMTB, _OCpt, _NCa, _SE, _SBo, _SO],
+  [_NTe, _MR, _CTA, _CTB, _LMTA, _LMTB, _OCpt, _NCa, _SE, _SBo, _SO],
   [0, 1, 4, 4, 4, 4, 0, 0, 0, 0, 0]
 ];
 export var ListOptimizationJobsResponse$: StaticStructureSchema = [3, n0, _LOJRi,
   0,
-  [_OJSp, _NT],
+  [_OJSp, _NTe],
   [() => OptimizationJobSummaries, 0], 1
 ];
 export var ListPartnerAppsRequest$: StaticStructureSchema = [3, n0, _LPAR,
   0,
-  [_MR, _NT],
+  [_MR, _NTe],
   [1, 0]
 ];
 export var ListPartnerAppsResponse$: StaticStructureSchema = [3, n0, _LPARi,
   0,
-  [_Sum, _NT],
+  [_Sum, _NTe],
   [() => PartnerAppSummaries, 0]
 ];
 export var ListPipelineExecutionsRequest$: StaticStructureSchema = [3, n0, _LPER,
   0,
-  [_PNi, _CAre, _CBr, _SBo, _SO, _NT, _MR],
+  [_PNi, _CAre, _CBr, _SBo, _SO, _NTe, _MR],
   [0, 4, 4, 0, 0, 0, 1], 1
 ];
 export var ListPipelineExecutionsResponse$: StaticStructureSchema = [3, n0, _LPERi,
   0,
-  [_PESi, _NT],
+  [_PESi, _NTe],
   [() => PipelineExecutionSummaryList, 0]
 ];
 export var ListPipelineExecutionStepsRequest$: StaticStructureSchema = [3, n0, _LPESR,
   0,
-  [_PEA, _NT, _MR, _SO],
+  [_PEA, _NTe, _MR, _SO],
   [0, 0, 1, 0]
 ];
 export var ListPipelineExecutionStepsResponse$: StaticStructureSchema = [3, n0, _LPESRi,
   0,
-  [_PESip, _NT],
+  [_PESip, _NTe],
   [() => PipelineExecutionStepList, 0]
 ];
 export var ListPipelineParametersForExecutionRequest$: StaticStructureSchema = [3, n0, _LPPFER,
   0,
-  [_PEA, _NT, _MR],
+  [_PEA, _NTe, _MR],
   [0, 0, 1], 1
 ];
 export var ListPipelineParametersForExecutionResponse$: StaticStructureSchema = [3, n0, _LPPFERi,
   0,
-  [_PP, _NT],
+  [_PP, _NTe],
   [() => ParameterList, 0]
 ];
 export var ListPipelinesRequest$: StaticStructureSchema = [3, n0, _LPR,
   0,
-  [_PNP, _CAre, _CBr, _SBo, _SO, _NT, _MR],
+  [_PNP, _CAre, _CBr, _SBo, _SO, _NTe, _MR],
   [0, 4, 4, 0, 0, 0, 1]
 ];
 export var ListPipelinesResponse$: StaticStructureSchema = [3, n0, _LPRi,
   0,
-  [_PSi, _NT],
+  [_PSi, _NTe],
   [() => PipelineSummaryList, 0]
 ];
 export var ListPipelineVersionsRequest$: StaticStructureSchema = [3, n0, _LPVR,
   0,
-  [_PNi, _CAre, _CBr, _SO, _NT, _MR],
+  [_PNi, _CAre, _CBr, _SO, _NTe, _MR],
   [0, 4, 4, 0, 0, 1], 1
 ];
 export var ListPipelineVersionsResponse$: StaticStructureSchema = [3, n0, _LPVRi,
   0,
-  [_PVS, _NT],
+  [_PVS, _NTe],
   [() => PipelineVersionSummaryList, 0]
 ];
 export var ListProcessingJobsRequest$: StaticStructureSchema = [3, n0, _LPJR,
   0,
-  [_CTA, _CTB, _LMTA, _LMTB, _NCa, _SE, _SBo, _SO, _NT, _MR],
+  [_CTA, _CTB, _LMTA, _LMTB, _NCa, _SE, _SBo, _SO, _NTe, _MR],
   [4, 4, 4, 4, 0, 0, 0, 0, 0, 1]
 ];
 export var ListProcessingJobsResponse$: StaticStructureSchema = [3, n0, _LPJRi,
   0,
-  [_PJSr, _NT],
+  [_PJSr, _NTe],
   [() => ProcessingJobSummaries, 0], 1
 ];
 export var ListProjectsInput$: StaticStructureSchema = [3, n0, _LPI,
   0,
-  [_CTA, _CTB, _MR, _NCa, _NT, _SBo, _SO],
+  [_CTA, _CTB, _MR, _NCa, _NTe, _SBo, _SO],
   [4, 4, 1, 0, 0, 0, 0]
 ];
 export var ListProjectsOutput$: StaticStructureSchema = [3, n0, _LPO,
   0,
-  [_PSL, _NT],
+  [_PSL, _NTe],
   [() => ProjectSummaryList, 0], 1
 ];
 export var ListResourceCatalogsRequest$: StaticStructureSchema = [3, n0, _LRCR,
   0,
-  [_NCa, _CTA, _CTB, _SO, _SBo, _MR, _NT],
+  [_NCa, _CTA, _CTB, _SO, _SBo, _MR, _NTe],
   [0, 4, 4, 0, 0, 1, 0]
 ];
 export var ListResourceCatalogsResponse$: StaticStructureSchema = [3, n0, _LRCRi,
   0,
-  [_RCes, _NT],
+  [_RCes, _NTe],
   [() => ResourceCatalogList, 0]
 ];
 export var ListSpacesRequest$: StaticStructureSchema = [3, n0, _LSR,
   0,
-  [_NT, _MR, _SO, _SBo, _DIE, _SNC],
+  [_NTe, _MR, _SO, _SBo, _DIE, _SNC],
   [0, 1, 0, 0, 0, 0]
 ];
 export var ListSpacesResponse$: StaticStructureSchema = [3, n0, _LSRi,
   0,
-  [_Spa, _NT],
+  [_Spa, _NTe],
   [() => SpaceList, 0]
 ];
 export var ListStageDevicesRequest$: StaticStructureSchema = [3, n0, _LSDR,
   0,
-  [_EDPN, _SNt, _NT, _MR, _EDDIOS],
+  [_EDPN, _SNt, _NTe, _MR, _EDDIOS],
   [0, 0, 0, 1, 2], 2
 ];
 export var ListStageDevicesResponse$: StaticStructureSchema = [3, n0, _LSDRi,
   0,
-  [_DDSevi, _NT],
+  [_DDSevi, _NTe],
   [() => DeviceDeploymentSummaries, 0], 1
 ];
 export var ListStudioLifecycleConfigsRequest$: StaticStructureSchema = [3, n0, _LSLCR,
   0,
-  [_MR, _NT, _NCa, _ATE, _CTB, _CTA, _MTB, _MTA, _SBo, _SO],
+  [_MR, _NTe, _NCa, _ATE, _CTB, _CTA, _MTB, _MTA, _SBo, _SO],
   [1, 0, 0, 0, 4, 4, 4, 4, 0, 0]
 ];
 export var ListStudioLifecycleConfigsResponse$: StaticStructureSchema = [3, n0, _LSLCRi,
   0,
-  [_NT, _SLC],
+  [_NTe, _SLC],
   [0, () => StudioLifecycleConfigsList]
 ];
 export var ListSubscribedWorkteamsRequest$: StaticStructureSchema = [3, n0, _LSWR,
   0,
-  [_NCa, _NT, _MR],
+  [_NCa, _NTe, _MR],
   [0, 0, 1]
 ];
 export var ListSubscribedWorkteamsResponse$: StaticStructureSchema = [3, n0, _LSWRi,
   0,
-  [_SWu, _NT],
+  [_SWu, _NTe],
   [() => SubscribedWorkteams, 0], 1
 ];
 export var ListTagsInput$: StaticStructureSchema = [3, n0, _LTI,
   0,
-  [_RA, _NT, _MR],
+  [_RA, _NTe, _MR],
   [0, 0, 1], 1
 ];
 export var ListTagsOutput$: StaticStructureSchema = [3, n0, _LTO,
   0,
-  [_Ta, _NT],
+  [_Ta, _NTe],
   [() => TagList, 0]
 ];
 export var ListTrainingJobsForHyperParameterTuningJobRequest$: StaticStructureSchema = [3, n0, _LTJFHPTJR,
   0,
-  [_HPTJN, _NT, _MR, _SE, _SBo, _SO],
+  [_HPTJN, _NTe, _MR, _SE, _SBo, _SO],
   [0, 0, 1, 0, 0, 0], 1
 ];
 export var ListTrainingJobsForHyperParameterTuningJobResponse$: StaticStructureSchema = [3, n0, _LTJFHPTJRi,
   0,
-  [_TJSra, _NT],
+  [_TJSra, _NTe],
   [() => HyperParameterTrainingJobSummaries, 0], 1
 ];
 export var ListTrainingJobsRequest$: StaticStructureSchema = [3, n0, _LTJR,
   0,
-  [_NT, _MR, _CTA, _CTB, _LMTA, _LMTB, _NCa, _SE, _SBo, _SO, _WPSE, _TPAE],
+  [_NTe, _MR, _CTA, _CTB, _LMTA, _LMTB, _NCa, _SE, _SBo, _SO, _WPSE, _TPAE],
   [0, 1, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0]
 ];
 export var ListTrainingJobsResponse$: StaticStructureSchema = [3, n0, _LTJRi,
   0,
-  [_TJSra, _NT],
+  [_TJSra, _NTe],
   [() => TrainingJobSummaries, 0], 1
 ];
 export var ListTrainingPlansRequest$: StaticStructureSchema = [3, n0, _LTPR,
   0,
-  [_NT, _MR, _STAt, _STBt, _SBo, _SO, _Fil],
+  [_NTe, _MR, _STAt, _STBt, _SBo, _SO, _Fil],
   [0, 1, 4, 4, 0, 0, () => TrainingPlanFilters]
 ];
 export var ListTrainingPlansResponse$: StaticStructureSchema = [3, n0, _LTPRi,
   0,
-  [_TPSr, _NT],
+  [_TPSr, _NTe],
   [() => TrainingPlanSummaries, 0], 1
 ];
 export var ListTransformJobsRequest$: StaticStructureSchema = [3, n0, _LTJRis,
   0,
-  [_CTA, _CTB, _LMTA, _LMTB, _NCa, _SE, _SBo, _SO, _NT, _MR],
+  [_CTA, _CTB, _LMTA, _LMTB, _NCa, _SE, _SBo, _SO, _NTe, _MR],
   [4, 4, 4, 4, 0, 0, 0, 0, 0, 1]
 ];
 export var ListTransformJobsResponse$: StaticStructureSchema = [3, n0, _LTJRist,
   0,
-  [_TJSran, _NT],
+  [_TJSran, _NTe],
   [() => TransformJobSummaries, 0], 1
 ];
 export var ListTrialComponentsRequest$: StaticStructureSchema = [3, n0, _LTCR,
   0,
-  [_ENx, _TN, _SA, _CAre, _CBr, _SBo, _SO, _MR, _NT],
+  [_ENx, _TN, _SA, _CAre, _CBr, _SBo, _SO, _MR, _NTe],
   [0, 0, 0, 4, 4, 0, 0, 1, 0]
 ];
 export var ListTrialComponentsResponse$: StaticStructureSchema = [3, n0, _LTCRi,
   0,
-  [_TCS, _NT],
+  [_TCS, _NTe],
   [() => TrialComponentSummaries, 0]
 ];
 export var ListTrialsRequest$: StaticStructureSchema = [3, n0, _LTR,
   0,
-  [_ENx, _TCN, _CAre, _CBr, _SBo, _SO, _MR, _NT],
+  [_ENx, _TCN, _CAre, _CBr, _SBo, _SO, _MR, _NTe],
   [0, 0, 4, 4, 0, 0, 1, 0]
 ];
 export var ListTrialsResponse$: StaticStructureSchema = [3, n0, _LTRi,
   0,
-  [_TSr, _NT],
+  [_TSr, _NTe],
   [() => TrialSummaries, 0]
 ];
 export var ListUltraServersByReservedCapacityRequest$: StaticStructureSchema = [3, n0, _LUSBRCR,
   0,
-  [_RCA, _MR, _NT],
+  [_RCA, _MR, _NTe],
   [0, 1, 0], 1
 ];
 export var ListUltraServersByReservedCapacityResponse$: StaticStructureSchema = [3, n0, _LUSBRCRi,
   0,
-  [_USl, _NT],
+  [_USl, _NTe],
   [() => UltraServers, 0], 1
 ];
 export var ListUserProfilesRequest$: StaticStructureSchema = [3, n0, _LUPR,
   0,
-  [_NT, _MR, _SO, _SBo, _DIE, _UPNC],
+  [_NTe, _MR, _SO, _SBo, _DIE, _UPNC],
   [0, 1, 0, 0, 0, 0]
 ];
 export var ListUserProfilesResponse$: StaticStructureSchema = [3, n0, _LUPRi,
   0,
-  [_UPs, _NT],
+  [_UPs, _NTe],
   [() => UserProfileList, 0]
 ];
 export var ListWorkforcesRequest$: StaticStructureSchema = [3, n0, _LWR,
   0,
-  [_SBo, _SO, _NCa, _NT, _MR],
+  [_SBo, _SO, _NCa, _NTe, _MR],
   [0, 0, 0, 0, 1]
 ];
 export var ListWorkforcesResponse$: StaticStructureSchema = [3, n0, _LWRi,
   0,
-  [_Wor, _NT],
+  [_Wor, _NTe],
   [() => Workforces, 0], 1
 ];
 export var ListWorkteamsRequest$: StaticStructureSchema = [3, n0, _LWRis,
   0,
-  [_SBo, _SO, _NCa, _NT, _MR],
+  [_SBo, _SO, _NCa, _NTe, _MR],
   [0, 0, 0, 0, 1]
 ];
 export var ListWorkteamsResponse$: StaticStructureSchema = [3, n0, _LWRist,
   0,
-  [_Work, _NT],
+  [_Work, _NTe],
   [() => Workteams, 0], 1
 ];
 export var MemberDefinition$: StaticStructureSchema = [3, n0, _MDem,
@@ -8102,7 +8141,7 @@ export var MemberDefinition$: StaticStructureSchema = [3, n0, _MDem,
   [_CMD, _OMD],
   [() => CognitoMemberDefinition$, () => OidcMemberDefinition$]
 ];
-export var MetadataProperties$: StaticStructureSchema = [3, n0, _MP,
+export var MetadataProperties$: StaticStructureSchema = [3, n0, _MPe,
   0,
   [_CIom, _Rep, _GB, _PIro],
   [0, 0, 0, 0]
@@ -8154,7 +8193,7 @@ export var MlflowDetails$: StaticStructureSchema = [3, n0, _MDl,
 ];
 export var Model$: StaticStructureSchema = [3, n0, _Mode,
   0,
-  [_MNo, _PC, _Co, _IEC, _ERA, _VC, _CT, _MA, _ENI, _Ta, _DR],
+  [_MNod, _PC, _Co, _IEC, _ERA, _VC, _CT, _MA, _ENI, _Ta, _DR],
   [0, () => ContainerDefinition$, () => ContainerDefinitionList, () => InferenceExecutionConfig$, 0, () => VpcConfig$, 4, 0, 2, () => TagList, () => DeploymentRecommendation$]
 ];
 export var ModelAccessConfig$: StaticStructureSchema = [3, n0, _MAC,
@@ -8337,9 +8376,9 @@ export var ModelMetrics$: StaticStructureSchema = [3, n0, _MM,
   [_MQ, _MDQ, _B, _Ex],
   [() => ModelQuality$, () => ModelDataQuality$, () => Bias$, () => Explainability$]
 ];
-export var ModelPackage$: StaticStructureSchema = [3, n0, _MPod,
+export var ModelPackage$: StaticStructureSchema = [3, n0, _MPo,
   0,
-  [_MPN, _MPGN, _MPV, _MPRT, _MPA, _MPD, _CT, _ISn, _SAS, _VSa, _MPSo, _MPSD, _CFM, _MAS, _CB, _MP, _MM, _LMT, _LMB, _ADpp, _Do, _Tas, _SPU, _AIS, _SU, _SC, _MCod, _MLC, _Ta, _CMP, _DCB, _SMV],
+  [_MPN, _MPGN, _MPV, _MPRT, _MPA, _MPD, _CT, _ISn, _SAS, _VSa, _MPSo, _MPSD, _CFM, _MAS, _CB, _MPe, _MM, _LMT, _LMB, _ADpp, _Do, _Tas, _SPU, _AIS, _SU, _SC, _MCod, _MLC, _Ta, _CMP, _DCB, _SMV],
   [0, 0, 1, 0, 0, 0, 4, () => InferenceSpecification$, () => SourceAlgorithmSpecification$, () => ModelPackageValidationSpecification$, 0, () => ModelPackageStatusDetails$, 2, 0, () => UserContext$, () => MetadataProperties$, () => ModelMetrics$, 4, () => UserContext$, 0, 0, 0, 0, () => AdditionalInferenceSpecifications, 0, () => ModelPackageSecurityConfig$, [() => ModelPackageModelCard$, 0], () => ModelLifeCycle$, () => TagList, 128 | 0, () => DriftCheckBaselines$, 0]
 ];
 export var ModelPackageConfig$: StaticStructureSchema = [3, n0, _MPC,
@@ -8449,17 +8488,17 @@ export var ModelStepMetadata$: StaticStructureSchema = [3, n0, _MSM,
 ];
 export var ModelSummary$: StaticStructureSchema = [3, n0, _MSode,
   0,
-  [_MNo, _MA, _CT],
+  [_MNod, _MA, _CT],
   [0, 0, 4], 3
 ];
 export var ModelVariantConfig$: StaticStructureSchema = [3, n0, _MVC,
   0,
-  [_MNo, _VN, _ICnfr],
+  [_MNod, _VN, _ICnfr],
   [0, 0, () => ModelInfrastructureConfig$], 3
 ];
 export var ModelVariantConfigSummary$: StaticStructureSchema = [3, n0, _MVCS,
   0,
-  [_MNo, _VN, _ICnfr, _St],
+  [_MNod, _VN, _ICnfr, _St],
   [0, 0, () => ModelInfrastructureConfig$, 0], 4
 ];
 export var MonitoringAlertActions$: StaticStructureSchema = [3, n0, _MAA,
@@ -8714,7 +8753,7 @@ export var OptimizationOutput$: StaticStructureSchema = [3, n0, _OO,
 ];
 export var OptimizationSageMakerModel$: StaticStructureSchema = [3, n0, _OSMM,
   0,
-  [_MNo],
+  [_MNod],
   [0]
 ];
 export var OptimizationVpcConfig$: StaticStructureSchema = [3, n0, _OVCp,
@@ -8939,7 +8978,7 @@ export var ProcessingStoppingCondition$: StaticStructureSchema = [3, n0, _PSC,
 ];
 export var ProductionVariant$: StaticStructureSchema = [3, n0, _PVr,
   0,
-  [_VN, _MNo, _IIC, _IT, _IVW, _ATcc, _CDCo, _SCe, _VSIGB, _MDDTIS, _CSHCTIS, _ESSMA, _MIS, _RCo, _IAV, _CRC],
+  [_VN, _MNod, _IIC, _IT, _IVW, _ATcc, _CDCo, _SCe, _VSIGB, _MDDTIS, _CSHCTIS, _ESSMA, _MIS, _RCo, _IAV, _CRC],
   [0, 0, 1, 0, 1, 0, () => ProductionVariantCoreDumpConfig$, () => ProductionVariantServerlessConfig$, 1, 1, 1, 2, () => ProductionVariantManagedInstanceScaling$, () => ProductionVariantRoutingConfig$, 0, () => ProductionVariantCapacityReservationConfig$], 1
 ];
 export var ProductionVariantCapacityReservationConfig$: StaticStructureSchema = [3, n0, _PVCRC,
@@ -9059,12 +9098,12 @@ export var QueryFilters$: StaticStructureSchema = [3, n0, _QF,
 ];
 export var QueryLineageRequest$: StaticStructureSchema = [3, n0, _QLR,
   0,
-  [_SAt, _Di, _IEn, _Fil, _MDa, _MR, _NT],
+  [_SAt, _Di, _IEn, _Fil, _MDa, _MR, _NTe],
   [64 | 0, 0, 2, () => QueryFilters$, 1, 1, 0]
 ];
 export var QueryLineageResponse$: StaticStructureSchema = [3, n0, _QLRu,
   0,
-  [_Ve, _Edg, _NT],
+  [_Ve, _Edg, _NTe],
   [() => Vertices, () => Edges, 0]
 ];
 export var RealTimeInferenceConfig$: StaticStructureSchema = [3, n0, _RTIC,
@@ -9094,7 +9133,7 @@ export var RecommendationJobInferenceBenchmark$: StaticStructureSchema = [3, n0,
 ];
 export var RecommendationJobInputConfig$: StaticStructureSchema = [3, n0, _RJIC,
   0,
-  [_MPVA, _MNo, _JDIS, _TPr, _RLe, _ECndpoi, _VKKI, _CCon, _End, _VC],
+  [_MPVA, _MNod, _JDIS, _TPr, _RLe, _ECndpoi, _VKKI, _CCon, _End, _VC],
   [0, 0, 1, () => TrafficPattern$, () => RecommendationJobResourceLimit$, () => EndpointInputConfigurations, 0, () => RecommendationJobContainerConfig$, () => Endpoints, () => RecommendationJobVpcConfig$]
 ];
 export var RecommendationJobOutputConfig$: StaticStructureSchema = [3, n0, _RJOC,
@@ -9289,7 +9328,7 @@ export var S3FileSystem$: StaticStructureSchema = [3, n0, _SFS,
 ];
 export var S3FileSystemConfig$: StaticStructureSchema = [3, n0, _SFSC,
   0,
-  [_SUr, _MPo],
+  [_SUr, _MP],
   [0, 0], 1
 ];
 export var S3ModelDataSource$: StaticStructureSchema = [3, n0, _SMDS,
@@ -9339,17 +9378,17 @@ export var SearchExpression$: StaticStructureSchema = [3, n0, _SEe,
 ];
 export var SearchRecord$: StaticStructureSchema = [3, n0, _SRe,
   0,
-  [_TJ, _Exp, _Tr, _TCr, _En, _MPod, _MPG, _Pi, _PE, _PVi, _FG, _FMe, _Proj, _HPTJ, _MCod, _Mode],
+  [_TJ, _Exp, _Tr, _TCr, _En, _MPo, _MPG, _Pi, _PE, _PVi, _FG, _FMe, _Proj, _HPTJ, _MCod, _Mode],
   [() => TrainingJob$, () => Experiment$, () => Trial$, () => TrialComponent$, () => Endpoint$, [() => ModelPackage$, 0], () => ModelPackageGroup$, () => Pipeline$, () => PipelineExecution$, () => PipelineVersion$, () => FeatureGroup$, () => FeatureMetadata$, () => Project$, () => HyperParameterTuningJobSearchEntity$, [() => ModelCard$, 0], () => ModelDashboardModel$]
 ];
 export var SearchRequest$: StaticStructureSchema = [3, n0, _SRea,
   0,
-  [_Res, _SEe, _SBo, _SO, _NT, _MR, _CAFO, _VCi],
+  [_Res, _SEe, _SBo, _SO, _NTe, _MR, _CAFO, _VCi],
   [0, () => SearchExpression$, 0, 0, 0, 1, 0, () => VisibilityConditionsList], 1
 ];
 export var SearchResponse$: StaticStructureSchema = [3, n0, _SRear,
   0,
-  [_Resu, _NT, _TH],
+  [_Resu, _NTe, _TH],
   [[() => SearchResultsList, 0], 0, () => TotalHits$]
 ];
 export var SearchTrainingPlanOfferingsRequest$: StaticStructureSchema = [3, n0, _STPOR,
@@ -9874,7 +9913,7 @@ export var TransformInput$: StaticStructureSchema = [3, n0, _TIr,
 ];
 export var TransformJob$: StaticStructureSchema = [3, n0, _TJr,
   0,
-  [_TJNr, _TJAr, _TJSr, _FR, _MNo, _MCT, _MCCo, _MPIMB, _BS, _E, _TIr, _TO, _DCC, _TR, _CT, _TSTr, _TETr, _LJA, _AMLJAu, _DP, _ECxp, _Ta],
+  [_TJNr, _TJAr, _TJSr, _FR, _MNod, _MCT, _MCCo, _MPIMB, _BS, _E, _TIr, _TO, _DCC, _TR, _CT, _TSTr, _TETr, _LJA, _AMLJAu, _DP, _ECxp, _Ta],
   [0, 0, 0, 0, 0, 1, () => ModelClientConfig$, 1, 0, 128 | 0, () => TransformInput$, () => TransformOutput$, () => BatchDataCaptureConfig$, () => TransformResources$, 4, 4, 4, 0, 0, () => DataProcessing$, () => ExperimentConfig$, () => TagList]
 ];
 export var TransformJobDefinition$: StaticStructureSchema = [3, n0, _TJDr,
@@ -9909,12 +9948,12 @@ export var TransformS3DataSource$: StaticStructureSchema = [3, n0, _TSDS,
 ];
 export var Trial$: StaticStructureSchema = [3, n0, _Tr,
   0,
-  [_TN, _TA, _DNi, _ENx, _S, _CT, _CB, _LMT, _LMB, _MP, _Ta, _TCS],
+  [_TN, _TA, _DNi, _ENx, _S, _CT, _CB, _LMT, _LMB, _MPe, _Ta, _TCS],
   [0, 0, 0, 0, () => TrialSource$, 4, () => UserContext$, 4, () => UserContext$, () => MetadataProperties$, () => TagList, () => TrialComponentSimpleSummaries]
 ];
 export var TrialComponent$: StaticStructureSchema = [3, n0, _TCr,
   0,
-  [_TCN, _DNi, _TCA, _S, _St, _STt, _ETn, _CT, _CB, _LMT, _LMB, _P, _IAn, _OA, _Me, _MP, _SDo, _LGA, _Ta, _Paren, _RNu],
+  [_TCN, _DNi, _TCA, _S, _St, _STt, _ETn, _CT, _CB, _LMT, _LMB, _P, _IAn, _OA, _Me, _MPe, _SDo, _LGA, _Ta, _Paren, _RNu],
   [0, 0, 0, () => TrialComponentSource$, () => TrialComponentStatus$, 4, 4, 4, () => UserContext$, 4, () => UserContext$, () => TrialComponentParameters, () => TrialComponentArtifacts, () => TrialComponentArtifacts, () => TrialComponentMetricSummaries, () => MetadataProperties$, () => TrialComponentSourceDetail$, 0, () => TagList, () => Parents, 0]
 ];
 export var TrialComponentArtifact$: StaticStructureSchema = [3, n0, _TCAr,
@@ -10049,8 +10088,8 @@ export var UpdateArtifactResponse$: StaticStructureSchema = [3, n0, _UARpda,
 ];
 export var UpdateClusterRequest$: StaticStructureSchema = [3, n0, _UCR,
   0,
-  [_CNl, _IG, _RIG, _TSCi, _NR, _IGTD, _NPM, _CRl, _ASu],
-  [0, () => ClusterInstanceGroupSpecifications, () => ClusterRestrictedInstanceGroupSpecifications, () => ClusterTieredStorageConfig$, 0, 64 | 0, 0, 0, () => ClusterAutoScalingConfig$], 1
+  [_CNl, _IG, _RIG, _TSCi, _NR, _IGTD, _NPM, _CRl, _ASu, _Or],
+  [0, () => ClusterInstanceGroupSpecifications, () => ClusterRestrictedInstanceGroupSpecifications, () => ClusterTieredStorageConfig$, 0, 64 | 0, 0, 0, () => ClusterAutoScalingConfig$, () => ClusterOrchestrator$], 1
 ];
 export var UpdateClusterResponse$: StaticStructureSchema = [3, n0, _UCRp,
   0,
@@ -10698,6 +10737,7 @@ var ClusterNodeLogicalIdList = 64 | 0;
 var ClusterNodeSummaries: StaticListSchema = [1, n0, _CNSl,
   0, () => ClusterNodeSummary$
 ];
+var ClusterPartitionNames = 64 | 0;
 var ClusterRestrictedInstanceGroupDetailsList: StaticListSchema = [1, n0, _CRIGDL,
   0, () => ClusterRestrictedInstanceGroupDetails$
 ];
@@ -11353,8 +11393,8 @@ export var AutoMLProblemTypeResolvedAttributes$: StaticUnionSchema = [4, n0, _AM
 ];
 export var ClusterInstanceStorageConfig$: StaticUnionSchema = [4, n0, _CISCl,
   0,
-  [_EVC],
-  [() => ClusterEbsVolumeConfig$]
+  [_EVC, _FLC, _FOZC],
+  [() => ClusterEbsVolumeConfig$, () => ClusterFsxLustreConfig$, () => ClusterFsxOpenZfsConfig$]
 ];
 export var CollectionConfig$: StaticUnionSchema = [4, n0, _CColle,
   0,

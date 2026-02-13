@@ -75,6 +75,15 @@ export interface DescribeClusterNodeCommandOutput extends DescribeClusterNodeRes
  * //           VolumeKmsKeyId: "STRING_VALUE",
  * //           RootVolume: true || false,
  * //         },
+ * //         FsxLustreConfig: { // ClusterFsxLustreConfig
+ * //           DnsName: "STRING_VALUE", // required
+ * //           MountName: "STRING_VALUE", // required
+ * //           MountPath: "STRING_VALUE",
+ * //         },
+ * //         FsxOpenZfsConfig: { // ClusterFsxOpenZfsConfig
+ * //           DnsName: "STRING_VALUE", // required
+ * //           MountPath: "STRING_VALUE",
+ * //         },
  * //       },
  * //     ],
  * //     PrivatePrimaryIp: "STRING_VALUE",

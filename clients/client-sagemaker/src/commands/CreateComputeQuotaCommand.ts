@@ -4,8 +4,7 @@ import { Command as $Command } from "@smithy/smithy-client";
 import type { MetadataBearer as __MetadataBearer } from "@smithy/types";
 
 import { commonParams } from "../endpoint/EndpointParameters";
-import type { CreateComputeQuotaRequest } from "../models/models_0";
-import type { CreateComputeQuotaResponse } from "../models/models_1";
+import type { CreateComputeQuotaRequest, CreateComputeQuotaResponse } from "../models/models_1";
 import type { SageMakerClientResolvedConfig, ServiceInputTypes, ServiceOutputTypes } from "../SageMakerClient";
 import { CreateComputeQuota$ } from "../schemas/schemas_0";
 
