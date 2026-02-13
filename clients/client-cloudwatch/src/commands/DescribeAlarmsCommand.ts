@@ -150,7 +150,7 @@ export interface DescribeAlarmsCommandOutput extends DescribeAlarmsOutput, __Met
  * //         },
  * //       ],
  * //       ThresholdMetricId: "STRING_VALUE",
- * //       EvaluationState: "PARTIAL_DATA",
+ * //       EvaluationState: "PARTIAL_DATA" || "EVALUATION_FAILURE" || "EVALUATION_ERROR",
  * //       StateTransitionedTimestamp: new Date("TIMESTAMP"),
  * //     },
  * //   ],

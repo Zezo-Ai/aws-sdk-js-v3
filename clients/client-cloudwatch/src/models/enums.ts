@@ -157,6 +157,8 @@ export type ScanBy = (typeof ScanBy)[keyof typeof ScanBy];
  * @enum
  */
 export const EvaluationState = {
+  EVALUATION_ERROR: "EVALUATION_ERROR",
+  EVALUATION_FAILURE: "EVALUATION_FAILURE",
   PARTIAL_DATA: "PARTIAL_DATA",
 } as const;
 /**

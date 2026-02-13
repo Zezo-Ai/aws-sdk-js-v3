@@ -1408,10 +1408,10 @@ export interface MetricAlarm {
   ThresholdMetricId?: string | undefined;
 
   /**
-   * <p>If the value of this field is <code>PARTIAL_DATA</code>, the alarm is being evaluated
-   *             based on only partial data. This happens if the query used for the alarm returns more
-   *             than 10,000 metrics. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+   * <p>If the value of this field is <code>PARTIAL_DATA</code>, it indicates that not all the available data was able to be retrieved due to quota limitations. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
    *                 alarms on Metrics Insights queries</a>.</p>
+   *          <p>If the value of this field is <code>EVALUATION_ERROR</code>, it indicates configuration errors in alarm setup that require review and correction. Refer to StateReason field of the alarm for more details.</p>
+   *          <p>If the value of this field is <code>EVALUATION_FAILURE</code>, it indicates temporary CloudWatch issues. We recommend manual monitoring until the issue is resolved </p>
    * @public
    */
   EvaluationState?: EvaluationState | undefined;
