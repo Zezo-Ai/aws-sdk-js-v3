@@ -233,6 +233,11 @@ import {
   CreateIntegrationAssociationCommandOutput,
 } from "./commands/CreateIntegrationAssociationCommand";
 import {
+  CreateNotificationCommand,
+  CreateNotificationCommandInput,
+  CreateNotificationCommandOutput,
+} from "./commands/CreateNotificationCommand";
+import {
   CreateParticipantCommand,
   CreateParticipantCommandInput,
   CreateParticipantCommandOutput,
@@ -402,6 +407,11 @@ import {
   DeleteIntegrationAssociationCommandOutput,
 } from "./commands/DeleteIntegrationAssociationCommand";
 import {
+  DeleteNotificationCommand,
+  DeleteNotificationCommandInput,
+  DeleteNotificationCommandOutput,
+} from "./commands/DeleteNotificationCommand";
+import {
   DeletePredefinedAttributeCommand,
   DeletePredefinedAttributeCommandInput,
   DeletePredefinedAttributeCommandOutput,
@@ -565,6 +575,11 @@ import {
   DescribeInstanceStorageConfigCommandInput,
   DescribeInstanceStorageConfigCommandOutput,
 } from "./commands/DescribeInstanceStorageConfigCommand";
+import {
+  DescribeNotificationCommand,
+  DescribeNotificationCommandInput,
+  DescribeNotificationCommandOutput,
+} from "./commands/DescribeNotificationCommand";
 import {
   DescribePhoneNumberCommand,
   DescribePhoneNumberCommandInput,
@@ -973,6 +988,11 @@ import {
 } from "./commands/ListLambdaFunctionsCommand";
 import { ListLexBotsCommand, ListLexBotsCommandInput, ListLexBotsCommandOutput } from "./commands/ListLexBotsCommand";
 import {
+  ListNotificationsCommand,
+  ListNotificationsCommandInput,
+  ListNotificationsCommandOutput,
+} from "./commands/ListNotificationsCommand";
+import {
   ListPhoneNumbersCommand,
   ListPhoneNumbersCommandInput,
   ListPhoneNumbersCommandOutput,
@@ -1091,6 +1111,11 @@ import {
   ListUserHierarchyGroupsCommandOutput,
 } from "./commands/ListUserHierarchyGroupsCommand";
 import {
+  ListUserNotificationsCommand,
+  ListUserNotificationsCommandInput,
+  ListUserNotificationsCommandOutput,
+} from "./commands/ListUserNotificationsCommand";
+import {
   ListUserProficienciesCommand,
   ListUserProficienciesCommandInput,
   ListUserProficienciesCommandOutput,
@@ -1207,6 +1232,11 @@ import {
   SearchHoursOfOperationsCommandInput,
   SearchHoursOfOperationsCommandOutput,
 } from "./commands/SearchHoursOfOperationsCommand";
+import {
+  SearchNotificationsCommand,
+  SearchNotificationsCommandInput,
+  SearchNotificationsCommandOutput,
+} from "./commands/SearchNotificationsCommand";
 import {
   SearchPredefinedAttributesCommand,
   SearchPredefinedAttributesCommandInput,
@@ -1508,6 +1538,11 @@ import {
   UpdateInstanceStorageConfigCommandOutput,
 } from "./commands/UpdateInstanceStorageConfigCommand";
 import {
+  UpdateNotificationContentCommand,
+  UpdateNotificationContentCommandInput,
+  UpdateNotificationContentCommandOutput,
+} from "./commands/UpdateNotificationContentCommand";
+import {
   UpdateParticipantAuthenticationCommand,
   UpdateParticipantAuthenticationCommandInput,
   UpdateParticipantAuthenticationCommandOutput,
@@ -1648,6 +1683,11 @@ import {
   UpdateUserIdentityInfoCommandInput,
   UpdateUserIdentityInfoCommandOutput,
 } from "./commands/UpdateUserIdentityInfoCommand";
+import {
+  UpdateUserNotificationStatusCommand,
+  UpdateUserNotificationStatusCommandInput,
+  UpdateUserNotificationStatusCommandOutput,
+} from "./commands/UpdateUserNotificationStatusCommand";
 import {
   UpdateUserPhoneConfigCommand,
   UpdateUserPhoneConfigCommandInput,
@@ -1836,6 +1876,7 @@ const commands = {
   CreateHoursOfOperationOverrideCommand,
   CreateInstanceCommand,
   CreateIntegrationAssociationCommand,
+  CreateNotificationCommand,
   CreateParticipantCommand,
   CreatePersistentContactAssociationCommand,
   CreatePredefinedAttributeCommand,
@@ -1873,6 +1914,7 @@ const commands = {
   DeleteHoursOfOperationOverrideCommand,
   DeleteInstanceCommand,
   DeleteIntegrationAssociationCommand,
+  DeleteNotificationCommand,
   DeletePredefinedAttributeCommand,
   DeletePromptCommand,
   DeletePushNotificationRegistrationCommand,
@@ -1909,6 +1951,7 @@ const commands = {
   DescribeInstanceCommand,
   DescribeInstanceAttributeCommand,
   DescribeInstanceStorageConfigCommand,
+  DescribeNotificationCommand,
   DescribePhoneNumberCommand,
   DescribePredefinedAttributeCommand,
   DescribePromptCommand,
@@ -1992,6 +2035,7 @@ const commands = {
   ListIntegrationAssociationsCommand,
   ListLambdaFunctionsCommand,
   ListLexBotsCommand,
+  ListNotificationsCommand,
   ListPhoneNumbersCommand,
   ListPhoneNumbersV2Command,
   ListPredefinedAttributesCommand,
@@ -2018,6 +2062,7 @@ const commands = {
   ListTrafficDistributionGroupUsersCommand,
   ListUseCasesCommand,
   ListUserHierarchyGroupsCommand,
+  ListUserNotificationsCommand,
   ListUserProficienciesCommand,
   ListUsersCommand,
   ListViewsCommand,
@@ -2043,6 +2088,7 @@ const commands = {
   SearchEvaluationFormsCommand,
   SearchHoursOfOperationOverridesCommand,
   SearchHoursOfOperationsCommand,
+  SearchNotificationsCommand,
   SearchPredefinedAttributesCommand,
   SearchPromptsCommand,
   SearchQueuesCommand,
@@ -2107,6 +2153,7 @@ const commands = {
   UpdateHoursOfOperationOverrideCommand,
   UpdateInstanceAttributeCommand,
   UpdateInstanceStorageConfigCommand,
+  UpdateNotificationContentCommand,
   UpdateParticipantAuthenticationCommand,
   UpdateParticipantRoleConfigCommand,
   UpdatePhoneNumberCommand,
@@ -2136,6 +2183,7 @@ const commands = {
   UpdateUserHierarchyGroupNameCommand,
   UpdateUserHierarchyStructureCommand,
   UpdateUserIdentityInfoCommand,
+  UpdateUserNotificationStatusCommand,
   UpdateUserPhoneConfigCommand,
   UpdateUserProficienciesCommand,
   UpdateUserRoutingProfileCommand,
@@ -3019,6 +3067,23 @@ export interface Connect {
   ): void;
 
   /**
+   * @see {@link CreateNotificationCommand}
+   */
+  createNotification(
+    args: CreateNotificationCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<CreateNotificationCommandOutput>;
+  createNotification(
+    args: CreateNotificationCommandInput,
+    cb: (err: any, data?: CreateNotificationCommandOutput) => void
+  ): void;
+  createNotification(
+    args: CreateNotificationCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: CreateNotificationCommandOutput) => void
+  ): void;
+
+  /**
    * @see {@link CreateParticipantCommand}
    */
   createParticipant(
@@ -3648,6 +3713,23 @@ export interface Connect {
   ): void;
 
   /**
+   * @see {@link DeleteNotificationCommand}
+   */
+  deleteNotification(
+    args: DeleteNotificationCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<DeleteNotificationCommandOutput>;
+  deleteNotification(
+    args: DeleteNotificationCommandInput,
+    cb: (err: any, data?: DeleteNotificationCommandOutput) => void
+  ): void;
+  deleteNotification(
+    args: DeleteNotificationCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: DeleteNotificationCommandOutput) => void
+  ): void;
+
+  /**
    * @see {@link DeletePredefinedAttributeCommand}
    */
   deletePredefinedAttribute(
@@ -4257,6 +4339,23 @@ export interface Connect {
     args: DescribeInstanceStorageConfigCommandInput,
     options: __HttpHandlerOptions,
     cb: (err: any, data?: DescribeInstanceStorageConfigCommandOutput) => void
+  ): void;
+
+  /**
+   * @see {@link DescribeNotificationCommand}
+   */
+  describeNotification(
+    args: DescribeNotificationCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<DescribeNotificationCommandOutput>;
+  describeNotification(
+    args: DescribeNotificationCommandInput,
+    cb: (err: any, data?: DescribeNotificationCommandOutput) => void
+  ): void;
+  describeNotification(
+    args: DescribeNotificationCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: DescribeNotificationCommandOutput) => void
   ): void;
 
   /**
@@ -5672,6 +5771,23 @@ export interface Connect {
   ): void;
 
   /**
+   * @see {@link ListNotificationsCommand}
+   */
+  listNotifications(
+    args: ListNotificationsCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<ListNotificationsCommandOutput>;
+  listNotifications(
+    args: ListNotificationsCommandInput,
+    cb: (err: any, data?: ListNotificationsCommandOutput) => void
+  ): void;
+  listNotifications(
+    args: ListNotificationsCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: ListNotificationsCommandOutput) => void
+  ): void;
+
+  /**
    * @see {@link ListPhoneNumbersCommand}
    */
   listPhoneNumbers(
@@ -6116,6 +6232,23 @@ export interface Connect {
   ): void;
 
   /**
+   * @see {@link ListUserNotificationsCommand}
+   */
+  listUserNotifications(
+    args: ListUserNotificationsCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<ListUserNotificationsCommandOutput>;
+  listUserNotifications(
+    args: ListUserNotificationsCommandInput,
+    cb: (err: any, data?: ListUserNotificationsCommandOutput) => void
+  ): void;
+  listUserNotifications(
+    args: ListUserNotificationsCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: ListUserNotificationsCommandOutput) => void
+  ): void;
+
+  /**
    * @see {@link ListUserProficienciesCommand}
    */
   listUserProficiencies(
@@ -6538,6 +6671,23 @@ export interface Connect {
     args: SearchHoursOfOperationsCommandInput,
     options: __HttpHandlerOptions,
     cb: (err: any, data?: SearchHoursOfOperationsCommandOutput) => void
+  ): void;
+
+  /**
+   * @see {@link SearchNotificationsCommand}
+   */
+  searchNotifications(
+    args: SearchNotificationsCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<SearchNotificationsCommandOutput>;
+  searchNotifications(
+    args: SearchNotificationsCommandInput,
+    cb: (err: any, data?: SearchNotificationsCommandOutput) => void
+  ): void;
+  searchNotifications(
+    args: SearchNotificationsCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: SearchNotificationsCommandOutput) => void
   ): void;
 
   /**
@@ -7631,6 +7781,23 @@ export interface Connect {
   ): void;
 
   /**
+   * @see {@link UpdateNotificationContentCommand}
+   */
+  updateNotificationContent(
+    args: UpdateNotificationContentCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<UpdateNotificationContentCommandOutput>;
+  updateNotificationContent(
+    args: UpdateNotificationContentCommandInput,
+    cb: (err: any, data?: UpdateNotificationContentCommandOutput) => void
+  ): void;
+  updateNotificationContent(
+    args: UpdateNotificationContentCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: UpdateNotificationContentCommandOutput) => void
+  ): void;
+
+  /**
    * @see {@link UpdateParticipantAuthenticationCommand}
    */
   updateParticipantAuthentication(
@@ -8121,6 +8288,23 @@ export interface Connect {
     args: UpdateUserIdentityInfoCommandInput,
     options: __HttpHandlerOptions,
     cb: (err: any, data?: UpdateUserIdentityInfoCommandOutput) => void
+  ): void;
+
+  /**
+   * @see {@link UpdateUserNotificationStatusCommand}
+   */
+  updateUserNotificationStatus(
+    args: UpdateUserNotificationStatusCommandInput,
+    options?: __HttpHandlerOptions
+  ): Promise<UpdateUserNotificationStatusCommandOutput>;
+  updateUserNotificationStatus(
+    args: UpdateUserNotificationStatusCommandInput,
+    cb: (err: any, data?: UpdateUserNotificationStatusCommandOutput) => void
+  ): void;
+  updateUserNotificationStatus(
+    args: UpdateUserNotificationStatusCommandInput,
+    options: __HttpHandlerOptions,
+    cb: (err: any, data?: UpdateUserNotificationStatusCommandOutput) => void
   ): void;
 
   /**

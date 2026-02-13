@@ -5,8 +5,8 @@ import type { MetadataBearer as __MetadataBearer } from "@smithy/types";
 
 import type { ConnectClientResolvedConfig, ServiceInputTypes, ServiceOutputTypes } from "../ConnectClient";
 import { commonParams } from "../endpoint/EndpointParameters";
-import type { ImportWorkspaceMediaRequest, ImportWorkspaceMediaResponse } from "../models/models_2";
-import { ImportWorkspaceMedia$ } from "../schemas/schemas_0";
+import type { DeleteNotificationRequest, DeleteNotificationResponse } from "../models/models_1";
+import { DeleteNotification$ } from "../schemas/schemas_0";
 
 /**
  * @public
@@ -16,43 +16,44 @@ export { $Command };
 /**
  * @public
  *
- * The input for {@link ImportWorkspaceMediaCommand}.
+ * The input for {@link DeleteNotificationCommand}.
  */
-export interface ImportWorkspaceMediaCommandInput extends ImportWorkspaceMediaRequest {}
+export interface DeleteNotificationCommandInput extends DeleteNotificationRequest {}
 /**
  * @public
  *
- * The output of {@link ImportWorkspaceMediaCommand}.
+ * The output of {@link DeleteNotificationCommand}.
  */
-export interface ImportWorkspaceMediaCommandOutput extends ImportWorkspaceMediaResponse, __MetadataBearer {}
+export interface DeleteNotificationCommandOutput extends DeleteNotificationResponse, __MetadataBearer {}
 
 /**
- * <p>Imports a media asset (such as a logo) for use in a workspace.</p>
+ * <p>Deletes a notification. Once deleted, the notification is no longer visible to all users and cannot be managed through the Admin Website or APIs.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
- * import { ConnectClient, ImportWorkspaceMediaCommand } from "@aws-sdk/client-connect"; // ES Modules import
- * // const { ConnectClient, ImportWorkspaceMediaCommand } = require("@aws-sdk/client-connect"); // CommonJS import
+ * import { ConnectClient, DeleteNotificationCommand } from "@aws-sdk/client-connect"; // ES Modules import
+ * // const { ConnectClient, DeleteNotificationCommand } = require("@aws-sdk/client-connect"); // CommonJS import
  * // import type { ConnectClientConfig } from "@aws-sdk/client-connect";
  * const config = {}; // type is ConnectClientConfig
  * const client = new ConnectClient(config);
- * const input = { // ImportWorkspaceMediaRequest
+ * const input = { // DeleteNotificationRequest
  *   InstanceId: "STRING_VALUE", // required
- *   WorkspaceId: "STRING_VALUE", // required
- *   MediaType: "IMAGE_LOGO_LIGHT_FAVICON" || "IMAGE_LOGO_DARK_FAVICON" || "IMAGE_LOGO_LIGHT_HORIZONTAL" || "IMAGE_LOGO_DARK_HORIZONTAL", // required
- *   MediaSource: "STRING_VALUE", // required
+ *   NotificationId: "STRING_VALUE", // required
  * };
- * const command = new ImportWorkspaceMediaCommand(input);
+ * const command = new DeleteNotificationCommand(input);
  * const response = await client.send(command);
  * // {};
  *
  * ```
  *
- * @param ImportWorkspaceMediaCommandInput - {@link ImportWorkspaceMediaCommandInput}
- * @returns {@link ImportWorkspaceMediaCommandOutput}
- * @see {@link ImportWorkspaceMediaCommandInput} for command's `input` shape.
- * @see {@link ImportWorkspaceMediaCommandOutput} for command's `response` shape.
+ * @param DeleteNotificationCommandInput - {@link DeleteNotificationCommandInput}
+ * @returns {@link DeleteNotificationCommandOutput}
+ * @see {@link DeleteNotificationCommandInput} for command's `input` shape.
+ * @see {@link DeleteNotificationCommandOutput} for command's `response` shape.
  * @see {@link ConnectClientResolvedConfig | config} for ConnectClient's `config` shape.
+ *
+ * @throws {@link AccessDeniedException} (client fault)
+ *  <p>You do not have sufficient permissions to perform this action.</p>
  *
  * @throws {@link InternalServiceException} (server fault)
  *  <p>Request processing failed because of an error or failure with the service.</p>
@@ -75,10 +76,10 @@ export interface ImportWorkspaceMediaCommandOutput extends ImportWorkspaceMediaR
  *
  * @public
  */
-export class ImportWorkspaceMediaCommand extends $Command
+export class DeleteNotificationCommand extends $Command
   .classBuilder<
-    ImportWorkspaceMediaCommandInput,
-    ImportWorkspaceMediaCommandOutput,
+    DeleteNotificationCommandInput,
+    DeleteNotificationCommandOutput,
     ConnectClientResolvedConfig,
     ServiceInputTypes,
     ServiceOutputTypes
@@ -87,19 +88,19 @@ export class ImportWorkspaceMediaCommand extends $Command
   .m(function (this: any, Command: any, cs: any, config: ConnectClientResolvedConfig, o: any) {
     return [getEndpointPlugin(config, Command.getEndpointParameterInstructions())];
   })
-  .s("AmazonConnectService", "ImportWorkspaceMedia", {})
-  .n("ConnectClient", "ImportWorkspaceMediaCommand")
-  .sc(ImportWorkspaceMedia$)
+  .s("AmazonConnectService", "DeleteNotification", {})
+  .n("ConnectClient", "DeleteNotificationCommand")
+  .sc(DeleteNotification$)
   .build() {
   /** @internal type navigation helper, not in runtime. */
   protected declare static __types: {
     api: {
-      input: ImportWorkspaceMediaRequest;
+      input: DeleteNotificationRequest;
       output: {};
     };
     sdk: {
-      input: ImportWorkspaceMediaCommandInput;
-      output: ImportWorkspaceMediaCommandOutput;
+      input: DeleteNotificationCommandInput;
+      output: DeleteNotificationCommandOutput;
     };
   };
 }

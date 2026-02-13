@@ -12,6 +12,7 @@ import {
   AttachedFileServiceQuotaExceededExceptionReason,
   BehaviorType,
   Channel,
+  ConfigurableNotificationPriority,
   ContactFlowStatus,
   ContactFlowType,
   ContactInitiationMethod,
@@ -45,6 +46,7 @@ import {
   InstanceStorageResourceType,
   IntegrationType,
   ListFlowAssociationResourceType,
+  LocaleCode,
   MultiSelectQuestionRuleCategoryAutomationCondition,
   NotificationContentType,
   NotificationDeliveryType,
@@ -5207,6 +5209,79 @@ export interface CreateIntegrationAssociationResponse {
 }
 
 /**
+ * @public
+ */
+export interface CreateNotificationRequest {
+  /**
+   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+
+  /**
+   * <p>The timestamp when the notification should expire and no longer be displayed to users. If not specified, defaults to one week from creation.</p>
+   * @public
+   */
+  ExpiresAt?: Date | undefined;
+
+  /**
+   * <p>A list of Amazon Resource Names (ARNs) identifying the recipients of the notification. Can include user ARNs or instance ARNs to target all users in an instance. Maximum of 200 recipients.</p>
+   * @public
+   */
+  Recipients: string[] | undefined;
+
+  /**
+   * <p>The priority level of the notification. Valid values are HIGH and LOW. High priority notifications are displayed above low priority notifications.</p>
+   * @public
+   */
+  Priority?: ConfigurableNotificationPriority | undefined;
+
+  /**
+   * <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports markdown formatting and embedded links. Maximum 250 characters per locale.</p>
+   * @public
+   */
+  Content: Partial<Record<LocaleCode, string>> | undefined;
+
+  /**
+   * <p>The tags used to organize, track, or control access for this resource. For example, <code>\{ "Tags": \{"key1":"value1", "key2":"value2"\} \}</code>.</p>
+   * @public
+   */
+  Tags?: Record<string, string> | undefined;
+
+  /**
+   * <p>The unique identifier for a notification.</p>
+   * @public
+   */
+  PredefinedNotificationId?: string | undefined;
+
+  /**
+   * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+   *             request. If not provided, the Amazon Web Services
+   *             SDK populates this field. For more information about idempotency, see
+   *             <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+   * @public
+   */
+  ClientToken?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface CreateNotificationResponse {
+  /**
+   * <p>The unique identifier assigned to the created notification.</p>
+   * @public
+   */
+  NotificationId: string | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of the created notification.</p>
+   * @public
+   */
+  NotificationArn: string | undefined;
+}
+
+/**
  * <p>The details to add for the participant.</p>
  * @public
  */
@@ -7984,58 +8059,4 @@ export interface PaletteNavigation {
    * @public
    */
   InvertActionsColors?: boolean | undefined;
-}
-
-/**
- * <p>Contains primary color configuration for a workspace theme.</p>
- * @public
- */
-export interface PalettePrimary {
-  /**
-   * <p>The default primary color used throughout the workspace.</p>
-   * @public
-   */
-  Default?: string | undefined;
-
-  /**
-   * <p>The primary color used for active states.</p>
-   * @public
-   */
-  Active?: string | undefined;
-
-  /**
-   * <p>The text color that contrasts with the primary color for readability.</p>
-   * @public
-   */
-  ContrastText?: string | undefined;
-}
-
-/**
- * <p>Contains color palette configuration for different areas of a workspace.</p>
- * @public
- */
-export interface WorkspaceThemePalette {
-  /**
-   * <p>The color configuration for the header area.</p>
-   * @public
-   */
-  Header?: PaletteHeader | undefined;
-
-  /**
-   * <p>The color configuration for the navigation area.</p>
-   * @public
-   */
-  Navigation?: PaletteNavigation | undefined;
-
-  /**
-   * <p>The color configuration for the canvas area.</p>
-   * @public
-   */
-  Canvas?: PaletteCanvas | undefined;
-
-  /**
-   * <p>The primary color configuration used throughout the workspace.</p>
-   * @public
-   */
-  Primary?: PalettePrimary | undefined;
 }

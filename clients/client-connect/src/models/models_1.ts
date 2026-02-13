@@ -35,9 +35,11 @@ import {
   InstanceStatus,
   InstanceStorageResourceType,
   IntervalPeriod,
+  LocaleCode,
   MediaStreamType,
   MediaType,
   NextContactType,
+  NotificationPriority,
   OperationalStatus,
   OverrideType,
   ParticipantType,
@@ -64,7 +66,6 @@ import {
   WorkspaceFontFamily,
 } from "./enums";
 import {
-  type AgentConfig,
   type AgentQualityMetrics,
   type AgentsCriteria,
   type AgentStatus,
@@ -82,6 +83,9 @@ import {
   type OutboundCallerConfig,
   type OutboundEmailConfig,
   type OverrideTimeSlice,
+  type PaletteCanvas,
+  type PaletteHeader,
+  type PaletteNavigation,
   type ParticipantCapabilities,
   type PredefinedAttributeValues,
   type QueueReference,
@@ -96,13 +100,11 @@ import {
   type Validation,
   type View,
   type WorkspaceThemeImages,
-  type WorkspaceThemePalette,
   AfterContactWorkConfigPerChannel,
   AgentContactReference,
   AiAgentInfo,
   AliasConfiguration,
   AutoAcceptConfig,
-  Distribution,
   FailedBatchAssociationSummary,
   HoursOfOperationConfig,
   HoursOfOperationOverrideConfig,
@@ -117,6 +119,60 @@ import {
   TaskTemplateField,
   VoiceEnhancementConfig,
 } from "./models_0";
+
+/**
+ * <p>Contains primary color configuration for a workspace theme.</p>
+ * @public
+ */
+export interface PalettePrimary {
+  /**
+   * <p>The default primary color used throughout the workspace.</p>
+   * @public
+   */
+  Default?: string | undefined;
+
+  /**
+   * <p>The primary color used for active states.</p>
+   * @public
+   */
+  Active?: string | undefined;
+
+  /**
+   * <p>The text color that contrasts with the primary color for readability.</p>
+   * @public
+   */
+  ContrastText?: string | undefined;
+}
+
+/**
+ * <p>Contains color palette configuration for different areas of a workspace.</p>
+ * @public
+ */
+export interface WorkspaceThemePalette {
+  /**
+   * <p>The color configuration for the header area.</p>
+   * @public
+   */
+  Header?: PaletteHeader | undefined;
+
+  /**
+   * <p>The color configuration for the navigation area.</p>
+   * @public
+   */
+  Navigation?: PaletteNavigation | undefined;
+
+  /**
+   * <p>The color configuration for the canvas area.</p>
+   * @public
+   */
+  Canvas?: PaletteCanvas | undefined;
+
+  /**
+   * <p>The primary color configuration used throughout the workspace.</p>
+   * @public
+   */
+  Primary?: PalettePrimary | undefined;
+}
 
 /**
  * <p>Contains font family configuration for workspace themes.</p>
@@ -696,6 +752,29 @@ export interface DeleteIntegrationAssociationRequest {
    */
   IntegrationAssociationId: string | undefined;
 }
+
+/**
+ * @public
+ */
+export interface DeleteNotificationRequest {
+  /**
+   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+
+  /**
+   * <p>The unique identifier for the notification to delete.</p>
+   * @public
+   */
+  NotificationId: string | undefined;
+}
+
+/**
+ * <p>The response from deleting a notification.</p>
+ * @public
+ */
+export interface DeleteNotificationResponse {}
 
 /**
  * @public
@@ -3769,6 +3848,100 @@ export interface DescribeInstanceStorageConfigResponse {
    * @public
    */
   StorageConfig?: InstanceStorageConfig | undefined;
+}
+
+/**
+ * @public
+ */
+export interface DescribeNotificationRequest {
+  /**
+   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+
+  /**
+   * <p>The unique identifier for the notification.</p>
+   * @public
+   */
+  NotificationId: string | undefined;
+}
+
+/**
+ * <p>Contains information about a notification, including its content, priority, recipients, and metadata.</p>
+ * @public
+ */
+export interface Notification {
+  /**
+   * <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale.</p>
+   * @public
+   */
+  Content?: Partial<Record<LocaleCode, string>> | undefined;
+
+  /**
+   * <p>The unique identifier for the notification.</p>
+   * @public
+   */
+  Id: string | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of the notification.</p>
+   * @public
+   */
+  Arn: string | undefined;
+
+  /**
+   * <p>The priority level of the notification. Valid values are URGENT, HIGH, and LOW.</p>
+   * @public
+   */
+  Priority?: NotificationPriority | undefined;
+
+  /**
+   * <p>A list of Amazon Resource Names (ARNs) identifying the recipients of the notification. Maximum of 200 recipients.</p>
+   * @public
+   */
+  Recipients?: string[] | undefined;
+
+  /**
+   * <p>The timestamp when the notification was last modified.</p>
+   * @public
+   */
+  LastModifiedTime: Date | undefined;
+
+  /**
+   * <p>The timestamp when the notification was created.</p>
+   * @public
+   */
+  CreatedAt?: Date | undefined;
+
+  /**
+   * <p>The timestamp when the notification expires and is no longer displayed to users.</p>
+   * @public
+   */
+  ExpiresAt?: Date | undefined;
+
+  /**
+   * <p>The AWS Region where the notification was last modified.</p>
+   * @public
+   */
+  LastModifiedRegion?: string | undefined;
+
+  /**
+   * <p>The tags used to organize, track, or control access for this resource. For example, <code>\{ "Tags": \{"key1":"value1", "key2":"value2"\} \}</code>.</p>
+   * @public
+   */
+  Tags?: Record<string, string> | undefined;
+}
+
+/**
+ * @public
+ */
+export interface DescribeNotificationResponse {
+  /**
+   * <p>The complete notification information including content, priority, recipients, and metadata.</p>
+   * @public
+   */
+  Notification: Notification | undefined;
 }
 
 /**
@@ -10138,159 +10311,3 @@ export interface SignInDistribution {
    */
   Enabled: boolean | undefined;
 }
-
-/**
- * <p>The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both
- *    the instance and its replica(s).</p>
- * @public
- */
-export interface SignInConfig {
-  /**
-   * <p>Information about traffic distributions.</p>
-   * @public
-   */
-  Distributions: SignInDistribution[] | undefined;
-}
-
-/**
- * <p>The distribution of traffic between the instance and its replicas.</p>
- * @public
- */
-export interface TelephonyConfig {
-  /**
-   * <p>Information about traffic distributions.</p>
-   * @public
-   */
-  Distributions: Distribution[] | undefined;
-}
-
-/**
- * @public
- */
-export interface GetTrafficDistributionResponse {
-  /**
-   * <p>The distribution of traffic between the instance and its replicas.</p>
-   * @public
-   */
-  TelephonyConfig?: TelephonyConfig | undefined;
-
-  /**
-   * <p>The identifier of the traffic distribution group.
-   * This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created.
-   * The ARN must be provided if the call is from the replicated Region.</p>
-   * @public
-   */
-  Id?: string | undefined;
-
-  /**
-   * <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
-   * @public
-   */
-  Arn?: string | undefined;
-
-  /**
-   * <p>The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both
-   *    the instance and its replica(s).</p>
-   * @public
-   */
-  SignInConfig?: SignInConfig | undefined;
-
-  /**
-   * <p>The distribution of agents between the instance and its replica(s).</p>
-   * @public
-   */
-  AgentConfig?: AgentConfig | undefined;
-}
-
-/**
- * @public
- */
-export interface ImportPhoneNumberRequest {
-  /**
-   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-   * @public
-   */
-  InstanceId: string | undefined;
-
-  /**
-   * <p>The claimed phone number ARN being imported from the external service, such as Amazon Web Services End User
-   *    Messaging. If it is from Amazon Web Services End User Messaging, it looks like the ARN of the phone number to import
-   *    from Amazon Web Services End User Messaging.</p>
-   * @public
-   */
-  SourcePhoneNumberArn: string | undefined;
-
-  /**
-   * <p>The description of the phone number.</p>
-   * @public
-   */
-  PhoneNumberDescription?: string | undefined;
-
-  /**
-   * <p>The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.</p>
-   * @public
-   */
-  Tags?: Record<string, string> | undefined;
-
-  /**
-   * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
-   *             request. If not provided, the Amazon Web Services
-   *             SDK populates this field. For more information about idempotency, see
-   *             <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-   * @public
-   */
-  ClientToken?: string | undefined;
-}
-
-/**
- * @public
- */
-export interface ImportPhoneNumberResponse {
-  /**
-   * <p>A unique identifier for the phone number.</p>
-   * @public
-   */
-  PhoneNumberId?: string | undefined;
-
-  /**
-   * <p>The Amazon Resource Name (ARN) of the phone number.</p>
-   * @public
-   */
-  PhoneNumberArn?: string | undefined;
-}
-
-/**
- * @public
- */
-export interface ImportWorkspaceMediaRequest {
-  /**
-   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
-   *    the Amazon Resource Name (ARN) of the instance.</p>
-   * @public
-   */
-  InstanceId: string | undefined;
-
-  /**
-   * <p>The identifier of the workspace.</p>
-   * @public
-   */
-  WorkspaceId: string | undefined;
-
-  /**
-   * <p>The type of media. Valid values are: <code>IMAGE_LOGO_FAVICON</code> and
-   *    <code>IMAGE_LOGO_HORIZONTAL</code>.</p>
-   * @public
-   */
-  MediaType: MediaType | undefined;
-
-  /**
-   * <p>The media source. Can be an S3 presigned URL or a base64-encoded string.</p>
-   * @public
-   */
-  MediaSource: string | undefined;
-}
-
-/**
- * @public
- */
-export interface ImportWorkspaceMediaResponse {}

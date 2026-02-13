@@ -5,8 +5,9 @@ import type { MetadataBearer as __MetadataBearer } from "@smithy/types";
 
 import type { ConnectClientResolvedConfig, ServiceInputTypes, ServiceOutputTypes } from "../ConnectClient";
 import { commonParams } from "../endpoint/EndpointParameters";
-import type { SearchViewsRequest, SearchViewsResponse } from "../models/models_3";
-import { SearchViews$ } from "../schemas/schemas_0";
+import type { SearchNotificationsResponse } from "../models/models_2";
+import type { SearchNotificationsRequest } from "../models/models_3";
+import { SearchNotifications$ } from "../schemas/schemas_0";
 
 /**
  * @public
@@ -16,31 +17,31 @@ export { $Command };
 /**
  * @public
  *
- * The input for {@link SearchViewsCommand}.
+ * The input for {@link SearchNotificationsCommand}.
  */
-export interface SearchViewsCommandInput extends SearchViewsRequest {}
+export interface SearchNotificationsCommandInput extends SearchNotificationsRequest {}
 /**
  * @public
  *
- * The output of {@link SearchViewsCommand}.
+ * The output of {@link SearchNotificationsCommand}.
  */
-export interface SearchViewsCommandOutput extends SearchViewsResponse, __MetadataBearer {}
+export interface SearchNotificationsCommandOutput extends SearchNotificationsResponse, __MetadataBearer {}
 
 /**
- * <p>Searches views based on name, description, or tags.</p>
+ * <p>Searches for notifications based on specified criteria and filters. Returns a paginated list of notifications matching the search parameters, ordered by descending creation time. Supports filtering by content and tags.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
- * import { ConnectClient, SearchViewsCommand } from "@aws-sdk/client-connect"; // ES Modules import
- * // const { ConnectClient, SearchViewsCommand } = require("@aws-sdk/client-connect"); // CommonJS import
+ * import { ConnectClient, SearchNotificationsCommand } from "@aws-sdk/client-connect"; // ES Modules import
+ * // const { ConnectClient, SearchNotificationsCommand } = require("@aws-sdk/client-connect"); // CommonJS import
  * // import type { ConnectClientConfig } from "@aws-sdk/client-connect";
  * const config = {}; // type is ConnectClientConfig
  * const client = new ConnectClient(config);
- * const input = { // SearchViewsRequest
+ * const input = { // SearchNotificationsRequest
  *   InstanceId: "STRING_VALUE", // required
  *   NextToken: "STRING_VALUE",
  *   MaxResults: Number("int"),
- *   SearchFilter: { // ViewSearchFilter
+ *   SearchFilter: { // NotificationSearchFilter
  *     AttributeFilter: { // ControlPlaneAttributeFilter
  *       OrConditions: [ // CommonAttributeOrConditionList
  *         { // CommonAttributeAndCondition
@@ -63,62 +64,54 @@ export interface SearchViewsCommandOutput extends SearchViewsResponse, __Metadat
  *       TagCondition: "<TagCondition>",
  *     },
  *   },
- *   SearchCriteria: { // ViewSearchCriteria
- *     OrConditions: [ // ViewSearchConditionList
+ *   SearchCriteria: { // NotificationSearchCriteria
+ *     OrConditions: [ // NotificationSearchConditionList
  *       {
  *         OrConditions: [
- *           "<ViewSearchCriteria>",
+ *           "<NotificationSearchCriteria>",
  *         ],
  *         AndConditions: [
- *           "<ViewSearchCriteria>",
+ *           "<NotificationSearchCriteria>",
  *         ],
  *         StringCondition: { // StringCondition
  *           FieldName: "STRING_VALUE",
  *           Value: "STRING_VALUE",
  *           ComparisonType: "STARTS_WITH" || "CONTAINS" || "EXACT",
  *         },
- *         ViewTypeCondition: "CUSTOMER_MANAGED" || "AWS_MANAGED",
- *         ViewStatusCondition: "PUBLISHED" || "SAVED",
  *       },
  *     ],
  *     AndConditions: [
- *       "<ViewSearchCriteria>",
+ *       "<NotificationSearchCriteria>",
  *     ],
  *     StringCondition: {
  *       FieldName: "STRING_VALUE",
  *       Value: "STRING_VALUE",
  *       ComparisonType: "STARTS_WITH" || "CONTAINS" || "EXACT",
  *     },
- *     ViewTypeCondition: "CUSTOMER_MANAGED" || "AWS_MANAGED",
- *     ViewStatusCondition: "PUBLISHED" || "SAVED",
  *   },
  * };
- * const command = new SearchViewsCommand(input);
+ * const command = new SearchNotificationsCommand(input);
  * const response = await client.send(command);
- * // { // SearchViewsResponse
- * //   Views: [ // ViewSearchSummaryList
- * //     { // View
+ * // { // SearchNotificationsResponse
+ * //   Notifications: [ // NotificationSearchSummaryList
+ * //     { // NotificationSearchSummary
  * //       Id: "STRING_VALUE",
  * //       Arn: "STRING_VALUE",
- * //       Name: "STRING_VALUE",
- * //       Status: "PUBLISHED" || "SAVED",
- * //       Type: "CUSTOMER_MANAGED" || "AWS_MANAGED",
- * //       Description: "STRING_VALUE",
- * //       Version: Number("int"),
- * //       VersionDescription: "STRING_VALUE",
- * //       Content: { // ViewContent
- * //         InputSchema: "STRING_VALUE",
- * //         Template: "STRING_VALUE",
- * //         Actions: [ // ViewActions
- * //           "STRING_VALUE",
- * //         ],
+ * //       InstanceId: "STRING_VALUE",
+ * //       Content: { // NotificationContent
+ * //         "<keys>": "STRING_VALUE",
  * //       },
+ * //       Priority: "URGENT" || "HIGH" || "LOW",
+ * //       Recipients: [ // RecipientList
+ * //         "STRING_VALUE",
+ * //       ],
+ * //       CreatedAt: new Date("TIMESTAMP"),
+ * //       ExpiresAt: new Date("TIMESTAMP"),
+ * //       LastModifiedRegion: "STRING_VALUE",
+ * //       LastModifiedTime: new Date("TIMESTAMP"),
  * //       Tags: { // TagMap
  * //         "<keys>": "STRING_VALUE",
  * //       },
- * //       CreatedTime: new Date("TIMESTAMP"),
- * //       LastModifiedTime: new Date("TIMESTAMP"),
- * //       ViewContentSha256: "STRING_VALUE",
  * //     },
  * //   ],
  * //   NextToken: "STRING_VALUE",
@@ -127,10 +120,10 @@ export interface SearchViewsCommandOutput extends SearchViewsResponse, __Metadat
  *
  * ```
  *
- * @param SearchViewsCommandInput - {@link SearchViewsCommandInput}
- * @returns {@link SearchViewsCommandOutput}
- * @see {@link SearchViewsCommandInput} for command's `input` shape.
- * @see {@link SearchViewsCommandOutput} for command's `response` shape.
+ * @param SearchNotificationsCommandInput - {@link SearchNotificationsCommandInput}
+ * @returns {@link SearchNotificationsCommandOutput}
+ * @see {@link SearchNotificationsCommandInput} for command's `input` shape.
+ * @see {@link SearchNotificationsCommandOutput} for command's `response` shape.
  * @see {@link ConnectClientResolvedConfig | config} for ConnectClient's `config` shape.
  *
  * @throws {@link AccessDeniedException} (client fault)
@@ -157,10 +150,10 @@ export interface SearchViewsCommandOutput extends SearchViewsResponse, __Metadat
  *
  * @public
  */
-export class SearchViewsCommand extends $Command
+export class SearchNotificationsCommand extends $Command
   .classBuilder<
-    SearchViewsCommandInput,
-    SearchViewsCommandOutput,
+    SearchNotificationsCommandInput,
+    SearchNotificationsCommandOutput,
     ConnectClientResolvedConfig,
     ServiceInputTypes,
     ServiceOutputTypes
@@ -169,19 +162,19 @@ export class SearchViewsCommand extends $Command
   .m(function (this: any, Command: any, cs: any, config: ConnectClientResolvedConfig, o: any) {
     return [getEndpointPlugin(config, Command.getEndpointParameterInstructions())];
   })
-  .s("AmazonConnectService", "SearchViews", {})
-  .n("ConnectClient", "SearchViewsCommand")
-  .sc(SearchViews$)
+  .s("AmazonConnectService", "SearchNotifications", {})
+  .n("ConnectClient", "SearchNotificationsCommand")
+  .sc(SearchNotifications$)
   .build() {
   /** @internal type navigation helper, not in runtime. */
   protected declare static __types: {
     api: {
-      input: SearchViewsRequest;
-      output: SearchViewsResponse;
+      input: SearchNotificationsRequest;
+      output: SearchNotificationsResponse;
     };
     sdk: {
-      input: SearchViewsCommandInput;
-      output: SearchViewsCommandOutput;
+      input: SearchNotificationsCommandInput;
+      output: SearchNotificationsCommandOutput;
     };
   };
 }

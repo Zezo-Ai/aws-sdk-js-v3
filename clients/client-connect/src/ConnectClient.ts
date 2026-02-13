@@ -211,6 +211,7 @@ import {
   CreateIntegrationAssociationCommandInput,
   CreateIntegrationAssociationCommandOutput,
 } from "./commands/CreateIntegrationAssociationCommand";
+import { CreateNotificationCommandInput, CreateNotificationCommandOutput } from "./commands/CreateNotificationCommand";
 import { CreateParticipantCommandInput, CreateParticipantCommandOutput } from "./commands/CreateParticipantCommand";
 import {
   CreatePersistentContactAssociationCommandInput,
@@ -305,6 +306,7 @@ import {
   DeleteIntegrationAssociationCommandInput,
   DeleteIntegrationAssociationCommandOutput,
 } from "./commands/DeleteIntegrationAssociationCommand";
+import { DeleteNotificationCommandInput, DeleteNotificationCommandOutput } from "./commands/DeleteNotificationCommand";
 import {
   DeletePredefinedAttributeCommandInput,
   DeletePredefinedAttributeCommandOutput,
@@ -404,6 +406,10 @@ import {
   DescribeInstanceStorageConfigCommandInput,
   DescribeInstanceStorageConfigCommandOutput,
 } from "./commands/DescribeInstanceStorageConfigCommand";
+import {
+  DescribeNotificationCommandInput,
+  DescribeNotificationCommandOutput,
+} from "./commands/DescribeNotificationCommand";
 import {
   DescribePhoneNumberCommandInput,
   DescribePhoneNumberCommandOutput,
@@ -652,6 +658,7 @@ import {
   ListLambdaFunctionsCommandOutput,
 } from "./commands/ListLambdaFunctionsCommand";
 import { ListLexBotsCommandInput, ListLexBotsCommandOutput } from "./commands/ListLexBotsCommand";
+import { ListNotificationsCommandInput, ListNotificationsCommandOutput } from "./commands/ListNotificationsCommand";
 import { ListPhoneNumbersCommandInput, ListPhoneNumbersCommandOutput } from "./commands/ListPhoneNumbersCommand";
 import { ListPhoneNumbersV2CommandInput, ListPhoneNumbersV2CommandOutput } from "./commands/ListPhoneNumbersV2Command";
 import {
@@ -727,6 +734,10 @@ import {
   ListUserHierarchyGroupsCommandOutput,
 } from "./commands/ListUserHierarchyGroupsCommand";
 import {
+  ListUserNotificationsCommandInput,
+  ListUserNotificationsCommandOutput,
+} from "./commands/ListUserNotificationsCommand";
+import {
   ListUserProficienciesCommandInput,
   ListUserProficienciesCommandOutput,
 } from "./commands/ListUserProficienciesCommand";
@@ -781,6 +792,10 @@ import {
   SearchHoursOfOperationsCommandInput,
   SearchHoursOfOperationsCommandOutput,
 } from "./commands/SearchHoursOfOperationsCommand";
+import {
+  SearchNotificationsCommandInput,
+  SearchNotificationsCommandOutput,
+} from "./commands/SearchNotificationsCommand";
 import {
   SearchPredefinedAttributesCommandInput,
   SearchPredefinedAttributesCommandOutput,
@@ -972,6 +987,10 @@ import {
   UpdateInstanceStorageConfigCommandOutput,
 } from "./commands/UpdateInstanceStorageConfigCommand";
 import {
+  UpdateNotificationContentCommandInput,
+  UpdateNotificationContentCommandOutput,
+} from "./commands/UpdateNotificationContentCommand";
+import {
   UpdateParticipantAuthenticationCommandInput,
   UpdateParticipantAuthenticationCommandOutput,
 } from "./commands/UpdateParticipantAuthenticationCommand";
@@ -1063,6 +1082,10 @@ import {
   UpdateUserIdentityInfoCommandInput,
   UpdateUserIdentityInfoCommandOutput,
 } from "./commands/UpdateUserIdentityInfoCommand";
+import {
+  UpdateUserNotificationStatusCommandInput,
+  UpdateUserNotificationStatusCommandOutput,
+} from "./commands/UpdateUserNotificationStatusCommand";
 import {
   UpdateUserPhoneConfigCommandInput,
   UpdateUserPhoneConfigCommandOutput,
@@ -1158,6 +1181,7 @@ export type ServiceInputTypes =
   | CreateHoursOfOperationOverrideCommandInput
   | CreateInstanceCommandInput
   | CreateIntegrationAssociationCommandInput
+  | CreateNotificationCommandInput
   | CreateParticipantCommandInput
   | CreatePersistentContactAssociationCommandInput
   | CreatePredefinedAttributeCommandInput
@@ -1195,6 +1219,7 @@ export type ServiceInputTypes =
   | DeleteHoursOfOperationOverrideCommandInput
   | DeleteInstanceCommandInput
   | DeleteIntegrationAssociationCommandInput
+  | DeleteNotificationCommandInput
   | DeletePredefinedAttributeCommandInput
   | DeletePromptCommandInput
   | DeletePushNotificationRegistrationCommandInput
@@ -1231,6 +1256,7 @@ export type ServiceInputTypes =
   | DescribeInstanceAttributeCommandInput
   | DescribeInstanceCommandInput
   | DescribeInstanceStorageConfigCommandInput
+  | DescribeNotificationCommandInput
   | DescribePhoneNumberCommandInput
   | DescribePredefinedAttributeCommandInput
   | DescribePromptCommandInput
@@ -1314,6 +1340,7 @@ export type ServiceInputTypes =
   | ListIntegrationAssociationsCommandInput
   | ListLambdaFunctionsCommandInput
   | ListLexBotsCommandInput
+  | ListNotificationsCommandInput
   | ListPhoneNumbersCommandInput
   | ListPhoneNumbersV2CommandInput
   | ListPredefinedAttributesCommandInput
@@ -1340,6 +1367,7 @@ export type ServiceInputTypes =
   | ListTrafficDistributionGroupsCommandInput
   | ListUseCasesCommandInput
   | ListUserHierarchyGroupsCommandInput
+  | ListUserNotificationsCommandInput
   | ListUserProficienciesCommandInput
   | ListUsersCommandInput
   | ListViewVersionsCommandInput
@@ -1365,6 +1393,7 @@ export type ServiceInputTypes =
   | SearchEvaluationFormsCommandInput
   | SearchHoursOfOperationOverridesCommandInput
   | SearchHoursOfOperationsCommandInput
+  | SearchNotificationsCommandInput
   | SearchPredefinedAttributesCommandInput
   | SearchPromptsCommandInput
   | SearchQueuesCommandInput
@@ -1429,6 +1458,7 @@ export type ServiceInputTypes =
   | UpdateHoursOfOperationOverrideCommandInput
   | UpdateInstanceAttributeCommandInput
   | UpdateInstanceStorageConfigCommandInput
+  | UpdateNotificationContentCommandInput
   | UpdateParticipantAuthenticationCommandInput
   | UpdateParticipantRoleConfigCommandInput
   | UpdatePhoneNumberCommandInput
@@ -1458,6 +1488,7 @@ export type ServiceInputTypes =
   | UpdateUserHierarchyGroupNameCommandInput
   | UpdateUserHierarchyStructureCommandInput
   | UpdateUserIdentityInfoCommandInput
+  | UpdateUserNotificationStatusCommandInput
   | UpdateUserPhoneConfigCommandInput
   | UpdateUserProficienciesCommandInput
   | UpdateUserRoutingProfileCommandInput
@@ -1519,6 +1550,7 @@ export type ServiceOutputTypes =
   | CreateHoursOfOperationOverrideCommandOutput
   | CreateInstanceCommandOutput
   | CreateIntegrationAssociationCommandOutput
+  | CreateNotificationCommandOutput
   | CreateParticipantCommandOutput
   | CreatePersistentContactAssociationCommandOutput
   | CreatePredefinedAttributeCommandOutput
@@ -1556,6 +1588,7 @@ export type ServiceOutputTypes =
   | DeleteHoursOfOperationOverrideCommandOutput
   | DeleteInstanceCommandOutput
   | DeleteIntegrationAssociationCommandOutput
+  | DeleteNotificationCommandOutput
   | DeletePredefinedAttributeCommandOutput
   | DeletePromptCommandOutput
   | DeletePushNotificationRegistrationCommandOutput
@@ -1592,6 +1625,7 @@ export type ServiceOutputTypes =
   | DescribeInstanceAttributeCommandOutput
   | DescribeInstanceCommandOutput
   | DescribeInstanceStorageConfigCommandOutput
+  | DescribeNotificationCommandOutput
   | DescribePhoneNumberCommandOutput
   | DescribePredefinedAttributeCommandOutput
   | DescribePromptCommandOutput
@@ -1675,6 +1709,7 @@ export type ServiceOutputTypes =
   | ListIntegrationAssociationsCommandOutput
   | ListLambdaFunctionsCommandOutput
   | ListLexBotsCommandOutput
+  | ListNotificationsCommandOutput
   | ListPhoneNumbersCommandOutput
   | ListPhoneNumbersV2CommandOutput
   | ListPredefinedAttributesCommandOutput
@@ -1701,6 +1736,7 @@ export type ServiceOutputTypes =
   | ListTrafficDistributionGroupsCommandOutput
   | ListUseCasesCommandOutput
   | ListUserHierarchyGroupsCommandOutput
+  | ListUserNotificationsCommandOutput
   | ListUserProficienciesCommandOutput
   | ListUsersCommandOutput
   | ListViewVersionsCommandOutput
@@ -1726,6 +1762,7 @@ export type ServiceOutputTypes =
   | SearchEvaluationFormsCommandOutput
   | SearchHoursOfOperationOverridesCommandOutput
   | SearchHoursOfOperationsCommandOutput
+  | SearchNotificationsCommandOutput
   | SearchPredefinedAttributesCommandOutput
   | SearchPromptsCommandOutput
   | SearchQueuesCommandOutput
@@ -1790,6 +1827,7 @@ export type ServiceOutputTypes =
   | UpdateHoursOfOperationOverrideCommandOutput
   | UpdateInstanceAttributeCommandOutput
   | UpdateInstanceStorageConfigCommandOutput
+  | UpdateNotificationContentCommandOutput
   | UpdateParticipantAuthenticationCommandOutput
   | UpdateParticipantRoleConfigCommandOutput
   | UpdatePhoneNumberCommandOutput
@@ -1819,6 +1857,7 @@ export type ServiceOutputTypes =
   | UpdateUserHierarchyGroupNameCommandOutput
   | UpdateUserHierarchyStructureCommandOutput
   | UpdateUserIdentityInfoCommandOutput
+  | UpdateUserNotificationStatusCommandOutput
   | UpdateUserPhoneConfigCommandOutput
   | UpdateUserProficienciesCommandOutput
   | UpdateUserRoutingProfileCommandOutput

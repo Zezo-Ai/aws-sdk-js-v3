@@ -199,6 +199,7 @@ import {
   Condition$,
   ConditionalOperationFailedException,
   ConditionalOperationFailedException$,
+  ConfigurableNotificationPriority,
   ConflictException,
   ConflictException$,
   Connect,
@@ -315,6 +316,10 @@ import {
   CreateIntegrationAssociationCommand,
   CreateIntegrationAssociationRequest$,
   CreateIntegrationAssociationResponse$,
+  CreateNotification$,
+  CreateNotificationCommand,
+  CreateNotificationRequest$,
+  CreateNotificationResponse$,
   CreateParticipant$,
   CreateParticipantCommand,
   CreateParticipantRequest$,
@@ -490,6 +495,10 @@ import {
   DeleteIntegrationAssociation$,
   DeleteIntegrationAssociationCommand,
   DeleteIntegrationAssociationRequest$,
+  DeleteNotification$,
+  DeleteNotificationCommand,
+  DeleteNotificationRequest$,
+  DeleteNotificationResponse$,
   DeletePredefinedAttribute$,
   DeletePredefinedAttributeCommand,
   DeletePredefinedAttributeRequest$,
@@ -624,6 +633,10 @@ import {
   DescribeInstanceStorageConfigCommand,
   DescribeInstanceStorageConfigRequest$,
   DescribeInstanceStorageConfigResponse$,
+  DescribeNotification$,
+  DescribeNotificationCommand,
+  DescribeNotificationRequest$,
+  DescribeNotificationResponse$,
   DescribePhoneNumber$,
   DescribePhoneNumberCommand,
   DescribePhoneNumberRequest$,
@@ -1162,6 +1175,10 @@ import {
   ListLexBotsCommand,
   ListLexBotsRequest$,
   ListLexBotsResponse$,
+  ListNotifications$,
+  ListNotificationsCommand,
+  ListNotificationsRequest$,
+  ListNotificationsResponse$,
   ListPhoneNumbers$,
   ListPhoneNumbersCommand,
   ListPhoneNumbersRequest$,
@@ -1267,6 +1284,10 @@ import {
   ListUserHierarchyGroupsCommand,
   ListUserHierarchyGroupsRequest$,
   ListUserHierarchyGroupsResponse$,
+  ListUserNotifications$,
+  ListUserNotificationsCommand,
+  ListUserNotificationsRequest$,
+  ListUserNotificationsResponse$,
   ListUserProficiencies$,
   ListUserProficienciesCommand,
   ListUserProficienciesRequest$,
@@ -1295,6 +1316,7 @@ import {
   ListWorkspacesCommand,
   ListWorkspacesRequest$,
   ListWorkspacesResponse$,
+  LocaleCode,
   MatchCriteria$,
   MaximumResultReturnedException,
   MaximumResultReturnedException$,
@@ -1323,9 +1345,16 @@ import {
   NextContactEntry$,
   NextContactMetadata$,
   NextContactType,
+  Notification$,
   NotificationContentType,
   NotificationDeliveryType,
+  NotificationPriority,
   NotificationRecipientType$,
+  NotificationSearchCriteria$,
+  NotificationSearchFilter$,
+  NotificationSearchSummary$,
+  NotificationSource,
+  NotificationStatus,
   NumberComparisonType,
   NumberCondition$,
   NumberReference$,
@@ -1659,6 +1688,10 @@ import {
   SearchHoursOfOperationsCommand,
   SearchHoursOfOperationsRequest$,
   SearchHoursOfOperationsResponse$,
+  SearchNotifications$,
+  SearchNotificationsCommand,
+  SearchNotificationsRequest$,
+  SearchNotificationsResponse$,
   SearchPredefinedAttributes$,
   SearchPredefinedAttributesCommand,
   SearchPredefinedAttributesRequest$,
@@ -1984,6 +2017,10 @@ import {
   UpdateInstanceStorageConfig$,
   UpdateInstanceStorageConfigCommand,
   UpdateInstanceStorageConfigRequest$,
+  UpdateNotificationContent$,
+  UpdateNotificationContentCommand,
+  UpdateNotificationContentRequest$,
+  UpdateNotificationContentResponse$,
   UpdateParticipantAuthentication$,
   UpdateParticipantAuthenticationCommand,
   UpdateParticipantAuthenticationRequest$,
@@ -2079,6 +2116,10 @@ import {
   UpdateUserIdentityInfo$,
   UpdateUserIdentityInfoCommand,
   UpdateUserIdentityInfoRequest$,
+  UpdateUserNotificationStatus$,
+  UpdateUserNotificationStatusCommand,
+  UpdateUserNotificationStatusRequest$,
+  UpdateUserNotificationStatusResponse$,
   UpdateUserPhoneConfig$,
   UpdateUserPhoneConfigCommand,
   UpdateUserPhoneConfigRequest$,
@@ -2129,6 +2170,7 @@ import {
   UserInfo$,
   UserNotFoundException,
   UserNotFoundException$,
+  UserNotificationSummary$,
   UserPhoneConfig$,
   UserProficiency$,
   UserProficiencyDisassociate$,
@@ -2274,6 +2316,8 @@ assert(typeof CreateInstanceCommand === "function");
 assert(typeof CreateInstance$ === "object");
 assert(typeof CreateIntegrationAssociationCommand === "function");
 assert(typeof CreateIntegrationAssociation$ === "object");
+assert(typeof CreateNotificationCommand === "function");
+assert(typeof CreateNotification$ === "object");
 assert(typeof CreateParticipantCommand === "function");
 assert(typeof CreateParticipant$ === "object");
 assert(typeof CreatePersistentContactAssociationCommand === "function");
@@ -2348,6 +2392,8 @@ assert(typeof DeleteInstanceCommand === "function");
 assert(typeof DeleteInstance$ === "object");
 assert(typeof DeleteIntegrationAssociationCommand === "function");
 assert(typeof DeleteIntegrationAssociation$ === "object");
+assert(typeof DeleteNotificationCommand === "function");
+assert(typeof DeleteNotification$ === "object");
 assert(typeof DeletePredefinedAttributeCommand === "function");
 assert(typeof DeletePredefinedAttribute$ === "object");
 assert(typeof DeletePromptCommand === "function");
@@ -2420,6 +2466,8 @@ assert(typeof DescribeInstanceAttributeCommand === "function");
 assert(typeof DescribeInstanceAttribute$ === "object");
 assert(typeof DescribeInstanceStorageConfigCommand === "function");
 assert(typeof DescribeInstanceStorageConfig$ === "object");
+assert(typeof DescribeNotificationCommand === "function");
+assert(typeof DescribeNotification$ === "object");
 assert(typeof DescribePhoneNumberCommand === "function");
 assert(typeof DescribePhoneNumber$ === "object");
 assert(typeof DescribePredefinedAttributeCommand === "function");
@@ -2586,6 +2634,8 @@ assert(typeof ListLambdaFunctionsCommand === "function");
 assert(typeof ListLambdaFunctions$ === "object");
 assert(typeof ListLexBotsCommand === "function");
 assert(typeof ListLexBots$ === "object");
+assert(typeof ListNotificationsCommand === "function");
+assert(typeof ListNotifications$ === "object");
 assert(typeof ListPhoneNumbersCommand === "function");
 assert(typeof ListPhoneNumbers$ === "object");
 assert(typeof ListPhoneNumbersV2Command === "function");
@@ -2638,6 +2688,8 @@ assert(typeof ListUseCasesCommand === "function");
 assert(typeof ListUseCases$ === "object");
 assert(typeof ListUserHierarchyGroupsCommand === "function");
 assert(typeof ListUserHierarchyGroups$ === "object");
+assert(typeof ListUserNotificationsCommand === "function");
+assert(typeof ListUserNotifications$ === "object");
 assert(typeof ListUserProficienciesCommand === "function");
 assert(typeof ListUserProficiencies$ === "object");
 assert(typeof ListUsersCommand === "function");
@@ -2688,6 +2740,8 @@ assert(typeof SearchHoursOfOperationOverridesCommand === "function");
 assert(typeof SearchHoursOfOperationOverrides$ === "object");
 assert(typeof SearchHoursOfOperationsCommand === "function");
 assert(typeof SearchHoursOfOperations$ === "object");
+assert(typeof SearchNotificationsCommand === "function");
+assert(typeof SearchNotifications$ === "object");
 assert(typeof SearchPredefinedAttributesCommand === "function");
 assert(typeof SearchPredefinedAttributes$ === "object");
 assert(typeof SearchPromptsCommand === "function");
@@ -2816,6 +2870,8 @@ assert(typeof UpdateInstanceAttributeCommand === "function");
 assert(typeof UpdateInstanceAttribute$ === "object");
 assert(typeof UpdateInstanceStorageConfigCommand === "function");
 assert(typeof UpdateInstanceStorageConfig$ === "object");
+assert(typeof UpdateNotificationContentCommand === "function");
+assert(typeof UpdateNotificationContent$ === "object");
 assert(typeof UpdateParticipantAuthenticationCommand === "function");
 assert(typeof UpdateParticipantAuthentication$ === "object");
 assert(typeof UpdateParticipantRoleConfigCommand === "function");
@@ -2874,6 +2930,8 @@ assert(typeof UpdateUserHierarchyStructureCommand === "function");
 assert(typeof UpdateUserHierarchyStructure$ === "object");
 assert(typeof UpdateUserIdentityInfoCommand === "function");
 assert(typeof UpdateUserIdentityInfo$ === "object");
+assert(typeof UpdateUserNotificationStatusCommand === "function");
+assert(typeof UpdateUserNotificationStatus$ === "object");
 assert(typeof UpdateUserPhoneConfigCommand === "function");
 assert(typeof UpdateUserPhoneConfig$ === "object");
 assert(typeof UpdateUserProficienciesCommand === "function");
@@ -3076,6 +3134,8 @@ assert(typeof CreateInstanceRequest$ === "object");
 assert(typeof CreateInstanceResponse$ === "object");
 assert(typeof CreateIntegrationAssociationRequest$ === "object");
 assert(typeof CreateIntegrationAssociationResponse$ === "object");
+assert(typeof CreateNotificationRequest$ === "object");
+assert(typeof CreateNotificationResponse$ === "object");
 assert(typeof CreateParticipantRequest$ === "object");
 assert(typeof CreateParticipantResponse$ === "object");
 assert(typeof CreatePersistentContactAssociationRequest$ === "object");
@@ -3170,6 +3230,8 @@ assert(typeof DeleteHoursOfOperationOverrideRequest$ === "object");
 assert(typeof DeleteHoursOfOperationRequest$ === "object");
 assert(typeof DeleteInstanceRequest$ === "object");
 assert(typeof DeleteIntegrationAssociationRequest$ === "object");
+assert(typeof DeleteNotificationRequest$ === "object");
+assert(typeof DeleteNotificationResponse$ === "object");
 assert(typeof DeletePredefinedAttributeRequest$ === "object");
 assert(typeof DeletePromptRequest$ === "object");
 assert(typeof DeletePushNotificationRegistrationRequest$ === "object");
@@ -3232,6 +3294,8 @@ assert(typeof DescribeInstanceRequest$ === "object");
 assert(typeof DescribeInstanceResponse$ === "object");
 assert(typeof DescribeInstanceStorageConfigRequest$ === "object");
 assert(typeof DescribeInstanceStorageConfigResponse$ === "object");
+assert(typeof DescribeNotificationRequest$ === "object");
+assert(typeof DescribeNotificationResponse$ === "object");
 assert(typeof DescribePhoneNumberRequest$ === "object");
 assert(typeof DescribePhoneNumberResponse$ === "object");
 assert(typeof DescribePredefinedAttributeRequest$ === "object");
@@ -3533,6 +3597,8 @@ assert(typeof ListLambdaFunctionsRequest$ === "object");
 assert(typeof ListLambdaFunctionsResponse$ === "object");
 assert(typeof ListLexBotsRequest$ === "object");
 assert(typeof ListLexBotsResponse$ === "object");
+assert(typeof ListNotificationsRequest$ === "object");
+assert(typeof ListNotificationsResponse$ === "object");
 assert(typeof ListPhoneNumbersRequest$ === "object");
 assert(typeof ListPhoneNumbersResponse$ === "object");
 assert(typeof ListPhoneNumbersSummary$ === "object");
@@ -3586,6 +3652,8 @@ assert(typeof ListUseCasesRequest$ === "object");
 assert(typeof ListUseCasesResponse$ === "object");
 assert(typeof ListUserHierarchyGroupsRequest$ === "object");
 assert(typeof ListUserHierarchyGroupsResponse$ === "object");
+assert(typeof ListUserNotificationsRequest$ === "object");
+assert(typeof ListUserNotificationsResponse$ === "object");
 assert(typeof ListUserProficienciesRequest$ === "object");
 assert(typeof ListUserProficienciesResponse$ === "object");
 assert(typeof ListUsersRequest$ === "object");
@@ -3618,7 +3686,11 @@ assert(typeof NameCriteria$ === "object");
 assert(typeof NewSessionDetails$ === "object");
 assert(typeof NextContactEntry$ === "object");
 assert(typeof NextContactMetadata$ === "object");
+assert(typeof Notification$ === "object");
 assert(typeof NotificationRecipientType$ === "object");
+assert(typeof NotificationSearchCriteria$ === "object");
+assert(typeof NotificationSearchFilter$ === "object");
+assert(typeof NotificationSearchSummary$ === "object");
 assert(typeof NumberCondition$ === "object");
 assert(typeof NumberReference$ === "object");
 assert(typeof NumericQuestionPropertyValueAutomation$ === "object");
@@ -3777,6 +3849,8 @@ assert(typeof SearchHoursOfOperationOverridesRequest$ === "object");
 assert(typeof SearchHoursOfOperationOverridesResponse$ === "object");
 assert(typeof SearchHoursOfOperationsRequest$ === "object");
 assert(typeof SearchHoursOfOperationsResponse$ === "object");
+assert(typeof SearchNotificationsRequest$ === "object");
+assert(typeof SearchNotificationsResponse$ === "object");
 assert(typeof SearchPredefinedAttributesRequest$ === "object");
 assert(typeof SearchPredefinedAttributesResponse$ === "object");
 assert(typeof SearchPromptsRequest$ === "object");
@@ -3948,6 +4022,8 @@ assert(typeof UpdateHoursOfOperationOverrideRequest$ === "object");
 assert(typeof UpdateHoursOfOperationRequest$ === "object");
 assert(typeof UpdateInstanceAttributeRequest$ === "object");
 assert(typeof UpdateInstanceStorageConfigRequest$ === "object");
+assert(typeof UpdateNotificationContentRequest$ === "object");
+assert(typeof UpdateNotificationContentResponse$ === "object");
 assert(typeof UpdateParticipantAuthenticationRequest$ === "object");
 assert(typeof UpdateParticipantAuthenticationResponse$ === "object");
 assert(typeof UpdateParticipantRoleConfigChannelInfo$ === "object");
@@ -3985,6 +4061,8 @@ assert(typeof UpdateUserHierarchyGroupNameRequest$ === "object");
 assert(typeof UpdateUserHierarchyRequest$ === "object");
 assert(typeof UpdateUserHierarchyStructureRequest$ === "object");
 assert(typeof UpdateUserIdentityInfoRequest$ === "object");
+assert(typeof UpdateUserNotificationStatusRequest$ === "object");
+assert(typeof UpdateUserNotificationStatusResponse$ === "object");
 assert(typeof UpdateUserPhoneConfigRequest$ === "object");
 assert(typeof UpdateUserProficienciesRequest$ === "object");
 assert(typeof UpdateUserRoutingProfileRequest$ === "object");
@@ -4012,6 +4090,7 @@ assert(typeof UserHierarchyGroupSearchFilter$ === "object");
 assert(typeof UserIdentityInfo$ === "object");
 assert(typeof UserIdentityInfoLite$ === "object");
 assert(typeof UserInfo$ === "object");
+assert(typeof UserNotificationSummary$ === "object");
 assert(typeof UserPhoneConfig$ === "object");
 assert(typeof UserProficiency$ === "object");
 assert(typeof UserProficiencyDisassociate$ === "object");
@@ -4069,6 +4148,7 @@ assert(typeof BooleanComparisonType === "object");
 assert(typeof Channel === "object");
 assert(typeof ChatEventType === "object");
 assert(typeof Comparison === "object");
+assert(typeof ConfigurableNotificationPriority === "object");
 assert(typeof ContactFlowModuleState === "object");
 assert(typeof ContactFlowModuleStatus === "object");
 assert(typeof ContactFlowState === "object");
@@ -4137,6 +4217,7 @@ assert(typeof IntervalPeriod === "object");
 assert(typeof IvrRecordingTrack === "object");
 assert(typeof LexVersion === "object");
 assert(typeof ListFlowAssociationResourceType === "object");
+assert(typeof LocaleCode === "object");
 assert(typeof MediaStreamType === "object");
 assert(typeof MediaType === "object");
 assert(typeof MeetingFeatureStatus === "object");
@@ -4145,6 +4226,9 @@ assert(typeof MultiSelectQuestionRuleCategoryAutomationCondition === "object");
 assert(typeof NextContactType === "object");
 assert(typeof NotificationContentType === "object");
 assert(typeof NotificationDeliveryType === "object");
+assert(typeof NotificationPriority === "object");
+assert(typeof NotificationSource === "object");
+assert(typeof NotificationStatus === "object");
 assert(typeof NumberComparisonType === "object");
 assert(typeof NumericQuestionPropertyAutomationLabel === "object");
 assert(typeof OperationalStatus === "object");

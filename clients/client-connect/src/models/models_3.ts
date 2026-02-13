@@ -23,12 +23,15 @@ import {
   EvaluationFormVersionStatus,
   FileStatusType,
   FileUseCaseType,
+  HierarchyGroupMatchType,
   InboundMessageSourceType,
   InitiateAs,
   InstanceAttributeType,
   InstanceStorageResourceType,
   IvrRecordingTrack,
+  LocaleCode,
   MeetingFeatureStatus,
+  NotificationStatus,
   OutboundMessageSourceType,
   OverrideType,
   ParticipantTimerAction,
@@ -39,6 +42,7 @@ import {
   RoutingCriteriaStepStatus,
   RulePublishStatus,
   SearchableQueueType,
+  TargetListType,
   TaskTemplateStatus,
   TestCaseExecutionStatus,
   TestCaseStatus,
@@ -47,6 +51,8 @@ import {
   ViewStatus,
   ViewType,
   Visibility,
+  VocabularyLanguageCode,
+  VocabularyState,
   VoiceRecordingTrack,
 } from "./enums";
 import {
@@ -83,7 +89,6 @@ import {
   type UserInfo,
   type UserPhoneConfig,
   type Validation,
-  type View,
   type ViewInputContent,
   AfterContactWorkConfigPerChannel,
   Application,
@@ -99,8 +104,10 @@ import {
   Reference,
   RoutingProfileQueueConfig,
   RuleAction,
+  TagCondition,
   TaskTemplateField,
   UserProficiency,
+  View,
   VoiceEnhancementConfig,
 } from "./models_0";
 import {
@@ -117,13 +124,12 @@ import {
   type GlobalResiliencyMetadata,
   type QualityMetrics,
   type QueueInfo,
-  type SignInConfig,
   type TaskTemplateInfoV2,
-  type TelephonyConfig,
   type WisdomInfo,
   type WorkspaceTheme,
   ContactEvaluation,
   EvaluationNote,
+  HierarchyGroup,
   NextContactEntry,
   RecordingInfo,
 } from "./models_1";
@@ -133,6 +139,7 @@ import type {
   ContactFlowSearchFilter,
   ContactSearchSummaryAgentInfo,
   ContactSearchSummaryQueueInfo,
+  ControlPlaneTagFilter,
   DataTableSearchFilter,
   DateCondition,
   DateTimeCondition,
@@ -140,20 +147,498 @@ import type {
   EmailAddressSearchFilter,
   EvaluationFormSearchFilter,
   EvaluationSearchFilter,
-  HierarchyGroupCondition,
   HoursOfOperationSearchFilter,
-  ListCondition,
+  NotificationSearchFilter,
   NumberCondition,
   PromptSearchFilter,
   QueueSearchFilter,
   QuickConnectSearchFilter,
   RoutingProfileSearchFilter,
   SecurityProfilesSearchFilter,
+  SignInConfig,
+  TelephonyConfig,
   TestCaseSearchFilter,
   UserHierarchyGroupSearchFilter,
-  UserSearchFilter,
-  ViewSearchFilter,
 } from "./models_2";
+
+/**
+ * @public
+ */
+export interface SearchUserHierarchyGroupsResponse {
+  /**
+   * <p>Information about the userHierarchyGroups.</p>
+   * @public
+   */
+  UserHierarchyGroups?: HierarchyGroup[] | undefined;
+
+  /**
+   * <p>If there are additional results, this is the token for the next set of results.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+
+  /**
+   * <p>The total number of userHierarchyGroups which matched your search query.</p>
+   * @public
+   */
+  ApproximateTotalCount?: number | undefined;
+}
+
+/**
+ * <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
+ * @public
+ */
+export interface HierarchyGroupCondition {
+  /**
+   * <p>The value in the hierarchy group condition.</p>
+   * @public
+   */
+  Value?: string | undefined;
+
+  /**
+   * <p>The type of hierarchy group match.</p>
+   * @public
+   */
+  HierarchyGroupMatchType?: HierarchyGroupMatchType | undefined;
+}
+
+/**
+ * <p>A leaf node condition which can be used to specify a ProficiencyName, ProficiencyValue and
+ *    ProficiencyLimit.</p>
+ * @public
+ */
+export interface Condition {
+  /**
+   * <p>A leaf node condition which can be used to specify a string condition.</p>
+   *          <note>
+   *             <p>The currently supported values for <code>FieldName</code> are <code>name</code> and <code>value</code>.</p>
+   *          </note>
+   * @public
+   */
+  StringCondition?: StringCondition | undefined;
+
+  /**
+   * <p>A leaf node condition which can be used to specify a numeric condition.</p>
+   * @public
+   */
+  NumberCondition?: NumberCondition | undefined;
+}
+
+/**
+ * <p>A leaf node condition which can be used to specify a List condition to search users with attributes included in
+ *    Lists like Proficiencies.</p>
+ * @public
+ */
+export interface ListCondition {
+  /**
+   * <p>The type of target list that will be used to filter the users.</p>
+   * @public
+   */
+  TargetListType?: TargetListType | undefined;
+
+  /**
+   * <p>A list of Condition objects which would be applied together with an AND condition.</p>
+   * @public
+   */
+  Conditions?: Condition[] | undefined;
+}
+
+/**
+ * <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
+ * @public
+ */
+export interface AttributeAndCondition {
+  /**
+   * <p>A leaf node condition which can be used to specify a tag condition.</p>
+   * @public
+   */
+  TagConditions?: TagCondition[] | undefined;
+
+  /**
+   * <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
+   * @public
+   */
+  HierarchyGroupCondition?: HierarchyGroupCondition | undefined;
+}
+
+/**
+ * <p>An object that can be used to specify Tag conditions or Hierarchy Group conditions inside the
+ *     <code>SearchFilter</code>.</p>
+ *          <p>This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
+ *          <ul>
+ *             <li>
+ *                <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator</p>
+ *             </li>
+ *             <li>
+ *                <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p>
+ *             </li>
+ *          </ul>
+ *          <note>
+ *             <p>Only one field can be populated. Maximum number of allowed Tag conditions is 25. Maximum number of allowed
+ *     Hierarchy Group conditions is 20.</p>
+ *          </note>
+ * @public
+ */
+export interface ControlPlaneUserAttributeFilter {
+  /**
+   * <p>A list of conditions which would be applied together with an <code>OR</code> condition.</p>
+   * @public
+   */
+  OrConditions?: AttributeAndCondition[] | undefined;
+
+  /**
+   * <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
+   * @public
+   */
+  AndCondition?: AttributeAndCondition | undefined;
+
+  /**
+   * <p>A leaf node condition which can be used to specify a tag condition, for example, <code>HAVE BPO = 123</code>.
+   *   </p>
+   * @public
+   */
+  TagCondition?: TagCondition | undefined;
+
+  /**
+   * <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
+   * @public
+   */
+  HierarchyGroupCondition?: HierarchyGroupCondition | undefined;
+}
+
+/**
+ * <p>Filters to be applied to search results.</p>
+ * @public
+ */
+export interface UserSearchFilter {
+  /**
+   * <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an
+   *     <code>OR</code> of <code>AND</code> (List of List) input where:</p>
+   *          <ul>
+   *             <li>
+   *                <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p>
+   *             </li>
+   *             <li>
+   *                <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p>
+   *             </li>
+   *          </ul>
+   * @public
+   */
+  TagFilter?: ControlPlaneTagFilter | undefined;
+
+  /**
+   * <p>An object that can be used to specify Tag conditions or Hierarchy Group conditions inside the
+   *    SearchFilter.</p>
+   *          <p>This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
+   *          <ul>
+   *             <li>
+   *                <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator.</p>
+   *             </li>
+   *             <li>
+   *                <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p>
+   *             </li>
+   *          </ul>
+   *          <note>
+   *             <p>Only one field can be populated. This object can’t be used along with TagFilter. Request can either contain
+   *     TagFilter or UserAttributeFilter if SearchFilter is specified, combination of both is not supported and such request
+   *     will throw AccessDeniedException.</p>
+   *          </note>
+   * @public
+   */
+  UserAttributeFilter?: ControlPlaneUserAttributeFilter | undefined;
+}
+
+/**
+ * <p>The user's first name and last name.</p>
+ * @public
+ */
+export interface UserIdentityInfoLite {
+  /**
+   * <p>The user's first name.</p>
+   * @public
+   */
+  FirstName?: string | undefined;
+
+  /**
+   * <p>The user's last name.</p>
+   * @public
+   */
+  LastName?: string | undefined;
+}
+
+/**
+ * <p>Information about the returned users.</p>
+ * @public
+ */
+export interface UserSearchSummary {
+  /**
+   * <p>The Amazon Resource Name (ARN) of the user.</p>
+   * @public
+   */
+  Arn?: string | undefined;
+
+  /**
+   * <p>The directory identifier of the user.</p>
+   * @public
+   */
+  DirectoryUserId?: string | undefined;
+
+  /**
+   * <p>The identifier of the user's hierarchy group.</p>
+   * @public
+   */
+  HierarchyGroupId?: string | undefined;
+
+  /**
+   * <p>The identifier of the user's summary.</p>
+   * @public
+   */
+  Id?: string | undefined;
+
+  /**
+   * <p>The user's first name and last name.</p>
+   * @public
+   */
+  IdentityInfo?: UserIdentityInfoLite | undefined;
+
+  /**
+   * <p>Contains information about the phone configuration settings for a user.</p>
+   * @public
+   */
+  PhoneConfig?: UserPhoneConfig | undefined;
+
+  /**
+   * <p>The identifier of the user's routing profile.</p>
+   * @public
+   */
+  RoutingProfileId?: string | undefined;
+
+  /**
+   * <p>The identifiers of the user's security profiles.</p>
+   * @public
+   */
+  SecurityProfileIds?: string[] | undefined;
+
+  /**
+   * <p>The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.</p>
+   * @public
+   */
+  Tags?: Record<string, string> | undefined;
+
+  /**
+   * <p>The name of the user.</p>
+   * @public
+   */
+  Username?: string | undefined;
+
+  /**
+   * <p>The list of auto-accept configuration settings for each channel.</p>
+   * @public
+   */
+  AutoAcceptConfigs?: AutoAcceptConfig[] | undefined;
+
+  /**
+   * <p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>
+   * @public
+   */
+  AfterContactWorkConfigs?: AfterContactWorkConfigPerChannel[] | undefined;
+
+  /**
+   * <p>The list of phone number configuration settings for each channel.</p>
+   * @public
+   */
+  PhoneNumberConfigs?: PhoneNumberConfig[] | undefined;
+
+  /**
+   * <p>The list of persistent connection configuration settings for each channel.</p>
+   * @public
+   */
+  PersistentConnectionConfigs?: PersistentConnectionConfig[] | undefined;
+
+  /**
+   * <p>The list of voice enhancement configuration settings for each channel.</p>
+   * @public
+   */
+  VoiceEnhancementConfigs?: VoiceEnhancementConfig[] | undefined;
+}
+
+/**
+ * @public
+ */
+export interface SearchUsersResponse {
+  /**
+   * <p>Information about the users.</p>
+   * @public
+   */
+  Users?: UserSearchSummary[] | undefined;
+
+  /**
+   * <p>If there are additional results, this is the token for the next set of results.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+
+  /**
+   * <p>The total number of users who matched your search query.</p>
+   * @public
+   */
+  ApproximateTotalCount?: number | undefined;
+}
+
+/**
+ * <p>Defines filters to apply when searching for views, such as tag-based filters.</p>
+ * @public
+ */
+export interface ViewSearchFilter {
+  /**
+   * <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an
+   *     <code>OR</code> or <code>AND</code> (List of List) input where:</p>
+   *          <ul>
+   *             <li>
+   *                <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator.</p>
+   *             </li>
+   *             <li>
+   *                <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p>
+   *             </li>
+   *          </ul>
+   * @public
+   */
+  AttributeFilter?: ControlPlaneAttributeFilter | undefined;
+}
+
+/**
+ * @public
+ */
+export interface SearchViewsResponse {
+  /**
+   * <p>A list of views that match the search criteria.</p>
+   * @public
+   */
+  Views?: View[] | undefined;
+
+  /**
+   * <p>If there are additional results, this is the token for the next set of results.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+
+  /**
+   * <p>The approximate total number of views that match the search criteria.</p>
+   * @public
+   */
+  ApproximateTotalCount?: number | undefined;
+}
+
+/**
+ * @public
+ */
+export interface SearchVocabulariesRequest {
+  /**
+   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+
+  /**
+   * <p>The maximum number of results to return per page.</p>
+   * @public
+   */
+  MaxResults?: number | undefined;
+
+  /**
+   * <p>The token for the next set of results. Use the value returned in the previous
+   * response in the next request to retrieve the next set of results.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+
+  /**
+   * <p>The current state of the custom vocabulary.</p>
+   * @public
+   */
+  State?: VocabularyState | undefined;
+
+  /**
+   * <p>The starting pattern of the name of the vocabulary.</p>
+   * @public
+   */
+  NameStartsWith?: string | undefined;
+
+  /**
+   * <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see
+   * <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a>
+   *          </p>
+   * @public
+   */
+  LanguageCode?: VocabularyLanguageCode | undefined;
+}
+
+/**
+ * <p>Contains summary information about the custom vocabulary.</p>
+ * @public
+ */
+export interface VocabularySummary {
+  /**
+   * <p>A unique name of the custom vocabulary.</p>
+   * @public
+   */
+  Name: string | undefined;
+
+  /**
+   * <p>The identifier of the custom vocabulary.</p>
+   * @public
+   */
+  Id: string | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
+   * @public
+   */
+  Arn: string | undefined;
+
+  /**
+   * <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see
+   * <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a>
+   *          </p>
+   * @public
+   */
+  LanguageCode: VocabularyLanguageCode | undefined;
+
+  /**
+   * <p>The current state of the custom vocabulary.</p>
+   * @public
+   */
+  State: VocabularyState | undefined;
+
+  /**
+   * <p>The timestamp when the custom vocabulary was last modified.</p>
+   * @public
+   */
+  LastModifiedTime: Date | undefined;
+
+  /**
+   * <p>The reason why the custom vocabulary was not created.</p>
+   * @public
+   */
+  FailureReason?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface SearchVocabulariesResponse {
+  /**
+   * <p>The list of the available custom vocabularies.</p>
+   * @public
+   */
+  VocabularySummaryList?: VocabularySummary[] | undefined;
+
+  /**
+   * <p>If there are additional results, this is the token for the next set of results.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+}
 
 /**
  * <p>Defines filters to apply when searching for workspace associations, such as tag-based filters.</p>
@@ -3269,6 +3754,35 @@ export interface UpdateInstanceStorageConfigRequest {
 /**
  * @public
  */
+export interface UpdateNotificationContentRequest {
+  /**
+   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+
+  /**
+   * <p>The unique identifier for the notification to update.</p>
+   * @public
+   */
+  NotificationId: string | undefined;
+
+  /**
+   * <p>The updated localized content of the notification. A map of locale codes and values. Maximum 500 characters per locale.</p>
+   * @public
+   */
+  Content: Partial<Record<LocaleCode, string>> | undefined;
+}
+
+/**
+ * <p>The response from updating notification content.</p>
+ * @public
+ */
+export interface UpdateNotificationContentResponse {}
+
+/**
+ * @public
+ */
 export interface UpdateParticipantAuthenticationRequest {
   /**
    * <p>The <code>state</code> query parameter that was provided by Cognito in the <code>redirectUri</code>. This will
@@ -4523,6 +5037,53 @@ export interface UpdateUserIdentityInfoRequest {
 /**
  * @public
  */
+export interface UpdateUserNotificationStatusRequest {
+  /**
+   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+
+  /**
+   * <p>The unique identifier for the notification.</p>
+   * @public
+   */
+  NotificationId: string | undefined;
+
+  /**
+   * <p>The identifier of the user whose notification status is being updated.</p>
+   * @public
+   */
+  UserId: string | undefined;
+
+  /**
+   * <p>The new status for the notification. Valid values are READ, UNREAD, and HIDDEN.</p>
+   * @public
+   */
+  Status: NotificationStatus | undefined;
+
+  /**
+   * <p>The timestamp when the notification status was last modified. Used for cross-region replication and optimistic locking.</p>
+   * @public
+   */
+  LastModifiedTime?: Date | undefined;
+
+  /**
+   * <p>The AWS Region where the notification status was last modified. Used for cross-region replication.</p>
+   * @public
+   */
+  LastModifiedRegion?: string | undefined;
+}
+
+/**
+ * <p>The response from updating a user's notification status.</p>
+ * @public
+ */
+export interface UpdateUserNotificationStatusResponse {}
+
+/**
+ * @public
+ */
 export interface UpdateUserPhoneConfigRequest {
   /**
    * <p>Information about phone configuration settings for the user.</p>
@@ -5279,6 +5840,30 @@ export interface HoursOfOperationSearchCriteria {
    *             <p>The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>,
    *      <code>timezone</code>, and <code>resourceID</code>.</p>
    *          </note>
+   * @public
+   */
+  StringCondition?: StringCondition | undefined;
+}
+
+/**
+ * <p>The search criteria to be used to return notifications.</p>
+ * @public
+ */
+export interface NotificationSearchCriteria {
+  /**
+   * <p>A list of conditions to be met, where at least one condition must be satisfied.</p>
+   * @public
+   */
+  OrConditions?: NotificationSearchCriteria[] | undefined;
+
+  /**
+   * <p>A list of conditions that must all be satisfied.</p>
+   * @public
+   */
+  AndConditions?: NotificationSearchCriteria[] | undefined;
+
+  /**
+   * <p>A leaf node condition which can be used to specify a string condition.</p>
    * @public
    */
   StringCondition?: StringCondition | undefined;
@@ -6100,6 +6685,41 @@ export interface SearchHoursOfOperationsRequest {
    * @public
    */
   SearchCriteria?: HoursOfOperationSearchCriteria | undefined;
+}
+
+/**
+ * @public
+ */
+export interface SearchNotificationsRequest {
+  /**
+   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+
+  /**
+   * <p>The token for the next set of results. Use the value returned in the previous response to retrieve the next page of results.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+
+  /**
+   * <p>The maximum number of results to return per page. Valid range is 1-100.</p>
+   * @public
+   */
+  MaxResults?: number | undefined;
+
+  /**
+   * <p>Filters to apply to the search results, such as tag-based filters.</p>
+   * @public
+   */
+  SearchFilter?: NotificationSearchFilter | undefined;
+
+  /**
+   * <p>The search criteria to apply when searching for notifications. Supports filtering by notification ID and message content using comparison types such as STARTS_WITH, CONTAINS, and EXACT.</p>
+   * @public
+   */
+  SearchCriteria?: NotificationSearchCriteria | undefined;
 }
 
 /**

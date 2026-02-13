@@ -25,14 +25,17 @@ import {
   EvaluationType,
   EventSourceName,
   ExecutionRecordStatus,
-  HierarchyGroupMatchType,
   InstanceStatus,
   InstanceStorageResourceType,
   IntegrationType,
   LexVersion,
   ListFlowAssociationResourceType,
+  LocaleCode,
   MediaType,
   MonitorCapability,
+  NotificationPriority,
+  NotificationSource,
+  NotificationStatus,
   NumberComparisonType,
   ParticipantRole,
   PhoneNumberCountryCode,
@@ -56,7 +59,6 @@ import {
   SortOrder,
   SourceType,
   StringComparisonType,
-  TargetListType,
   TaskTemplateStatus,
   TestCaseExecutionStatus,
   TestCaseStatus,
@@ -65,35 +67,28 @@ import {
   ViewStatus,
   ViewType,
   VocabularyLanguageCode,
-  VocabularyState,
 } from "./enums";
 import {
+  type AgentConfig,
   type AgentHierarchyGroups,
   type ControlPlaneAttributeFilter,
   type DataTableLockVersion,
   type LexV2Bot,
-  type StringCondition,
-  type UserPhoneConfig,
   ActionSummary,
-  AfterContactWorkConfigPerChannel,
   AgentStatus,
   AgentStatusSummary,
   AliasConfiguration,
   AnalyticsDataAssociationResult,
   Application,
-  AutoAcceptConfig,
+  Distribution,
   FlowAssociationSummary,
   FlowModule,
   InstanceStorageConfig,
   LexBot,
-  PersistentConnectionConfig,
-  PhoneNumberConfig,
   PrimaryValueResponse,
   SecurityProfileItem,
   TagCondition,
   UserProficiency,
-  View,
-  VoiceEnhancementConfig,
 } from "./models_0";
 import {
   type EvaluationContactParticipant,
@@ -103,18 +98,175 @@ import {
   ContactFlowModule,
   DataTable,
   DataTableAttribute,
-  HierarchyGroup,
   HierarchyGroupSummary,
   HoursOfOperation,
   HoursOfOperationOverride,
   HoursOfOperationsIdentifier,
+  Notification,
   PredefinedAttribute,
   Prompt,
   Queue,
   QuickConnect,
   RoutingProfile,
+  SignInDistribution,
   TestCase,
 } from "./models_1";
+
+/**
+ * <p>The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both
+ *    the instance and its replica(s).</p>
+ * @public
+ */
+export interface SignInConfig {
+  /**
+   * <p>Information about traffic distributions.</p>
+   * @public
+   */
+  Distributions: SignInDistribution[] | undefined;
+}
+
+/**
+ * <p>The distribution of traffic between the instance and its replicas.</p>
+ * @public
+ */
+export interface TelephonyConfig {
+  /**
+   * <p>Information about traffic distributions.</p>
+   * @public
+   */
+  Distributions: Distribution[] | undefined;
+}
+
+/**
+ * @public
+ */
+export interface GetTrafficDistributionResponse {
+  /**
+   * <p>The distribution of traffic between the instance and its replicas.</p>
+   * @public
+   */
+  TelephonyConfig?: TelephonyConfig | undefined;
+
+  /**
+   * <p>The identifier of the traffic distribution group.
+   * This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created.
+   * The ARN must be provided if the call is from the replicated Region.</p>
+   * @public
+   */
+  Id?: string | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+   * @public
+   */
+  Arn?: string | undefined;
+
+  /**
+   * <p>The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both
+   *    the instance and its replica(s).</p>
+   * @public
+   */
+  SignInConfig?: SignInConfig | undefined;
+
+  /**
+   * <p>The distribution of agents between the instance and its replica(s).</p>
+   * @public
+   */
+  AgentConfig?: AgentConfig | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ImportPhoneNumberRequest {
+  /**
+   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+
+  /**
+   * <p>The claimed phone number ARN being imported from the external service, such as Amazon Web Services End User
+   *    Messaging. If it is from Amazon Web Services End User Messaging, it looks like the ARN of the phone number to import
+   *    from Amazon Web Services End User Messaging.</p>
+   * @public
+   */
+  SourcePhoneNumberArn: string | undefined;
+
+  /**
+   * <p>The description of the phone number.</p>
+   * @public
+   */
+  PhoneNumberDescription?: string | undefined;
+
+  /**
+   * <p>The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.</p>
+   * @public
+   */
+  Tags?: Record<string, string> | undefined;
+
+  /**
+   * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+   *             request. If not provided, the Amazon Web Services
+   *             SDK populates this field. For more information about idempotency, see
+   *             <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
+   * @public
+   */
+  ClientToken?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ImportPhoneNumberResponse {
+  /**
+   * <p>A unique identifier for the phone number.</p>
+   * @public
+   */
+  PhoneNumberId?: string | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of the phone number.</p>
+   * @public
+   */
+  PhoneNumberArn?: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ImportWorkspaceMediaRequest {
+  /**
+   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+   *    the Amazon Resource Name (ARN) of the instance.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+
+  /**
+   * <p>The identifier of the workspace.</p>
+   * @public
+   */
+  WorkspaceId: string | undefined;
+
+  /**
+   * <p>The type of media. Valid values are: <code>IMAGE_LOGO_FAVICON</code> and
+   *    <code>IMAGE_LOGO_HORIZONTAL</code>.</p>
+   * @public
+   */
+  MediaType: MediaType | undefined;
+
+  /**
+   * <p>The media source. Can be an S3 presigned URL or a base64-encoded string.</p>
+   * @public
+   */
+  MediaSource: string | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ImportWorkspaceMediaResponse {}
 
 /**
  * @public
@@ -2856,6 +3008,46 @@ export interface ListLexBotsResponse {
 /**
  * @public
  */
+export interface ListNotificationsRequest {
+  /**
+   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+
+  /**
+   * <p>The token for the next set of results. Use the value returned in the previous response to retrieve the next page of results.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+
+  /**
+   * <p>The maximum number of results to return per page. Valid range is 1-100.</p>
+   * @public
+   */
+  MaxResults?: number | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ListNotificationsResponse {
+  /**
+   * <p>The token for the next set of results. If present, there are more results available.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+
+  /**
+   * <p>A list of notification summaries.</p>
+   * @public
+   */
+  NotificationSummaryList: Notification[] | undefined;
+}
+
+/**
+ * @public
+ */
 export interface ListPhoneNumbersRequest {
   /**
    * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
@@ -5489,6 +5681,112 @@ export interface ListUserHierarchyGroupsResponse {
 /**
  * @public
  */
+export interface ListUserNotificationsRequest {
+  /**
+   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+   * @public
+   */
+  InstanceId: string | undefined;
+
+  /**
+   * <p>The token for the next set of results. Use the value returned in the previous response to retrieve the next page of results.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+
+  /**
+   * <p>The maximum number of results to return per page. Valid range is 1-1000.</p>
+   * @public
+   */
+  MaxResults?: number | undefined;
+
+  /**
+   * <p>The identifier of the user.</p>
+   * @public
+   */
+  UserId: string | undefined;
+}
+
+/**
+ * <p>Summary information about a notification for a specific user, including the user's read status.</p>
+ * @public
+ */
+export interface UserNotificationSummary {
+  /**
+   * <p>The unique identifier for the notification.</p>
+   * @public
+   */
+  NotificationId?: string | undefined;
+
+  /**
+   * <p>The status of the notification for this user. Valid values are READ, UNREAD, and HIDDEN.</p>
+   * @public
+   */
+  NotificationStatus?: NotificationStatus | undefined;
+
+  /**
+   * <p>The identifier of the Amazon Connect instance.</p>
+   * @public
+   */
+  InstanceId?: string | undefined;
+
+  /**
+   * <p>The identifier of the recipient user.</p>
+   * @public
+   */
+  RecipientId?: string | undefined;
+
+  /**
+   * <p>The localized content of the notification.</p>
+   * @public
+   */
+  Content?: Partial<Record<LocaleCode, string>> | undefined;
+
+  /**
+   * <p>The priority level of the notification.</p>
+   * @public
+   */
+  Priority?: NotificationPriority | undefined;
+
+  /**
+   * <p>The source that created the notification. Valid values are CUSTOMER, RULES, and SYSTEM.</p>
+   * @public
+   */
+  Source?: NotificationSource | undefined;
+
+  /**
+   * <p>The timestamp when the notification was created.</p>
+   * @public
+   */
+  CreatedAt?: Date | undefined;
+
+  /**
+   * <p>The timestamp when the notification expires.</p>
+   * @public
+   */
+  ExpiresAt?: Date | undefined;
+}
+
+/**
+ * @public
+ */
+export interface ListUserNotificationsResponse {
+  /**
+   * <p>A list of notifications sent to the specified user.</p>
+   * @public
+   */
+  UserNotifications?: UserNotificationSummary[] | undefined;
+
+  /**
+   * <p>The token for the next set of results. If present, there are more results available.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+}
+
+/**
+ * @public
+ */
 export interface ListUserProficienciesRequest {
   /**
    * <p>The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the
@@ -7743,6 +8041,113 @@ export interface SearchHoursOfOperationsResponse {
 }
 
 /**
+ * <p>Filters to apply when searching for notifications.</p>
+ * @public
+ */
+export interface NotificationSearchFilter {
+  /**
+   * <p>Attribute-based filters to apply to the search results.</p>
+   * @public
+   */
+  AttributeFilter?: ControlPlaneAttributeFilter | undefined;
+}
+
+/**
+ * <p>Summary information about a notification returned from a search operation.</p>
+ * @public
+ */
+export interface NotificationSearchSummary {
+  /**
+   * <p>The unique identifier for the notification.</p>
+   * @public
+   */
+  Id?: string | undefined;
+
+  /**
+   * <p>The Amazon Resource Name (ARN) of the notification.</p>
+   * @public
+   */
+  Arn?: string | undefined;
+
+  /**
+   * <p>The identifier of the Amazon Connect instance.</p>
+   * @public
+   */
+  InstanceId?: string | undefined;
+
+  /**
+   * <p>The localized content of the notification.</p>
+   * @public
+   */
+  Content?: Partial<Record<LocaleCode, string>> | undefined;
+
+  /**
+   * <p>The priority level of the notification.</p>
+   * @public
+   */
+  Priority?: NotificationPriority | undefined;
+
+  /**
+   * <p>A list of recipient Amazon Resource Names (ARNs).</p>
+   * @public
+   */
+  Recipients?: string[] | undefined;
+
+  /**
+   * <p>The timestamp when the notification was created.</p>
+   * @public
+   */
+  CreatedAt?: Date | undefined;
+
+  /**
+   * <p>The timestamp when the notification expires.</p>
+   * @public
+   */
+  ExpiresAt?: Date | undefined;
+
+  /**
+   * <p>The AWS Region where the notification was last modified.</p>
+   * @public
+   */
+  LastModifiedRegion?: string | undefined;
+
+  /**
+   * <p>The timestamp when the notification was last modified.</p>
+   * @public
+   */
+  LastModifiedTime?: Date | undefined;
+
+  /**
+   * <p>The tags associated with the notification.</p>
+   * @public
+   */
+  Tags?: Record<string, string> | undefined;
+}
+
+/**
+ * @public
+ */
+export interface SearchNotificationsResponse {
+  /**
+   * <p>A list of notifications matching the search criteria.</p>
+   * @public
+   */
+  Notifications?: NotificationSearchSummary[] | undefined;
+
+  /**
+   * <p>The token for the next set of results. If present, there are more results available.</p>
+   * @public
+   */
+  NextToken?: string | undefined;
+
+  /**
+   * <p>The approximate total number of notifications matching the search criteria.</p>
+   * @public
+   */
+  ApproximateTotalCount?: number | undefined;
+}
+
+/**
  * @public
  */
 export interface SearchPredefinedAttributesResponse {
@@ -8232,483 +8637,4 @@ export interface UserHierarchyGroupSearchFilter {
    * @public
    */
   AttributeFilter?: ControlPlaneAttributeFilter | undefined;
-}
-
-/**
- * @public
- */
-export interface SearchUserHierarchyGroupsResponse {
-  /**
-   * <p>Information about the userHierarchyGroups.</p>
-   * @public
-   */
-  UserHierarchyGroups?: HierarchyGroup[] | undefined;
-
-  /**
-   * <p>If there are additional results, this is the token for the next set of results.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
-
-  /**
-   * <p>The total number of userHierarchyGroups which matched your search query.</p>
-   * @public
-   */
-  ApproximateTotalCount?: number | undefined;
-}
-
-/**
- * <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
- * @public
- */
-export interface HierarchyGroupCondition {
-  /**
-   * <p>The value in the hierarchy group condition.</p>
-   * @public
-   */
-  Value?: string | undefined;
-
-  /**
-   * <p>The type of hierarchy group match.</p>
-   * @public
-   */
-  HierarchyGroupMatchType?: HierarchyGroupMatchType | undefined;
-}
-
-/**
- * <p>A leaf node condition which can be used to specify a ProficiencyName, ProficiencyValue and
- *    ProficiencyLimit.</p>
- * @public
- */
-export interface Condition {
-  /**
-   * <p>A leaf node condition which can be used to specify a string condition.</p>
-   *          <note>
-   *             <p>The currently supported values for <code>FieldName</code> are <code>name</code> and <code>value</code>.</p>
-   *          </note>
-   * @public
-   */
-  StringCondition?: StringCondition | undefined;
-
-  /**
-   * <p>A leaf node condition which can be used to specify a numeric condition.</p>
-   * @public
-   */
-  NumberCondition?: NumberCondition | undefined;
-}
-
-/**
- * <p>A leaf node condition which can be used to specify a List condition to search users with attributes included in
- *    Lists like Proficiencies.</p>
- * @public
- */
-export interface ListCondition {
-  /**
-   * <p>The type of target list that will be used to filter the users.</p>
-   * @public
-   */
-  TargetListType?: TargetListType | undefined;
-
-  /**
-   * <p>A list of Condition objects which would be applied together with an AND condition.</p>
-   * @public
-   */
-  Conditions?: Condition[] | undefined;
-}
-
-/**
- * <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
- * @public
- */
-export interface AttributeAndCondition {
-  /**
-   * <p>A leaf node condition which can be used to specify a tag condition.</p>
-   * @public
-   */
-  TagConditions?: TagCondition[] | undefined;
-
-  /**
-   * <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
-   * @public
-   */
-  HierarchyGroupCondition?: HierarchyGroupCondition | undefined;
-}
-
-/**
- * <p>An object that can be used to specify Tag conditions or Hierarchy Group conditions inside the
- *     <code>SearchFilter</code>.</p>
- *          <p>This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
- *          <ul>
- *             <li>
- *                <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator</p>
- *             </li>
- *             <li>
- *                <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p>
- *             </li>
- *          </ul>
- *          <note>
- *             <p>Only one field can be populated. Maximum number of allowed Tag conditions is 25. Maximum number of allowed
- *     Hierarchy Group conditions is 20.</p>
- *          </note>
- * @public
- */
-export interface ControlPlaneUserAttributeFilter {
-  /**
-   * <p>A list of conditions which would be applied together with an <code>OR</code> condition.</p>
-   * @public
-   */
-  OrConditions?: AttributeAndCondition[] | undefined;
-
-  /**
-   * <p>A list of conditions which would be applied together with an <code>AND</code> condition.</p>
-   * @public
-   */
-  AndCondition?: AttributeAndCondition | undefined;
-
-  /**
-   * <p>A leaf node condition which can be used to specify a tag condition, for example, <code>HAVE BPO = 123</code>.
-   *   </p>
-   * @public
-   */
-  TagCondition?: TagCondition | undefined;
-
-  /**
-   * <p>A leaf node condition which can be used to specify a hierarchy group condition.</p>
-   * @public
-   */
-  HierarchyGroupCondition?: HierarchyGroupCondition | undefined;
-}
-
-/**
- * <p>Filters to be applied to search results.</p>
- * @public
- */
-export interface UserSearchFilter {
-  /**
-   * <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an
-   *     <code>OR</code> of <code>AND</code> (List of List) input where:</p>
-   *          <ul>
-   *             <li>
-   *                <p>Top level list specifies conditions that need to be applied with <code>OR</code> operator</p>
-   *             </li>
-   *             <li>
-   *                <p>Inner list specifies conditions that need to be applied with <code>AND</code> operator.</p>
-   *             </li>
-   *          </ul>
-   * @public
-   */
-  TagFilter?: ControlPlaneTagFilter | undefined;
-
-  /**
-   * <p>An object that can be used to specify Tag conditions or Hierarchy Group conditions inside the
-   *    SearchFilter.</p>
-   *          <p>This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>
-   *          <ul>
-   *             <li>
-   *                <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator.</p>
-   *             </li>
-   *             <li>
-   *                <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p>
-   *             </li>
-   *          </ul>
-   *          <note>
-   *             <p>Only one field can be populated. This object can’t be used along with TagFilter. Request can either contain
-   *     TagFilter or UserAttributeFilter if SearchFilter is specified, combination of both is not supported and such request
-   *     will throw AccessDeniedException.</p>
-   *          </note>
-   * @public
-   */
-  UserAttributeFilter?: ControlPlaneUserAttributeFilter | undefined;
-}
-
-/**
- * <p>The user's first name and last name.</p>
- * @public
- */
-export interface UserIdentityInfoLite {
-  /**
-   * <p>The user's first name.</p>
-   * @public
-   */
-  FirstName?: string | undefined;
-
-  /**
-   * <p>The user's last name.</p>
-   * @public
-   */
-  LastName?: string | undefined;
-}
-
-/**
- * <p>Information about the returned users.</p>
- * @public
- */
-export interface UserSearchSummary {
-  /**
-   * <p>The Amazon Resource Name (ARN) of the user.</p>
-   * @public
-   */
-  Arn?: string | undefined;
-
-  /**
-   * <p>The directory identifier of the user.</p>
-   * @public
-   */
-  DirectoryUserId?: string | undefined;
-
-  /**
-   * <p>The identifier of the user's hierarchy group.</p>
-   * @public
-   */
-  HierarchyGroupId?: string | undefined;
-
-  /**
-   * <p>The identifier of the user's summary.</p>
-   * @public
-   */
-  Id?: string | undefined;
-
-  /**
-   * <p>The user's first name and last name.</p>
-   * @public
-   */
-  IdentityInfo?: UserIdentityInfoLite | undefined;
-
-  /**
-   * <p>Contains information about the phone configuration settings for a user.</p>
-   * @public
-   */
-  PhoneConfig?: UserPhoneConfig | undefined;
-
-  /**
-   * <p>The identifier of the user's routing profile.</p>
-   * @public
-   */
-  RoutingProfileId?: string | undefined;
-
-  /**
-   * <p>The identifiers of the user's security profiles.</p>
-   * @public
-   */
-  SecurityProfileIds?: string[] | undefined;
-
-  /**
-   * <p>The tags used to organize, track, or control access for this resource. For example, \{ "Tags": \{"key1":"value1", "key2":"value2"\} \}.</p>
-   * @public
-   */
-  Tags?: Record<string, string> | undefined;
-
-  /**
-   * <p>The name of the user.</p>
-   * @public
-   */
-  Username?: string | undefined;
-
-  /**
-   * <p>The list of auto-accept configuration settings for each channel.</p>
-   * @public
-   */
-  AutoAcceptConfigs?: AutoAcceptConfig[] | undefined;
-
-  /**
-   * <p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>
-   * @public
-   */
-  AfterContactWorkConfigs?: AfterContactWorkConfigPerChannel[] | undefined;
-
-  /**
-   * <p>The list of phone number configuration settings for each channel.</p>
-   * @public
-   */
-  PhoneNumberConfigs?: PhoneNumberConfig[] | undefined;
-
-  /**
-   * <p>The list of persistent connection configuration settings for each channel.</p>
-   * @public
-   */
-  PersistentConnectionConfigs?: PersistentConnectionConfig[] | undefined;
-
-  /**
-   * <p>The list of voice enhancement configuration settings for each channel.</p>
-   * @public
-   */
-  VoiceEnhancementConfigs?: VoiceEnhancementConfig[] | undefined;
-}
-
-/**
- * @public
- */
-export interface SearchUsersResponse {
-  /**
-   * <p>Information about the users.</p>
-   * @public
-   */
-  Users?: UserSearchSummary[] | undefined;
-
-  /**
-   * <p>If there are additional results, this is the token for the next set of results.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
-
-  /**
-   * <p>The total number of users who matched your search query.</p>
-   * @public
-   */
-  ApproximateTotalCount?: number | undefined;
-}
-
-/**
- * <p>Defines filters to apply when searching for views, such as tag-based filters.</p>
- * @public
- */
-export interface ViewSearchFilter {
-  /**
-   * <p>An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>. This accepts an
-   *     <code>OR</code> or <code>AND</code> (List of List) input where:</p>
-   *          <ul>
-   *             <li>
-   *                <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator.</p>
-   *             </li>
-   *             <li>
-   *                <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p>
-   *             </li>
-   *          </ul>
-   * @public
-   */
-  AttributeFilter?: ControlPlaneAttributeFilter | undefined;
-}
-
-/**
- * @public
- */
-export interface SearchViewsResponse {
-  /**
-   * <p>A list of views that match the search criteria.</p>
-   * @public
-   */
-  Views?: View[] | undefined;
-
-  /**
-   * <p>If there are additional results, this is the token for the next set of results.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
-
-  /**
-   * <p>The approximate total number of views that match the search criteria.</p>
-   * @public
-   */
-  ApproximateTotalCount?: number | undefined;
-}
-
-/**
- * @public
- */
-export interface SearchVocabulariesRequest {
-  /**
-   * <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-   * @public
-   */
-  InstanceId: string | undefined;
-
-  /**
-   * <p>The maximum number of results to return per page.</p>
-   * @public
-   */
-  MaxResults?: number | undefined;
-
-  /**
-   * <p>The token for the next set of results. Use the value returned in the previous
-   * response in the next request to retrieve the next set of results.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
-
-  /**
-   * <p>The current state of the custom vocabulary.</p>
-   * @public
-   */
-  State?: VocabularyState | undefined;
-
-  /**
-   * <p>The starting pattern of the name of the vocabulary.</p>
-   * @public
-   */
-  NameStartsWith?: string | undefined;
-
-  /**
-   * <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see
-   * <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a>
-   *          </p>
-   * @public
-   */
-  LanguageCode?: VocabularyLanguageCode | undefined;
-}
-
-/**
- * <p>Contains summary information about the custom vocabulary.</p>
- * @public
- */
-export interface VocabularySummary {
-  /**
-   * <p>A unique name of the custom vocabulary.</p>
-   * @public
-   */
-  Name: string | undefined;
-
-  /**
-   * <p>The identifier of the custom vocabulary.</p>
-   * @public
-   */
-  Id: string | undefined;
-
-  /**
-   * <p>The Amazon Resource Name (ARN) of the custom vocabulary.</p>
-   * @public
-   */
-  Arn: string | undefined;
-
-  /**
-   * <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see
-   * <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a>
-   *          </p>
-   * @public
-   */
-  LanguageCode: VocabularyLanguageCode | undefined;
-
-  /**
-   * <p>The current state of the custom vocabulary.</p>
-   * @public
-   */
-  State: VocabularyState | undefined;
-
-  /**
-   * <p>The timestamp when the custom vocabulary was last modified.</p>
-   * @public
-   */
-  LastModifiedTime: Date | undefined;
-
-  /**
-   * <p>The reason why the custom vocabulary was not created.</p>
-   * @public
-   */
-  FailureReason?: string | undefined;
-}
-
-/**
- * @public
- */
-export interface SearchVocabulariesResponse {
-  /**
-   * <p>The list of the available custom vocabularies.</p>
-   * @public
-   */
-  VocabularySummaryList?: VocabularySummary[] | undefined;
-
-  /**
-   * <p>If there are additional results, this is the token for the next set of results.</p>
-   * @public
-   */
-  NextToken?: string | undefined;
 }

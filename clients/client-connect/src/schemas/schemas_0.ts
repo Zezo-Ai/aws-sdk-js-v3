@@ -427,7 +427,10 @@ const _CMo = "ContactMetrics";
 const _CMu = "CustomerMetrics";
 const _CMur = "CurrentMetric";
 const _CMurr = "CurrentMetrics";
+const _CN = "CreateNotification";
 const _CNFE = "ContactNotFoundException";
+const _CNR = "CreateNotificationRequest";
+const _CNRr = "CreateNotificationResponse";
 const _CNV = "CreateNewVersion";
 const _CO = "ComparisonOperator";
 const _COFE = "ConditionalOperationFailedException";
@@ -685,6 +688,12 @@ const _DLFR = "DisassociateLambdaFunctionRequest";
 const _DM = "DeliveryMethod";
 const _DN = "DisplayName";
 const _DNAE = "DestinationNotAllowedException";
+const _DNR = "DeleteNotificationRequest";
+const _DNRe = "DeleteNotificationResponse";
+const _DNRes = "DescribeNotificationRequest";
+const _DNResc = "DescribeNotificationResponse";
+const _DNe = "DeleteNotification";
+const _DNes = "DescribeNotification";
 const _DO = "DisplayOrder";
 const _DOCE = "DisconnectOnCustomerExit";
 const _DOQI = "DefaultOutboundQueueId";
@@ -896,6 +905,7 @@ const _EAn = "EntityArn";
 const _EAv = "EvaluationArn";
 const _EAva = "EvaluationAcknowledgement";
 const _EAval = "EvaluatorArn";
+const _EAx = "ExpiresAt";
 const _EBA = "EventBridgeAction";
 const _EBAD = "EventBridgeActionDefinition";
 const _EC = "ErrorCode";
@@ -1397,6 +1407,9 @@ const _LMR = "LastModifiedRegion";
 const _LMT = "LastModifiedTime";
 const _LMTa = "LastMessageTimestamp";
 const _LN = "LastName";
+const _LNR = "ListNotificationsRequest";
+const _LNRi = "ListNotificationsResponse";
+const _LNi = "ListNotifications";
 const _LO = "LevelOne";
 const _LP = "ListPrompts";
 const _LPA = "ListPredefinedAttributes";
@@ -1485,6 +1498,9 @@ const _LUCRi = "ListUseCasesResponse";
 const _LUHG = "ListUserHierarchyGroups";
 const _LUHGR = "ListUserHierarchyGroupsRequest";
 const _LUHGRi = "ListUserHierarchyGroupsResponse";
+const _LUN = "ListUserNotifications";
+const _LUNR = "ListUserNotificationsRequest";
+const _LUNRi = "ListUserNotificationsResponse";
 const _LUP = "ListUserProficiencies";
 const _LUPR = "ListUserProficienciesRequest";
 const _LUPRi = "ListUserProficienciesResponse";
@@ -1592,15 +1608,17 @@ const _Min = "Minimum";
 const _Mo = "Mode";
 const _Mob = "Mobile";
 const _N = "Name";
-const _NA = "NotApplicable";
+const _NA = "NotificationArn";
 const _NAC = "NotAttributeCondition";
 const _NAE = "NotApplicableEnabled";
+const _NAo = "NotApplicable";
 const _NC = "NumberCondition";
 const _NCC = "NewChatCreated";
 const _NCE = "NextContactEntry";
 const _NCM = "NextContactMetadata";
 const _NCa = "NameCriteria";
 const _NCe = "NextContacts";
+const _NI = "NotificationId";
 const _NOAMAQ = "NumberOfAssociatedManualAssignmentQueues";
 const _NOAQ = "NumberOfAssociatedQueues";
 const _NOAU = "NumberOfAssociatedUsers";
@@ -1611,14 +1629,23 @@ const _NR = "NumberReference";
 const _NRT = "NotificationRecipientType";
 const _NRu = "NumResponses";
 const _NS = "NextStatus";
+const _NSC = "NotificationSearchCriteria";
+const _NSCL = "NotificationSearchConditionList";
 const _NSD = "NewSessionDetails";
+const _NSF = "NotificationSearchFilter";
+const _NSL = "NotificationSummaryList";
+const _NSS = "NotificationSearchSummary";
+const _NSSL = "NotificationSearchSummaryList";
 const _NSW = "NameStartsWith";
+const _NSo = "NotificationStatus";
 const _NT = "NextToken";
 const _NV = "NumericValue";
 const _Na = "Namespace";
 const _Nav = "Navigation";
 const _Ne = "Negate";
-const _No = "Notes";
+const _No = "Notification";
+const _Not = "Notes";
+const _Noti = "Notifications";
 const _Nu = "Number";
 const _Num = "Numeric";
 const _O = "Origin";
@@ -1726,6 +1753,7 @@ const _PNCCh = "PhoneNumberCountryCodes";
 const _PNCh = "PhoneNumberConfig";
 const _PND = "PhoneNumberDescription";
 const _PNI = "PhoneNumberId";
+const _PNIr = "PredefinedNotificationId";
 const _PNP = "PhoneNumberPrefix";
 const _PNQCC = "PhoneNumberQuickConnectConfig";
 const _PNS = "PhoneNumberStatus";
@@ -1862,6 +1890,7 @@ const _RIRe = "ReplicateInstanceResponse";
 const _RIUE = "ResourceInUseException";
 const _RIe = "RecordId";
 const _RIec = "RecordIds";
+const _RIeci = "RecipientId";
 const _RIeco = "RecordingInfo";
 const _RIef = "RefId";
 const _RIeg = "RegistrationId";
@@ -1956,8 +1985,9 @@ const _RTefe = "ReferenceTypes";
 const _RTes = "ResourceTypes";
 const _Ra = "Range";
 const _Re = "Recordings";
-const _Rec = "Record";
+const _Rec = "Recipients";
 const _Reci = "Recipient";
+const _Reco = "Record";
 const _Red = "Redaction";
 const _Ref = "References";
 const _Refe = "Reference";
@@ -2109,6 +2139,9 @@ const _SN = "StatusName";
 const _SNA = "ScoreNotApplicable";
 const _SNAD = "SendNotificationActionDefinition";
 const _SNAe = "SendNotificationAction";
+const _SNR = "SearchNotificationsRequest";
+const _SNRe = "SearchNotificationsResponse";
+const _SNe = "SearchNotifications";
 const _SO = "SortOrder";
 const _SOCC = "StartOutboundChatContact";
 const _SOCCR = "StartOutboundChatContactRequest";
@@ -2470,7 +2503,13 @@ const _UISC = "UpdateInstanceStorageConfig";
 const _UISCR = "UpdateInstanceStorageConfigRequest";
 const _UIs = "UserInfo";
 const _UIse = "UserIds";
+const _UN = "UserNotifications";
+const _UNC = "UpdateNotificationContent";
+const _UNCR = "UpdateNotificationContentRequest";
+const _UNCRp = "UpdateNotificationContentResponse";
 const _UNFE = "UserNotFoundException";
+const _UNS = "UserNotificationSummary";
+const _UNSL = "UserNotificationSummaryList";
 const _UP = "UserProficiencies";
 const _UPA = "UpdateParticipantAuthentication";
 const _UPAR = "UpdateParticipantAuthenticationRequest";
@@ -2558,6 +2597,9 @@ const _UUHSR = "UpdateUserHierarchyStructureRequest";
 const _UUII = "UpdateUserIdentityInfo";
 const _UUIIR = "UpdateUserIdentityInfoRequest";
 const _UUM = "UploadUrlMetadata";
+const _UUNS = "UpdateUserNotificationStatus";
+const _UUNSR = "UpdateUserNotificationStatusRequest";
+const _UUNSRp = "UpdateUserNotificationStatusResponse";
 const _UUP = "UpdateUserProficiencies";
 const _UUPC = "UpdateUserPhoneConfig";
 const _UUPCR = "UpdateUserPhoneConfigRequest";
@@ -3873,6 +3915,16 @@ export var CreateIntegrationAssociationResponse$: StaticStructureSchema = [3, n0
   [_IAI, _IAA],
   [0, 0]
 ];
+export var CreateNotificationRequest$: StaticStructureSchema = [3, n0, _CNR,
+  0,
+  [_II, _Rec, _Co, _EAx, _Prio, _Ta, _PNIr, _CT],
+  [[0, 1], 64 | 0, 128 | 0, 4, 0, 128 | 0, 0, [0, 4]], 3
+];
+export var CreateNotificationResponse$: StaticStructureSchema = [3, n0, _CNRr,
+  0,
+  [_NI, _NA],
+  [0, 0], 2
+];
 export var CreateParticipantRequest$: StaticStructureSchema = [3, n0, _CPR,
   0,
   [_II, _CI, _PD, _CT],
@@ -4343,6 +4395,16 @@ export var DeleteIntegrationAssociationRequest$: StaticStructureSchema = [3, n0,
   [_II, _IAI],
   [[0, 1], [0, 1]], 2
 ];
+export var DeleteNotificationRequest$: StaticStructureSchema = [3, n0, _DNR,
+  0,
+  [_II, _NI],
+  [[0, 1], [0, 1]], 2
+];
+export var DeleteNotificationResponse$: StaticStructureSchema = [3, n0, _DNRe,
+  0,
+  [],
+  []
+];
 export var DeletePredefinedAttributeRequest$: StaticStructureSchema = [3, n0, _DPAR,
   0,
   [_II, _N],
@@ -4652,6 +4714,16 @@ export var DescribeInstanceStorageConfigResponse$: StaticStructureSchema = [3, n
   0,
   [_SCt],
   [() => InstanceStorageConfig$]
+];
+export var DescribeNotificationRequest$: StaticStructureSchema = [3, n0, _DNRes,
+  0,
+  [_II, _NI],
+  [[0, 1], [0, 1]], 2
+];
+export var DescribeNotificationResponse$: StaticStructureSchema = [3, n0, _DNResc,
+  0,
+  [_No],
+  [() => Notification$], 1
 ];
 export var DescribePhoneNumberRequest$: StaticStructureSchema = [3, n0, _DPNR,
   0,
@@ -5050,7 +5122,7 @@ export var EvaluateDataTableValuesResponse$: StaticStructureSchema = [3, n0, _ED
 ];
 export var Evaluation$: StaticStructureSchema = [3, n0, _Ev,
   0,
-  [_EI, _EAv, _Meta, _An, _No, _St, _CTre, _LMT, _Sc, _ETv, _Ta],
+  [_EI, _EAv, _Meta, _An, _Not, _St, _CTre, _LMT, _Sc, _ETv, _Ta],
   [0, 0, () => EvaluationMetadata$, () => EvaluationAnswersOutputMap, () => EvaluationNotesMap, 0, 4, 4, () => EvaluationScoresMap, 0, 128 | 0], 8
 ];
 export var EvaluationAcknowledgement$: StaticStructureSchema = [3, n0, _EAva,
@@ -5280,7 +5352,7 @@ export var EvaluationReviewRequestComment$: StaticStructureSchema = [3, n0, _ERR
 ];
 export var EvaluationScore$: StaticStructureSchema = [3, n0, _ES,
   0,
-  [_Per, _NA, _AFut, _AW],
+  [_Per, _NAo, _AFut, _AW],
   [1, 2, 2, 1]
 ];
 export var EvaluationSearchCriteria$: StaticStructureSchema = [3, n0, _ESC,
@@ -5330,7 +5402,7 @@ export var EventBridgeActionDefinition$: StaticStructureSchema = [3, n0, _EBAD,
 ];
 export var ExecutionRecord$: StaticStructureSchema = [3, n0, _ERx,
   0,
-  [_OI, _St, _Tim, _Rec],
+  [_OI, _St, _Tim, _Reco],
   [0, 0, 4, 0]
 ];
 export var Expiry$: StaticStructureSchema = [3, n0, _Ex,
@@ -6108,6 +6180,16 @@ export var ListLexBotsResponse$: StaticStructureSchema = [3, n0, _LLBRi,
   [_LBe, _NT],
   [() => LexBotsList, 0]
 ];
+export var ListNotificationsRequest$: StaticStructureSchema = [3, n0, _LNR,
+  0,
+  [_II, _NT, _MR],
+  [[0, 1], [0, { [_hQ]: _nT }], [1, { [_hQ]: _mR }]], 1
+];
+export var ListNotificationsResponse$: StaticStructureSchema = [3, n0, _LNRi,
+  0,
+  [_NSL, _NT],
+  [() => NotificationSummaryList, 0], 1
+];
 export var ListPhoneNumbersRequest$: StaticStructureSchema = [3, n0, _LPNR,
   0,
   [_II, _PNTh, _PNCCh, _NT, _MR],
@@ -6373,6 +6455,16 @@ export var ListUserHierarchyGroupsResponse$: StaticStructureSchema = [3, n0, _LU
   [_UHGSL, _NT],
   [() => HierarchyGroupSummaryList, 0]
 ];
+export var ListUserNotificationsRequest$: StaticStructureSchema = [3, n0, _LUNR,
+  0,
+  [_II, _UI, _NT, _MR],
+  [[0, 1], [0, 1], [0, { [_hQ]: _nT }], [1, { [_hQ]: _mR }]], 2
+];
+export var ListUserNotificationsResponse$: StaticStructureSchema = [3, n0, _LUNRi,
+  0,
+  [_UN, _NT],
+  [() => UserNotificationSummaryList, 0]
+];
 export var ListUserProficienciesRequest$: StaticStructureSchema = [3, n0, _LUPR,
   0,
   [_II, _UI, _NT, _MR],
@@ -6528,10 +6620,30 @@ export var NextContactEntry$: StaticStructureSchema = [3, n0, _NCE,
   [_T, _NCM],
   [0, () => NextContactMetadata$]
 ];
+export var Notification$: StaticStructureSchema = [3, n0, _No,
+  0,
+  [_I, _A, _LMT, _Co, _Prio, _Rec, _CAr, _EAx, _LMR, _Ta],
+  [0, 0, 4, 128 | 0, 0, 64 | 0, 4, 4, 0, 128 | 0], 3
+];
 export var NotificationRecipientType$: StaticStructureSchema = [3, n0, _NRT,
   0,
   [_UT, _UIse],
   [128 | 0, 64 | 0]
+];
+export var NotificationSearchCriteria$: StaticStructureSchema = [3, n0, _NSC,
+  0,
+  [_OC, _ACn, _SC],
+  [() => NotificationSearchConditionList, () => NotificationSearchConditionList, () => StringCondition$]
+];
+export var NotificationSearchFilter$: StaticStructureSchema = [3, n0, _NSF,
+  0,
+  [_AFt],
+  [() => ControlPlaneAttributeFilter$]
+];
+export var NotificationSearchSummary$: StaticStructureSchema = [3, n0, _NSS,
+  0,
+  [_I, _A, _II, _Co, _Prio, _Rec, _CAr, _EAx, _LMR, _LMT, _Ta],
+  [0, 0, 0, 128 | 0, 0, 64 | 0, 4, 4, 0, 4, 128 | 0]
 ];
 export var NumberCondition$: StaticStructureSchema = [3, n0, _NC,
   0,
@@ -7298,6 +7410,16 @@ export var SearchHoursOfOperationsResponse$: StaticStructureSchema = [3, n0, _SH
   [_HOOo, _NT, _ATC],
   [() => HoursOfOperationList, 0, 1]
 ];
+export var SearchNotificationsRequest$: StaticStructureSchema = [3, n0, _SNR,
+  0,
+  [_II, _NT, _MR, _SF, _SCe],
+  [0, 0, 1, () => NotificationSearchFilter$, () => NotificationSearchCriteria$], 1
+];
+export var SearchNotificationsResponse$: StaticStructureSchema = [3, n0, _SNRe,
+  0,
+  [_Noti, _NT, _ATC],
+  [() => NotificationSearchSummaryList, 0, 1]
+];
 export var SearchPredefinedAttributesRequest$: StaticStructureSchema = [3, n0, _SPAR,
   0,
   [_II, _NT, _MR, _SCe],
@@ -7745,7 +7867,7 @@ export var SubmitAutoEvaluationActionDefinition$: StaticStructureSchema = [3, n0
 ];
 export var SubmitContactEvaluationRequest$: StaticStructureSchema = [3, n0, _SCERu,
   0,
-  [_II, _EI, _An, _No, _SB],
+  [_II, _EI, _An, _Not, _SB],
   [[0, 1], [0, 1], () => EvaluationAnswersInputMap, () => EvaluationNotesMap, () => EvaluatorUserUnion$], 2
 ];
 export var SubmitContactEvaluationResponse$: StaticStructureSchema = [3, n0, _SCERub,
@@ -7980,7 +8102,7 @@ export var UpdateContactAttributesResponse$: StaticStructureSchema = [3, n0, _UC
 ];
 export var UpdateContactEvaluationRequest$: StaticStructureSchema = [3, n0, _UCER,
   0,
-  [_II, _EI, _An, _No, _UB],
+  [_II, _EI, _An, _Not, _UB],
   [[0, 1], [0, 1], () => EvaluationAnswersInputMap, () => EvaluationNotesMap, () => EvaluatorUserUnion$], 2
 ];
 export var UpdateContactEvaluationResponse$: StaticStructureSchema = [3, n0, _UCERp,
@@ -8147,6 +8269,16 @@ export var UpdateInstanceStorageConfigRequest$: StaticStructureSchema = [3, n0, 
   0,
   [_II, _AIs, _RT, _SCt, _CT],
   [[0, 1], [0, 1], [0, { [_hQ]: _rT }], () => InstanceStorageConfig$, [0, 4]], 4
+];
+export var UpdateNotificationContentRequest$: StaticStructureSchema = [3, n0, _UNCR,
+  0,
+  [_II, _NI, _Co],
+  [[0, 1], [0, 1], 128 | 0], 3
+];
+export var UpdateNotificationContentResponse$: StaticStructureSchema = [3, n0, _UNCRp,
+  0,
+  [],
+  []
 ];
 export var UpdateParticipantAuthenticationRequest$: StaticStructureSchema = [3, n0, _UPAR,
   0,
@@ -8328,6 +8460,16 @@ export var UpdateUserIdentityInfoRequest$: StaticStructureSchema = [3, n0, _UUII
   [_IId, _UI, _II],
   [[() => UserIdentityInfo$, 0], [0, 1], [0, 1]], 3
 ];
+export var UpdateUserNotificationStatusRequest$: StaticStructureSchema = [3, n0, _UUNSR,
+  0,
+  [_II, _NI, _UI, _St, _LMT, _LMR],
+  [[0, 1], [0, 1], [0, 1], 0, [4, { [_hH]: _xalmt }], [0, { [_hH]: _xalmr }]], 4
+];
+export var UpdateUserNotificationStatusResponse$: StaticStructureSchema = [3, n0, _UUNSRp,
+  0,
+  [],
+  []
+];
 export var UpdateUserPhoneConfigRequest$: StaticStructureSchema = [3, n0, _UUPCR,
   0,
   [_PCh, _UI, _II],
@@ -8462,6 +8604,11 @@ export var UserInfo$: StaticStructureSchema = [3, n0, _UIs,
   0,
   [_UI],
   [0]
+];
+export var UserNotificationSummary$: StaticStructureSchema = [3, n0, _UNS,
+  0,
+  [_NI, _NSo, _II, _RIeci, _Co, _Prio, _So, _CAr, _EAx],
+  [0, 0, 0, 0, 128 | 0, 0, 0, 4, 4]
 ];
 export var UserPhoneConfig$: StaticStructureSchema = [3, n0, _UPC,
   0,
@@ -9053,6 +9200,15 @@ var MonthList = 64 | 1;
 var NextContacts: StaticListSchema = [1, n0, _NCe,
   0, () => NextContactEntry$
 ];
+var NotificationSearchConditionList: StaticListSchema = [1, n0, _NSCL,
+  0, () => NotificationSearchCriteria$
+];
+var NotificationSearchSummaryList: StaticListSchema = [1, n0, _NSSL,
+  0, () => NotificationSearchSummary$
+];
+var NotificationSummaryList: StaticListSchema = [1, n0, _NSL,
+  0, () => Notification$
+];
 var OperationalHours: StaticListSchema = [1, n0, _OH,
   0, () => OperationalHour$
 ];
@@ -9174,6 +9330,7 @@ var RealTimeContactAnalysisTranscriptItemsWithCharacterOffsets: StaticListSchema
 var RealTimeContactAnalysisTranscriptItemsWithContent: StaticListSchema = [1, n0, _RTCATIWCe,
   0, () => RealTimeContactAnalysisTranscriptItemWithContent$
 ];
+var RecipientList = 64 | 0;
 var RecordIds = 64 | 0;
 var Recordings: StaticListSchema = [1, n0, _Re,
   0, () => RecordingInfo$
@@ -9357,6 +9514,9 @@ var UserHierarchyGroupSearchConditionList: StaticListSchema = [1, n0, _UHGSCL,
   0, () => UserHierarchyGroupSearchCriteria$
 ];
 var UserIdList = 64 | 0;
+var UserNotificationSummaryList: StaticListSchema = [1, n0, _UNSL,
+  0, () => UserNotificationSummary$
+];
 var UserProficiencyDisassociateList: StaticListSchema = [1, n0, _UPDL,
   0, () => UserProficiencyDisassociate$
 ];
@@ -9448,6 +9608,7 @@ var EvaluationNotesMap: StaticMapSchema = [2, n0, _ENM,
 var EvaluationScoresMap: StaticMapSchema = [2, n0, _ESMv,
   0, 0, () => EvaluationScore$
 ];
+var NotificationContent = 128 | 0;
 var RealTimeContactAnalysisMatchedDetails: StaticMapSchema = [2, n0, _RTCAMD,
   0, 0, () => RealTimeContactAnalysisCategoryDetails$
 ];
@@ -9472,7 +9633,7 @@ export var CreatedByInfo$: StaticUnionSchema = [4, n0, _CBI,
 ];
 export var EvaluationAnswerData$: StaticUnionSchema = [4, n0, _EAD,
   0,
-  [_SV, _NV, _SVt, _DTVa, _NA],
+  [_SV, _NV, _SVt, _DTVa, _NAo],
   [0, 1, 64 | 0, 0, 2]
 ];
 export var EvaluationFormItem$: StaticUnionSchema = [4, n0, _EFIv,
@@ -9698,6 +9859,9 @@ export var CreateInstance$: StaticOperationSchema = [9, n0, _CIr,
 export var CreateIntegrationAssociation$: StaticOperationSchema = [9, n0, _CIA,
   { [_h]: ["PUT", "/instance/{InstanceId}/integration-associations", 200] }, () => CreateIntegrationAssociationRequest$, () => CreateIntegrationAssociationResponse$
 ];
+export var CreateNotification$: StaticOperationSchema = [9, n0, _CN,
+  { [_h]: ["PUT", "/notifications/{InstanceId}", 200] }, () => CreateNotificationRequest$, () => CreateNotificationResponse$
+];
 export var CreateParticipant$: StaticOperationSchema = [9, n0, _CPr,
   { [_h]: ["POST", "/contact/create-participant", 200] }, () => CreateParticipantRequest$, () => CreateParticipantResponse$
 ];
@@ -9809,6 +9973,9 @@ export var DeleteInstance$: StaticOperationSchema = [9, n0, _DIel,
 export var DeleteIntegrationAssociation$: StaticOperationSchema = [9, n0, _DIA,
   { [_h]: ["DELETE", "/instance/{InstanceId}/integration-associations/{IntegrationAssociationId}", 200] }, () => DeleteIntegrationAssociationRequest$, () => __Unit
 ];
+export var DeleteNotification$: StaticOperationSchema = [9, n0, _DNe,
+  { [_h]: ["DELETE", "/notifications/{InstanceId}/{NotificationId}", 200] }, () => DeleteNotificationRequest$, () => DeleteNotificationResponse$
+];
 export var DeletePredefinedAttribute$: StaticOperationSchema = [9, n0, _DPA,
   { [_h]: ["DELETE", "/predefined-attributes/{InstanceId}/{Name}", 200] }, () => DeletePredefinedAttributeRequest$, () => __Unit
 ];
@@ -9916,6 +10083,9 @@ export var DescribeInstanceAttribute$: StaticOperationSchema = [9, n0, _DIAe,
 ];
 export var DescribeInstanceStorageConfig$: StaticOperationSchema = [9, n0, _DISC,
   { [_h]: ["GET", "/instance/{InstanceId}/storage-config/{AssociationId}", 200] }, () => DescribeInstanceStorageConfigRequest$, () => DescribeInstanceStorageConfigResponse$
+];
+export var DescribeNotification$: StaticOperationSchema = [9, n0, _DNes,
+  { [_h]: ["GET", "/notifications/{InstanceId}/{NotificationId}", 200] }, () => DescribeNotificationRequest$, () => DescribeNotificationResponse$
 ];
 export var DescribePhoneNumber$: StaticOperationSchema = [9, n0, _DPNes,
   { [_h]: ["GET", "/phone-number/{PhoneNumberId}", 200] }, () => DescribePhoneNumberRequest$, () => DescribePhoneNumberResponse$
@@ -10166,6 +10336,9 @@ export var ListLambdaFunctions$: StaticOperationSchema = [9, n0, _LLF,
 export var ListLexBots$: StaticOperationSchema = [9, n0, _LLB,
   { [_h]: ["GET", "/instance/{InstanceId}/lex-bots", 200] }, () => ListLexBotsRequest$, () => ListLexBotsResponse$
 ];
+export var ListNotifications$: StaticOperationSchema = [9, n0, _LNi,
+  { [_h]: ["GET", "/notifications/{InstanceId}", 200] }, () => ListNotificationsRequest$, () => ListNotificationsResponse$
+];
 export var ListPhoneNumbers$: StaticOperationSchema = [9, n0, _LPN,
   { [_h]: ["GET", "/phone-numbers-summary/{InstanceId}", 200] }, () => ListPhoneNumbersRequest$, () => ListPhoneNumbersResponse$
 ];
@@ -10244,6 +10417,9 @@ export var ListUseCases$: StaticOperationSchema = [9, n0, _LUC,
 export var ListUserHierarchyGroups$: StaticOperationSchema = [9, n0, _LUHG,
   { [_h]: ["GET", "/user-hierarchy-groups-summary/{InstanceId}", 200] }, () => ListUserHierarchyGroupsRequest$, () => ListUserHierarchyGroupsResponse$
 ];
+export var ListUserNotifications$: StaticOperationSchema = [9, n0, _LUN,
+  { [_h]: ["GET", "/users/{InstanceId}/{UserId}/notifications", 200] }, () => ListUserNotificationsRequest$, () => ListUserNotificationsResponse$
+];
 export var ListUserProficiencies$: StaticOperationSchema = [9, n0, _LUP,
   { [_h]: ["GET", "/users/{InstanceId}/{UserId}/proficiencies", 200] }, () => ListUserProficienciesRequest$, () => ListUserProficienciesResponse$
 ];
@@ -10318,6 +10494,9 @@ export var SearchHoursOfOperationOverrides$: StaticOperationSchema = [9, n0, _SH
 ];
 export var SearchHoursOfOperations$: StaticOperationSchema = [9, n0, _SHOO,
   { [_h]: ["POST", "/search-hours-of-operations", 200] }, () => SearchHoursOfOperationsRequest$, () => SearchHoursOfOperationsResponse$
+];
+export var SearchNotifications$: StaticOperationSchema = [9, n0, _SNe,
+  { [_h]: ["POST", "/search-notifications", 200] }, () => SearchNotificationsRequest$, () => SearchNotificationsResponse$
 ];
 export var SearchPredefinedAttributes$: StaticOperationSchema = [9, n0, _SPAe,
   { [_h]: ["POST", "/search-predefined-attributes", 200] }, () => SearchPredefinedAttributesRequest$, () => SearchPredefinedAttributesResponse$
@@ -10511,6 +10690,9 @@ export var UpdateInstanceAttribute$: StaticOperationSchema = [9, n0, _UIA,
 export var UpdateInstanceStorageConfig$: StaticOperationSchema = [9, n0, _UISC,
   { [_h]: ["POST", "/instance/{InstanceId}/storage-config/{AssociationId}", 200] }, () => UpdateInstanceStorageConfigRequest$, () => __Unit
 ];
+export var UpdateNotificationContent$: StaticOperationSchema = [9, n0, _UNC,
+  { [_h]: ["POST", "/notifications/{InstanceId}/{NotificationId}", 200] }, () => UpdateNotificationContentRequest$, () => UpdateNotificationContentResponse$
+];
 export var UpdateParticipantAuthentication$: StaticOperationSchema = [9, n0, _UPA,
   { [_h]: ["POST", "/contact/update-participant-authentication", 200] }, () => UpdateParticipantAuthenticationRequest$, () => UpdateParticipantAuthenticationResponse$
 ];
@@ -10597,6 +10779,9 @@ export var UpdateUserHierarchyStructure$: StaticOperationSchema = [9, n0, _UUHS,
 ];
 export var UpdateUserIdentityInfo$: StaticOperationSchema = [9, n0, _UUII,
   { [_h]: ["POST", "/users/{InstanceId}/{UserId}/identity-info", 200] }, () => UpdateUserIdentityInfoRequest$, () => __Unit
+];
+export var UpdateUserNotificationStatus$: StaticOperationSchema = [9, n0, _UUNS,
+  { [_h]: ["POST", "/users/{InstanceId}/{UserId}/notifications/{NotificationId}", 200] }, () => UpdateUserNotificationStatusRequest$, () => UpdateUserNotificationStatusResponse$
 ];
 export var UpdateUserPhoneConfig$: StaticOperationSchema = [9, n0, _UUPC,
   { [_h]: ["POST", "/users/{InstanceId}/{UserId}/phone-config", 200] }, () => UpdateUserPhoneConfigRequest$, () => __Unit

@@ -985,6 +985,42 @@ export type SourceType = (typeof SourceType)[keyof typeof SourceType];
  * @public
  * @enum
  */
+export const LocaleCode = {
+  DeDE: "de_DE",
+  EnUS: "en_US",
+  EsES: "es_ES",
+  FrFR: "fr_FR",
+  IdID: "id_ID",
+  ItIT: "it_IT",
+  JaJP: "ja_JP",
+  KoKR: "ko_KR",
+  PtBR: "pt_BR",
+  ZhCN: "zh_CN",
+  ZhTW: "zh_TW",
+} as const;
+/**
+ * @public
+ */
+export type LocaleCode = (typeof LocaleCode)[keyof typeof LocaleCode];
+
+/**
+ * @public
+ * @enum
+ */
+export const ConfigurableNotificationPriority = {
+  High: "HIGH",
+  Low: "LOW",
+} as const;
+/**
+ * @public
+ */
+export type ConfigurableNotificationPriority =
+  (typeof ConfigurableNotificationPriority)[keyof typeof ConfigurableNotificationPriority];
+
+/**
+ * @public
+ * @enum
+ */
 export const ParticipantRole = {
   AGENT: "AGENT",
   CUSTOMER: "CUSTOMER",
@@ -1695,6 +1731,20 @@ export type InstanceAttributeType = (typeof InstanceAttributeType)[keyof typeof 
  * @public
  * @enum
  */
+export const NotificationPriority = {
+  High: "HIGH",
+  Low: "LOW",
+  Urgent: "URGENT",
+} as const;
+/**
+ * @public
+ */
+export type NotificationPriority = (typeof NotificationPriority)[keyof typeof NotificationPriority];
+
+/**
+ * @public
+ * @enum
+ */
 export const PhoneNumberCountryCode = {
   AD: "AD",
   AE: "AE",
@@ -2381,6 +2431,34 @@ export const ExecutionRecordStatus = {
  * @public
  */
 export type ExecutionRecordStatus = (typeof ExecutionRecordStatus)[keyof typeof ExecutionRecordStatus];
+
+/**
+ * @public
+ * @enum
+ */
+export const NotificationStatus = {
+  Hidden: "HIDDEN",
+  Read: "READ",
+  Unread: "UNREAD",
+} as const;
+/**
+ * @public
+ */
+export type NotificationStatus = (typeof NotificationStatus)[keyof typeof NotificationStatus];
+
+/**
+ * @public
+ * @enum
+ */
+export const NotificationSource = {
+  Customer: "CUSTOMER",
+  Rules: "RULES",
+  System: "SYSTEM",
+} as const;
+/**
+ * @public
+ */
+export type NotificationSource = (typeof NotificationSource)[keyof typeof NotificationSource];
 
 /**
  * @public
