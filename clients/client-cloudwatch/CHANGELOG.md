@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.990.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.989.0...v3.990.0) (2026-02-13)
+
+
+### Features
+
+* **client-cloudwatch:** Adding new evaluation states that provides information about the alarm evaluation process. Evaluation error Indicates configuration errors in alarm setup that require review and correction. Evaluation failure Indicates temporary CloudWatch issues. ([5a085a8](https://github.com/aws/aws-sdk-js-v3/commit/5a085a8ae5c58427d73c19fb55632117a91eb68c))
+
+
+
+
+
 # [3.989.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.988.0...v3.989.0) (2026-02-12)
 
 **Note:** Version bump only for package @aws-sdk/client-cloudwatch

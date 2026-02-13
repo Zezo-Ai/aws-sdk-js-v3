@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.990.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.989.0...v3.990.0) (2026-02-13)
+
+
+### Features
+
+* **client-sagemaker:** Enable g7e instance type support for SageMaker Processing, and enable single file configuration provisioning for HyperPod Slurm, where customers have the option to use HyperPod API to provide the provisioning parameters. ([6f77d87](https://github.com/aws/aws-sdk-js-v3/commit/6f77d876fc26c887c0bcfe153a751b2505345ad3))
+
+
+
+
+
 # [3.989.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.988.0...v3.989.0) (2026-02-12)
 
 **Note:** Version bump only for package @aws-sdk/client-sagemaker

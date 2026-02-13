@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.990.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.989.0...v3.990.0) (2026-02-13)
+
+
+### Features
+
+* **client-connect:** API release for headerr notifications in the admin website. APIs allow customers to publish brief messages (including URLs) to a specified audience, and a new header icon will indicate when unread messages are available. ([11a9568](https://github.com/aws/aws-sdk-js-v3/commit/11a9568e2cea18e86f8110d466ae01fc592ecc53))
+
+
+
+
+
 # [3.989.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.988.0...v3.989.0) (2026-02-12)
 
 **Note:** Version bump only for package @aws-sdk/client-connect

@@ -13,6 +13,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+
+# 3.973.10 (2026-02-12)
+### Tests
+* **client-ec2:** additional integ tests for ec2 ([#7736](https://github.com/aws/aws-sdk-js-v3/issues/7736)) ([fcd1430](https://github.com/aws/aws-sdk-js-v3/commit/fcd1430a1a6de0c4f2e32366f4fa2746ba856c55))
+
+
+
 # 3.973.9 (2026-02-11)
 ### Bug Fixes
 * **client-ec2:** fix ec2QueryName serialization ([#7734](https://github.com/aws/aws-sdk-js-v3/issues/7734)) ([05e3a62](https://github.com/aws/aws-sdk-js-v3/commit/05e3a621a6d8d49a4d027638987326d9c850dbf3))

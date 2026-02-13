@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.990.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.989.0...v3.990.0) (2026-02-13)
+
+
+### Features
+
+* **client-cloudwatch:** Adding new evaluation states that provides information about the alarm evaluation process. Evaluation error Indicates configuration errors in alarm setup that require review and correction. Evaluation failure Indicates temporary CloudWatch issues. ([5a085a8](https://github.com/aws/aws-sdk-js-v3/commit/5a085a8ae5c58427d73c19fb55632117a91eb68c))
+* **client-connect:** API release for headerr notifications in the admin website. APIs allow customers to publish brief messages (including URLs) to a specified audience, and a new header icon will indicate when unread messages are available. ([11a9568](https://github.com/aws/aws-sdk-js-v3/commit/11a9568e2cea18e86f8110d466ae01fc592ecc53))
+* **client-ec2:** This release adds geography information to EC2 region and availability zone APIs. DescribeRegions now includes a Geography field, while DescribeAvailabilityZones includes both Geography and SubGeography fields, enabling better geographic classification for AWS regions and zones. ([eed96c0](https://github.com/aws/aws-sdk-js-v3/commit/eed96c0586c1200cce5e25077e0bfcb7902f185b))
+* **client-inspector2:** Added .Net 10 (dotnet10) and Node 24.x (node24.x) runtime support for lambda package scanning ([168caeb](https://github.com/aws/aws-sdk-js-v3/commit/168caeb6a2cd510d8d8373f91fab175b70e8f7dd))
+* **client-sagemaker:** Enable g7e instance type support for SageMaker Processing, and enable single file configuration provisioning for HyperPod Slurm, where customers have the option to use HyperPod API to provide the provisioning parameters. ([6f77d87](https://github.com/aws/aws-sdk-js-v3/commit/6f77d876fc26c887c0bcfe153a751b2505345ad3))
+
+
+
+
+
 # [3.989.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.988.0...v3.989.0) (2026-02-12)
 
 
