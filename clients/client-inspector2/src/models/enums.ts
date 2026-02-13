@@ -384,6 +384,7 @@ export type PackageType = (typeof PackageType)[keyof typeof PackageType];
  */
 export const Runtime = {
   DOTNETCORE_3_1: "DOTNETCORE_3_1",
+  DOTNET_10: "DOTNET_10",
   DOTNET_6: "DOTNET_6",
   DOTNET_7: "DOTNET_7",
   GO_1_X: "GO_1_X",
@@ -396,6 +397,7 @@ export const Runtime = {
   NODEJS_14_X: "NODEJS_14_X",
   NODEJS_16_X: "NODEJS_16_X",
   NODEJS_18_X: "NODEJS_18_X",
+  NODEJS_24_X: "NODEJS_24_X",
   PYTHON_3_10: "PYTHON_3_10",
   PYTHON_3_11: "PYTHON_3_11",
   PYTHON_3_7: "PYTHON_3_7",
