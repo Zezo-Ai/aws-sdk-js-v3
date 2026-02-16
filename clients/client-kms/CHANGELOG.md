@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.991.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.990.0...v3.991.0) (2026-02-16)
+
+
+### Features
+
+* **client-kms:** Added support for Decrypt and ReEncrypt API's to use dry run feature without ciphertext for authorization validation ([492b281](https://github.com/aws/aws-sdk-js-v3/commit/492b2819ebcc83aa4c7bfaa5668abe91993ede88))
+
+
+
+
+
 # [3.990.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.989.0...v3.990.0) (2026-02-13)
 
 **Note:** Version bump only for package @aws-sdk/client-kms

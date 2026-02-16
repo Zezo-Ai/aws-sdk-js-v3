@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.991.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.990.0...v3.991.0) (2026-02-16)
+
+
+### Features
+
+* **client-kafka:** Amazon MSK now supports dual-stack connectivity (IPv4 and IPv6) for existing MSK clusters. You can enable dual-stack on existing clusters by specifying the NetworkType parameter in updateConnectivity API. ([67a33d9](https://github.com/aws/aws-sdk-js-v3/commit/67a33d9aaeaab51779b50d7c3b31117645241fb9))
+
+
+
+
+
 # [3.990.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.989.0...v3.990.0) (2026-02-13)
 
 **Note:** Version bump only for package @aws-sdk/client-kafka

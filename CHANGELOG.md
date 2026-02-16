@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.991.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.990.0...v3.991.0) (2026-02-16)
+
+
+### Features
+
+* **client-kafka:** Amazon MSK now supports dual-stack connectivity (IPv4 and IPv6) for existing MSK clusters. You can enable dual-stack on existing clusters by specifying the NetworkType parameter in updateConnectivity API. ([67a33d9](https://github.com/aws/aws-sdk-js-v3/commit/67a33d9aaeaab51779b50d7c3b31117645241fb9))
+* **client-kms:** Added support for Decrypt and ReEncrypt API's to use dry run feature without ciphertext for authorization validation ([492b281](https://github.com/aws/aws-sdk-js-v3/commit/492b2819ebcc83aa4c7bfaa5668abe91993ede88))
+* **client-qconnect:** Update MessageType enum to include missing types. ([9aaf67f](https://github.com/aws/aws-sdk-js-v3/commit/9aaf67f21701b136a7439e00a16c1bf083a24163))
+* **clients:** update client endpoints as of 2026-02-16 ([c3afa91](https://github.com/aws/aws-sdk-js-v3/commit/c3afa9115eb9f0391e272dacfff8e3ed636b5230))
+
+
+
+
+
 # [3.990.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.989.0...v3.990.0) (2026-02-13)
 
 
