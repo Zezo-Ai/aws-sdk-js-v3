@@ -37,7 +37,7 @@ export interface RotateKeyOnDemandCommandOutput extends RotateKeyOnDemandRespons
  *       2024, and you perform an on-demand rotation on April 10, 2024, the key will automatically
  *       rotate, as scheduled, on April 14, 2024 and every 730 days thereafter.</p>
  *          <note>
- *             <p>You can perform on-demand key rotation a <b>maximum of 10
+ *             <p>You can perform on-demand key rotation a <b>maximum of 25
  *           times</b> per KMS key. You can use the KMS console to view the number of
  *         remaining on-demand rotations available for a KMS key.</p>
  *          </note>

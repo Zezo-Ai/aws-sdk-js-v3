@@ -94,6 +94,7 @@ import {
   DisconnectCustomKeyStoreCommand,
   DisconnectCustomKeyStoreRequest$,
   DisconnectCustomKeyStoreResponse$,
+  DryRunModifierType,
   DryRunOperationException,
   DryRunOperationException$,
   EnableKey$,
@@ -571,6 +572,7 @@ assert(typeof CustomerMasterKeySpec === "object");
 assert(typeof CustomKeyStoreType === "object");
 assert(typeof DataKeyPairSpec === "object");
 assert(typeof DataKeySpec === "object");
+assert(typeof DryRunModifierType === "object");
 assert(typeof EncryptionAlgorithmSpec === "object");
 assert(typeof ExpirationModelType === "object");
 assert(typeof GrantOperation === "object");

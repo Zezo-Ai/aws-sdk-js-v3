@@ -366,6 +366,7 @@ export interface KMS {
   /**
    * @see {@link DecryptCommand}
    */
+  decrypt(): Promise<DecryptCommandOutput>;
   decrypt(
     args: DecryptCommandInput,
     options?: __HttpHandlerOptions

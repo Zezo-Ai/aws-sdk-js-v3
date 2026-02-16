@@ -358,6 +358,18 @@ export type DataKeySpec = (typeof DataKeySpec)[keyof typeof DataKeySpec];
  * @public
  * @enum
  */
+export const DryRunModifierType = {
+  IGNORE_CIPHERTEXT: "IGNORE_CIPHERTEXT",
+} as const;
+/**
+ * @public
+ */
+export type DryRunModifierType = (typeof DryRunModifierType)[keyof typeof DryRunModifierType];
+
+/**
+ * @public
+ * @enum
+ */
 export const KeyEncryptionMechanism = {
   RSAES_OAEP_SHA_256: "RSAES_OAEP_SHA_256",
 } as const;

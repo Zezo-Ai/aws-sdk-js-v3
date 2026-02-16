@@ -93,7 +93,6 @@ export interface CreateKeyCommandOutput extends CreateKeyResponse, __MetadataBea
  *                <p> </p>
  *             </dd>
  *             <dt>Multi-Region primary keys</dt>
- *             <dt>Imported key material</dt>
  *             <dd>
  *                <p>To create a multi-Region <i>primary key</i> in the local Amazon Web Services Region,
  *             use the <code>MultiRegion</code> parameter with a value of <code>True</code>. To create
@@ -111,6 +110,7 @@ export interface CreateKeyCommandOutput extends CreateKeyResponse, __MetadataBea
  *       it in a different Amazon Web Services Region without re-encrypting the data or making a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
  *                <p> </p>
  *             </dd>
+ *             <dt>Imported key material</dt>
  *             <dd>
  *                <p>To import your own key material into a KMS key, begin by creating a KMS key with no
  *             key material. To do this, use the <code>Origin</code> parameter of

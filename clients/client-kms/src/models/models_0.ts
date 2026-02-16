@@ -7,6 +7,7 @@ import {
   CustomKeyStoreType,
   DataKeyPairSpec,
   DataKeySpec,
+  DryRunModifierType,
   EncryptionAlgorithmSpec,
   ExpirationModelType,
   GrantOperation,
@@ -1669,9 +1670,10 @@ export interface RecipientInfo {
 export interface DecryptRequest {
   /**
    * <p>Ciphertext to be decrypted. The blob includes metadata.</p>
+   *          <p>This parameter is required in all cases except when <code>DryRun</code> is <code>true</code> and <code>DryRunModifiers</code> is set to <code>IGNORE_CIPHERTEXT</code>.</p>
    * @public
    */
-  CiphertextBlob: Uint8Array | undefined;
+  CiphertextBlob?: Uint8Array | undefined;
 
   /**
    * <p>Specifies the encryption context to use when decrypting the data.
@@ -1699,7 +1701,7 @@ export interface DecryptRequest {
    *       different KMS key, the <code>Decrypt</code> operation throws an
    *         <code>IncorrectKeyException</code>.</p>
    *          <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS
-   *       key. If you used a symmetric encryption KMS key, KMS can get the KMS key from metadata that
+   *       key or when <code>DryRun</code> is <code>true</code> and <code>DryRunModifiers</code> is set to <code>IGNORE_CIPHERTEXT</code>. If you used a symmetric encryption KMS key, KMS can get the KMS key from metadata that
    *       it adds to the symmetric ciphertext blob. However, it is always recommended as a best
    *       practice. This practice ensures that you use the KMS key that you intend.</p>
    *          <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
@@ -1761,6 +1763,17 @@ export interface DecryptRequest {
    * @public
    */
   DryRun?: boolean | undefined;
+
+  /**
+   * <p>Specifies the modifiers to apply to the dry run operation. <code>DryRunModifiers</code> is an optional parameter that only applies when <code>DryRun</code> is
+   *         set to <code>true</code>.</p>
+   *          <p>When set to <code>IGNORE_CIPHERTEXT</code>, KMS performs only authorization validation without ciphertext validation. This allows you to test permissions
+   *         without requiring a valid ciphertext blob.</p>
+   *          <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/testing-permissions.html">Testing your
+   *         permissions</a> in the <i>Key Management Service Developer Guide</i>.</p>
+   * @public
+   */
+  DryRunModifiers?: DryRunModifierType[] | undefined;
 }
 
 /**
@@ -4249,9 +4262,10 @@ export interface PutKeyPolicyRequest {
 export interface ReEncryptRequest {
   /**
    * <p>Ciphertext of the data to reencrypt.</p>
+   *          <p>This parameter is required in all cases except when <code>DryRun</code> is <code>true</code> and <code>DryRunModifiers</code> is set to <code>IGNORE_CIPHERTEXT</code>.</p>
    * @public
    */
-  CiphertextBlob: Uint8Array | undefined;
+  CiphertextBlob?: Uint8Array | undefined;
 
   /**
    * <p>Specifies the encryption context to use to decrypt the ciphertext. Enter the same
@@ -4272,8 +4286,9 @@ export interface ReEncryptRequest {
    *       different KMS key, the <code>ReEncrypt</code> operation throws an
    *         <code>IncorrectKeyException</code>.</p>
    *          <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS
-   *       key. If you used a symmetric encryption KMS key, KMS can get the KMS key from metadata that
-   *       it adds to the symmetric ciphertext blob. However, it is always recommended as a best
+   *       key or when <code>DryRun</code> is <code>true</code> and <code>DryRunModifiers</code> is set to
+   *       <code>IGNORE_CIPHERTEXT</code>. If you used a symmetric encryption KMS key, KMS can get the KMS key
+   *       from metadata that it adds to the symmetric ciphertext blob. However, it is always recommended as a best
    *       practice. This practice ensures that you use the KMS key that you intend.</p>
    *          <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
    *          <p>For example:</p>
@@ -4383,6 +4398,17 @@ export interface ReEncryptRequest {
    * @public
    */
   DryRun?: boolean | undefined;
+
+  /**
+   * <p>Specifies the modifiers to apply to the dry run operation. <code>DryRunModifiers</code> is an optional parameter that only applies when <code>DryRun</code> is
+   *         set to <code>true</code>.</p>
+   *          <p>When set to <code>IGNORE_CIPHERTEXT</code>, KMS performs only authorization validation without ciphertext validation. This allows you to test permissions
+   *         without requiring a valid ciphertext blob.</p>
+   *          <p>To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/testing-permissions.html">Testing your
+   *         permissions</a> in the <i>Key Management Service Developer Guide</i>.</p>
+   * @public
+   */
+  DryRunModifiers?: DryRunModifierType[] | undefined;
 }
 
 /**

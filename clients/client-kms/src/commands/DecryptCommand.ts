@@ -133,7 +133,7 @@ export interface DecryptCommandOutput extends DecryptResponse, __MetadataBearer 
  * const config = {}; // type is KMSClientConfig
  * const client = new KMSClient(config);
  * const input = { // DecryptRequest
- *   CiphertextBlob: new Uint8Array(), // e.g. Buffer.from("") or new TextEncoder().encode("")   // required
+ *   CiphertextBlob: new Uint8Array(), // e.g. Buffer.from("") or new TextEncoder().encode("")
  *   EncryptionContext: { // EncryptionContextType
  *     "<keys>": "STRING_VALUE",
  *   },
@@ -147,6 +147,9 @@ export interface DecryptCommandOutput extends DecryptResponse, __MetadataBearer 
  *     AttestationDocument: new Uint8Array(), // e.g. Buffer.from("") or new TextEncoder().encode("")
  *   },
  *   DryRun: true || false,
+ *   DryRunModifiers: [ // DryRunModifierList
+ *     "IGNORE_CIPHERTEXT",
+ *   ],
  * };
  * const command = new DecryptCommand(input);
  * const response = await client.send(command);

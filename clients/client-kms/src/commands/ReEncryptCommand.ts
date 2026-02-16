@@ -131,7 +131,7 @@ export interface ReEncryptCommandOutput extends ReEncryptResponse, __MetadataBea
  * const config = {}; // type is KMSClientConfig
  * const client = new KMSClient(config);
  * const input = { // ReEncryptRequest
- *   CiphertextBlob: new Uint8Array(), // e.g. Buffer.from("") or new TextEncoder().encode("")   // required
+ *   CiphertextBlob: new Uint8Array(), // e.g. Buffer.from("") or new TextEncoder().encode("")
  *   SourceEncryptionContext: { // EncryptionContextType
  *     "<keys>": "STRING_VALUE",
  *   },
@@ -146,6 +146,9 @@ export interface ReEncryptCommandOutput extends ReEncryptResponse, __MetadataBea
  *     "STRING_VALUE",
  *   ],
  *   DryRun: true || false,
+ *   DryRunModifiers: [ // DryRunModifierList
+ *     "IGNORE_CIPHERTEXT",
+ *   ],
  * };
  * const command = new ReEncryptCommand(input);
  * const response = await client.send(command);

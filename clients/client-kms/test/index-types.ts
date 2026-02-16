@@ -168,6 +168,7 @@ export type {
   CustomKeyStoreType,
   DataKeyPairSpec,
   DataKeySpec,
+  DryRunModifierType,
   EncryptionAlgorithmSpec,
   ExpirationModelType,
   GrantOperation,

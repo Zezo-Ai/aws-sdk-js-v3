@@ -81,6 +81,7 @@ const _DKRi = "DisableKeyRequest";
 const _DKRis = "DisableKeyRotation";
 const _DKi = "DisableKey";
 const _DR = "DryRun";
+const _DRM = "DryRunModifiers";
 const _DROE = "DryRunOperationException";
 const _DRe = "DecryptRequest";
 const _DRec = "DecryptResponse";
@@ -801,8 +802,8 @@ export var CustomKeyStoresListEntry$: StaticStructureSchema = [3, n0, _CKSLE,
 ];
 export var DecryptRequest$: StaticStructureSchema = [3, n0, _DRe,
   0,
-  [_CB, _EC, _GT, _KI, _EA, _R, _DR],
-  [21, 128 | 0, 64 | 0, 0, 0, () => RecipientInfo$, 2], 1
+  [_CB, _EC, _GT, _KI, _EA, _R, _DR, _DRM],
+  [21, 128 | 0, 64 | 0, 0, 0, () => RecipientInfo$, 2, 64 | 0]
 ];
 export var DecryptResponse$: StaticStructureSchema = [3, n0, _DRec,
   0,
@@ -1121,8 +1122,8 @@ export var RecipientInfo$: StaticStructureSchema = [3, n0, _RI,
 ];
 export var ReEncryptRequest$: StaticStructureSchema = [3, n0, _RER,
   0,
-  [_CB, _DKI, _SEC, _SKI, _DEC, _SEA, _DEA, _GT, _DR],
-  [21, 0, 128 | 0, 0, 128 | 0, 0, 0, 64 | 0, 2], 2
+  [_DKI, _CB, _SEC, _SKI, _DEC, _SEA, _DEA, _GT, _DR, _DRM],
+  [0, 21, 128 | 0, 0, 128 | 0, 0, 0, 64 | 0, 2, 64 | 0], 1
 ];
 export var ReEncryptResponse$: StaticStructureSchema = [3, n0, _RERe,
   0,
@@ -1267,6 +1268,7 @@ var CustomKeyStoresList: StaticListSchema = [1, n0, _CKSL,
   0, [() => CustomKeyStoresListEntry$,
     0]
 ];
+var DryRunModifierList = 64 | 0;
 var EncryptionAlgorithmSpecList = 64 | 0;
 var GrantList: StaticListSchema = [1, n0, _GL,
   0, () => GrantListEntry$
