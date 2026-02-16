@@ -235,6 +235,7 @@ import {
   ListVpcConnectionsResponse$,
   LoggingInfo$,
   MutableClusterInfo$,
+  NetworkType,
   NodeExporter$,
   NodeExporterInfo$,
   NodeInfo$,
@@ -296,6 +297,7 @@ import {
   Scram$,
   Serverless$,
   ServerlessClientAuthentication$,
+  ServerlessConnectivityInfo$,
   ServerlessRequest$,
   ServerlessSasl$,
   ServiceUnavailableException,
@@ -672,6 +674,7 @@ assert(typeof Sasl$ === "object");
 assert(typeof Scram$ === "object");
 assert(typeof Serverless$ === "object");
 assert(typeof ServerlessClientAuthentication$ === "object");
+assert(typeof ServerlessConnectivityInfo$ === "object");
 assert(typeof ServerlessRequest$ === "object");
 assert(typeof ServerlessSasl$ === "object");
 assert(typeof StateInfo$ === "object");
@@ -732,6 +735,7 @@ assert(typeof ConfigurationState === "object");
 assert(typeof CustomerActionStatus === "object");
 assert(typeof EnhancedMonitoring === "object");
 assert(typeof KafkaVersionStatus === "object");
+assert(typeof NetworkType === "object");
 assert(typeof NodeType === "object");
 assert(typeof RebalancingStatus === "object");
 assert(typeof ReplicationStartingPositionType === "object");

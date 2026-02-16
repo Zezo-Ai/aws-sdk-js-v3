@@ -57,6 +57,7 @@ export interface UpdateConnectivityCommandOutput extends UpdateConnectivityRespo
  *         },
  *       },
  *     },
+ *     NetworkType: "IPV4" || "DUAL",
  *   },
  *   CurrentVersion: "STRING_VALUE", // required
  * };

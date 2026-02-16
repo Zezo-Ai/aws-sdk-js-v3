@@ -8,6 +8,7 @@ import {
   CustomerActionStatus,
   EnhancedMonitoring,
   KafkaVersionStatus,
+  NetworkType,
   NodeType,
   RebalancingStatus,
   ReplicationStartingPositionType,
@@ -210,6 +211,12 @@ export interface ConnectivityInfo {
    * @public
    */
   VpcConnectivity?: VpcConnectivity | undefined;
+
+  /**
+   * <p>The network type of the cluster, which is IPv4 or DUAL. The DUAL network type uses both IPv4 and IPv6 addresses for your cluster and its resources.</p><p>By default, a cluster uses the IPv4 network type.</p>
+   * @public
+   */
+  NetworkType?: NetworkType | undefined;
 }
 
 /**
@@ -683,6 +690,18 @@ export interface ServerlessClientAuthentication {
 }
 
 /**
+ * <p>Describes the cluster's connectivity information, such as its network type, which is IPv4 or DUAL.</p>
+ * @public
+ */
+export interface ServerlessConnectivityInfo {
+  /**
+   * <p>The network type of the cluster, which is IPv4 or DUAL. The DUAL network type uses both IPv4 and IPv6 addresses for your cluster and its resources.</p><p>By default, a cluster uses the IPv4 network type.</p>
+   * @public
+   */
+  NetworkType?: NetworkType | undefined;
+}
+
+/**
  * <p>The configuration of the Amazon VPCs for the cluster.</p>
  * @public
  */
@@ -716,6 +735,12 @@ export interface Serverless {
    * @public
    */
   ClientAuthentication?: ServerlessClientAuthentication | undefined;
+
+  /**
+   * <p>Describes the cluster's connectivity information, such as its network type, which is IPv4 or DUAL.</p>
+   * @public
+   */
+  ConnectivityInfo?: ServerlessConnectivityInfo | undefined;
 }
 
 /**
@@ -2168,6 +2193,18 @@ export interface VpcConnectionInfoServerless {
  */
 export interface ClusterOperationV2Serverless {
   /**
+   * <p>Describes the cluster's attributes before any updates are applied. For example, networkType, which can be either IPv4 or DUAL.</p>
+   * @public
+   */
+  SourceClusterInfo?: ServerlessConnectivityInfo | undefined;
+
+  /**
+   * <p>Describes the cluster's attributes after any updates are applied. For example, networkType, which can be either IPv4 or DUAL.</p>
+   * @public
+   */
+  TargetClusterInfo?: ServerlessConnectivityInfo | undefined;
+
+  /**
    * <p>Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.</p>
    * @public
    */
@@ -3542,6 +3579,30 @@ export interface GetBootstrapBrokersResponse {
    * @public
    */
   BootstrapBrokerStringVpcConnectivitySaslIam?: string | undefined;
+
+  /**
+   * <p>A string that contains one or more DNS names (or IP) and port pairs for IPv6 connectivity.</p>
+   * @public
+   */
+  BootstrapBrokerStringIpv6?: string | undefined;
+
+  /**
+   * <p>A string that contains one or more DNS names (or IP) and TLS port pairs for IPv6 connectivity.</p>
+   * @public
+   */
+  BootstrapBrokerStringTlsIpv6?: string | undefined;
+
+  /**
+   * <p>A string that contains one or more DNS names (or IP) and SASL SCRAM port pairs for IPv6 connectivity.</p>
+   * @public
+   */
+  BootstrapBrokerStringSaslScramIpv6?: string | undefined;
+
+  /**
+   * <p>A string that contains one or more DNS names (or IP) and SASL IAM port pairs for IPv6 connectivity.</p>
+   * @public
+   */
+  BootstrapBrokerStringSaslIamIpv6?: string | undefined;
 }
 
 /**

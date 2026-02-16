@@ -95,6 +95,7 @@ export interface DescribeClusterV2CommandOutput extends DescribeClusterV2Respons
  * //               },
  * //             },
  * //           },
+ * //           NetworkType: "IPV4" || "DUAL",
  * //         },
  * //         ZoneIds: [
  * //           "STRING_VALUE",
@@ -185,6 +186,9 @@ export interface DescribeClusterV2CommandOutput extends DescribeClusterV2Respons
  * //             Enabled: true || false,
  * //           },
  * //         },
+ * //       },
+ * //       ConnectivityInfo: { // ServerlessConnectivityInfo
+ * //         NetworkType: "IPV4" || "DUAL",
  * //       },
  * //     },
  * //   },

@@ -74,6 +74,7 @@ export interface CreateClusterCommandOutput extends CreateClusterResponse, __Met
  *           },
  *         },
  *       },
+ *       NetworkType: "IPV4" || "DUAL",
  *     },
  *     ZoneIds: [
  *       "STRING_VALUE",

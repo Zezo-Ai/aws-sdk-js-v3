@@ -158,6 +158,7 @@ export interface ListClusterOperationsCommandOutput extends ListClusterOperation
  * //               },
  * //             },
  * //           },
+ * //           NetworkType: "IPV4" || "DUAL",
  * //         },
  * //         StorageMode: "LOCAL" || "TIERED",
  * //         BrokerCountUpdateInfo: { // BrokerCountUpdateInfo
@@ -265,6 +266,7 @@ export interface ListClusterOperationsCommandOutput extends ListClusterOperation
  * //               },
  * //             },
  * //           },
+ * //           NetworkType: "IPV4" || "DUAL",
  * //         },
  * //         StorageMode: "LOCAL" || "TIERED",
  * //         BrokerCountUpdateInfo: {

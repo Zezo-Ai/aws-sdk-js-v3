@@ -84,6 +84,7 @@ export interface ListClustersCommandOutput extends ListClustersResponse, __Metad
  * //               },
  * //             },
  * //           },
+ * //           NetworkType: "IPV4" || "DUAL",
  * //         },
  * //         ZoneIds: [
  * //           "STRING_VALUE",

@@ -155,6 +155,7 @@ export interface DescribeClusterOperationCommandOutput extends DescribeClusterOp
  * //             },
  * //           },
  * //         },
+ * //         NetworkType: "IPV4" || "DUAL",
  * //       },
  * //       StorageMode: "LOCAL" || "TIERED",
  * //       BrokerCountUpdateInfo: { // BrokerCountUpdateInfo
@@ -262,6 +263,7 @@ export interface DescribeClusterOperationCommandOutput extends DescribeClusterOp
  * //             },
  * //           },
  * //         },
+ * //         NetworkType: "IPV4" || "DUAL",
  * //       },
  * //       StorageMode: "LOCAL" || "TIERED",
  * //       BrokerCountUpdateInfo: {

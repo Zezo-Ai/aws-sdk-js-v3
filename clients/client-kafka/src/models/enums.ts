@@ -47,6 +47,19 @@ export type BrokerAZDistribution = (typeof BrokerAZDistribution)[keyof typeof Br
  * @public
  * @enum
  */
+export const NetworkType = {
+  DUAL: "DUAL",
+  IPV4: "IPV4",
+} as const;
+/**
+ * @public
+ */
+export type NetworkType = (typeof NetworkType)[keyof typeof NetworkType];
+
+/**
+ * @public
+ * @enum
+ */
 export const CustomerActionStatus = {
   ACTION_RECOMMENDED: "ACTION_RECOMMENDED",
   CRITICAL_ACTION_REQUIRED: "CRITICAL_ACTION_REQUIRED",

@@ -99,6 +99,7 @@ export interface ListClustersV2CommandOutput extends ListClustersV2Response, __M
  * //                 },
  * //               },
  * //             },
+ * //             NetworkType: "IPV4" || "DUAL",
  * //           },
  * //           ZoneIds: [
  * //             "STRING_VALUE",
@@ -189,6 +190,9 @@ export interface ListClustersV2CommandOutput extends ListClustersV2Response, __M
  * //               Enabled: true || false,
  * //             },
  * //           },
+ * //         },
+ * //         ConnectivityInfo: { // ServerlessConnectivityInfo
+ * //           NetworkType: "IPV4" || "DUAL",
  * //         },
  * //       },
  * //     },

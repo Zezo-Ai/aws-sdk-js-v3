@@ -52,6 +52,10 @@ export interface GetBootstrapBrokersCommandOutput extends GetBootstrapBrokersRes
  * //   BootstrapBrokerStringVpcConnectivityTls: "STRING_VALUE",
  * //   BootstrapBrokerStringVpcConnectivitySaslScram: "STRING_VALUE",
  * //   BootstrapBrokerStringVpcConnectivitySaslIam: "STRING_VALUE",
+ * //   BootstrapBrokerStringIpv6: "STRING_VALUE",
+ * //   BootstrapBrokerStringTlsIpv6: "STRING_VALUE",
+ * //   BootstrapBrokerStringSaslScramIpv6: "STRING_VALUE",
+ * //   BootstrapBrokerStringSaslIamIpv6: "STRING_VALUE",
  * // };
  *
  * ```

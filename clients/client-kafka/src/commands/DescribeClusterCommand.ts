@@ -81,6 +81,7 @@ export interface DescribeClusterCommandOutput extends DescribeClusterResponse, _
  * //             },
  * //           },
  * //         },
+ * //         NetworkType: "IPV4" || "DUAL",
  * //       },
  * //       ZoneIds: [
  * //         "STRING_VALUE",

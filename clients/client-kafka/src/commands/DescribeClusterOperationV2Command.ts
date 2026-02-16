@@ -156,6 +156,7 @@ export interface DescribeClusterOperationV2CommandOutput extends DescribeCluster
  * //               },
  * //             },
  * //           },
+ * //           NetworkType: "IPV4" || "DUAL",
  * //         },
  * //         StorageMode: "LOCAL" || "TIERED",
  * //         BrokerCountUpdateInfo: { // BrokerCountUpdateInfo
@@ -263,6 +264,7 @@ export interface DescribeClusterOperationV2CommandOutput extends DescribeCluster
  * //               },
  * //             },
  * //           },
+ * //           NetworkType: "IPV4" || "DUAL",
  * //         },
  * //         StorageMode: "LOCAL" || "TIERED",
  * //         BrokerCountUpdateInfo: {
@@ -288,6 +290,12 @@ export interface DescribeClusterOperationV2CommandOutput extends DescribeCluster
  * //       },
  * //     },
  * //     Serverless: { // ClusterOperationV2Serverless
+ * //       SourceClusterInfo: { // ServerlessConnectivityInfo
+ * //         NetworkType: "IPV4" || "DUAL",
+ * //       },
+ * //       TargetClusterInfo: {
+ * //         NetworkType: "IPV4" || "DUAL",
+ * //       },
  * //       VpcConnectionInfo: { // VpcConnectionInfoServerless
  * //         CreationTime: new Date("TIMESTAMP"),
  * //         Owner: "STRING_VALUE",
