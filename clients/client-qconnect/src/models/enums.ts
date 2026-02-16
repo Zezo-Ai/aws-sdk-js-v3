@@ -598,6 +598,7 @@ export type Participant = (typeof Participant)[keyof typeof Participant];
  */
 export const MessageType = {
   TEXT: "TEXT",
+  TOOL_USE_RESULT: "TOOL_USE_RESULT",
 } as const;
 /**
  * @public
