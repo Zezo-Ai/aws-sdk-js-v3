@@ -28,6 +28,9 @@ export interface ListImageReferrersCommandOutput extends ListImageReferrersRespo
 
 /**
  * <p>Lists the artifacts associated with a specified subject image.</p>
+ *          <note>
+ *             <p>The IAM principal invoking this operation must have the <code>ecr:BatchGetImage</code> permission.</p>
+ *          </note>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
