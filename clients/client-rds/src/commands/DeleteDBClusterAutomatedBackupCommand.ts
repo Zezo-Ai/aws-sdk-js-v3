@@ -59,6 +59,7 @@ export interface DeleteDBClusterAutomatedBackupCommandOutput extends DeleteDBClu
  * //     IAMDatabaseAuthenticationEnabled: true || false,
  * //     ClusterCreateTime: new Date("TIMESTAMP"),
  * //     StorageEncrypted: true || false,
+ * //     StorageEncryptionType: "none" || "sse-kms" || "sse-rds",
  * //     AllocatedStorage: Number("int"),
  * //     EngineVersion: "STRING_VALUE",
  * //     DBClusterArn: "STRING_VALUE",

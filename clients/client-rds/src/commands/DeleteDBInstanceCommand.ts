@@ -184,6 +184,7 @@ export interface DeleteDBInstanceCommandOutput extends DeleteDBInstanceResult, _
  * //       },
  * //     ],
  * //     StorageType: "STRING_VALUE",
+ * //     StorageEncryptionType: "none" || "sse-kms" || "sse-rds",
  * //     TdeCredentialArn: "STRING_VALUE",
  * //     DbInstancePort: Number("int"),
  * //     DBClusterIdentifier: "STRING_VALUE",

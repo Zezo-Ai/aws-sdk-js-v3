@@ -104,6 +104,7 @@ export interface StartDBClusterCommandOutput extends StartDBClusterResult, __Met
  * //     ],
  * //     HostedZoneId: "STRING_VALUE",
  * //     StorageEncrypted: true || false,
+ * //     StorageEncryptionType: "none" || "sse-kms" || "sse-rds",
  * //     KmsKeyId: "STRING_VALUE",
  * //     DbClusterResourceId: "STRING_VALUE",
  * //     DBClusterArn: "STRING_VALUE",

@@ -117,6 +117,7 @@ export interface DescribeDBClustersCommandOutput extends DBClusterMessage, __Met
  * //       ],
  * //       HostedZoneId: "STRING_VALUE",
  * //       StorageEncrypted: true || false,
+ * //       StorageEncryptionType: "none" || "sse-kms" || "sse-rds",
  * //       KmsKeyId: "STRING_VALUE",
  * //       DbClusterResourceId: "STRING_VALUE",
  * //       DBClusterArn: "STRING_VALUE",

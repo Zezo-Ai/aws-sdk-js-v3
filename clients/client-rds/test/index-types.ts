@@ -519,6 +519,7 @@ export type {
   MasterUserAuthenticationType,
   ReplicaMode,
   SourceType,
+  StorageEncryptionType,
   TargetConnectionNetworkType,
   TargetHealthReason,
   TargetRole,

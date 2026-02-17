@@ -59,6 +59,20 @@ export type ExportSourceType = (typeof ExportSourceType)[keyof typeof ExportSour
  * @public
  * @enum
  */
+export const StorageEncryptionType = {
+  CMK: "sse-kms",
+  SSE: "sse-rds",
+  UNENCRYPTED: "none",
+} as const;
+/**
+ * @public
+ */
+export type StorageEncryptionType = (typeof StorageEncryptionType)[keyof typeof StorageEncryptionType];
+
+/**
+ * @public
+ * @enum
+ */
 export const ClusterScalabilityType = {
   LIMITLESS: "limitless",
   STANDARD: "standard",

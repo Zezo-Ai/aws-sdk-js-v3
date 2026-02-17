@@ -1061,6 +1061,7 @@ import {
   StopDBInstanceCommand,
   StopDBInstanceMessage$,
   StopDBInstanceResult$,
+  StorageEncryptionType,
   StorageQuotaExceededFault,
   StorageQuotaExceededFault$,
   StorageTypeNotAvailableFault,
@@ -1932,6 +1933,7 @@ assert(typeof LocalWriteForwardingStatus === "object");
 assert(typeof MasterUserAuthenticationType === "object");
 assert(typeof ReplicaMode === "object");
 assert(typeof SourceType === "object");
+assert(typeof StorageEncryptionType === "object");
 assert(typeof TargetConnectionNetworkType === "object");
 assert(typeof TargetHealthReason === "object");
 assert(typeof TargetRole === "object");

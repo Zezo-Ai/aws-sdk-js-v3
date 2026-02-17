@@ -26,6 +26,7 @@ import {
   MasterUserAuthenticationType,
   ReplicaMode,
   SourceType,
+  StorageEncryptionType,
   TargetConnectionNetworkType,
   TargetHealthReason,
   TargetRole,
@@ -981,6 +982,12 @@ export interface DBClusterSnapshot {
   StorageEncrypted?: boolean | undefined;
 
   /**
+   * <p>The type of encryption used to protect data at rest in the DB cluster snapshot. Possible values:</p> <ul> <li> <p> <code>none</code> - The DB cluster snapshot is not encrypted.</p> </li> <li> <p> <code>sse-rds</code> - The DB cluster snapshot is encrypted using an Amazon Web Services owned KMS key.</p> </li> <li> <p> <code>sse-kms</code> - The DB cluster snapshot is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p> </li> </ul>
+   * @public
+   */
+  StorageEncryptionType?: StorageEncryptionType | undefined;
+
+  /**
    * <p>The number of days for which automatic DB snapshots are retained.</p>
    * @public
    */
@@ -1361,6 +1368,12 @@ export interface DBSnapshot {
    * @public
    */
   Encrypted?: boolean | undefined;
+
+  /**
+   * <p>The type of encryption used to protect data at rest in the DB snapshot. Possible values:</p> <ul> <li> <p> <code>none</code> - The DB snapshot is not encrypted.</p> </li> <li> <p> <code>sse-rds</code> - The DB snapshot is encrypted using an Amazon Web Services owned KMS key.</p> </li> <li> <p> <code>sse-kms</code> - The DB snapshot is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p> </li> </ul>
+   * @public
+   */
+  StorageEncryptionType?: StorageEncryptionType | undefined;
 
   /**
    * <p>The number of days for which automatic DB snapshots are retained.</p>
@@ -3416,6 +3429,12 @@ export interface DBCluster {
   StorageEncrypted?: boolean | undefined;
 
   /**
+   * <p>The type of encryption used to protect data at rest in the DB cluster. Possible values:</p> <ul> <li> <p> <code>none</code> - The DB cluster is not encrypted.</p> </li> <li> <p> <code>sse-rds</code> - The DB cluster is encrypted using an Amazon Web Services owned KMS key.</p> </li> <li> <p> <code>sse-kms</code> - The DB cluster is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p> </li> </ul>
+   * @public
+   */
+  StorageEncryptionType?: StorageEncryptionType | undefined;
+
+  /**
    * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
    * @public
    */
@@ -4940,6 +4959,12 @@ export interface DBInstance {
    * @public
    */
   StorageType?: string | undefined;
+
+  /**
+   * <p>The type of encryption used to protect data at rest in the DB instance. Possible values:</p> <ul> <li> <p> <code>none</code> - The DB instance is not encrypted.</p> </li> <li> <p> <code>sse-rds</code> - The DB instance is encrypted using an Amazon Web Services owned KMS key.</p> </li> <li> <p> <code>sse-kms</code> - The DB instance is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p> </li> </ul>
+   * @public
+   */
+  StorageEncryptionType?: StorageEncryptionType | undefined;
 
   /**
    * <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
@@ -6525,6 +6550,12 @@ export interface GlobalCluster {
   StorageEncrypted?: boolean | undefined;
 
   /**
+   * <p>The type of encryption used to protect data at rest in the global database cluster. Possible values:</p> <ul> <li> <p> <code>none</code> - The global database cluster is not encrypted.</p> </li> <li> <p> <code>sse-rds</code> - The global database cluster is encrypted using an Amazon Web Services owned KMS key.</p> </li> <li> <p> <code>sse-kms</code> - The global database cluster is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p> </li> </ul>
+   * @public
+   */
+  StorageEncryptionType?: StorageEncryptionType | undefined;
+
+  /**
    * <p>The deletion protection setting for the new global database cluster.</p>
    * @public
    */
@@ -7139,6 +7170,12 @@ export interface DBClusterAutomatedBackup {
   StorageEncrypted?: boolean | undefined;
 
   /**
+   * <p>The type of encryption used to protect data at rest in the automated backup. Possible values:</p> <ul> <li> <p> <code>none</code> - The automated backup is not encrypted.</p> </li> <li> <p> <code>sse-rds</code> - The automated backup is encrypted using an Amazon Web Services owned KMS key.</p> </li> <li> <p> <code>sse-kms</code> - The automated backup is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p> </li> </ul>
+   * @public
+   */
+  StorageEncryptionType?: StorageEncryptionType | undefined;
+
+  /**
    * <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
    * @public
    */
@@ -7463,6 +7500,12 @@ export interface DBInstanceAutomatedBackup {
    * @public
    */
   Encrypted?: boolean | undefined;
+
+  /**
+   * <p>The type of encryption used to protect data at rest in the automated backup. Possible values:</p> <ul> <li> <p> <code>none</code> - The automated backup is not encrypted.</p> </li> <li> <p> <code>sse-rds</code> - The automated backup is encrypted using an Amazon Web Services owned KMS key.</p> </li> <li> <p> <code>sse-kms</code> - The automated backup is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p> </li> </ul>
+   * @public
+   */
+  StorageEncryptionType?: StorageEncryptionType | undefined;
 
   /**
    * <p>The storage type associated with the automated backup.</p>

@@ -52,6 +52,7 @@ export interface DeleteGlobalClusterCommandOutput extends DeleteGlobalClusterRes
  * //     EngineLifecycleSupport: "STRING_VALUE",
  * //     DatabaseName: "STRING_VALUE",
  * //     StorageEncrypted: true || false,
+ * //     StorageEncryptionType: "none" || "sse-kms" || "sse-rds",
  * //     DeletionProtection: true || false,
  * //     GlobalClusterMembers: [ // GlobalClusterMemberList
  * //       { // GlobalClusterMember

@@ -1304,8 +1304,9 @@ const _SELL = "SupportedEngineLifecycleList";
 const _SELu = "SupportedEngineLifecycle";
 const _SEM = "SupportedEngineModes";
 const _SEMu = "SupportsEnhancedMonitoring";
-const _SET = "StartExportTask";
+const _SET = "StorageEncryptionType";
 const _SETM = "StartExportTaskMessage";
+const _SETt = "StartExportTask";
 const _SEV = "SourceEngineVersion";
 const _SEo = "SourceEngine";
 const _SFD = "SetForDelete";
@@ -2972,13 +2973,13 @@ export var CustomDBEngineVersionAMI$: StaticStructureSchema = [3, n0, _CDBEVAMI,
 ];
 export var DBCluster$: StaticStructureSchema = [3, n0, _DBC,
   0,
-  [_AS, _AZv, _BRP, _CSN, _DN, _DBCI, _DBCPG, _DBSGu, _St, _PP, _ERT, _End, _RE, _CE, _MAZ, _E, _EV, _LRT, _P, _MU, _DBCOGM, _PBW, _PMW, _URO, _RSI, _RRI, _SIt, _DBCM, _VSG, _HZI, _SE, _KKI, _DCRI, _DBCA, _AR, _IAMDAE, _CGI, _CCT, _EBT, _BW, _BCCR, _ECLEn, _Ca, _PMV, _EMn, _SCI, _RCCC, _DBCIC, _STt, _I, _ST, _IOONAMT, _PA, _AMVU, _DP, _HEE, _ASM, _ASS, _ASKKI, _ASKSN, _CTTS, _CAC, _DM, _TL, _GCI, _GWFS, _GWFR, _NT, _ART, _SVSC, _SVPV, _MIo, _MRA, _DIM, _PIE, _PIKMSKI, _PIRP, _DBSI, _MUS, _LWFS, _ABRPA, _LD, _CST, _CD, _ELS],
-  [1, [() => AvailabilityZones, 0], 1, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 64 | 0, 2, 0, 0, 4, 1, 0, [() => DBClusterOptionGroupMemberships, 0], 0, 0, 0, 0, [() => ReadReplicaIdentifierList, 0], [() => DBClusterStatusInfoList, 0], [() => DBClusterMemberList, 0], [() => VpcSecurityGroupMembershipList, 0], 0, 2, 0, 0, 0, [() => DBClusterRoles, 0], 2, 0, 4, 4, 1, 1, 64 | 0, 1, [() => ClusterPendingModifiedValues$, 0], 0, () => ScalingConfigurationInfo$, () => RdsCustomClusterConfiguration$, 0, 0, 1, 1, 4, 2, 2, 2, 2, 0, 0, 0, 0, 2, 2, [() => DomainMembershipList, 0], [() => TagList, 0], 0, 0, 2, 0, 4, () => ServerlessV2ScalingConfigurationInfo$, 0, 1, 0, 0, 2, 0, 1, 0, () => MasterUserSecret$, 0, 0, () => LimitlessDatabase$, 0, () => CertificateDetails$, 0]
+  [_AS, _AZv, _BRP, _CSN, _DN, _DBCI, _DBCPG, _DBSGu, _St, _PP, _ERT, _End, _RE, _CE, _MAZ, _E, _EV, _LRT, _P, _MU, _DBCOGM, _PBW, _PMW, _URO, _RSI, _RRI, _SIt, _DBCM, _VSG, _HZI, _SE, _SET, _KKI, _DCRI, _DBCA, _AR, _IAMDAE, _CGI, _CCT, _EBT, _BW, _BCCR, _ECLEn, _Ca, _PMV, _EMn, _SCI, _RCCC, _DBCIC, _STt, _I, _ST, _IOONAMT, _PA, _AMVU, _DP, _HEE, _ASM, _ASS, _ASKKI, _ASKSN, _CTTS, _CAC, _DM, _TL, _GCI, _GWFS, _GWFR, _NT, _ART, _SVSC, _SVPV, _MIo, _MRA, _DIM, _PIE, _PIKMSKI, _PIRP, _DBSI, _MUS, _LWFS, _ABRPA, _LD, _CST, _CD, _ELS],
+  [1, [() => AvailabilityZones, 0], 1, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 64 | 0, 2, 0, 0, 4, 1, 0, [() => DBClusterOptionGroupMemberships, 0], 0, 0, 0, 0, [() => ReadReplicaIdentifierList, 0], [() => DBClusterStatusInfoList, 0], [() => DBClusterMemberList, 0], [() => VpcSecurityGroupMembershipList, 0], 0, 2, 0, 0, 0, 0, [() => DBClusterRoles, 0], 2, 0, 4, 4, 1, 1, 64 | 0, 1, [() => ClusterPendingModifiedValues$, 0], 0, () => ScalingConfigurationInfo$, () => RdsCustomClusterConfiguration$, 0, 0, 1, 1, 4, 2, 2, 2, 2, 0, 0, 0, 0, 2, 2, [() => DomainMembershipList, 0], [() => TagList, 0], 0, 0, 2, 0, 4, () => ServerlessV2ScalingConfigurationInfo$, 0, 1, 0, 0, 2, 0, 1, 0, () => MasterUserSecret$, 0, 0, () => LimitlessDatabase$, 0, () => CertificateDetails$, 0]
 ];
 export var DBClusterAutomatedBackup$: StaticStructureSchema = [3, n0, _DBCAB,
   0,
-  [_E, _VI, _DBCABA, _DBCI, _RW, _MU, _DCRI, _R, _LM, _St, _IAMDAE, _CCT, _SE, _AS, _EV, _DBCA, _BRP, _PBW, _EMn, _AZv, _P, _KKI, _STt, _I, _ST, _ABRPA, _TL],
-  [0, 0, 0, 0, () => RestoreWindow$, 0, 0, 0, 0, 0, 2, 4, 2, 1, 0, 0, 1, 0, 0, [() => AvailabilityZones, 0], 1, 0, 0, 1, 1, 0, [() => TagList, 0]]
+  [_E, _VI, _DBCABA, _DBCI, _RW, _MU, _DCRI, _R, _LM, _St, _IAMDAE, _CCT, _SE, _SET, _AS, _EV, _DBCA, _BRP, _PBW, _EMn, _AZv, _P, _KKI, _STt, _I, _ST, _ABRPA, _TL],
+  [0, 0, 0, 0, () => RestoreWindow$, 0, 0, 0, 0, 0, 2, 4, 2, 0, 1, 0, 0, 1, 0, 0, [() => AvailabilityZones, 0], 1, 0, 0, 1, 1, 0, [() => TagList, 0]]
 ];
 export var DBClusterAutomatedBackupMessage$: StaticStructureSchema = [3, n0, _DBCABM,
   0,
@@ -3052,8 +3053,8 @@ export var DBClusterRole$: StaticStructureSchema = [3, n0, _DBCR,
 ];
 export var DBClusterSnapshot$: StaticStructureSchema = [3, n0, _DBCS,
   0,
-  [_AZv, _DBCSI, _DBCI, _SCT, _E, _EMn, _AS, _St, _P, _VI, _CCT, _MU, _EV, _LM, _STna, _PP, _SE, _BRP, _PBW, _KKI, _DBCSA, _SDBCSA, _IAMDAE, _TL, _STt, _ST, _DCRI, _DBSI],
-  [[() => AvailabilityZones, 0], 0, 0, 4, 0, 0, 1, 0, 1, 0, 4, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 2, [() => TagList, 0], 0, 1, 0, 0]
+  [_AZv, _DBCSI, _DBCI, _SCT, _E, _EMn, _AS, _St, _P, _VI, _CCT, _MU, _EV, _LM, _STna, _PP, _SE, _SET, _BRP, _PBW, _KKI, _DBCSA, _SDBCSA, _IAMDAE, _TL, _STt, _ST, _DCRI, _DBSI],
+  [[() => AvailabilityZones, 0], 0, 0, 4, 0, 0, 1, 0, 1, 0, 4, 0, 0, 0, 0, 1, 2, 0, 1, 0, 0, 0, 0, 2, [() => TagList, 0], 0, 1, 0, 0]
 ];
 export var DBClusterSnapshotAttribute$: StaticStructureSchema = [3, n0, _DBCSAl,
   0,
@@ -3087,13 +3088,13 @@ export var DBEngineVersionMessage$: StaticStructureSchema = [3, n0, _DBEVM,
 ];
 export var DBInstance$: StaticStructureSchema = [3, n0, _DBI,
   0,
-  [_DBII, _DBIC, _E, _DBIS, _MU, _DBN, _End, _AS, _ICTn, _PBW, _BRP, _DBSGe, _VSG, _DBPGa, _AZ, _DBSGu, _PMW, _URO, _PMV, _LRT, _MAZ, _EV, _AMVU, _RRSDBII, _RRDBII, _RRDBCI, _RM, _LM, _I, _ST, _OGM, _CSN, _NCSN, _SAZe, _PA, _SIt, _STt, _TCA, _DIP, _DBCI, _SE, _KKI, _DRI, _CACI, _DM, _CTTS, _MIo, _EMRA, _MRA, _PT, _DBIA, _Ti, _IAMDAE, _DIM, _PIE, _PIKMSKI, _PIRP, _ECLEn, _PF, _DP, _AR, _LE, _MAS, _TL, _AM, _RFAMT, _COIE, _NT, _ASS, _ASKKI, _ASKSN, _ASM, _ASENAFI, _ABRPA, _DBIABR, _BTa, _ART, _CIIP, _ASPS, _CD, _DBSI, _MUS, _RRSDBCI, _PP, _MT, _DLV, _ISCUA, _ELS, _ASVd, _SVS],
-  [0, 0, 0, 0, 0, 0, () => Endpoint$, 1, 4, 0, 1, [() => DBSecurityGroupMembershipList, 0], [() => VpcSecurityGroupMembershipList, 0], [() => DBParameterGroupStatusList, 0], 0, [() => DBSubnetGroup$, 0], 0, 0, [() => PendingModifiedValues$, 0], 4, 2, 0, 2, 0, [() => ReadReplicaDBInstanceIdentifierList, 0], [() => ReadReplicaDBClusterIdentifierList, 0], 0, 0, 1, 1, [() => OptionGroupMembershipList, 0], 0, 0, 0, 2, [() => DBInstanceStatusInfoList, 0], 0, 0, 1, 0, 2, 0, 0, 0, [() => DomainMembershipList, 0], 2, 1, 0, 0, 1, 0, 0, 2, 0, 2, 0, 1, 64 | 0, [() => ProcessorFeatureList, 0], 2, [() => DBInstanceRoles, 0], () => Endpoint$, 1, [() => TagList, 0], 0, 4, 2, 0, 0, 0, 0, 0, 2, 0, [() => DBInstanceAutomatedBackupsReplicationList, 0], 0, 4, 0, 0, () => CertificateDetails$, 0, () => MasterUserSecret$, 0, 0, 2, 2, 2, 0, () => AdditionalStorageVolumesOutputList, 0]
+  [_DBII, _DBIC, _E, _DBIS, _MU, _DBN, _End, _AS, _ICTn, _PBW, _BRP, _DBSGe, _VSG, _DBPGa, _AZ, _DBSGu, _PMW, _URO, _PMV, _LRT, _MAZ, _EV, _AMVU, _RRSDBII, _RRDBII, _RRDBCI, _RM, _LM, _I, _ST, _OGM, _CSN, _NCSN, _SAZe, _PA, _SIt, _STt, _SET, _TCA, _DIP, _DBCI, _SE, _KKI, _DRI, _CACI, _DM, _CTTS, _MIo, _EMRA, _MRA, _PT, _DBIA, _Ti, _IAMDAE, _DIM, _PIE, _PIKMSKI, _PIRP, _ECLEn, _PF, _DP, _AR, _LE, _MAS, _TL, _AM, _RFAMT, _COIE, _NT, _ASS, _ASKKI, _ASKSN, _ASM, _ASENAFI, _ABRPA, _DBIABR, _BTa, _ART, _CIIP, _ASPS, _CD, _DBSI, _MUS, _RRSDBCI, _PP, _MT, _DLV, _ISCUA, _ELS, _ASVd, _SVS],
+  [0, 0, 0, 0, 0, 0, () => Endpoint$, 1, 4, 0, 1, [() => DBSecurityGroupMembershipList, 0], [() => VpcSecurityGroupMembershipList, 0], [() => DBParameterGroupStatusList, 0], 0, [() => DBSubnetGroup$, 0], 0, 0, [() => PendingModifiedValues$, 0], 4, 2, 0, 2, 0, [() => ReadReplicaDBInstanceIdentifierList, 0], [() => ReadReplicaDBClusterIdentifierList, 0], 0, 0, 1, 1, [() => OptionGroupMembershipList, 0], 0, 0, 0, 2, [() => DBInstanceStatusInfoList, 0], 0, 0, 0, 1, 0, 2, 0, 0, 0, [() => DomainMembershipList, 0], 2, 1, 0, 0, 1, 0, 0, 2, 0, 2, 0, 1, 64 | 0, [() => ProcessorFeatureList, 0], 2, [() => DBInstanceRoles, 0], () => Endpoint$, 1, [() => TagList, 0], 0, 4, 2, 0, 0, 0, 0, 0, 2, 0, [() => DBInstanceAutomatedBackupsReplicationList, 0], 0, 4, 0, 0, () => CertificateDetails$, 0, () => MasterUserSecret$, 0, 0, 2, 2, 2, 0, () => AdditionalStorageVolumesOutputList, 0]
 ];
 export var DBInstanceAutomatedBackup$: StaticStructureSchema = [3, n0, _DBIAB,
   0,
-  [_DBIA, _DRI, _R, _DBII, _RW, _AS, _St, _P, _AZ, _VI, _ICTn, _MU, _E, _EV, _LM, _I, _ST, _OGN, _TCA, _Enc, _STt, _KKI, _Ti, _IAMDAE, _BRP, _PBW, _DBIABA, _DBIABR, _BTa, _MT, _ABRPA, _TL, _DLV, _ASVd],
-  [0, 0, 0, 0, () => RestoreWindow$, 1, 0, 1, 0, 0, 4, 0, 0, 0, 0, 1, 1, 0, 0, 2, 0, 0, 0, 2, 1, 0, 0, [() => DBInstanceAutomatedBackupsReplicationList, 0], 0, 2, 0, [() => TagList, 0], 2, () => AdditionalStorageVolumesList]
+  [_DBIA, _DRI, _R, _DBII, _RW, _AS, _St, _P, _AZ, _VI, _ICTn, _MU, _E, _EV, _LM, _I, _ST, _OGN, _TCA, _Enc, _SET, _STt, _KKI, _Ti, _IAMDAE, _BRP, _PBW, _DBIABA, _DBIABR, _BTa, _MT, _ABRPA, _TL, _DLV, _ASVd],
+  [0, 0, 0, 0, () => RestoreWindow$, 1, 0, 1, 0, 0, 4, 0, 0, 0, 0, 1, 1, 0, 0, 2, 0, 0, 0, 0, 2, 1, 0, 0, [() => DBInstanceAutomatedBackupsReplicationList, 0], 0, 2, 0, [() => TagList, 0], 2, () => AdditionalStorageVolumesList]
 ];
 export var DBInstanceAutomatedBackupMessage$: StaticStructureSchema = [3, n0, _DBIABM,
   0,
@@ -3207,8 +3208,8 @@ export var DBShardGroup$: StaticStructureSchema = [3, n0, _DBSGh,
 ];
 export var DBSnapshot$: StaticStructureSchema = [3, n0, _DBS,
   0,
-  [_DBSIn, _DBII, _SCT, _E, _AS, _St, _P, _AZ, _VI, _ICTn, _MU, _EV, _LM, _STna, _I, _ST, _OGN, _PP, _SR, _SDBSI, _STt, _TCA, _Enc, _BRP, _PBW, _KKI, _DBSA, _Ti, _IAMDAE, _PF, _DRI, _TL, _STn, _OSCT, _SDT, _DBSI, _MT, _DLV, _ASVd, _SAZ],
-  [0, 0, 4, 0, 1, 0, 1, 0, 0, 4, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 2, [() => ProcessorFeatureList, 0], 0, [() => TagList, 0], 0, 4, 4, 0, 2, 2, () => AdditionalStorageVolumesList, 0]
+  [_DBSIn, _DBII, _SCT, _E, _AS, _St, _P, _AZ, _VI, _ICTn, _MU, _EV, _LM, _STna, _I, _ST, _OGN, _PP, _SR, _SDBSI, _STt, _TCA, _Enc, _SET, _BRP, _PBW, _KKI, _DBSA, _Ti, _IAMDAE, _PF, _DRI, _TL, _STn, _OSCT, _SDT, _DBSI, _MT, _DLV, _ASVd, _SAZ],
+  [0, 0, 4, 0, 1, 0, 1, 0, 0, 4, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 2, [() => ProcessorFeatureList, 0], 0, [() => TagList, 0], 0, 4, 4, 0, 2, 2, () => AdditionalStorageVolumesList, 0]
 ];
 export var DBSnapshotAttribute$: StaticStructureSchema = [3, n0, _DBSAn,
   0,
@@ -3857,8 +3858,8 @@ export var Filter$: StaticStructureSchema = [3, n0, _Fil,
 ];
 export var GlobalCluster$: StaticStructureSchema = [3, n0, _GC,
   0,
-  [_GCI, _GCRI, _GCA, _St, _E, _EV, _ELS, _DN, _SE, _DP, _GCM, _End, _FSa, _TL],
-  [0, 0, 0, 0, 0, 0, 0, 0, 2, 2, [() => GlobalClusterMemberList, 0], 0, () => FailoverState$, [() => TagList, 0]]
+  [_GCI, _GCRI, _GCA, _St, _E, _EV, _ELS, _DN, _SE, _SET, _DP, _GCM, _End, _FSa, _TL],
+  [0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, [() => GlobalClusterMemberList, 0], 0, () => FailoverState$, [() => TagList, 0]]
 ];
 export var GlobalClusterMember$: StaticStructureSchema = [3, n0, _GCMl,
   0,
@@ -5623,7 +5624,7 @@ export var StartDBInstance$: StaticOperationSchema = [9, n0, _SDBI,
 export var StartDBInstanceAutomatedBackupsReplication$: StaticOperationSchema = [9, n0, _SDBIABRt,
   0, () => StartDBInstanceAutomatedBackupsReplicationMessage$, () => StartDBInstanceAutomatedBackupsReplicationResult$
 ];
-export var StartExportTask$: StaticOperationSchema = [9, n0, _SET,
+export var StartExportTask$: StaticOperationSchema = [9, n0, _SETt,
   0, () => StartExportTaskMessage$, () => ExportTask$
 ];
 export var StopActivityStream$: StaticOperationSchema = [9, n0, _SASt,

@@ -66,6 +66,7 @@ export interface DeleteDBSnapshotCommandOutput extends DeleteDBSnapshotResult, _
  * //     StorageType: "STRING_VALUE",
  * //     TdeCredentialArn: "STRING_VALUE",
  * //     Encrypted: true || false,
+ * //     StorageEncryptionType: "none" || "sse-kms" || "sse-rds",
  * //     BackupRetentionPeriod: Number("int"),
  * //     PreferredBackupWindow: "STRING_VALUE",
  * //     KmsKeyId: "STRING_VALUE",

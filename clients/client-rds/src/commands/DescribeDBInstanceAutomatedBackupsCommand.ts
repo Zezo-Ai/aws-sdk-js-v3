@@ -80,6 +80,7 @@ export interface DescribeDBInstanceAutomatedBackupsCommandOutput extends DBInsta
  * //       OptionGroupName: "STRING_VALUE",
  * //       TdeCredentialArn: "STRING_VALUE",
  * //       Encrypted: true || false,
+ * //       StorageEncryptionType: "none" || "sse-kms" || "sse-rds",
  * //       StorageType: "STRING_VALUE",
  * //       KmsKeyId: "STRING_VALUE",
  * //       Timezone: "STRING_VALUE",
