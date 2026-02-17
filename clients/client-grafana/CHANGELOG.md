@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.992.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.991.0...v3.992.0) (2026-02-17)
+
+
+### Features
+
+* **client-grafana:** This release updates Amazon Managed Grafana's APIs to support customer managed KMS keys. ([276a337](https://github.com/aws/aws-sdk-js-v3/commit/276a337c073570ca05e7c180ce29d331f0ff46c7))
+
+
+
+
+
 # [3.991.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.990.0...v3.991.0) (2026-02-16)
 
 **Note:** Version bump only for package @aws-sdk/client-grafana

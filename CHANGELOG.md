@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.992.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.991.0...v3.992.0) (2026-02-17)
+
+
+### Features
+
+* **client-ec2:** Add Operator field to CreatePlacementGroup and DescribePlacementGroup APIs. ([ccdf06a](https://github.com/aws/aws-sdk-js-v3/commit/ccdf06ad091052487c004656f37f2a7e0735e7fa))
+* **client-grafana:** This release updates Amazon Managed Grafana's APIs to support customer managed KMS keys. ([276a337](https://github.com/aws/aws-sdk-js-v3/commit/276a337c073570ca05e7c180ce29d331f0ff46c7))
+* **client-rds:** Adds support for the StorageEncryptionType field to specify encryption type for DB clusters, DB instances, snapshots, automated backups, and global clusters. ([976ce19](https://github.com/aws/aws-sdk-js-v3/commit/976ce1931dc7c5a468728d7877d3b207636c18b8))
+* **client-workspaces-web:** Adds support for branding customization without requiring a custom wallpaper. ([dce7846](https://github.com/aws/aws-sdk-js-v3/commit/dce78467312566e5fdca2342560bea22f52f986e))
+* **clients:** update client endpoints as of 2026-02-17 ([72c7805](https://github.com/aws/aws-sdk-js-v3/commit/72c7805906244b8796a3a0df64892a857071e847))
+
+
+
+
+
 # [3.991.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.990.0...v3.991.0) (2026-02-16)
 
 

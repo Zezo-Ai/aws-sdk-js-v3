@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.992.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.991.0...v3.992.0) (2026-02-17)
+
+
+### Features
+
+* **client-ec2:** Add Operator field to CreatePlacementGroup and DescribePlacementGroup APIs. ([ccdf06a](https://github.com/aws/aws-sdk-js-v3/commit/ccdf06ad091052487c004656f37f2a7e0735e7fa))
+
+
+
+
+
 # [3.991.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.990.0...v3.991.0) (2026-02-16)
 
 **Note:** Version bump only for package @aws-sdk/client-ec2

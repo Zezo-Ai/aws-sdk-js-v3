@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.992.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.991.0...v3.992.0) (2026-02-17)
+
+
+### Features
+
+* **client-rds:** Adds support for the StorageEncryptionType field to specify encryption type for DB clusters, DB instances, snapshots, automated backups, and global clusters. ([976ce19](https://github.com/aws/aws-sdk-js-v3/commit/976ce1931dc7c5a468728d7877d3b207636c18b8))
+
+
+
+
+
 # [3.991.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.990.0...v3.991.0) (2026-02-16)
 
 **Note:** Version bump only for package @aws-sdk/client-rds
