@@ -10657,8 +10657,8 @@ export var CreateNetworkInterfaceResult$: StaticStructureSchema = [3, n0, _CNIRr
 ];
 export var CreatePlacementGroupRequest$: StaticStructureSchema = [3, n0, _CPGR,
   0,
-  [_PCa, _TS, _SLp, _LGIi, _DR, _GN, _Str],
-  [1, [() => TagSpecificationList, { [_xN]: _TSa }], 0, 0, [2, { [_eQN]: `DryRun`
+  [_PCa, _TS, _SLp, _LGIi, _Op, _DR, _GN, _Str],
+  [1, [() => TagSpecificationList, { [_xN]: _TSa }], 0, 0, () => OperatorRequest$, [2, { [_eQN]: `DryRun`
   , [_xN]: _dR }], [0, { [_eQN]: `GroupName`
   , [_xN]: _gN }], [0, { [_eQN]: `Strategy`
   , [_xN]: _str }]]
@@ -21454,7 +21454,7 @@ export var Placement$: StaticStructureSchema = [3, n0, _Pla,
 ];
 export var PlacementGroup$: StaticStructureSchema = [3, n0, _PG,
   0,
-  [_GN, _St, _Str, _PCa, _GIr, _T, _GA, _SLp, _LGIi],
+  [_GN, _St, _Str, _PCa, _GIr, _T, _GA, _SLp, _LGIi, _Op],
   [[0, { [_eQN]: `GroupName`
   , [_xN]: _gN }], [0, { [_eQN]: `State`
   , [_xN]: _st }], [0, { [_eQN]: `Strategy`
@@ -21464,7 +21464,8 @@ export var PlacementGroup$: StaticStructureSchema = [3, n0, _PG,
   , [_xN]: _tS }], [0, { [_eQN]: `GroupArn`
   , [_xN]: _gA }], [0, { [_eQN]: `SpreadLevel`
   , [_xN]: _sLp }], [0, { [_eQN]: `LinkedGroupId`
-  , [_xN]: _lGIi }]]
+  , [_xN]: _lGIi }], [() => OperatorResponse$, { [_eQN]: `Operator`
+  , [_xN]: _ope }]]
 ];
 export var PlacementGroupInfo$: StaticStructureSchema = [3, n0, _PGI,
   0,

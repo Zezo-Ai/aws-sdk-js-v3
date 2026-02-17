@@ -12610,6 +12610,12 @@ export interface CreatePlacementGroupRequest {
   LinkedGroupId?: string | undefined;
 
   /**
+   * <p>Reserved for internal use.</p>
+   * @public
+   */
+  Operator?: OperatorRequest | undefined;
+
+  /**
    * <p>Checks whether you have the required permissions for the operation, without actually making the
    *   request, and provides an error response. If you have the required permissions, the error response is
    *   <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -12692,6 +12698,12 @@ export interface PlacementGroup {
    * @public
    */
   LinkedGroupId?: string | undefined;
+
+  /**
+   * <p>The service provider that manages the Placement Group.</p>
+   * @public
+   */
+  Operator?: OperatorResponse | undefined;
 }
 
 /**

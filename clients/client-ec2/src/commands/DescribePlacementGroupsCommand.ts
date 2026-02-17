@@ -81,6 +81,10 @@ export interface DescribePlacementGroupsCommandOutput extends DescribePlacementG
  * //       GroupArn: "STRING_VALUE",
  * //       SpreadLevel: "host" || "rack",
  * //       LinkedGroupId: "STRING_VALUE",
+ * //       Operator: { // OperatorResponse
+ * //         Managed: true || false,
+ * //         Principal: "STRING_VALUE",
+ * //       },
  * //     },
  * //   ],
  * // };

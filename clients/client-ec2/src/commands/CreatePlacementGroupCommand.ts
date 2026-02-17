@@ -60,6 +60,9 @@ export interface CreatePlacementGroupCommandOutput extends CreatePlacementGroupR
  *   ],
  *   SpreadLevel: "host" || "rack",
  *   LinkedGroupId: "STRING_VALUE",
+ *   Operator: { // OperatorRequest
+ *     Principal: "STRING_VALUE",
+ *   },
  *   DryRun: true || false,
  *   GroupName: "STRING_VALUE",
  *   Strategy: "cluster" || "spread" || "partition",
@@ -82,6 +85,10 @@ export interface CreatePlacementGroupCommandOutput extends CreatePlacementGroupR
  * //     GroupArn: "STRING_VALUE",
  * //     SpreadLevel: "host" || "rack",
  * //     LinkedGroupId: "STRING_VALUE",
+ * //     Operator: { // OperatorResponse
+ * //       Managed: true || false,
+ * //       Principal: "STRING_VALUE",
+ * //     },
  * //   },
  * // };
  *
