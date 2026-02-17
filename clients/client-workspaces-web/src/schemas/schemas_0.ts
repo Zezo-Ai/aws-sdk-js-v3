@@ -692,13 +692,13 @@ export var AssociateUserSettingsResponse$: StaticStructureSchema = [3, n0, _AUSR
 ];
 export var BrandingConfiguration$: StaticStructureSchema = [3, n0, _BC,
   0,
-  [_l, _w, _f, _lS, _cT, _tOS],
-  [() => ImageMetadata$, () => ImageMetadata$, () => ImageMetadata$, () => LocalizedBrandingStringMap, 0, [() => Markdown, 0]], 5
+  [_l, _f, _lS, _cT, _w, _tOS],
+  [() => ImageMetadata$, () => ImageMetadata$, () => LocalizedBrandingStringMap, 0, () => ImageMetadata$, [() => Markdown, 0]], 4
 ];
 export var BrandingConfigurationCreateInput$: StaticStructureSchema = [3, n0, _BCCI,
   0,
-  [_l, _w, _f, _lS, _cT, _tOS],
-  [[() => IconImageInput$, 0], [() => WallpaperImageInput$, 0], [() => IconImageInput$, 0], () => LocalizedBrandingStringMap, 0, [() => Markdown, 0]], 5
+  [_l, _f, _lS, _cT, _w, _tOS],
+  [[() => IconImageInput$, 0], [() => IconImageInput$, 0], () => LocalizedBrandingStringMap, 0, [() => WallpaperImageInput$, 0], [() => Markdown, 0]], 4
 ];
 export var BrandingConfigurationUpdateInput$: StaticStructureSchema = [3, n0, _BCUI,
   0,

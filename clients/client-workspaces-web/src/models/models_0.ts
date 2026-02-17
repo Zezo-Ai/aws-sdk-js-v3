@@ -3538,7 +3538,7 @@ export interface BrandingConfiguration {
    * <p>Metadata for the wallpaper image file, including the MIME type, file extension, and upload timestamp.</p>
    * @public
    */
-  wallpaper: ImageMetadata | undefined;
+  wallpaper?: ImageMetadata | undefined;
 
   /**
    * <p>Metadata for the favicon image file, including the MIME type, file extension, and upload timestamp.</p>
@@ -3725,10 +3725,10 @@ export interface BrandingConfigurationCreateInput {
   logo: IconImageInput | undefined;
 
   /**
-   * <p>The wallpaper image for the portal. Provide either a binary image file or an S3 URI pointing to the image file. Maximum 5 MB in JPEG or PNG format.</p>
+   * <p>The wallpaper image for the portal. Provide either a binary image file or an S3 URI pointing to the image file. Maximum 5 MB in JPEG or PNG format. If not provided, a default wallpaper will be used as the background image.</p>
    * @public
    */
-  wallpaper: WallpaperImageInput | undefined;
+  wallpaper?: WallpaperImageInput | undefined;
 
   /**
    * <p>The favicon image for the portal. Provide either a binary image file or an S3 URI pointing to the image file. Maximum 100 KB in JPEG, PNG, or ICO format.</p>
@@ -3874,7 +3874,7 @@ export interface CreateUserSettingsRequest {
   toolbarConfiguration?: ToolbarConfiguration | undefined;
 
   /**
-   * <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, wallpaper, localized strings, color theme, and an optional terms of service.</p>
+   * <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, localized strings, color theme, and optionally a wallpaper and terms of service.</p>
    * @public
    */
   brandingConfigurationInput?: BrandingConfigurationCreateInput | undefined;
@@ -4274,7 +4274,7 @@ export interface UpdateUserSettingsRequest {
   toolbarConfiguration?: ToolbarConfiguration | undefined;
 
   /**
-   * <p>The branding configuration that customizes the appearance of the web portal for end users. When updating user settings without an existing branding configuration, all fields (logo, favicon, wallpaper, localized strings, and color theme) are required except for terms of service. When updating user settings with an existing branding configuration, all fields are optional.</p>
+   * <p>The branding configuration that customizes the appearance of the web portal for end users. When updating user settings without an existing branding configuration, all fields (logo, favicon, localized strings, and color theme) are required except for wallpaper and terms of service. When updating user settings with an existing branding configuration, all fields are optional.</p>
    * @public
    */
   brandingConfigurationInput?: BrandingConfigurationUpdateInput | undefined;
