@@ -30,12 +30,7 @@ export interface DeleteWorkspaceServiceAccountTokenCommandInput extends DeleteWo
 export interface DeleteWorkspaceServiceAccountTokenCommandOutput extends DeleteWorkspaceServiceAccountTokenResponse, __MetadataBearer {}
 
 /**
- * <p>Deletes a token for the workspace service account.</p>
- *          <p>This will disable the key associated with the token. If any automation is currently
- *             using the key, it will no longer be authenticated or authorized to perform actions with
- *             the Grafana HTTP APIs.</p>
- *          <p>Service accounts are only available for workspaces that are compatible with Grafana
- *             version 9 and above.</p>
+ * <p>Deletes a token for the workspace service account.</p> <p>This will disable the key associated with the token. If any automation is currently using the key, it will no longer be authenticated or authorized to perform actions with the Grafana HTTP APIs.</p> <p>Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript

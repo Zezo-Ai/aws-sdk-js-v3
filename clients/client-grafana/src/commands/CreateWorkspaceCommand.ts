@@ -27,11 +27,7 @@ export interface CreateWorkspaceCommandInput extends CreateWorkspaceRequest {}
 export interface CreateWorkspaceCommandOutput extends CreateWorkspaceResponse, __MetadataBearer {}
 
 /**
- * <p>Creates a <i>workspace</i>. In a workspace, you can create Grafana
- *             dashboards and visualizations to analyze your metrics, logs, and traces. You don't have
- *             to build, package, or deploy any hardware to run the Grafana server.</p>
- *          <p>Don't use <code>CreateWorkspace</code> to modify an existing workspace. Instead, use
- *                 <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspace.html">UpdateWorkspace</a>.</p>
+ * <p>Creates a <i>workspace</i>. In a workspace, you can create Grafana dashboards and visualizations to analyze your metrics, logs, and traces. You don't have to build, package, or deploy any hardware to run the Grafana server.</p> <p>Don't use <code>CreateWorkspace</code> to modify an existing workspace. Instead, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspace.html">UpdateWorkspace</a>.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -82,6 +78,7 @@ export interface CreateWorkspaceCommandOutput extends CreateWorkspaceResponse, _
  *     ],
  *   },
  *   grafanaVersion: "STRING_VALUE",
+ *   kmsKeyId: "STRING_VALUE",
  * };
  * const command = new CreateWorkspaceCommand(input);
  * const response = await client.send(command);
@@ -139,6 +136,7 @@ export interface CreateWorkspaceCommandOutput extends CreateWorkspaceResponse, _
  * //       ],
  * //     },
  * //     grafanaToken: "STRING_VALUE",
+ * //     kmsKeyId: "STRING_VALUE",
  * //   },
  * // };
  *

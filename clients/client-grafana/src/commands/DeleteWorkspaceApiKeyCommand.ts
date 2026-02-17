@@ -27,11 +27,7 @@ export interface DeleteWorkspaceApiKeyCommandInput extends DeleteWorkspaceApiKey
 export interface DeleteWorkspaceApiKeyCommandOutput extends DeleteWorkspaceApiKeyResponse, __MetadataBearer {}
 
 /**
- * <p>Deletes a Grafana API key for the workspace.</p>
- *          <note>
- *             <p>In workspaces compatible with Grafana version 9 or above, use workspace service
- *                 accounts instead of API keys. API keys will be removed in a future release.</p>
- *          </note>
+ * <p>Deletes a Grafana API key for the workspace.</p> <note> <p>In workspaces compatible with Grafana version 9 or above, use workspace service accounts instead of API keys. API keys will be removed in a future release.</p> </note>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript

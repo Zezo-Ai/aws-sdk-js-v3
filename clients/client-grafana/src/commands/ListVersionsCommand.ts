@@ -27,9 +27,7 @@ export interface ListVersionsCommandInput extends ListVersionsRequest {}
 export interface ListVersionsCommandOutput extends ListVersionsResponse, __MetadataBearer {}
 
 /**
- * <p>Lists available versions of Grafana. These are available when calling
- *             <code>CreateWorkspace</code>. Optionally, include a workspace to list the versions
- *             to which it can be upgraded.</p>
+ * <p>Lists available versions of Grafana. These are available when calling <code>CreateWorkspace</code>. Optionally, include a workspace to list the versions to which it can be upgraded.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript

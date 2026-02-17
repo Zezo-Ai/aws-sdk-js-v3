@@ -30,13 +30,7 @@ export interface ListWorkspaceServiceAccountTokensCommandInput extends ListWorks
 export interface ListWorkspaceServiceAccountTokensCommandOutput extends ListWorkspaceServiceAccountTokensResponse, __MetadataBearer {}
 
 /**
- * <p>Returns a list of tokens for a workspace service account.</p>
- *          <note>
- *             <p>This does not return the key for each token. You cannot access keys after they
- *                 are created. To create a new key, delete the token and recreate it.</p>
- *          </note>
- *          <p>Service accounts are only available for workspaces that are compatible with Grafana
- *             version 9 and above.</p>
+ * <p>Returns a list of tokens for a workspace service account.</p> <note> <p>This does not return the key for each token. You cannot access keys after they are created. To create a new key, delete the token and recreate it.</p> </note> <p>Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript

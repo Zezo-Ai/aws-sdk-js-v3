@@ -27,14 +27,7 @@ export interface UpdateWorkspaceAuthenticationCommandInput extends UpdateWorkspa
 export interface UpdateWorkspaceAuthenticationCommandOutput extends UpdateWorkspaceAuthenticationResponse, __MetadataBearer {}
 
 /**
- * <p>Use this operation to define the identity provider (IdP) that this workspace
- *             authenticates users from, using SAML. You can also map SAML assertion attributes to
- *             workspace user information and define which groups in the assertion attribute are to
- *             have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
- *          <note>
- *             <p>Changes to the authentication method for a workspace may take a few minutes to
- *                 take effect.</p>
- *          </note>
+ * <p>Use this operation to define the identity provider (IdP) that this workspace authenticates users from, using SAML. You can also map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p> <note> <p>Changes to the authentication method for a workspace may take a few minutes to take effect.</p> </note>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript

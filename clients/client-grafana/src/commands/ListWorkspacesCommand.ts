@@ -27,8 +27,7 @@ export interface ListWorkspacesCommandInput extends ListWorkspacesRequest {}
 export interface ListWorkspacesCommandOutput extends ListWorkspacesResponse, __MetadataBearer {}
 
 /**
- * <p>Returns a list of Amazon Managed Grafana workspaces in the account, with some information
- *             about each workspace. For more complete information about one workspace, use <a href="https://docs.aws.amazon.com/AAMG/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.</p>
+ * <p>Returns a list of Amazon Managed Grafana workspaces in the account, with some information about each workspace. For more complete information about one workspace, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript

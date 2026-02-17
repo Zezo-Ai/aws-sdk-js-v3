@@ -27,9 +27,7 @@ export interface ListWorkspaceServiceAccountsCommandInput extends ListWorkspaceS
 export interface ListWorkspaceServiceAccountsCommandOutput extends ListWorkspaceServiceAccountsResponse, __MetadataBearer {}
 
 /**
- * <p>Returns a list of service accounts for a workspace.</p>
- *          <p>Service accounts are only available for workspaces that are compatible with Grafana
- *             version 9 and above.</p>
+ * <p>Returns a list of service accounts for a workspace.</p> <p>Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
