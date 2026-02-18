@@ -66,7 +66,7 @@ export interface GetMembershipCommandOutput extends GetMembershipOutput, __Metad
  * //     defaultResultConfiguration: { // MembershipProtectedQueryResultConfiguration
  * //       outputConfiguration: { // MembershipProtectedQueryOutputConfiguration Union: only one key present
  * //         s3: { // ProtectedQueryS3OutputConfiguration
- * //           resultFormat: "STRING_VALUE", // required
+ * //           resultFormat: "CSV" || "PARQUET", // required
  * //           bucket: "STRING_VALUE", // required
  * //           keyPrefix: "STRING_VALUE",
  * //           singleFileOutput: true || false,

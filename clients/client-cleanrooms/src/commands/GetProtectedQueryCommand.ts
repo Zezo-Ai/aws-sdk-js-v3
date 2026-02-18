@@ -60,7 +60,7 @@ export interface GetProtectedQueryCommandOutput extends GetProtectedQueryOutput,
  * //     resultConfiguration: { // ProtectedQueryResultConfiguration
  * //       outputConfiguration: { // ProtectedQueryOutputConfiguration Union: only one key present
  * //         s3: { // ProtectedQueryS3OutputConfiguration
- * //           resultFormat: "STRING_VALUE", // required
+ * //           resultFormat: "CSV" || "PARQUET", // required
  * //           bucket: "STRING_VALUE", // required
  * //           keyPrefix: "STRING_VALUE",
  * //           singleFileOutput: true || false,
@@ -72,7 +72,7 @@ export interface GetProtectedQueryCommandOutput extends GetProtectedQueryOutput,
  * //           locations: [ // ProtectedQueryDistributeOutputConfigurationLocations // required
  * //             { // ProtectedQueryDistributeOutputConfigurationLocation Union: only one key present
  * //               s3: {
- * //                 resultFormat: "STRING_VALUE", // required
+ * //                 resultFormat: "CSV" || "PARQUET", // required
  * //                 bucket: "STRING_VALUE", // required
  * //                 keyPrefix: "STRING_VALUE",
  * //                 singleFileOutput: true || false,

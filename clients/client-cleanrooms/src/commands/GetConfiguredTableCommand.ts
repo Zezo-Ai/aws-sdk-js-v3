@@ -74,6 +74,7 @@ export interface GetConfiguredTableCommandOutput extends GetConfiguredTableOutpu
  * //         outputLocation: "STRING_VALUE",
  * //         databaseName: "STRING_VALUE", // required
  * //         tableName: "STRING_VALUE", // required
+ * //         catalogName: "STRING_VALUE",
  * //       },
  * //     },
  * //     createTime: new Date("TIMESTAMP"), // required

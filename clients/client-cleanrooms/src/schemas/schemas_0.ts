@@ -605,6 +605,7 @@ const _cMA = "creatorMemberAbilities";
 const _cMLMA = "creatorMLMemberAbilities";
 const _cMLMAu = "customMLMemberAbilities";
 const _cN = "columnNames";
+const _cNa = "catalogName";
 const _cNo = "columnName";
 const _cNol = "collaborationName";
 const _cP = "collaborationPolicy";
@@ -1009,8 +1010,8 @@ export var ApprovalStatusDetails$: StaticStructureSchema = [3, n0, _ASD,
 ];
 export var AthenaTableReference$: StaticStructureSchema = [3, n0, _ATR,
   0,
-  [_wG, _dN, _tN, _reg, _oL],
-  [0, 0, 0, 0, 0], 3
+  [_wG, _dN, _tN, _reg, _oL, _cNa],
+  [0, 0, 0, 0, 0, 0], 3
 ];
 export var BatchGetCollaborationAnalysisTemplateError$: StaticStructureSchema = [3, n0, _BGCATE,
   0,

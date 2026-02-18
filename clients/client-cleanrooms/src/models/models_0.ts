@@ -1869,6 +1869,12 @@ export interface AthenaTableReference {
    * @public
    */
   tableName: string | undefined;
+
+  /**
+   * <p> The catalog name.</p>
+   * @public
+   */
+  catalogName?: string | undefined;
 }
 
 /**
