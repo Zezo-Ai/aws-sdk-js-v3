@@ -7,6 +7,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+
+# 3.972.5 (2026-02-18)
+### Chores
+* bump fast-xml-parser to 5.3.6 ([#7747](https://github.com/aws/aws-sdk-js-v3/issues/7747)) ([74d03fa](https://github.com/aws/aws-sdk-js-v3/commit/74d03faf12a9970b1510406afd30bab58de050e8))
+
+
+
 # 3.972.4 (2026-02-03)
 ### Chores
 * **scripts:** update release script ([#7707](https://github.com/aws/aws-sdk-js-v3/issues/7707)) ([6c7353e](https://github.com/aws/aws-sdk-js-v3/commit/6c7353ebf2ebc1692781fbddb99911c33b80ca34))

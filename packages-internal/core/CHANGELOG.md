@@ -14,6 +14,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+
+# 3.973.11 (2026-02-17)
+### Chores
+* **codegen:** fix undefined http binding top level members ([#7741](https://github.com/aws/aws-sdk-js-v3/issues/7741)) ([4b02642](https://github.com/aws/aws-sdk-js-v3/commit/4b0264205571fb92738e0304838377aa8d98394c))
+
+
+
 # 3.973.10 (2026-02-12)
 ### Tests
 * **client-ec2:** additional integ tests for ec2 ([#7736](https://github.com/aws/aws-sdk-js-v3/issues/7736)) ([fcd1430](https://github.com/aws/aws-sdk-js-v3/commit/fcd1430a1a6de0c4f2e32366f4fa2746ba856c55))

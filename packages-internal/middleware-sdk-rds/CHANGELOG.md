@@ -10,6 +10,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+
+# 3.972.8 (2026-02-17)
+### Chores
+* **codegen:** fix undefined http binding top level members ([#7741](https://github.com/aws/aws-sdk-js-v3/issues/7741)) ([4b02642](https://github.com/aws/aws-sdk-js-v3/commit/4b0264205571fb92738e0304838377aa8d98394c))
+
+
+
 # 3.972.7 (2026-02-10)
 ### Chores
 * **codegen:** update for compositeErrorRegistries ([#7728](https://github.com/aws/aws-sdk-js-v3/issues/7728)) ([d20ea16](https://github.com/aws/aws-sdk-js-v3/commit/d20ea16f8069517b7dc02c62f39afea11423f061))
