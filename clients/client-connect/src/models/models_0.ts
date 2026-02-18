@@ -5237,7 +5237,7 @@ export interface CreateNotificationRequest {
   Priority?: ConfigurableNotificationPriority | undefined;
 
   /**
-   * <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports markdown formatting and embedded links. Maximum 250 characters per locale.</p>
+   * <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports links. Maximum 250 characters per locale.</p>
    * @public
    */
   Content: Partial<Record<LocaleCode, string>> | undefined;

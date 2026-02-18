@@ -27,7 +27,7 @@ export interface CreateNotificationCommandInput extends CreateNotificationReques
 export interface CreateNotificationCommandOutput extends CreateNotificationResponse, __MetadataBearer {}
 
 /**
- * <p>Creates a new notification to be delivered to specified recipients. Notifications can include localized content with embedded links, and an optional expiration time. Recipients can be specified as individual user ARNs or instance ARNs to target all users in an instance.</p>
+ * <p>Creates a new notification to be delivered to specified recipients. Notifications can include localized content with links, and an optional expiration time. Recipients can be specified as individual user ARNs or instance ARNs to target all users in an instance.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
