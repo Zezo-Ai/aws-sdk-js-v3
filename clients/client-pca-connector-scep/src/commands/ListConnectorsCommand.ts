@@ -64,7 +64,7 @@ export interface ListConnectorsCommandOutput extends ListConnectorsResponse, __M
  * //         Audience: "STRING_VALUE",
  * //       },
  * //       Status: "CREATING" || "ACTIVE" || "DELETING" || "FAILED",
- * //       StatusReason: "INTERNAL_FAILURE" || "PRIVATECA_ACCESS_DENIED" || "PRIVATECA_INVALID_STATE" || "PRIVATECA_RESOURCE_NOT_FOUND",
+ * //       StatusReason: "INTERNAL_FAILURE" || "PRIVATECA_ACCESS_DENIED" || "PRIVATECA_INVALID_STATE" || "PRIVATECA_RESOURCE_NOT_FOUND" || "VPC_ENDPOINT_RESOURCE_NOT_FOUND" || "VPC_ENDPOINT_DNS_ENTRIES_NOT_FOUND",
  * //       Endpoint: "STRING_VALUE",
  * //       CreatedAt: new Date("TIMESTAMP"),
  * //       UpdatedAt: new Date("TIMESTAMP"),
@@ -82,15 +82,10 @@ export interface ListConnectorsCommandOutput extends ListConnectorsResponse, __M
  * @see {@link PcaConnectorScepClientResolvedConfig | config} for PcaConnectorScepClient's `config` shape.
  *
  * @throws {@link AccessDeniedException} (client fault)
- *  <p>You can receive this error if you attempt to perform an operation and you don't have
- *       the required permissions. This can be caused by insufficient permissions in policies
- *       attached to your Amazon Web Services Identity and Access Management (IAM) principal. It can also happen
- *       because of restrictions in place from an Amazon Web Services Organizations service control policy (SCP)
- *       that affects your Amazon Web Services account.</p>
+ *  <p>You can receive this error if you attempt to perform an operation and you don't have the required permissions. This can be caused by insufficient permissions in policies attached to your Amazon Web Services Identity and Access Management (IAM) principal. It can also happen because of restrictions in place from an Amazon Web Services Organizations service control policy (SCP) that affects your Amazon Web Services account.</p>
  *
  * @throws {@link InternalServerException} (server fault)
- *  <p>The request processing has failed because of an unknown error, exception or failure with
- *       an internal server.</p>
+ *  <p>The request processing has failed because of an unknown error, exception or failure with an internal server.</p>
  *
  * @throws {@link ThrottlingException} (client fault)
  *  <p>The limit on the number of requests per second was exceeded.</p>

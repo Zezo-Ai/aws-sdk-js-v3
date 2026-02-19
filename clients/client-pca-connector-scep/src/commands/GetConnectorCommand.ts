@@ -31,7 +31,7 @@ export interface GetConnectorCommandInput extends GetConnectorRequest {}
 export interface GetConnectorCommandOutput extends GetConnectorResponse, __MetadataBearer {}
 
 /**
- * <p>Retrieves details about the specified <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Connector.html">Connector</a>. Calling this action returns important details about the connector, such as the public SCEP URL where your clients can request certificates.</p>
+ * <p>Retrieves details about the specified <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Connector.html">Connector</a>. Calling this action returns important details about the connector, such as the public SCEP URL where your clients can request certificates.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -62,7 +62,7 @@ export interface GetConnectorCommandOutput extends GetConnectorResponse, __Metad
  * //       Audience: "STRING_VALUE",
  * //     },
  * //     Status: "CREATING" || "ACTIVE" || "DELETING" || "FAILED",
- * //     StatusReason: "INTERNAL_FAILURE" || "PRIVATECA_ACCESS_DENIED" || "PRIVATECA_INVALID_STATE" || "PRIVATECA_RESOURCE_NOT_FOUND",
+ * //     StatusReason: "INTERNAL_FAILURE" || "PRIVATECA_ACCESS_DENIED" || "PRIVATECA_INVALID_STATE" || "PRIVATECA_RESOURCE_NOT_FOUND" || "VPC_ENDPOINT_RESOURCE_NOT_FOUND" || "VPC_ENDPOINT_DNS_ENTRIES_NOT_FOUND",
  * //     Endpoint: "STRING_VALUE",
  * //     CreatedAt: new Date("TIMESTAMP"),
  * //     UpdatedAt: new Date("TIMESTAMP"),
@@ -78,15 +78,10 @@ export interface GetConnectorCommandOutput extends GetConnectorResponse, __Metad
  * @see {@link PcaConnectorScepClientResolvedConfig | config} for PcaConnectorScepClient's `config` shape.
  *
  * @throws {@link AccessDeniedException} (client fault)
- *  <p>You can receive this error if you attempt to perform an operation and you don't have
- *       the required permissions. This can be caused by insufficient permissions in policies
- *       attached to your Amazon Web Services Identity and Access Management (IAM) principal. It can also happen
- *       because of restrictions in place from an Amazon Web Services Organizations service control policy (SCP)
- *       that affects your Amazon Web Services account.</p>
+ *  <p>You can receive this error if you attempt to perform an operation and you don't have the required permissions. This can be caused by insufficient permissions in policies attached to your Amazon Web Services Identity and Access Management (IAM) principal. It can also happen because of restrictions in place from an Amazon Web Services Organizations service control policy (SCP) that affects your Amazon Web Services account.</p>
  *
  * @throws {@link InternalServerException} (server fault)
- *  <p>The request processing has failed because of an unknown error, exception or failure with
- *       an internal server.</p>
+ *  <p>The request processing has failed because of an unknown error, exception or failure with an internal server.</p>
  *
  * @throws {@link ResourceNotFoundException} (client fault)
  *  <p>The operation tried to access a nonexistent resource. The resource might be incorrectly specified, or it might have a status other than <code>ACTIVE</code>.</p>

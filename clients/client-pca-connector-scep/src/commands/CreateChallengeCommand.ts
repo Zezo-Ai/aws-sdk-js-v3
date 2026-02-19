@@ -31,8 +31,7 @@ export interface CreateChallengeCommandInput extends CreateChallengeRequest {}
 export interface CreateChallengeCommandOutput extends CreateChallengeResponse, __MetadataBearer {}
 
 /**
- * <p>For general-purpose connectors. Creates a <i>challenge password</i> for the specified connector. The SCEP protocol uses a challenge password to authenticate a request before issuing a certificate from a certificate authority (CA). Your SCEP clients include the challenge password as part of their certificate request to Connector for SCEP. To retrieve the connector Amazon Resource Names (ARNs) for the connectors in your account, call <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_ListConnectors.html">ListConnectors</a>.</p>
- *          <p>To create additional challenge passwords for the connector, call <code>CreateChallenge</code> again. We recommend frequently rotating your challenge passwords.</p>
+ * <p>For general-purpose connectors. Creates a <i>challenge password</i> for the specified connector. The SCEP protocol uses a challenge password to authenticate a request before issuing a certificate from a certificate authority (CA). Your SCEP clients include the challenge password as part of their certificate request to Connector for SCEP. To retrieve the connector Amazon Resource Names (ARNs) for the connectors in your account, call <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_ListConnectors.html">ListConnectors</a>.</p> <p>To create additional challenge passwords for the connector, call <code>CreateChallenge</code> again. We recommend frequently rotating your challenge passwords.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -69,22 +68,16 @@ export interface CreateChallengeCommandOutput extends CreateChallengeResponse, _
  * @see {@link PcaConnectorScepClientResolvedConfig | config} for PcaConnectorScepClient's `config` shape.
  *
  * @throws {@link AccessDeniedException} (client fault)
- *  <p>You can receive this error if you attempt to perform an operation and you don't have
- *       the required permissions. This can be caused by insufficient permissions in policies
- *       attached to your Amazon Web Services Identity and Access Management (IAM) principal. It can also happen
- *       because of restrictions in place from an Amazon Web Services Organizations service control policy (SCP)
- *       that affects your Amazon Web Services account.</p>
+ *  <p>You can receive this error if you attempt to perform an operation and you don't have the required permissions. This can be caused by insufficient permissions in policies attached to your Amazon Web Services Identity and Access Management (IAM) principal. It can also happen because of restrictions in place from an Amazon Web Services Organizations service control policy (SCP) that affects your Amazon Web Services account.</p>
  *
  * @throws {@link BadRequestException} (client fault)
  *  <p>The request is malformed or contains an error such as an invalid parameter value or a missing required parameter.</p>
  *
  * @throws {@link ConflictException} (client fault)
- *  <p>This request can't be completed for one of the following reasons because the requested
- *       resource was being concurrently modified by another request.</p>
+ *  <p>This request can't be completed for one of the following reasons because the requested resource was being concurrently modified by another request.</p>
  *
  * @throws {@link InternalServerException} (server fault)
- *  <p>The request processing has failed because of an unknown error, exception or failure with
- *       an internal server.</p>
+ *  <p>The request processing has failed because of an unknown error, exception or failure with an internal server.</p>
  *
  * @throws {@link ResourceNotFoundException} (client fault)
  *  <p>The operation tried to access a nonexistent resource. The resource might be incorrectly specified, or it might have a status other than <code>ACTIVE</code>.</p>

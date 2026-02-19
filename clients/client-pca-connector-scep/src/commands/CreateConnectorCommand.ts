@@ -48,6 +48,7 @@ export interface CreateConnectorCommandOutput extends CreateConnectorResponse, _
  *       Domain: "STRING_VALUE", // required
  *     },
  *   },
+ *   VpcEndpointId: "STRING_VALUE",
  *   ClientToken: "STRING_VALUE",
  *   Tags: { // Tags
  *     "<keys>": "STRING_VALUE",
@@ -68,19 +69,13 @@ export interface CreateConnectorCommandOutput extends CreateConnectorResponse, _
  * @see {@link PcaConnectorScepClientResolvedConfig | config} for PcaConnectorScepClient's `config` shape.
  *
  * @throws {@link AccessDeniedException} (client fault)
- *  <p>You can receive this error if you attempt to perform an operation and you don't have
- *       the required permissions. This can be caused by insufficient permissions in policies
- *       attached to your Amazon Web Services Identity and Access Management (IAM) principal. It can also happen
- *       because of restrictions in place from an Amazon Web Services Organizations service control policy (SCP)
- *       that affects your Amazon Web Services account.</p>
+ *  <p>You can receive this error if you attempt to perform an operation and you don't have the required permissions. This can be caused by insufficient permissions in policies attached to your Amazon Web Services Identity and Access Management (IAM) principal. It can also happen because of restrictions in place from an Amazon Web Services Organizations service control policy (SCP) that affects your Amazon Web Services account.</p>
  *
  * @throws {@link ConflictException} (client fault)
- *  <p>This request can't be completed for one of the following reasons because the requested
- *       resource was being concurrently modified by another request.</p>
+ *  <p>This request can't be completed for one of the following reasons because the requested resource was being concurrently modified by another request.</p>
  *
  * @throws {@link InternalServerException} (server fault)
- *  <p>The request processing has failed because of an unknown error, exception or failure with
- *       an internal server.</p>
+ *  <p>The request processing has failed because of an unknown error, exception or failure with an internal server.</p>
  *
  * @throws {@link ResourceNotFoundException} (client fault)
  *  <p>The operation tried to access a nonexistent resource. The resource might be incorrectly specified, or it might have a status other than <code>ACTIVE</code>.</p>

@@ -80,6 +80,7 @@ const _UA = "UpdatedAt";
 const _UR = "UntagResource";
 const _URR = "UntagResourceRequest";
 const _VE = "ValidationException";
+const _VEI = "VpcEndpointId";
 const _c = "client";
 const _e = "error";
 const _h = "http";
@@ -214,8 +215,8 @@ export var CreateChallengeResponse$: StaticStructureSchema = [3, n0, _CCRr,
 ];
 export var CreateConnectorRequest$: StaticStructureSchema = [3, n0, _CCRre,
   0,
-  [_CAA, _MDM, _CT, _Ta],
-  [0, () => MobileDeviceManagement$, [0, 4], 128 | 0], 1
+  [_CAA, _MDM, _VEI, _CT, _Ta],
+  [0, () => MobileDeviceManagement$, 0, [0, 4], 128 | 0], 1
 ];
 export var CreateConnectorResponse$: StaticStructureSchema = [3, n0, _CCRrea,
   0,
