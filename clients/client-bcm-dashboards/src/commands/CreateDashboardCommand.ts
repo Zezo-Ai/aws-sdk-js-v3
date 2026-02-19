@@ -41,6 +41,7 @@ export interface CreateDashboardCommandOutput extends CreateDashboardResponse, _
  *   description: "STRING_VALUE",
  *   widgets: [ // WidgetList // required
  *     { // Widget
+ *       id: "STRING_VALUE",
  *       title: "STRING_VALUE", // required
  *       description: "STRING_VALUE",
  *       width: Number("int"),

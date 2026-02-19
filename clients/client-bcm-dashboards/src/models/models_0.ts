@@ -785,6 +785,12 @@ export interface WidgetConfig {
  */
 export interface Widget {
   /**
+   * The unique identifier for the widget.
+   * @public
+   */
+  id?: string | undefined;
+
+  /**
    * <p>The title of the widget.</p>
    * @public
    */

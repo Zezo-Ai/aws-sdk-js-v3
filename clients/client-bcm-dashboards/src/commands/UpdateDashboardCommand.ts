@@ -42,6 +42,7 @@ export interface UpdateDashboardCommandOutput extends UpdateDashboardResponse, _
  *   description: "STRING_VALUE",
  *   widgets: [ // WidgetList
  *     { // Widget
+ *       id: "STRING_VALUE",
  *       title: "STRING_VALUE", // required
  *       description: "STRING_VALUE",
  *       width: Number("int"),

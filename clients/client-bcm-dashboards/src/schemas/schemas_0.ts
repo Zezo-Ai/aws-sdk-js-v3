@@ -78,6 +78,7 @@ const _gr = "graph";
 const _h = "height";
 const _hE = "httpError";
 const _hO = "horizontalOffset";
+const _i = "id";
 const _k = "key";
 const _m = "message";
 const _mO = "matchOptions";
@@ -355,8 +356,8 @@ export var UpdateDashboardResponse$: StaticStructureSchema = [3, n0, _UDRp,
 ];
 export var Widget$: StaticStructureSchema = [3, n0, _W,
   0,
-  [_ti, _co, _d, _wi, _h, _hO],
-  [0, () => WidgetConfigList, 0, 1, 1, 1], 2
+  [_ti, _co, _i, _d, _wi, _h, _hO],
+  [0, () => WidgetConfigList, 0, 0, 1, 1, 1], 2
 ];
 export var WidgetConfig$: StaticStructureSchema = [3, n0, _WC,
   0,

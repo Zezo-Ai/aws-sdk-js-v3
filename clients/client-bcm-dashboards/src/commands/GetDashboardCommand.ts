@@ -48,6 +48,7 @@ export interface GetDashboardCommandOutput extends GetDashboardResponse, __Metad
  * //   type: "CUSTOM", // required
  * //   widgets: [ // WidgetList // required
  * //     { // Widget
+ * //       id: "STRING_VALUE",
  * //       title: "STRING_VALUE", // required
  * //       description: "STRING_VALUE",
  * //       width: Number("int"),
