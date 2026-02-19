@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.994.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.993.0...v3.994.0) (2026-02-19)
+
+
+### Features
+
+* **client-bcm-dashboards:** The Billing and Cost Management GetDashboard API now returns identifier for each widget, enabling users to uniquely identify widgets within their dashboards. ([4d6e1de](https://github.com/aws/aws-sdk-js-v3/commit/4d6e1de79c505a6806eb8c66d48bd278f60868f9))
+
+
+
+
+
 # [3.993.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.992.0...v3.993.0) (2026-02-18)
 
 **Note:** Version bump only for package @aws-sdk/client-bcm-dashboards

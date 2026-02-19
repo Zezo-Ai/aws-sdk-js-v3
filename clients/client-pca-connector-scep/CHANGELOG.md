@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.994.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.993.0...v3.994.0) (2026-02-19)
+
+
+### Features
+
+* **client-pca-connector-scep:** AWS Private CA Connector for SCEP now supports AWS PrivateLink, allowing your clients to request certificates from within your Amazon Virtual Private Cloud (VPC) without traversing the public internet. With this launch, you can create VPC endpoints to connect to your SCEP connector privately. ([6ffd8f0](https://github.com/aws/aws-sdk-js-v3/commit/6ffd8f08c3d0fc44ea0b4ce41f707411530d3bf4))
+
+
+
+
+
 # [3.993.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.992.0...v3.993.0) (2026-02-18)
 
 **Note:** Version bump only for package @aws-sdk/client-pca-connector-scep
