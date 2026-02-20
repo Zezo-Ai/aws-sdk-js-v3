@@ -159,6 +159,7 @@ export interface DescribeAssociationCommandOutput extends DescribeAssociationRes
  * //         State: "UNKNOWN" || "ALARM", // required
  * //       },
  * //     ],
+ * //     AssociationDispatchAssumeRole: "STRING_VALUE",
  * //   },
  * // };
  *

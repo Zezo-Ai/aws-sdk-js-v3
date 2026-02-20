@@ -166,6 +166,7 @@ export interface UpdateAssociationStatusCommandOutput extends UpdateAssociationS
  * //         State: "UNKNOWN" || "ALARM", // required
  * //       },
  * //     ],
+ * //     AssociationDispatchAssumeRole: "STRING_VALUE",
  * //   },
  * // };
  *

@@ -133,6 +133,7 @@ export interface CreateAssociationBatchCommandOutput extends CreateAssociationBa
  *       },
  *     },
  *   ],
+ *   AssociationDispatchAssumeRole: "STRING_VALUE",
  * };
  * const command = new CreateAssociationBatchCommand(input);
  * const response = await client.send(command);
@@ -250,6 +251,7 @@ export interface CreateAssociationBatchCommandOutput extends CreateAssociationBa
  * //           State: "UNKNOWN" || "ALARM", // required
  * //         },
  * //       ],
+ * //       AssociationDispatchAssumeRole: "STRING_VALUE",
  * //     },
  * //   ],
  * //   Failed: [ // FailedCreateAssociationList

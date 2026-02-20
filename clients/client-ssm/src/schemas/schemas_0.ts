@@ -8,6 +8,7 @@ const _ACc = "ActivationCode";
 const _ACt = "AttachmentContent";
 const _ACtt = "AttachmentsContent";
 const _AD = "AssociationDescription";
+const _ADAR = "AssociationDispatchAssumeRole";
 const _ADE = "AccessDeniedException";
 const _ADL = "AssociationDescriptionList";
 const _ADNAE = "AutomationDefinitionNotApprovedException";
@@ -2528,8 +2529,8 @@ export var Association$: StaticStructureSchema = [3, n0, _As,
 ];
 export var AssociationDescription$: StaticStructureSchema = [3, n0, _AD,
   0,
-  [_N, _II, _AV, _Da, _LUAD, _St, _O, _DV, _ATPN, _P, _AIs, _Ta, _SE, _OL, _LED, _LSED, _AN, _ME, _MC, _CS, _SCy, _AOACI, _CN, _TL, _SO, _Du, _TM, _AC, _TA],
-  [0, 0, 0, 4, 4, () => AssociationStatus$, () => AssociationOverview$, 0, 0, [() => _Parameters, 0], 0, () => Targets, 0, () => InstanceAssociationOutputLocation$, 4, 4, 0, 0, 0, 0, 0, 2, 64 | 0, () => TargetLocations, 1, 1, [1, n0, _TM, 0, [2, n0, _TMa, 0, 0, 64 | 0]], () => AlarmConfiguration$, () => AlarmStateInformationList]
+  [_N, _II, _AV, _Da, _LUAD, _St, _O, _DV, _ATPN, _P, _AIs, _Ta, _SE, _OL, _LED, _LSED, _AN, _ME, _MC, _CS, _SCy, _AOACI, _CN, _TL, _SO, _Du, _TM, _AC, _TA, _ADAR],
+  [0, 0, 0, 4, 4, () => AssociationStatus$, () => AssociationOverview$, 0, 0, [() => _Parameters, 0], 0, () => Targets, 0, () => InstanceAssociationOutputLocation$, 4, 4, 0, 0, 0, 0, 0, 2, 64 | 0, () => TargetLocations, 1, 1, [1, n0, _TM, 0, [2, n0, _TMa, 0, 0, 64 | 0]], () => AlarmConfiguration$, () => AlarmStateInformationList, 0]
 ];
 export var AssociationExecution$: StaticStructureSchema = [3, n0, _AE,
   0,
@@ -2568,8 +2569,8 @@ export var AssociationStatus$: StaticStructureSchema = [3, n0, _AS,
 ];
 export var AssociationVersionInfo$: StaticStructureSchema = [3, n0, _AVI,
   0,
-  [_AIs, _AV, _CD, _N, _DV, _P, _Ta, _SE, _OL, _AN, _ME, _MC, _CS, _SCy, _AOACI, _CN, _TL, _SO, _Du, _TM],
-  [0, 0, 4, 0, 0, [() => _Parameters, 0], () => Targets, 0, () => InstanceAssociationOutputLocation$, 0, 0, 0, 0, 0, 2, 64 | 0, () => TargetLocations, 1, 1, [1, n0, _TM, 0, [2, n0, _TMa, 0, 0, 64 | 0]]]
+  [_AIs, _AV, _CD, _N, _DV, _P, _Ta, _SE, _OL, _AN, _ME, _MC, _CS, _SCy, _AOACI, _CN, _TL, _SO, _Du, _TM, _ADAR],
+  [0, 0, 4, 0, 0, [() => _Parameters, 0], () => Targets, 0, () => InstanceAssociationOutputLocation$, 0, 0, 0, 0, 0, 2, 64 | 0, () => TargetLocations, 1, 1, [1, n0, _TM, 0, [2, n0, _TMa, 0, 0, 64 | 0]], 0]
 ];
 export var AttachmentContent$: StaticStructureSchema = [3, n0, _ACt,
   0,
@@ -2703,8 +2704,8 @@ export var CreateActivationResult$: StaticStructureSchema = [3, n0, _CARr,
 ];
 export var CreateAssociationBatchRequest$: StaticStructureSchema = [3, n0, _CABR,
   0,
-  [_En],
-  [[() => CreateAssociationBatchRequestEntries, 0]], 1
+  [_En, _ADAR],
+  [[() => CreateAssociationBatchRequestEntries, 0], 0], 1
 ];
 export var CreateAssociationBatchRequestEntry$: StaticStructureSchema = [3, n0, _CABRE,
   0,
@@ -2718,8 +2719,8 @@ export var CreateAssociationBatchResult$: StaticStructureSchema = [3, n0, _CABRr
 ];
 export var CreateAssociationRequest$: StaticStructureSchema = [3, n0, _CARre,
   0,
-  [_N, _DV, _II, _P, _Ta, _SE, _OL, _AN, _ATPN, _ME, _MC, _CS, _SCy, _AOACI, _CN, _TL, _SO, _Du, _TM, _T, _AC],
-  [0, 0, 0, [() => _Parameters, 0], () => Targets, 0, () => InstanceAssociationOutputLocation$, 0, 0, 0, 0, 0, 0, 2, 64 | 0, () => TargetLocations, 1, 1, [1, n0, _TM, 0, [2, n0, _TMa, 0, 0, 64 | 0]], () => TagList, () => AlarmConfiguration$], 1
+  [_N, _DV, _II, _P, _Ta, _SE, _OL, _AN, _ATPN, _ME, _MC, _CS, _SCy, _AOACI, _CN, _TL, _SO, _Du, _TM, _T, _AC, _ADAR],
+  [0, 0, 0, [() => _Parameters, 0], () => Targets, 0, () => InstanceAssociationOutputLocation$, 0, 0, 0, 0, 0, 0, 2, 64 | 0, () => TargetLocations, 1, 1, [1, n0, _TM, 0, [2, n0, _TMa, 0, 0, 64 | 0]], () => TagList, () => AlarmConfiguration$, 0], 1
 ];
 export var CreateAssociationResult$: StaticStructureSchema = [3, n0, _CARrea,
   0,
@@ -4628,8 +4629,8 @@ export var UnlabelParameterVersionResult$: StaticStructureSchema = [3, n0, _UPVR
 ];
 export var UpdateAssociationRequest$: StaticStructureSchema = [3, n0, _UAR,
   0,
-  [_AIs, _P, _DV, _SE, _OL, _N, _Ta, _AN, _AV, _ATPN, _ME, _MC, _CS, _SCy, _AOACI, _CN, _TL, _SO, _Du, _TM, _AC],
-  [0, [() => _Parameters, 0], 0, 0, () => InstanceAssociationOutputLocation$, 0, () => Targets, 0, 0, 0, 0, 0, 0, 0, 2, 64 | 0, () => TargetLocations, 1, 1, [1, n0, _TM, 0, [2, n0, _TMa, 0, 0, 64 | 0]], () => AlarmConfiguration$], 1
+  [_AIs, _P, _DV, _SE, _OL, _N, _Ta, _AN, _AV, _ATPN, _ME, _MC, _CS, _SCy, _AOACI, _CN, _TL, _SO, _Du, _TM, _AC, _ADAR],
+  [0, [() => _Parameters, 0], 0, 0, () => InstanceAssociationOutputLocation$, 0, () => Targets, 0, 0, 0, 0, 0, 0, 0, 2, 64 | 0, () => TargetLocations, 1, 1, [1, n0, _TM, 0, [2, n0, _TMa, 0, 0, 64 | 0]], () => AlarmConfiguration$, 0], 1
 ];
 export var UpdateAssociationResult$: StaticStructureSchema = [3, n0, _UARp,
   0,

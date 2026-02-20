@@ -1026,6 +1026,23 @@ export interface CreateAssociationRequest {
    * @public
    */
   AlarmConfiguration?: AlarmConfiguration | undefined;
+
+  /**
+   * <p>A role used by association to take actions on your behalf.
+   *    State Manager will assume this role and call required APIs when dispatching
+   *    configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html">
+   *    service-linked role for Systems Manager</a> will be used by default.
+   *   </p>
+   *          <note>
+   *             <p>It is recommended that you define a custom IAM role so that you have full control of
+   *     the permissions that State Manager has when taking actions on your behalf.</p>
+   *             <p>Service-linked role support in State Manager is being phased out. Associations
+   *     relying on service-linked role may require updates in the future to continue
+   *     functioning properly.</p>
+   *          </note>
+   * @public
+   */
+  AssociationDispatchAssumeRole?: string | undefined;
 }
 
 /**
@@ -1299,6 +1316,16 @@ export interface AssociationDescription {
    * @public
    */
   TriggeredAlarms?: AlarmStateInformation[] | undefined;
+
+  /**
+   * <p>A role used by association to take actions on your behalf.
+   *    State Manager will assume this role and call required APIs when dispatching
+   *    configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html">
+   *    service-linked role for Systems Manager</a> will be used by default.
+   *   </p>
+   * @public
+   */
+  AssociationDispatchAssumeRole?: string | undefined;
 }
 
 /**
@@ -1528,6 +1555,23 @@ export interface CreateAssociationBatchRequest {
    * @public
    */
   Entries: CreateAssociationBatchRequestEntry[] | undefined;
+
+  /**
+   * <p>A role used by association to take actions on your behalf.
+   *    State Manager will assume this role and call required APIs when dispatching
+   *    configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html">
+   *    service-linked role for Systems Manager</a> will be used by default.
+   *   </p>
+   *          <note>
+   *             <p>It is recommended that you define a custom IAM role so that you have full control of
+   *     the permissions that State Manager has when taking actions on your behalf.</p>
+   *             <p>Service-linked role support in State Manager is being phased out. Associations
+   *     relying on service-linked role may require updates in the future to continue
+   *     functioning properly.</p>
+   *          </note>
+   * @public
+   */
+  AssociationDispatchAssumeRole?: string | undefined;
 }
 
 /**
@@ -2326,8 +2370,7 @@ export interface CreateOpsItemRequest {
    *                <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change
    *      requests. </p>
    *                <important>
-   *                   <p>Amazon Web Services Systems Manager Change Manager will no longer be open to new
-   *   customers starting November 7, 2025. If you would like to use Change Manager, sign up prior to that date. Existing customers can
+   *                   <p>Amazon Web Services Systems Manager Change Manager is no longer open to new customers. Existing customers can
    *   continue to use the service as normal. For more information, see
    * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon Web Services Systems Manager Change Manager availability change</a>.</p>
    *                </important>

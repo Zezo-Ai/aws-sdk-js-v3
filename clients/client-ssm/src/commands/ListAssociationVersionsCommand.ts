@@ -125,6 +125,7 @@ export interface ListAssociationVersionsCommandOutput extends ListAssociationVer
  * //           ],
  * //         },
  * //       ],
+ * //       AssociationDispatchAssumeRole: "STRING_VALUE",
  * //     },
  * //   ],
  * //   NextToken: "STRING_VALUE",

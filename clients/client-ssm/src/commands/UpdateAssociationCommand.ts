@@ -143,6 +143,7 @@ export interface UpdateAssociationCommandOutput extends UpdateAssociationResult,
  *       },
  *     ],
  *   },
+ *   AssociationDispatchAssumeRole: "STRING_VALUE",
  * };
  * const command = new UpdateAssociationCommand(input);
  * const response = await client.send(command);
@@ -259,6 +260,7 @@ export interface UpdateAssociationCommandOutput extends UpdateAssociationResult,
  * //         State: "UNKNOWN" || "ALARM", // required
  * //       },
  * //     ],
+ * //     AssociationDispatchAssumeRole: "STRING_VALUE",
  * //   },
  * // };
  *
