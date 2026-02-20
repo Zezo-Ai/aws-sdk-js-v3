@@ -96,6 +96,7 @@ export interface StartImageBuilderCommandOutput extends StartImageBuilderResult,
  * //       VolumeSizeInGb: Number("int"),
  * //     },
  * //     LatestAppstreamAgentVersion: "TRUE" || "FALSE",
+ * //     DisableIMDSV1: true || false,
  * //   },
  * // };
  *

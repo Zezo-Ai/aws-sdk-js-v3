@@ -80,6 +80,7 @@ export interface StopAppBlockBuilderCommandOutput extends StopAppBlockBuilderRes
  * //         VpceId: "STRING_VALUE",
  * //       },
  * //     ],
+ * //     DisableIMDSV1: true || false,
  * //   },
  * // };
  *

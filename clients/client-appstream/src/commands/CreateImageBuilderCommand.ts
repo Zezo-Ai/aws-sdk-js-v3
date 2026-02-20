@@ -77,6 +77,7 @@ export interface CreateImageBuilderCommandOutput extends CreateImageBuilderResul
  *   SoftwaresToUninstall: [
  *     "STRING_VALUE",
  *   ],
+ *   DisableIMDSV1: true || false,
  * };
  * const command = new CreateImageBuilderCommand(input);
  * const response = await client.send(command);
@@ -134,6 +135,7 @@ export interface CreateImageBuilderCommandOutput extends CreateImageBuilderResul
  * //       VolumeSizeInGb: Number("int"),
  * //     },
  * //     LatestAppstreamAgentVersion: "TRUE" || "FALSE",
+ * //     DisableIMDSV1: true || false,
  * //   },
  * // };
  *

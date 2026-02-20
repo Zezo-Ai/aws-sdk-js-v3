@@ -65,6 +65,7 @@ export interface UpdateAppBlockBuilderCommandOutput extends UpdateAppBlockBuilde
  *   AttributesToDelete: [ // AppBlockBuilderAttributes
  *     "IAM_ROLE_ARN" || "ACCESS_ENDPOINTS" || "VPC_CONFIGURATION_SECURITY_GROUP_IDS",
  *   ],
+ *   DisableIMDSV1: true || false,
  * };
  * const command = new UpdateAppBlockBuilderCommand(input);
  * const response = await client.send(command);
@@ -105,6 +106,7 @@ export interface UpdateAppBlockBuilderCommandOutput extends UpdateAppBlockBuilde
  * //         VpceId: "STRING_VALUE",
  * //       },
  * //     ],
+ * //     DisableIMDSV1: true || false,
  * //   },
  * // };
  *

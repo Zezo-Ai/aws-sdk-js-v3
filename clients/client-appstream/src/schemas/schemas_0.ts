@@ -209,6 +209,7 @@ const _DIBRes = "DescribeImageBuildersRequest";
 const _DIBResc = "DescribeImageBuildersResult";
 const _DIBe = "DescribeImageBuilders";
 const _DID = "DestinationImageDescription";
+const _DIMDSV = "DisableIMDSV1";
 const _DIN = "DestinationImageName";
 const _DIP = "DeleteImagePermissions";
 const _DIPR = "DeleteImagePermissionsRequest";
@@ -747,8 +748,8 @@ export var AppBlock$: StaticStructureSchema = [3, n0, _AB,
 ];
 export var AppBlockBuilder$: StaticStructureSchema = [3, n0, _ABB,
   0,
-  [_A, _N, _P, _IT, _VC, _S, _DN, _D, _EDIA, _IRA, _CT, _ABBE, _SCR, _AEc],
-  [0, 0, 0, 0, () => VpcConfig$, 0, 0, 0, 2, 0, 4, () => ResourceErrors, () => AppBlockBuilderStateChangeReason$, () => AccessEndpointList], 6
+  [_A, _N, _P, _IT, _VC, _S, _DN, _D, _EDIA, _IRA, _CT, _ABBE, _SCR, _AEc, _DIMDSV],
+  [0, 0, 0, 0, () => VpcConfig$, 0, 0, 0, 2, 0, 4, () => ResourceErrors, () => AppBlockBuilderStateChangeReason$, () => AccessEndpointList, 2], 6
 ];
 export var AppBlockBuilderAppBlockAssociation$: StaticStructureSchema = [3, n0, _ABBABA,
   0,
@@ -882,8 +883,8 @@ export var CopyImageResponse$: StaticStructureSchema = [3, n0, _CIRo,
 ];
 export var CreateAppBlockBuilderRequest$: StaticStructureSchema = [3, n0, _CABBR,
   0,
-  [_N, _P, _IT, _VC, _D, _DN, _T, _EDIA, _IRA, _AEc],
-  [0, 0, 0, () => VpcConfig$, 0, 0, 128 | 0, 2, 0, () => AccessEndpointList], 4
+  [_N, _P, _IT, _VC, _D, _DN, _T, _EDIA, _IRA, _AEc, _DIMDSV],
+  [0, 0, 0, () => VpcConfig$, 0, 0, 128 | 0, 2, 0, () => AccessEndpointList, 2], 4
 ];
 export var CreateAppBlockBuilderResult$: StaticStructureSchema = [3, n0, _CABBRr,
   0,
@@ -952,8 +953,8 @@ export var CreateExportImageTaskResult$: StaticStructureSchema = [3, n0, _CEITRr
 ];
 export var CreateFleetRequest$: StaticStructureSchema = [3, n0, _CFR,
   0,
-  [_N, _IT, _IN, _IA, _FT, _CC, _VC, _MUDIS, _DTIS, _D, _DN, _EDIA, _DJI, _T, _IDTIS, _IRA, _SV, _P, _MCS, _UDFS, _SSSL, _MSPI, _RVC],
-  [0, 0, 0, 0, 0, () => ComputeCapacity$, () => VpcConfig$, 1, 1, 0, 0, 2, () => DomainJoinInfo$, 128 | 0, 1, 0, 0, 0, 1, 64 | 0, () => S3Location$, 1, () => VolumeConfig$], 2
+  [_N, _IT, _IN, _IA, _FT, _CC, _VC, _MUDIS, _DTIS, _D, _DN, _EDIA, _DJI, _T, _IDTIS, _IRA, _SV, _P, _MCS, _UDFS, _SSSL, _MSPI, _RVC, _DIMDSV],
+  [0, 0, 0, 0, 0, () => ComputeCapacity$, () => VpcConfig$, 1, 1, 0, 0, 2, () => DomainJoinInfo$, 128 | 0, 1, 0, 0, 0, 1, 64 | 0, () => S3Location$, 1, () => VolumeConfig$, 2], 2
 ];
 export var CreateFleetResult$: StaticStructureSchema = [3, n0, _CFRr,
   0,
@@ -962,8 +963,8 @@ export var CreateFleetResult$: StaticStructureSchema = [3, n0, _CFRr,
 ];
 export var CreateImageBuilderRequest$: StaticStructureSchema = [3, n0, _CIBR,
   0,
-  [_N, _IT, _IN, _IA, _D, _DN, _VC, _IRA, _EDIA, _DJI, _AAV, _T, _AEc, _RVC, _STI, _STU],
-  [0, 0, 0, 0, 0, 0, () => VpcConfig$, 0, 2, () => DomainJoinInfo$, 0, 128 | 0, () => AccessEndpointList, () => VolumeConfig$, 64 | 0, 64 | 0], 2
+  [_N, _IT, _IN, _IA, _D, _DN, _VC, _IRA, _EDIA, _DJI, _AAV, _T, _AEc, _RVC, _STI, _STU, _DIMDSV],
+  [0, 0, 0, 0, 0, 0, () => VpcConfig$, 0, 2, () => DomainJoinInfo$, 0, 128 | 0, () => AccessEndpointList, () => VolumeConfig$, 64 | 0, 64 | 0, 2], 2
 ];
 export var CreateImageBuilderResult$: StaticStructureSchema = [3, n0, _CIBRr,
   0,
@@ -1492,8 +1493,8 @@ export var Filter$: StaticStructureSchema = [3, n0, _Fi,
 ];
 export var Fleet$: StaticStructureSchema = [3, n0, _F,
   0,
-  [_A, _N, _IT, _CCS, _S, _DN, _D, _IN, _IA, _FT, _MUDIS, _DTIS, _VC, _CT, _FE, _EDIA, _DJI, _IDTIS, _IRA, _SV, _P, _MCS, _UDFS, _SSSL, _MSPI, _RVC],
-  [0, 0, 0, () => ComputeCapacityStatus$, 0, 0, 0, 0, 0, 0, 1, 1, () => VpcConfig$, 4, () => FleetErrors, 2, () => DomainJoinInfo$, 1, 0, 0, 0, 1, 64 | 0, () => S3Location$, 1, () => VolumeConfig$], 5
+  [_A, _N, _IT, _CCS, _S, _DN, _D, _IN, _IA, _FT, _MUDIS, _DTIS, _VC, _CT, _FE, _EDIA, _DJI, _IDTIS, _IRA, _SV, _P, _MCS, _UDFS, _SSSL, _MSPI, _RVC, _DIMDSV],
+  [0, 0, 0, () => ComputeCapacityStatus$, 0, 0, 0, 0, 0, 0, 1, 1, () => VpcConfig$, 4, () => FleetErrors, 2, () => DomainJoinInfo$, 1, 0, 0, 0, 1, 64 | 0, () => S3Location$, 1, () => VolumeConfig$, 2], 5
 ];
 export var FleetError$: StaticStructureSchema = [3, n0, _FEl,
   0,
@@ -1517,8 +1518,8 @@ export var Image$: StaticStructureSchema = [3, n0, _I,
 ];
 export var ImageBuilder$: StaticStructureSchema = [3, n0, _IB,
   0,
-  [_N, _A, _IA, _D, _DN, _VC, _IT, _P, _IRA, _S, _SCR, _CT, _EDIA, _DJI, _NAC, _IBE, _AAV, _AEc, _RVC, _LAAV],
-  [0, 0, 0, 0, 0, () => VpcConfig$, 0, 0, 0, 0, () => ImageBuilderStateChangeReason$, 4, 2, () => DomainJoinInfo$, () => NetworkAccessConfiguration$, () => ResourceErrors, 0, () => AccessEndpointList, () => VolumeConfig$, 0], 1
+  [_N, _A, _IA, _D, _DN, _VC, _IT, _P, _IRA, _S, _SCR, _CT, _EDIA, _DJI, _NAC, _IBE, _AAV, _AEc, _RVC, _LAAV, _DIMDSV],
+  [0, 0, 0, 0, 0, () => VpcConfig$, 0, 0, 0, 0, () => ImageBuilderStateChangeReason$, 4, 2, () => DomainJoinInfo$, () => NetworkAccessConfiguration$, () => ResourceErrors, 0, () => AccessEndpointList, () => VolumeConfig$, 0, 2], 1
 ];
 export var ImageBuilderStateChangeReason$: StaticStructureSchema = [3, n0, _IBSCR,
   0,
@@ -1757,8 +1758,8 @@ export var UntagResourceResponse$: StaticStructureSchema = [3, n0, _URRn,
 ];
 export var UpdateAppBlockBuilderRequest$: StaticStructureSchema = [3, n0, _UABBR,
   0,
-  [_N, _D, _DN, _P, _IT, _VC, _EDIA, _IRA, _AEc, _ATD],
-  [0, 0, 0, 0, 0, () => VpcConfig$, 2, 0, () => AccessEndpointList, 64 | 0], 1
+  [_N, _D, _DN, _P, _IT, _VC, _EDIA, _IRA, _AEc, _ATD, _DIMDSV],
+  [0, 0, 0, 0, 0, () => VpcConfig$, 2, 0, () => AccessEndpointList, 64 | 0, 2], 1
 ];
 export var UpdateAppBlockBuilderResult$: StaticStructureSchema = [3, n0, _UABBRp,
   0,
@@ -1797,8 +1798,8 @@ export var UpdateEntitlementResult$: StaticStructureSchema = [3, n0, _UERp,
 ];
 export var UpdateFleetRequest$: StaticStructureSchema = [3, n0, _UFR,
   0,
-  [_IN, _IA, _N, _IT, _CC, _VC, _MUDIS, _DTIS, _DVC, _D, _DN, _EDIA, _DJI, _IDTIS, _ATD, _IRA, _SV, _P, _MCS, _UDFS, _SSSL, _MSPI, _RVC],
-  [0, 0, 0, 0, () => ComputeCapacity$, () => VpcConfig$, 1, 1, 2, 0, 0, 2, () => DomainJoinInfo$, 1, 64 | 0, 0, 0, 0, 1, 64 | 0, () => S3Location$, 1, () => VolumeConfig$]
+  [_IN, _IA, _N, _IT, _CC, _VC, _MUDIS, _DTIS, _DVC, _D, _DN, _EDIA, _DJI, _IDTIS, _ATD, _IRA, _SV, _P, _MCS, _UDFS, _SSSL, _MSPI, _RVC, _DIMDSV],
+  [0, 0, 0, 0, () => ComputeCapacity$, () => VpcConfig$, 1, 1, 2, 0, 0, 2, () => DomainJoinInfo$, 1, 64 | 0, 0, 0, 0, 1, 64 | 0, () => S3Location$, 1, () => VolumeConfig$, 2]
 ];
 export var UpdateFleetResult$: StaticStructureSchema = [3, n0, _UFRp,
   0,

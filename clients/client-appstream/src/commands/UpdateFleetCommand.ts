@@ -103,6 +103,7 @@ export interface UpdateFleetCommandOutput extends UpdateFleetResult, __MetadataB
  *   RootVolumeConfig: { // VolumeConfig
  *     VolumeSizeInGb: Number("int"),
  *   },
+ *   DisableIMDSV1: true || false,
  * };
  * const command = new UpdateFleetCommand(input);
  * const response = await client.send(command);
@@ -165,6 +166,7 @@ export interface UpdateFleetCommandOutput extends UpdateFleetResult, __MetadataB
  * //     RootVolumeConfig: { // VolumeConfig
  * //       VolumeSizeInGb: Number("int"),
  * //     },
+ * //     DisableIMDSV1: true || false,
  * //   },
  * // };
  *

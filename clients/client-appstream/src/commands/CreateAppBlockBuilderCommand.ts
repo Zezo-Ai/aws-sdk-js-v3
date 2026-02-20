@@ -61,6 +61,7 @@ export interface CreateAppBlockBuilderCommandOutput extends CreateAppBlockBuilde
  *       VpceId: "STRING_VALUE",
  *     },
  *   ],
+ *   DisableIMDSV1: true || false,
  * };
  * const command = new CreateAppBlockBuilderCommand(input);
  * const response = await client.send(command);
@@ -101,6 +102,7 @@ export interface CreateAppBlockBuilderCommandOutput extends CreateAppBlockBuilde
  * //         VpceId: "STRING_VALUE",
  * //       },
  * //     ],
+ * //     DisableIMDSV1: true || false,
  * //   },
  * // };
  *

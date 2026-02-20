@@ -100,6 +100,7 @@ export interface DescribeImageBuildersCommandOutput extends DescribeImageBuilder
  * //         VolumeSizeInGb: Number("int"),
  * //       },
  * //       LatestAppstreamAgentVersion: "TRUE" || "FALSE",
+ * //       DisableIMDSV1: true || false,
  * //     },
  * //   ],
  * //   NextToken: "STRING_VALUE",

@@ -83,6 +83,7 @@ export interface DescribeAppBlockBuildersCommandOutput extends DescribeAppBlockB
  * //           VpceId: "STRING_VALUE",
  * //         },
  * //       ],
+ * //       DisableIMDSV1: true || false,
  * //     },
  * //   ],
  * //   NextToken: "STRING_VALUE",

@@ -435,6 +435,12 @@ export interface AppBlockBuilder {
    * @public
    */
   AccessEndpoints?: AccessEndpoint[] | undefined;
+
+  /**
+   * <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the app block builder.</p>
+   * @public
+   */
+  DisableIMDSV1?: boolean | undefined;
 }
 
 /**
@@ -1272,6 +1278,12 @@ export interface CreateAppBlockBuilderRequest {
    * @public
    */
   AccessEndpoints?: AccessEndpoint[] | undefined;
+
+  /**
+   * <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+   * @public
+   */
+  DisableIMDSV1?: boolean | undefined;
 }
 
 /**
@@ -2133,6 +2145,15 @@ export interface CreateFleetRequest {
    * @public
    */
   RootVolumeConfig?: VolumeConfig | undefined;
+
+  /**
+   * <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+   *          <note>
+   *             <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
+   *          </note>
+   * @public
+   */
+  DisableIMDSV1?: boolean | undefined;
 }
 
 /**
@@ -2483,6 +2504,12 @@ export interface Fleet {
    * @public
    */
   RootVolumeConfig?: VolumeConfig | undefined;
+
+  /**
+   * <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the fleet.</p>
+   * @public
+   */
+  DisableIMDSV1?: boolean | undefined;
 }
 
 /**
@@ -2890,6 +2917,15 @@ export interface CreateImageBuilderRequest {
    * @public
    */
   SoftwaresToUninstall?: string[] | undefined;
+
+  /**
+   * <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+   *          <note>
+   *             <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
+   *          </note>
+   * @public
+   */
+  DisableIMDSV1?: boolean | undefined;
 }
 
 /**
@@ -3199,6 +3235,12 @@ export interface ImageBuilder {
    * @public
    */
   LatestAppstreamAgentVersion?: LatestAppstreamAgentVersion | undefined;
+
+  /**
+   * <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the image builder.</p>
+   * @public
+   */
+  DisableIMDSV1?: boolean | undefined;
 }
 
 /**
@@ -6287,6 +6329,12 @@ export interface UpdateAppBlockBuilderRequest {
    * @public
    */
   AttributesToDelete?: AppBlockBuilderAttribute[] | undefined;
+
+  /**
+   * <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+   * @public
+   */
+  DisableIMDSV1?: boolean | undefined;
 }
 
 /**
@@ -6786,6 +6834,15 @@ export interface UpdateFleetRequest {
    * @public
    */
   RootVolumeConfig?: VolumeConfig | undefined;
+
+  /**
+   * <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+   *          <note>
+   *             <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
+   *          </note>
+   * @public
+   */
+  DisableIMDSV1?: boolean | undefined;
 }
 
 /**

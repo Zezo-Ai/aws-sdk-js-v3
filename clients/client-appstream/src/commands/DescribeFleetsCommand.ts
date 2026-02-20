@@ -104,6 +104,7 @@ export interface DescribeFleetsCommandOutput extends DescribeFleetsResult, __Met
  * //       RootVolumeConfig: { // VolumeConfig
  * //         VolumeSizeInGb: Number("int"),
  * //       },
+ * //       DisableIMDSV1: true || false,
  * //     },
  * //   ],
  * //   NextToken: "STRING_VALUE",

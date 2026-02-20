@@ -82,6 +82,7 @@ export interface StartAppBlockBuilderCommandOutput extends StartAppBlockBuilderR
  * //         VpceId: "STRING_VALUE",
  * //       },
  * //     ],
+ * //     DisableIMDSV1: true || false,
  * //   },
  * // };
  *

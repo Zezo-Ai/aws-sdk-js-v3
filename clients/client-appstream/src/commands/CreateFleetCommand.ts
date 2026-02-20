@@ -82,6 +82,7 @@ export interface CreateFleetCommandOutput extends CreateFleetResult, __MetadataB
  *   RootVolumeConfig: { // VolumeConfig
  *     VolumeSizeInGb: Number("int"),
  *   },
+ *   DisableIMDSV1: true || false,
  * };
  * const command = new CreateFleetCommand(input);
  * const response = await client.send(command);
@@ -144,6 +145,7 @@ export interface CreateFleetCommandOutput extends CreateFleetResult, __MetadataB
  * //     RootVolumeConfig: { // VolumeConfig
  * //       VolumeSizeInGb: Number("int"),
  * //     },
+ * //     DisableIMDSV1: true || false,
  * //   },
  * // };
  *
