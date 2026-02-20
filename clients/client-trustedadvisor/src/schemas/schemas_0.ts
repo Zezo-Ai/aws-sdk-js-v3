@@ -79,6 +79,7 @@ const _d = "description";
 const _e = "error";
 const _eC = "errorCount";
 const _eCr = "errorCode";
+const _eCx = "excludedCount";
 const _eM = "errorMessage";
 const _eMS = "estimatedMonthlySavings";
 const _ePMS = "estimatedPercentMonthlySavings";
@@ -114,6 +115,7 @@ const _rRE = "recommendationResourceExclusions";
 const _rRS = "recommendationResourceSummaries";
 const _rS = "recommendationSummaries";
 const _s = "smithy.ts.sdk.synthetic.com.amazonaws.trustedadvisor";
+const _sR = "statusReason";
 const _se = "server";
 const _so = "source";
 const _st = "status";
@@ -229,8 +231,8 @@ export var GetOrganizationRecommendationResponse$: StaticStructureSchema = [3, n
 ];
 export var GetRecommendationRequest$: StaticStructureSchema = [3, n0, _GRR,
   0,
-  [_rI],
-  [[0, 1]], 1
+  [_rI, _l],
+  [[0, 1], [0, { [_hQ]: _l }]], 1
 ];
 export var GetRecommendationResponse$: StaticStructureSchema = [3, n0, _GRRe,
   0,
@@ -279,8 +281,8 @@ export var ListOrganizationRecommendationsResponse$: StaticStructureSchema = [3,
 ];
 export var ListRecommendationResourcesRequest$: StaticStructureSchema = [3, n0, _LRRR,
   0,
-  [_rI, _nT, _mR, _st, _eS, _rC],
-  [[0, 1], [0, { [_hQ]: _nT }], [1, { [_hQ]: _mR }], [0, { [_hQ]: _st }], [0, { [_hQ]: _eS }], [0, { [_hQ]: _rC }]], 1
+  [_rI, _nT, _mR, _st, _eS, _rC, _l],
+  [[0, 1], [0, { [_hQ]: _nT }], [1, { [_hQ]: _mR }], [0, { [_hQ]: _st }], [0, { [_hQ]: _eS }], [0, { [_hQ]: _rC }], [0, { [_hQ]: _l }]], 1
 ];
 export var ListRecommendationResourcesResponse$: StaticStructureSchema = [3, n0, _LRRRi,
   0,
@@ -289,8 +291,8 @@ export var ListRecommendationResourcesResponse$: StaticStructureSchema = [3, n0,
 ];
 export var ListRecommendationsRequest$: StaticStructureSchema = [3, n0, _LRR,
   0,
-  [_nT, _mR, _t, _st, _pi, _aSw, _so, _cI, _aLUA, _bLUA],
-  [[0, { [_hQ]: _nT }], [1, { [_hQ]: _mR }], [0, { [_hQ]: _t }], [0, { [_hQ]: _st }], [0, { [_hQ]: _pi }], [0, { [_hQ]: _aSw }], [0, { [_hQ]: _so }], [0, { [_hQ]: _cI }], [4, { [_hQ]: _aLUA }], [4, { [_hQ]: _bLUA }]]
+  [_nT, _mR, _t, _st, _pi, _aSw, _so, _cI, _aLUA, _bLUA, _l],
+  [[0, { [_hQ]: _nT }], [1, { [_hQ]: _mR }], [0, { [_hQ]: _t }], [0, { [_hQ]: _st }], [0, { [_hQ]: _pi }], [0, { [_hQ]: _aSw }], [0, { [_hQ]: _so }], [0, { [_hQ]: _cI }], [4, { [_hQ]: _aLUA }], [4, { [_hQ]: _bLUA }], [0, { [_hQ]: _l }]]
 ];
 export var ListRecommendationsResponse$: StaticStructureSchema = [3, n0, _LRRi,
   0,
@@ -314,8 +316,8 @@ export var OrganizationRecommendationSummary$: StaticStructureSchema = [3, n0, _
 ];
 export var Recommendation$: StaticStructureSchema = [3, n0, _R,
   0,
-  [_i, _t, _st, _p, _so, _n, _rA, _a, _d, _cA, _lS, _aS, _pSA, _cAr, _lUA, _cB, _uOBO, _uOBOJT, _uR, _uRC, _rAe],
-  [0, 0, 0, 64 | 0, 0, 0, () => RecommendationResourcesAggregates$, 0, 0, 0, 0, 64 | 0, () => RecommendationPillarSpecificAggregates$, 5, 5, 0, 0, 0, [() => RecommendationUpdateReason, 0], 0, 5], 9
+  [_i, _t, _st, _p, _so, _n, _rA, _a, _d, _cA, _lS, _aS, _pSA, _cAr, _lUA, _sR, _cB, _uOBO, _uOBOJT, _uR, _uRC, _rAe],
+  [0, 0, 0, 64 | 0, 0, 0, () => RecommendationResourcesAggregates$, 0, 0, 0, 0, 64 | 0, () => RecommendationPillarSpecificAggregates$, 5, 5, 0, 0, 0, 0, [() => RecommendationUpdateReason, 0], 0, 5], 9
 ];
 export var RecommendationCostOptimizingAggregates$: StaticStructureSchema = [3, n0, _RCOA,
   0,
@@ -334,8 +336,8 @@ export var RecommendationResourceExclusion$: StaticStructureSchema = [3, n0, _RR
 ];
 export var RecommendationResourcesAggregates$: StaticStructureSchema = [3, n0, _RRA,
   0,
-  [_oC, _wC, _eC],
-  [1, 1, 1], 3
+  [_oC, _wC, _eC, _eCx],
+  [1, 1, 1, 1], 3
 ];
 export var RecommendationResourceSummary$: StaticStructureSchema = [3, n0, _RRS,
   0,
@@ -344,8 +346,8 @@ export var RecommendationResourceSummary$: StaticStructureSchema = [3, n0, _RRS,
 ];
 export var RecommendationSummary$: StaticStructureSchema = [3, n0, _RS,
   0,
-  [_i, _t, _st, _p, _so, _n, _rA, _a, _cA, _lS, _aS, _pSA, _cAr, _lUA],
-  [0, 0, 0, 64 | 0, 0, 0, () => RecommendationResourcesAggregates$, 0, 0, 0, 64 | 0, () => RecommendationPillarSpecificAggregates$, 5, 5], 8
+  [_i, _t, _st, _p, _so, _n, _rA, _a, _cA, _lS, _aS, _pSA, _cAr, _lUA, _sR],
+  [0, 0, 0, 64 | 0, 0, 0, () => RecommendationResourcesAggregates$, 0, 0, 0, 64 | 0, () => RecommendationPillarSpecificAggregates$, 5, 5, 0], 8
 ];
 export var UpdateOrganizationRecommendationLifecycleRequest$: StaticStructureSchema = [3, n0, _UORLR,
   0,

@@ -34,9 +34,7 @@ export interface ListOrganizationRecommendationAccountsCommandInput extends List
 export interface ListOrganizationRecommendationAccountsCommandOutput extends ListOrganizationRecommendationAccountsResponse, __MetadataBearer {}
 
 /**
- * <p>Lists the accounts that own the resources for an organization aggregate recommendation. This API only
- *             supports prioritized recommendations.
- *         </p>
+ * <p>Lists the accounts that own the resources for an organization aggregate recommendation. This API only supports prioritized recommendations and provides global priority recommendations, eliminating the need to call the API in each AWS Region. </p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript

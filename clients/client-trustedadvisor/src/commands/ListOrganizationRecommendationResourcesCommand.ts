@@ -34,9 +34,7 @@ export interface ListOrganizationRecommendationResourcesCommandInput extends Lis
 export interface ListOrganizationRecommendationResourcesCommandOutput extends ListOrganizationRecommendationResourcesResponse, __MetadataBearer {}
 
 /**
- * <p>List Resources of a Recommendation within an Organization. This API only supports prioritized
- *             recommendations.
- *         </p>
+ * <p>List Resources of a Recommendation within an Organization. This API only supports prioritized recommendations and provides global priority recommendations, eliminating the need to call the API in each AWS Region. </p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript

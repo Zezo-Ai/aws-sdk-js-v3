@@ -31,9 +31,7 @@ export interface GetOrganizationRecommendationCommandInput extends GetOrganizati
 export interface GetOrganizationRecommendationCommandOutput extends GetOrganizationRecommendationResponse, __MetadataBearer {}
 
 /**
- * <p>Get a specific recommendation within an AWS Organizations organization. This API supports only prioritized
- *             recommendations.
- *         </p>
+ * <p>Get a specific recommendation within an AWS Organizations organization. This API supports only prioritized recommendations and provides global priority recommendations, eliminating the need to call the API in each AWS Region. </p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -57,7 +55,7 @@ export interface GetOrganizationRecommendationCommandOutput extends GetOrganizat
  * //     pillars: [ // RecommendationPillarList // required
  * //       "cost_optimizing" || "performance" || "security" || "service_limits" || "fault_tolerance" || "operational_excellence",
  * //     ],
- * //     source: "aws_config" || "compute_optimizer" || "cost_explorer" || "lse" || "manual" || "pse" || "rds" || "resilience" || "resilience_hub" || "security_hub" || "stir" || "ta_check" || "well_architected", // required
+ * //     source: "aws_config" || "compute_optimizer" || "cost_explorer" || "lse" || "manual" || "pse" || "rds" || "resilience" || "resilience_hub" || "security_hub" || "stir" || "ta_check" || "well_architected" || "cost_optimization_hub", // required
  * //     awsServices: [ // RecommendationAwsServiceList
  * //       "STRING_VALUE",
  * //     ],
@@ -66,6 +64,7 @@ export interface GetOrganizationRecommendationCommandOutput extends GetOrganizat
  * //       okCount: Number("long"), // required
  * //       warningCount: Number("long"), // required
  * //       errorCount: Number("long"), // required
+ * //       excludedCount: Number("long"),
  * //     },
  * //     pillarSpecificAggregates: { // RecommendationPillarSpecificAggregates
  * //       costOptimizing: { // RecommendationCostOptimizingAggregates

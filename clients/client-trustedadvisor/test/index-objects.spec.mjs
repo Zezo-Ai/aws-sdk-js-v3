@@ -69,6 +69,7 @@ import {
   ResourceNotFoundException,
   ResourceNotFoundException$,
   ResourceStatus,
+  StatusReason,
   ThrottlingException,
   ThrottlingException$,
   TrustedAdvisor,
@@ -156,6 +157,7 @@ assert(typeof RecommendationSource === "object");
 assert(typeof RecommendationStatus === "object");
 assert(typeof RecommendationType === "object");
 assert(typeof ResourceStatus === "object");
+assert(typeof StatusReason === "object");
 assert(typeof UpdateRecommendationLifecycleStage === "object");
 assert(typeof UpdateRecommendationLifecycleStageReasonCode === "object");
 // errors

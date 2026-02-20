@@ -31,7 +31,7 @@ export interface ListRecommendationResourcesCommandInput extends ListRecommendat
 export interface ListRecommendationResourcesCommandOutput extends ListRecommendationResourcesResponse, __MetadataBearer {}
 
 /**
- * <p>List Resources of a Recommendation</p>
+ * <p>List Resources of a Recommendation. This API provides global recommendations, eliminating the need to call the API in each AWS Region.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -47,6 +47,7 @@ export interface ListRecommendationResourcesCommandOutput extends ListRecommenda
  *   exclusionStatus: "excluded" || "included",
  *   regionCode: "STRING_VALUE",
  *   recommendationIdentifier: "STRING_VALUE", // required
+ *   language: "en" || "ja" || "zh" || "fr" || "de" || "ko" || "zh_TW" || "it" || "es" || "pt_BR" || "id",
  * };
  * const command = new ListRecommendationResourcesCommand(input);
  * const response = await client.send(command);

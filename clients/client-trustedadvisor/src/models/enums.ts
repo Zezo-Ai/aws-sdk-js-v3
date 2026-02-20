@@ -59,6 +59,7 @@ export const RecommendationSource = {
   AWS_CONFIG: "aws_config",
   COMPUTE_OPTIMIZER: "compute_optimizer",
   COST_EXPLORER: "cost_explorer",
+  COST_OPTIMIZATION_HUB: "cost_optimization_hub",
   LSE: "lse",
   MANUAL: "manual",
   PSE: "pse",
@@ -136,6 +137,18 @@ export const RecommendationLanguage = {
  * @public
  */
 export type RecommendationLanguage = (typeof RecommendationLanguage)[keyof typeof RecommendationLanguage];
+
+/**
+ * @public
+ * @enum
+ */
+export const StatusReason = {
+  NO_DATA_OK: "no_data_ok",
+} as const;
+/**
+ * @public
+ */
+export type StatusReason = (typeof StatusReason)[keyof typeof StatusReason];
 
 /**
  * @public

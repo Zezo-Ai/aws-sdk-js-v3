@@ -8,6 +8,7 @@ import {
   RecommendationStatus,
   RecommendationType,
   ResourceStatus,
+  StatusReason,
   UpdateRecommendationLifecycleStage,
   UpdateRecommendationLifecycleStageReasonCode,
 } from "./enums";
@@ -36,19 +37,13 @@ export interface AccountRecommendationLifecycleSummary {
   lifecycleStage?: RecommendationLifecycleStage | undefined;
 
   /**
-   * <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information
-   *             is only available when a Technical Account Manager takes an action on a recommendation managed by AWS
-   *             Trusted Advisor Priority
-   *         </p>
+   * <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority </p>
    * @public
    */
   updatedOnBehalfOf?: string | undefined;
 
   /**
-   * <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation.
-   *             This information is only available when a Technical Account Manager takes an action on a recommendation
-   *             managed by AWS Trusted Advisor Priority
-   *         </p>
+   * <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority </p>
    * @public
    */
   updatedOnBehalfOfJobTitle?: string | undefined;
@@ -243,8 +238,7 @@ export interface RecommendationResourcesAggregates {
   okCount: number | undefined;
 
   /**
-   * <p>The number of AWS resources that were flagged to have warning according to the Trusted Advisor check
-   *         </p>
+   * <p>The number of AWS resources that were flagged to have warning according to the Trusted Advisor check </p>
    * @public
    */
   warningCount: number | undefined;
@@ -254,6 +248,12 @@ export interface RecommendationResourcesAggregates {
    * @public
    */
   errorCount: number | undefined;
+
+  /**
+   * <p>The number of AWS resources belonging to this Trusted Advisor check that were excluded by the customer</p>
+   * @public
+   */
+  excludedCount?: number | undefined;
 }
 
 /**
@@ -358,19 +358,13 @@ export interface OrganizationRecommendation {
   createdBy?: string | undefined;
 
   /**
-   * <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information
-   *             is only available when a Technical Account Manager takes an action on a recommendation managed by AWS
-   *             Trusted Advisor Priority
-   *         </p>
+   * <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority </p>
    * @public
    */
   updatedOnBehalfOf?: string | undefined;
 
   /**
-   * <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation.
-   *             This information is only available when a Technical Account Manager takes an action on a recommendation
-   *             managed by AWS Trusted Advisor Priority
-   *         </p>
+   * <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority </p>
    * @public
    */
   updatedOnBehalfOfJobTitle?: string | undefined;
@@ -414,6 +408,12 @@ export interface GetRecommendationRequest {
    * @public
    */
   recommendationIdentifier: string | undefined;
+
+  /**
+   * <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+   * @public
+   */
+  language?: RecommendationLanguage | undefined;
 }
 
 /**
@@ -506,6 +506,12 @@ export interface Recommendation {
   arn: string | undefined;
 
   /**
+   * <p>This attribute provides additional details about potential discrepancies in check status determination.</p>
+   * @public
+   */
+  statusReason?: StatusReason | undefined;
+
+  /**
    * <p>A description for AWS Trusted Advisor recommendations</p>
    * @public
    */
@@ -518,19 +524,13 @@ export interface Recommendation {
   createdBy?: string | undefined;
 
   /**
-   * <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information
-   *             is only available when a Technical Account Manager takes an action on a recommendation managed by AWS
-   *             Trusted Advisor Priority
-   *         </p>
+   * <p>The person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority </p>
    * @public
    */
   updatedOnBehalfOf?: string | undefined;
 
   /**
-   * <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation.
-   *             This information is only available when a Technical Account Manager takes an action on a recommendation
-   *             managed by AWS Trusted Advisor Priority
-   *         </p>
+   * <p>The job title of the person on whose behalf a Technical Account Manager (TAM) updated the recommendation. This information is only available when a Technical Account Manager takes an action on a recommendation managed by AWS Trusted Advisor Priority </p>
    * @public
    */
   updatedOnBehalfOfJobTitle?: string | undefined;
@@ -570,9 +570,7 @@ export interface GetRecommendationResponse {
  */
 export interface ListChecksRequest {
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous response in the next request
-   *             to retrieve the next set of results.
-   *         </p>
+   * <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
    * @public
    */
   nextToken?: string | undefined;
@@ -613,9 +611,7 @@ export interface ListChecksRequest {
  */
 export interface ListChecksResponse {
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous response in the next request
-   *             to retrieve the next set of results.
-   *         </p>
+   * <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
    * @public
    */
   nextToken?: string | undefined;
@@ -632,9 +628,7 @@ export interface ListChecksResponse {
  */
 export interface ListOrganizationRecommendationAccountsRequest {
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous response in the next request
-   *             to retrieve the next set of results.
-   *         </p>
+   * <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
    * @public
    */
   nextToken?: string | undefined;
@@ -663,9 +657,7 @@ export interface ListOrganizationRecommendationAccountsRequest {
  */
 export interface ListOrganizationRecommendationAccountsResponse {
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous response in the next request
-   *             to retrieve the next set of results.
-   *         </p>
+   * <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
    * @public
    */
   nextToken?: string | undefined;
@@ -682,9 +674,7 @@ export interface ListOrganizationRecommendationAccountsResponse {
  */
 export interface ListOrganizationRecommendationResourcesRequest {
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous response in the next request
-   *             to retrieve the next set of results.
-   *         </p>
+   * <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
    * @public
    */
   nextToken?: string | undefined;
@@ -744,7 +734,7 @@ export interface OrganizationRecommendationResourceSummary {
   arn: string | undefined;
 
   /**
-   * <p>The AWS resource identifier</p>
+   * <p>The AWS resource identifier. There are certain checks that generate recommendation resources without an awsResourceId.</p>
    * @public
    */
   awsResourceId: string | undefined;
@@ -797,9 +787,7 @@ export interface OrganizationRecommendationResourceSummary {
  */
 export interface ListOrganizationRecommendationResourcesResponse {
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous response in the next request
-   *             to retrieve the next set of results.
-   *         </p>
+   * <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
    * @public
    */
   nextToken?: string | undefined;
@@ -816,9 +804,7 @@ export interface ListOrganizationRecommendationResourcesResponse {
  */
 export interface ListOrganizationRecommendationsRequest {
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous response in the next request
-   *             to retrieve the next set of results.
-   *         </p>
+   * <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
    * @public
    */
   nextToken?: string | undefined;
@@ -973,9 +959,7 @@ export interface OrganizationRecommendationSummary {
  */
 export interface ListOrganizationRecommendationsResponse {
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous response in the next request
-   *             to retrieve the next set of results.
-   *         </p>
+   * <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
    * @public
    */
   nextToken?: string | undefined;
@@ -992,9 +976,7 @@ export interface ListOrganizationRecommendationsResponse {
  */
 export interface ListRecommendationResourcesRequest {
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous response in the next request
-   *             to retrieve the next set of results.
-   *         </p>
+   * <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
    * @public
    */
   nextToken?: string | undefined;
@@ -1028,6 +1010,12 @@ export interface ListRecommendationResourcesRequest {
    * @public
    */
   recommendationIdentifier: string | undefined;
+
+  /**
+   * <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+   * @public
+   */
+  language?: RecommendationLanguage | undefined;
 }
 
 /**
@@ -1048,7 +1036,7 @@ export interface RecommendationResourceSummary {
   arn: string | undefined;
 
   /**
-   * <p>The AWS resource identifier</p>
+   * <p>The AWS resource identifier. There are certain checks that generate recommendation resources without an awsResourceId.</p>
    * @public
    */
   awsResourceId: string | undefined;
@@ -1095,9 +1083,7 @@ export interface RecommendationResourceSummary {
  */
 export interface ListRecommendationResourcesResponse {
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous response in the next request
-   *             to retrieve the next set of results.
-   *         </p>
+   * <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
    * @public
    */
   nextToken?: string | undefined;
@@ -1114,9 +1100,7 @@ export interface ListRecommendationResourcesResponse {
  */
 export interface ListRecommendationsRequest {
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous response in the next request
-   *             to retrieve the next set of results.
-   *         </p>
+   * <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
    * @public
    */
   nextToken?: string | undefined;
@@ -1174,6 +1158,12 @@ export interface ListRecommendationsRequest {
    * @public
    */
   beforeLastUpdatedAt?: Date | undefined;
+
+  /**
+   * <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+   * @public
+   */
+  language?: RecommendationLanguage | undefined;
 }
 
 /**
@@ -1264,6 +1254,12 @@ export interface RecommendationSummary {
    * @public
    */
   arn: string | undefined;
+
+  /**
+   * <p>This attribute provides additional details about potential discrepancies in check status determination.</p>
+   * @public
+   */
+  statusReason?: StatusReason | undefined;
 }
 
 /**
@@ -1271,9 +1267,7 @@ export interface RecommendationSummary {
  */
 export interface ListRecommendationsResponse {
   /**
-   * <p>The token for the next set of results. Use the value returned in the previous response in the next request
-   *             to retrieve the next set of results.
-   *         </p>
+   * <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
    * @public
    */
   nextToken?: string | undefined;

@@ -31,7 +31,7 @@ export interface ListRecommendationsCommandInput extends ListRecommendationsRequ
 export interface ListRecommendationsCommandOutput extends ListRecommendationsResponse, __MetadataBearer {}
 
 /**
- * <p>List a filterable set of Recommendations</p>
+ * <p>List a filterable set of Recommendations. This API provides global recommendations, eliminating the need to call the API in each AWS Region.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -47,10 +47,11 @@ export interface ListRecommendationsCommandOutput extends ListRecommendationsRes
  *   status: "ok" || "warning" || "error",
  *   pillar: "cost_optimizing" || "performance" || "security" || "service_limits" || "fault_tolerance" || "operational_excellence",
  *   awsService: "STRING_VALUE",
- *   source: "aws_config" || "compute_optimizer" || "cost_explorer" || "lse" || "manual" || "pse" || "rds" || "resilience" || "resilience_hub" || "security_hub" || "stir" || "ta_check" || "well_architected",
+ *   source: "aws_config" || "compute_optimizer" || "cost_explorer" || "lse" || "manual" || "pse" || "rds" || "resilience" || "resilience_hub" || "security_hub" || "stir" || "ta_check" || "well_architected" || "cost_optimization_hub",
  *   checkIdentifier: "STRING_VALUE",
  *   afterLastUpdatedAt: new Date("TIMESTAMP"),
  *   beforeLastUpdatedAt: new Date("TIMESTAMP"),
+ *   language: "en" || "ja" || "zh" || "fr" || "de" || "ko" || "zh_TW" || "it" || "es" || "pt_BR" || "id",
  * };
  * const command = new ListRecommendationsCommand(input);
  * const response = await client.send(command);
@@ -66,7 +67,7 @@ export interface ListRecommendationsCommandOutput extends ListRecommendationsRes
  * //       pillars: [ // RecommendationPillarList // required
  * //         "cost_optimizing" || "performance" || "security" || "service_limits" || "fault_tolerance" || "operational_excellence",
  * //       ],
- * //       source: "aws_config" || "compute_optimizer" || "cost_explorer" || "lse" || "manual" || "pse" || "rds" || "resilience" || "resilience_hub" || "security_hub" || "stir" || "ta_check" || "well_architected", // required
+ * //       source: "aws_config" || "compute_optimizer" || "cost_explorer" || "lse" || "manual" || "pse" || "rds" || "resilience" || "resilience_hub" || "security_hub" || "stir" || "ta_check" || "well_architected" || "cost_optimization_hub", // required
  * //       awsServices: [ // RecommendationAwsServiceList
  * //         "STRING_VALUE",
  * //       ],
@@ -75,6 +76,7 @@ export interface ListRecommendationsCommandOutput extends ListRecommendationsRes
  * //         okCount: Number("long"), // required
  * //         warningCount: Number("long"), // required
  * //         errorCount: Number("long"), // required
+ * //         excludedCount: Number("long"),
  * //       },
  * //       pillarSpecificAggregates: { // RecommendationPillarSpecificAggregates
  * //         costOptimizing: { // RecommendationCostOptimizingAggregates
@@ -85,6 +87,7 @@ export interface ListRecommendationsCommandOutput extends ListRecommendationsRes
  * //       createdAt: new Date("TIMESTAMP"),
  * //       lastUpdatedAt: new Date("TIMESTAMP"),
  * //       arn: "STRING_VALUE", // required
+ * //       statusReason: "no_data_ok",
  * //     },
  * //   ],
  * // };

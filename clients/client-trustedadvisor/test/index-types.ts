@@ -43,6 +43,7 @@ export type {
   RecommendationStatus,
   RecommendationType,
   ResourceStatus,
+  StatusReason,
   UpdateRecommendationLifecycleStage,
   UpdateRecommendationLifecycleStageReasonCode,
   AccountRecommendationLifecycleSummary,

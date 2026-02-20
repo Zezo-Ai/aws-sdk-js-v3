@@ -31,7 +31,7 @@ export interface GetRecommendationCommandInput extends GetRecommendationRequest 
 export interface GetRecommendationCommandOutput extends GetRecommendationResponse, __MetadataBearer {}
 
 /**
- * <p>Get a specific Recommendation</p>
+ * <p>Get a specific Recommendation. This API provides global recommendations, eliminating the need to call the API in each AWS Region.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -42,6 +42,7 @@ export interface GetRecommendationCommandOutput extends GetRecommendationRespons
  * const client = new TrustedAdvisorClient(config);
  * const input = { // GetRecommendationRequest
  *   recommendationIdentifier: "STRING_VALUE", // required
+ *   language: "en" || "ja" || "zh" || "fr" || "de" || "ko" || "zh_TW" || "it" || "es" || "pt_BR" || "id",
  * };
  * const command = new GetRecommendationCommand(input);
  * const response = await client.send(command);
@@ -55,7 +56,7 @@ export interface GetRecommendationCommandOutput extends GetRecommendationRespons
  * //     pillars: [ // RecommendationPillarList // required
  * //       "cost_optimizing" || "performance" || "security" || "service_limits" || "fault_tolerance" || "operational_excellence",
  * //     ],
- * //     source: "aws_config" || "compute_optimizer" || "cost_explorer" || "lse" || "manual" || "pse" || "rds" || "resilience" || "resilience_hub" || "security_hub" || "stir" || "ta_check" || "well_architected", // required
+ * //     source: "aws_config" || "compute_optimizer" || "cost_explorer" || "lse" || "manual" || "pse" || "rds" || "resilience" || "resilience_hub" || "security_hub" || "stir" || "ta_check" || "well_architected" || "cost_optimization_hub", // required
  * //     awsServices: [ // RecommendationAwsServiceList
  * //       "STRING_VALUE",
  * //     ],
@@ -64,6 +65,7 @@ export interface GetRecommendationCommandOutput extends GetRecommendationRespons
  * //       okCount: Number("long"), // required
  * //       warningCount: Number("long"), // required
  * //       errorCount: Number("long"), // required
+ * //       excludedCount: Number("long"),
  * //     },
  * //     pillarSpecificAggregates: { // RecommendationPillarSpecificAggregates
  * //       costOptimizing: { // RecommendationCostOptimizingAggregates
@@ -74,6 +76,7 @@ export interface GetRecommendationCommandOutput extends GetRecommendationRespons
  * //     createdAt: new Date("TIMESTAMP"),
  * //     lastUpdatedAt: new Date("TIMESTAMP"),
  * //     arn: "STRING_VALUE", // required
+ * //     statusReason: "no_data_ok",
  * //     description: "STRING_VALUE", // required
  * //     createdBy: "STRING_VALUE",
  * //     updatedOnBehalfOf: "STRING_VALUE",

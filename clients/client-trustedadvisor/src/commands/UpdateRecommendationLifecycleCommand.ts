@@ -31,7 +31,7 @@ export interface UpdateRecommendationLifecycleCommandInput extends UpdateRecomme
 export interface UpdateRecommendationLifecycleCommandOutput extends __MetadataBearer {}
 
 /**
- * <p>Update the lifecyle of a Recommendation. This API only supports prioritized recommendations.</p>
+ * <p>Update the lifecyle of a Recommendation. This API only supports prioritized recommendations and updates global priority recommendations, eliminating the need to call the API in each AWS Region.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
