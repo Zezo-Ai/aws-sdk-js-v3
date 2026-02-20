@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.995.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.994.0...v3.995.0) (2026-02-20)
+
+
+### Features
+
+* **client-appstream:** Adding new attribute to disable IMDS v1 APIs for fleet, Image Builder and AppBlockBuilder instances. ([7202188](https://github.com/aws/aws-sdk-js-v3/commit/720218892a2c5eae9c5157e383a253d02a5b3959))
+* **client-ecs:** Migrated to Smithy. No functional changes ([20258a5](https://github.com/aws/aws-sdk-js-v3/commit/20258a5ffedcaffdf80b85eeb66d5e00057de37d))
+* **client-sagemaker-runtime:** Added support for S3OutputPathExtension and Filename parameters to the InvokeEndpointAsync API to allow users to customize the S3 output path and file name for async inference response payloads. ([edac3d7](https://github.com/aws/aws-sdk-js-v3/commit/edac3d730ce23289651582209425f567912be4fd))
+* **client-signer-data:** This release introduces AWS Signer Data Plane SDK client supporting GetRevocationStatus API. The new client enables AWS PrivateLink connectivity with both private DNS and VPC endpoint URLs. ([b03b059](https://github.com/aws/aws-sdk-js-v3/commit/b03b059db8d788eed82aa57f354adc89d06767c7))
+* **client-ssm:** Add support for AssociationDispatchAssumeRole in AWS SSM State Manager. ([83535fc](https://github.com/aws/aws-sdk-js-v3/commit/83535fc82c40d5871dea60dc4374527d6a2ff5be))
+* **client-trustedadvisor:** Adding a new enum attribute(statusReason) to TrustedAdvisorAPI response. This attribute explains reasoning behind check status for certain specific scenarios. ([2d4a1eb](https://github.com/aws/aws-sdk-js-v3/commit/2d4a1eb4804aafa8b4581783e0db0dcb3eb61e8d))
+* **clients:** update client endpoints as of 2026-02-20 ([aa23f1e](https://github.com/aws/aws-sdk-js-v3/commit/aa23f1e0e151ac3e2ce430b8b847ee196d78f457))
+
+
+
+
+
 # [3.994.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.993.0...v3.994.0) (2026-02-19)
 
 

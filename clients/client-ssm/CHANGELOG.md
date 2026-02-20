@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.995.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.994.0...v3.995.0) (2026-02-20)
+
+
+### Features
+
+* **client-ssm:** Add support for AssociationDispatchAssumeRole in AWS SSM State Manager. ([83535fc](https://github.com/aws/aws-sdk-js-v3/commit/83535fc82c40d5871dea60dc4374527d6a2ff5be))
+
+
+
+
+
 # [3.994.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.993.0...v3.994.0) (2026-02-19)
 
 **Note:** Version bump only for package @aws-sdk/client-ssm

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.995.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.994.0...v3.995.0) (2026-02-20)
+
+
+### Features
+
+* **client-appstream:** Adding new attribute to disable IMDS v1 APIs for fleet, Image Builder and AppBlockBuilder instances. ([7202188](https://github.com/aws/aws-sdk-js-v3/commit/720218892a2c5eae9c5157e383a253d02a5b3959))
+
+
+
+
+
 # [3.994.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.993.0...v3.994.0) (2026-02-19)
 
 **Note:** Version bump only for package @aws-sdk/client-appstream

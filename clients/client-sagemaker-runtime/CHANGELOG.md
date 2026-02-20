@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.995.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.994.0...v3.995.0) (2026-02-20)
+
+
+### Features
+
+* **client-sagemaker-runtime:** Added support for S3OutputPathExtension and Filename parameters to the InvokeEndpointAsync API to allow users to customize the S3 output path and file name for async inference response payloads. ([edac3d7](https://github.com/aws/aws-sdk-js-v3/commit/edac3d730ce23289651582209425f567912be4fd))
+
+
+
+
+
 # [3.994.0](https://github.com/aws/aws-sdk-js-v3/compare/v3.993.0...v3.994.0) (2026-02-19)
 
 **Note:** Version bump only for package @aws-sdk/client-sagemaker-runtime
