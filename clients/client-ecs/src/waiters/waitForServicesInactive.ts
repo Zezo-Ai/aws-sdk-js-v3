@@ -50,7 +50,7 @@ export const waitForServicesInactive = async (
   params: WaiterConfiguration<ECSClient>,
   input: DescribeServicesCommandInput
 ): Promise<WaiterResult> => {
-  const serviceDefaults = { minDelay: 15, maxDelay: 120 };
+  const serviceDefaults = { minDelay: 15, maxDelay: 600 };
   return createWaiter({ ...serviceDefaults, ...params }, input, checkState);
 };
 /**
@@ -62,7 +62,7 @@ export const waitUntilServicesInactive = async (
   params: WaiterConfiguration<ECSClient>,
   input: DescribeServicesCommandInput
 ): Promise<WaiterResult> => {
-  const serviceDefaults = { minDelay: 15, maxDelay: 120 };
+  const serviceDefaults = { minDelay: 15, maxDelay: 600 };
   const result = await createWaiter({ ...serviceDefaults, ...params }, input, checkState);
   return checkExceptions(result);
 };

@@ -27,13 +27,7 @@ export interface ListTaskDefinitionFamiliesCommandInput extends ListTaskDefiniti
 export interface ListTaskDefinitionFamiliesCommandOutput extends ListTaskDefinitionFamiliesResponse, __MetadataBearer {}
 
 /**
- * <p>Returns a list of task definition families that are registered to your account. This
- * 			list includes task definition families that no longer have any <code>ACTIVE</code> task
- * 			definition revisions.</p>
- *          <p>You can filter out task definition families that don't contain any <code>ACTIVE</code>
- * 			task definition revisions by setting the <code>status</code> parameter to
- * 				<code>ACTIVE</code>. You can also filter the results with the
- * 				<code>familyPrefix</code> parameter.</p>
+ * <p>Returns a list of task definition families that are registered to your account. This list includes task definition families that no longer have any <code>ACTIVE</code> task definition revisions.</p> <p>You can filter out task definition families that don't contain any <code>ACTIVE</code> task definition revisions by setting the <code>status</code> parameter to <code>ACTIVE</code>. You can also filter the results with the <code>familyPrefix</code> parameter.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -66,15 +60,10 @@ export interface ListTaskDefinitionFamiliesCommandOutput extends ListTaskDefinit
  * @see {@link ECSClientResolvedConfig | config} for ECSClient's `config` shape.
  *
  * @throws {@link ClientException} (client fault)
- *  <p>These errors are usually caused by a client action. This client action might be using
- * 			an action or resource on behalf of a user that doesn't have permissions to use the
- * 			action or resource. Or, it might be specifying an identifier that isn't valid.</p>
+ *  <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
  *
  * @throws {@link InvalidParameterException} (client fault)
- *  <p>The specified parameter isn't valid. Review the available parameters for the API
- * 			request.</p>
- *          <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS
- * 				service event messages</a>. </p>
+ *  <p>The specified parameter isn't valid. Review the available parameters for the API request.</p> <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>. </p>
  *
  * @throws {@link ServerException} (server fault)
  *  <p>These errors are usually caused by a server issue.</p>
@@ -82,24 +71,6 @@ export interface ListTaskDefinitionFamiliesCommandOutput extends ListTaskDefinit
  * @throws {@link ECSServiceException}
  * <p>Base exception class for all service exceptions from ECS service.</p>
  *
- *
- * @example To filter your registered task definition families
- * ```javascript
- * // This example lists the task definition revisions that start with "hpcc".
- * const input = {
- *   familyPrefix: "hpcc"
- * };
- * const command = new ListTaskDefinitionFamiliesCommand(input);
- * const response = await client.send(command);
- * /* response is
- * {
- *   families: [
- *     "hpcc",
- *     "hpcc-c4-8xlarge"
- *   ]
- * }
- * *\/
- * ```
  *
  * @example To list your registered task definition families
  * ```javascript
@@ -112,6 +83,24 @@ export interface ListTaskDefinitionFamiliesCommandOutput extends ListTaskDefinit
  *   families: [
  *     "node-js-app",
  *     "web-timer",
+ *     "hpcc",
+ *     "hpcc-c4-8xlarge"
+ *   ]
+ * }
+ * *\/
+ * ```
+ *
+ * @example To filter your registered task definition families
+ * ```javascript
+ * // This example lists the task definition revisions that start with "hpcc".
+ * const input = {
+ *   familyPrefix: "hpcc"
+ * };
+ * const command = new ListTaskDefinitionFamiliesCommand(input);
+ * const response = await client.send(command);
+ * /* response is
+ * {
+ *   families: [
  *     "hpcc",
  *     "hpcc-c4-8xlarge"
  *   ]

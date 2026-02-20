@@ -38,7 +38,7 @@ export const waitForTasksStopped = async (
   params: WaiterConfiguration<ECSClient>,
   input: DescribeTasksCommandInput
 ): Promise<WaiterResult> => {
-  const serviceDefaults = { minDelay: 6, maxDelay: 120 };
+  const serviceDefaults = { minDelay: 6, maxDelay: 600 };
   return createWaiter({ ...serviceDefaults, ...params }, input, checkState);
 };
 /**
@@ -50,7 +50,7 @@ export const waitUntilTasksStopped = async (
   params: WaiterConfiguration<ECSClient>,
   input: DescribeTasksCommandInput
 ): Promise<WaiterResult> => {
-  const serviceDefaults = { minDelay: 6, maxDelay: 120 };
+  const serviceDefaults = { minDelay: 6, maxDelay: 600 };
   const result = await createWaiter({ ...serviceDefaults, ...params }, input, checkState);
   return checkExceptions(result);
 };

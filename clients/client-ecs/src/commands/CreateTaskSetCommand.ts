@@ -27,18 +27,7 @@ export interface CreateTaskSetCommandInput extends CreateTaskSetRequest {}
 export interface CreateTaskSetCommandOutput extends CreateTaskSetResponse, __MetadataBearer {}
 
 /**
- * <p>Create a task set in the specified cluster and service. This is used when a service
- * 			uses the <code>EXTERNAL</code> deployment controller type. For more information, see
- * 				<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment
- * 				types</a> in the <i>Amazon Elastic Container Service Developer
- * 				Guide</i>.</p>
- *          <note>
- *             <p>On March 21, 2024, a change was made to resolve the task definition revision
- * 				before authorization. When a task definition revision is not specified,
- * 				authorization will occur using the latest revision of a task definition.</p>
- *          </note>
- *          <p>For information about the maximum number of task sets and other quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon ECS service quotas</a> in the <i>Amazon Elastic Container Service
- * 				Developer Guide</i>.</p>
+ * <p>Create a task set in the specified cluster and service. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note> <p>On March 21, 2024, a change was made to resolve the task definition revision before authorization. When a task definition revision is not specified, authorization will occur using the latest revision of a task definition.</p> </note> <p>For information about the maximum number of task sets and other quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon ECS service quotas</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -196,25 +185,19 @@ export interface CreateTaskSetCommandOutput extends CreateTaskSetResponse, __Met
  *  <p>You don't have authorization to perform the requested action.</p>
  *
  * @throws {@link ClientException} (client fault)
- *  <p>These errors are usually caused by a client action. This client action might be using
- * 			an action or resource on behalf of a user that doesn't have permissions to use the
- * 			action or resource. Or, it might be specifying an identifier that isn't valid.</p>
+ *  <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
  *
  * @throws {@link ClusterNotFoundException} (client fault)
  *  <p>The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>. Amazon ECS clusters are Region specific.</p>
  *
  * @throws {@link InvalidParameterException} (client fault)
- *  <p>The specified parameter isn't valid. Review the available parameters for the API
- * 			request.</p>
- *          <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS
- * 				service event messages</a>. </p>
+ *  <p>The specified parameter isn't valid. Review the available parameters for the API request.</p> <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>. </p>
  *
  * @throws {@link NamespaceNotFoundException} (client fault)
  *  <p>The specified namespace wasn't found.</p>
  *
  * @throws {@link PlatformTaskDefinitionIncompatibilityException} (client fault)
- *  <p>The specified platform version doesn't satisfy the required capabilities of the task
- * 			definition.</p>
+ *  <p>The specified platform version doesn't satisfy the required capabilities of the task definition.</p>
  *
  * @throws {@link PlatformUnknownException} (client fault)
  *  <p>The specified platform version doesn't exist.</p>
@@ -223,12 +206,10 @@ export interface CreateTaskSetCommandOutput extends CreateTaskSetResponse, __Met
  *  <p>These errors are usually caused by a server issue.</p>
  *
  * @throws {@link ServiceNotActiveException} (client fault)
- *  <p>The specified service isn't active. You can't update a service that's inactive. If you
- * 			have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.</p>
+ *  <p>The specified service isn't active. You can't update a service that's inactive. If you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.</p>
  *
  * @throws {@link ServiceNotFoundException} (client fault)
- *  <p>The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>. Amazon ECS services are cluster specific and Region
- * 			specific.</p>
+ *  <p>The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>. Amazon ECS services are cluster specific and Region specific.</p>
  *
  * @throws {@link UnsupportedFeatureException} (client fault)
  *  <p>The specified task isn't supported in this Region.</p>

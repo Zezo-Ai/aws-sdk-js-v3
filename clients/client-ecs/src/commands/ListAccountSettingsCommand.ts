@@ -67,15 +67,10 @@ export interface ListAccountSettingsCommandOutput extends ListAccountSettingsRes
  * @see {@link ECSClientResolvedConfig | config} for ECSClient's `config` shape.
  *
  * @throws {@link ClientException} (client fault)
- *  <p>These errors are usually caused by a client action. This client action might be using
- * 			an action or resource on behalf of a user that doesn't have permissions to use the
- * 			action or resource. Or, it might be specifying an identifier that isn't valid.</p>
+ *  <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
  *
  * @throws {@link InvalidParameterException} (client fault)
- *  <p>The specified parameter isn't valid. Review the available parameters for the API
- * 			request.</p>
- *          <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS
- * 				service event messages</a>. </p>
+ *  <p>The specified parameter isn't valid. Review the available parameters for the API request.</p> <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>. </p>
  *
  * @throws {@link ServerException} (server fault)
  *  <p>These errors are usually caused by a server issue.</p>
@@ -84,12 +79,11 @@ export interface ListAccountSettingsCommandOutput extends ListAccountSettingsRes
  * <p>Base exception class for all service exceptions from ECS service.</p>
  *
  *
- * @example To view the effective account settings for a specific IAM user or IAM role
+ * @example To view your effective account settings
  * ```javascript
- * // This example displays the effective account settings for the specified user or role.
+ * // This example displays the effective account settings for your account.
  * const input = {
- *   effectiveSettings: true,
- *   principalArn: "arn:aws:iam::<aws_account_id>:user/principalName"
+ *   effectiveSettings: true
  * };
  * const command = new ListAccountSettingsCommand(input);
  * const response = await client.send(command);
@@ -116,11 +110,12 @@ export interface ListAccountSettingsCommandOutput extends ListAccountSettingsRes
  * *\/
  * ```
  *
- * @example To view your effective account settings
+ * @example To view the effective account settings for a specific IAM user or IAM role
  * ```javascript
- * // This example displays the effective account settings for your account.
+ * // This example displays the effective account settings for the specified user or role.
  * const input = {
- *   effectiveSettings: true
+ *   effectiveSettings: true,
+ *   principalArn: "arn:aws:iam::<aws_account_id>:user/principalName"
  * };
  * const command = new ListAccountSettingsCommand(input);
  * const response = await client.send(command);

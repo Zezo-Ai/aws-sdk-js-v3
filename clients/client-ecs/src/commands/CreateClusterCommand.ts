@@ -27,19 +27,7 @@ export interface CreateClusterCommandInput extends CreateClusterRequest {}
 export interface CreateClusterCommandOutput extends CreateClusterResponse, __MetadataBearer {}
 
 /**
- * <p>Creates a new Amazon ECS cluster. By default, your account receives a
- * 				<code>default</code> cluster when you launch your first container instance. However,
- * 			you can create your own cluster with a unique name.</p>
- *          <note>
- *             <p>When you call the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html">CreateCluster</a>
- * 				API operation, Amazon ECS attempts to create the Amazon ECS service-linked role for
- * 				your account. This is so that it can manage required resources in other Amazon Web
- * 					Services services on your behalf. However, if the user that makes the
- * 				call doesn't have permissions to create the service-linked role, it isn't created.
- * 				For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
- * 					service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic
- * 					Container Service Developer Guide</i>.</p>
- *          </note>
+ * <p>Creates a new Amazon ECS cluster. By default, your account receives a <code>default</code> cluster when you launch your first container instance. However, you can create your own cluster with a unique name.</p> <note> <p>When you call the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html">CreateCluster</a> API operation, Amazon ECS attempts to create the Amazon ECS service-linked role for your account. This is so that it can manage required resources in other Amazon Web Services services on your behalf. However, if the user that makes the call doesn't have permissions to create the service-linked role, it isn't created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </note>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -178,15 +166,10 @@ export interface CreateClusterCommandOutput extends CreateClusterResponse, __Met
  * @see {@link ECSClientResolvedConfig | config} for ECSClient's `config` shape.
  *
  * @throws {@link ClientException} (client fault)
- *  <p>These errors are usually caused by a client action. This client action might be using
- * 			an action or resource on behalf of a user that doesn't have permissions to use the
- * 			action or resource. Or, it might be specifying an identifier that isn't valid.</p>
+ *  <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
  *
  * @throws {@link InvalidParameterException} (client fault)
- *  <p>The specified parameter isn't valid. Review the available parameters for the API
- * 			request.</p>
- *          <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS
- * 				service event messages</a>. </p>
+ *  <p>The specified parameter isn't valid. Review the available parameters for the API request.</p> <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>. </p>
  *
  * @throws {@link NamespaceNotFoundException} (client fault)
  *  <p>The specified namespace wasn't found.</p>

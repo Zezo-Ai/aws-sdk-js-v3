@@ -27,13 +27,7 @@ export interface DescribeExpressGatewayServiceCommandInput extends DescribeExpre
 export interface DescribeExpressGatewayServiceCommandOutput extends DescribeExpressGatewayServiceResponse, __MetadataBearer {}
 
 /**
- * <p>Retrieves detailed information about an Express service, including current status,
- * 			configuration, managed infrastructure, and service revisions.</p>
- *          <p>Returns comprehensive service details, active service revisions, ingress paths with
- * 			endpoints, and managed Amazon Web Services resource status including load balancers and auto-scaling
- * 			policies.</p>
- *          <p>Use the <code>include</code> parameter to retrieve additional information such as
- * 			resource tags.</p>
+ * <p>Retrieves detailed information about an Express service, including current status, configuration, managed infrastructure, and service revisions.</p> <p>Returns comprehensive service details, active service revisions, ingress paths with endpoints, and managed Amazon Web Services resource status including load balancers and auto-scaling policies.</p> <p>Use the <code>include</code> parameter to retrieve additional information such as resource tags.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -141,18 +135,13 @@ export interface DescribeExpressGatewayServiceCommandOutput extends DescribeExpr
  *  <p>You don't have authorization to perform the requested action.</p>
  *
  * @throws {@link ClientException} (client fault)
- *  <p>These errors are usually caused by a client action. This client action might be using
- * 			an action or resource on behalf of a user that doesn't have permissions to use the
- * 			action or resource. Or, it might be specifying an identifier that isn't valid.</p>
+ *  <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
  *
  * @throws {@link ClusterNotFoundException} (client fault)
  *  <p>The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>. Amazon ECS clusters are Region specific.</p>
  *
  * @throws {@link InvalidParameterException} (client fault)
- *  <p>The specified parameter isn't valid. Review the available parameters for the API
- * 			request.</p>
- *          <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS
- * 				service event messages</a>. </p>
+ *  <p>The specified parameter isn't valid. Review the available parameters for the API request.</p> <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>. </p>
  *
  * @throws {@link ResourceNotFoundException} (client fault)
  *  <p>The specified resource wasn't found.</p>

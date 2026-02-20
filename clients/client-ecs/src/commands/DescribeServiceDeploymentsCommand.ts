@@ -27,10 +27,7 @@ export interface DescribeServiceDeploymentsCommandInput extends DescribeServiceD
 export interface DescribeServiceDeploymentsCommandOutput extends DescribeServiceDeploymentsResponse, __MetadataBearer {}
 
 /**
- * <p>Describes one or more of your service deployments.</p>
- *          <p>A service deployment happens when you release a software update for the service. For
- * 			more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployment.html">View service history
- * 				using Amazon ECS service deployments</a>.</p>
+ * <p>Describes one or more of your service deployments.</p> <p>A service deployment happens when you release a software update for the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployment.html">View service history using Amazon ECS service deployments</a>.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -155,25 +152,19 @@ export interface DescribeServiceDeploymentsCommandOutput extends DescribeService
  *  <p>You don't have authorization to perform the requested action.</p>
  *
  * @throws {@link ClientException} (client fault)
- *  <p>These errors are usually caused by a client action. This client action might be using
- * 			an action or resource on behalf of a user that doesn't have permissions to use the
- * 			action or resource. Or, it might be specifying an identifier that isn't valid.</p>
+ *  <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
  *
  * @throws {@link ClusterNotFoundException} (client fault)
  *  <p>The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>. Amazon ECS clusters are Region specific.</p>
  *
  * @throws {@link InvalidParameterException} (client fault)
- *  <p>The specified parameter isn't valid. Review the available parameters for the API
- * 			request.</p>
- *          <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS
- * 				service event messages</a>. </p>
+ *  <p>The specified parameter isn't valid. Review the available parameters for the API request.</p> <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>. </p>
  *
  * @throws {@link ServerException} (server fault)
  *  <p>These errors are usually caused by a server issue.</p>
  *
  * @throws {@link ServiceNotFoundException} (client fault)
- *  <p>The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>. Amazon ECS services are cluster specific and Region
- * 			specific.</p>
+ *  <p>The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>. Amazon ECS services are cluster specific and Region specific.</p>
  *
  * @throws {@link UnsupportedFeatureException} (client fault)
  *  <p>The specified task isn't supported in this Region.</p>
@@ -181,6 +172,46 @@ export interface DescribeServiceDeploymentsCommandOutput extends DescribeService
  * @throws {@link ECSServiceException}
  * <p>Base exception class for all service exceptions from ECS service.</p>
  *
+ *
+ * @example To describe a service deployment
+ * ```javascript
+ * // This example describes a service deployment for the service sd-example in the example cluster.
+ * const input = {
+ *   serviceDeploymentArns: [
+ *     "arn:aws:ecs:us-west-2:123456789012:service-deployment/example/sd-example/NCWGC2ZR-taawPAYrIaU5"
+ *   ]
+ * };
+ * const command = new DescribeServiceDeploymentsCommand(input);
+ * const response = await client.send(command);
+ * /* response is
+ * {
+ *   failures:   [],
+ *   serviceDeployments: [
+ *     {
+ *       clusterArn: "arn:aws:ecs:us-west-2:123456789012:cluster/example",
+ *       deploymentConfiguration: {
+ *         deploymentCircuitBreaker: {
+ *           enable: false,
+ *           rollback: false
+ *         },
+ *         maximumPercent: 200,
+ *         minimumHealthyPercent: 100
+ *       },
+ *       serviceArn: "arn:aws:ecs:us-west-2:123456789012:service/example/sd-example",
+ *       serviceDeploymentArn: "arn:aws:ecs:us-west-2:123456789012:service-deployment/example/sd-example/NCWGC2ZR-taawPAYrIaU5",
+ *       status: "PENDING",
+ *       targetServiceRevision: {
+ *         arn: "arn:aws:ecs:us-west-2:123456789012:service-revision/example/sd-example/4980306466373577095",
+ *         pendingTaskCount: 0,
+ *         requestedTaskCount: 0,
+ *         runningTaskCount: 0
+ *       },
+ *       updatedAt: "2024-09-10T16:49:35.57Z"
+ *     }
+ *   ]
+ * }
+ * *\/
+ * ```
  *
  * @public
  */

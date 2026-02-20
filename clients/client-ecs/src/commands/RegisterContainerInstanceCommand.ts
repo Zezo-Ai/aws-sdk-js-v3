@@ -27,12 +27,7 @@ export interface RegisterContainerInstanceCommandInput extends RegisterContainer
 export interface RegisterContainerInstanceCommandOutput extends RegisterContainerInstanceResponse, __MetadataBearer {}
 
 /**
- * <note>
- *             <p>This action is only used by the Amazon ECS agent, and it is not intended for use
- * 				outside of the agent.</p>
- *          </note>
- *          <p>Registers an EC2 instance into the specified cluster. This instance becomes available
- * 			to place containers on.</p>
+ * <note> <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p> </note> <p>Registers an EC2 instance into the specified cluster. This instance becomes available to place containers on.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -178,15 +173,10 @@ export interface RegisterContainerInstanceCommandOutput extends RegisterContaine
  * @see {@link ECSClientResolvedConfig | config} for ECSClient's `config` shape.
  *
  * @throws {@link ClientException} (client fault)
- *  <p>These errors are usually caused by a client action. This client action might be using
- * 			an action or resource on behalf of a user that doesn't have permissions to use the
- * 			action or resource. Or, it might be specifying an identifier that isn't valid.</p>
+ *  <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
  *
  * @throws {@link InvalidParameterException} (client fault)
- *  <p>The specified parameter isn't valid. Review the available parameters for the API
- * 			request.</p>
- *          <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS
- * 				service event messages</a>. </p>
+ *  <p>The specified parameter isn't valid. Review the available parameters for the API request.</p> <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>. </p>
  *
  * @throws {@link ServerException} (server fault)
  *  <p>These errors are usually caused by a server issue.</p>

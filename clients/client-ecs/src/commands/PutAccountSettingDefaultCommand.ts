@@ -27,8 +27,7 @@ export interface PutAccountSettingDefaultCommandInput extends PutAccountSettingD
 export interface PutAccountSettingDefaultCommandOutput extends PutAccountSettingDefaultResponse, __MetadataBearer {}
 
 /**
- * <p>Modifies an account setting for all users on an account for whom no individual account
- * 			setting has been specified. Account settings are set on a per-Region basis.</p>
+ * <p>Modifies an account setting for all users on an account for whom no individual account setting has been specified. Account settings are set on a per-Region basis.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -61,15 +60,10 @@ export interface PutAccountSettingDefaultCommandOutput extends PutAccountSetting
  * @see {@link ECSClientResolvedConfig | config} for ECSClient's `config` shape.
  *
  * @throws {@link ClientException} (client fault)
- *  <p>These errors are usually caused by a client action. This client action might be using
- * 			an action or resource on behalf of a user that doesn't have permissions to use the
- * 			action or resource. Or, it might be specifying an identifier that isn't valid.</p>
+ *  <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
  *
  * @throws {@link InvalidParameterException} (client fault)
- *  <p>The specified parameter isn't valid. Review the available parameters for the API
- * 			request.</p>
- *          <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS
- * 				service event messages</a>. </p>
+ *  <p>The specified parameter isn't valid. Review the available parameters for the API request.</p> <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>. </p>
  *
  * @throws {@link ServerException} (server fault)
  *  <p>These errors are usually caused by a server issue.</p>

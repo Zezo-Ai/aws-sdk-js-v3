@@ -27,15 +27,7 @@ export interface CreateExpressGatewayServiceCommandInput extends CreateExpressGa
 export interface CreateExpressGatewayServiceCommandOutput extends CreateExpressGatewayServiceResponse, __MetadataBearer {}
 
 /**
- * <p>Creates an Express service that simplifies deploying containerized web applications on
- * 			Amazon ECS with managed Amazon Web Services infrastructure. This operation provisions and configures
- * 			Application Load Balancers, target groups, security groups, and auto-scaling policies
- * 			automatically.</p>
- *          <p>Specify a primary container configuration with your application image and basic
- * 			settings. Amazon ECS creates the necessary Amazon Web Services resources for traffic distribution, health
- * 			monitoring, network access control, and capacity management.</p>
- *          <p>Provide an execution role for task operations and an infrastructure role for managing
- * 			Amazon Web Services resources on your behalf.</p>
+ * <p>Creates an Express service that simplifies deploying containerized web applications on Amazon ECS with managed Amazon Web Services infrastructure. This operation provisions and configures Application Load Balancers, target groups, security groups, and auto-scaling policies automatically.</p> <p>Specify a primary container configuration with your application image and basic settings. Amazon ECS creates the necessary Amazon Web Services resources for traffic distribution, health monitoring, network access control, and capacity management.</p> <p>Provide an execution role for task operations and an infrastructure role for managing Amazon Web Services resources on your behalf.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -193,22 +185,16 @@ export interface CreateExpressGatewayServiceCommandOutput extends CreateExpressG
  *  <p>You don't have authorization to perform the requested action.</p>
  *
  * @throws {@link ClientException} (client fault)
- *  <p>These errors are usually caused by a client action. This client action might be using
- * 			an action or resource on behalf of a user that doesn't have permissions to use the
- * 			action or resource. Or, it might be specifying an identifier that isn't valid.</p>
+ *  <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
  *
  * @throws {@link ClusterNotFoundException} (client fault)
  *  <p>The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>. Amazon ECS clusters are Region specific.</p>
  *
  * @throws {@link InvalidParameterException} (client fault)
- *  <p>The specified parameter isn't valid. Review the available parameters for the API
- * 			request.</p>
- *          <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS
- * 				service event messages</a>. </p>
+ *  <p>The specified parameter isn't valid. Review the available parameters for the API request.</p> <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>. </p>
  *
  * @throws {@link PlatformTaskDefinitionIncompatibilityException} (client fault)
- *  <p>The specified platform version doesn't satisfy the required capabilities of the task
- * 			definition.</p>
+ *  <p>The specified platform version doesn't satisfy the required capabilities of the task definition.</p>
  *
  * @throws {@link PlatformUnknownException} (client fault)
  *  <p>The specified platform version doesn't exist.</p>

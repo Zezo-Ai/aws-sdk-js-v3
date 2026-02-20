@@ -27,11 +27,7 @@ export interface SubmitContainerStateChangeCommandInput extends SubmitContainerS
 export interface SubmitContainerStateChangeCommandOutput extends SubmitContainerStateChangeResponse, __MetadataBearer {}
 
 /**
- * <note>
- *             <p>This action is only used by the Amazon ECS agent, and it is not intended for use
- * 				outside of the agent.</p>
- *          </note>
- *          <p>Sent to acknowledge that a container changed states.</p>
+ * <note> <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p> </note> <p>Sent to acknowledge that a container changed states.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -77,9 +73,7 @@ export interface SubmitContainerStateChangeCommandOutput extends SubmitContainer
  *  <p>You don't have authorization to perform the requested action.</p>
  *
  * @throws {@link ClientException} (client fault)
- *  <p>These errors are usually caused by a client action. This client action might be using
- * 			an action or resource on behalf of a user that doesn't have permissions to use the
- * 			action or resource. Or, it might be specifying an identifier that isn't valid.</p>
+ *  <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
  *
  * @throws {@link ServerException} (server fault)
  *  <p>These errors are usually caused by a server issue.</p>

@@ -27,14 +27,7 @@ export interface DeleteExpressGatewayServiceCommandInput extends DeleteExpressGa
 export interface DeleteExpressGatewayServiceCommandOutput extends DeleteExpressGatewayServiceResponse, __MetadataBearer {}
 
 /**
- * <p>Deletes an Express service and removes all associated Amazon Web Services resources. This operation
- * 			stops service tasks, removes the Application Load Balancer, target groups, security groups,
- * 			auto-scaling policies, and other managed infrastructure components.</p>
- *          <p>The service enters a <code>DRAINING</code> state where existing tasks complete current
- * 			requests without starting new tasks. After all tasks stop, the service and infrastructure
- * 			are permanently removed.</p>
- *          <p>This operation cannot be reversed. Back up important data and verify the service is no
- * 			longer needed before deletion.</p>
+ * <p>Deletes an Express service and removes all associated Amazon Web Services resources. This operation stops service tasks, removes the Application Load Balancer, target groups, security groups, auto-scaling policies, and other managed infrastructure components.</p> <p>The service enters a <code>DRAINING</code> state where existing tasks complete current requests without starting new tasks. After all tasks stop, the service and infrastructure are permanently removed.</p> <p>This operation cannot be reversed. Back up important data and verify the service is no longer needed before deletion.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -139,29 +132,22 @@ export interface DeleteExpressGatewayServiceCommandOutput extends DeleteExpressG
  *  <p>You don't have authorization to perform the requested action.</p>
  *
  * @throws {@link ClientException} (client fault)
- *  <p>These errors are usually caused by a client action. This client action might be using
- * 			an action or resource on behalf of a user that doesn't have permissions to use the
- * 			action or resource. Or, it might be specifying an identifier that isn't valid.</p>
+ *  <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
  *
  * @throws {@link ClusterNotFoundException} (client fault)
  *  <p>The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>. Amazon ECS clusters are Region specific.</p>
  *
  * @throws {@link InvalidParameterException} (client fault)
- *  <p>The specified parameter isn't valid. Review the available parameters for the API
- * 			request.</p>
- *          <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS
- * 				service event messages</a>. </p>
+ *  <p>The specified parameter isn't valid. Review the available parameters for the API request.</p> <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>. </p>
  *
  * @throws {@link ServerException} (server fault)
  *  <p>These errors are usually caused by a server issue.</p>
  *
  * @throws {@link ServiceNotActiveException} (client fault)
- *  <p>The specified service isn't active. You can't update a service that's inactive. If you
- * 			have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.</p>
+ *  <p>The specified service isn't active. You can't update a service that's inactive. If you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.</p>
  *
  * @throws {@link ServiceNotFoundException} (client fault)
- *  <p>The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>. Amazon ECS services are cluster specific and Region
- * 			specific.</p>
+ *  <p>The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>. Amazon ECS services are cluster specific and Region specific.</p>
  *
  * @throws {@link UnsupportedFeatureException} (client fault)
  *  <p>The specified task isn't supported in this Region.</p>

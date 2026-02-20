@@ -299,6 +299,18 @@ export type CapacityProviderUpdateStatus =
  * @public
  * @enum
  */
+export const CapacityProviderField = {
+  TAGS: "TAGS",
+} as const;
+/**
+ * @public
+ */
+export type CapacityProviderField = (typeof CapacityProviderField)[keyof typeof CapacityProviderField];
+
+/**
+ * @public
+ * @enum
+ */
 export const ExecuteCommandLogging = {
   DEFAULT: "DEFAULT",
   NONE: "NONE",
@@ -325,93 +337,124 @@ export type ClusterSettingName = (typeof ClusterSettingName)[keyof typeof Cluste
  * @public
  * @enum
  */
-export const ExpressGatewayServiceScalingMetric = {
-  AverageCPUUtilization: "AVERAGE_CPU",
-  AverageMemoryUtilization: "AVERAGE_MEMORY",
-  RequestCountPerTarget: "REQUEST_COUNT_PER_TARGET",
+export const TargetType = {
+  CONTAINER_INSTANCE: "container-instance",
 } as const;
 /**
  * @public
  */
-export type ExpressGatewayServiceScalingMetric =
-  (typeof ExpressGatewayServiceScalingMetric)[keyof typeof ExpressGatewayServiceScalingMetric];
+export type TargetType = (typeof TargetType)[keyof typeof TargetType];
 
 /**
  * @public
  * @enum
  */
-export const ExpressGatewayServiceStatusCode = {
+export const InstanceHealthCheckState = {
+  IMPAIRED: "IMPAIRED",
+  INITIALIZING: "INITIALIZING",
+  INSUFFICIENT_DATA: "INSUFFICIENT_DATA",
+  OK: "OK",
+} as const;
+/**
+ * @public
+ */
+export type InstanceHealthCheckState = (typeof InstanceHealthCheckState)[keyof typeof InstanceHealthCheckState];
+
+/**
+ * @public
+ * @enum
+ */
+export const InstanceHealthCheckType = {
+  CONTAINER_RUNTIME: "CONTAINER_RUNTIME",
+} as const;
+/**
+ * @public
+ */
+export type InstanceHealthCheckType = (typeof InstanceHealthCheckType)[keyof typeof InstanceHealthCheckType];
+
+/**
+ * @public
+ * @enum
+ */
+export const ClusterField = {
+  ATTACHMENTS: "ATTACHMENTS",
+  CONFIGURATIONS: "CONFIGURATIONS",
+  SETTINGS: "SETTINGS",
+  STATISTICS: "STATISTICS",
+  TAGS: "TAGS",
+} as const;
+/**
+ * @public
+ */
+export type ClusterField = (typeof ClusterField)[keyof typeof ClusterField];
+
+/**
+ * @public
+ * @enum
+ */
+export const ContainerInstanceStatus = {
   ACTIVE: "ACTIVE",
+  DEREGISTERING: "DEREGISTERING",
   DRAINING: "DRAINING",
-  INACTIVE: "INACTIVE",
+  REGISTERING: "REGISTERING",
+  REGISTRATION_FAILED: "REGISTRATION_FAILED",
 } as const;
 /**
  * @public
  */
-export type ExpressGatewayServiceStatusCode =
-  (typeof ExpressGatewayServiceStatusCode)[keyof typeof ExpressGatewayServiceStatusCode];
+export type ContainerInstanceStatus = (typeof ContainerInstanceStatus)[keyof typeof ContainerInstanceStatus];
 
 /**
  * @public
  * @enum
  */
-export const AvailabilityZoneRebalancing = {
-  DISABLED: "DISABLED",
-  ENABLED: "ENABLED",
+export const TransportProtocol = {
+  TCP: "tcp",
+  UDP: "udp",
 } as const;
 /**
  * @public
  */
-export type AvailabilityZoneRebalancing =
-  (typeof AvailabilityZoneRebalancing)[keyof typeof AvailabilityZoneRebalancing];
+export type TransportProtocol = (typeof TransportProtocol)[keyof typeof TransportProtocol];
 
 /**
  * @public
  * @enum
  */
-export const DeploymentLifecycleHookStage = {
-  POST_PRODUCTION_TRAFFIC_SHIFT: "POST_PRODUCTION_TRAFFIC_SHIFT",
-  POST_SCALE_UP: "POST_SCALE_UP",
-  POST_TEST_TRAFFIC_SHIFT: "POST_TEST_TRAFFIC_SHIFT",
-  PRE_SCALE_UP: "PRE_SCALE_UP",
-  PRODUCTION_TRAFFIC_SHIFT: "PRODUCTION_TRAFFIC_SHIFT",
-  RECONCILE_SERVICE: "RECONCILE_SERVICE",
-  TEST_TRAFFIC_SHIFT: "TEST_TRAFFIC_SHIFT",
+export const ManagedAgentName = {
+  ExecuteCommandAgent: "ExecuteCommandAgent",
 } as const;
 /**
  * @public
  */
-export type DeploymentLifecycleHookStage =
-  (typeof DeploymentLifecycleHookStage)[keyof typeof DeploymentLifecycleHookStage];
+export type ManagedAgentName = (typeof ManagedAgentName)[keyof typeof ManagedAgentName];
 
 /**
  * @public
  * @enum
  */
-export const DeploymentStrategy = {
-  BLUE_GREEN: "BLUE_GREEN",
-  CANARY: "CANARY",
-  LINEAR: "LINEAR",
-  ROLLING: "ROLLING",
+export const ContainerInstanceField = {
+  CONTAINER_INSTANCE_HEALTH: "CONTAINER_INSTANCE_HEALTH",
+  TAGS: "TAGS",
 } as const;
 /**
  * @public
  */
-export type DeploymentStrategy = (typeof DeploymentStrategy)[keyof typeof DeploymentStrategy];
+export type ContainerInstanceField = (typeof ContainerInstanceField)[keyof typeof ContainerInstanceField];
 
 /**
  * @public
  * @enum
  */
-export const DeploymentControllerType = {
-  CODE_DEPLOY: "CODE_DEPLOY",
-  ECS: "ECS",
-  EXTERNAL: "EXTERNAL",
+export const DesiredStatus = {
+  PENDING: "PENDING",
+  RUNNING: "RUNNING",
+  STOPPED: "STOPPED",
 } as const;
 /**
  * @public
  */
-export type DeploymentControllerType = (typeof DeploymentControllerType)[keyof typeof DeploymentControllerType];
+export type DesiredStatus = (typeof DesiredStatus)[keyof typeof DesiredStatus];
 
 /**
  * @public
@@ -432,194 +475,13 @@ export type LaunchType = (typeof LaunchType)[keyof typeof LaunchType];
  * @public
  * @enum
  */
-export const AssignPublicIp = {
-  DISABLED: "DISABLED",
-  ENABLED: "ENABLED",
+export const PlatformDeviceType = {
+  GPU: "GPU",
 } as const;
 /**
  * @public
  */
-export type AssignPublicIp = (typeof AssignPublicIp)[keyof typeof AssignPublicIp];
-
-/**
- * @public
- * @enum
- */
-export const PlacementConstraintType = {
-  DISTINCT_INSTANCE: "distinctInstance",
-  MEMBER_OF: "memberOf",
-} as const;
-/**
- * @public
- */
-export type PlacementConstraintType = (typeof PlacementConstraintType)[keyof typeof PlacementConstraintType];
-
-/**
- * @public
- * @enum
- */
-export const PlacementStrategyType = {
-  BINPACK: "binpack",
-  RANDOM: "random",
-  SPREAD: "spread",
-} as const;
-/**
- * @public
- */
-export type PlacementStrategyType = (typeof PlacementStrategyType)[keyof typeof PlacementStrategyType];
-
-/**
- * @public
- * @enum
- */
-export const PropagateTags = {
-  NONE: "NONE",
-  SERVICE: "SERVICE",
-  TASK_DEFINITION: "TASK_DEFINITION",
-} as const;
-/**
- * @public
- */
-export type PropagateTags = (typeof PropagateTags)[keyof typeof PropagateTags];
-
-/**
- * @public
- * @enum
- */
-export const SchedulingStrategy = {
-  DAEMON: "DAEMON",
-  REPLICA: "REPLICA",
-} as const;
-/**
- * @public
- */
-export type SchedulingStrategy = (typeof SchedulingStrategy)[keyof typeof SchedulingStrategy];
-
-/**
- * @public
- * @enum
- */
-export const ServiceConnectAccessLoggingFormat = {
-  JSON: "JSON",
-  TEXT: "TEXT",
-} as const;
-/**
- * @public
- */
-export type ServiceConnectAccessLoggingFormat =
-  (typeof ServiceConnectAccessLoggingFormat)[keyof typeof ServiceConnectAccessLoggingFormat];
-
-/**
- * @public
- * @enum
- */
-export const ServiceConnectIncludeQueryParameters = {
-  DISABLED: "DISABLED",
-  ENABLED: "ENABLED",
-} as const;
-/**
- * @public
- */
-export type ServiceConnectIncludeQueryParameters =
-  (typeof ServiceConnectIncludeQueryParameters)[keyof typeof ServiceConnectIncludeQueryParameters];
-
-/**
- * @public
- * @enum
- */
-export const LogDriver = {
-  AWSFIRELENS: "awsfirelens",
-  AWSLOGS: "awslogs",
-  FLUENTD: "fluentd",
-  GELF: "gelf",
-  JOURNALD: "journald",
-  JSON_FILE: "json-file",
-  SPLUNK: "splunk",
-  SYSLOG: "syslog",
-} as const;
-/**
- * @public
- */
-export type LogDriver = (typeof LogDriver)[keyof typeof LogDriver];
-
-/**
- * @public
- * @enum
- */
-export const TaskFilesystemType = {
-  EXT3: "ext3",
-  EXT4: "ext4",
-  NTFS: "ntfs",
-  XFS: "xfs",
-} as const;
-/**
- * @public
- */
-export type TaskFilesystemType = (typeof TaskFilesystemType)[keyof typeof TaskFilesystemType];
-
-/**
- * @public
- * @enum
- */
-export const EBSResourceType = {
-  VOLUME: "volume",
-} as const;
-/**
- * @public
- */
-export type EBSResourceType = (typeof EBSResourceType)[keyof typeof EBSResourceType];
-
-/**
- * @public
- * @enum
- */
-export const DeploymentRolloutState = {
-  COMPLETED: "COMPLETED",
-  FAILED: "FAILED",
-  IN_PROGRESS: "IN_PROGRESS",
-} as const;
-/**
- * @public
- */
-export type DeploymentRolloutState = (typeof DeploymentRolloutState)[keyof typeof DeploymentRolloutState];
-
-/**
- * @public
- * @enum
- */
-export const ResourceManagementType = {
-  CUSTOMER: "CUSTOMER",
-  ECS: "ECS",
-} as const;
-/**
- * @public
- */
-export type ResourceManagementType = (typeof ResourceManagementType)[keyof typeof ResourceManagementType];
-
-/**
- * @public
- * @enum
- */
-export const ScaleUnit = {
-  PERCENT: "PERCENT",
-} as const;
-/**
- * @public
- */
-export type ScaleUnit = (typeof ScaleUnit)[keyof typeof ScaleUnit];
-
-/**
- * @public
- * @enum
- */
-export const StabilityStatus = {
-  STABILIZING: "STABILIZING",
-  STEADY_STATE: "STEADY_STATE",
-} as const;
-/**
- * @public
- */
-export type StabilityStatus = (typeof StabilityStatus)[keyof typeof StabilityStatus];
+export type PlatformDeviceType = (typeof PlatformDeviceType)[keyof typeof PlatformDeviceType];
 
 /**
  * @public
@@ -655,18 +517,6 @@ export const SettingType = {
  * @public
  */
 export type SettingType = (typeof SettingType)[keyof typeof SettingType];
-
-/**
- * @public
- * @enum
- */
-export const TargetType = {
-  CONTAINER_INSTANCE: "container-instance",
-} as const;
-/**
- * @public
- */
-export type TargetType = (typeof TargetType)[keyof typeof TargetType];
 
 /**
  * @public
@@ -741,6 +591,25 @@ export type DeviceCgroupPermission = (typeof DeviceCgroupPermission)[keyof typeo
  * @public
  * @enum
  */
+export const LogDriver = {
+  AWSFIRELENS: "awsfirelens",
+  AWSLOGS: "awslogs",
+  FLUENTD: "fluentd",
+  GELF: "gelf",
+  JOURNALD: "journald",
+  JSON_FILE: "json-file",
+  SPLUNK: "splunk",
+  SYSLOG: "syslog",
+} as const;
+/**
+ * @public
+ */
+export type LogDriver = (typeof LogDriver)[keyof typeof LogDriver];
+
+/**
+ * @public
+ * @enum
+ */
 export const ApplicationProtocol = {
   GRPC: "grpc",
   HTTP: "http",
@@ -750,19 +619,6 @@ export const ApplicationProtocol = {
  * @public
  */
 export type ApplicationProtocol = (typeof ApplicationProtocol)[keyof typeof ApplicationProtocol];
-
-/**
- * @public
- * @enum
- */
-export const TransportProtocol = {
-  TCP: "tcp",
-  UDP: "udp",
-} as const;
-/**
- * @public
- */
-export type TransportProtocol = (typeof TransportProtocol)[keyof typeof TransportProtocol];
 
 /**
  * @public
@@ -974,82 +830,27 @@ export type EFSTransitEncryption = (typeof EFSTransitEncryption)[keyof typeof EF
  * @public
  * @enum
  */
-export const InstanceHealthCheckState = {
-  IMPAIRED: "IMPAIRED",
-  INITIALIZING: "INITIALIZING",
-  INSUFFICIENT_DATA: "INSUFFICIENT_DATA",
-  OK: "OK",
-} as const;
-/**
- * @public
- */
-export type InstanceHealthCheckState = (typeof InstanceHealthCheckState)[keyof typeof InstanceHealthCheckState];
-
-/**
- * @public
- * @enum
- */
-export const InstanceHealthCheckType = {
-  CONTAINER_RUNTIME: "CONTAINER_RUNTIME",
-} as const;
-/**
- * @public
- */
-export type InstanceHealthCheckType = (typeof InstanceHealthCheckType)[keyof typeof InstanceHealthCheckType];
-
-/**
- * @public
- * @enum
- */
-export const CapacityProviderField = {
+export const TaskDefinitionField = {
   TAGS: "TAGS",
 } as const;
 /**
  * @public
  */
-export type CapacityProviderField = (typeof CapacityProviderField)[keyof typeof CapacityProviderField];
+export type TaskDefinitionField = (typeof TaskDefinitionField)[keyof typeof TaskDefinitionField];
 
 /**
  * @public
  * @enum
  */
-export const ClusterField = {
-  ATTACHMENTS: "ATTACHMENTS",
-  CONFIGURATIONS: "CONFIGURATIONS",
-  SETTINGS: "SETTINGS",
-  STATISTICS: "STATISTICS",
-  TAGS: "TAGS",
+export const TaskDefinitionFamilyStatus = {
+  ACTIVE: "ACTIVE",
+  ALL: "ALL",
+  INACTIVE: "INACTIVE",
 } as const;
 /**
  * @public
  */
-export type ClusterField = (typeof ClusterField)[keyof typeof ClusterField];
-
-/**
- * @public
- * @enum
- */
-export const ContainerInstanceField = {
-  CONTAINER_INSTANCE_HEALTH: "CONTAINER_INSTANCE_HEALTH",
-  TAGS: "TAGS",
-} as const;
-/**
- * @public
- */
-export type ContainerInstanceField = (typeof ContainerInstanceField)[keyof typeof ContainerInstanceField];
-
-/**
- * @public
- * @enum
- */
-export const ExpressGatewayServiceInclude = {
-  TAGS: "TAGS",
-} as const;
-/**
- * @public
- */
-export type ExpressGatewayServiceInclude =
-  (typeof ExpressGatewayServiceInclude)[keyof typeof ExpressGatewayServiceInclude];
+export type TaskDefinitionFamilyStatus = (typeof TaskDefinitionFamilyStatus)[keyof typeof TaskDefinitionFamilyStatus];
 
 /**
  * @public
@@ -1066,6 +867,40 @@ export const ServiceDeploymentRollbackMonitorsStatus = {
  */
 export type ServiceDeploymentRollbackMonitorsStatus =
   (typeof ServiceDeploymentRollbackMonitorsStatus)[keyof typeof ServiceDeploymentRollbackMonitorsStatus];
+
+/**
+ * @public
+ * @enum
+ */
+export const DeploymentLifecycleHookStage = {
+  POST_PRODUCTION_TRAFFIC_SHIFT: "POST_PRODUCTION_TRAFFIC_SHIFT",
+  POST_SCALE_UP: "POST_SCALE_UP",
+  POST_TEST_TRAFFIC_SHIFT: "POST_TEST_TRAFFIC_SHIFT",
+  PRE_SCALE_UP: "PRE_SCALE_UP",
+  PRODUCTION_TRAFFIC_SHIFT: "PRODUCTION_TRAFFIC_SHIFT",
+  RECONCILE_SERVICE: "RECONCILE_SERVICE",
+  TEST_TRAFFIC_SHIFT: "TEST_TRAFFIC_SHIFT",
+} as const;
+/**
+ * @public
+ */
+export type DeploymentLifecycleHookStage =
+  (typeof DeploymentLifecycleHookStage)[keyof typeof DeploymentLifecycleHookStage];
+
+/**
+ * @public
+ * @enum
+ */
+export const DeploymentStrategy = {
+  BLUE_GREEN: "BLUE_GREEN",
+  CANARY: "CANARY",
+  LINEAR: "LINEAR",
+  ROLLING: "ROLLING",
+} as const;
+/**
+ * @public
+ */
+export type DeploymentStrategy = (typeof DeploymentStrategy)[keyof typeof DeploymentStrategy];
 
 /**
  * @public
@@ -1113,17 +948,246 @@ export type ServiceDeploymentStatus = (typeof ServiceDeploymentStatus)[keyof typ
  * @public
  * @enum
  */
-export const ManagedResourceStatus = {
-  ACTIVE: "ACTIVE",
-  DELETED: "DELETED",
-  DEPROVISIONING: "DEPROVISIONING",
-  FAILED: "FAILED",
-  PROVISIONING: "PROVISIONING",
+export const ExpressGatewayServiceScalingMetric = {
+  AverageCPUUtilization: "AVERAGE_CPU",
+  AverageMemoryUtilization: "AVERAGE_MEMORY",
+  RequestCountPerTarget: "REQUEST_COUNT_PER_TARGET",
 } as const;
 /**
  * @public
  */
-export type ManagedResourceStatus = (typeof ManagedResourceStatus)[keyof typeof ManagedResourceStatus];
+export type ExpressGatewayServiceScalingMetric =
+  (typeof ExpressGatewayServiceScalingMetric)[keyof typeof ExpressGatewayServiceScalingMetric];
+
+/**
+ * @public
+ * @enum
+ */
+export const ExpressGatewayServiceStatusCode = {
+  ACTIVE: "ACTIVE",
+  DRAINING: "DRAINING",
+  INACTIVE: "INACTIVE",
+} as const;
+/**
+ * @public
+ */
+export type ExpressGatewayServiceStatusCode =
+  (typeof ExpressGatewayServiceStatusCode)[keyof typeof ExpressGatewayServiceStatusCode];
+
+/**
+ * @public
+ * @enum
+ */
+export const AvailabilityZoneRebalancing = {
+  DISABLED: "DISABLED",
+  ENABLED: "ENABLED",
+} as const;
+/**
+ * @public
+ */
+export type AvailabilityZoneRebalancing =
+  (typeof AvailabilityZoneRebalancing)[keyof typeof AvailabilityZoneRebalancing];
+
+/**
+ * @public
+ * @enum
+ */
+export const DeploymentControllerType = {
+  CODE_DEPLOY: "CODE_DEPLOY",
+  ECS: "ECS",
+  EXTERNAL: "EXTERNAL",
+} as const;
+/**
+ * @public
+ */
+export type DeploymentControllerType = (typeof DeploymentControllerType)[keyof typeof DeploymentControllerType];
+
+/**
+ * @public
+ * @enum
+ */
+export const AssignPublicIp = {
+  DISABLED: "DISABLED",
+  ENABLED: "ENABLED",
+} as const;
+/**
+ * @public
+ */
+export type AssignPublicIp = (typeof AssignPublicIp)[keyof typeof AssignPublicIp];
+
+/**
+ * @public
+ * @enum
+ */
+export const PlacementConstraintType = {
+  DISTINCT_INSTANCE: "distinctInstance",
+  MEMBER_OF: "memberOf",
+} as const;
+/**
+ * @public
+ */
+export type PlacementConstraintType = (typeof PlacementConstraintType)[keyof typeof PlacementConstraintType];
+
+/**
+ * @public
+ * @enum
+ */
+export const PlacementStrategyType = {
+  BINPACK: "binpack",
+  RANDOM: "random",
+  SPREAD: "spread",
+} as const;
+/**
+ * @public
+ */
+export type PlacementStrategyType = (typeof PlacementStrategyType)[keyof typeof PlacementStrategyType];
+
+/**
+ * @public
+ * @enum
+ */
+export const PropagateTags = {
+  NONE: "NONE",
+  SERVICE: "SERVICE",
+  TASK_DEFINITION: "TASK_DEFINITION",
+} as const;
+/**
+ * @public
+ */
+export type PropagateTags = (typeof PropagateTags)[keyof typeof PropagateTags];
+
+/**
+ * @public
+ * @enum
+ */
+export const SchedulingStrategy = {
+  DAEMON: "DAEMON",
+  REPLICA: "REPLICA",
+} as const;
+/**
+ * @public
+ */
+export type SchedulingStrategy = (typeof SchedulingStrategy)[keyof typeof SchedulingStrategy];
+
+/**
+ * @public
+ * @enum
+ */
+export const ServiceConnectAccessLoggingFormat = {
+  JSON: "JSON",
+  TEXT: "TEXT",
+} as const;
+/**
+ * @public
+ */
+export type ServiceConnectAccessLoggingFormat =
+  (typeof ServiceConnectAccessLoggingFormat)[keyof typeof ServiceConnectAccessLoggingFormat];
+
+/**
+ * @public
+ * @enum
+ */
+export const ServiceConnectIncludeQueryParameters = {
+  DISABLED: "DISABLED",
+  ENABLED: "ENABLED",
+} as const;
+/**
+ * @public
+ */
+export type ServiceConnectIncludeQueryParameters =
+  (typeof ServiceConnectIncludeQueryParameters)[keyof typeof ServiceConnectIncludeQueryParameters];
+
+/**
+ * @public
+ * @enum
+ */
+export const TaskFilesystemType = {
+  EXT3: "ext3",
+  EXT4: "ext4",
+  NTFS: "ntfs",
+  XFS: "xfs",
+} as const;
+/**
+ * @public
+ */
+export type TaskFilesystemType = (typeof TaskFilesystemType)[keyof typeof TaskFilesystemType];
+
+/**
+ * @public
+ * @enum
+ */
+export const EBSResourceType = {
+  VOLUME: "volume",
+} as const;
+/**
+ * @public
+ */
+export type EBSResourceType = (typeof EBSResourceType)[keyof typeof EBSResourceType];
+
+/**
+ * @public
+ * @enum
+ */
+export const DeploymentRolloutState = {
+  COMPLETED: "COMPLETED",
+  FAILED: "FAILED",
+  IN_PROGRESS: "IN_PROGRESS",
+} as const;
+/**
+ * @public
+ */
+export type DeploymentRolloutState = (typeof DeploymentRolloutState)[keyof typeof DeploymentRolloutState];
+
+/**
+ * @public
+ * @enum
+ */
+export const ResourceManagementType = {
+  CUSTOMER: "CUSTOMER",
+  ECS: "ECS",
+} as const;
+/**
+ * @public
+ */
+export type ResourceManagementType = (typeof ResourceManagementType)[keyof typeof ResourceManagementType];
+
+/**
+ * @public
+ * @enum
+ */
+export const ScaleUnit = {
+  PERCENT: "PERCENT",
+} as const;
+/**
+ * @public
+ */
+export type ScaleUnit = (typeof ScaleUnit)[keyof typeof ScaleUnit];
+
+/**
+ * @public
+ * @enum
+ */
+export const StabilityStatus = {
+  STABILIZING: "STABILIZING",
+  STEADY_STATE: "STEADY_STATE",
+} as const;
+/**
+ * @public
+ */
+export type StabilityStatus = (typeof StabilityStatus)[keyof typeof StabilityStatus];
+
+/**
+ * @public
+ * @enum
+ */
+export const ExpressGatewayServiceInclude = {
+  TAGS: "TAGS",
+} as const;
+/**
+ * @public
+ */
+export type ExpressGatewayServiceInclude =
+  (typeof ExpressGatewayServiceInclude)[keyof typeof ExpressGatewayServiceInclude];
 
 /**
  * @public
@@ -1141,13 +1205,44 @@ export type ServiceField = (typeof ServiceField)[keyof typeof ServiceField];
  * @public
  * @enum
  */
-export const TaskDefinitionField = {
-  TAGS: "TAGS",
+export const StopServiceDeploymentStopType = {
+  ABORT: "ABORT",
+  ROLLBACK: "ROLLBACK",
 } as const;
 /**
  * @public
  */
-export type TaskDefinitionField = (typeof TaskDefinitionField)[keyof typeof TaskDefinitionField];
+export type StopServiceDeploymentStopType =
+  (typeof StopServiceDeploymentStopType)[keyof typeof StopServiceDeploymentStopType];
+
+/**
+ * @public
+ * @enum
+ */
+export const ManagedResourceStatus = {
+  ACTIVE: "ACTIVE",
+  DELETED: "DELETED",
+  DEPROVISIONING: "DEPROVISIONING",
+  FAILED: "FAILED",
+  PROVISIONING: "PROVISIONING",
+} as const;
+/**
+ * @public
+ */
+export type ManagedResourceStatus = (typeof ManagedResourceStatus)[keyof typeof ManagedResourceStatus];
+
+/**
+ * @public
+ * @enum
+ */
+export const SortOrder = {
+  ASC: "ASC",
+  DESC: "DESC",
+} as const;
+/**
+ * @public
+ */
+export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder];
 
 /**
  * @public
@@ -1192,18 +1287,6 @@ export type HealthStatus = (typeof HealthStatus)[keyof typeof HealthStatus];
  * @public
  * @enum
  */
-export const ManagedAgentName = {
-  ExecuteCommandAgent: "ExecuteCommandAgent",
-} as const;
-/**
- * @public
- */
-export type ManagedAgentName = (typeof ManagedAgentName)[keyof typeof ManagedAgentName];
-
-/**
- * @public
- * @enum
- */
 export const TaskStopCode = {
   ESSENTIAL_CONTAINER_EXITED: "EssentialContainerExited",
   SERVICE_SCHEDULER_INITIATED: "ServiceSchedulerInitiated",
@@ -1228,86 +1311,3 @@ export const TaskSetField = {
  * @public
  */
 export type TaskSetField = (typeof TaskSetField)[keyof typeof TaskSetField];
-
-/**
- * @public
- * @enum
- */
-export const ContainerInstanceStatus = {
-  ACTIVE: "ACTIVE",
-  DEREGISTERING: "DEREGISTERING",
-  DRAINING: "DRAINING",
-  REGISTERING: "REGISTERING",
-  REGISTRATION_FAILED: "REGISTRATION_FAILED",
-} as const;
-/**
- * @public
- */
-export type ContainerInstanceStatus = (typeof ContainerInstanceStatus)[keyof typeof ContainerInstanceStatus];
-
-/**
- * @public
- * @enum
- */
-export const TaskDefinitionFamilyStatus = {
-  ACTIVE: "ACTIVE",
-  ALL: "ALL",
-  INACTIVE: "INACTIVE",
-} as const;
-/**
- * @public
- */
-export type TaskDefinitionFamilyStatus = (typeof TaskDefinitionFamilyStatus)[keyof typeof TaskDefinitionFamilyStatus];
-
-/**
- * @public
- * @enum
- */
-export const SortOrder = {
-  ASC: "ASC",
-  DESC: "DESC",
-} as const;
-/**
- * @public
- */
-export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder];
-
-/**
- * @public
- * @enum
- */
-export const DesiredStatus = {
-  PENDING: "PENDING",
-  RUNNING: "RUNNING",
-  STOPPED: "STOPPED",
-} as const;
-/**
- * @public
- */
-export type DesiredStatus = (typeof DesiredStatus)[keyof typeof DesiredStatus];
-
-/**
- * @public
- * @enum
- */
-export const PlatformDeviceType = {
-  GPU: "GPU",
-} as const;
-/**
- * @public
- */
-export type PlatformDeviceType = (typeof PlatformDeviceType)[keyof typeof PlatformDeviceType];
-
-/**
- * @public
- * @enum
- */
-export const StopServiceDeploymentStopType = {
-  ABORT: "ABORT",
-  ROLLBACK: "ROLLBACK",
-} as const;
-/**
- * @public
- */
-export type StopServiceDeploymentStopType =
-  (typeof StopServiceDeploymentStopType)[keyof typeof StopServiceDeploymentStopType];

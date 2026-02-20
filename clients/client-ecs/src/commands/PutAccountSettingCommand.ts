@@ -27,12 +27,7 @@ export interface PutAccountSettingCommandInput extends PutAccountSettingRequest 
 export interface PutAccountSettingCommandOutput extends PutAccountSettingResponse, __MetadataBearer {}
 
 /**
- * <p>Modifies an account setting. Account settings are set on a per-Region basis.</p>
- *          <p>If you change the root user account setting, the default settings are reset for users
- * 			and roles that do not have specified individual account settings. For more information,
- * 			see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
- * 				Settings</a> in the <i>Amazon Elastic Container Service Developer
- * 				Guide</i>.</p>
+ * <p>Modifies an account setting. Account settings are set on a per-Region basis.</p> <p>If you change the root user account setting, the default settings are reset for users and roles that do not have specified individual account settings. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -66,15 +61,10 @@ export interface PutAccountSettingCommandOutput extends PutAccountSettingRespons
  * @see {@link ECSClientResolvedConfig | config} for ECSClient's `config` shape.
  *
  * @throws {@link ClientException} (client fault)
- *  <p>These errors are usually caused by a client action. This client action might be using
- * 			an action or resource on behalf of a user that doesn't have permissions to use the
- * 			action or resource. Or, it might be specifying an identifier that isn't valid.</p>
+ *  <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
  *
  * @throws {@link InvalidParameterException} (client fault)
- *  <p>The specified parameter isn't valid. Review the available parameters for the API
- * 			request.</p>
- *          <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS
- * 				service event messages</a>. </p>
+ *  <p>The specified parameter isn't valid. Review the available parameters for the API request.</p> <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>. </p>
  *
  * @throws {@link ServerException} (server fault)
  *  <p>These errors are usually caused by a server issue.</p>
@@ -82,6 +72,26 @@ export interface PutAccountSettingCommandOutput extends PutAccountSettingRespons
  * @throws {@link ECSServiceException}
  * <p>Base exception class for all service exceptions from ECS service.</p>
  *
+ *
+ * @example To modify your account settings
+ * ```javascript
+ * // This example modifies your account settings to opt in to the new ARN and resource ID format for Amazon ECS services. If you’re using this command as the root user, then changes apply to the entire AWS account, unless an IAM user or role explicitly overrides these settings for themselves.
+ * const input = {
+ *   name: "serviceLongArnFormat",
+ *   value: "enabled"
+ * };
+ * const command = new PutAccountSettingCommand(input);
+ * const response = await client.send(command);
+ * /* response is
+ * {
+ *   setting: {
+ *     name: "serviceLongArnFormat",
+ *     principalArn: "arn:aws:iam::<aws_account_id>:user/principalName",
+ *     value: "enabled"
+ *   }
+ * }
+ * *\/
+ * ```
  *
  * @example To modify the account settings for a specific IAM user or IAM role
  * ```javascript
@@ -97,26 +107,6 @@ export interface PutAccountSettingCommandOutput extends PutAccountSettingRespons
  * {
  *   setting: {
  *     name: "containerInstanceLongArnFormat",
- *     principalArn: "arn:aws:iam::<aws_account_id>:user/principalName",
- *     value: "enabled"
- *   }
- * }
- * *\/
- * ```
- *
- * @example To modify your account settings
- * ```javascript
- * // This example modifies your account settings to opt in to the new ARN and resource ID format for Amazon ECS services. If you’re using this command as the root user, then changes apply to the entire AWS account, unless an IAM user or role explicitly overrides these settings for themselves.
- * const input = {
- *   name: "serviceLongArnFormat",
- *   value: "enabled"
- * };
- * const command = new PutAccountSettingCommand(input);
- * const response = await client.send(command);
- * /* response is
- * {
- *   setting: {
- *     name: "serviceLongArnFormat",
  *     principalArn: "arn:aws:iam::<aws_account_id>:user/principalName",
  *     value: "enabled"
  *   }

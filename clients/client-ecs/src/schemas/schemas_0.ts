@@ -2957,7 +2957,7 @@ var FirelensConfigurationOptionsMap = 128 | 0;
 var LogConfigurationOptionsMap = 128 | 0;
 var StringMap = 128 | 0;
 export var CreateCapacityProvider$: StaticOperationSchema = [9, n0, _CCP,
-  0, () => CreateCapacityProviderRequest$, () => CreateCapacityProviderResponse$
+  2, () => CreateCapacityProviderRequest$, () => CreateCapacityProviderResponse$
 ];
 export var CreateCluster$: StaticOperationSchema = [9, n0, _CCr,
   0, () => CreateClusterRequest$, () => CreateClusterResponse$
@@ -2978,22 +2978,22 @@ export var DeleteAttributes$: StaticOperationSchema = [9, n0, _DAe,
   0, () => DeleteAttributesRequest$, () => DeleteAttributesResponse$
 ];
 export var DeleteCapacityProvider$: StaticOperationSchema = [9, n0, _DCP,
-  0, () => DeleteCapacityProviderRequest$, () => DeleteCapacityProviderResponse$
+  2, () => DeleteCapacityProviderRequest$, () => DeleteCapacityProviderResponse$
 ];
 export var DeleteCluster$: StaticOperationSchema = [9, n0, _DCel,
-  0, () => DeleteClusterRequest$, () => DeleteClusterResponse$
+  2, () => DeleteClusterRequest$, () => DeleteClusterResponse$
 ];
 export var DeleteExpressGatewayService$: StaticOperationSchema = [9, n0, _DEGS,
   0, () => DeleteExpressGatewayServiceRequest$, () => DeleteExpressGatewayServiceResponse$
 ];
 export var DeleteService$: StaticOperationSchema = [9, n0, _DS,
-  0, () => DeleteServiceRequest$, () => DeleteServiceResponse$
+  2, () => DeleteServiceRequest$, () => DeleteServiceResponse$
 ];
 export var DeleteTaskDefinitions$: StaticOperationSchema = [9, n0, _DTD,
   0, () => DeleteTaskDefinitionsRequest$, () => DeleteTaskDefinitionsResponse$
 ];
 export var DeleteTaskSet$: StaticOperationSchema = [9, n0, _DTS,
-  0, () => DeleteTaskSetRequest$, () => DeleteTaskSetResponse$
+  2, () => DeleteTaskSetRequest$, () => DeleteTaskSetResponse$
 ];
 export var DeregisterContainerInstance$: StaticOperationSchema = [9, n0, _DCI,
   0, () => DeregisterContainerInstanceRequest$, () => DeregisterContainerInstanceResponse$

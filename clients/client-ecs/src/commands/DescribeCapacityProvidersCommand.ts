@@ -191,18 +191,13 @@ export interface DescribeCapacityProvidersCommandOutput extends DescribeCapacity
  * @see {@link ECSClientResolvedConfig | config} for ECSClient's `config` shape.
  *
  * @throws {@link ClientException} (client fault)
- *  <p>These errors are usually caused by a client action. This client action might be using
- * 			an action or resource on behalf of a user that doesn't have permissions to use the
- * 			action or resource. Or, it might be specifying an identifier that isn't valid.</p>
+ *  <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
  *
  * @throws {@link ClusterNotFoundException} (client fault)
  *  <p>The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>. Amazon ECS clusters are Region specific.</p>
  *
  * @throws {@link InvalidParameterException} (client fault)
- *  <p>The specified parameter isn't valid. Review the available parameters for the API
- * 			request.</p>
- *          <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS
- * 				service event messages</a>. </p>
+ *  <p>The specified parameter isn't valid. Review the available parameters for the API request.</p> <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>. </p>
  *
  * @throws {@link ServerException} (server fault)
  *  <p>These errors are usually caused by a server issue.</p>
@@ -213,48 +208,6 @@ export interface DescribeCapacityProvidersCommandOutput extends DescribeCapacity
  * @throws {@link ECSServiceException}
  * <p>Base exception class for all service exceptions from ECS service.</p>
  *
- *
- * @example To describe a specific capacity provider
- * ```javascript
- * // This example retrieves details about the capacity provider MyCapacityProvider
- * const input = {
- *   capacityProviders: [
- *     "MyCapacityProvider"
- *   ],
- *   include: [
- *     "TAGS"
- *   ]
- * };
- * const command = new DescribeCapacityProvidersCommand(input);
- * const response = await client.send(command);
- * /* response is
- * {
- *   capacityProviders: [
- *     {
- *       autoScalingGroupProvider: {
- *         autoScalingGroupArn: "arn:aws:autoscaling:us-west-2:123456789012:autoScalingGroup:a1b2c3d4-5678-90ab-cdef-EXAMPLE11111:autoScalingGroupName/MyAutoScalingGroup",
- *         managedScaling: {
- *           maximumScalingStepSize: 1000,
- *           minimumScalingStepSize: 1,
- *           status: "ENABLED",
- *           targetCapacity: 100
- *         },
- *         managedTerminationProtection: "ENABLED"
- *       },
- *       capacityProviderArn: "arn:aws:ecs:us-west-2:123456789012:capacity-provider/MyCapacityProvider",
- *       name: "MyCapacityProvider",
- *       status: "ACTIVE",
- *       tags: [
- *         {
- *           key: "environment",
- *           value: "production"
- *         }
- *       ]
- *     }
- *   ]
- * }
- * *\/
- * ```
  *
  * @example To describe all capacity providers
  * ```javascript
@@ -292,6 +245,48 @@ export interface DescribeCapacityProvidersCommandOutput extends DescribeCapacity
  *       name: "FARGATE_SPOT",
  *       status: "ACTIVE",
  *       tags:       []
+ *     }
+ *   ]
+ * }
+ * *\/
+ * ```
+ *
+ * @example To describe a specific capacity provider
+ * ```javascript
+ * // This example retrieves details about the capacity provider MyCapacityProvider
+ * const input = {
+ *   capacityProviders: [
+ *     "MyCapacityProvider"
+ *   ],
+ *   include: [
+ *     "TAGS"
+ *   ]
+ * };
+ * const command = new DescribeCapacityProvidersCommand(input);
+ * const response = await client.send(command);
+ * /* response is
+ * {
+ *   capacityProviders: [
+ *     {
+ *       autoScalingGroupProvider: {
+ *         autoScalingGroupArn: "arn:aws:autoscaling:us-west-2:123456789012:autoScalingGroup:a1b2c3d4-5678-90ab-cdef-EXAMPLE11111:autoScalingGroupName/MyAutoScalingGroup",
+ *         managedScaling: {
+ *           maximumScalingStepSize: 1000,
+ *           minimumScalingStepSize: 1,
+ *           status: "ENABLED",
+ *           targetCapacity: 100
+ *         },
+ *         managedTerminationProtection: "ENABLED"
+ *       },
+ *       capacityProviderArn: "arn:aws:ecs:us-west-2:123456789012:capacity-provider/MyCapacityProvider",
+ *       name: "MyCapacityProvider",
+ *       status: "ACTIVE",
+ *       tags: [
+ *         {
+ *           key: "environment",
+ *           value: "production"
+ *         }
+ *       ]
  *     }
  *   ]
  * }

@@ -27,12 +27,7 @@ export interface ListServiceDeploymentsCommandInput extends ListServiceDeploymen
 export interface ListServiceDeploymentsCommandOutput extends ListServiceDeploymentsResponse, __MetadataBearer {}
 
 /**
- * <p>This operation lists all the service deployments that meet the specified filter
- * 			criteria.</p>
- *          <p>A service deployment happens when you release a software update for the service. You
- * 			route traffic from the running service revisions to the new service revison and control
- * 			the number of running tasks. </p>
- *          <p>This API returns the values that you use for the request parameters in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceRevisions.html">DescribeServiceRevisions</a>.</p>
+ * <p>This operation lists all the service deployments that meet the specified filter criteria.</p> <p>A service deployment happens when you release a software update for the service. You route traffic from the running service revisions to the new service revison and control the number of running tasks. </p> <p>This API returns the values that you use for the request parameters in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceRevisions.html">DescribeServiceRevisions</a>.</p>
  * @example
  * Use a bare-bones client and the command you need to make an API call.
  * ```javascript
@@ -85,22 +80,16 @@ export interface ListServiceDeploymentsCommandOutput extends ListServiceDeployme
  *  <p>You don't have authorization to perform the requested action.</p>
  *
  * @throws {@link ClientException} (client fault)
- *  <p>These errors are usually caused by a client action. This client action might be using
- * 			an action or resource on behalf of a user that doesn't have permissions to use the
- * 			action or resource. Or, it might be specifying an identifier that isn't valid.</p>
+ *  <p>These errors are usually caused by a client action. This client action might be using an action or resource on behalf of a user that doesn't have permissions to use the action or resource. Or, it might be specifying an identifier that isn't valid.</p>
  *
  * @throws {@link InvalidParameterException} (client fault)
- *  <p>The specified parameter isn't valid. Review the available parameters for the API
- * 			request.</p>
- *          <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS
- * 				service event messages</a>. </p>
+ *  <p>The specified parameter isn't valid. Review the available parameters for the API request.</p> <p>For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon ECS service event messages</a>. </p>
  *
  * @throws {@link ServerException} (server fault)
  *  <p>These errors are usually caused by a server issue.</p>
  *
  * @throws {@link ServiceNotFoundException} (client fault)
- *  <p>The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>. Amazon ECS services are cluster specific and Region
- * 			specific.</p>
+ *  <p>The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>. Amazon ECS services are cluster specific and Region specific.</p>
  *
  * @throws {@link UnsupportedFeatureException} (client fault)
  *  <p>The specified task isn't supported in this Region.</p>
