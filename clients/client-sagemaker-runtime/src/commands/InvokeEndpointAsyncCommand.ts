@@ -58,6 +58,8 @@ export interface InvokeEndpointAsyncCommandOutput extends InvokeEndpointAsyncOut
  *   CustomAttributes: "STRING_VALUE",
  *   InferenceId: "STRING_VALUE",
  *   InputLocation: "STRING_VALUE", // required
+ *   S3OutputPathExtension: "STRING_VALUE",
+ *   Filename: "STRING_VALUE",
  *   RequestTTLSeconds: Number("int"),
  *   InvocationTimeoutSeconds: Number("int"),
  * };

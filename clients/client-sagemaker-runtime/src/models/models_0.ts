@@ -241,6 +241,20 @@ export interface InvokeEndpointAsyncInput {
   InputLocation: string | undefined;
 
   /**
+   * <p>The path extension that is appended to the Amazon S3 output path where the inference
+   *             response payload is stored.</p>
+   * @public
+   */
+  S3OutputPathExtension?: string | undefined;
+
+  /**
+   * <p>The filename for the inference response payload stored in Amazon S3. If not
+   *             specified, Amazon SageMaker AI generates a filename based on the inference ID.</p>
+   * @public
+   */
+  Filename?: string | undefined;
+
+  /**
    * <p>Maximum age in seconds a request can be in the queue before it is marked as expired.
    *             The default is 6 hours, or 21,600 seconds.</p>
    * @public

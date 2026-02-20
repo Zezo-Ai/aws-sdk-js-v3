@@ -10,6 +10,7 @@ const _CT_ = "Content-Type";
 const _EC = "ErrorCode";
 const _EE = "EnableExplanations";
 const _EN = "EndpointName";
+const _F = "Filename";
 const _FL = "FailureLocation";
 const _ICN = "InferenceComponentName";
 const _IDE = "InternalDependencyException";
@@ -42,6 +43,7 @@ const _PP = "PayloadPart";
 const _RS = "ResponseStream";
 const _RTTLS = "RequestTTLSeconds";
 const _SI = "SessionId";
+const _SOPE = "S3OutputPathExtension";
 const _SU = "ServiceUnavailable";
 const _TCH = "TargetContainerHostname";
 const _TM = "TargetModel";
@@ -52,7 +54,8 @@ const _XASCA = "X-Amzn-SageMaker-Custom-Attributes";
 const _XASCSI = "X-Amzn-SageMaker-Closed-Session-Id";
 const _XASCT = "X-Amzn-SageMaker-Content-Type";
 const _XASEE = "X-Amzn-SageMaker-Enable-Explanations";
-const _XASF = "X-Amzn-SageMaker-FailureLocation";
+const _XASF = "X-Amzn-SageMaker-Filename";
+const _XASF_ = "X-Amzn-SageMaker-FailureLocation";
 const _XASI = "X-Amzn-SageMaker-InputLocation";
 const _XASIC = "X-Amzn-SageMaker-Inference-Component";
 const _XASII = "X-Amzn-SageMaker-Inference-Id";
@@ -60,6 +63,7 @@ const _XASI_ = "X-Amzn-SageMaker-InvocationTimeoutSeconds";
 const _XASNSI = "X-Amzn-SageMaker-New-Session-Id";
 const _XASO = "X-Amzn-SageMaker-OutputLocation";
 const _XASR = "X-Amzn-SageMaker-RequestTTLSeconds";
+const _XASS = "X-Amzn-SageMaker-S3OutputPathExtension";
 const _XASSI = "X-Amzn-SageMaker-Session-Id";
 const _XASTCH = "X-Amzn-SageMaker-Target-Container-Hostname";
 const _XASTM = "X-Amzn-SageMaker-Target-Model";
@@ -166,13 +170,13 @@ var CustomAttributesHeader: StaticSimpleSchema = [0, n0, _CAH, 8, 0];
 var PartBlob: StaticSimpleSchema = [0, n0, _PB, 8, 21];
 export var InvokeEndpointAsyncInput$: StaticStructureSchema = [3, n0, _IEAI,
   0,
-  [_EN, _IL, _CT, _A, _CA, _II, _RTTLS, _ITS],
-  [[0, 1], [0, { [_hH]: _XASI }], [0, { [_hH]: _XASCT }], [0, { [_hH]: _XASA }], [() => CustomAttributesHeader, { [_hH]: _XASCA }], [0, { [_hH]: _XASII }], [1, { [_hH]: _XASR }], [1, { [_hH]: _XASI_ }]], 2
+  [_EN, _IL, _CT, _A, _CA, _II, _SOPE, _F, _RTTLS, _ITS],
+  [[0, 1], [0, { [_hH]: _XASI }], [0, { [_hH]: _XASCT }], [0, { [_hH]: _XASA }], [() => CustomAttributesHeader, { [_hH]: _XASCA }], [0, { [_hH]: _XASII }], [0, { [_hH]: _XASS }], [0, { [_hH]: _XASF }], [1, { [_hH]: _XASR }], [1, { [_hH]: _XASI_ }]], 2
 ];
 export var InvokeEndpointAsyncOutput$: StaticStructureSchema = [3, n0, _IEAO,
   0,
   [_II, _OL, _FL],
-  [0, [0, { [_hH]: _XASO }], [0, { [_hH]: _XASF }]]
+  [0, [0, { [_hH]: _XASO }], [0, { [_hH]: _XASF_ }]]
 ];
 export var InvokeEndpointInput$: StaticStructureSchema = [3, n0, _IEI,
   0,
